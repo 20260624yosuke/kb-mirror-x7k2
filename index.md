@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1179 ファイル_
+_合計 1180 ファイル_
 
 ## root/ (11)
 
@@ -13,17 +13,18 @@ _合計 1179 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-22T19:35:59Z
-- [log.md](root/log.md) | 2026-08-22T23:26:41Z
+- [index.md](root/index.md) | 2026-08-22T23:35:03Z
+- [log.md](root/log.md) | 2026-08-22T23:32:15Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
-## wiki/analyses/ (51)
+## wiki/analyses/ (52)
 
 - [art-canvas-asuna-reference-axis-map.md](wiki/analyses/art-canvas-asuna-reference-axis-map.md) | 2026-06-14T16:03:54Z
 - [asuna-maid-costume-structure.md](wiki/analyses/asuna-maid-costume-structure.md) | 2026-06-24T01:38:06Z
 - [blender-bust-shape-reading-prompt-guardrails-2026-07-27.md](wiki/analyses/blender-bust-shape-reading-prompt-guardrails-2026-07-27.md) | 2026-07-27T11:57:19Z
 - [breast-force-field-composition-canvas-20260601.md](wiki/analyses/breast-force-field-composition-canvas-20260601.md) | 2026-06-01T06:43:42Z
 - [canvas-eagle-connection-strength.md](wiki/analyses/canvas-eagle-connection-strength.md) | 2026-06-07T09:30:11Z
+- [ch12-pilot-session-recovery-collision-verification.md](wiki/analyses/ch12-pilot-session-recovery-collision-verification.md) | 2026-08-22T23:34:20Z
 - [chatgpt-handoff-x-eagle-observation-rethink-2026-06-23.md](wiki/analyses/chatgpt-handoff-x-eagle-observation-rethink-2026-06-23.md) | 2026-06-23T04:55:56Z
 - [claude-md-rule-compression-handoff-2026-06-28.md](wiki/analyses/claude-md-rule-compression-handoff-2026-06-28.md) | 2026-06-28T02:49:49Z
 - [coloso-recording-workflow.md](wiki/analyses/coloso-recording-workflow.md) | 2026-07-07T00:55:52Z
@@ -218,7 +219,7 @@ _合計 1179 ファイル_
 - [codexbar.md](wiki/builds/codexbar.md) | 2026-07-14T11:51:42Z
 - [coloso-ingest-coverage-audit.md](wiki/builds/coloso-ingest-coverage-audit.md) | 2026-07-07T01:00:00Z
 - [context-harness.md](wiki/builds/context-harness.md) | 2026-08-13T15:35:51Z
-- [deliverable-inbox.md](wiki/builds/deliverable-inbox.md) | 2026-08-22T23:26:48Z
+- [deliverable-inbox.md](wiki/builds/deliverable-inbox.md) | 2026-08-22T23:32:41Z
 - [diary-quick-capture.md](wiki/builds/diary-quick-capture.md) | 2026-06-06T12:22:11Z
 - [e-hentai-notion-clipper.md](wiki/builds/e-hentai-notion-clipper.md) | 2026-06-25T10:02:35Z
 - [eagle-clip-tag-runbook.md](wiki/builds/eagle-clip-tag-runbook.md) | 2026-07-06T13:02:48Z
@@ -238,7 +239,7 @@ _合計 1179 ファイル_
 - [gfl2-external-data-mount.md](wiki/builds/gfl2-external-data-mount.md) | 2026-07-30T02:39:19Z
 - [google-tasks-quickadd.md](wiki/builds/google-tasks-quickadd.md) | 2026-06-21T12:53:22Z
 - [handoff-visible-effect-rule-2026-08-01.md](wiki/builds/handoff-visible-effect-rule-2026-08-01.md) | 2026-08-02T02:46:31Z
-- [hizurume-visual-ingest-handoff-plan.md](wiki/builds/hizurume-visual-ingest-handoff-plan.md) | 2026-08-22T19:47:36Z
+- [hizurume-visual-ingest-handoff-plan.md](wiki/builds/hizurume-visual-ingest-handoff-plan.md) | 2026-08-22T23:34:47Z
 - [keyclack.md](wiki/builds/keyclack.md) | 2026-07-11T05:12:06Z
 - [kimi-code-artifact-location.md](wiki/builds/kimi-code-artifact-location.md) | 2026-08-19T08:20:34Z
 - [llm-chat-enter-guard.md](wiki/builds/llm-chat-enter-guard.md) | 2026-08-18T07:35:00Z

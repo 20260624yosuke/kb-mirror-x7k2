@@ -170,6 +170,18 @@ FAIL 項目を潰して PASS してから `visual_ingested` を付ける。
    FAIL する。frontmatter 追補(`visual_ingested` 等)は **snapshot の前**に済ませ、観測節は挿入位置の前後だけを
    書き換える方式にする。それでも FAIL した場合は raw・動画の非変更を機械確認したうえで snapshot 基準を
    再取得してよい(2026-08-22 v2.2 運用に対する同日のユーザー了承手順)。
+10. **親セッション停止後のサブエージェント結果は DB に残っていることがある**(2026-08-23 ch12 実例)。
+    opencode の Task サブエージェントは独立セッションとして動き、完了すれば `~/.local/share/opencode/opencode.db`
+    の part テーブルに本文が残る。session_id を頼りに照会して復旧できる。ただし回収判定は
+    **観測ブロック単位**で行うこと — task 出力にはプロンプト部のファイル一覧も含まれるため、
+    ファイル名言及の集計では prompt echo まで数えて過大評価になる(「15枚回収」判定が実際は
+    9枚+欠落7枚だった実害)。詳細: [[ch12-pilot-session-recovery-collision-verification]]。
+11. **同一成果物への二重作業を避ける**(2026-08-23 ch12 実例・破損ゼロで解消)。ハーネス違い
+    (desktop/CLI/Codex/Kimi)でも vault と opencode.db は共通のため、ユーザーが複数窓に同じ指示を
+    出していると manifest・観測節・frames dir を奪い合う。作業開始時に (a) 対象ファイルの mtime、
+    (b) opencode.db の session 更新時刻、で並行 writer を確認。衝突検知時は **自分の footprint
+    (相手が参照しない自分の生成物)だけ撤去 + 書き込み退避** が最短解で、相手の編集物には触らない。
+    詳細: [[ch12-pilot-session-recovery-collision-verification]]。
 
 ## 報告形式(各バッチ末)
 
@@ -184,3 +196,5 @@ FAIL 項目を潰して PASS してから `visual_ingested` を付ける。
 - 2026-08-23: パイロット開始直前に ch12 が 12_01 + 12_02 の分割動画であることが判明。
   全章実調査の結果 25 章中 14 章が分割で、対応表を実態に修正。武田さんの選択により
   設計正本 v2.3(分割動画対応)を先に適用してから、ch12 を 1 ページとして両動画処理する。
+- 2026-08-23: パイロット完走後の独立検証と、その過程で判明したセッション停止復旧・二重作業衝突の
+  教訓を落とし穴 #10/#11 として追記(経緯全文は [[ch12-pilot-session-recovery-collision-verification]])。

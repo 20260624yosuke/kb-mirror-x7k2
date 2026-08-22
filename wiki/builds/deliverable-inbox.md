@@ -87,6 +87,9 @@ python3 "<KBルート>/tools/inbox.py" add "<絶対パス>" --origin <claude-cod
   (`[[wiki/…/名前|名前]]`)から日頃の実績があるスラグ形式(`[[ページ名]]`)へ統一。
   同名 md が複数ある場合のみパス形式へ自動フォールバック(`md_stem_counts`)。
   ボード冒頭に「行の見え方」凡例を追加(wikilink 行=押せる/パス行=`llm-wiki-inbox open <短ID>` で開く)。
+- **2026-08-23 同日修正2**。vault 外ファイル等の「押せない行」への正規導線として、第3の
+  Raycast コマンド「成果物Inboxの項目を開く」(短ID→`inbox.py open`)を追加。これで全行が
+  短ID経由で開ける。install_llm_wiki_inbox.sh は3本体制。
 
 ## 関連リンク
 
