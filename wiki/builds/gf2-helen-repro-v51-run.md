@@ -1551,10 +1551,68 @@ f98 の発見を受け `scripts/f99_dorm_lightprobes_extract.py` が当該 bundl
 ### 次の一手（2026-08-23 時点の未了）
 
 1. SH→Blender ライティング再構成（プローブ位置＋係数からの適用）は**別計画として承認を取る**
-2. scene root `.unity` 自体の所在は未確定（部屋は家具 prefab 等の別経路で構築されている可能性）。
-   「欠損103本」リスト自体も f97 の要求どおり再導出が必要
-3. backup volume 走査（FDA付与の実施確認未了）、f46系確認画像の撮り直し、
-   HANDOFF への反映、f94 由来 negative-claims 登録、CA証明書削除案内 — すべて未了
+2. ~~scene root `.unity` 自体の所在は未確定~~ → **f100 で再導出済み**（下の節）。
+   実行時が別scene/別構成で動いている可能性が残るため join 追及は継続
+3. backup volume 走査（FDA付与の実施確認未了）、CA証明書削除案内 — 未了。
+   ~~f46系確認画像の撮り直し~~（2026-08-23に完了）、~~HANDOFF への反映~~（同日実施）、
+   ~~f94 由来 negative-claims 登録~~（同日実施）
+
+## 2026-08-23 — 「欠損103本」を3レベルで再導出（f100）、f46 を回復、台帳を現行へ同期
+
+### f100 — 欠損リスト再導出（f97 門の要求を履行）
+
+`scripts/f100_missing_deps_rederive.py` が cache/app 両 root の **全18,568ファイル**を
+①UnityFS ノード表（圧縮されたディレクトリ部を展開して読む＝生バイト走査の盲点を回避）、
+②全データブロック展開後の内容バイト、③`CAB-<md5(hash)>`／`<hash>.bundle` の2形式文字列、
+の3レベルで走査し直した（`ledger/h0157-missing-rederive-decompressed-v1.json`・
+pipeline_valid=true・エラー0）。
+
+- **欠損102件の内訳**: **7件は「ディスク名が違うだけ」で実在**（期待ノード名が別ファイルの
+  中身として一致。中身は寮の小物 Material/Texture2D: glow/smoke/tree/trash 系）／
+  **87件は参照のみ**（他バンドルから CAB/m_Name 形式で参照されるだけで本体不在）／
+  **15件(+special 1件)は3レベルとも不検出**
+- **scene root `d128870a…`(CAB-5dde1387…) と Helen prefab root `7648416f…`(CAB-38db6dba…) 
+  は参照を含め不検出**。ただし LT-16/LT-17 の「寮が DL0 で正常動作した観測」との整合として、
+  **「実行時は別の scene/構成で動いている可能性」**を明記し、強い否定（ロード不能・回収不可）
+  には使わない（negative-claims `h0157-scene-prefab-root-local-absence-rederived` に
+  runtime_reconciliation つきで登録済み）。H0157→scene の join 未回収の状態は不変
+- **CAB 導出規則を新規回収（LT-19）**: `AssetBundle.m_Name = <catalog_hash>.bundle`、
+  `ノード名 = md5(m_Name)`。例外は monoscripts ラベル付の `<hash>_monoscripts.bundle`
+  （33f6dee0….bundle で実測）。現存184ユニークhashのうち183件がこの規則で自己ノード一致
+  （陽性対照）
+- **Helen SSR0101 関連トークンは展開レベルで多数検出**: `c_HelenSSR0101`×663 /
+  `HelenSSR0101`×872 が12バンドル。中身は AnimationClip・AnimatorController・
+  **LOD1 メッシュ22本**（cloth2/cloth3_trans/hair/body 等 lod1。LOD0 は既抽出済み）・
+  Texture2D77枚＋**RampSetting10件**（f80 の既回収10件と同一集合＝新規 ramp はない）。
+  **Helen SSR0101 の Material は展開レベルでも0件**（材質センサスと整合）
+
+### f46 回復（2026-08-23・blend 無変更）
+
+f95 で blend が変わったために古かった確認画像3枚を**現行 blend `e0ba175651c20251…` から
+撮り直し**、`f45` 比較 JSON も取り直し（原作 肌÷髪 **3.52** 対 現行 **2.7**・参考値で
+見た目合否ではない）→ `f46` **合格**。
+
+### 台帳・門の同期（すべて機械監査で確認）
+
+- fact-ledger へ **LT-18 / LT-18b / LT-19** を追加（verifier つき・計60事実）。
+  陳腐化していた **OL-7**（成果物SHA b1214f28…→e0ba1756…）/ **OL-12**（GATE 13/2→14/1・
+  G13 復帰）/ **LT-12**（ログローテーションで分母が21→16ファイル・併存3→4件）を実測へ同期
+- negative-claims へ **2件追加**: 上記 roots 所在主張（3レベル走査・陽性対照2段・
+  runtime reconciliation・反証つき）と f94 の ZBias/カメラ未回収
+  （`scripts/f94b_zbias_evidence_verify.py` を読み取り専用検査器として新設）
+- 監査結果: `f50` audit **PASS（60事実）**／`f72` audit **PASS（enforced 26件）**／
+  再現試験 `f50`(25件)・`f72`(15件)・`f97`(4件) 全 PASS／品質ゲート `plan` PASS・
+  `batch` は従来どおり意図的 FAIL（欠損入力あり）
+
+### 使わなかったもの・落とした情報（2026-08-23 分）
+
+1. 捨てたもの: なし（成果物 blend・ゲームデータ・app は無変更。書いたのは台帳・スクリプト・
+   確認画像3枚・比較JSONのみ）。
+2. 手元でどう変わるか: 成果物の絵は変わらない。「欠損102件」のうち7件が実在と分かったことで、
+   将来に寮sceneを組む際の入手対象が減る。照明・階調表の適用状況も変わらない
+   （prefab root と Helen 材質は今回も不検出のため G10 ブロッカーは不変）。
+3. 戻せるか: 台帳エントリ（LT-18系・negative-claims 2件・OL-7/OL-12/LT-12 の旧文言は
+   git管理外につき旧値はこの節と run-state 履歴に記録）を削除すれば元に戻る。
 
 ## 使わなかったもの・落とした情報
 
