@@ -8948,3 +8948,19 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
     コマンド「成果物Inboxの項目を開く」(短ID→inbox.py open)を追加・実体配置済み。
     install_llm_wiki_inbox.sh を3本体制へ更新。凡例も新導線へ改訂、ボード再生成済み。
     クリック実挙動は武田さん再テスト待ち(i0823672 等)。
+
+## [2026-08-23] query | ch12 パイロットの経緯3点を file-back(セッション停止復旧・二重作業衝突・独立検証)
+
+- ユーザーの問い「ここまでの経緯は wiki に記録済みか」への回答で、パイロット本体は log 済みだが
+  運用上の出来事 3 点が未記録と判明 → [[ch12-pilot-session-recovery-collision-verification]] を
+  新設して記録し、[[hizurume-visual-ingest-handoff-plan]] の落とし穴に #10/#11 として要約追記した。
+  (1) 親セッション停止後に Task サブエージェントの盲検読取結果が opencode.db へ残留していたことの
+  復旧手順と、プロンプト部のファイル一覧まで集計すると回収数を過大評価する実害。
+  (2) desktop 側 ox と CLI 側 ox が同一成果物(manifest/観測節/frames dir)へ同時書き込みした衝突を、
+  自分の footprint 撤去+書き込み退避だけで破損ゼロ解消した手順。ハーネス違いでも vault と DB は共通。
+  (3) 完成物 47 行に対する独立検証: gate `check --phase complete` 再実行 PASS、独立収集の 105 枚読取
+  データとの照合で不一致 2 フレーム(13m33s/14m52s のスライド割り当て)を検出 → 第三盲検読取の多数投票で
+  **成果物の表どおり正しい**(誤読は検証側)と確定。修正は不要だった。
+- 更新: wiki/analyses/ch12-pilot-session-recovery-collision-verification.md(新規),
+  [[hizurume-visual-ingest-handoff-plan]](落とし穴 #10/#11 + 変遷), index.md(analyses 行追加)
+- 次点: 変更なし(ch12 パイロット自体の承認待ちは既存エントリのとおり)
