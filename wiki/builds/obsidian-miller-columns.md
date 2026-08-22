@@ -6,7 +6,7 @@ sources: []
 status: active
 confidence: medium
 evidence_level: source-backed
-last_reviewed: 2026-07-12
+last_reviewed: 2026-08-22
 related:
   - "[[obsidian-ui-improvement-roadmap]]"
 ---
@@ -67,6 +67,11 @@ Finder らしさ強化。実装担当は Sonnet 5 推奨(2回直らなければ�
 
 改名・新規作成(右クリックは削除のみ実装済み)、ドラッグ&ドロップ、ソート設定、フォルダ除外、
 プレビュー列、自動追従トグル
+
+- 2026-08-15、**自動追従トグルに実需要が発生**(Google Tasks サブタスク
+  「②Miller Columns追補：選択ファイルへの自動フォーカス」)。
+  [[obsidian-ui-improvement-roadmap]] ②節へ追補記載済み。
+  v0.3.0 計画とは別件。着手は別指示
 
 ## 矛盾・未確定(2026-07-12 実機確認後・既知の不満)
 

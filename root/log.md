@@ -8730,3 +8730,26 @@ raw/ 全体の未 ingest 監査で未処理と判明していた講師紹介ペ�
   02:20「本の端」を2倍クロップ字形分析で確定(壁/陰は低解像度誤読)。いずれも
   [[ox-video-read-comparison-hizurume-ch11]] の当日検証結果と整合。
 - 更新: `index.md`(Builds 1行), `log.md`
+
+## [2026-08-22] ingest | Obsidian ui改良 サブタスク整理(Google Tasks 同期)
+
+- 武田さん依頼: Google Tasks「Obsidian ui改良」(進行中プロジェクト)サブタスクの改良。
+- 流れ: 方針承認 → サブエージェント第三者レビュー(指摘3件を採用: 元文一字一句保存+機械比較 /
+  B記述の正本整合 / ④「完了」と新要望の矛盾表現)→ 計画承認 → 実行。
+- Google Tasks 側(`tasks.patch` 2件のみ・実行前に生JSONバックアップ):
+  - A: 「動画に関する操作をyoutubeに近い操作感にして欲しい。スキップとか」→
+    `④動画ビュワー追補：YouTube風のスキップ操作`(notes に元文全文+意図明確化+現状)
+  - B: 「ファイルmiller columns 現在の選択ファイルにフォーカス…」→
+    `②Miller Columns追補：選択ファイルへの自動フォーカス`(notes に元文全文+
+    「未実装： 自動追従トグル」への実需要+v0.3.0とは別件であること)
+  - 検証: 再読み取りで title 変更・元文一字一句一致・parent 維持の機械比較 **ALL PASS**
+- wiki 側:
+  - [[obsidian-ui-improvement-roadmap]] — ④節に「追補(2026-08-22): YouTube風スキップ操作の要望」、
+    ②節に「追補(2026-08-15): 選択ファイルへの自動フォーカス要望」を追加。
+    優先順表は完了事実と新規要望を分けて1セルに更新。「再オープン」表現は不使用
+  - [[obsidian-miller-columns]] — 「未実装： 自動追従トグル」に2026-08-15実需要発生を注記
+    (roadmap ②節との相互参照。v0.3.0 計画とは別件)
+  - `index.md` — roadmap 行の1行サマリ更新
+- 未着手: 追補2件の実装自体(シーク操作調整/自動フォーカストグル)。いずれも別指示で着手
+- 触ったページ: wiki/builds/obsidian-ui-improvement-roadmap.md, wiki/builds/obsidian-miller-columns.md,
+  index.md, log.md / Google Tasks(進行中プロジェクト: サブタスク2件)
