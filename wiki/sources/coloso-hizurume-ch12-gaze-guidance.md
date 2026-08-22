@@ -5,6 +5,7 @@ authors: [ひづるめ]
 date: 2025
 source_path: raw/_coloso/2026_05_31_ひづるめ/coloso_ひづるめ_12 視線誘導とサブ視線誘導.md
 ingested: 2026-06-01
+visual_ingested: 2026-08-23
 tags: [coloso, hizurume, gaze-guidance, contrast, complementary-color, density]
 status: active
 confidence: high

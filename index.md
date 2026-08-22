@@ -14,7 +14,7 @@ _合計 1179 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-22T19:35:59Z
-- [log.md](root/log.md) | 2026-08-22T19:36:24Z
+- [log.md](root/log.md) | 2026-08-22T19:47:27Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/analyses/ (51)
@@ -238,7 +238,7 @@ _合計 1179 ファイル_
 - [gfl2-external-data-mount.md](wiki/builds/gfl2-external-data-mount.md) | 2026-07-30T02:39:19Z
 - [google-tasks-quickadd.md](wiki/builds/google-tasks-quickadd.md) | 2026-06-21T12:53:22Z
 - [handoff-visible-effect-rule-2026-08-01.md](wiki/builds/handoff-visible-effect-rule-2026-08-01.md) | 2026-08-02T02:46:31Z
-- [hizurume-visual-ingest-handoff-plan.md](wiki/builds/hizurume-visual-ingest-handoff-plan.md) | 2026-08-22T15:22:22Z
+- [hizurume-visual-ingest-handoff-plan.md](wiki/builds/hizurume-visual-ingest-handoff-plan.md) | 2026-08-22T19:47:36Z
 - [keyclack.md](wiki/builds/keyclack.md) | 2026-07-11T05:12:06Z
 - [kimi-code-artifact-location.md](wiki/builds/kimi-code-artifact-location.md) | 2026-08-19T08:20:34Z
 - [llm-chat-enter-guard.md](wiki/builds/llm-chat-enter-guard.md) | 2026-08-18T07:35:00Z
@@ -952,7 +952,7 @@ _合計 1179 ファイル_
 - [coloso-hizurume-ch09-light-shadow-color.md](wiki/sources/coloso-hizurume-ch09-light-shadow-color.md) | 2026-05-31T15:41:15Z
 - [coloso-hizurume-ch10-efficient-practice.md](wiki/sources/coloso-hizurume-ch10-efficient-practice.md) | 2026-05-31T15:44:53Z
 - [coloso-hizurume-ch11-force-field.md](wiki/sources/coloso-hizurume-ch11-force-field.md) | 2026-08-22T13:55:29Z
-- [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-08-22T19:32:50Z
+- [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-08-22T19:46:28Z
 - [coloso-hizurume-ch13-illusion-and-lies.md](wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md) | 2026-05-31T15:48:49Z
 - [coloso-hizurume-ch14-simplification.md](wiki/sources/coloso-hizurume-ch14-simplification.md) | 2026-05-31T15:49:11Z
 - [coloso-hizurume-ch15-painting-to-illustration.md](wiki/sources/coloso-hizurume-ch15-painting-to-illustration.md) | 2026-05-31T15:53:02Z

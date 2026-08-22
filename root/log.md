@@ -8927,6 +8927,12 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
   (スライド側の揺れ)。画面語彙と文字起こしの差も確認: 画面「蜂っぽい何か」(文字起こし「8っぽい何か」)、
   画面「質感対比を出しています」([[shinri-tai-hi]] 概要の「心理対比」と語彙が異なる — entity/concept
   凍結中のためパイロット承認後の更新候補として記録)、画面「ばかし遠近法」「ぼかし、落かし」は表記どおり。
+- ゲート運用上の注記(本件): 初回 snapshot は観測節が無い時点で取得したが、節挿入を
+  Python の read_text→write_text で行ったため本文非破壊検査が FAIL(raw・動画は不変と機械確認済み)。
+  原因の完全特定には至らなかったが、同一問題は同日の ye_jji ch03 でも発生しており、
+  承認済みの手順(frontmatter 追補 → raw・動画非変更の機械確認 → snapshot 基準を再取得 → check)で
+  解決し PASS。動画 SHA-256 は初回 snapshot と再取得後で一致(`1e14a18d…`/`c55c04d3…`)。
+  次章以降は「frontmatter 追補 → snapshot → 抽出 → 節の byte 保持スプライス挿入」の順に統一する。
 - 更新: [[coloso-hizurume-ch12-gaze-guidance]](`## 映像観測(フレーム由来)` 新設+`visual_ingested`)、
   `wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/`(snapshot.json+manifest.json+フレーム47枚)、
   [[video-visual-ingest-design]](v2.3)、[[hizurume-visual-ingest-handoff-plan]](对应表修正+変遷)、
