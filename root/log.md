@@ -8753,3 +8753,15 @@ raw/ 全体の未 ingest 監査で未処理と判明していた講師紹介ペ�
 - 未着手: 追補2件の実装自体(シーク操作調整/自動フォーカストグル)。いずれも別指示で着手
 - 触ったページ: wiki/builds/obsidian-ui-improvement-roadmap.md, wiki/builds/obsidian-miller-columns.md,
   index.md, log.md / Google Tasks(進行中プロジェクト: サブタスク2件)
+
+## [2026-08-22] ingest | ye_jji ch02 遡及ゲート適用 + 入口規約同期(video-visual-ingest v2.2 継続)
+
+SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)ことを確認し、残作業を完了。
+
+- ゲート拡張: `read_model` 旧キー互換+manifest の `frame_sha256` と実ファイルの一致検証を追加。
+- 入口規約同期: `AGENTS.md` / `CLAUDE.md` の映像 ingest 節にゲート常時必須の1項目を追加。
+  `.claude/skills/video-visual-ingest/SKILL.md` パイロット節を実施済みに更新。
+- [[coloso-ye-jji-ch02-contrast]] 遡及適用: `snapshot --retrofit`(動画 SHA-256 は 7月記録値と一致)+
+  盲検再読取3枚(04m40s/06m47s/09m33s)= **全 confirmed**(7月 codex-gpt-5 観測に訂正なし)+
+  manifest に completed/recheck 追加 → **gate PASS**。frame_sha256 全11枚一致。
+- 更新: `log.md`
