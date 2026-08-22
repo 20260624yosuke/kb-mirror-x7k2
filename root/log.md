@@ -8853,3 +8853,17 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
   backup volume走査（FDA付与の実施確認未了）、HANDOFFへの反映、f94由来negative-claims登録、
   blend変更に伴うf46系確認画像の撮り直し、CA証明書(mitmproxy)削除案内。
 - 触ったページ: [[gf2-helen-repro-v51-run]] / log.md / quality-gate.json(プロジェクト側)
+
+## [2026-08-23] build | gf2-helen-repro-v51 寮の焼き込み照明を回収（f98/f99）
+
+- 絞り込み展開走査を実行: `f98_bundle_block_scan.py`（UnityFSブロック直読み＋lz4/lzma展開）が
+  cache+app 18,568ファイルを約3分で完走・エラー0。陽性対照2件合格のもと
+  **`06Aimo_Dorm_GFMB_lightProbes` が app 同梱 `29684a9f…bundle`(LZ4HC圧縮)内に実在**と判明。
+  「scene root欠損→照明回収不可」前提は覆った（生バイト走査は圧縮内部を見えないのが原因）。
+- `f99_dorm_lightprobes_extract.py` で LightProbes を台帳化
+  （プローブ8点×RGB球面調和27係数・オクルージョン8組・きらきら層候補のパーティクル16体も記録）。
+  抽出チェック全合格。
+- 更新: `wiki/builds/gf2-helen-repro-v51-run.md`（新しい矛盾節へ解決追記・次の一手節を回収結果へ改訂）,
+  プロジェクト側 `run-state.json`（照明_lightProbes回収_2026_08_23 追加）。
+- 未了: SH→Blender適用計画（承認待ち）・欠損リスト再導出・backup volume走査・f46系撮り直し・HANDOFF反映。
+- 触ったページ: [[gf2-helen-repro-v51-run]] / log.md / run-state.json(プロジェクト側)

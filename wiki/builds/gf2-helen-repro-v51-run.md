@@ -1505,6 +1505,15 @@ scene root `d128870a…bundle` はディスク上に名前で存在せず、生�
 全量展開走査(f96)は速度不足で中断。第1版は import 不備で全ファイルエラーの無効台帳を出したため、
 `ledger/h0157-decompressed-scene-scan.json` は**参照しないこと**。
 
+**【2026-08-23 解決】** 高速版 `scripts/f98_bundle_block_scan.py`（UnityFSブロック直読み＋
+lz4/lzma展開・オブジェクト解析なし。ブロック情報先頭の16バイトhash読み飛ばしを実装）が
+18,568ファイルを約3分で完走。エラー0・rawフォールバック0。陽性対照2件合格
+（`c_HelenDorm_Bedroom_05`=10ヒット／`_OutlineWidth`=8142ヒット）のもと、
+**`06Aimo_Dorm_GFMB`／`GFMB_lightProbes` が app 同梱側
+`29684a9f82183f96b0cdf1a05b4c517e.bundle`（UnityFS v7・LZ4HC圧縮）の中に実在**すると判明
+（`ledger/h0157-decompressed-scene-scan-v2.json`）。つまり「欠損103本」リストには、
+**生バイト走査では見えない圧縮内部に実データがあるケースが含まれていた**。
+
 ### ミスの経緯と f97 ゲート化（武田さん指示）
 
 > 「ローカルにすでにある可能性があって、その可能性を憶測でスルーしてたってことだもんな」
@@ -1524,12 +1533,28 @@ scene root `d128870a…bundle` はディスク上に名前で存在せず、生�
   弱めた言い方は通る・完全証拠＋実行時矛盾は不合格・完全証拠は合格。
 - `quality-gate.json` の `gates` 節へ登録済み（2026-08-23）。
 
-### 次の一手（ここでサーバー負荷により中断）
+### 続き — 寮の焼き込み照明(LightProbes)を回収した（f99・2026-08-23）
 
-絞り込み展開走査: 寮の照明データが手元のどの bundle 内にあるか、対象を絞って UnityPy で展開し
-特定する（読み取り専用）。見つかれば `source_recovery_blocked` の解除。並行候補:
-backup volume 走査（FDA付与の実施確認が未了）。本正本への追記は済んだが、プロジェクト側
-`HANDOFF-2026-08-20.md` への本節反映と f94 由来の negative-claims 登録は**未了**。
+f98 の発見を受け `scripts/f99_dorm_lightprobes_extract.py` が当該 bundle 内の LightProbes
+オブジェクトを丸ごと台帳化した（`ledger/h0157-dorm-lightprobes-primary.json`）:
+
+- `m_Name = 06Aimo_Dorm_GFMB_lightProbes`（対象確認・bundle SHA接頭辞一致）
+- **プローブ8点**の座標と、各点に **RGB球面調和係数27値（9係数×3チャンネル）**・
+  オクルージョン8組。例: probe[0] のDC項(環境光の平均色)は RGB=(0.626, 0.655, 0.592)
+  ＝暖色寄りの中性
+- 同一 bundle 内に shine/glow 系 GameObject＋ParticleSystem16体（寮装飾パーティクル＝
+  **きらきら層の候補**）。scene 本体ジオメトリ/Light はこの bundle 外
+- 抽出時の陽性対照: 名前一致・SHA一致・係数形状(27値×全probe)を機械チェックし全合格
+
+これで**寮の焼き込み環境光が手元で入手可能になった**。
+
+### 次の一手（2026-08-23 時点の未了）
+
+1. SH→Blender ライティング再構成（プローブ位置＋係数からの適用）は**別計画として承認を取る**
+2. scene root `.unity` 自体の所在は未確定（部屋は家具 prefab 等の別経路で構築されている可能性）。
+   「欠損103本」リスト自体も f97 の要求どおり再導出が必要
+3. backup volume 走査（FDA付与の実施確認未了）、f46系確認画像の撮り直し、
+   HANDOFF への反映、f94 由来 negative-claims 登録、CA証明書削除案内 — すべて未了
 
 ## 使わなかったもの・落とした情報
 
