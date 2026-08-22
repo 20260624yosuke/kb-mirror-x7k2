@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1179 ファイル_
+_合計 1194 ファイル_
 
 ## root/ (11)
 
@@ -113,54 +113,69 @@ _合計 1179 ファイル_
 - [hizurume-ch11-14m20s.png](wiki/assets/frames/coloso-hizurume-ch11-force-field/hizurume-ch11-14m20s.png) | 2026-06-11T10:31:05Z
 - [hizurume-ch11-14m40s.png](wiki/assets/frames/coloso-hizurume-ch11-force-field/hizurume-ch11-14m40s.png) | 2026-06-11T10:31:05Z
 
-## wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/ (47)
+## wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/ (62)
 
-- [hizurume-ch12-01-00m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-00m20s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-00m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-00m40s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-01m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-01m00s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-01m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-01m20s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-03m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-03m00s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-03m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-03m20s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-03m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-03m40s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-04m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-04m00s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-04m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-04m20s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-05m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-05m20s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-05m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-05m40s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-07m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-07m00s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-07m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-07m20s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-08m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-08m00s.png) | 2026-08-22T19:06:41Z
+- [hizurume-ch12-01-00m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-00m20s.png) | 2026-08-22T15:27:47Z
+- [hizurume-ch12-01-00m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-00m40s.png) | 2026-08-22T15:27:47Z
+- [hizurume-ch12-01-01m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-01m00s.png) | 2026-08-22T15:27:47Z
+- [hizurume-ch12-01-01m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-01m20s.png) | 2026-08-22T15:27:48Z
+- [hizurume-ch12-01-01m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-01m40s.png) | 2026-08-22T15:27:48Z
+- [hizurume-ch12-01-01m50s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-01m50s.png) | 2026-08-22T15:28:01Z
+- [hizurume-ch12-01-02m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-02m00s.png) | 2026-08-22T15:27:49Z
+- [hizurume-ch12-01-02m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-02m20s.png) | 2026-08-22T15:27:49Z
+- [hizurume-ch12-01-03m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-03m00s.png) | 2026-08-22T15:27:49Z
+- [hizurume-ch12-01-03m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-03m20s.png) | 2026-08-22T15:27:49Z
+- [hizurume-ch12-01-03m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-03m40s.png) | 2026-08-22T15:27:50Z
+- [hizurume-ch12-01-04m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-04m00s.png) | 2026-08-22T15:27:50Z
+- [hizurume-ch12-01-04m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-04m20s.png) | 2026-08-22T15:27:50Z
+- [hizurume-ch12-01-04m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-04m40s.png) | 2026-08-22T15:27:50Z
+- [hizurume-ch12-01-05m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-05m00s.png) | 2026-08-22T15:27:51Z
+- [hizurume-ch12-01-05m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-05m20s.png) | 2026-08-22T15:27:51Z
+- [hizurume-ch12-01-05m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-05m40s.png) | 2026-08-22T15:27:51Z
+- [hizurume-ch12-01-07m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-07m00s.png) | 2026-08-22T15:27:53Z
+- [hizurume-ch12-01-07m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-07m20s.png) | 2026-08-22T15:27:53Z
+- [hizurume-ch12-01-08m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-08m00s.png) | 2026-08-22T15:27:54Z
 - [hizurume-ch12-01-08m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-08m20s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-08m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-08m40s.png) | 2026-08-22T19:06:41Z
+- [hizurume-ch12-01-08m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-08m40s.png) | 2026-08-22T15:27:54Z
 - [hizurume-ch12-01-09m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-09m20s.png) | 2026-08-22T19:06:41Z
 - [hizurume-ch12-01-09m31s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-09m31s.png) | 2026-08-22T19:06:41Z
 - [hizurume-ch12-01-09m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-09m40s.png) | 2026-08-22T19:06:41Z
 - [hizurume-ch12-01-10m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-10m00s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-10m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-10m40s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-11m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-11m40s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-12m15s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-12m15s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-12m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-12m40s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-13m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m00s.png) | 2026-08-22T19:06:41Z
+- [hizurume-ch12-01-10m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-10m40s.png) | 2026-08-22T15:27:56Z
+- [hizurume-ch12-01-11m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-11m40s.png) | 2026-08-22T15:27:57Z
+- [hizurume-ch12-01-12m15s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-12m15s.png) | 2026-08-22T15:28:03Z
+- [hizurume-ch12-01-12m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-12m40s.png) | 2026-08-22T15:27:58Z
+- [hizurume-ch12-01-13m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m00s.png) | 2026-08-22T15:27:58Z
+- [hizurume-ch12-01-13m10s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m10s.png) | 2026-08-22T15:28:03Z
 - [hizurume-ch12-01-13m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m20s.png) | 2026-08-22T19:06:41Z
 - [hizurume-ch12-01-13m33s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m33s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-13m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m40s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-14m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-14m20s.png) | 2026-08-22T19:06:41Z
+- [hizurume-ch12-01-13m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m40s.png) | 2026-08-22T15:27:59Z
+- [hizurume-ch12-01-14m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-14m20s.png) | 2026-08-22T15:27:59Z
 - [hizurume-ch12-01-14m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-14m40s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-01-14m52s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-14m52s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-02-00m36s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-00m36s.png) | 2026-08-22T19:06:41Z
+- [hizurume-ch12-01-14m52s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-14m52s.png) | 2026-08-22T15:28:04Z
+- [hizurume-ch12-02-00m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-00m20s.png) | 2026-08-22T15:28:26Z
+- [hizurume-ch12-02-00m36s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-00m36s.png) | 2026-08-22T15:28:40Z
+- [hizurume-ch12-02-00m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-00m40s.png) | 2026-08-22T15:28:26Z
 - [hizurume-ch12-02-02m41s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-02m41s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-02-03m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-03m00s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-02-05m14s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-05m14s.png) | 2026-08-22T19:06:41Z
+- [hizurume-ch12-02-03m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-03m00s.png) | 2026-08-22T15:28:29Z
+- [hizurume-ch12-02-05m14s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-05m14s.png) | 2026-08-22T15:28:42Z
+- [hizurume-ch12-02-05m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-05m40s.png) | 2026-08-22T15:28:33Z
 - [hizurume-ch12-02-06m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-06m20s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-02-06m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-06m40s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-02-07m16s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-07m16s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-02-07m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-07m20s.png) | 2026-08-22T19:06:41Z
+- [hizurume-ch12-02-06m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-06m40s.png) | 2026-08-22T15:28:34Z
+- [hizurume-ch12-02-07m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-07m00s.png) | 2026-08-22T15:28:34Z
+- [hizurume-ch12-02-07m16s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-07m16s.png) | 2026-08-22T15:28:42Z
+- [hizurume-ch12-02-07m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-07m20s.png) | 2026-08-22T15:28:34Z
 - [hizurume-ch12-02-07m38s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-07m38s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-02-08m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-08m00s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-02-08m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-08m20s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-02-09m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-09m00s.png) | 2026-08-22T19:06:41Z
+- [hizurume-ch12-02-08m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-08m00s.png) | 2026-08-22T15:28:35Z
+- [hizurume-ch12-02-08m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-08m20s.png) | 2026-08-22T15:28:35Z
+- [hizurume-ch12-02-08m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-08m40s.png) | 2026-08-22T15:28:36Z
+- [hizurume-ch12-02-09m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-09m00s.png) | 2026-08-22T15:28:36Z
+- [hizurume-ch12-02-09m22s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-09m22s.png) | 2026-08-22T15:28:43Z
 - [hizurume-ch12-02-09m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-09m40s.png) | 2026-08-22T19:06:41Z
+- [hizurume-ch12-02-10m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-10m00s.png) | 2026-08-22T15:28:37Z
 - [hizurume-ch12-02-10m20s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-10m20s.png) | 2026-08-22T19:06:41Z
-- [hizurume-ch12-02-11m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-11m00s.png) | 2026-08-22T19:06:41Z
+- [hizurume-ch12-02-11m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-11m00s.png) | 2026-08-22T15:28:38Z
+- [hizurume-ch12-02-11m40s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-11m40s.png) | 2026-08-22T15:28:39Z
 - [hizurume-ch12-02-11m48s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-11m48s.png) | 2026-08-22T19:06:41Z
 
 ## wiki/assets/frames/coloso-ye-jji-ch02-contrast/ (11)
