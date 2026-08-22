@@ -5,12 +5,12 @@ status: active
 confidence: high
 evidence_level: user-stated
 created: 2026-06-11
-last_reviewed: 2026-08-22
-version: "2.2"
+last_reviewed: 2026-08-23
+version: "2.3"
 sources: []
 ---
 
-# video-visual-ingest 設計 v2.2
+# video-visual-ingest 設計 v2.3
 
 講座動画の画面を、raw に残る動画を根拠として wiki source ページへ取り込む仕組みの正本仕様。
 通常の `llm-wiki ingest` に動画検出と映像価値判定を統合し、動画が知識を持つ場合は映像も自動で取り込む。
@@ -52,6 +52,18 @@ sources: []
 - 抽出フレームはシステム一時ディレクトリに作り、観測と結び付いたものだけ `wiki/assets/frames/<source-slug>/` に保存する。
 - 未使用フレームは保存せず、処理後に削除する。
 - PNG は動画解像度のまま保存する。
+
+## 分割動画(1 章に複数の動画)の扱い(v2.3)
+
+2026-08-23 の実調査で、ひづるめ講座は 25 章中 14 章が分割動画(02/09/10/12/13/15×4本/17/18/19×4本/20×3本/21/22/23/25)。
+**1 章 = 1 source ページ = 1 frames ディレクトリ = 1 manifest は維持し**、次の拡張で扱う。
+
+- **snapshot**: `--video` を繰り返し指定できる。複数指定時は `videos[]`(link / path / sha256 / size_bytes / duration_seconds の配列)として記録する。単一指定時は従来どおり `video_link` + `video`。
+- **manifest**: 複数動画ページでは `videos[]` 配列と、動画ごとの `extraction[]`(part 付き)を記録する。observations の各要素は `video`(動画ファイル名)を持つ。
+- **観測表**: 複数動画ページでは `| evidence_id | 動画 | 時刻 | frame | 確信度 | 画面の観測(事実のみ) |` の 6 列。動画列は videos[].path のベース名(`12_01.mp4` 等)と一致させる。単一動画ページは従来 5 列のまま。
+- **フレーム名**: パート番号を短縮キーに含める(`<short>-<part>-MMmSSs.png`,例: `hizurume-ch12-01-04m07s.png`)。抽出は動画ごとに行い、保存時に改名してよい。
+- **再確認(recheck)**: 最低枚数は全パート合算の saved から算出する(max(3, 10%))。可能なら全パートをカバーしてサンプルする。
+- **`visual_ingested`**: ページ内の全動画の処理が完了したときだけ付与する。部分的な完了では付けない。
 
 ## 品質ゲート(v2.2 機械化)
 
@@ -121,6 +133,11 @@ sources: []
 
 ## 変更履歴
 
+- v2.3 (2026-08-23): 分割動画(1 章に複数の動画)対応。snapshot の `--video` 反復指定、
+  manifest `videos[]` / 動画ごと `extraction[]`、観測表への動画列追加(複数動画ページのみ)、
+  フレーム名へのパート番号導入、`visual_ingested` は全動画完了時のみ。
+  発端: パイロット対象の ch12 が 12_01 + 12_02 の分割で、引き継ぎプランの「単一 12.mp4」前提が
+  実態と不一致だった(全章実調査の結果 14 章が分割)。武田さんの選択によりツール拡張を先に実施。
 - v2.2 (2026-08-22): 品質ゲートを機械化(`tools/video_ingest_gate.py`)。snapshot/check 常時必須、
   不一致は両方許容・記録必須、遡及モード追加。初回適用として [[coloso-hizurume-ch11-force-field]] に
   遡及再確認を実施し 4 箇所を修正・1件を字形確定(経緯: [[ox-video-read-comparison-hizurume-ch11]])。
