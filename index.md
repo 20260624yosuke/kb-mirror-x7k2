@@ -952,7 +952,7 @@ _合計 1179 ファイル_
 - [coloso-hizurume-ch09-light-shadow-color.md](wiki/sources/coloso-hizurume-ch09-light-shadow-color.md) | 2026-05-31T15:41:15Z
 - [coloso-hizurume-ch10-efficient-practice.md](wiki/sources/coloso-hizurume-ch10-efficient-practice.md) | 2026-05-31T15:44:53Z
 - [coloso-hizurume-ch11-force-field.md](wiki/sources/coloso-hizurume-ch11-force-field.md) | 2026-08-22T13:55:29Z
-- [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-05-31T15:19:00Z
+- [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-08-22T19:32:50Z
 - [coloso-hizurume-ch13-illusion-and-lies.md](wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md) | 2026-05-31T15:48:49Z
 - [coloso-hizurume-ch14-simplification.md](wiki/sources/coloso-hizurume-ch14-simplification.md) | 2026-05-31T15:49:11Z
 - [coloso-hizurume-ch15-painting-to-illustration.md](wiki/sources/coloso-hizurume-ch15-painting-to-illustration.md) | 2026-05-31T15:53:02Z

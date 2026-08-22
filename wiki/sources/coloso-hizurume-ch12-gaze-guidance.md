@@ -75,6 +75,65 @@ last_reviewed: 2026-06-01
 - 市場・SNS 観察(重い絵が伸びる 等)は本人の主観的経験則。再現性は未検証 → confidence medium。
 - ⑤ 視覚心理・⑦ シェイプ・⑨ 流れの詳細は ch13 / ch14 等の未取込章に依存。
 
+## 映像観測(フレーム由来)
+
+- 抽出日: 2026-08-23 / 元動画: [[_attachments/12_01.mp4]] + [[_attachments/12_02.mp4]](分割 2 本)
+- 元動画 SHA-256: `1e14a18d1021fd1b6ac81d9a7fb6f3f18ed79f161b3d27ee1e1ab756ab328a0f`(12_01) / `c55c04d31b262c4a11318c464da7b6a0f84d40ac18f01ef8f9a8cbac5f9676dc`(12_02)
+- 方式: 20 秒間隔 + 文字起こし誘導の狙い撃ち / 抽出 57+48 枚 → 盲検読取 105 枚 → 保存 47 枚
+- 設計版: video-visual-ingest-design v2.3(分割動画対応・動画列付き 6 列表) / 読取モデル: opencode/x-preview-f-free (ox-alpha)
+- 凡例: 画面上で確認できた事実のみ。判読できない文字は「判読不能」と記載。時刻は各動画内の時刻。スライド固有の表記は画面どおり写す(例:「シュミラクラ」「ばかし遠近法」「落かし」)。文字起こしとの語彙差(画面「質感対比」↔ 文字起こし「心理対比」等)は画面事実を優先。
+
+| evidence_id | 動画 | 時刻 | frame | 確信度 | 画面の観測(事実のみ) |
+|---|---|---|---|---|---|
+| ev-001 | 12_01.mp4 | 00:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-00m20s.png]] | high | CLIP STUDIO の草原写真キャンバス。黒文字「絵の視線誘導とは、簡単に言うと」+白ボックス『意図した場所に視線を持っていきたいときに、迷いにくくすること』 |
+| ev-002 | 12_01.mp4 | 00:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-00m40s.png]] | high | 黒背景の店内グレースケッチ(通路と棚)。桃色テキスト「はじめての店 / どこに何があるのか分からない」 |
+| ev-003 | 12_01.mp4 | 01:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-01m00s.png]] | high | 同スケッチに白ラベル 4 枚と引出線:「乳製品」(特大)/「菓子類」/「ハム、ソーセージ」/「野菜、果物類」 |
+| ev-004 | 12_01.mp4 | 01:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-01m20s.png]] | high | 定義スライド:「視線はとても迷いやすいので、それを導いてあげるのが視線誘導です。」+メイン視線誘導/サブ視線誘導の定義 2 文+サブ視線誘導造語の説明文全文(「私が作りました」「ぜひ覚えてください」を含む) |
+| ev-005 | 12_01.mp4 | 03:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-03m00s.png]] | high | 砂浜の黒髪シルエット少女(左)と輪郭が埋まって見づらい同構図(右)のグレー画像 2 枚(注釈前) |
+| ev-006 | 12_01.mp4 | 03:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-03m20s.png]] | high | 同スライド完成形 3 枚構成: 左「明度変化により見やすくなっている(明度による視線誘導)」/中央「輪郭の明度が一緒でわかりづらい」/右=白髪・白肌で背景暗く人物が浮く例+「ややこしいのが、状況が変わり、見やすくなればまた違う結果になることです。」 |
+| ev-007 | 12_01.mp4 | 03:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-03m40s.png]] | high | 左=白壁を背にした獣耳少女モノクロ。右=黒背景に白抜き 2 人と刀状形の 2 値風画像。「明度による視線誘導の基礎がわかったら、次は応用です。」 |
+| ev-008 | 12_01.mp4 | 04:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-04m00s.png]] | high | 左=カラー化した猫耳少女(暖色逆光・ロッカー背景)。右=黒地スライド「ラフを描き」「目立たせたい部分を決めます」「今回は黒い髪に黒い服…背景は明るい方が目立ちますね」「白髪の場合は、黒い背景が目立ちます。これは対比の作用です」+下部赤枠「視線誘導は基本後出しです。見えにくいとき、その都度、視線誘導法を活用して見やすくします。」 |
+| ev-009 | 12_01.mp4 | 04:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-04m20s.png]] | high | 同スライドに赤注釈追加: 対象行に赤下線+赤枠注記「最初からわからなくても後から、見えにくいと思ったらそのとき変えればいいのです」 |
+| ev-010 | 12_01.mp4 | 05:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-05m20s.png]] | high | 白キャンバスに大きな黒シルエット(山稜状)+赤×印。右上「黒と白の比率が一緒でも黒が目立ちにくい」 |
+| ev-011 | 12_01.mp4 | 05:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-05m40s.png]] | high | 左=ドレス姿 2 人のカラーイラスト。中央=「2値化」ダイアログ(閾値127)。右=同絵の2値化版(顔・肌が白、背景黒)+「2値化するとき、顔がはっきり見えるように調整します。」 |
+| ev-012 | 12_01.mp4 | 07:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-07m00s.png]] | high | 黒背景に白ギザギザ形状と黒円(目)。赤丸①②③+比較手順の赤文字 3 行「① 大きい黒と白を比べる」「② 白と小さい白を比べる」「③ 小さい黒とさらに小さい白と比べる」+白文字「比較して、小さい方に視線が誘導されることを仮に、『明暗比較連鎖』と名付けておきます。」 |
+| ev-013 | 12_01.mp4 | 07:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-07m20s.png]] | high | 銀白髪・黒角・赤目の少女が椅子に膝を抱えるカラーイラスト(灰色ビル群背景)。中央=「2値化」ダイアログ(閾値95)、右=2値化黑白版 |
+| ev-014 | 12_01.mp4 | 08:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-08m00s.png]] | medium | 同イラストの白黒版に青い斜め落書き線+①②③注釈(②額の黒つぶれ→曲線矢印が目元、③目鼻の間)。文章「2値化して顔がはっきり見るように調整します」「これでわかりやすくなりました この絵では、目がとても目立ちます。」「目立つメカニズムはさっき解説した明暗比較連鎖です。」「目や顔が無条件で目立つ シュミラクラ現象も関わっていますが、今は触れません。詳細は後ほど」(「シュミラクラ」は画面表記どおり・原寸クロップで確定)。ダイアログ閾値95 |
+| ev-015 | 12_01.mp4 | 08:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-08m20s.png]] | high | ズーム120.4%の顔アップ。赤丸②(額の黒つぶれ付近から曲線矢印が目元へ)と③(目鼻の間)。レイヤー1172選択 |
+| ev-016 | 12_01.mp4 | 08:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-08m40s.png]] | medium | 左=横たわる人物の白黒イラスト。右半分に手順リスト「明暗対比を強くする方法 ・表示レイヤーのコピーを結合 ・2値化レイヤーで顔をはっきり映るように調整 ・2値化レイヤーの合成モードをソフトライトに設定 ・レイヤーの不透明を落とす ・なじませるように、ぼかす」 |
+| ev-017 | 12_01.mp4 | 09:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-09m20s.png]] | high | 「2値化」ダイアログ表示中(閾値170)。イラストはほぼ黒シルエット状。レイヤーパネルはグレーアウト |
+| ev-018 | 12_01.mp4 | 09:31 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-09m31s.png]] | medium | レイヤーパネル選択行は「閾値 1」(原寸クロップで確定)、合成モード「ソフトライト」、不透明度 20% |
+| ev-019 | 12_01.mp4 | 09:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-09m40s.png]] | medium | レイヤーパネル上に右クリックメニュー(新規ラスターレイヤー/レイヤーマスク/選択中のレイヤーを結合/表示レイヤーを結合/表示レイヤーのコピーを統合/画像を統合 等) |
+| ev-020 | 12_01.mp4 | 10:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-10m00s.png]] | medium | 選択行の不透明度は 23% 台(判読)。白黒絵は全体に柔らかいグレー調(ぼかし・馴染んだ外観) |
+| ev-021 | 12_01.mp4 | 10:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-10m40s.png]] | high | 淡い黄色スライドに紫の手書き風文字「色による視線誘導は 少しでも色の勉強をしたみなさんなら知っています。」「色による視線誘導で主に使うのは、」「『補色』です」 |
+| ev-022 | 12_01.mp4 | 11:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-11m40s.png]] | high | 白背景図解「補色で色が強調されるメカニズム」。本文「彩度の高い色を見ると…補色の色を作り出し、知覚させます」「これを『補色強調』と言います」(下線付き)。青大円+黄小円の図 |
+| ev-023 | 12_01.mp4 | 12:15 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-12m15s.png]] | high | 黒背景。左=金髪バニー服女性イラスト。右=「この絵の補色は全体の黄色と目やバニー服の青ですね」「目の彩度をとても高くすることで、補色強調を発生させています。」(黄色と青の字は着色) |
+| ev-024 | 12_01.mp4 | 12:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-12m40s.png]] | high | 黄色地に青い抽象形(人物シルエット状)。「はい、もうおわりですよね?」「色でも比較連鎖し、強調される『補色比較連鎖』が発生します」+右下「内容は割愛」 |
+| ev-025 | 12_01.mp4 | 13:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m00s.png]] | high | 黒背景スライド「調和対比による視線誘導とは、調和しているところ、一部分だけ乱すことによって視線を集める方法」。例示パネル群: 黒縦縞/黒水玉/赤水玉+緑 1 個/黒三角群/白地に曲線と旗 |
+| ev-026 | 12_01.mp4 | 13:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m20s.png]] | medium | バニーイラスト+赤注釈「何度も言う通り、視線誘導は基本後出しです。この絵も、ラフでキャラクターを描いたあとに調和のとれた柱を追加しました」+白背景の線画ラフ |
+| ev-027 | 12_01.mp4 | 13:33 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m33s.png]] | high | 赤系背景スライド「視覚心理による視線誘導とは、人の心理を逆手に取って視線を集める視線誘導です。」水色ボックスに蜂イラストと文「例えば、これはなんでしょう 蜂っぽい何かです。でも色は蜂です。ここで人は錯覚し、蜂だと認識します。」(再確認済み・画面は蜂) |
+| ev-028 | 12_01.mp4 | 13:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-13m40s.png]] | high | 同蜂スライド+水色ボックス追加: ツインテール少女頭部シルエット(髪の上に蜂)+「蜂っぽい何かをこの絵にとりいれました」 |
+| ev-029 | 12_01.mp4 | 14:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-14m20s.png]] | high | 白背景。左=山道と岩壁の写真。右=「質感による視線誘導とは、情報密度の操作で視線を集めることです」「質感による視線誘導に密接に関わってくるのが、絵の力場とサブ視線誘導です。」 |
+| ev-030 | 12_01.mp4 | 14:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-14m40s.png]] | high | 黒背景に左右 2 枚のイラスト+赤オーバーレイ。白文字「まず力場を見ます。」「力場の青い部分が(焦点コントロールする力が低い域)」「サブ視線誘導(情報を抜く)を通用する場所です」 |
+| ev-031 | 12_01.mp4 | 14:52 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-01-14m52s.png]] | high | 同 2 枚に赤オーバーレイ+黄色粒状の密度分布重ね。文は「さらに密度分布を重ねてみます。」まで進行 |
+| ev-032 | 12_02.mp4 | 00:36 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-00m36s.png]] | high | スライド「部分的に意図してくすませるサブ視線誘導」+赤字定義『意図した場所に視線を集めるために、それ以外の場所の情報を下げる「サブ視線誘導」が存在します』。「情報量の下げ方」節に作例 3 つ(脚・リボン・ハイヒール)の赤丸+ラベル「ぼかし、落かし」「くすませて視線から外す」「階調を減らしてシンプル化」(画面表記どおり・再確認済み) |
+| ev-033 | 12_02.mp4 | 02:41 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-02m41s.png]] | medium | 人物周囲に選択破線(マーチングアンツ、53.3% 表示)。レイヤー1173選択 |
+| ev-034 | 12_02.mp4 | 03:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-03m00s.png]] | high | 全身表示(眼鏡女性・ベッド上のスマホと亀のぬいぐるみ)。右上に手書きラベル 4 種『くすみ』『ぼかし』『とかし(頭字判読不能)』『空気遠近』。ツールプロパティ「エアブラシ 8」サイズ 800.0 |
+| ev-035 | 12_02.mp4 | 05:14 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-05m14s.png]] | high | 黒背景スライド「情報密度を高める考え方」。右文「情報密度を高める場所は力場を見ればわかります。」「1、陰影 2、色 3、光 の順で描くとわかりやすいかなと思います。私はこの順序のことが多いです。」「順序は各々のやりやすさで変わりますので、自由に組みかえてOKです。」左に彩色スケッチ |
+| ev-036 | 12_02.mp4 | 06:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-06m20s.png]] | high | 同スライド、左図がモノクロ版(グレー階調の同ポーズ)に変化 |
+| ev-037 | 12_02.mp4 | 06:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-06m40s.png]] | high | 白キャンバスに黒文字のみ「まとめると、質感による視線誘導とは、基本的に引き算です。」「情報を抜くことによって、メインの視線誘導をより際立たせることが目的の手法です。」 |
+| ev-038 | 12_02.mp4 | 07:16 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-07m16s.png]] | high | 「ポジティブシェイプ、ネガティブシェイプ」スライド。赤字「暗い領域をポジティブシェイプ」/青字「何もないところをネガティブシェイプ」。中央に旗付き山状の黒シルエット |
+| ev-039 | 12_02.mp4 | 07:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-07m20s.png]] | high | 同スライドに緑の分解輪郭追加(頭部を囲む円+土台の三角群)+「現実は、簡単なシェイプの集まりでできているため、難しい形の場合は、分解して考えてみよう!」 |
+| ev-040 | 12_02.mp4 | 07:38 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-07m38s.png]] | high | 「遠近視線誘導法は大きく分けて3つ。今すぐできます。これも後出しです。」「ばかし遠近法 と 空気遠近法 と ライン型遠近 です。」(「ばかし」は画面表記どおり・濁点付き字形を再確認)。写真 3 枚=秋の静物(カクテルグラス・赤い実・白カボチャ・ろうそく)/丘の上の家と山並み/金色の外装パネルの近代建築 |
+| ev-041 | 12_02.mp4 | 08:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-08m00s.png]] | high | 同スライドにキャプション追加: 左「遠くか手前のものをばかすだけ」中央「遠くのものを白くするだけ 野外では、青白く」右「線で奥行きを表現するだけ」(画面表記どおり) |
+| ev-042 | 12_02.mp4 | 08:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-08m20s.png]] | high | 黒背景にアニメイラスト 3 枚横並び+赤楕円注釈(左=黒髪少女の顔周辺/中=ブーツと脚/右=木製装置風)。下部「空気遠近法はこんな感じで応用できます。こうすることで、遠くに見えるという錯覚が発生します。空気遠近法は、軽い絵に使われることが多いです。」 |
+| ev-043 | 12_02.mp4 | 09:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-09m00s.png]] | high | 「流れによる視線誘導とは、線を用いて焦点を集める方法です」。左=渦巻状の曲線群、右=漫画の集中線状の直線群、中央「漫画の集中線なんかも同じ」 |
+| ev-044 | 12_02.mp4 | 09:40 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-09m40s.png]] | high | 構図段階の人物ラフ線画 2 枚+追記テキスト「ただ、残酷なことをお伝えしなければならない時がきました。」 |
+| ev-045 | 12_02.mp4 | 10:20 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-10m20s.png]] | high | カラーイラスト 7 点一覧(水着・ビーチ系)。長文テキスト「こういう感じの元気で非現実的な流れの絵は現在(2025年、おそらく2026年以降もしばらく)のXでは、いいねが伸びません。…」狐耳ドレスの横に赤禁止マーク |
+| ev-046 | 12_02.mp4 | 11:00 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-11m00s.png]] | high | 同スライド、テキスト差し替わり「ただ、商業イラストでは喜ばれますね。いいねをとって、フォロワーを増やすか、いいねが減る分お金を取るかはみなさん次第です。私は、そもそもいいね数とフォロワー様がいなきゃ仕事をもらいにくいと思っていますので…フォロワーを増やす方向ですね。」 |
+| ev-047 | 12_02.mp4 | 11:48 | ![[wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-11m48s.png]] | high | 黒背景に暗色系イラスト 4 点。下段「最近の流行りは、塗り方が心理的に重い絵です。私の絵では、キャラクターを心理的に重く、背景を心理的に軽くし、質感対比を出しています。最近では、キャラクターを心理的に重く描く研究をしていました」「重い絵の説明も、後ほど」(「心理的」「質感対比」とも画面表記どおり・再確認済み) |
+
 ## 関連リンク
+
 - [[coloso-hizurume-illustration-course]] — 講座メタ
 - [[coloso-hizurume-ch11-force-field]] — 前章(絵の力場)
