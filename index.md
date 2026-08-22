@@ -6,4 +6,3 @@ _sync_manifest.tsv 由来のファイル一覧。日時は各ファイルの更�
 - [handoffs/handoff-visible-effect-rule-2026-08-01.md](handoffs/handoff-visible-effect-rule-2026-08-01.md) | 2026-08-02T02:46:31Z
 - [handoffs/claude-handoff-active-display-resolution.md](handoffs/claude-handoff-active-display-resolution.md) | 2026-06-19T06:29:15Z
 - [handoffs/claude-handoff-x-eagle-ui-unification.md](handoffs/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
-- [selftest/bridge-sync-selftest.md](selftest/bridge-sync-selftest.md) | 2026-08-22T13:28:05Z
