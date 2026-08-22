@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1110 ファイル_
+_合計 1111 ファイル_
 
 ## root/ (11)
 
@@ -127,7 +127,7 @@ _合計 1110 ファイル_
 - [ye-jji-ch02-09m10s.png](wiki/assets/frames/coloso-ye-jji-ch02-contrast/ye-jji-ch02-09m10s.png) | 2026-07-12T02:05:39Z
 - [ye-jji-ch02-09m33s.png](wiki/assets/frames/coloso-ye-jji-ch02-contrast/ye-jji-ch02-09m33s.png) | 2026-07-12T02:05:39Z
 
-## wiki/builds/ (61)
+## wiki/builds/ (62)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -178,6 +178,7 @@ _合計 1110 ファイル_
 - [mmd-library-full-fidelity-rebuild-plan.md](wiki/builds/mmd-library-full-fidelity-rebuild-plan.md) | 2026-08-03T08:33:41Z
 - [multi-site-image-search.md](wiki/builds/multi-site-image-search.md) | 2026-06-15T14:10:13Z
 - [myart-canvas-gallery.md](wiki/builds/myart-canvas-gallery.md) | 2026-07-14T11:33:11Z
+- [obsidian-bridge-chatgpt-mirror.md](wiki/builds/obsidian-bridge-chatgpt-mirror.md) | 2026-08-22T15:12:16Z
 - [obsidian-direct-open-entrypoint.md](wiki/builds/obsidian-direct-open-entrypoint.md) | 2026-08-22T12:22:28Z
 - [obsidian-miller-columns.md](wiki/builds/obsidian-miller-columns.md) | 2026-08-22T14:53:52Z
 - [obsidian-ui-improvement-roadmap.md](wiki/builds/obsidian-ui-improvement-roadmap.md) | 2026-08-22T14:54:16Z
