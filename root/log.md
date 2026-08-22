@@ -8938,3 +8938,6 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
   [[video-visual-ingest-design]](v2.3)、[[hizurume-visual-ingest-handoff-plan]](对应表修正+変遷)、
   `.claude/skills/video-visual-ingest/SKILL.md`(分割動画注記)、`index.md`
 - 次点: パイロットのユーザーレビュー → 承認後 B1〜B4 バッチ展開。entity / concept は凍結継続。
+  - 追記(同日): ボードに「行の見え方」凡例を追加(wikilink行=押せる/パス行=押せないため
+    `llm-wiki-inbox open <短ID>` を案内)。リンク不達の体感報告(2026-08-23)への一次対応。
+    リンク対象6件の実在とパス形式wikilinkのvault内先行例は機械確認済み。クリック実挙動は未確認。
