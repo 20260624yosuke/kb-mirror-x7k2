@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1109 ファイル_
+_合計 1110 ファイル_
 
 ## root/ (11)
 
@@ -13,7 +13,7 @@ _合計 1109 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-22T14:08:30Z
+- [index.md](root/index.md) | 2026-08-22T14:46:57Z
 - [log.md](root/log.md) | 2026-08-22T14:44:20Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
@@ -127,7 +127,7 @@ _合計 1109 ファイル_
 - [ye-jji-ch02-09m10s.png](wiki/assets/frames/coloso-ye-jji-ch02-contrast/ye-jji-ch02-09m10s.png) | 2026-07-12T02:05:39Z
 - [ye-jji-ch02-09m33s.png](wiki/assets/frames/coloso-ye-jji-ch02-contrast/ye-jji-ch02-09m33s.png) | 2026-07-12T02:05:39Z
 
-## wiki/builds/ (60)
+## wiki/builds/ (61)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -164,6 +164,7 @@ _合計 1109 ファイル_
 - [gfl2-external-data-mount.md](wiki/builds/gfl2-external-data-mount.md) | 2026-07-30T02:39:19Z
 - [google-tasks-quickadd.md](wiki/builds/google-tasks-quickadd.md) | 2026-06-21T12:53:22Z
 - [handoff-visible-effect-rule-2026-08-01.md](wiki/builds/handoff-visible-effect-rule-2026-08-01.md) | 2026-08-02T02:46:31Z
+- [hizurume-visual-ingest-handoff-plan.md](wiki/builds/hizurume-visual-ingest-handoff-plan.md) | 2026-08-22T14:46:35Z
 - [keyclack.md](wiki/builds/keyclack.md) | 2026-07-11T05:12:06Z
 - [kimi-code-artifact-location.md](wiki/builds/kimi-code-artifact-location.md) | 2026-08-19T08:20:34Z
 - [llm-chat-enter-guard.md](wiki/builds/llm-chat-enter-guard.md) | 2026-08-18T07:35:00Z
