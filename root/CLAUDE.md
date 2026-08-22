@@ -391,6 +391,21 @@ Codex では `~/.codex/skills/grill-build/SKILL.md` を正規入口にし、Clau
 `$plan-gate`（Codex）または`/plan-gate`（Claude）を明示した時だけ起動する。目的は実装前の計画承認であり、承認後も実装へ進まない。Codex は `request_user_input`、Claude Code は `AskUserQuestion` で承認カードを出す。無回答・空回答・タイムアウト相当・カード閉鎖・古いカードの回答は承認でも中断でもなく、保存済みの同じ `card_id` / `plan_sha256` の承認待ちを維持する。高リスク案件では、計画を見せる前に `gpt-5.6-terra` / reasoning effort `medium` の監査を完了し、major finding がない場合だけ承認カードへ進む。`APPROVED` と `USER_STOPPED` は当該 plan-gate 呼出しだけの終端で、報告後は次の明示依頼を妨げない。
 <!-- END GENERATED: plan-gate -->
 
+## 成果物 Inbox(全ハーネス共通の機械導線)
+
+成果物(新規作成・更新してユーザーに確認してほしいファイル)が完成したら、報告文に加えて必ず
+inbox へ機械的に申告する。チャット内リンクの押下可否はハーネス(opencode 等)依存のため、
+押せるリンクではなくこの申告が成果物確認の正の経路。
+
+```
+python3 "<KBルート>/tools/inbox.py" add "<絶対パス>" --origin <claude-code|codex|kimi|opencode> --task "<依頼の要約>" --note "<見て判断すべき点>"
+```
+
+- 申告は窓を開かない(静かに記録されるだけ)。同一パスの未処理分がある場合は弾かれ、既存の短IDが返る。
+- ユーザーの入口: Raycast「成果物Inboxを開く」= 未処理ボード(inbox-dashboard.md)を Obsidian でオープン。
+  「成果物Inbox処理済み」= 短ID指定で完了化。CLI は `llm-wiki-inbox`(add/list/open/done/board)。
+- 正本と経緯は [[deliverable-inbox]]。
+
 ## 命名規則
 
 - ファイル名は **kebab-case + `.md`**(ASCII)。日本語タイトルは本文中の見出しで表現。

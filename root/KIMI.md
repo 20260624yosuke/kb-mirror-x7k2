@@ -36,6 +36,18 @@ Obsidianで開く: obsidian://open?vault=LLM+Knowledge+Base+_01&file=wiki%2Fsour
 - /Volumes/SSD_M.2/05_claude/.../tools/generate_report.py （絶対パス）
 ```
 
+## Kimi 独自補足: 成果物 Inbox への申告
+
+場所の明示(上のルール)に加えて、成果物を作成・更新した場合は inbox への申告も必須。
+チャット内リンクはハーネス依存で押せないことがあるため、申告した記録が確認導線の正になる。
+
+```
+python3 "<KBルート>/tools/inbox.py" add "<絶対パス>" --origin kimi --task "<依頼の要約>" --note "<見て判断すべき点>"
+```
+
+- ユーザーの入口: Raycast「成果物Inboxを開く」/「成果物Inbox処理済み」。CLI は `llm-wiki-inbox`。
+- 共通規則は `AGENTS.md`「成果物 Inbox(全ハーネス共通の機械導線)」節。正本は [[deliverable-inbox]]。
+
 ### 関連
 
 - `AGENTS.md` — 共通規則
