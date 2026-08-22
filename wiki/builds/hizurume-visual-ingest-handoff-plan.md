@@ -55,27 +55,29 @@ video-visual-ingest v2.2 ワークフローで映像観測層を追加する。
 | 06 描き方の種類 | coloso_ひづるめ_06 …md | 06.mp4 | coloso-hizurume-ch06-drawing-types | 未 |
 | 07 構図 | coloso_ひづるめ_07 …md | 07.mp4 | coloso-hizurume-ch07-composition | 未 |
 | 08 人体 | coloso_ひづるめ_08 …md | 08.mp4 | coloso-hizurume-ch08-anatomy-basics | 未 |
-| 09 光と影と色 | coloso_ひづるめ_09 …md | 09.mp4 | coloso-hizurume-ch09-light-shadow-color | 未 |
-| 10 効率的な練習方法 | coloso_ひづるめ_10 …md | 10.mp4 | coloso-hizurume-ch10-efficient-practice | 未 |
+| 09 光と影と色 | coloso_ひづるめ_09 …md | **09_01.mp4 + 09_02.mp4(分割)** | coloso-hizurume-ch09-light-shadow-color | 未 |
+| 10 効率的な練習方法 | coloso_ひづるめ_10 …md | **10_01.mp4 + 10_02.mp4(分割)** | coloso-hizurume-ch10-efficient-practice | 未 |
 | 11 絵の力場 | (完遂) | 11.mp4 | coloso-hizurume-ch11-force-field | **済**(29枚) |
-| 12 視線誘導とサブ視線誘導 | coloso_ひづるめ_12 …md | 12.mp4 | coloso-hizurume-ch12-gaze-guidance | 未・**パイロット** |
-| 13 錯覚と嘘 | coloso_ひづるめ_13 …md | 13.mp4 | coloso-hizurume-ch13-illusion-and-lies | 未 |
-| 14 シンプルとは洗練の極み | coloso_ひづるめ_14 …md | 14.mp4 | coloso-hizurume-ch14-simplification | 未 |
-| 15 絵画をイラストへ変換 | coloso_ひづるめ_15 …md | 15.mp4 | coloso-hizurume-ch15-painting-to-illustration | 未 |
+| 12 視線誘導とサブ視線誘導 | coloso_ひづるめ_12 …md | **12_01.mp4 + 12_02.mp4(分割)** | coloso-hizurume-ch12-gaze-guidance | 未・**パイロット** |
+| 13 錯覚と嘘 | coloso_ひづるめ_13 …md | **13_01.mp4 + 13_02.mp4(分割)** | coloso-hizurume-ch13-illusion-and-lies | 未 |
+| 14 シンプルとは洗練の極み | coloso_ひづるめ_14 …md | 14_01.mp4(単本) | coloso-hizurume-ch14-simplification | 未 |
+| 15 絵画をイラストへ変換 | coloso_ひづるめ_15 …md | **15_01〜15_04.mp4(4 本)** | coloso-hizurume-ch15-painting-to-illustration | 未 |
 | 16 一枚絵の速度アップ | coloso_ひづるめ_16 …md | 16.mp4 | coloso-hizurume-ch16-speed-up | 未 |
-| 17 実技1-1 暗い絵 | coloso_ひづるめ_17 …md | 17.mp4 | coloso-hizurume-ch17-dark-painting-1 | 未 |
-| 18 実技1-2 絵画技法 | coloso_ひづるめ_18 …md | 18.mp4 | coloso-hizurume-ch18-painting-technique-2 | 未 |
-| 19 実技1-3 仕上げ | coloso_ひづるめ_19 …md | 19.mp4 | coloso-hizurume-ch19-finishing-3 | 未 |
-| 20 実技2-1 | coloso_ひづるめ_20 …md | 20.mp4 | coloso-hizurume-ch20-bright-painting-1 | 未 |
-| 21 実技2-2 | coloso_ひづるめ_21 …md | 21.mp4 | coloso-hizurume-ch21-painting-work-2 | 未 |
-| 22 実技2-3 | coloso_ひづるめ_22 …md | 22.mp4 | coloso-hizurume-ch22-negative-check-3 | 未 |
-| 23 実技2-4 | coloso_ひづるめ_23 …md | 23.mp4 | coloso-hizurume-ch23-quality-finish-4 | 未 |
+| 17 実技1-1 暗い絵 | coloso_ひづるめ_17 …md | **17_01.mp4 + 17_02.mp4(分割)** | coloso-hizurume-ch17-dark-painting-1 | 未 |
+| 18 実技1-2 絵画技法 | coloso_ひづるめ_18 …md | **18_01.mp4 + 18_02.mp4(分割)** | coloso-hizurume-ch18-painting-technique-2 | 未 |
+| 19 実技1-3 仕上げ | coloso_ひづるめ_19 …md | **19_01〜19_04.mp4(4 本)** | coloso-hizurume-ch19-finishing-3 | 未 |
+| 20 実技2-1 | coloso_ひづるめ_20 …md | **20_01〜20_03.mp4(3 本)** | coloso-hizurume-ch20-bright-painting-1 | 未 |
+| 21 実技2-2 | coloso_ひづるめ_21 …md | **21_01.mp4 + 21_02.mp4(分割)** | coloso-hizurume-ch21-painting-work-2 | 未 |
+| 22 実技2-3 | coloso_ひづるめ_22 …md | **22_01.mp4 + 22_02.mp4(分割)** | coloso-hizurume-ch22-negative-check-3 | 未 |
+| 23 実技2-4 | coloso_ひづるめ_23 …md | **23_01.mp4 + 23_02.mp4(分割)** | coloso-hizurume-ch23-quality-finish-4 | 未 |
 | 24 復習 | coloso_ひづるめ_24 …md | 24.mp4 | coloso-hizurume-ch24-review | 未 |
-| 25 過去絵10枚添削 | coloso_ひづるめ_25 …md | 25.mp4 | coloso-hizurume-ch25-10-artwork-critique | 未 |
+| 25 過去絵10枚添削 | coloso_ひづるめ_25 …md | **25_01.mp4 + 25_02.mp4(分割)** | coloso-hizurume-ch25-10-artwork-critique | 未 |
 | 26 まとめ | coloso_ひづるめ_26 …md | 26.mp4 | coloso-hizurume-ch26-summary | 未 |
 
-注意: raw md 内には `[[NN.mp4]]` とフルパスの二重リンクがあるため dry-run が
-「候補が複数」エラーを出す。その場合は必ず `--video "_attachments/<NN>.mp4"` 形式で固定する。
+注意(2026-08-23 修正): 当初「raw md 内の `[[NN.mp4]]` とフルパスの二重リンクが
+dry-run の複数候補エラーの原因」と記載していたが、誤りだった。実際は章そのものが
+**複数本の動画に分割されている**(下表の「動画」列参照)。14 章が該当し、v2.3 で
+1 ページとして処理する(設計正本の「分割動画の扱い」節)。
 
 ## バッチ計画(停止点つき)
 
@@ -174,3 +176,6 @@ FAIL 項目を潰して PASS してから `visual_ingested` を付ける。
 ## 変遷
 
 - 2026-08-22: 初版作成。v2.2 運用了承(ye_jji ch02 レビュー)を受け、残り 25 章への展開計画として正本化。
+- 2026-08-23: パイロット開始直前に ch12 が 12_01 + 12_02 の分割動画であることが判明。
+  全章実調査の結果 25 章中 14 章が分割で、対応表を実態に修正。武田さんの選択により
+  設計正本 v2.3(分割動画対応)を先に適用してから、ch12 を 1 ページとして両動画処理する。
