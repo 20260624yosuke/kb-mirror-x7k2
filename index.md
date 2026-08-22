@@ -1008,7 +1008,7 @@ _合計 1132 ファイル_
 - [coloso-sasa-illustration-course.md](wiki/sources/coloso-sasa-illustration-course.md) | 2026-06-10T13:29:43Z
 - [coloso-ye-jji-ch01-intro.md](wiki/sources/coloso-ye-jji-ch01-intro.md) | 2026-07-07T00:52:32Z
 - [coloso-ye-jji-ch02-contrast.md](wiki/sources/coloso-ye-jji-ch02-contrast.md) | 2026-07-12T02:39:57Z
-- [coloso-ye-jji-ch03-silhouette.md](wiki/sources/coloso-ye-jji-ch03-silhouette.md) | 2026-06-22T12:48:42Z
+- [coloso-ye-jji-ch03-silhouette.md](wiki/sources/coloso-ye-jji-ch03-silhouette.md) | 2026-08-22T18:45:14Z
 - [coloso-ye-jji-ch04-volume.md](wiki/sources/coloso-ye-jji-ch04-volume.md) | 2026-05-31T17:13:58Z
 - [coloso-ye-jji-ch05-texture-basic.md](wiki/sources/coloso-ye-jji-ch05-texture-basic.md) | 2026-05-31T17:43:13Z
 - [coloso-ye-jji-ch06-texture-applied.md](wiki/sources/coloso-ye-jji-ch06-texture-applied.md) | 2026-05-31T17:43:15Z

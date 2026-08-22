@@ -9,6 +9,11 @@ ingested: 2026-05-13
 re_ingested: 2026-05-17
 tags: [coloso, illustration, silhouette, composition, info-density]
 parent: coloso-ye-jji-illustration-course
+status: active
+confidence: high
+evidence_level: source-backed
+last_reviewed: 2026-08-23
+visual_ingested: 2026-08-23
 ---
 
 # ye_jji_03. 描写の前にシルエットをチェックする
@@ -84,3 +89,49 @@ parent: coloso-ye-jji-illustration-course
 
 > [!note] 訂正済み (re-ingest 2026-05-17)
 > 旧 wiki(ch04 で [[silhouette-of-light-edge]] が初出と整理)に対し、PDF では本章 ch03 の冒頭で「明暗境界もシルエットの一種」と既に提示されていることが判明。本概念の **起点は ch03**、量感への接続が ch04 と整理し直すのが正確。
+
+## 映像観測(フレーム由来)
+
+この節は、本文・補助資料・図とは別に、動画フレーム上で確認できた事実を証拠 ID と画像付きで記録する層である。利用時はこの章ページ全体の知識として本文や図と照合するが、映像観測だけから本文にない解釈を自動で確定しない。
+
+- 抽出日: 2026-08-23 / 元動画: [[03 1.mov]] / 元動画 SHA-256: `4b8cd506bbaf36dab8a677716bba2a50416ab76be89be9128d6d9d09d639f03d`
+- 対象範囲: 全編(00:00–17:50) / 方式: 20秒間隔 + 文字起こし誘導6箇所 / 抽出60枚・読取60枚・保存20枚
+- 設計版: video-visual-ingest-design v2.3 / 読取モデル: opencode/x-preview-f-free (ox-alpha)
+- 凡例: 観測列は画面上で確認できた事実のみ。字幕はフレームで判読できた範囲だけを要約した。スライド文字の表記(日本語/ハングル)は読めたままを記す。
+
+| evidence_id | 時刻 | frame | 確信度 | 画面の観測(事実のみ) |
+|---|---|---|---|---|
+| ev-001 | 00:00 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-00m00s.png]] | high | 黒画面。下部に白字幕で字幕OFFの手順案内(「設定」→「吹き出しボタン」→「PCはon、モバイルは隠す」)。スライド・ソフトUIは未表示。 |
+| ev-002 | 00:30 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-00m30s.png]] | high | 白背景スライド、見出し「1. シルエットとは？」。緑矢印付き本文「何かの輪郭」。ピースサインの少年線画と同ポーズの顔なしシルエット版を並べた白枠2枚。右側に白い衣装の女性イラストへ大きな黒いシルエット形状を重ねた図と文「イラストの密度を上げる / 明暗を分割するときに必要な知識」。左下にColoso著作権表記。 |
+| ev-003 | 00:40 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-00m40s.png]] | high | 同スライド体裁で見出しが「2. シルエットの重要性」に変化。グレー塗り少女3体=ハート形の髪・円形の髪・三角形シルエット+ティアラ。緑矢印文「シルエットは内部描写よりも多くの情報量を持つ」(「情報量」を強調)。 |
+| ev-004 | 01:00 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-01m00s.png]] | high | スライドUIがハングル表記(タブ「1. 중요성」、見出し「2. 실루엣의 중요성」)。髪束のグレーイラスト左右比較=左は単調で流れる1束、右は明暗差・隙間・先端カールが多く細分化。字幕「左の場合はシルエットは単調ですが、内部の描写が多いです。」 |
+| ev-005 | 01:20 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-01m20s.png]] | high | タブ中央「2. 한계」アクティブ。黒角丸見出し「1. 限界」(日本語表記・クロップ確定)。少女3体の変形例=直立/スパイク状髪で片手上げ/波打つ長髪でスカート下を黒塗り。矢印文「キャラクターイラストにおけるシルエットの形の変形は制限されている」(クロップ確定)。透かし web_in_box_mail-973965。 |
+| ev-006 | 02:00 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-02m00s.png]] | high | 同見出しのまま図版が3オブジェクトに変化: たわんだ布(ラベル「布」)、リボン状曲線(ラベル「リボン」)、小さな花の塊(ラベル「小さなオブジェクトのまとまり」)。 |
+| ev-007 | 02:12 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-02m12s.png]] | high | 見出し「1. 흐름 만들기」(タブ3番アクティブ)。同一の帽子を押さえる長髪ドレス少女を左右に配置=左は胸元・腕まわりの影が細かく刻まれた版、右は影の塊が大きくまとまった版。 |
+| ev-008 | 03:00 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-03m00s.png]] | high | 見出し「2. 계단식 변형」。白背景に黒シルエット2個=上細の髪束状/帽子風人物型の大型。左シルエットに沿って赤い曲線と矢頭のオーバーレイ表示(変形デモ開始時点)。 |
+| ev-009 | 04:20 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-04m20s.png]] | high | 同スライド。左毛束の形状が段階的に変化したうえ、右大型シルエット内部左寄りに白い楕円形の隙間が出現、丸カーソル表示。字幕「この穴が徐々に小さくなる形か徐々に大きくなる形に変えてみましょう。」 |
+| ev-010 | 05:20 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-05m20s.png]] | high | 見出し「3. 구멍 만들기」に変化。半円の連なりからなる雲・煙状の黒い塊1つ(まだ穴なし)。塊上部中央に小さな白点カーソル。 |
+| ev-011 | 06:00 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-06m00s.png]] | high | 同じ雲状の塊の内部に不規則な白い穴が複数開いた状態(中央〜中央右)。丸カーソル表示。 |
+| ev-012 | 06:20 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-06m20s.png]] | high | 見出し「4. 반복 만들지 말기」。スカートの白黒イラスト2枚=ウエストベルト・ギャザー表現ほぼ同形で、皺の位置等が微妙に異なる。 |
+| ev-013 | 06:55 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-06m55s.png]] | high | 見出し「5. 삼각형 활용하기」。肘から下を曲げた袖のグレーイラスト左右。左袖上部に赤色の三角形状が連なる筆致状オーバーレイ+丸カーソル、右袖は素の状態。 |
+| ev-014 | 07:15 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-07m15s.png]] | high | 見出し「6. 밀도에 차이 주기」。濃いグレーの影形状を多数含む袖型イラスト2枚。左袖中央に丸カーソル。 |
+| ev-015 | 07:40 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-07m40s.png]] | high | CLIP STUDIO PAINT EX の全画面(4001 x 2251px 72dpi 66.7%)。キャンバス上にスライドタブ図形+赤ピン留めの手書きメモ用紙(韓国語6項目・一部判読不能)+ヘッドバンド・ツインテール・Tシャツ・背中に翼のグレースケール少女イラスト。Tool Property Brush Size 31.0。 |
+| ev-016 | 10:20 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-10m20s.png]] | high | ズーム66.0%へ縮小し、タブ3つ(「1. 중요성」「2. 한계」「3. 요령」)とメモ用紙・イラスト全体が俯瞰できる状態。 |
+| ev-017 | 13:20 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-13m20s.png]] | high | ズーム80.7%。右レイヤーパネルに韓国語名フォルダ階層(「요령」「실습」等・細部判読不能)、Layer 24 選択中。Brush Size 55.5。メモ手書き6項目(字形は一部判読不能)。 |
+| ev-018 | 15:00 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-15m00s.png]] | medium | ズーム59.3%。アプリUI(メニューバー・パネル)は正立、キャンバス内の少女イラストも正立だが、キャンバス上のタブ図形と手書きメモ用紙のみ上下逆さに表示(クロップ盲検確定)。Sub Tool はテクスチャ系ブラシ(Brush Size 366.1, Strength 70)、Layer 25 選択。逆さの操作種別(反転/回転)は画面からは確定できない。 |
+| ev-019 | 16:20 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-16m20s.png]] | high | ズーム66.0%。Layer 26 選択、Brush Size 29.9。字幕「このように、この唐突な流れを整理することができますね。」= 中間段階のサイドヘア追加操作後の時点。 |
+| ev-020 | 17:35 | ![[wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-17m35s.png]] | high | ズーム72.7%、タブ3つ全表示。Layer 24 選択。字幕「分割する前と比べると、このような形に作り上げました。」= 分割前後を比較する時点。 |
+
+### 再確認(recheck)
+
+保存20枚中3枚(01m20s / 13m20s / 15m00s)を別サブエージェントが盲検再読取した。
+
+- **01m20s = confirmed**: 再読取のみハングル表記と報告したが、見出し・矢印文の原寸クロップ盲検読取で日本語表記を確定(正本どおり・訂正なし)。
+- **13m20s = confirmed**: 構成・数値は一致。手書きメモ項目文の写しが読み手ごとに揺れるため、観測表では項目文を断定せず「一部判読不能」に統一。
+- **15m00s = corrected**: 初回「キャンバス左右反転」・再読取「180度回転」の不一致を、クロップ盲検読取4枚で確定(ev-018 行のとおり修正)。
+
+## 不確実・要確認
+
+- 映像観測は全編を対象としたが、20秒間隔+6箇所の狙い撃ち抽出のため、それ以外の時点の画面状態は本節から断定しない。
+- 本動画(`03 1.mov`)は2026-08-23にHDD録画から移植した版であり、raw 文字起こしの時刻とは数十秒程度のずれがあり得る。映像観測の「時刻」列は動画ファイル上の時刻である。
+- ev-018 の上下逆さ表示は、キャンバス表示操作なのかキャンバス上オブジェクト(タブ・メモ図形)への個別変形なのかを画面からは確定できていない。
