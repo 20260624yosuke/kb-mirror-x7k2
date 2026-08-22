@@ -27,7 +27,7 @@ opencode TUI など**チャット内リンクが押せないハーネス**でも
 |---|---|
 | `tools/inbox.py` | 正本 CLI。`add` / `list` / `open` / `done` / `board` |
 | `tools/inbox.jsonl` | 追記専用イベントログ。fcntl.flock 排他・破損行は無視して継続 |
-| `inbox-dashboard.md`(KBルート直下) | 機械生成ボード。鮮度表示+新着順+フォルダ階層ツリー+vault 外ノード。毎回全再生成され手編集不可 |
+| `inbox-dashboard.md`(KBルート直下) | 機械生成ボード。鮮度表示+新着順+フォルダ階層ツリー+**本文埋め込み**(vault 外 md/画像は `_attachments/inbox-review/<短ID>` へ複製して表示)。毎回全再生成され手編集不可 |
 | `tools/llm_wiki_inbox.sh` ほか4本 | Raycast 正本5本(ボード表示/項目オープン/一括オープン/処理済み化/全処理済み化) |
 | `tools/install_llm_wiki_inbox.sh` | Raycast 実体(`~/.config/raycast-scripts/`)と CLI 入口(`~/.local/bin/llm-wiki-inbox`)の配置 |
 | `AGENTS.md` / `CLAUDE.md` / `KIMI.md`「成果物 Inbox」節 | LLM への申告指示(3正本すべてに同文系) |
@@ -98,6 +98,11 @@ python3 "<KBルート>/tools/inbox.py" add "<絶対パス>" --origin <claude-cod
   `> [!note]-` コールアウト+`![[embed]]`。自己埋め込みと対象外を除外)
   ②「成果物Inbox一括オープン」(open --all・ユーザー発動時のみ窓が出る設計)
   ③「成果物Inbox全処理済み」(done --all・履歴から復旧可能)。install_llm_wiki_inbox.sh は5本体制。
+- **2026-08-23 同日修正4**。「押せる行/押せない行の区別は推論判断になりミスが多い」との批判を受け、
+  行種による挙動差をほぼ解消: vault 外の md/画像もボード生成時に
+  `_attachments/inbox-review/<短ID>.<拡張子>` へ複製し(ID 名で一意)、本文/画像を埋め込み表示。
+  複製は毎回のボード再生成時に更新され、処理済み化時に自動削除(`cleanup_staged`)。
+  残存する埋め込み対象外はフォルダ・コード等の稀タイプのみ。
 
 ## 関連リンク
 
