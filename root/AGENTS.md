@@ -307,6 +307,9 @@ query 節だけに閉じず、ingest / lint / 通常相談 / 修繕方針の判�
 - フレームは `wiki/assets/frames/<source-slug>/` に保存され、全パス
   `![[wiki/assets/frames/...]]` で source ページから参照される。`raw/` には書き込まない。
 - `tools/video_frames.py --dry-run` で動画の SHA-256、容量、再生時間、抽出予定を確認する。
+- 品質ゲート: `tools/video_ingest_gate.py` の `snapshot`(抽出前の同一性記録)と `check --phase complete`
+  (完成報告前の来歴・本文非破壊・整合・再確認手続き・台帳検査)は **常時必須**(設計 v2.2)。
+  第2読者との不一致は両方許容・記録必須(確定なら corrected / 未確定なら行に要確認表記+marked-uncertain)。
 - 等間隔抽出で見つからなかったものを「動画に存在しない」と確定しない。
 
 ### LLM 対話ログの ingest(`raw/_llm_logs/`)
