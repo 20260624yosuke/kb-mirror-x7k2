@@ -205,6 +205,7 @@ b27 は「未解決57本の親は原作データに存在しない」と結論�
 | `scripts/f49_question_ticket.py` | 調べた証跡（実在する参照＋未解決の理由）の無い質問を武田さんへ投げること（DRESS 事件の型） | `logs/f49-gate-replay-test.json` |
 | `scripts/f50_fact_audit.py` | 検証器の無い主張（文章だけの主張）を事実として台帳に置くこと。**2026-08-20 に抜け道10件（C1〜C10）を追加で塞いだ**。固定Pythonの実体差し替えと真偽値/文字列の取り違えも拒否 | `logs/f50-gate-replay-test.json`（25件） |
 | `scripts/f72_negative_claim_gate.py` | **証明の無い否定・不能の結論**（「無い」「0件」「未取得」「未回収」「回収できていない」「できない」「原理的に」…）。強い否定には ①探索範囲 ②再実行できる探索と件数 ③**陽性対照** ④反証の道、実現不能の主張にはさらに ⑤試した記録 を必須にする | `logs/f72-gate-replay-test.json`（15件） |
+| `scripts/f97_local_first_gate.py` | **静的な差分・生バイト走査だけでの「手元に無い／欠損／回収不可」の断定**。展開レベル走査（圧縮ブロック内部点検）をしていない主張は弱めた言い方へ、実行時に「欠損ありのまま正常動作した」観測と突き合わせていない強い否定は不合格 | `logs/f97-gate-replay-test.json`（4件・2026-08-22深夜の実際の事故パターン→不合格を含む） |
 
 - 台帳: `ledger/missing-cabs.json`（欠落 CAB **45件**。2026-08-19 に再測定し checker 実測と一致）、
   `ledger/living-claims.json`（この正本の生きている主張 **40件** を機械可読化。
@@ -1381,7 +1382,7 @@ grep してもゲームデータの証明にならない。
 | 対象 | 現状 | 再開条件 |
 |---|---|---|
 | H0157 scene | `read_only_live_log_correlated; cjk_probe_lines_recovered_f90; revised_trace_implemented; original_lldb_attach_refused; no_retry; no_breakpoint_installed` | 原本LLDB attach 1回は2026-08-22 14:31にOSが拒否。現行計画の停止条件に従い技術的停止。Developer Mode変更、`sudo`、再署名、注入、追加ツールは本計画外なので行わない。別の明示計画がない限りruntime traceは再試行しない。`f90`がprobe行とtimelineの近接併存6窓を追加回収したが（LT-16）、Addressables要求キーの証明には届いていない。欠損bundleが通常のゲーム操作では落ちない実測も追加（LT-17） |
-| 欠損bundle回収（CDN計画） | `phase_a_complete; phase_b1_stopped_at_cdn_403` | 武田さんがCDN直接取得ルートを選択し、計画正本は `06_repro-v51/reports/CDN-RECOVERY-PLAN-2026-08-22.md`。Phase A（ネット接触なし）は完了：CDNベースURL `https://gf2-jp-cdn.17996cdn.com/prod` を端末内URLキャッシュの`client_res_v1`応答から回収、appカタログinternal_idが文字どおり `{0}/<name>.bundle` 形式であることを確認、欠損103本をhash・sizeつきで `06_repro-v51/ledger/cdn-targets.json` へ台帳化（size欄は手元実在ファイルとcache1500/1500・app1499/1500で一致）。Phase B1はscene root1本のみ試験し候補6URLが全て403で停止条件到達。同一CDNの既知実績URL(website/gm PNG)は200・乱数名も403のため「パス違い」と「認証必要」は外側から区別できない。`{0}`を確定する残りの道3件（通信キャプチャ／ゲーム内一括DL機能の確認／backup volume読める化）は計画書に記載済みで、いずれも武田さんの選択待ち |
+| 欠損bundle回収（CDN計画） | `phase_a_complete; phase_b1_stopped_at_cdn_403; capture_executed_no_pinning; {0}_live_confirmed; res_version_equals_local` | 武田さんがCDN直接取得ルートを選択し、計画正本は `06_repro-v51/reports/CDN-RECOVERY-PLAN-2026-08-22.md`。Phase A（ネット接触なし）は完了：CDNベースURL `https://gf2-jp-cdn.17996cdn.com/prod` を端末内URLキャッシュの`client_res_v1`応答から回収、appカタログinternal_idが文字どおり `{0}/<name>.bundle` 形式であることを確認、欠損103本をhash・sizeつきで `06_repro-v51/ledger/cdn-targets.json` へ台帳化（size欄は手元実在ファイルとcache1500/1500・app1499/1500で一致）。Phase B1はscene root1本のみ試験し候補6URLが全て403で停止条件到達。**【2026-08-23 追記】通信キャプチャを実施し、ピン留めなし・`{0}`の生確定・ResVersion一致（＝通常プレイでは欠損bundleを絶対に取りに来ない）を確認（詳細は下の節）。ゲーム内一括DL機能は武田さん確認により不存在。よってCDN直接取得は通常フローでは道が尽き、実質保留。残る回収候補は backup volume 走査（FDA付与の実施確認未了）と、圧縮内部に既にある可能性の展開走査（承認待ちで中断）** |
 | 照明 | 候補の回収資産は未適用 | scene確定後、欠損102依存を回収して実際のLight / Probe / Reflection / 画面効果を結合 |
 | 階調表 | 10件回収済み・材質対応は未回収 | prefab root `7648416f…bundle` から renderer→material→ramp 対応を抽出 |
 | 輪郭線 | 世界座標化とP22導出は済み | Helen固有width、ZBias、H0157カメラnear/far、見た目比較を別検証 |
@@ -1452,6 +1453,84 @@ prefab rootは端末に落ちていない。入手試行の実績はこれで**3
    欠損bundleが「通常のゲーム操作では落ちない」という入手実績の精度。
 3. 戻せるか: `git`管理外のため台帳エントリ（LT-16/LT-17・negative-claims登録）を削除すれば元に戻る。
 
+## 2026-08-22 深夜〜08-23 未明 — 通信キャプチャを実施し、足元を裸足へ切替、「欠損」前提の見落しを門にした（f94〜f97）
+
+### 足元を `_Fight`(ハイヒール) から `_Dorm`(裸足) へ切替えた（f95）
+
+前節まで、`c01_build_blend.py` 注記(2)には「足元は `_Fight`(靴あり) が礼服の正解。
+H0157 側に手がかりは無い」とあったが、これは誤りだった。原作フレーム
+`reports/original-frames/h0157_20.png` / `h0157_26.png`（実機画面32枚のうち足がはっきり
+見える2枚）は**両方とも裸足**で、単独プレビューとの突合では `_Dorm`=裸足／
+`_Fight`=シルバーストラップのハイヒール。「手がかりは無い」と書いたとき、
+実在する原作フレームを見ていなかった。
+
+武田さんの承認のもと `scripts/f95_p1_feet_dorm_switch.py` でコレクション
+`P1_Dorm_裸足` を表示・`P1_Fight_靴あり` を非表示へ切替えた。**G13 は判定条件を一切変えずに
+PASS へ復帰し、GATE は 14 PASS / 1 FAIL（残 FAIL=G10 のみ）**。成果物 SHA は
+`e0ba175651c20251…`、直前版は `blends/_pre-f95-dorm-feet/helen-h0157-repro__b1214f28194caddf.blend`
+（`run-state.json` 同期済み・`logs/f95-feet-switch.json`）。注記(2)本文は撤回せず履歴として残す。
+blend 変更に伴う f46 系確認画像の撮り直しは**未了**（見た目の報告の前に必須）。
+
+### f94 — ZBias 実値と H0157 カメラ near/far は手元では未回収
+
+`scripts/f94_outline_zbias_camera_primary.py` が `GlobalCharOutlineZBias` と H0157 カメラ
+near/far を metadata／UnityFramework／managed assembly 両版／HUDll／local bundle
+cache+app 約1.9万本の生バイト／実行ログ24本で探索した結果、**すべて 0件**。陽性対照は
+7入力すべて合格（`ledger/h0157-outline-zbias-camera-primary.json`）。限定: bundle 生バイト
+走査は UnityFS 圧縮ブロック内部を見ない。`DormCameraData` は12行の ID 表のみで射影値なし。
+
+### 通信キャプチャ初実施 — ピン留めなし・`{0}` 生確定・通常プレイでは欠損は落ちない確定
+
+mitmproxy を導入し、Wi-Fi プロキシ経由でゲームの HTTPS を全記録した（2026-08-22 22:39–23:03）。
+
+- **ピン留めなし**: ゲームUA(`EXILIUM/4517 CFNetwork`) の HTTPS 通信が全てプロキシ経由で成功。
+- **`{0}` の実値を生きた通信で確定**: `https://gf2-jp-cdn.17996cdn.com/prod`
+  （お知らせ画像4枚が `/prod/website/gm/<大文字MD5>.png` の形で200取得）。
+- **サーバー版＝手元版**: `client_res_v1` 応答の `ResVersion 2.12.4517.13535.26111` が
+  手元カタログ(26111)と一致。ゲームは自分のキャッシュを「完全」と見なしており、
+  **通常プレイでは欠損 bundle を絶対に取りに来ない**。
+- 武田さんはキャプチャ中に寮→ヘレンの部屋→**H0157 本体clip（c_HelenSSR0101_Bedroom_0101）
+  まで再生**。それでも bundle GET **0本**・新規ファイル**0個**
+  （入手試行ゼロは4回目＝LT-17の延長）。
+- 作業後処理: プロキシ解除済み・mitmdump 停止済み。CA証明書(mitmproxy) は System keychain へ
+  信頼登録のまま残置（削除は未案内）。記録 `intermediate/cdn-capture/capture-20260822.flow`
+  （82MB・ゲーム以外の個人通信も混在するため解析後の取扱い要検討）。
+
+### 新しい矛盾 — 「scene root 欠損」前提が崩れた可能性
+
+scene root `d128870a…bundle` はディスク上に名前で存在せず、生バイト走査でも
+`06Aimo_Dorm_GFMB` 文字列はどの local bundle にも無い（カタログ2種にのみ存在）。
+それでも寮シーンはエラー0・DL0で動作し、**部屋は普通に表示された**（武田さん目視「A. 普通」）。
+生バイト走査は圧縮ブロック内部を見ないため、必要データが別 bundle の圧縮内部にある可能性が残る。
+全量展開走査(f96)は速度不足で中断。第1版は import 不備で全ファイルエラーの無効台帳を出したため、
+`ledger/h0157-decompressed-scene-scan.json` は**参照しないこと**。
+
+### ミスの経緯と f97 ゲート化（武田さん指示）
+
+> 「ローカルにすでにある可能性があって、その可能性を憶測でスルーしてたってことだもんな」
+
+- 「scene root 欠損 → 照明・階調表は `source_recovery_blocked`」という結論を数日扱ったが、
+  根拠は①カタログvsディスクの名前突合 ②生バイト走査 のみで、③圧縮内部を見る展開走査をしておらず、
+  ④実行時観測（欠損ありのまま正常動作）との突き合わせもしていなかった。
+- 失敗の型: **静的な差分・生バイト走査で「無い」と出たことを、「動いているという観測」と
+  突き合わせずに強い結論へ持ち上げる。**
+
+これを受けて `scripts/f97_local_first_gate.py` をルールではなく門として実装:
+
+- 強い「無い/欠損/回収不可」主張に対し ①raw_scan ②decompressed_scan（していないなら主張を
+  弱めさせる）③runtime_reconciliation（「動いた観測あり」で再導出なしの強い否定=不合格）
+  ④falsifier を要求。
+- 再現試験 **4/4 合格**（`logs/f97-gate-replay-test.json`）: 今夜の事故パターンは不合格・
+  弱めた言い方は通る・完全証拠＋実行時矛盾は不合格・完全証拠は合格。
+- `quality-gate.json` の `gates` 節へ登録済み（2026-08-23）。
+
+### 次の一手（ここでサーバー負荷により中断）
+
+絞り込み展開走査: 寮の照明データが手元のどの bundle 内にあるか、対象を絞って UnityPy で展開し
+特定する（読み取り専用）。見つかれば `source_recovery_blocked` の解除。並行候補:
+backup volume 走査（FDA付与の実施確認が未了）。本正本への追記は済んだが、プロジェクト側
+`HANDOFF-2026-08-20.md` への本節反映と f94 由来の negative-claims 登録は**未了**。
+
 ## 使わなかったもの・落とした情報
 
 - **対象appの再署名・注入・無断attach**
@@ -1481,6 +1560,8 @@ prefab rootは端末に落ちていない。入手試行の実績はこれで**3
 ### この案件で繰り返している失敗の型
 
 - **問いの立て方が違うと、0件が「無い」に見える。**→ 陽性対照を必須にする（`f72` で機械化した）
+- **静的な差分で「無い」と出ても、実行時の観測と突き合わせない限り「無い」は確定しない。**
+  → 展開走査（圧縮内部点検）と実行時照合を必須にする（`f97` で機械化した）
 - **自分の式を両辺に置くと、検証はいつでも 0 になる。**→ 原作か独立実装と比べる（`f75`）
 - **シェーダの既定値は「原作の値」ではない。**→ 実際の材質の分布を数える
 - **検証器が空だと、誤りに気づけない。**→ 台帳の数字どうしの引き算・`grep -c`・自分の台帳を

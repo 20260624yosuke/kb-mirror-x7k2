@@ -8826,7 +8826,8 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
 - 一致確認4重チェック: ①番号対応 ②プレイリストindex算術(既知例外: 02/06_1=index無し,19_1=45重複)
   ③ffprobe実測長 vs 書き起こシ最終ts（46本全て±180秒以内）④フレーム目視照合50本（49 MATCH+1消去法確定、MISMATCH 0）。
 - 編集前バックアップ: /var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji_backup_md/ (72枚・揮発性、復元はここから)。
-- 残課題: _attachments内の未参照旧版 (03.mov, 04_01.mov, 04_01 1.mov 計約4.7GB) が残置。削除は別承認制。
+- 未参照旧版の削除: (03.mov, 04_01.mov, 04_01 1.mov 計約4.6GB) — 参照ゼロを再確認のうえ武田さん承認で削除。
+  _attachments の動画は参照分53本のみとなった。
 - 対応表データ: /var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/mapping.tsv, durations.tsv / 判定ログ: 同dir frames/
 
 ## [2026-08-22] build | ObsidianBridge テキスト同期上限を1MB→5MBへ
@@ -8834,3 +8835,21 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
 - log.mdが846KBまで肥大し1MBキャップ接近(重い使用日なら数日で自動スキップ開始の見込み)。武田さん判断で「logは外さず、上限引き上げ」を採用。分割/recent派生ビューは見送り。
 - bridge_sync.py のMAX_SIZEを5MBへ変更。ローカル運用・manifest・公開範囲に変更なし。
 - 更新: `wiki/builds/obsidian-bridge-chatgpt-mirror.md`(セキュリティ節+変遷), `log.md`。スクリプト本体は ~/Library/Application Support/ObsidianBridge/bridge_sync.py
+
+## [2026-08-23] build | gf2-helen-repro-v51 深夜セッション（f94〜f97）の正本記録
+
+- 前セッション（サーバー負荷で中断）の続き。`wiki/builds/gf2-helen-repro-v51-run.md` へ
+  「2026-08-22 深夜〜08-23 未明」節を追記: ①f95足元切替（_Fight→_Dorm、G13判定緩めなしでPASS復帰、
+  GATE 14 PASS / 1 FAIL=G10、成果物SHA `e0ba175651c20251…`）②f94 ZBias/near-far手元探索0件
+  （陽性対照7入力合格）③通信キャプチャ初実施（ピン留めなし・`{0}`生確定・ResVersion一致＝
+  通常プレイでは欠損bundleは落ちない確定・H0157 clip再生中もDLゼロ）④scene root欠損前提の
+  矛盾発覚（部屋は正常表示・圧縮内部未点検）⑤f97ローカル優先ゲート新設（再現試験4/4合格）。
+- 門テーブルへ f97 行を追加、「失敗の型」リストへ静的差分×実行時観測の型を追加、
+  CDN回収行へ2026-08-23追記（CDN直接取得は通常フローでは道が尽き実質保留）、
+  frontmatter `last_reviewed` を2026-08-23へ更新。
+- プロジェクト側: `quality-gate.json` の `gates.items` へ `f97-local-first-gate` を登録
+  （last_updated 2026-08-23）。`run-state.json` は前セッション済み（e0ba1756…同期確認）。
+- 未了（次セッションの一手）: 絞り込み展開走査で寮照明データの所在特定（承認待ちで中断中）、
+  backup volume走査（FDA付与の実施確認未了）、HANDOFFへの反映、f94由来negative-claims登録、
+  blend変更に伴うf46系確認画像の撮り直し、CA証明書(mitmproxy)削除案内。
+- 触ったページ: [[gf2-helen-repro-v51-run]] / log.md / quality-gate.json(プロジェクト側)
