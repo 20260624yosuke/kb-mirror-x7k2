@@ -8828,3 +8828,9 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
 - 編集前バックアップ: /var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji_backup_md/ (72枚・揮発性、復元はここから)。
 - 残課題: _attachments内の未参照旧版 (03.mov, 04_01.mov, 04_01 1.mov 計約4.7GB) が残置。削除は別承認制。
 - 対応表データ: /var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/mapping.tsv, durations.tsv / 判定ログ: 同dir frames/
+
+## [2026-08-22] build | ObsidianBridge テキスト同期上限を1MB→5MBへ
+
+- log.mdが846KBまで肥大し1MBキャップ接近(重い使用日なら数日で自動スキップ開始の見込み)。武田さん判断で「logは外さず、上限引き上げ」を採用。分割/recent派生ビューは見送り。
+- bridge_sync.py のMAX_SIZEを5MBへ変更。ローカル運用・manifest・公開範囲に変更なし。
+- 更新: `wiki/builds/obsidian-bridge-chatgpt-mirror.md`(セキュリティ節+変遷), `log.md`。スクリプト本体は ~/Library/Application Support/ObsidianBridge/bridge_sync.py

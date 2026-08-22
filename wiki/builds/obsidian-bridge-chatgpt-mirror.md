@@ -41,7 +41,7 @@ ChatGPTはローカルObsidian Vaultを直接読めないため、**許可リス
 
 ## セキュリティ設計(と変更履歴)
 
-- 許可リスト(default deny)。除外: 隠しディレクトリ/.git/__pycache__/backups等。テキスト1MB・画像10MB上限
+- 許可リスト(default deny)。除外: 隠しディレクトリ/.git/__pycache__/backups等。テキスト5MB(2026-08-22に1MBから引き上げ)・画像10MB上限
 - 秘密スキャン: **専用パターン11種(openai/anthropic/github×2/aws/google/hf/slack/秘密鍵/JWT/bearer)+ keyword=valueルール(16字以上英数字混在)**。全行適用
 - 方針変更(2026-08-22): 汎用エントロピー総当たり検出は廃止。本KBの正当な長ID(Blenderクリップ名`BED-ACT_…`、Google画像検索のURL内部トークン等)に連続誤爆し、fail-closedが形骸化する恐れが実測されたため。未知形式への第二防御として GitHub Push Protection を想定(要設定確認)
 - unpublish原則: 一度pushしたら取り下げにはrepo削除→再作成が必要。「撤去不能前提」でmanifest選定する
@@ -59,6 +59,7 @@ TEST1a〜10合格(逐字一致/削除反映/検知停止/quarantine非公開/日
 ## 変遷
 
 - 2026-08-22: v1計画→独立監査2体(Major8+Minor12)→v2→実装(パイロット4本)→同日中に案B承認でナレッジ全文共有へ拡大
+- 2026-08-22: テキスト同期上限を1MB→5MBへ引き上げ(log.md肥大対策。フル同期継続方針を武田さん確認済み。分割・recent派生ビューは見送り)
 
 ## 関連リンク
 
