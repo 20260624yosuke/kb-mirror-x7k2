@@ -8816,3 +8816,15 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
 - 更新: `wiki/builds/obsidian-bridge-chatgpt-mirror.md`(新規), `index.md`, `log.md`
 - 外部成果物: ~/Library/Application Support/ObsidianBridge/, ~/Library/LaunchAgents/com.takedayousuke.obsidian-bridge.plist
 - 経緯補足: 武田さんから「経緯はwikiに記録済みか」と問われ未記録だったことを説明(log更新規約の字面を優先しすぎた)。承認を得て本エントリ+buildページを作成。
+
+## [2026-08-23] ingest | ye_jji講座 録画動画のローカル移植（YouTube埋め込み置換）
+
+- raw/_coloso/01_coloso_ye_jji/ の講座ノート67枚（本体49＋_資料18）のYouTube動画埋め込みを、
+  HDD録画(講座_録画)からのローカルファイル参照 `![[*.mov]]` に置換。frontmatterのsource URLは元情報として保持。
+- コピー50操作（新規49本＋02.mov差替）。使用版: 01〜06_05は音ズレ_編集版（編集カットのため06_01は通常版より169秒短い）、
+  07以降は通常フォルダ版。総量約117GB、全ファイルサイズ突合検証済み。
+- 一致確認4重チェック: ①番号対応 ②プレイリストindex算術(既知例外: 02/06_1=index無し,19_1=45重複)
+  ③ffprobe実測長 vs 書き起こシ最終ts（46本全て±180秒以内）④フレーム目視照合50本（49 MATCH+1消去法確定、MISMATCH 0）。
+- 編集前バックアップ: /var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji_backup_md/ (72枚・揮発性、復元はここから)。
+- 残課題: _attachments内の未参照旧版 (03.mov, 04_01.mov, 04_01 1.mov 計約4.7GB) が残置。削除は別承認制。
+- 対応表データ: /var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/mapping.tsv, durations.tsv / 判定ログ: 同dir frames/
