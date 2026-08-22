@@ -8867,3 +8867,19 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
   プロジェクト側 `run-state.json`（照明_lightProbes回収_2026_08_23 追加）。
 - 未了: SH→Blender適用計画（承認待ち）・欠損リスト再導出・backup volume走査・f46系撮り直し・HANDOFF反映。
 - 触ったページ: [[gf2-helen-repro-v51-run]] / log.md / run-state.json(プロジェクト側)
+
+## [2026-08-23] build | 成果物 Inbox(deliverable-inbox)新設
+
+- opencode TUI でチャット内リンクが押せず成果物を確認できない問題(2026-08-23 実測)の解消。
+  リンク押下依存を捨て、機械的スクリプトの申告制 inbox へ方針確定(自動オープン案は武田さんの
+  画面張り付きなし運用のため却下、inbox 構想→文脈凍結→階層ツリー+新着順併記で承認)。
+- サブエージェントによる実装前レビューを実施し、今回必須6件(ボード直下md解決不可の地雷、
+  done導線未閉鎖、位置番号誤操作リスク→短ID化、同時書き込み耐性→イベントログ+flock、
+  AGENTS/CLAUDE/KIMI 3正本追記、SSD未マウント時メッセージ)を反映。
+- 新規: tools/inbox.py / tools/inbox.jsonl(運用開始時に生成) / inbox-dashboard.md(機械生成) /
+  tools/llm_wiki_inbox.sh / tools/llm_wiki_inbox_done.sh / tools/install_llm_wiki_inbox.sh /
+  wiki/builds/deliverable-inbox.md。更新: AGENTS.md・CLAUDE.md・KIMI.md(申告指示節追記) /
+  index.md(build行追加)。CLI 入口 ~/.local/bin/llm-wiki-inbox 配置済み。
+- 確認: 単体動作試験(add重複弾き・存在チェック・done/open分岐・Obsidian URI 形式一致・
+  階層レンダリング・空状態)合格。未確認: Raycast 実機ワンクリック動作(武田さん作業)、
+  Obsidian 内での wikilink 押下の最終目視。

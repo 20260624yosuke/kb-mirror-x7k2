@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1131 ファイル_
+_合計 1132 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 1131 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-22T15:12:44Z
-- [log.md](root/log.md) | 2026-08-22T18:03:18Z
+- [index.md](root/index.md) | 2026-08-22T18:28:39Z
+- [log.md](root/log.md) | 2026-08-22T18:29:05Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/analyses/ (51)
@@ -150,7 +150,7 @@ _合計 1131 ファイル_
 - [ye-jji-ch03-16m20s.png](wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-16m20s.png) | 2026-08-22T18:16:20Z
 - [ye-jji-ch03-17m35s.png](wiki/assets/frames/coloso-ye-jji-ch03-silhouette/ye-jji-ch03-17m35s.png) | 2026-08-22T18:16:20Z
 
-## wiki/builds/ (62)
+## wiki/builds/ (63)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -168,6 +168,7 @@ _合計 1131 ファイル_
 - [codexbar.md](wiki/builds/codexbar.md) | 2026-07-14T11:51:42Z
 - [coloso-ingest-coverage-audit.md](wiki/builds/coloso-ingest-coverage-audit.md) | 2026-07-07T01:00:00Z
 - [context-harness.md](wiki/builds/context-harness.md) | 2026-08-13T15:35:51Z
+- [deliverable-inbox.md](wiki/builds/deliverable-inbox.md) | 2026-08-22T18:28:12Z
 - [diary-quick-capture.md](wiki/builds/diary-quick-capture.md) | 2026-06-06T12:22:11Z
 - [e-hentai-notion-clipper.md](wiki/builds/e-hentai-notion-clipper.md) | 2026-06-25T10:02:35Z
 - [eagle-clip-tag-runbook.md](wiki/builds/eagle-clip-tag-runbook.md) | 2026-07-06T13:02:48Z
