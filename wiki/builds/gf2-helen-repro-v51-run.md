@@ -1597,9 +1597,11 @@ f95 で blend が変わったために古かった確認画像3枚を**現行 bl
 - fact-ledger へ **LT-18 / LT-18b / LT-19** を追加（verifier つき・計60事実）。
   陳腐化していた **OL-7**（成果物SHA b1214f28…→e0ba1756…）/ **OL-12**（GATE 13/2→14/1・
   G13 復帰）/ **LT-12**（ログローテーションで分母が21→16ファイル・併存3→4件）を実測へ同期
-- negative-claims へ **2件追加**: 上記 roots 所在主張（3レベル走査・陽性対照2段・
-  runtime reconciliation・反証つき）と f94 の ZBias/カメラ未回収
-  （`scripts/f94b_zbias_evidence_verify.py` を読み取り専用検査器として新設）
+- negative-claims へ **3件追加**: 上記 roots 所在主張（3レベル走査・陽性対照2段・
+  runtime reconciliation・反証つき）、f94 の ZBias/カメラ探索結果
+  （`scripts/f94b_zbias_evidence_verify.py` を読み取り専用検査器として新設）、
+  Helen SSR0101 衣装材質の手元不在（`scripts/f35b_ssr0101_material_verify.py` 新設。
+  センサス19,869件中 c_HelenSSR0101_slg_* は0件・対照の同形式衣装材質は217件実在）
 - 監査結果: `f50` audit **PASS（60事実）**／`f72` audit **PASS（enforced 26件）**／
   再現試験 `f50`(25件)・`f72`(15件)・`f97`(4件) 全 PASS／品質ゲート `plan` PASS・
   `batch` は従来どおり意図的 FAIL（欠損入力あり）
