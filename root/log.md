@@ -8768,6 +8768,22 @@ raw/ 全体の未 ingest 監査で未処理と判明していた講師紹介ペ�
 - 更新: `wiki/builds/obsidian-ui-improvement-roadmap.md`(④節追補に調査結果・実機確認手順・再開手順を追記), `log.md`
 - Google Tasks: サブタスクA(`④動画ビュワー追補…`)は開いたまま=トラッカー。触らず
 
+## [2026-08-22] ingest | Miller Columns v0.2.1(自動追従トグル)実装
+
+- 武田さん承認(「②だけ今やる」→ 計画「1 承認」)により [[obsidian-miller-columns]] へ
+  「開いたファイルへ自動追従」を実装。v0.2.1。
+- 変更: `.obsidian/plugins/miller-columns/main.js`(DEFAULT_SETTINGS に autoFollow: true /
+  file-open イベントで revealActiveFile を自動発火 / 自ビュー由来の file-open は再描画しない
+  ガード / PluginSettingTab でトグル設定・既定ON)/ manifest.json(version 0.2.0 → 0.2.1)。
+  styles.css・data.json は変更なし
+- バックアップ: 同フォルダに `*.v0.2.0.bak` 3ファイル(main.js / manifest.json / styles.css)。
+  戻すときは名前を戻して Obsidian 再読込
+- 検証: `node --check` 構文合格 + obsidian モジュールをスタブした読込検証(onload/saveSettings/
+  activateView 存在)。**実機確認は未実施**(武田さんが Obsidian 再読込後に判定)
+- 更新: `wiki/builds/obsidian-miller-columns.md`(v0.2.1 節・未実装から自動追従トグルを外し実装済みへ・変遷),
+  `wiki/builds/obsidian-ui-improvement-roadmap.md`(②節追補を実装済み・確認待ちへ, 優先順表), `log.md`
+- Google Tasks サブタスクB(`②Miller Columns追補…`)も開いたまま=実機確認のトラッカー
+
 ## [2026-08-22] ingest | ye_jji ch02 遡及ゲート適用 + 入口規約同期(video-visual-ingest v2.2 継続)
 
 SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)ことを確認し、残作業を完了。
