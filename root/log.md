@@ -8805,3 +8805,14 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
   ひづるめ講座の未取り込み25章へ映像層を追加する計画。対象対応表・パイロット=ch12→承認後4バッチ・
   盲検読取プロトコル・既知の落とし穴・停止点を収録。
 - 更新: `.claude/skills/video-visual-ingest/SKILL.md`(了承を追記), `index.md`, `log.md`
+
+## [2026-08-22] build | ObsidianBridge(ChatGPT読み取りブリッジ)新規構築とナレッジ全文共有化
+
+- 目的: ChatGPTがローカルVaultを直接読めない問題を、許可リスト同期+GitHub公開ミラー(raw配信)で解く。正本計画書は ~/llm-uploads/20260822-obsidian-chatgpt-bridge-plan.md(v2、独立監査2体の指摘全反映)。
+- 構成: [[obsidian-bridge-chatgpt-mirror]] — bridge_sync.py(許可リスト→入力検証→秘密スキャン→index生成→git commit/push)+ launchd 300秒常駐。ミラー= github.com/20260624yosuke/kb-mirror-x7k2(公開・PATはキーチェーン保存)。
+- 経過: パイロット4本で実装検証(TEST1a〜10合格)→同日中に武田さんが案B承認 → wiki全文1,098+root11 の1,111ファイル公開へ拡大。API tree権威判定+抜き打ちraw取得で確認済み。
+- スキャン方針変更: 汎用エントロピー検出廃止(Blenderクリップ名等の正当な長IDに誤爆継続→fail-closed形骸化懸念の実測)。専用パターン11種+keywordルールで担保。
+- 実測: index全リンク200/Vault変更→即時push/削除反映/非対象404/CDN最大5分(?v=無効も実測確認)。
+- 更新: `wiki/builds/obsidian-bridge-chatgpt-mirror.md`(新規), `index.md`, `log.md`
+- 外部成果物: ~/Library/Application Support/ObsidianBridge/, ~/Library/LaunchAgents/com.takedayousuke.obsidian-bridge.plist
+- 経緯補足: 武田さんから「経緯はwikiに記録済みか」と問われ未記録だったことを説明(log更新規約の字面を優先しすぎた)。承認を得て本エントリ+buildページを作成。
