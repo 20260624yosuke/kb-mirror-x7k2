@@ -8779,3 +8779,13 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
   盲検再読取3枚(04m40s/06m47s/09m33s)= **全 confirmed**(7月 codex-gpt-5 観測に訂正なし)+
   manifest に completed/recheck 追加 → **gate PASS**。frame_sha256 全11枚一致。
 - 更新: `log.md`
+
+## [2026-08-22] query | 映像ゲート運用のユーザー了承 + ひづるめ講座 再ingest 引き継ぎ計画
+
+- 武田さんが [[coloso-ye-jji-ch02-contrast]] の遡及ゲート適用結果を確認し「結構いいんじゃないですかね」
+  と了承。v2.2 ワークフロー(snapshot → 抽出 → 盲検読取 → recheck → check PASS → visual_ingested)
+  の実運用開始を承認。
+- 新規 build: [[hizurume-visual-ingest-handoff-plan]] — 別セッションのエージェント向け引き継ぎ資料。
+  ひづるめ講座の未取り込み25章へ映像層を追加する計画。対象対応表・パイロット=ch12→承認後4バッチ・
+  盲検読取プロトコル・既知の落とし穴・停止点を収録。
+- 更新: `.claude/skills/video-visual-ingest/SKILL.md`(了承を追記), `index.md`, `log.md`
