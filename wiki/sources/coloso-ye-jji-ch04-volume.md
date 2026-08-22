@@ -9,6 +9,11 @@ ingested: 2026-05-13
 re_ingested: 2026-05-17
 tags: [coloso, illustration, volume, shading, light-theory]
 parent: coloso-ye-jji-illustration-course
+status: active
+confidence: high
+evidence_level: source-backed
+last_reviewed: 2026-08-23
+visual_ingested: 2026-08-23
 ---
 
 # ye_jji_04. 量感の描写
