@@ -8754,6 +8754,20 @@ raw/ 全体の未 ingest 監査で未処理と判明していた講師紹介ペ�
 - 触ったページ: wiki/builds/obsidian-ui-improvement-roadmap.md, wiki/builds/obsidian-miller-columns.md,
   index.md, log.md / Google Tasks(進行中プロジェクト: サブタスク2件)
 
+## [2026-08-22] ingest | ④スキップ操作の調査結果記録と実機確認待ちへの固定
+
+- 「計画を見て実装して」で着手。④(MX スキップ)と②(Miller Columns 自動フォーカス)の方針カードを出した段階で
+  武田さんが「矢印は効かなかった気がする、自分で確認する。問題があったら再開できるよう記録しておいて」と指示。
+- MX v4 main.js 解析(minify・クローズドソースの文字列抽出):
+  - 内蔵キー確認: `J`/`←`=seekBackward(5)、`L`/`→`=seekForward(5)、`K`/`Space`=togglePaused、
+    `↑`/`↓`=volume±0.05、`M`=ミュート、`F`=全画面、`I`=PiP、`C`=字幕。プレイヤーフォーカス時のみ有効
+  - シーク幅5秒は固定・設定不可。ホットキー割当可能なシーク系コマンド無し(take-timestamp 等のみ)
+  - 10秒化改造=閉じたプラグイン内部イベント直叩き→不採用推奨
+- 実装判断: 武田さんの実機確認が先。②Miller Columns 自動フォーカスは方針承認まで進んだが実装は未了
+  (承認待ちのまま停止)。
+- 更新: `wiki/builds/obsidian-ui-improvement-roadmap.md`(④節追補に調査結果・実機確認手順・再開手順を追記), `log.md`
+- Google Tasks: サブタスクA(`④動画ビュワー追補…`)は開いたまま=トラッカー。触らず
+
 ## [2026-08-22] ingest | ye_jji ch02 遡及ゲート適用 + 入口規約同期(video-visual-ingest v2.2 継続)
 
 SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)ことを確認し、残作業を完了。
