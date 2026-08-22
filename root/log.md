@@ -8964,3 +8964,8 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
 - 更新: wiki/analyses/ch12-pilot-session-recovery-collision-verification.md(新規),
   [[hizurume-visual-ingest-handoff-plan]](落とし穴 #10/#11 + 変遷), index.md(analyses 行追加)
 - 次点: 変更なし(ch12 パイロット自体の承認待ちは既存エントリのとおり)
+  - 追記(同日4): 導線負担批判(項目数×複数操作)を受け「最大3アクション」へ再設計。
+    ①ボードに本文埋め込み節(vault内mdを折りたたみコールアウト+![[embed]]、自己埋め込み除外)
+    ②Raycast「成果物Inbox一括オープン」(open --all) ③Raycast「成果物Inbox全処理済み」
+    (done --all)を追加。install_llm_wiki_inbox.sh は5本体制で実体配置済み、ボード再生成済み。
+    埋め込み表示の実機確認は武田さん再テスト待ち。

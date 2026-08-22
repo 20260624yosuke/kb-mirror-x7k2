@@ -28,7 +28,7 @@ opencode TUI など**チャット内リンクが押せないハーネス**でも
 | `tools/inbox.py` | 正本 CLI。`add` / `list` / `open` / `done` / `board` |
 | `tools/inbox.jsonl` | 追記専用イベントログ。fcntl.flock 排他・破損行は無視して継続 |
 | `inbox-dashboard.md`(KBルート直下) | 機械生成ボード。鮮度表示+新着順+フォルダ階層ツリー+vault 外ノード。毎回全再生成され手編集不可 |
-| `tools/llm_wiki_inbox.sh` / `llm_wiki_inbox_done.sh` | Raycast 正本2本(ボード表示/処理済み化) |
+| `tools/llm_wiki_inbox.sh` ほか4本 | Raycast 正本5本(ボード表示/項目オープン/一括オープン/処理済み化/全処理済み化) |
 | `tools/install_llm_wiki_inbox.sh` | Raycast 実体(`~/.config/raycast-scripts/`)と CLI 入口(`~/.local/bin/llm-wiki-inbox`)の配置 |
 | `AGENTS.md` / `CLAUDE.md` / `KIMI.md`「成果物 Inbox」節 | LLM への申告指示(3正本すべてに同文系) |
 
@@ -44,14 +44,14 @@ python3 "<KBルート>/tools/inbox.py" add "<絶対パス>" --origin <claude-cod
 - 項目 ID はタイムスタンプ由来の短ID(例: `i0823a4f`)。位置番号を使わないのは、複数ハーネス並行時に
   番号ずれで別成果物を誤開放/誤完了化する事故防止(レビュー指摘)。
 
-### ユーザー側(確認)
+### ユーザー側(確認・最大3アクション)
 
-1. Raycast「**成果物Inboxを開く**」→ 未処理ボード(inbox-dashboard.md)を Obsidian でオープン。
-   vault 内項目は wikilink(押せる)、vault 外は絶対パス表記。
-2. 必要なものだけ開いて中身を確認。
-3. Raycast「**成果物Inbox処理済み**」で短ID入力 → done 化(未処理件数が減る)。CLI なら `llm-wiki-inbox done i0823a4f`。
+1. Raycast「**成果物Inboxを開く**」→ 未処理ボードを Obsidian でオープン。
+   vault 内 md の本文は**折りたたみ埋め込み**で同ページ内に表示(見出しを展開すればスクロールだけで読める)。
+2. 埋め込み対象外(vault 外・md 以外)は Raycast「**成果物Inbox一括オープン**」でまとめて機械的に開く。
+3. 読み終えたら「**成果物Inbox全処理済み**」で inbox を空に。誤爆時は履歴(inbox.jsonl)から復旧可能。
 
-`open` コマンドは開くだけで処理済みにしない(「開いた=確認済み」の誤完了化防止)。
+個別操作も可能:「成果物Inboxの項目を開く」+短ID / 「成果物Inbox処理済み」+短ID。
 
 ## 設計上の要点
 
@@ -76,8 +76,11 @@ python3 "<KBルート>/tools/inbox.py" add "<絶対パス>" --origin <claude-cod
 ## 後回し(実害発生後に対応予定)
 
 - 同一パス再 add 時の note/task 更新(upsert)。現状はエラー案内のみ。
-- `open --all` の窓嵐対策(件数上限や事前確認)。ユーザー能動実行なので様子見。
 - done 履歴による jsonl 肥大化のアーカイブ分離。
+- 一括オープンの件数上限(現状は未処理全件。窓が出るのはユーザー発動時のみという前提で様子見)。
+
+※旧「open --all の窓嵐対策」は 2026-08-23 同日修正2で「成果物Inbox一括オープン」として
+意図的機能化したため、後回し項目から削除。
 
 ## 変更履歴
 
@@ -90,6 +93,11 @@ python3 "<KBルート>/tools/inbox.py" add "<絶対パス>" --origin <claude-cod
 - **2026-08-23 同日修正2**。vault 外ファイル等の「押せない行」への正規導線として、第3の
   Raycast コマンド「成果物Inboxの項目を開く」(短ID→`inbox.py open`)を追加。これで全行が
   短ID経由で開ける。install_llm_wiki_inbox.sh は3本体制。
+- **2026-08-23 同日修正3**。「項目数×複数操作になって負担が最悪」との批判を受け、
+  「最大3アクション」へ再設計: ①ボード内本文埋め込み(vault 内 md を折りたたみ
+  `> [!note]-` コールアウト+`![[embed]]`。自己埋め込みと対象外を除外)
+  ②「成果物Inbox一括オープン」(open --all・ユーザー発動時のみ窓が出る設計)
+  ③「成果物Inbox全処理済み」(done --all・履歴から復旧可能)。install_llm_wiki_inbox.sh は5本体制。
 
 ## 関連リンク
 
