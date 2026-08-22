@@ -8906,3 +8906,29 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
   `wiki/assets/frames/coloso-ye-jji-ch03-silhouette/`(snapshot.json+manifest.json+フレーム20枚), `index.md`(変更なし確認)
 - 次点: パイロットのユーザーレビュー → 承認後、B1〜B4 バッチ(ch04〜ch23、ch01/ch22/ch23含む)へ展開。
   entity / concept はバッチ承認まで凍結。
+
+## [2026-08-23] ingest | ひづるめ ch12 視線誘導とサブ視線誘導 — 映像レイヤー追加(パイロット・分割動画 v2.3 初適用)
+
+- 引き継ぎプラン([[hizurume-visual-ingest-handoff-plan]])のパイロットとして、文章 ingest 済み
+  [[coloso-hizurume-ch12-gaze-guidance]] に映像観測層を追加した。
+- 開始直前に計画表との食い違いを発見: ch12 は「12.mp4 単一」ではなく **12_01.mp4 + 12_02.mp4 の分割**。
+  全 26 章を実調査した結果 25 章中 14 章が分割動画で、武田さんの選択(B)により
+  設計正本 v2.3(分割動画対応)を先に実装してから 1 ページとして両動画を処理した。
+- v2.3 実装: `tools/video_ingest_gate.py`(snapshot `--video` 反復指定→`videos[]` 記録 / manifest
+  `videos[]`+動画ごと `extraction[]` / 観測表動画列入り 6 列 / 行ごとに対応動画長で時刻検査 /
+  初回 ingest 用の本文非破壊検査=節の外側全体ハッシュ比較)。
+  リグレッション: ch11 は PASS 継続。ye_jji ch02 は環境側の 02.mov 差し替え(mtime 2026-08-23 00:00、
+  記録1.84GB→実際2.30GB)で来歴 FAIL — 本作業とは無関係の事前発問題。
+- 処理: snapshot(両動画 SHA-256 記録)→ 抽出 p1=57枚+p2=48枚(interval20s+狙い撃ち12/9箇所)
+  → 盲検読取 105 枚全件(wiki非参照サブエージェント8体、出力途切れ2回は再読取で回収)
+  → 保存47枚(`hizurume-ch12-01-*` 31枚 / `hizurume-ch12-02-*` 16枚) → recheck 6枚(最低5枚)。
+- recheck 結果: confirmed 5 / corrected 1。corrected=09m31s のレイヤー名(初回「複製1」・再確認「鮮血1」
+  と割れ→原寸クロップで「閾値 1」と確定)。クロップ確定もう1件: 08m00s の画面表記は「シュミラクラ現象」
+  (スライド側の揺れ)。画面語彙と文字起こしの差も確認: 画面「蜂っぽい何か」(文字起こし「8っぽい何か」)、
+  画面「質感対比を出しています」([[shinri-tai-hi]] 概要の「心理対比」と語彙が異なる — entity/concept
+  凍結中のためパイロット承認後の更新候補として記録)、画面「ばかし遠近法」「ぼかし、落かし」は表記どおり。
+- 更新: [[coloso-hizurume-ch12-gaze-guidance]](`## 映像観測(フレーム由来)` 新設+`visual_ingested`)、
+  `wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/`(snapshot.json+manifest.json+フレーム47枚)、
+  [[video-visual-ingest-design]](v2.3)、[[hizurume-visual-ingest-handoff-plan]](对应表修正+変遷)、
+  `.claude/skills/video-visual-ingest/SKILL.md`(分割動画注記)、`index.md`
+- 次点: パイロットのユーザーレビュー → 承認後 B1〜B4 バッチ展開。entity / concept は凍結継続。
