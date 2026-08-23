@@ -10,6 +10,7 @@ status: active
 confidence: high
 evidence_level: source-backed
 last_reviewed: 2026-06-10
+visual_ingested: 2026-08-23
 ---
 
 # coloso 佐々 ch02 ― 成長を加速する「気づきメモ」
