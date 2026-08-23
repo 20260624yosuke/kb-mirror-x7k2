@@ -9,7 +9,7 @@ tags: [Coloso, 人体ドローイング, 線, アニメーター]
 status: active
 confidence: high
 evidence_level: source-backed
-last_reviewed: 2026-06-01
+last_reviewed: 2026-08-23
 ---
 
 # coloso hide ch02 ― 線の引き方について
