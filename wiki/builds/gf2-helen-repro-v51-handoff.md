@@ -223,11 +223,31 @@ sources:
     （`f35b_ssr0101_material_verify.py` で再計数・対照の同形式衣装材質217件実在）
 48. **f46を合格へ復帰**: blendが変わって古かった確認画像3枚を**現行blend `e0ba175651c20251…`
     から撮り直し**、`f45`比較JSONも取り直し（原作 肌÷髪 3.52 対 現行 2.7・参考値）。
-49. **台帳・門の同期**: fact-ledger へ LT-18/LT-18b/LT-19 追加（計60事実）、陳腐化した
-    OL-7（SHA）/OL-12（GATE 14/1）/LT-12（ログローテーションで16ファイル・併存4件）を実測へ更新、
-    negative-claims へ3件追加。監査: `f50` PASS／`f72` enforced29件 PASS／`f48` PASS／
-    再現試験 f50(25)・f72(15)・f97(4) 全PASS／品質ゲート plan PASS・batchは意図どおりFAIL。
-    **blend 無変更（`e0ba175651c20251…`）**
+ 49. **台帳・門の同期**: fact-ledger へ LT-18/LT-18b/LT-19 追加（計60事実）、陳腐化した
+     OL-7（SHA）/OL-12（GATE 14/1）/LT-12（ログローテーションで16ファイル・併存4件）を実測へ更新、
+     negative-claims へ3件追加。監査: `f50` PASS／`f72` enforced29件 PASS／`f48` PASS／
+     再現試験 f50(25)・f72(15)・f97(4) 全PASS／品質ゲート plan PASS・batchは意図どおりFAIL。
+     **blend 無変更（`e0ba175651c20251…`）**
+50. **A/B/C並列の結果（2026-08-23午前〜昼・武田さん指示）**:
+    **A=SH方式2試作（`f103`）**: 焼き込みSH8プローブの評価器を実装、自己検査合格
+    （球面平均==DC 誤差5e-4）。候補blend `blends/_candidate-sh-lighting/` に生成。
+    機械比較: 原作 肌÷髪 **3.52** / SH候補 **2.23** / 現行旧灯は暗すぎて測定不能(null)。
+    画像 `reports/matpreview/f103_contact_sheet.png`・数値 `logs/f103-compare.json`。
+    本blend反映は未実施（武田さんの見比べ待ち）。
+    **B=backup volume点検**（`ledger/backup-volume-access-20260823.json`）: HDD_02 全深度で
+    ゲームデータ無し。HDD_バックアップ/HDD_バックアップ_macbookpro の2台は macOS TCC で
+    root列挙拒否 → **フルディスクアクセス許可が武田さんの操作として必要**。
+    **C=スキン構造の解明**（武田さんの指示「ドルフロにはスキンというコンテンツがある。探して」）:
+    P1/P2/P3 は衣装モジュール（スキン）単位。**P2＝ストッキングセット**
+    （P2_body_d テクスチャ＝黒ニーハイ＋クリムゾンガーターの生地を目視確認）、
+    原作フレーム h0157_20 でも着用確認（つま先のみ露出＝f95の観測と整合）。
+    ModelConfigData.bytes に HelenSSR0101 行あり、Item_ClothesMod_HelenSSR01_P1/P2/P3_Body.png 実在
+    （`ledger/h0157-skin-content-evidence.json`）。原作メッシュは複数サブメッシュ持ちで境界は
+    manifestから復元可能 → `f102` で11分離描画＋連絡シートを作成。
+    **武田さんの決定（AskUserQuestion・2026-08-23）: 「P1のまま維持」**。
+    ストッキング表示と silkstock ramp適用（G10未反映4枚中2枚）は第1段合格後の展開時に
+    改めて計画する。経緯は run-state.json の `plan_conflicts` "G13/DRESS" へ記録済み。
+    成果物blend無変更
 
 ---
 

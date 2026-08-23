@@ -1620,6 +1620,29 @@ f95 で blend が変わったために古かった確認画像3枚を**現行 bl
 3. 戻せるか: 台帳エントリ（LT-18系・negative-claims 2件・OL-7/OL-12/LT-12 の旧文言は
    git管理外につき旧値はこの節と run-state 履歴に記録）を削除すれば元に戻る。
 
+### 2026-08-23 午後 — A/B/C 並列（SH方式2試作・backup volume点検・スキン構造の解明）
+
+**A（方式2・武田さん承認）**: `f103` が焼き込みSH8プローブを評価し候補blend
+`blends/_candidate-sh-lighting/` を生成。自己検査（球面平均==DC）誤差5e-4で合格。
+機械比較は 原作 肌÷髪 **3.52** / SH候補 **2.23** / 現行旧灯は暗すぎて測定不能。
+本blend反映は未実施。画像 `reports/matpreview/f103_contact_sheet.png`。
+
+**B**: HDD_02 全深度でゲームデータ無し。HDD_バックアップ系2台は macOS TCC 拒否中
+（フルディスクアクセス許可待ち）。`ledger/backup-volume-access-20260823.json`。
+
+**C（武田さんの指示「ドルフロにはスキンというコンテンツがある。探して」）**: P1/P2/P3 は
+衣装モジュール単位で、**P2＝ストッキングセット**（P2_body_d＝黒ニーハイ＋クリムゾン
+ガーターの生地）、原作フレーム h0157_20 でも着用確認（つま先のみ露出＝f95観測と整合）。
+ModelConfigData.bytes に HelenSSR0101 行、Item_ClothesMod_*_Body.png 実在
+（`ledger/h0157-skin-content-evidence.json`）。原作メッシュは複数サブメッシュ持ちで境界は
+manifestから復元可能 → `f102` が11分離描画＋連絡シートを作成。
+**武田さん決定「P1のまま維持」**: ストッキング表示と silkstock ramp適用は第1段合格後の
+展開時に改めて計画（run-state `plan_conflicts` "G13/DRESS"）。成果物blend無変更。
+
+HANDOFF の所在はこの日をもって wiki 側へ移設された
+（`wiki/builds/gf2-helen-repro-v51-handoff.md`・旧位置はポインタ文件）。
+
+
 ## 使わなかったもの・落とした情報
 
 - **対象appの再署名・注入・無断attach**
