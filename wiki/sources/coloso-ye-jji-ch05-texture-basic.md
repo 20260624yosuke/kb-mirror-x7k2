@@ -13,7 +13,6 @@ status: active
 confidence: high
 evidence_level: source-backed
 last_reviewed: 2026-08-23
-visual_ingested: 2026-08-23
 ---
 
 # ye_jji_05. 多様なテクスチャー描写(基礎編)

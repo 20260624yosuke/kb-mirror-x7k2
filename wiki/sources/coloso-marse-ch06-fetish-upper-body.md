@@ -5,7 +5,6 @@ authors: [マーセ]
 date: 2026-05-30
 source_path: "raw/_coloso/2026_05_30_マーセ/coloso_マーセ_06 上半身に関するフェチの入れ方.md"
 ingested: 2026-06-01
-visual_ingested: 2026-08-23
 tags: [coloso, marse, fetish, upper-body, chest, clothing]
 status: active
 confidence: high
