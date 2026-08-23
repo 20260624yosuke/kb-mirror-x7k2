@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1229 ファイル_
+_合計 1230 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 1229 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-23T01:16:57Z
-- [log.md](root/log.md) | 2026-08-23T01:21:52Z
+- [index.md](root/index.md) | 2026-08-23T01:55:20Z
+- [log.md](root/log.md) | 2026-08-23T01:55:08Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/analyses/ (53)
@@ -257,7 +257,7 @@ _合計 1229 ファイル_
 - [ye-jji-ch04-p4-12m40s.png](wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-12m40s.png) | 2026-08-23T00:22:33Z
 - [ye-jji-ch04-p4-18m00s.png](wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-18m00s.png) | 2026-08-23T00:22:33Z
 
-## wiki/builds/ (65)
+## wiki/builds/ (66)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -315,6 +315,7 @@ _合計 1229 ファイル_
 - [obsidian-direct-open-entrypoint.md](wiki/builds/obsidian-direct-open-entrypoint.md) | 2026-08-22T12:22:28Z
 - [obsidian-miller-columns.md](wiki/builds/obsidian-miller-columns.md) | 2026-08-22T14:53:52Z
 - [obsidian-ui-improvement-roadmap.md](wiki/builds/obsidian-ui-improvement-roadmap.md) | 2026-08-22T14:54:16Z
+- [oxloop-parallel-agent-loop.md](wiki/builds/oxloop-parallel-agent-loop.md) | 2026-08-23T01:54:55Z
 - [plan-gate-skill.md](wiki/builds/plan-gate-skill.md) | 2026-08-13T13:28:21Z
 - [pureref-notion-link-workflow.md](wiki/builds/pureref-notion-link-workflow.md) | 2026-05-30T07:51:11Z
 - [pureref-personal-fork.md](wiki/builds/pureref-personal-fork.md) | 2026-06-22T12:49:33Z
@@ -972,8 +973,8 @@ _合計 1229 ファイル_
 - [coloso-chan-02-sec19-practical-process.md](wiki/sources/coloso-chan-02-sec19-practical-process.md) | 2026-05-31T17:13:58Z
 - [coloso-chan-02-sec20-outro.md](wiki/sources/coloso-chan-02-sec20-outro.md) | 2026-05-31T17:13:58Z
 - [coloso-hide-ch01-intro.md](wiki/sources/coloso-hide-ch01-intro.md) | 2026-05-31T17:38:22Z
-- [coloso-hide-ch02-line-drawing.md](wiki/sources/coloso-hide-ch02-line-drawing.md) | 2026-08-23T01:21:03Z
-- [coloso-hide-ch03-line-practice.md](wiki/sources/coloso-hide-ch03-line-practice.md) | 2026-05-31T17:38:22Z
+- [coloso-hide-ch02-line-drawing.md](wiki/sources/coloso-hide-ch02-line-drawing.md) | 2026-08-23T01:56:29Z
+- [coloso-hide-ch03-line-practice.md](wiki/sources/coloso-hide-ch03-line-practice.md) | 2026-08-23T01:56:52Z
 - [coloso-hide-ch04-body-basics.md](wiki/sources/coloso-hide-ch04-body-basics.md) | 2026-07-15T09:03:40Z
 - [coloso-hide-ch05-male-female-proportion.md](wiki/sources/coloso-hide-ch05-male-female-proportion.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch06-toushin-character.md](wiki/sources/coloso-hide-ch06-toushin-character.md) | 2026-05-31T17:38:22Z

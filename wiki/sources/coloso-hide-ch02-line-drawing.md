@@ -10,6 +10,7 @@ status: active
 confidence: high
 evidence_level: source-backed
 last_reviewed: 2026-08-23
+visual_ingested: 2026-08-23
 ---
 
 # coloso hide ch02 ― 線の引き方について

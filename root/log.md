@@ -9038,3 +9038,22 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
 - 追記（同日 10:35）: 移植計画書への承認カードで武田さんが「中断」を選択。
   実装未着手のまま停止。再開時は [[gf2-helen-futa-addition-handoff]] §2 から
   計画書の再承認を行う。残置物（抽出blend・実測JSON・計画書）は全て有効なまま保管。
+
+## [2026-08-23] build | oxloop 並列マルチエージェントループ新設
+
+- 実ファイルが存在しなかった oxloop 設計テキストを、武田さん承認のもと新規実装。
+  サブエージェントによる opencode CLI 実測レビュー(v1.18.21)を経て、判定権限を
+  LLM プロンプトから loop.sh へ移管する設計へ修正してから着手。
+- 新規: tools/oxloop/{loop.sh, prompts/{planner,worker,verifier}.md, README.md,
+  tests/t1-single.md, tests/t2-parallel.md, tests/t3-impossible.md} +
+  wiki/builds/oxloop-parallel-agent-loop.md。更新: index.md(build行追加)。
+- 機械的保証: VERIFIED 発行は「verifier rc=0 × 全アーム成功 × PROGRESS.log 非空 ×
+  REPORT必須節grep」の全条件時のみ(loop.sh)。アーム cwd 物理分離・タイムアウト内蔵・
+  失敗経路は STATE.log へ状態遷移記録。完了時 REPORT を成果物 Inbox へ自動申告。
+- テスト: t1 単一アーム縦貫 VERIFIED(2.5分)/t2 planner+3並列 VERIFIED+Inbox登録(9.5分)/
+  強制FIXESで繰り越し→ラウンド消費→exit6 を確認。t3 不可能仕様は verifier が代替達成として
+  正当合格(完了条件に逃げ道を書いた仕様側の教訓として記録)。
+- 試験中に修正した不具合: アーム一覧の空白分割爆発/worker へのアーム定義パス渡しが
+  cwd 外読取拒否で全滅(プロンプト埋め込み化)/watchdog sleep 孤児によるパイプ滞留/
+  二重 FAILCOUNT/KB_ROOT 階層誤り。
+- 未確認: 実運用タスクでの初回使用、5以上の並列、verifier 別モデル指定。
