@@ -254,6 +254,22 @@ sources:
     ストッキング表示と silkstock ramp適用（G10未反映4枚中2枚）は第1段合格後の展開時に
     改めて計画する。経緯は run-state.json の `plan_conflicts` "G13/DRESS" へ記録済み。
     成果物blend無変更
+51. **プローブ出自確認が合格（`f106`・計画v2は独立レビュー通過後）**: 完了条件3点が全合格 —
+    ①寮probe切替行が3日(07-25/08-19/08-22)に渡り8件 ②Dormを含むprobe名は
+    `06Aimo_Dorm_GFMB_lightProbes` のみで一意 ③Helen以外(Qiongjiu/Cheeta/Harpsy)でも
+    寮probe→Bedroom timeline密接隣接(<400文字)が各1例。
+    **「寮表示時にこのprobeセットが使われる」を併存証拠の範囲で採用**
+    （照明値そのものの証明ではない）。LT-16を新測定値へ同期・LT-20新設。
+    `[Lounge] Load Scene Task` 数値idと寝間Form表行id(106701系)の突合は不成立(有効な否定)。
+52. **プローブ個別評価（`f107`）**: f103の「baseline」が実は全LIGHT非表示+ほぼ黒世界だったことが判明
+    （＝真の現行灯レンダが未存在だったため本物も撮った）。current・mean_sh・probe0..7の
+    10候補×2カメラを同一構図でレンダ、輝度正規化済み肌÷髪比+R/Bで比較
+    （`logs/f107-compare.json`・`reports/matpreview/f107_contact_sheet.png`）。
+    原作32枚の正規化比は平均**3.32**(フレーム差1.82〜5.0)・R/B平均0.97。
+    最接近は mean_sh(face 2.94/full 2.11・R/B 0.972)とprobe2/4(2.89/2.3前後・R/B約1.0)、
+    どの単一probeも原作比には届かない → **「tetrahedral補間(最大4probe)+直接光欠落」の可能性**
+    として報告し、補間候補追加の可否を武田さんに問うて停止（計画v2の定義どおり）。
+    成果物blend無変更
 
 ---
 
