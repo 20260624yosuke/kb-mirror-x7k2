@@ -1664,6 +1664,15 @@ Lounge Task id と寝間Form表id(106701系)の突合は不成立。
 して報告し停止。比較シート `reports/matpreview/f107_contact_sheet.png`。
 成果物blend無変更（`e0ba175651c20251…`）。
 
+**f108/f109（較正候補とv2 blend書き出し・武田さん「必要なことをする」指示）**:
+台帳 `m_Tetrahedralization` はフラグのみで四面体実データは空だった（レビュー記述を訂正）。
+probe座標から偶数index＝下層(z0.01)暖色系・奇数index＝上層(z0.18)暗青系と判明し、層別平均＋
+原作平均輝度110への輝度較正(k倍)で5候補を作成。**cal_low** が全身比最接近(2.81/2.60・暖色)、
+**cal_mean_sh** が顔比・色味最接近(2.96/2.08・R/B 0.974)。f109でこの2つをBlenderで開ける
+v2候補blendとして書き出し済み（`blends/_candidate-sh-lighting/*_sh-candidate-v2-meansh.blend`・
+同 `_v2-low.blend`）。書き出し直後にセッション死亡し、報告のみ次セッションで実施。
+tetra真値不可のため approximation 扱い。成果物blend無変更。
+
 
 ## 使わなかったもの・落とした情報
 

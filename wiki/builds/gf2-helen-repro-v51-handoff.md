@@ -270,6 +270,19 @@ sources:
     どの単一probeも原作比には届かない → **「tetrahedral補間(最大4probe)+直接光欠落」の可能性**
     として報告し、補間候補追加の可否を武田さんに問うて停止（計画v2の定義どおり）。
     成果物blend無変更
+53. **較正候補5種とv2候補blend書き出し（`f108`/`f109`・武田さん指示「目標は原作の再現なので
+    必要なことをする」）**: 台帳の `m_Tetrahedralization` は**フラグのみで四面体実データは空**
+    （独立レビューの記述と異なるため訂正記録）。代わりにprobe座標の構造（偶数index=z下層0.01＝
+    暖色系・奇数index=z上層0.18＝暗青系）から層別平均＋原作平均輝度110への較正(k倍)で近似。
+    結果(`logs/f108-compare.json`): **cal_low**(下層4probe較正) face 2.81/**full 2.60**・R/B 1.013＝
+    全身比が最接近で暖色、**cal_mean_sh** face **2.96**/full 2.08・R/B 0.974＝顔比と色味が最接近
+    （原作 3.32/R/B 0.97 対比）。シート `reports/matpreview/f108_contact_sheet.png`。
+    `f109` で上位2候補を「Blenderで開けるblend」として書き出し済み
+    （`blends/_candidate-sh-lighting/helen-h0157-repro__e0ba175651c20251_sh-candidate-v2-meansh.blend`
+    SHA先頭 `84377d2017678db1`／同 `_v2-low.blend` SHA先頭 `5d8464c427ab5f13`。
+    ビューポートのシーンライト＋シーンワールドON済みで保存）。
+    **ここでセッション死亡（API network_error）→報告のみ次セッションへ持ち越し**。
+    tetra真値は scene root 回収まで不可のため本結果は approximation 扱い。成果物blend無変更
 
 ---
 
