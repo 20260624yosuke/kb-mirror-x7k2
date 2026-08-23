@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1272 ファイル_
+_合計 1282 ファイル_
 
 ## root/ (11)
 
@@ -237,6 +237,19 @@ _合計 1272 ファイル_
 - [marse-ch04-02m00s.png](wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/marse-ch04-02m00s.png) | 2026-08-23T00:42:05Z
 - [marse-ch04-02m40s.png](wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/marse-ch04-02m40s.png) | 2026-08-23T00:42:05Z
 - [marse-ch04-03m00s.png](wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/marse-ch04-03m00s.png) | 2026-08-23T00:42:05Z
+
+## wiki/assets/frames/coloso-sasa-ch01-intro/ (10)
+
+- [sasa-ch01-00m40s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-00m40s.png) | 2026-08-23T08:19:16Z
+- [sasa-ch01-02m00s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-02m00s.png) | 2026-08-23T08:19:16Z
+- [sasa-ch01-03m20s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-03m20s.png) | 2026-08-23T08:19:16Z
+- [sasa-ch01-04m20s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-04m20s.png) | 2026-08-23T08:19:16Z
+- [sasa-ch01-05m20s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-05m20s.png) | 2026-08-23T08:19:16Z
+- [sasa-ch01-07m03s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-07m03s.png) | 2026-08-23T08:19:16Z
+- [sasa-ch01-08m00s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-08m00s.png) | 2026-08-23T08:19:16Z
+- [sasa-ch01-08m20s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-08m20s.png) | 2026-08-23T08:19:16Z
+- [sasa-ch01-09m00s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-09m00s.png) | 2026-08-23T08:19:16Z
+- [sasa-ch01-10m00s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-10m00s.png) | 2026-08-23T08:19:16Z
 
 ## wiki/assets/frames/coloso-ye-jji-ch02-contrast/ (11)
 
