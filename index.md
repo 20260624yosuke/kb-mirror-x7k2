@@ -1137,7 +1137,7 @@ _合計 1282 ファイル_
 - [coloso-nekojira-ch25-final-corrections.md](wiki/sources/coloso-nekojira-ch25-final-corrections.md) | 2026-06-22T12:48:42Z
 - [coloso-nekojira-ch26-summary-advice.md](wiki/sources/coloso-nekojira-ch26-summary-advice.md) | 2026-06-22T12:48:42Z
 - [coloso-nekojira-product-page.md](wiki/sources/coloso-nekojira-product-page.md) | 2026-08-22T13:10:17Z
-- [coloso-sasa-ch01-intro.md](wiki/sources/coloso-sasa-ch01-intro.md) | 2026-06-10T13:29:43Z
+- [coloso-sasa-ch01-intro.md](wiki/sources/coloso-sasa-ch01-intro.md) | 2026-08-23T08:43:21Z
 - [coloso-sasa-ch02-insight-memo.md](wiki/sources/coloso-sasa-ch02-insight-memo.md) | 2026-06-10T13:16:52Z
 - [coloso-sasa-ch03-growth-mechanism.md](wiki/sources/coloso-sasa-ch03-growth-mechanism.md) | 2026-06-10T13:16:52Z
 - [coloso-sasa-ch04-foundation-theory.md](wiki/sources/coloso-sasa-ch04-foundation-theory.md) | 2026-06-10T13:16:52Z
