@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1293 ファイル_
+_合計 1294 ファイル_
 
 ## root/ (11)
 
@@ -324,7 +324,7 @@ _合計 1293 ファイル_
 - [ye-jji-ch05-p3-07m00s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p3-07m00s.png) | 2026-08-23T09:15:08Z
 - [ye-jji-ch05-p3-14m40s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p3-14m40s.png) | 2026-08-23T09:15:09Z
 
-## wiki/builds/ (68)
+## wiki/builds/ (69)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -351,6 +351,7 @@ _合計 1293 ファイル_
 - [eagle-dedup-merge-2026-07-07.md](wiki/builds/eagle-dedup-merge-2026-07-07.md) | 2026-07-09T11:29:46Z
 - [eagle-folder-sort.md](wiki/builds/eagle-folder-sort.md) | 2026-07-04T14:37:29Z
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
+- [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-23T15:47:44Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-23T14:24:25Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
 - [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-23T11:14:20Z
