@@ -1367,8 +1367,12 @@ grep してもゲームデータの証明にならない。
 
 ## 次のセッションへ（2026-08-22 追記）
 
-**引き継ぎ資料の正本は `06_repro-v51/reports/HANDOFF-2026-08-20.md`**（ファイル名は20日のまま、
-本文へ2026-08-22のIL2CPP境界調査まで追記）。`reports/HANDOFF.md` は 2026-08-19 までの古い版。
+**引き継ぎ資料の正本は [[gf2-helen-repro-v51-handoff]]**
+（`wiki/builds/gf2-helen-repro-v51-handoff.md`。2026-08-23に武田さん決定で
+作業フォルダ `06_repro-v51/reports/HANDOFF-2026-08-20.md` から実体ごと wiki へ移動した。
+旧パスにはポインタだけ残してあり、`run-state.json` の `handoff_file` もこのページを指す。
+以後 HANDOFF への追記は wiki 側へ直接書く）。
+`reports/HANDOFF.md` は 2026-08-19 までの古い版なので参照しない。
 
 ### 済んだこと（2026-08-20）
 

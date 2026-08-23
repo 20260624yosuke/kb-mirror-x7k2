@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1204 ファイル_
+_合計 1205 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 1204 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-22T23:41:27Z
-- [log.md](root/log.md) | 2026-08-22T23:47:17Z
+- [index.md](root/index.md) | 2026-08-23T00:34:51Z
+- [log.md](root/log.md) | 2026-08-23T00:35:53Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/analyses/ (52)
@@ -228,7 +228,7 @@ _合計 1204 ファイル_
 - [ye-jji-ch04-p4-12m40s.png](wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-12m40s.png) | 2026-08-23T00:22:33Z
 - [ye-jji-ch04-p4-18m00s.png](wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-18m00s.png) | 2026-08-23T00:22:33Z
 
-## wiki/builds/ (63)
+## wiki/builds/ (64)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -254,7 +254,8 @@ _合計 1204 ファイル_
 - [eagle-folder-sort.md](wiki/builds/eagle-folder-sort.md) | 2026-07-04T14:37:29Z
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
-- [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-22T20:44:34Z
+- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-23T00:32:35Z
+- [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T00:34:32Z
 - [gf2-helen-rest-room-motion-v22.md](wiki/builds/gf2-helen-rest-room-motion-v22.md) | 2026-07-27T00:02:48Z
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z
 - [gf2-helen-ssr0101-short-outfit-reference-build.md](wiki/builds/gf2-helen-ssr0101-short-outfit-reference-build.md) | 2026-07-27T00:17:22Z
@@ -1087,8 +1088,8 @@ _合計 1204 ファイル_
 - [coloso-ye-jji-ch01-intro.md](wiki/sources/coloso-ye-jji-ch01-intro.md) | 2026-07-07T00:52:32Z
 - [coloso-ye-jji-ch02-contrast.md](wiki/sources/coloso-ye-jji-ch02-contrast.md) | 2026-07-12T02:39:57Z
 - [coloso-ye-jji-ch03-silhouette.md](wiki/sources/coloso-ye-jji-ch03-silhouette.md) | 2026-08-22T18:45:14Z
-- [coloso-ye-jji-ch04-volume.md](wiki/sources/coloso-ye-jji-ch04-volume.md) | 2026-08-23T00:30:29Z
-- [coloso-ye-jji-ch05-texture-basic.md](wiki/sources/coloso-ye-jji-ch05-texture-basic.md) | 2026-05-31T17:43:13Z
+- [coloso-ye-jji-ch04-volume.md](wiki/sources/coloso-ye-jji-ch04-volume.md) | 2026-08-23T00:32:02Z
+- [coloso-ye-jji-ch05-texture-basic.md](wiki/sources/coloso-ye-jji-ch05-texture-basic.md) | 2026-08-23T00:32:54Z
 - [coloso-ye-jji-ch06-texture-applied.md](wiki/sources/coloso-ye-jji-ch06-texture-applied.md) | 2026-05-31T17:43:15Z
 - [coloso-ye-jji-ch07-color-basic.md](wiki/sources/coloso-ye-jji-ch07-color-basic.md) | 2026-05-31T17:13:57Z
 - [coloso-ye-jji-ch08-color-applied.md](wiki/sources/coloso-ye-jji-ch08-color-applied.md) | 2026-05-31T17:13:57Z

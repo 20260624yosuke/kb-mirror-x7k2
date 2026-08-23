@@ -1405,6 +1405,7 @@
 - [[eagle-save-script-use-cases-2026-06-17]] — Eagle保存スクリプトを「保存した瞬間の文脈を失わない入口」として使う候補整理。反応数・出典・保存理由・重複検出を優先し、自動分類や確定タグ付けは後回し (ai-hypothesis, 2026-06-17)
 - [[asuna-maid-costume-structure]] — アスナ風メイド衣装を、白い胸当てパネル・紺V字パーツ・エプロン・ガーター風ストラップに分けて作画用に整理。Grok候補URLの優先度と追加検索語も分類 (ai-hypothesis, 2026-06-23)
 - [[gf2-helen-repro-v51-run]] — HELEN-REPRO v5.1 の実行記録（正本）。輪郭線clip.xyの世界座標化とMetal reversed-Z導出は反映済み。HybridCLR一次解析と保存runtime logでGFMB/Helen寮の併存を確認。改訂f88は6入口・2 phase・cleanup必須へ実装したが、2026-08-22の原本LLDB attach 1回はOSが拒否したため再試行せず技術的停止。breakpointとtraceは無く、scene load requestは未観測。候補照明・RampSettingは新規適用せず、scene/prefab rootと照明値は未回収。現行blendの既存推測AREA灯3つと既定階調は残存 (source-backed+user-stated, 2026-08-22)
+- [[gf2-helen-repro-v51-handoff]] — HELEN-REPRO v5.1 のセッション引き継ぎ資料（HANDOFF）。2026-08-23に作業フォルダ `06_repro-v51/reports/` から wiki へ実体ごと移動（武田さん決定）。読む順序・セッション作業ログ49件・f72門の仕様・8本の機械の門一覧・運用ルール短縮版を含む。数値の正本は [[gf2-helen-repro-v51-run]] 側で、`run-state.json` の `handoff_file` がこのページを指す (source-backed, 2026-08-23)
 - [[gf2-helen-ssr0101-obs-ledger-v51]] — 計画 v5.1 の OBS 全46件と、工程Aでの再測定（96項目中94一致／不一致はOBS9のみ・GATE未使用） (source-backed, 2026-08-10)
 - [[gf2-helen-bone-hierarchy-missing-2026-08-10]] — HELEN-REPRO v5.1 工程Bの新規観測。原作アニメの適用に要る骨の親子関係が、メッシュ骨323本中57本ぶんこの環境に存在しない（Avatar 415個・実在パス911万本まで探索して空振り）。胸メッシュのウェイト12〜40%に効くため工程C/Eを停止 (source-backed, 2026-08-10)
 - [[gf2-helen-cloth2-variant-breakage-2026-08-10]] — 前回の原因診断の訂正。「未解決57本が原因」は実測で否定（除外しても Flat 217倍・General 103倍・Bend 239倍）。無印 cloth2 は1.57倍で正常。壊れているのは確定済みと報告した骨の方 (source-backed, 2026-08-10)

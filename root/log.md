@@ -8974,3 +8974,34 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
     へ複製(i0823672.md 等・ID名)し、本文/画像を埋め込みで同ページ内に表示。処理済み化時に
     複製を自動削除(cleanup_staged)。残存対象外はフォルダ・コード等の稀タイプのみ。
     ボード再生成済み。埋め込み表示の実機確認待ち。
+
+## [2026-08-23] ingest | ye_jji ch04 量感の描写 映像観測追加(B1・分割4本/v2.3 初適用)
+
+- B1 第1章。4パート(04_01〜04_04、計約64分)を 1 source ページ([[coloso-ye-jji-ch04-volume]])+
+  1 frames ディレクトリ+1 manifest(videos[] 形式)で処理。`video_ingest_gate.py snapshot` に
+  複数 raw ページ対応(--page 反復→raw_pages[] 記録・check で全ページ来歴検証)を追加し後方互換確認済み(ch03 PASS)。
+- 抽出210枚(20秒間隔+文字起こし誘導16箇所)→ Task サブエージェント15体で盲検読取 → 保存24枚。
+- recheck 3枚(p1-01m00s 角度別明度表の数値表 / p2-14m07s / p4-12m40s)= 全 confirmed。
+- 録画不良の発見: パート3 03:20 とパート4 11:00 付近に「No Signal」信号消失フレーム(ev-016/ev-022)。
+- 運用確定(今後の標準手順): frontmatter 追補(visual_ingested 込み) → snapshot → 抽出 → 盲検読取 →
+  保存+manifest → 観測節をファイル末尾へ追記(節内は ### 以下で統一し tail を空保ち) → check PASS。
+  今回は manifest 側相対パス不備と節後置の ## 見出しで 2回 FAIL → 修正して PASS。
+- 更新: [[coloso-ye-jji-ch04-volume]](`## 映像観測(フレーム由来)` 新設・frontmatter・`visual_ingested`),
+  `wiki/assets/frames/coloso-ye-jji-ch04-volume/`(snapshot+manifest+フレーム24枚), `tools/video_ingest_gate.py`(複数rawページ対応), `log.md`
+
+## [2026-08-23] ingest | HELEN-REPRO v5.1 HANDOFF の wiki 取り込み（実体移動）
+
+- 武田さん決定により、作業フォルダの引き継ぎ資料
+  `gf2-helen-starlit-waltz/06_repro-v51/reports/HANDOFF-2026-08-20.md` の実体を wiki へ移動し、
+  [[gf2-helen-repro-v51-handoff]] として新設（frontmatter 追加・所在変更の info 注記・
+  §0 の自己参照を更新。本文は無改変）。
+- 理由: (1) wiki 外の情報は index/log/lint の監査線から外れる (2) 作業フォルダコピーを
+  規律で同期する方式は、旧 `reports/HANDOFF.md` が陳腐化して撤回済み結論を引用した
+  前例（wiki 正本 690行目付近・2026-08-18）がある。
+- 旧パスには行き先だけ書いたポインタを残した。`run-state.json` の `handoff_file` と
+  `next_action.参照` を wiki 絶対パスへ更新し、history に所在変更を記録
+  （last_updated 2026-08-23T09:33:55+09:00・blend 無変更）。
+- `reports/NEXT-SESSION-PROMPT.md` の HANDOFF 参照2件を wiki パスへ更新。
+- 更新: [[gf2-helen-repro-v51-handoff]](新規), [[gf2-helen-repro-v51-run]](次セッション節),
+  `index.md`, `log.md`, プロジェクト側 `run-state.json`, `reports/HANDOFF-2026-08-20.md`(ポインタ化),
+  `reports/NEXT-SESSION-PROMPT.md`
