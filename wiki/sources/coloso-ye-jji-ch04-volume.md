@@ -146,3 +146,48 @@ ch03 で学んだ **シルエット = 第一印象** の原則が、明暗境界
 - `Pasted image 20260516180748.png` — Shape Shading Description の量感描画後
 - `Pasted image 20260516184824.png` — キャラクターの下地
 - `Pasted image 20260516184840.png` — キャラクターの量感描画後
+## 映像観測(フレーム由来)
+
+この節は、本文・補助資料・図とは別に、動画フレーム上で確認できた事実を証拠 ID と画像付きで記録する層である。利用時はこの章ページ全体の知識として本文や図と照合するが、映像観測だけから本文にない解釈を自動で確定しない。
+
+- 抽出日: 2026-08-23 / 元動画: [[04_01 2.mov]] + [[04_02.mov]] + [[04_03.mov]] + [[04_04.mov]](分割4本・v2.3)
+- 方式: 各20秒間隔 + 文字起こし誘導(計16箇所) / 抽出210枚・読取210枚・保存24枚
+- 設計版: video-visual-ingest-design v2.3 / 読取モデル: opencode/x-preview-f-free (ox-alpha)
+- 凡例: 観測列は画面上で確認できた事実のみ。字幕はフレームで判読できた範囲だけを要約した。スライド文字は原文のまま。
+
+| evidence_id | 動画 | 時刻 | frame | 確信度 | 画面の観測(事実のみ) |
+|---|---|---|---|---|---|
+| ev-001 | 04_01 2.mov | 00:20 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p1-00m20s.png]] | high | スライド「1. 明暗理論」。黒枠見出し「いつ暗くなり、明るくなるのか？」→「光の量によって決まる！」→分岐「1. 距離」「2. 角度」。下段に電球(「光源」ラベル)+斜め配置パネル+赤い直線と角度記号+球体図解。 |
+| ev-002 | 04_01 2.mov | 01:00 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p1-01m00s.png]] | high | 同スライド右側に角度別の割合表が追加: 「90° 100% / 100° 99% / 110° 97% / 120° 94% / 130° 89% / 140° 82°(%表記なし) / 150° 73% / 160° 62% / 170° 45% / 180° 0%」。その右に白→黒グラデ球体。再確認で数値一致(confirmed)。 |
+| ev-003 | 04_01 2.mov | 02:00 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p1-02m00s.png]] | high | ハングルタブ「1. 명암 이론 / 2. 명암 종류」。白背景の球体(左上照り・右下暗)の境目に手書き白線、ペン先カーソル。字幕「この境界線を明暗境界、またはターミネーターと呼びます。」 |
+| ev-004 | 04_01 2.mov | 02:40 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p1-02m40s.png]] | high | 灰色床面シーンの接地球体。ラベル「Center Light」(頂点小円)、「Terminator」、「Mid tone」、床の影へ「Cast shadow」、手書きハングル注記2箇所。 |
+| ev-005 | 04_01 2.mov | 03:40 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p1-03m40s.png]] | high | 素の球体スライドに赤手書き注釈2つ:「Core shadow」(右暗部へ矢印)、「Occlusion shadow」(接地面の影へ)。 |
+| ev-006 | 04_01 2.mov | 04:00 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p1-04m00s.png]] | high | 白黒写真2分割スライド=左: ポニーテール石膏像(木陰・左から光)、右: 枕多数の白いベッド。注釈なし。 |
+| ev-007 | 04_01 2.mov | 08:00 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p1-08m00s.png]] | high | スライド「3. 描写方法」見出し「フォームシャドウの描写」副文「ぼかし具合(=中間トーンの範囲)で立体感を表現」。角が鋭利→丸め→複数段グレーの3直方体にピンク両端矢印。右上付箋「注意事項 / ぼかしツールの使用時は注意！」 |
+| ev-008 | 04_01 2.mov | 10:37 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p1-10m37s.png]] | high | ハングル見出し「캐스트 쉐도우 위치 계산」。透視床面に立方体ブロック群・六角柱・六角錐。手描き電球+赤ハングル「빛의 각도」「빛의 방향」。電球から赤光線が床へ、黒方向線が床を横切る。 |
+| ev-009 | 04_02.mov | 03:40 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p2-03m40s.png]] | high | CSP EX(4001x2251px)。床面に青い楕円=鍋のキャストシャドウ作図中。球体周辺にも青弧・直線・頂点ドット。Brush Size 28.2、HSV H220/S80/V100(青)。Layer 55 選択。 |
+| ev-010 | 04_02.mov | 04:00 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p2-04m00s.png]] | high | 青構築線が非表示になり、直方体から右へ伸ぶ鍋・円柱・球一体の影がグレー塗り完了。消しゴム系サブツール表示。Brush Size 145.9、V41%。Layer 56 選択。 |
+| ev-011 | 04_02.mov | 06:20 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p2-06m20s.png]] | high | キャンバス反時計回り回転表示(回転角欄 -77.1)。鍋横向き・蓋穴が手前。Brush Size 25.8。字幕「手首が楽な角度にキャンバスを傾けて…」 |
+| ev-012 | 04_02.mov | 13:35 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p2-13m35s.png]] | high | 静物全体(倍率66.6%)。字幕「そして次に反射光の描写を進めていきましょう。」Brush Size 60.7、V41%、Layer 60 選択。 |
+| ev-013 | 04_02.mov | 14:07 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p2-14m07s.png]] | high | キャンバス左上と右側に赤矢印を複数描き込み。字幕「従って、右から、下から、後ろから 来ることができます。」Brush Size 21.7、赤選択、Layer 61 選択。再確認 confirmed。 |
+| ev-014 | 04_03.mov | 01:38 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p3-01m38s.png]] | high | 静物ドキュメント。選択範囲系ツール選択(직사각형 선택/타원 선택等)。静物全体+影。字幕「このように図形の明暗を入れる実習を終わらせていきましょう。」(直後のフレーム時点) |
+| ev-015 | 04_03.mov | 02:00 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p3-02m00s.png]] | high | 別ドキュメント「4장 실습* (1871 x 3460px)」へ切替。ツインテール長髪少女の線画+フラット明るいグレー塗り。タブ2枚。字幕「そのためカリキュラムに追加してみました。」 |
+| ev-016 | 04_03.mov | 03:20 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p3-03m20s.png]] | high | 全面黒フレームに白文字「No Signal」+数字「14468111」。録画の信号消失フレーム。アプリUIなし。 |
+| ev-017 | 04_03.mov | 04:29 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p3-04m29s.png]] | high | キャラ全身(倍率48.5%)。髪右半分・顔横・胸元・シャツに濃グレー影塗り済み。字幕「ここは顔の影が落ちる可能性がありますね。」 |
+| ev-018 | 04_03.mov | 11:44 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p3-11m44s.png]] | high | 全身表示(49.0%)。フォーム〜キャストまで整理済み。字幕「そしてキャストシャドウまでずっと整理してみました。」Layer 2 ハイライト。 |
+| ev-019 | 04_04.mov | 00:20 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-00m20s.png]] | high | キャラ顔アップ(121%)。ぼかし工程開始時点。Brush Size 73.4、V62%。Layer 8 選択。 |
+| ev-020 | 04_04.mov | 01:20 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-01m20s.png]] | high | キャンバス反時計回り表示(100%)。右上に黒い滴型デモ形状+赤ストローク。字幕「だから上側だけを柔らかくするんです。」Brush Size 62.0。 |
+| ev-021 | 04_04.mov | 09:40 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-09m40s.png]] | high | 全身(40.5%)。Brush Size 349.4。字幕「フォームシャドウのこのラインだけ溶かしていきます。」Layer 8 選択。 |
+| ev-022 | 04_04.mov | 11:00 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-11m00s.png]] | high | 全面黒フレームに白文字「No Signal」+数字「14468111」。録画の信号消失フレーム(p3 の 03:20 と同一表示)。 |
+| ev-023 | 04_04.mov | 12:40 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-12m40s.png]] | high | 胸像クローズアップ(73.3%)。長方形選択ツールアクティブ、横髪に破線選択範囲+フローティング選択バー。V13%。字幕「このような横髪と後ろ髪を区別するこの位置にも、オクルージョンシャドウが生まれる可能性がありますね。」再確認 confirmed。 |
+| ev-024 | 04_04.mov | 18:00 | ![[wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-18m00s.png]] | high | 最終状態(44.4%)。全身表示、レイヤーパネル末尾(Layer 12/2/1 等)まで表示。エアブラシパネル、Brush Size 117.0、V39%。 |
+
+### 再確認(recheck)
+
+保存24枚中3枚(p1-01m00s / p2-14m07s / p4-12m40s)を別サブエージェントが盲検再読取し、全件 confirmed(不一致なし)。
+
+## 不確実・要確認
+
+- 本節の観測は各パート20秒間隔+計16箇所の狙い撃ち抽出に基づく。それ以外の時点の画面状態は断定しない。
+- パート3(03:20付近)とパート4(11:00付近)に「No Signal」信号消失フレームがある(ev-016, ev-022)。該当区間の画面内容は本節から取得できない。
+- 各動画は2026-08-23移植の録画版であり、raw 文字起こしの時刻と数十秒程度ずれる可能性がある。「時刻」列は動画ファイル上の時刻。
