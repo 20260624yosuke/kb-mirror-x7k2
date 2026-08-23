@@ -234,6 +234,12 @@ sources:
     機械比較: 原作 肌÷髪 **3.52** / SH候補 **2.23** / 現行旧灯は暗すぎて測定不能(null)。
     画像 `reports/matpreview/f103_contact_sheet.png`・数値 `logs/f103-compare.json`。
     本blend反映は未実施（武田さんの見比べ待ち）。
+    **【2026-08-23 午後 追記】輝度を110に正規化して再測定**（`logs/f103-compare-normalized.json`）:
+    旧灯 face **3.66**/full **4.17**、SH候補 face **2.94**/full **2.11**（原作3.52）。
+    正規化すると旧灯の肌÷髪比の方が原作に近い（旧灯は暗かっただけで比自体は取れていた）。
+    R/B色味（`logs/f103-rb-color.json`）: SH候補 **0.972** / 旧灯 **1.00** / 原作 **0.952**。
+    数値は参考値。合否は `reports/stage1-review-sheet.png`
+    （旧灯・SH候補・原作を見比べる第1段目視判断用シート）での武田さんの判断。
     **B=backup volume点検**（`ledger/backup-volume-access-20260823.json`）: HDD_02 全深度で
     ゲームデータ無し。HDD_バックアップ/HDD_バックアップ_macbookpro の2台は macOS TCC で
     root列挙拒否 → **フルディスクアクセス許可が武田さんの操作として必要**。

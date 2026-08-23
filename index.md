@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1224 ファイル_
+_合計 1229 ファイル_
 
 ## root/ (11)
 
@@ -185,6 +185,14 @@ _合計 1224 ファイル_
 - [hizurume-ch12-02-11m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-11m00s.png) | 2026-08-22T15:28:38Z
 - [hizurume-ch12-02-11m48s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-11m48s.png) | 2026-08-22T19:06:41Z
 
+## wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/ (5)
+
+- [marse-ch04-00m20s.png](wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/marse-ch04-00m20s.png) | 2026-08-23T00:42:05Z
+- [marse-ch04-00m48s.png](wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/marse-ch04-00m48s.png) | 2026-08-23T00:42:05Z
+- [marse-ch04-02m00s.png](wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/marse-ch04-02m00s.png) | 2026-08-23T00:42:05Z
+- [marse-ch04-02m40s.png](wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/marse-ch04-02m40s.png) | 2026-08-23T00:42:05Z
+- [marse-ch04-03m00s.png](wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/marse-ch04-03m00s.png) | 2026-08-23T00:42:05Z
+
 ## wiki/assets/frames/coloso-ye-jji-ch02-contrast/ (11)
 
 - [ye-jji-ch02-04m07s.png](wiki/assets/frames/coloso-ye-jji-ch02-contrast/ye-jji-ch02-04m07s.png) | 2026-07-12T02:05:39Z
@@ -276,8 +284,8 @@ _合計 1224 ファイル_
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-23T01:21:46Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
-- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-23T00:55:56Z
-- [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T00:56:20Z
+- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-23T01:28:29Z
+- [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T01:28:37Z
 - [gf2-helen-rest-room-motion-v22.md](wiki/builds/gf2-helen-rest-room-motion-v22.md) | 2026-07-27T00:02:48Z
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z
 - [gf2-helen-ssr0101-short-outfit-reference-build.md](wiki/builds/gf2-helen-ssr0101-short-outfit-reference-build.md) | 2026-07-27T00:17:22Z

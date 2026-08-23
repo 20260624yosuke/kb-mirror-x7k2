@@ -1626,6 +1626,10 @@ f95 で blend が変わったために古かった確認画像3枚を**現行 bl
 `blends/_candidate-sh-lighting/` を生成。自己検査（球面平均==DC）誤差5e-4で合格。
 機械比較は 原作 肌÷髪 **3.52** / SH候補 **2.23** / 現行旧灯は暗すぎて測定不能。
 本blend反映は未実施。画像 `reports/matpreview/f103_contact_sheet.png`。
+**【午後 追記】輝度110正規化で再測定**: 旧灯 face 3.66/full 4.17、SH候補 face 2.94/
+full 2.11 → 正規化すると旧灯の比率の方が原作に近い。R/B色味は SH候補 0.972 /
+旧灯 1.00 / 原作 0.952。第1段目視判断用シート `reports/stage1-review-sheet.png`
+を作成済み。数値は参考値、合否は武田さんの見比べ。
 
 **B**: HDD_02 全深度でゲームデータ無し。HDD_バックアップ系2台は macOS TCC 拒否中
 （フルディスクアクセス許可待ち）。`ledger/backup-volume-access-20260823.json`。
