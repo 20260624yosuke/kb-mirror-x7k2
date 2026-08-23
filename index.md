@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1291 ファイル_
+_合計 1292 ファイル_
 
 ## root/ (11)
 
@@ -323,7 +323,7 @@ _合計 1291 ファイル_
 - [ye-jji-ch05-p3-07m00s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p3-07m00s.png) | 2026-08-23T09:15:08Z
 - [ye-jji-ch05-p3-14m40s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p3-14m40s.png) | 2026-08-23T09:15:09Z
 
-## wiki/builds/ (67)
+## wiki/builds/ (68)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -340,6 +340,7 @@ _合計 1291 ファイル_
 - [codex-handoff-raw-ingest-batch.md](wiki/builds/codex-handoff-raw-ingest-batch.md) | 2026-07-07T00:55:14Z
 - [codexbar.md](wiki/builds/codexbar.md) | 2026-07-14T11:51:42Z
 - [coloso-ingest-coverage-audit.md](wiki/builds/coloso-ingest-coverage-audit.md) | 2026-07-07T01:00:00Z
+- [coloso-parallel-ingest-project.md](wiki/builds/coloso-parallel-ingest-project.md) | 2026-08-23T12:45:51Z
 - [coloso-visual-ingest-resume-inventory.md](wiki/builds/coloso-visual-ingest-resume-inventory.md) | 2026-08-23T12:03:30Z
 - [context-harness.md](wiki/builds/context-harness.md) | 2026-08-13T15:35:51Z
 - [deliverable-inbox.md](wiki/builds/deliverable-inbox.md) | 2026-08-22T23:47:34Z
