@@ -1078,9 +1078,9 @@ _合計 1272 ファイル_
 - [coloso-marse-ch02-course-outline.md](wiki/sources/coloso-marse-ch02-course-outline.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch03-work-environment.md](wiki/sources/coloso-marse-ch03-work-environment.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch04-reference-trend-face-stock.md](wiki/sources/coloso-marse-ch04-reference-trend-face-stock.md) | 2026-08-23T01:33:34Z
-- [coloso-marse-ch05-fetish-face.md](wiki/sources/coloso-marse-ch05-fetish-face.md) | 2026-06-01T03:44:37Z
-- [coloso-marse-ch06-fetish-upper-body.md](wiki/sources/coloso-marse-ch06-fetish-upper-body.md) | 2026-06-01T03:39:48Z
-- [coloso-marse-ch07-fetish-lower-full-body.md](wiki/sources/coloso-marse-ch07-fetish-lower-full-body.md) | 2026-06-01T03:39:48Z
+- [coloso-marse-ch05-fetish-face.md](wiki/sources/coloso-marse-ch05-fetish-face.md) | 2026-08-23T08:14:07Z
+- [coloso-marse-ch06-fetish-upper-body.md](wiki/sources/coloso-marse-ch06-fetish-upper-body.md) | 2026-08-23T08:14:07Z
+- [coloso-marse-ch07-fetish-lower-full-body.md](wiki/sources/coloso-marse-ch07-fetish-lower-full-body.md) | 2026-08-23T08:14:07Z
 - [coloso-marse-ch08-focus-first-composition.md](wiki/sources/coloso-marse-ch08-focus-first-composition.md) | 2026-06-01T03:44:37Z
 - [coloso-marse-ch09-feminine-pose.md](wiki/sources/coloso-marse-ch09-feminine-pose.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch10-arms-gaze-guide.md](wiki/sources/coloso-marse-ch10-arms-gaze-guide.md) | 2026-06-01T03:39:48Z
