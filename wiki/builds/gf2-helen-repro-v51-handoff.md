@@ -301,6 +301,19 @@ sources:
     0件のままblocked⑥照明の合否基準(GATE)は存在しない＝「監査抜け」ではなく判定不能だった。
     証拠 `logs/f110-lighting-stack.json`（冪等2回同一payload SHA・blend SHA前後一致）・
     報告 `reports/LIGHTING-DIAGNOSIS-2026-08-23.md`。成果物blend無変更
+56. **原作照明データ抽出を実施（`E0〜E3`・2026-08-24未明・抽出計画v2承認済み）**:
+    W1〜W4サブエージェント調査(カタログ60,434件横断/実行ログ再解析/展開レベル18,568本台帳化/計画レビュー)で
+    「動いた寮シーンの実体」は名前・CAB・サイズ3面からローカル不在と確定(F1〜F3)。
+    抽出対象を手元資産へ移し、E0=既回収実値(post24/LUTチェーン/SH8参照)の一式化
+    `logs/e0-post-values.json`、**E1=焼き込み照明の実画像抽出**: lightmap 1024×1024(light/shadowmask)
+    ×341/337インスタンス・ReflectionProbe cubemap×350/310/28・LUT を `reports/lighting-extract/`(984項目)へ
+    PNG書き出し、manifest `logs/e1-baked-lighting.json`(正対照合格・寸法台帳一致・ASTC手動デコード)。
+    **欠損2列表**: lightmap→rendererバインド/probe位置/RenderSettings/直接光はscene root依存で欠落=
+    適用時は approximation 明示が必須。E2=#USヒープ走査 `logs/e2-code-strings.json`: cache版DLLに
+    `LobbySceneManager.LoadRoomById:{0} begin` のログ書式文字列が実在(先行「0件」と部分一致で食い違い・
+    完全一致0・陽性対照両版合格)。E3=`logs/e3-room-trace.json`: RoomById 18件(Load8/Release10、
+    N=101/104/106/201/202)の近接表、計数はW2と完全一致。E4=backup volume走査はFDA許可待ち。
+    計画正本 `reports/LIGHT-DATA-EXTRACTION-PLAN-2026-08-23.md`。既存ファイル無変更
 
 ---
 

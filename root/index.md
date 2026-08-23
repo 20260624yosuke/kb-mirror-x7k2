@@ -1356,6 +1356,7 @@
 
 ## Analyses
 
+- [[gf2-helen-light-extract-execution-20260824]] — 原作照明データ抽出(E0〜E3)の実行結果サマリ。焼き込みlightmap2枚+cubemap3枚+LUTを実画像化(reports/lighting-extract 984項目・正対照合格)、cache版DLLにLoadRoomByIdログ書式3件実在、bind/probe位置はscene root依存で欠落=適用時approximation必須、E4はFDA待ち (source-backed, 2026-08-24)
 - [[gf2-helen-lighting-diagnosis-summary-20260823]] — ヘレン再現blendの照明診断サマリ(HTML要約)。ビューポート保存設定10画面すべてシーン灯OFFで森HDRIのみ・ramp入力37材質とも固定Z軸で灯に追従しない・直接光実値0件はblocked・照明の合否基準自体が未定義、の4点をf110実測で確定 (source-backed, 2026-08-23)
 
 - [[ch12-pilot-session-recovery-collision-verification]] — ch12 パイロット実行時の運用記録3点。親セッション停止後にサブエージェントの盲検読取結果が opencode DB へ残留していた復旧手順(プロンプト部集計の過大評価という実害含む)、desktop/CLI 2体が同一成果物へ書き込む二重作業衝突の検知と footprint 撤去による解消、完成物47行に対する独立検証(gate 再実行 PASS・第三盲検読取で不一致2フレームを決着し表どおり正しいことを確認)。落とし穴 #10/#11 の元記録 (source-backed, 2026-08-23)

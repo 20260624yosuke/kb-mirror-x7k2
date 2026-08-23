@@ -9153,3 +9153,18 @@ reports/LIGHTING-DIAGNOSIS-2026-08-23.md・run-state history追記・wiki正本(
 - 提案(すべて未実施・次回承認待ち): A symlink ページ作成 or リンク削除 /
   B index 追記・孤立 2 件の相互リンク整備 / C legacy 370 件は従来どおり触る際追補で継続。
 - 更新: `wiki/analyses/lint-report-2026-08-23.md`(新規), `index.md`, `log.md`。
+
+
+## [2026-08-24] query | ヘレン再現 原作照明データ抽出(E0〜E3)の実行とサマリ
+
+死亡セッション(ses_fd1d8e935ffe0)の承認済み計画v2を本セッションで再開・完了。
+E0=既回収実値一式化(logs/e0-post-values.json all_pass)。E1=死亡中に裏で完走していた抽出物を実ファイル
+確認で回収: reports/lighting-extract/(984項目)+logs/e1-baked-lighting.json(正対照合格・ASTC手動デコード・
+欠損2列=bind/probe位置/RenderSettings/直接光はscene root依存→適用時approximation必須)。
+E2=logs/e2-code-strings.json(cache版#USにLoadRoomById書式3件実在・陽性対照両版合格)。
+E3=logs/e3-room-trace.json(RoomById18件近接表・W2計数と完全一致)。E4=FDA待ち。
+成果物blend・既存ファイル無変更。wiki正本(gf2-helen-repro-v51-handoff)#56追記、
+計画正本へ実行完了状態を記入。
+- 更新: `index.md`, `log.md`,
+  `wiki/analyses/gf2-helen-light-extract-execution-20260824.md`(新規),
+  `wiki/builds/gf2-helen-repro-v51-handoff.md`(#56)

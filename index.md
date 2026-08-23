@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1294 ファイル_
+_合計 1295 ファイル_
 
 ## root/ (11)
 
@@ -13,11 +13,11 @@ _合計 1294 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-23T14:33:52Z
-- [log.md](root/log.md) | 2026-08-23T14:34:00Z
+- [index.md](root/index.md) | 2026-08-23T16:17:17Z
+- [log.md](root/log.md) | 2026-08-23T16:17:17Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
-## wiki/analyses/ (55)
+## wiki/analyses/ (56)
 
 - [art-canvas-asuna-reference-axis-map.md](wiki/analyses/art-canvas-asuna-reference-axis-map.md) | 2026-06-14T16:03:54Z
 - [asuna-maid-costume-structure.md](wiki/analyses/asuna-maid-costume-structure.md) | 2026-06-24T01:38:06Z
@@ -43,6 +43,7 @@ _合計 1294 ファイル_
 - [gf2-helen-bikini-harness-loop-application-2026-08-09.md](wiki/analyses/gf2-helen-bikini-harness-loop-application-2026-08-09.md) | 2026-08-09T10:41:23Z
 - [gf2-helen-bone-hierarchy-missing-2026-08-10.md](wiki/analyses/gf2-helen-bone-hierarchy-missing-2026-08-10.md) | 2026-08-10T14:36:07Z
 - [gf2-helen-cloth2-variant-breakage-2026-08-10.md](wiki/analyses/gf2-helen-cloth2-variant-breakage-2026-08-10.md) | 2026-08-10T14:48:27Z
+- [gf2-helen-light-extract-execution-20260824.md](wiki/analyses/gf2-helen-light-extract-execution-20260824.md) | 2026-08-23T16:17:00Z
 - [gf2-helen-lighting-diagnosis-summary-20260823.md](wiki/analyses/gf2-helen-lighting-diagnosis-summary-20260823.md) | 2026-08-23T11:30:45Z
 - [gf2-helen-ssr0101-obs-ledger-v51.md](wiki/analyses/gf2-helen-ssr0101-obs-ledger-v51.md) | 2026-08-10T13:15:57Z
 - [gfl2-helen-starlit-waltz-reference-route.md](wiki/analyses/gfl2-helen-starlit-waltz-reference-route.md) | 2026-07-25T00:32:08Z
@@ -354,7 +355,7 @@ _合計 1294 ファイル_
 - [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-23T15:47:44Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-23T14:24:25Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
-- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-23T11:14:20Z
+- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-23T16:15:30Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T10:00:16Z
 - [gf2-helen-rest-room-motion-v22.md](wiki/builds/gf2-helen-rest-room-motion-v22.md) | 2026-07-27T00:02:48Z
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z
