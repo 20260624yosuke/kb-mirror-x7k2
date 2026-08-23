@@ -9087,3 +9087,17 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
 - 更新: `index.md`, `log.md`,
   `wiki/assets/frames/coloso-sasa-ch01-intro/`(snapshot.json を retrofit 版へ更新・旧版は snapshot-pre.json),
   [[coloso-sasa-ch01-intro]] は本セッションでは未変更(死亡セッション分で完成済み)
+
+## [2026-08-23] query | ヘレン再現の照明診断(f110)とサマリページ
+
+武田さんの指摘「成果物の照明の品質が低い。ゲーム内は主光/補助光/環境光の構造なのに成果物はそうじゃない」
+を受け、承認済み計画第2版(独立レビュー反映後)で blend 無変更の実測診断を実施。
+発見: 保存ビューポート10画面すべて use_scene_lights=false / studio_light=forest.exr(シーン灯3本も世界背景も非表示)・
+ramp入力37材質すべて固定Z軸(clamp(dot(N,(0,0,1))))で灯方向に追従しない・既定黒白ramp22材質残存・
+SH8/RampSetting10件×4帯等は回収済み未適用・直接光実値0件blocked・照明合否基準(GATE)不存在。
+成果物: wiki/analyses/gf2-helen-lighting-diagnosis-summary-20260823.md(Obsidian用HTML要約)。
+プロジェクト側: scripts/f110_lighting_stack_audit.py 新設・logs/f110-lighting-stack.json・
+reports/LIGHTING-DIAGNOSIS-2026-08-23.md・run-state history追記・wiki正本(gf2-helen-repro-v51-handoff)へ#55追記。
+成果物blend無変更(SHA前後一致実測)。
+- 更新: `index.md`, `log.md`, `wiki/analyses/gf2-helen-lighting-diagnosis-summary-20260823.md`(新規),
+  `wiki/builds/gf2-helen-repro-v51-handoff.md`(#55)
