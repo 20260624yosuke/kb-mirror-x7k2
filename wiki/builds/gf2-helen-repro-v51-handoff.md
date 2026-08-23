@@ -290,6 +290,17 @@ sources:
     効くため数値比較は無影響・そのまま有効。**f103候補blendも同じ欠陥を持つ**＝前回「原作感がない」
     の目視は二重照明状態で行われていた可能性が高い。`f109b_candidate_blend_export_fix.py` で
     v2 blend2本を再書き出し（既存灯は両hide済み・実測確認済み）。手元のv2 blendはこの版を使うこと。
+55. **照明診断を実施（`f110`・2026-08-23夜・武田さん承認の計画第2版＋独立レビュー反映後）**:
+    「成果物の品質が低い・主光/補助光/環境光の構造がない」の原因仕分けのため、blend無変更で実測。
+    発見: ①**保存ビューポート10画面すべて use_scene_lights=false / use_scene_world=false /
+    studio_light=forest.exr** — 開いたとき見えているのはBlender同梱HDRI1枚だけでシーン灯3本も世界背景も点いていない
+    （f43・f109bと同じ経路3回目）②ramp入力は37材質すべて `clamp(dot(法線,(0,0,1)))` の固定Z軸で
+    灯方向に追従しない（原作は光ごとにV=0.125/0.625/0.875帯を読む・0357.msl行番号付き18/18機械確認PASS）③
+    既定黒→白2要素rampが22材質（顔face_lod0・素肌body/body1含む）に残存＝§9の22件と実数一致④
+    SH8プローブ/RampSetting10件×4帯/cubemap3/lightmap2/post24/LUT は**回収済み未適用**⑤直接光実値は
+    0件のままblocked⑥照明の合否基準(GATE)は存在しない＝「監査抜け」ではなく判定不能だった。
+    証拠 `logs/f110-lighting-stack.json`（冪等2回同一payload SHA・blend SHA前後一致）・
+    報告 `reports/LIGHTING-DIAGNOSIS-2026-08-23.md`。成果物blend無変更
 
 ---
 
