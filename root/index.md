@@ -203,7 +203,7 @@
 > **2026-06-10 完了**: ch01-36 / 全36章を取込済み。ch36 は文字起こし本文が空のため章説明のみ。
 
 - [[coloso-sasa-illustration-course]] — 講座全体のメタ source(全36章の構造・統合見解・取込状況) (ingested 2026-06-10)
-- [[coloso-sasa-ch01-intro]] — 自己紹介、成長過程、結果・過程・再現性による成長定義 (ingested 2026-06-10)
+- [[coloso-sasa-ch01-intro]] — 自己紹介、成長過程、結果・過程・再現性による成長定義 (ingested 2026-06-10, 映像観測10枚 2026-08-23)
 - [[coloso-sasa-ch02-insight-memo]] — 気づきメモを次回の実践へ接続する方法 (ingested 2026-06-10)
 - [[coloso-sasa-ch03-growth-mechanism]] — 知識を作品の変化へ変える変換力と成長循環 (ingested 2026-06-10)
 - [[coloso-sasa-ch04-foundation-theory]] — 基礎理論の分割学習と4段階実験循環 (ingested 2026-06-10)
