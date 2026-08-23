@@ -9134,3 +9134,22 @@ reports/LIGHTING-DIAGNOSIS-2026-08-23.md・run-state history追記・wiki正本(
   verify改修・再配置・選定やり直しは基準決定の後。
 - 更新: [[gf2-helen-futa-addition-handoff]], `index.md`, `log.md`,
   プロジェクト側 `probe_penetration.py`/`pen-probe-2026-08-23.json`(新規保存)
+
+## [2026-08-23] lint | Wiki 全体整合性チェック(棚出しのみ)
+
+- ox-alpha(opencode ハーネス)が lint 相当を実施。hold スキル経由で方針・計画の2段承認を取得済み。
+  別セッション(Coloso 映像 ingest バッチ)稼働中のため **修正は一切せず棚出しのみ**。
+- 機械走査(python 正規表現+ディスク突合の2パス): wiki 1,062 ページ中
+  legacy(frontmatter 4項目のいずれか欠け)370 / 鮮度切れ(last_reviewed 90日超)0(最古 2026-05-26) /
+  リンク切れ実害 1 slug(`clipstudio-backup-external-symlink` 未作成・gfl2-external-data-mount から×2) /
+  埋め込み画像切れ 7 枚([[coloso-hide-ch04-body-basics]]、[[coloso-visual-ingest-resume-inventory]]
+  の「壊れた状態」と一致=既知) / index 重複 0・幽霊 0・未収載 1(coloso-parallel-ingest-project) /
+  完全孤立 2(x-eagle-free-save-pilot, coloso-parallel-ingest-project) /
+  矛盾ありマーク wiki 内 3 ページ(firefox-x-profile-scroll-jump-root-cause / x-eagle-free-save-pilot /
+  coloso-ye-jji-ch01-intro)。
+- 誤検出対策: 表内 `[[file.png\|alias]]` エスケープ記法・大文字小文字・拡張子なし解決を補正した
+  第 2 パスで確定(第 1 パスの 1,943 件は規約ファイル・raw 由来ノイズ含むため不採用)。
+- 成果物: `wiki/analyses/lint-report-2026-08-23.md`(新規)。
+- 提案(すべて未実施・次回承認待ち): A symlink ページ作成 or リンク削除 /
+  B index 追記・孤立 2 件の相互リンク整備 / C legacy 370 件は従来どおり触る際追補で継続。
+- 更新: `wiki/analyses/lint-report-2026-08-23.md`(新規), `index.md`, `log.md`。
