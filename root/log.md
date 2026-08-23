@@ -9101,3 +9101,16 @@ reports/LIGHTING-DIAGNOSIS-2026-08-23.md・run-state history追記・wiki正本(
 成果物blend無変更(SHA前後一致実測)。
 - 更新: `index.md`, `log.md`, `wiki/analyses/gf2-helen-lighting-diagnosis-summary-20260823.md`(新規),
   `wiki/builds/gf2-helen-repro-v51-handoff.md`(#55)
+## [2026-08-23] build | coloso 映像ingest 中断タスクの棚卸し
+
+- ox サーバーエラーで停止した複数バッチの残タスクを、会話履歴ではなくディスク実測で確定した
+  (武田さんの「まず棚卸しのみ」承認に基づく)。
+- 方法: `wiki/sources/coloso-*.md` 190件の `visual_ingested` 走査+フレーム参照PNG存在突合+
+  opencode DB(272セッション)とエクスポートJSONによる死亡セッション特定。
+- 結果: 完全健康9章 / 壊れた状態6章(hide ch04 参照PNG7枚全滅・ye_jji ch05 抽出のみで中断・
+  marse ch05〜07+sasa ch02 は flag のみの幽霊状態) / 未着手約118章(hizurume24+sasa34+hide24+ye_jji18+marse18) /
+  動画無しblocked約45章(chan_02 20章・nekojira ほぼ全体)。
+- 最大の教訓: 死亡セッションの「marse ch04〜07・ye_jji ch05 処理済み」報告はディスク実態と食い違い、
+  会話上の完了主張は正本になり得ない。進捗は段階追記型のディスク台帳に持つ必要。
+- 成果物: [[coloso-visual-ingest-resume-inventory]](新規)。更新: index.md, log.md。
+- 次の問い: 壊れた6章の修復方針と並列ingest基盤設計(oxloop流用+ディスク台帳)への接続。
