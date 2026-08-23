@@ -9070,3 +9070,20 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
   `visual_ingested: 2026-08-23` 付与 → retrofit 最終スナップショット記録(ch02 と同形式)→ 再検査 PASS。
 - 更新: [[coloso-hide-ch03-line-practice]](`visual_ingested`),
   `wiki/assets/frames/coloso-hide-ch03-line-practice/`(manifest.json・snapshot.json), `log.md`
+
+## [2026-08-23] ingest | sasa ch01 自己紹介 映像観測追加(sasaバッチ・セッション停止からの再開)
+
+- 503 で停止したセッション連鎖(佐々講座の映像込み ingest brave-river の前 kind-wolf ses_fd3c9220…、さらに前の
+  eager-tiger も APIError 503 で中断)を実地確認で復旧。brave-river ses_fd2536596… は manifest 作成後・
+  台帳更新前に 503 停止していたため、今回の作業再開地点=台帳更新+ゲート検査として実施した。
+- 既存進捗(死亡セッション分): 抽出 39 枚(20 秒間隔+文字起こし誘導の狙い撃ち 04:37/06:24/07:03)→盲検読取 39 枚→
+  保存 10 枚→recheck 4 枚(サブエージェント不可のため wiki 非参照の独立再読取にフォールバック、全 confirmed。
+  タイムライン末尾「2025.4?」は画面自体が疑問符付き表記・「5万フォロワー達成」は算用数字、と画面どおり修正)→
+  source 反映(`visual_ingested: 2026-08-23` 付与+映像観測節 10 枚)→manifest v2.3(status complete)まで完了済み。
+- 今回実施: index.md の該当行へ映像観測表記を追記。初回ゲート検査は FAIL(「映像観測節の挿入以外に本文が変化」)だったため、
+  セッションログの edit 差分を逆適用して snapshot 時点の原文を復元し SHA-256 が完全一致することを実測
+  (=変化は frontmatter 追加+観測節挿入のみで、文字起こし本文の改変なしと実証)。hide ch02/ch03 再開時と同形式で
+  `snapshot-pre.json` 退避+retrofit 最終スナップショット記録 → ゲート PASS → 本エントリ追記 → 台帳込み再検査 PASS。
+- 更新: `index.md`, `log.md`,
+  `wiki/assets/frames/coloso-sasa-ch01-intro/`(snapshot.json を retrofit 版へ更新・旧版は snapshot-pre.json),
+  [[coloso-sasa-ch01-intro]] は本セッションでは未変更(死亡セッション分で完成済み)

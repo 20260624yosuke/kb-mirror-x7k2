@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1275 ファイル_
+_合計 1289 ファイル_
 
 ## root/ (11)
 
@@ -14,7 +14,7 @@ _合計 1275 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-23T09:11:38Z
-- [log.md](root/log.md) | 2026-08-23T09:06:16Z
+- [log.md](root/log.md) | 2026-08-23T09:18:04Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/analyses/ (53)
@@ -304,6 +304,23 @@ _合計 1275 ファイル_
 - [ye-jji-ch04-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-11m00s.png) | 2026-08-23T00:22:33Z
 - [ye-jji-ch04-p4-12m40s.png](wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-12m40s.png) | 2026-08-23T00:22:33Z
 - [ye-jji-ch04-p4-18m00s.png](wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-18m00s.png) | 2026-08-23T00:22:33Z
+
+## wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ (14)
+
+- [ye-jji-ch05-p1-00m20s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p1-00m20s.png) | 2026-08-23T09:15:06Z
+- [ye-jji-ch05-p1-01m40s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p1-01m40s.png) | 2026-08-23T09:15:06Z
+- [ye-jji-ch05-p1-02m20s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p1-02m20s.png) | 2026-08-23T09:15:07Z
+- [ye-jji-ch05-p1-03m56s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p1-03m56s.png) | 2026-08-23T09:15:07Z
+- [ye-jji-ch05-p1-06m20s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p1-06m20s.png) | 2026-08-23T09:15:07Z
+- [ye-jji-ch05-p1-11m40s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p1-11m40s.png) | 2026-08-23T09:15:07Z
+- [ye-jji-ch05-p2-00m20s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p2-00m20s.png) | 2026-08-23T09:15:07Z
+- [ye-jji-ch05-p2-01m00s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p2-01m00s.png) | 2026-08-23T09:15:07Z
+- [ye-jji-ch05-p2-01m40s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p2-01m40s.png) | 2026-08-23T09:15:07Z
+- [ye-jji-ch05-p2-02m20s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p2-02m20s.png) | 2026-08-23T09:15:07Z
+- [ye-jji-ch05-p3-02m00s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p3-02m00s.png) | 2026-08-23T09:15:07Z
+- [ye-jji-ch05-p3-04m20s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p3-04m20s.png) | 2026-08-23T09:15:08Z
+- [ye-jji-ch05-p3-07m00s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p3-07m00s.png) | 2026-08-23T09:15:08Z
+- [ye-jji-ch05-p3-14m40s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p3-14m40s.png) | 2026-08-23T09:15:09Z
 
 ## wiki/builds/ (66)
 
