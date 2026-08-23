@@ -81,7 +81,9 @@ sources: []
     （vert/face=台帳一致1596/1572・焼き込みスケール誤差0.0%・transform正規化・レンダ6枚800×1000実在。
     ※verify JSONが見るのは front/side の6枚。実ディスクは full 込み9枚 — diag JSONの `rendered` 参照）
   - レンダ: `reports/previews/phaseA_scaleS{30,40,50}_{front,side,full}.png`（全9枚・2026-08-23 17:49）
-    （Workbench OBJECT色・体は P1_body+Dorm足+腕+胸首+顔+髪 表示、衣装は非表示）
+    （Workbench OBJECT色・体は P1_body+Dorm足+腕+胸首+顔+髪＋**P1_cloth_lod0（服=スカート）を表示**。
+     keepリストは phase_a_fix_placement.py L169-174。旧注記「衣装は非表示」は誤り —
+     服が写っていたからこそ §2④訂正の服貫通が起きていた。他の衣装小物は非表示）
   - 目視確認所見（2026-08-23 20時台・**全9枚確認完了**。セッション死亡で5回失われたため本ページに永続化）:
     - **S30（11.86cm）**: front＝スカートのスリット下から亀頭先端だけが小さく覗く。体中心・股部高さで位置妥当／
       side＝この角度ではスカートと太ももの陰になりほぼ見えない／full＝スリット越しに股部の小さな点として視認

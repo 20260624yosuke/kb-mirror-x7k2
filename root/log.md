@@ -9114,3 +9114,23 @@ reports/LIGHTING-DIAGNOSIS-2026-08-23.md・run-state history追記・wiki正本(
   会話上の完了主張は正本になり得ない。進捗は段階追記型のディスク台帳に持つ必要。
 - 成果物: [[coloso-visual-ingest-resume-inventory]](新規)。更新: index.md, log.md。
 - 次の問い: 壊れた6章の修復方針と並列ingest基盤設計(oxloop流用+ディスク台帳)への接続。
+
+## [2026-08-23] query | ヘレン陰部追加の停止セッション再開と服貫通訂正（引き継ぎ完成）
+
+- 依頼: `05_futa helen.json`(nimble-comet) の停止調査と作業再開。最終メッセージが
+  APIError 503(Upstream endpoint unavailable・トークン0)で、コンタクトシート生成成功の直後
+  提示前に死亡していた。シート自体はディスク残存のため提示から再開。
+- 武田さんの選定カードへの回答は選定ではなく**前提指摘**（着衣なら非貫通が当然・勃起なら
+  布のテント変形が正・検証スクリプトがザル）。
+- BVH衝突再測定（`07_futa-helen/reports/probe_penetration.py` → `pen-probe-2026-08-23.json`、
+  読み取り専用headless）で**全候補が P1_cloth_lod0 と交差**（三角形交差 41〜42ペア、
+  裏側食い込み頂点 S30=299/S40=140/S50=53）。旧「貫通なし」所見は体についてのみ真で、
+  レンダ目視では服貫通を判定できていなかった。`phase_a_verify.py` の PASS は衝突無検証だった。
+- [[gf2-helen-futa-addition-handoff]] を引き継ぎ資料として完成: §2 冒頭を現在位置へ更新、
+  **§2⑤ に未決の受け入れ基準カード（A隠れる/C隠れる＋テント/Bスリット露出・各々失うもの付き）と
+  基準確定後の手順**を新設、§3 死亡履歴へ nimble-comet と再開セッションを追記、
+  §4 ファイル一覧へ作業blend/貫通実測/シートを追加、§7 変更履歴を追記。
+- スケール選定カードは回答中断により未決。**次セッションの入口は §2⑤ の基準カード再提示**。
+  verify改修・再配置・選定やり直しは基準決定の後。
+- 更新: [[gf2-helen-futa-addition-handoff]], `index.md`, `log.md`,
+  プロジェクト側 `probe_penetration.py`/`pen-probe-2026-08-23.json`(新規保存)
