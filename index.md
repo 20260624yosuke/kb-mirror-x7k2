@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1282 ファイル_
+_合計 1275 ファイル_
 
 ## root/ (11)
 
@@ -14,7 +14,7 @@ _合計 1282 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-23T01:55:20Z
-- [log.md](root/log.md) | 2026-08-23T01:55:08Z
+- [log.md](root/log.md) | 2026-08-23T09:06:16Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/analyses/ (53)
@@ -137,16 +137,6 @@ _合計 1282 ファイル_
 - [hide-ch03-15m20s.png](wiki/assets/frames/coloso-hide-ch03-line-practice/hide-ch03-15m20s.png) | 2026-08-23T02:17:23Z
 - [hide-ch03-16m00s.png](wiki/assets/frames/coloso-hide-ch03-line-practice/hide-ch03-16m00s.png) | 2026-08-23T02:17:23Z
 - [hide-ch03-16m40s.png](wiki/assets/frames/coloso-hide-ch03-line-practice/hide-ch03-16m40s.png) | 2026-08-23T02:17:23Z
-
-## wiki/assets/frames/coloso-hide-ch04-body-basics/ (7)
-
-- [hide-ch04-04m33s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-04m33s.png) | 2026-07-15T09:02:00Z
-- [hide-ch04-08m40s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-08m40s.png) | 2026-07-15T09:02:00Z
-- [hide-ch04-10m40s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-10m40s.png) | 2026-07-15T09:02:00Z
-- [hide-ch04-12m20s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-12m20s.png) | 2026-07-15T09:02:00Z
-- [hide-ch04-14m00s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-14m00s.png) | 2026-07-15T09:02:00Z
-- [hide-ch04-17m40s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-17m40s.png) | 2026-07-15T09:02:00Z
-- [hide-ch04-19m20s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-19m20s.png) | 2026-07-15T09:02:00Z
 
 ## wiki/assets/frames/coloso-hizurume-ch11-force-field/ (29)
 
@@ -1032,7 +1022,7 @@ _合計 1282 ファイル_
 - [coloso-chan-02-sec20-outro.md](wiki/sources/coloso-chan-02-sec20-outro.md) | 2026-05-31T17:13:58Z
 - [coloso-hide-ch01-intro.md](wiki/sources/coloso-hide-ch01-intro.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch02-line-drawing.md](wiki/sources/coloso-hide-ch02-line-drawing.md) | 2026-08-23T02:01:45Z
-- [coloso-hide-ch03-line-practice.md](wiki/sources/coloso-hide-ch03-line-practice.md) | 2026-08-23T02:17:23Z
+- [coloso-hide-ch03-line-practice.md](wiki/sources/coloso-hide-ch03-line-practice.md) | 2026-08-23T09:04:49Z
 - [coloso-hide-ch04-body-basics.md](wiki/sources/coloso-hide-ch04-body-basics.md) | 2026-07-15T09:03:40Z
 - [coloso-hide-ch05-male-female-proportion.md](wiki/sources/coloso-hide-ch05-male-female-proportion.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch06-toushin-character.md](wiki/sources/coloso-hide-ch06-toushin-character.md) | 2026-05-31T17:38:22Z

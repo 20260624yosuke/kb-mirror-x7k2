@@ -5,6 +5,7 @@ authors: [hide]
 date: 2026-05-31
 source_path: "raw/_coloso/2026_05_31_hide_01/coloso_hide_03 線を弾いてみよう.md"
 ingested: 2026-06-01
+visual_ingested: 2026-08-23
 tags: [Coloso, 人体ドローイング, 線, 練習]
 status: active
 confidence: high

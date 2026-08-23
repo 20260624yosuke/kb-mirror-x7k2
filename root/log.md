@@ -9057,3 +9057,16 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
   cwd 外読取拒否で全滅(プロンプト埋め込み化)/watchdog sleep 孤児によるパイプ滞留/
   二重 FAILCOUNT/KB_ROOT 階層誤り。
 - 未確認: 実運用タスクでの初回使用、5以上の並列、verifier 別モデル指定。
+
+## [2026-08-23] ingest | hide ch03 線を弾いてみよう 映像観測追加(hideバッチ・セッション停止からの再開)
+
+- 停止していた hide バッチセッション(ses_fd404d2c…/再開調査 ses_fd3b6fa9…)の調査を実地確認で復旧。
+  ch02 は完成済み(visual_ingested 済)と実測し、ch03 の recheck 工程途中から再開した。
+- 既存進捗(前セッション分): 抽出52枚→盲検52枚(b1〜b5)→保存42枚→assemble→splice→source 反映まで完了済み。
+- 今回実施: recheck 残り4枚(08m40s/13m20s/16m00s/16m40s、既存1枚と計5枚=最低要件 max(3, ceil(42×0.1)) を充足)。
+  不一致2件は原寸直接観察で裁定: 00m20s はレイヤー Layer1〜4+Paper が正(第2読者の「1〜5」は数え間違い)、
+  16m00s はモニター実写+グローブ手+右上有インセットが正(第2読者の「全画面スクショ」は誤認)。5枚とも confirmed。
+- wiki manifest 新規作成(status complete + completed + recheck ブロック)。厳格ゲート PASS(警告ゼロ)→
+  `visual_ingested: 2026-08-23` 付与 → retrofit 最終スナップショット記録(ch02 と同形式)→ 再検査 PASS。
+- 更新: [[coloso-hide-ch03-line-practice]](`visual_ingested`),
+  `wiki/assets/frames/coloso-hide-ch03-line-practice/`(manifest.json・snapshot.json), `log.md`
