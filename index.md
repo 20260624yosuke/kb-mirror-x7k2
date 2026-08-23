@@ -348,7 +348,7 @@ _合計 1290 ファイル_
 - [eagle-dedup-merge-2026-07-07.md](wiki/builds/eagle-dedup-merge-2026-07-07.md) | 2026-07-09T11:29:46Z
 - [eagle-folder-sort.md](wiki/builds/eagle-folder-sort.md) | 2026-07-04T14:37:29Z
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
-- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-23T07:56:17Z
+- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-23T11:42:05Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
 - [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-23T11:14:20Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T10:00:16Z
