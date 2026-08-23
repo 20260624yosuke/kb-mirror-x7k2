@@ -9018,3 +9018,23 @@ SKILL.md パイロット節が古い(ye_jji 02 は 2026-07-12 実施済み)こ�
   骨命名のキャラ間共通性。武田さん判断で**いったん保留**＝ヘレン工程F完了後の別計画。
 - file-back: [[gf2-costume-reference-feasibility-2026-08-23]] 新設,
   `index.md` 追記, `log.md` 本エントリ
+
+## [2026-08-23] ingest | ヘレン陰部追加プロジェクトの引き継ぎページ新設と移植下準備
+
+- 背景: ox セッション2本（quick-tiger 08-23 03:08 死亡、brave-wolf 同 10:02 死亡）が
+  「実質出力の直後にトークン0空ステップ→未完了のまま死亡」する同一パターンで中断。
+  武田さん指示で「wiki記録＋別セッション向け引き継ぎ資料を更新しながら作業」へ切替。
+- [[gf2-helen-futa-addition-handoff]] 新設（正本・wiki/builds/）。プロジェクト側
+  `07_futa-helen/reports/HANDOFF.md` はポインタ化。
+- 承認済みの続き作業を実施:
+  - ①クラスタ抽出: `blends/gracy-futa2-genitals-cluster.blend` 作成（SHA `4ebd139a…`）・
+    読み戻し検証で台帳値と一致（1,596v/1,572f、Glans400+Shaft828+Testicles344）。
+    テクスチャ4枚パック済み。ソース Futa2.blend 無変更。
+  - ②ヘレン体実測: `reports/helen-body-measure-2026-08-23.json`（読み取りのみ無変更）。
+    肌材質 `GF_c_HelenSSR0101_slg_body`、Hip骨ワールド座標、bboxはポーズ込みで身長に使えない点を記録。
+- 残課題: ライセンス購入証拠の本人確認（#7 Patreon有料物）。③移植計画書の作成と承認が次。
+- 更新: [[gf2-helen-futa-addition-handoff]](新規), プロジェクト側 ASSET-EVAL/HANDOFF/台帳JSON,
+  `index.md`, `log.md`
+- 追記（同日 10:35）: 移植計画書への承認カードで武田さんが「中断」を選択。
+  実装未着手のまま停止。再開時は [[gf2-helen-futa-addition-handoff]] §2 から
+  計画書の再承認を行う。残置物（抽出blend・実測JSON・計画書）は全て有効なまま保管。

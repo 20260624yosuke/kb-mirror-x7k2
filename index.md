@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1207 ファイル_
+_合計 1224 ファイル_
 
 ## root/ (11)
 
@@ -14,7 +14,7 @@ _合計 1207 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-23T01:16:57Z
-- [log.md](root/log.md) | 2026-08-23T01:11:05Z
+- [log.md](root/log.md) | 2026-08-23T01:21:52Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/analyses/ (53)
@@ -72,6 +72,26 @@ _合計 1207 ファイル_
 - [x-eagle-observation-2026-06-23.md](wiki/analyses/x-eagle-observation-2026-06-23.md) | 2026-06-23T05:28:45Z
 - [x-eagle-project-current-state-interference-audit-2026-06-24.md](wiki/analyses/x-eagle-project-current-state-interference-audit-2026-06-24.md) | 2026-06-24T15:01:17Z
 - [ye-jji-course-roi-for-growing-character-artist.md](wiki/analyses/ye-jji-course-roi-for-growing-character-artist.md) | 2026-07-07T00:55:52Z
+
+## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
+
+- [hide-ch02-00m20s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-00m20s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-00m40s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-00m40s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-01m00s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-01m00s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-01m20s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-01m20s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-01m40s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-01m40s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-02m00s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-02m00s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-03m00s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-03m00s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-03m20s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-03m20s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-03m40s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-03m40s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-04m00s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-04m00s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-04m20s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-04m20s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-04m40s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-04m40s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-05m00s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-05m00s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-05m20s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-05m20s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-05m40s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-05m40s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-06m20s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-06m20s.png) | 2026-08-23T01:21:03Z
+- [hide-ch02-06m40s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-06m40s.png) | 2026-08-23T01:21:03Z
 
 ## wiki/assets/frames/coloso-hide-ch04-body-basics/ (7)
 
@@ -254,7 +274,7 @@ _合計 1207 ファイル_
 - [eagle-dedup-merge-2026-07-07.md](wiki/builds/eagle-dedup-merge-2026-07-07.md) | 2026-07-09T11:29:46Z
 - [eagle-folder-sort.md](wiki/builds/eagle-folder-sort.md) | 2026-07-04T14:37:29Z
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
-- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-23T01:15:56Z
+- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-23T01:21:46Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
 - [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-23T00:55:56Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T00:56:20Z
@@ -944,7 +964,7 @@ _合計 1207 ファイル_
 - [coloso-chan-02-sec19-practical-process.md](wiki/sources/coloso-chan-02-sec19-practical-process.md) | 2026-05-31T17:13:58Z
 - [coloso-chan-02-sec20-outro.md](wiki/sources/coloso-chan-02-sec20-outro.md) | 2026-05-31T17:13:58Z
 - [coloso-hide-ch01-intro.md](wiki/sources/coloso-hide-ch01-intro.md) | 2026-05-31T17:38:22Z
-- [coloso-hide-ch02-line-drawing.md](wiki/sources/coloso-hide-ch02-line-drawing.md) | 2026-08-23T00:47:09Z
+- [coloso-hide-ch02-line-drawing.md](wiki/sources/coloso-hide-ch02-line-drawing.md) | 2026-08-23T01:21:03Z
 - [coloso-hide-ch03-line-practice.md](wiki/sources/coloso-hide-ch03-line-practice.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch04-body-basics.md](wiki/sources/coloso-hide-ch04-body-basics.md) | 2026-07-15T09:03:40Z
 - [coloso-hide-ch05-male-female-proportion.md](wiki/sources/coloso-hide-ch05-male-female-proportion.md) | 2026-05-31T17:38:22Z
