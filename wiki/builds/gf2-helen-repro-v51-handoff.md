@@ -418,15 +418,16 @@ checker の全文は会話に残っていないので、**上の表がすべて*
 他に曖昧な点はない（止め方＝監査を不合格にする／検出語／要求する証拠＝陽性対照を含む5点／
 再現試験の条件は、すべて4節で確定している）。
 
-## 6. 現在の停止点（原本LLDB attach 1回はOSに拒否・再試行せず技術的停止）
+## 6. 現在の停止点（**2026-08-23 夜更新**・原本LLDB attach 1回はOSに拒否・再試行せず技術的停止）
 
 | 対象 | 状態 | 再開条件 |
 |---|---|---|
+| **SH照明候補（最優先・ここで止まっている）** | **武田さんの目視判断待ち**。出自確認合格(`f106`)→単一probe評価(`f107`)→較正5候補(`f108`・cal_low=全身比最接近/cal_mean_sh=顔比・色味最接近)→**v2候補blend①②を白飛び訂正版として再書き出し済み(`f109b`)**。前版は既存灯がビューポートで点いたままの二重照明だったため目視無効の可能性（f103候補も同じ欠陥） | 武田さんが `blends/_candidate-sh-lighting/*_v2-meansh.blend` と同 `_v2-low.blend` を見比べた結果で分岐: 採用→本blend反映は別承認を取ってから／調整→第3版作成／現行維持→候補は保存扱い |
 | 輪郭線のclip.xy後段 | 世界座標入力へ実装・条件付き機械検証済み | checker指摘を反映済み。Helen固有width・ZBias・H0157 camera・見た目は別検証 |
 | q/P22の規約 | Metal reversed-Zから式を確定 | H0157原作カメラのnear/farを回収後、数値を置換 |
 | H0157 scene | `conversation_attested; original_lldb_attach_refused; no_retry; no_breakpoint_installed; runtime_gate_failed` | 2026-08-22 14:31に原本PID 30908へLLDB attachを1回試行したが`Not allowed to attach`。計画どおり再試行なし。Developer Mode変更、`sudo`、再署名、注入、追加ツールは本計画外なので行わない。別の明示計画がない限りruntime traceは技術的停止 |
-| Dorm scene候補の直接ライト | **一部前進**: 圧縮内部にGFMB lightProbes実在を確認（`f98`/`f99`・焼き込み環境光は回収済み）。**「欠損102依存」の再導出は完了（`f100`）**: 7件は別名で実在・87件は参照のみ・15件+special1件が不検出。直接Lightの所在は継続調査（scene root自体は参照を含め不検出） | SH→Blender適用は別計画承認。実行時が別scene/構成で動いている可能性を含めjoin継続 |
-| 階調表の材質対応 | `source_recovery_blocked`。prefab root `7648416f…bundle` は **`f100` の3レベル走査でも不検出**（参照すらない）。renderer→material→ramp抽出は入力待ち。silkstock ramp割当ては機械根拠が無く推測禁止（武田さん判断ならDEC） | prefab root実データの入手（CDN残りルート/backup volume readable化）。または武田さんの目視判断で割当てを決める |
+| backup volume 点検 | HDD_02はゲームデータ無し。**HDD_バックアップ系2台は macOS TCC 拒否中**（`ledger/backup-volume-access-20260823.json`） | 武田さんがシステム設定→プライバシーとセキュリティでフルディスクアクセス付与 → 残り2台を再走査 |
+| 階調表の材質対応 | `source_recovery_blocked`。prefab root `7648416f…bundle` は **`f100` の3レベル走査でも不検出**（参照すらない）。renderer→material→ramp抽出は入力待ち。silkstock ramp割当ては機械根拠が無く推測禁止（武田さん判断ならDEC）。ストッキング表示(P2)は**第1段合格後の展開時に改めて計画**（G13/DRESS決定済み） | prefab root実データの入手（CDN残りルート/backup volume readable化）。または武田さんの目視判断で割当てを決める |
 | 機械ハーネス f46〜f72 | 起動保留ではない。毎回の監査対象 | 継続実行 |
 
 照明リグ流用・白ランプ・body ramp流用・現状維持から選ばせる問題ではない。原作対応が取れるまで適用しない。
