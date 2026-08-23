@@ -56,7 +56,7 @@ visual_ingested: 2026-08-23
 
 | evidence_id | 時刻 | frame | 確信度 | 画面の観測(事実のみ) |
 |---|---|---|---|---|
-| ev-001 | 00:20 | ![[wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-00m20s.png]] | high | スライド「このchapterで学べること」。箇条書き4項目(線の重要性・ various 引き方・デメリット・意識点)。CLIP STUDIO PAINT EX、Illustration2* 36.6%表示 |
+| ev-001 | 00:20 | ![[wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-00m20s.png]] | high | スライド「このchapterで学べること」。箇条書き4項目「絵を描く時になぜ線が重要なのか?」「さまざまな線の引き方」「よくある線の引き方とデメリット」「線を引く時に意識すること」。CLIP STUDIO PAINT EX、タイトルバー Illustration2* 36.6% |
 | ev-002 | 00:40 | ![[wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-00m40s.png]] | high | ピラミッド図「絵を描く工程について」。下から人物ドローイング(素描)(赤枠)/線画/影付け/彩色/仕上げ、左に重要度小→大、右枠にテーマ・アイデア・構図・個性 |
 | ev-003 | 01:00 | ![[wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-01m00s.png]] | high | スライド「アニメーターの場合」「1cutを完成させるのに10枚20枚…100枚描くことも」。キャンバス白地 |
 | ev-004 | 01:20 | ![[wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-01m20s.png]] | high | スライド「ペンの持ち方と線の引き方について」。キャンバス白地で描画なし。鉛筆サブツール選択状態 |
