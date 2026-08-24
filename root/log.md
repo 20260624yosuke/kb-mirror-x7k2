@@ -9215,3 +9215,17 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 次の問い: Step 1 抽出ドライバ（決定性試験→b01/c01/d02参数化→機械突合+replay試験）へ進むか、
   新セッションで続けるか。
 - 更新: `index.md`, `log.md`, `wiki/builds/gf2-char-extract-handoff.md`(新規), プロジェクト側一式
+
+## [2026-08-24] ingest | Coloso 映像ingest バッチ再開 引き継ぎ資料新設(並列バッチ実測)
+
+- 依頼: 武田さん「hideだけじゃなくて、他の講座も同時に並列で処理してた」「引き継ぎ資料を作成、
+  別セクションで指示を送るのでコピペで済むように」。
+- 実測: 8/23 の並列バッチ死亡跡を temp(`<TEMP>`=opencode temp dir)と wiki assets 両面から走査し、
+  各講座の再開点を確定。反映待ち3章(hide ch05 manifest draft完成・marse ch05/ch06 盲検読了報告が
+  temp 残存)、読取途中3章(sasa ch02 観測00:00〜10:00済み/総長17:51、ye_jji ch05 p1〜p3+p4-H完了
+  でp4-I(2/2)14枚のみ未実行、marse ch07 未読取)、B修復(hide ch04 PNG復元待ち)。
+- 前回報告の訂正: sasa ch02 は「反映待ち」ではなく「読取途中」(観測テーブルが10:00で途切れている)。
+- 成果物: [[coloso-batch-resume-handoff]](新規)。現在地サマリ・共通正規手順(ゲートv2.3準拠)・
+  新セッション用コピペ指示文を収録。temp 揮発性のため退避必須を明記。
+- 更新: `index.md`, `log.md`, `wiki/builds/coloso-batch-resume-handoff.md`(新規)
+- 次の問い: コピペ指示文を新セッションへ投入し、タスク1(hide ch05 完成)から再開。
