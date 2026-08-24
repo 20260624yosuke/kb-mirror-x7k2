@@ -1107,7 +1107,7 @@ _合計 1352 ファイル_
 - [coloso-hide-ch02-line-drawing.md](wiki/sources/coloso-hide-ch02-line-drawing.md) | 2026-08-23T02:01:45Z
 - [coloso-hide-ch03-line-practice.md](wiki/sources/coloso-hide-ch03-line-practice.md) | 2026-08-23T09:04:49Z
 - [coloso-hide-ch04-body-basics.md](wiki/sources/coloso-hide-ch04-body-basics.md) | 2026-07-15T09:03:40Z
-- [coloso-hide-ch05-male-female-proportion.md](wiki/sources/coloso-hide-ch05-male-female-proportion.md) | 2026-05-31T17:38:22Z
+- [coloso-hide-ch05-male-female-proportion.md](wiki/sources/coloso-hide-ch05-male-female-proportion.md) | 2026-08-24T03:07:47Z
 - [coloso-hide-ch06-toushin-character.md](wiki/sources/coloso-hide-ch06-toushin-character.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch07-gesture-drawing-1.md](wiki/sources/coloso-hide-ch07-gesture-drawing-1.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch08-gesture-drawing-2.md](wiki/sources/coloso-hide-ch08-gesture-drawing-2.md) | 2026-05-31T17:38:22Z
