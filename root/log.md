@@ -9245,3 +9245,31 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   最終 check は本文非破壊が遡及基準(節の存在確認)で判定される旨を warning として明示。
 - 更新: `index.md`, `log.md`, `wiki/sources/coloso-hide-ch05-male-female-proportion.md`,
   `wiki/assets/frames/coloso-hide-ch05-male-female-proportion/manifest.json`
+
+## [2026-08-24] ingest | coloso 並列パイプライン初回稼働(hide ch05)と死亡セッション復帰
+
+- 依頼: 死亡した ox セッション(ses_fd1903605ffe、coloso 並列 ingest 基盤のパイロット監視中に停止)の
+  再開。エクスポート JSON から再開点を特定し復帰。
+- 実測: パイロット hide ch05 は 8/23 夜に 503(network_error)で3試行失敗 state=failed。
+  temp フレームは残存。本日 09:35 再ディスパッチし、A(抽出56枚+盲検)→B(独立再確認6枚)→
+  C(照合+source 反映+staging gate PASS)まで完走(12:09 staged)。途中 11:11-11:37 に
+  endpoint 断(network_error)で stage B が3回落ちたが、健全性プローブ後の再ディスパッチで回復。
+- 修正した基盤バグ(3件): ①run.sh がタイムアウト値を計算するだけで強制していなかった
+  (perl alarm ラッパで強制化) ②verify_stage の Python が関数外 return の SyntaxError で
+  常時死ぬ未実行コードだった(修正+両スキーマ対応) ③bash ツール経由の起動がプロセス
+  グループごと殺される(python start_new_session で独立起動に変更)。
+- manifest 契約不整合: ワーカーが模範出力通り extraction をリスト形式で書くため、
+  検査器が要求する extraction.written_frames が無い件。manifest 正規化+検査器を
+  両スキーマ対応+stage_a テンプレに辞書形式を明記して解決。
+- 監査: フレーム3枚をメインが実閲覧(通常1+corrected 2)、全て表行・recheck 判定と一致。
+  audit.json に記録。
+- 並行セッション: 監査中の 12:24-12:28、デスクトップ側の別セッションが
+  [[coloso-batch-resume-handoff]] タスク1-1 として hide ch05 の台帳反映(flag 付与+
+  snapshot 差し替え+index/log)を実施。complete gate 再実行と snapshot-pre/snapshot の
+  SHA 照合で正当性を検証済み。役割の重複( ye_jji ch05 が両計画に含まれる)は未解決。
+- 更新: `tools/ingest-parallel/run.sh`, `tools/ingest-parallel/prompts/stage_a_extract.md`,
+  `tools/ingest-parallel/tasks/coloso-hide-ch05-male-female-proportion/`(audit.json ほか),
+  `wiki/sources/coloso-hide-ch05-male-female-proportion.md`(並行セッション分を含む),
+  `index.md`(同), `wiki/assets/frames/coloso-hide-ch05-male-female-proportion/`
+- 次の問い: ye_jji ch05 を並行セッションとどちらが担当するか(両計画に含まれる)。
+  nekojira ch03 は本パイプラインのパイロットのみ。

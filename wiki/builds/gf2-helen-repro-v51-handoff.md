@@ -403,6 +403,27 @@ sources:
     - **成果物blend無変更**。証拠 `logs/f114-lighting-bundle-atlas.json` /
       `logs/f115-orphan-scene-identify.json` / `logs/f116-cab-graph.json`。
 
+61. **カード選択3件を実行（`f117`/`f118`/`f119`・2026-08-24夜・武田さんが選択）**:
+    - **f117 tetra真値v3試作**: 四面体18個＋probe座標の実データでUnity本来の重心座標補間を
+      実装。**陽性対照=probe位置で係数が完全一致(<1e-6)合格**。キャラ位置は未確定のため
+      重心XY×高さt(5段階)で評価・レンダ。参考値: t=1.0がface比2.66で最接近だがR/B=1.19と離れ、
+      数値上は従来cal_mean_sh(2.96/R-B0.974)が最接近のまま。
+      上位2候補(t0.75/t1.00)をf109b流式で書き出し済み
+      （`helen-h0157-repro__b52df9e45e471db3_sh-candidate-v3-t*.blend`）。
+      シート `reports/matpreview/f117_contact_sheet.png`。位置仮定が変われば真値補間の利点が出る。
+    - **f118 LoadRoomById経路解析**: cache版DLLの#USからパス文字列1,266件を抽出(カタログ一致63)。
+      **部屋キーは動的組み立て**と確定: prefix文字列
+      `Assets/ArtsResource/DormRes/I_dorm_bedroom/animation/clips/` ほか
+      （`PlayerDorm`・`Dorm/Prop`等）＋ID/名前。**寝室名前空間はcatalogに1件も無く**
+      手元データにも無い(4方法と整合)。DormRoomData全9行(武器室/卧室/浴室×皮膚)を回収。
+    - **f119 室内照明パターン台帳**: 部屋系34bundleをオブジェクト解析し
+      `ledger/f119-room-lighting-patterns.json` 化。**ゲームの室内シーンは
+      RenderSettings(fog+Trilight ambient)＋Area/Spot中心の多数灯＋キャラ専用の名前付き灯**
+      という構成。例: ASMR Safehouse07B(29灯: `char_rim_warm` Point I=3.0 暖色・
+      `main_light_fillface` Directional I=0.6 白・`main_light` Directional I=0.7 冷色影あり)。
+      H0157固有値ではないため適用はしない(運用ルール16)。
+    - **成果物blend無変更**。
+
 ---
 
 ## 3. 独立 checker（2026-08-19 2回目）の指摘 — **2026-08-20 に全件処理済み**
