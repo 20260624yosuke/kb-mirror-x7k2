@@ -58,13 +58,14 @@ sources:
 
 ## 1. 成果物と現在位置
 
-- 成果物 `blends/helen-h0157-repro.blend` — **SHA-256 `e0ba175651c20251…`**
-  （`f95` で足元を `_Fight`(ハイヒール)→`_Dorm`(裸足) へ切替・武田さん承認。直前版は `_pre-f95-dorm-feet/`）
+- 成果物 `blends/helen-h0157-repro.blend` — **SHA-256 `b52df9e45e471db3…`**
+  （**2026-08-24・A1表示経路修正で保存ビュー設定のみ変更**。形状・材質・灯パラメータは不変。
+  直前版は `_pre-f111-view-lights/`。その前は `f95` で足元を `_Fight`(ハイヒール)→`_Dorm`(裸足) へ切替・武田さん承認）
 - **GATE 14 PASS / 1 FAIL**（`G10`）。判定は一度も緩めていない（G13は2026-08-23に裸足切替でPASS復帰）
 - 機械監査（`f50`）: 事実 **57件**（2026-08-22夜時点）。最終再監査結果を11節に記録
 - 既存 blend 25個（`rest-room-v2.2/blends/`）は**全件無傷**（`a01 verify` で確認）
 - 工程F（武田さんが Blender で見て判断）には**まだ入っていない**
-- **blend が変わったため `f42`/`f43` の確認画像は古い**（見た目の報告の前に撮り直す）
+- f42/f43確認画像・f45比較JSON・環境記録は **2026-08-24に現行blend `b52df9e4…` から取り直し済み**（#58）
 
 ### 控え（版つきの名前。上書きしない作りになっている）
 
@@ -74,6 +75,7 @@ sources:
 | `blends/_pre-f56-outline/` `_pre-f57-outline-color/` `_pre-f63-clamp/` | 各工程の直前 |
 | `blends/_pre-f77-world-clip/helen-h0157-repro__be227dbc790bfcaf.blend` | **世界座標化直前。f77だけ戻すならここ** |
 | `blends/_pre-f95-dorm-feet/helen-h0157-repro__b1214f28194caddf.blend` | **足元切替(f95)直前。f95だけ戻すならここ** |
+| `blends/_pre-f111-view-lights/helen-h0157-repro__e0ba175651c20251.blend` | **A1表示経路修正(f111)直前。開いたときの見え方（HDRI写真のみ）を戻すならここ** |
 | `blends/_candidate-ramp-neutralized/` | 階調表の既定値を白にした**候補版**（成果物ではない） |
 
 ---
@@ -325,6 +327,23 @@ sources:
     (run-state next_action どおり)。証拠 `logs/e4-backup-volume-scan.json` +
     生find出力 `logs/e4-evidence/*.txt`。抽出計画v2(E0〜E4)はこれで全工程完走
 
+### 2026-08-24（昼）に足したこと
+
+58. **A1 表示経路の修正を実施（`f111_saved_view_scene_lights.py`・AskUserQuestion承認「承認する（推奨）」）**:
+    診断#55①「開いたとき見えている絵にシーン灯が無い」（f43・白飛びと同じ経路3回目）を解消。
+    本blendの保存ビューポート10画面すべて `use_scene_lights=false/use_scene_world=false/
+    studio_light=forest.exr` だったのを **両true へ変更**（v2候補と同じ規約・シェーディングtype=MATERIALは不変）。
+    **v2候補2本(meansh/low)は実測で既に両trueにつき無変更**（f109bの実装どおり・推測でなく実測で確認）。
+    保証: 控え `_pre-f111-view-lights/helen-h0157-repro__e0ba175651c20251.blend` とのセンサス比較で
+    engine・灯3本(energy/color/size/hide)・メッシュ30・頂点数・材質40 の**差分ゼロ**を機械確認
+    （`logs/f111-view-lights.json` ops=verify）。冪等試験: 2回目実行で flipped=0・SHA不変（ops=idem）。
+    **blend SHA `e0ba175651c20251…` → `b52df9e45e471db3…`**。
+    失ったもの: blendを開いた瞬間から 仮置きAREA灯3本＋灰色世界背景の絵になる
+    （旧見え方=森のHDRIのみ は控えから戻すか、ビューポートの Scene Lights/Scene World
+    チェックを外せばいつでも再現できる）。
+    後処理: f42/f43確認画像3枚を新blendから撮り直し、f45比較JSON取り直し
+    （原作肌÷髪 3.52 対 現行 2.7・参考値）、f46 record取り直し＋check=**PASS**。
+
 ---
 
 ## 3. 独立 checker（2026-08-19 2回目）の指摘 — **2026-08-20 に全件処理済み**
@@ -468,11 +487,11 @@ checker の全文は会話に残っていないので、**上の表がすべて*
 
 ### 推奨作業順序（2026-08-24時点・上の停止点表と併読。新セッションはここから再開）
 
-1. **A1 表示経路の修正**（最優先・小さなblend変更）— 本blend＋v2候補2本の保存ビューポートを
-   `use_scene_lights=true`(シーン灯ON)へ変える冪等スクリプト(f111想定)。
-   診断#55①「見ている絵にシーン灯が無い」の解消で、これを先にしないと A2 の目視判断自体が正しくできない
-   （f43・白飛びと同じ場所で3回目）。触るもの=保存ビュー設定のみ(形状・材質・灯パラメータ不変)。
-   blend SHA前後記録。失うもの: 開いた瞬間から仮置き3灯の絵になる。必要: 武田さん承認(計画→実行)
+1. **A1 表示経路の修正 — ✅ 完了（2026-08-24・#58）**: 本blend＋v2候補2本の保存ビューポートを
+   `use_scene_lights=true`(シーン灯ON)へ変える冪等スクリプト `f111` を実行済み。
+   v2候補は実測で既にtrueにつき無変更。センサス差分ゼロ・冪等確認済み。
+   blend SHA は `e0ba1756…`→`b52df9e45e471db3…`。f42/f43/f45/f46も新SHAで更新し f46 PASS。
+   失うもの: 開いた瞬間から仮置き3灯の絵になる（旧見え方は `_pre-f111-view-lights/` または手動切替で復元可）
 2. **A2 v2候補blend(meansh/low)の目視判断** — 表最優先行の既存停止点。A1後の表示経路で見比べる。
    分岐: 採用(本blend反映は別承認)／調整(第3版)／現行維持。`reports/stage1-review-sheet.png` は古い(#54)
 3. **A3 同構図目視シートの再作成** — 原作フレーム×旧灯×meansh×low を同カメラ同解像度で
@@ -489,7 +508,7 @@ checker の全文は会話に残っていないので、**上の表がすべて*
 **後回し・待ち**: P2ストッキング(第1段合格後)／scene root・prefab root・Helen材質設定
 (回収ルートは将来の配信待ちのみ=#57確定)／silkstock ramp割当て(推測禁止のまま)
 
-**判断待ちリスト**: ①A1実施承認 ←最初に欲しい返事 ②A2目視判断(meansh/low)
+**判断待ちリスト**: ~~①A1実施承認~~（2026-08-24に実施済み=#58） ②**A2目視判断(meansh/low) ←次はこれ**
 ③B着手可否 ④C可否(approximation受け入れ)
 
 照明リグ流用・白ランプ・body ramp流用・現状維持から選ばせる問題ではない。原作対応が取れるまで適用しない。
@@ -630,9 +649,9 @@ LLDB/Frida等の接続手段、ASLR補正、陽性対照breakpoint、managed key
 
 post-attachの最終確認（2026-08-22 15:40）: `f48`正本42件PASS / `f72`今回変更3文PASS・再現試験15件PASS / LT-12（runtime log併存3件）とLT-15（runtime gate `false`）の個別検証PASS。`f72`全量監査は`f87/il2cpp_dumper_py`待機、`f50`全量再監査は`f81`の900秒上限到達後の同じ`f87`待機で技術的停止したため、post-attach全量PASSとは記録しない。
 
-**`f46` だけ不合格のまま**: 成果物を変えたので、`f42`/`f43` が使う確認画像
-（`f43_hdri_rot000.png` / `f42_hdri_base.png` / `f42_scene_base.png`）が blend より古い。
-**見た目の報告を出す前に撮り直す**。`f45` の原作比較は取り直し済み。
+**`f46` の鮮度**: 2026-08-24のA1(#58)でblendが変わったため、f42/f43確認画像3枚・f45比較JSON・
+環境記録を新SHA `b52df9e45e471db3…` から取り直し済み。`f46 check` は **PASS**。
+（次にblendを変える作業では同じ取り直しが必須）
 
 台帳: `ledger/living-claims.json`（正本の生きている主張42件）
 
