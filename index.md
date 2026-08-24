@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1352 ファイル_
+_合計 1663 ファイル_
 
 ## root/ (11)
 
@@ -14,7 +14,7 @@ _合計 1352 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-24T03:24:29Z
-- [log.md](root/log.md) | 2026-08-24T03:24:38Z
+- [log.md](root/log.md) | 2026-08-24T03:28:57Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/analyses/ (56)
@@ -75,6 +75,353 @@ _合計 1352 ファイル_
 - [x-eagle-observation-2026-06-23.md](wiki/analyses/x-eagle-observation-2026-06-23.md) | 2026-06-23T05:28:45Z
 - [x-eagle-project-current-state-interference-audit-2026-06-24.md](wiki/analyses/x-eagle-project-current-state-interference-audit-2026-06-24.md) | 2026-06-24T15:01:17Z
 - [ye-jji-course-roi-for-growing-character-artist.md](wiki/analyses/ye-jji-course-roi-for-growing-character-artist.md) | 2026-07-07T00:55:52Z
+
+## wiki/assets/_staging_batch_resume_20260824/marse-visual/ (2)
+
+- [obs-ch05.md](wiki/assets/_staging_batch_resume_20260824/marse-visual/obs-ch05.md) | 2026-08-24T03:30:44Z
+- [obs-ch06.md](wiki/assets/_staging_batch_resume_20260824/marse-visual/obs-ch06.md) | 2026-08-24T03:30:44Z
+
+## wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/ (15)
+
+- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/00m00s.png) | 2026-08-24T03:30:44Z
+- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/00m20s.png) | 2026-08-24T03:30:44Z
+- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/00m40s.png) | 2026-08-24T03:30:44Z
+- [00m48s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/00m48s.png) | 2026-08-24T03:30:44Z
+- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/01m00s.png) | 2026-08-24T03:30:44Z
+- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/01m20s.png) | 2026-08-24T03:30:44Z
+- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/01m40s.png) | 2026-08-24T03:30:44Z
+- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/02m00s.png) | 2026-08-24T03:30:44Z
+- [02m07s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/02m07s.png) | 2026-08-24T03:30:44Z
+- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/02m20s.png) | 2026-08-24T03:30:44Z
+- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/02m40s.png) | 2026-08-24T03:30:44Z
+- [02m44s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/02m44s.png) | 2026-08-24T03:30:44Z
+- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/03m00s.png) | 2026-08-24T03:30:44Z
+- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/03m20s.png) | 2026-08-24T03:30:44Z
+- [obs-notes.md](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/obs-notes.md) | 2026-08-24T03:30:44Z
+
+## wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/ (19)
+
+- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/00m00s.png) | 2026-08-24T03:30:44Z
+- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/00m20s.png) | 2026-08-24T03:30:44Z
+- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/00m40s.png) | 2026-08-24T03:30:44Z
+- [00m53s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/00m53s.png) | 2026-08-24T03:30:44Z
+- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/01m00s.png) | 2026-08-24T03:30:44Z
+- [01m14s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/01m14s.png) | 2026-08-24T03:30:44Z
+- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/01m20s.png) | 2026-08-24T03:30:44Z
+- [01m25s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/01m25s.png) | 2026-08-24T03:30:44Z
+- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/01m40s.png) | 2026-08-24T03:30:44Z
+- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/02m00s.png) | 2026-08-24T03:30:44Z
+- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/02m20s.png) | 2026-08-24T03:30:44Z
+- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/02m40s.png) | 2026-08-24T03:30:44Z
+- [02m45s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/02m45s.png) | 2026-08-24T03:30:44Z
+- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/03m00s.png) | 2026-08-24T03:30:44Z
+- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/03m20s.png) | 2026-08-24T03:30:44Z
+- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/03m40s.png) | 2026-08-24T03:30:44Z
+- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/04m00s.png) | 2026-08-24T03:30:44Z
+- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/04m20s.png) | 2026-08-24T03:30:44Z
+- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/04m40s.png) | 2026-08-24T03:30:44Z
+
+## wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/ (19)
+
+- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/00m00s.png) | 2026-08-24T03:30:44Z
+- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/00m20s.png) | 2026-08-24T03:30:44Z
+- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/00m40s.png) | 2026-08-24T03:30:44Z
+- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/01m00s.png) | 2026-08-24T03:30:44Z
+- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/01m20s.png) | 2026-08-24T03:30:44Z
+- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/01m40s.png) | 2026-08-24T03:30:44Z
+- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/02m00s.png) | 2026-08-24T03:30:44Z
+- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/02m20s.png) | 2026-08-24T03:30:44Z
+- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/02m40s.png) | 2026-08-24T03:30:44Z
+- [02m54s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/02m54s.png) | 2026-08-24T03:30:44Z
+- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/03m00s.png) | 2026-08-24T03:30:44Z
+- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/03m20s.png) | 2026-08-24T03:30:44Z
+- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/03m40s.png) | 2026-08-24T03:30:44Z
+- [03m55s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/03m55s.png) | 2026-08-24T03:30:44Z
+- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/04m00s.png) | 2026-08-24T03:30:44Z
+- [04m09s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/04m09s.png) | 2026-08-24T03:30:44Z
+- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/04m20s.png) | 2026-08-24T03:30:44Z
+- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/04m40s.png) | 2026-08-24T03:30:44Z
+- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/05m00s.png) | 2026-08-24T03:30:44Z
+
+## wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/ (19)
+
+- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/00m00s.png) | 2026-08-24T03:30:44Z
+- [00m10s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/00m10s.png) | 2026-08-24T03:30:43Z
+- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/00m20s.png) | 2026-08-24T03:30:44Z
+- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/00m40s.png) | 2026-08-24T03:30:44Z
+- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/01m00s.png) | 2026-08-24T03:30:44Z
+- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/01m20s.png) | 2026-08-24T03:30:44Z
+- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/01m40s.png) | 2026-08-24T03:30:44Z
+- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/02m00s.png) | 2026-08-24T03:30:44Z
+- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/02m20s.png) | 2026-08-24T03:30:44Z
+- [02m35s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/02m35s.png) | 2026-08-24T03:30:44Z
+- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/02m40s.png) | 2026-08-24T03:30:43Z
+- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/03m00s.png) | 2026-08-24T03:30:43Z
+- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/03m20s.png) | 2026-08-24T03:30:43Z
+- [03m21s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/03m21s.png) | 2026-08-24T03:30:44Z
+- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/03m40s.png) | 2026-08-24T03:30:44Z
+- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/04m00s.png) | 2026-08-24T03:30:44Z
+- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/04m20s.png) | 2026-08-24T03:30:44Z
+- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/04m40s.png) | 2026-08-24T03:30:44Z
+- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/05m00s.png) | 2026-08-24T03:30:44Z
+
+## wiki/assets/_staging_batch_resume_20260824/sasa-batch/ (1)
+
+- [ch02-observations.md](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02-observations.md) | 2026-08-24T03:30:44Z
+
+## wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/ (36)
+
+- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/00m00s.png) | 2026-08-24T03:30:44Z
+- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/00m20s.png) | 2026-08-24T03:30:44Z
+- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/00m40s.png) | 2026-08-24T03:30:44Z
+- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/01m00s.png) | 2026-08-24T03:30:44Z
+- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/01m20s.png) | 2026-08-24T03:30:44Z
+- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/01m40s.png) | 2026-08-24T03:30:44Z
+- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/02m00s.png) | 2026-08-24T03:30:44Z
+- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/02m20s.png) | 2026-08-24T03:30:44Z
+- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/02m40s.png) | 2026-08-24T03:30:44Z
+- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/03m00s.png) | 2026-08-24T03:30:44Z
+- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/03m20s.png) | 2026-08-24T03:30:44Z
+- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/03m40s.png) | 2026-08-24T03:30:44Z
+- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/04m00s.png) | 2026-08-24T03:30:44Z
+- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/04m20s.png) | 2026-08-24T03:30:44Z
+- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/04m40s.png) | 2026-08-24T03:30:44Z
+- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/05m00s.png) | 2026-08-24T03:30:44Z
+- [05m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/05m20s.png) | 2026-08-24T03:30:44Z
+- [05m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/05m40s.png) | 2026-08-24T03:30:44Z
+- [06m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/06m00s.png) | 2026-08-24T03:30:44Z
+- [06m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/06m20s.png) | 2026-08-24T03:30:44Z
+- [06m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/06m40s.png) | 2026-08-24T03:30:44Z
+- [07m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/07m00s.png) | 2026-08-24T03:30:44Z
+- [07m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/07m20s.png) | 2026-08-24T03:30:44Z
+- [07m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/07m40s.png) | 2026-08-24T03:30:44Z
+- [08m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/08m00s.png) | 2026-08-24T03:30:44Z
+- [08m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/08m20s.png) | 2026-08-24T03:30:44Z
+- [08m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/08m40s.png) | 2026-08-24T03:30:44Z
+- [09m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/09m00s.png) | 2026-08-24T03:30:44Z
+- [09m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/09m20s.png) | 2026-08-24T03:30:44Z
+- [09m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/09m40s.png) | 2026-08-24T03:30:44Z
+- [10m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/10m00s.png) | 2026-08-24T03:30:44Z
+- [10m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/10m20s.png) | 2026-08-24T03:30:44Z
+- [10m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/10m40s.png) | 2026-08-24T03:30:44Z
+- [11m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/11m00s.png) | 2026-08-24T03:30:44Z
+- [11m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/11m20s.png) | 2026-08-24T03:30:44Z
+- [11m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/11m40s.png) | 2026-08-24T03:30:44Z
+
+## wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ (26)
+
+- [TASK_18_ch05-p1_読取2_4(欠落分).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_18_ch05-p1_%E8%AA%AD%E5%8F%962_4%28%E6%AC%A0%E8%90%BD%E5%88%86%29.completed.txt) | 2026-08-24T03:30:45Z
+- [TASK_18_ch05-p1_読取2_4(欠落分).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_18_ch05-p1_%E8%AA%AD%E5%8F%962_4%28%E6%AC%A0%E8%90%BD%E5%88%86%29.prompt.txt) | 2026-08-24T03:30:45Z
+- [TASK_18_ch05-p2_読取B(2_4).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_18_ch05-p2_%E8%AA%AD%E5%8F%96B%282_4%29.prompt.txt) | 2026-08-24T03:30:45Z
+- [TASK_18_ch05-p2_読取C(3_4).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_18_ch05-p2_%E8%AA%AD%E5%8F%96C%283_4%29.completed.txt) | 2026-08-24T03:30:45Z
+- [TASK_18_ch05-p2_読取C(3_4).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_18_ch05-p2_%E8%AA%AD%E5%8F%96C%283_4%29.prompt.txt) | 2026-08-24T03:30:45Z
+- [TASK_19_ch05-p2_読取A(1_4).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_19_ch05-p2_%E8%AA%AD%E5%8F%96A%281_4%29.completed.txt) | 2026-08-24T03:30:45Z
+- [TASK_19_ch05-p2_読取A(1_4).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_19_ch05-p2_%E8%AA%AD%E5%8F%96A%281_4%29.prompt.txt) | 2026-08-24T03:30:45Z
+- [TASK_19_ch05-p2_読取D(4_4).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_19_ch05-p2_%E8%AA%AD%E5%8F%96D%284_4%29.completed.txt) | 2026-08-24T03:30:45Z
+- [TASK_19_ch05-p2_読取D(4_4).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_19_ch05-p2_%E8%AA%AD%E5%8F%96D%284_4%29.prompt.txt) | 2026-08-24T03:30:45Z
+- [TASK_20_ch05-p2_読取B(2_4)再試行.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_20_ch05-p2_%E8%AA%AD%E5%8F%96B%282_4%29%E5%86%8D%E8%A9%A6%E8%A1%8C.completed.txt) | 2026-08-24T03:30:45Z
+- [TASK_20_ch05-p2_読取B(2_4)再試行.prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_20_ch05-p2_%E8%AA%AD%E5%8F%96B%282_4%29%E5%86%8D%E8%A9%A6%E8%A1%8C.prompt.txt) | 2026-08-24T03:30:45Z
+- [TASK_20_ch05-p3_読取E(1_3).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_20_ch05-p3_%E8%AA%AD%E5%8F%96E%281_3%29.completed.txt) | 2026-08-24T03:30:45Z
+- [TASK_20_ch05-p3_読取E(1_3).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_20_ch05-p3_%E8%AA%AD%E5%8F%96E%281_3%29.prompt.txt) | 2026-08-24T03:30:45Z
+- [TASK_21_ch05-p3_読取G(3_3).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_21_ch05-p3_%E8%AA%AD%E5%8F%96G%283_3%29.prompt.txt) | 2026-08-24T03:30:45Z
+- [TASK_21_ch05-p4_読取H(1_2).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_21_ch05-p4_%E8%AA%AD%E5%8F%96H%281_2%29.completed.txt) | 2026-08-24T03:30:45Z
+- [TASK_21_ch05-p4_読取H(1_2).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_21_ch05-p4_%E8%AA%AD%E5%8F%96H%281_2%29.prompt.txt) | 2026-08-24T03:30:45Z
+- [TASK_22_ch05-p4_読取I(2_2).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_22_ch05-p4_%E8%AA%AD%E5%8F%96I%282_2%29.prompt.txt) | 2026-08-24T03:30:45Z
+- [ch05-p1_読取1_4.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p1_%E8%AA%AD%E5%8F%961_4.completed.txt) | 2026-08-24T03:30:45Z
+- [ch05-p1_読取2_4.error.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p1_%E8%AA%AD%E5%8F%962_4.error.txt) | 2026-08-24T03:30:45Z
+- [ch05-p1_読取3_4.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p1_%E8%AA%AD%E5%8F%963_4.completed.txt) | 2026-08-24T03:30:45Z
+- [ch05-p1_読取4_4.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p1_%E8%AA%AD%E5%8F%964_4.completed.txt) | 2026-08-24T03:30:45Z
+- [ch05-p1_読取4_4.error.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p1_%E8%AA%AD%E5%8F%964_4.error.txt) | 2026-08-24T03:30:45Z
+- [ch05-p2_読取2_4.running.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p2_%E8%AA%AD%E5%8F%962_4.running.txt) | 2026-08-24T03:30:45Z
+- [ch05-p3_読取F_2_3.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p3_%E8%AA%AD%E5%8F%96F_2_3.completed.txt) | 2026-08-24T03:30:45Z
+- [ch05-p3_読取G_3_3.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p3_%E8%AA%AD%E5%8F%96G_3_3.completed.txt) | 2026-08-24T03:30:45Z
+- [ch05-p4_読取IB.backup.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p4_%E8%AA%AD%E5%8F%96IB.backup.txt) | 2026-08-24T03:30:45Z
+
+## wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/ (51)
+
+- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/00m00s.png) | 2026-08-24T03:30:44Z
+- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/00m20s.png) | 2026-08-24T03:30:44Z
+- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/00m40s.png) | 2026-08-24T03:30:44Z
+- [00m57s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/00m57s.png) | 2026-08-24T03:30:44Z
+- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/01m00s.png) | 2026-08-24T03:30:44Z
+- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/01m20s.png) | 2026-08-24T03:30:44Z
+- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/01m40s.png) | 2026-08-24T03:30:44Z
+- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/02m00s.png) | 2026-08-24T03:30:44Z
+- [02m18s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/02m18s.png) | 2026-08-24T03:30:44Z
+- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/02m20s.png) | 2026-08-24T03:30:44Z
+- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/02m40s.png) | 2026-08-24T03:30:44Z
+- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/03m00s.png) | 2026-08-24T03:30:44Z
+- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/03m20s.png) | 2026-08-24T03:30:44Z
+- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/03m40s.png) | 2026-08-24T03:30:44Z
+- [03m56s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/03m56s.png) | 2026-08-24T03:30:44Z
+- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/04m00s.png) | 2026-08-24T03:30:44Z
+- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/04m20s.png) | 2026-08-24T03:30:44Z
+- [04m39s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/04m39s.png) | 2026-08-24T03:30:44Z
+- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/04m40s.png) | 2026-08-24T03:30:44Z
+- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/05m00s.png) | 2026-08-24T03:30:44Z
+- [05m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/05m20s.png) | 2026-08-24T03:30:44Z
+- [05m33s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/05m33s.png) | 2026-08-24T03:30:44Z
+- [05m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/05m40s.png) | 2026-08-24T03:30:44Z
+- [06m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/06m00s.png) | 2026-08-24T03:30:44Z
+- [06m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/06m20s.png) | 2026-08-24T03:30:44Z
+- [06m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/06m40s.png) | 2026-08-24T03:30:44Z
+- [07m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/07m00s.png) | 2026-08-24T03:30:44Z
+- [07m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/07m20s.png) | 2026-08-24T03:30:44Z
+- [07m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/07m40s.png) | 2026-08-24T03:30:44Z
+- [08m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/08m00s.png) | 2026-08-24T03:30:44Z
+- [08m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/08m20s.png) | 2026-08-24T03:30:44Z
+- [08m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/08m40s.png) | 2026-08-24T03:30:44Z
+- [09m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/09m00s.png) | 2026-08-24T03:30:44Z
+- [09m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/09m20s.png) | 2026-08-24T03:30:44Z
+- [09m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/09m40s.png) | 2026-08-24T03:30:44Z
+- [10m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/10m00s.png) | 2026-08-24T03:30:44Z
+- [10m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/10m20s.png) | 2026-08-24T03:30:44Z
+- [10m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/10m40s.png) | 2026-08-24T03:30:44Z
+- [11m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/11m00s.png) | 2026-08-24T03:30:44Z
+- [11m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/11m20s.png) | 2026-08-24T03:30:44Z
+- [11m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/11m40s.png) | 2026-08-24T03:30:44Z
+- [12m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/12m00s.png) | 2026-08-24T03:30:44Z
+- [12m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/12m20s.png) | 2026-08-24T03:30:44Z
+- [12m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/12m40s.png) | 2026-08-24T03:30:44Z
+- [13m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/13m00s.png) | 2026-08-24T03:30:44Z
+- [13m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/13m20s.png) | 2026-08-24T03:30:44Z
+- [13m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/13m40s.png) | 2026-08-24T03:30:44Z
+- [14m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/14m00s.png) | 2026-08-24T03:30:44Z
+- [14m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/14m20s.png) | 2026-08-24T03:30:44Z
+- [14m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/14m40s.png) | 2026-08-24T03:30:44Z
+- [15m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/15m00s.png) | 2026-08-24T03:30:44Z
+
+## wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/ (50)
+
+- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/00m00s.png) | 2026-08-24T03:30:44Z
+- [00m13s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/00m13s.png) | 2026-08-24T03:30:44Z
+- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/00m20s.png) | 2026-08-24T03:30:44Z
+- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/00m40s.png) | 2026-08-24T03:30:44Z
+- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/01m00s.png) | 2026-08-24T03:30:44Z
+- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/01m20s.png) | 2026-08-24T03:30:44Z
+- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/01m40s.png) | 2026-08-24T03:30:44Z
+- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/02m00s.png) | 2026-08-24T03:30:44Z
+- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/02m20s.png) | 2026-08-24T03:30:44Z
+- [02m39s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/02m39s.png) | 2026-08-24T03:30:44Z
+- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/02m40s.png) | 2026-08-24T03:30:44Z
+- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/03m00s.png) | 2026-08-24T03:30:44Z
+- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/03m20s.png) | 2026-08-24T03:30:44Z
+- [03m33s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/03m33s.png) | 2026-08-24T03:30:44Z
+- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/03m40s.png) | 2026-08-24T03:30:44Z
+- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/04m00s.png) | 2026-08-24T03:30:44Z
+- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/04m20s.png) | 2026-08-24T03:30:44Z
+- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/04m40s.png) | 2026-08-24T03:30:44Z
+- [04m51s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/04m51s.png) | 2026-08-24T03:30:44Z
+- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/05m00s.png) | 2026-08-24T03:30:44Z
+- [05m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/05m20s.png) | 2026-08-24T03:30:44Z
+- [05m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/05m40s.png) | 2026-08-24T03:30:44Z
+- [06m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/06m00s.png) | 2026-08-24T03:30:44Z
+- [06m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/06m20s.png) | 2026-08-24T03:30:44Z
+- [06m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/06m40s.png) | 2026-08-24T03:30:44Z
+- [07m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/07m00s.png) | 2026-08-24T03:30:44Z
+- [07m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/07m20s.png) | 2026-08-24T03:30:44Z
+- [07m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/07m40s.png) | 2026-08-24T03:30:44Z
+- [08m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/08m00s.png) | 2026-08-24T03:30:44Z
+- [08m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/08m20s.png) | 2026-08-24T03:30:44Z
+- [08m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/08m40s.png) | 2026-08-24T03:30:44Z
+- [09m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/09m00s.png) | 2026-08-24T03:30:44Z
+- [09m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/09m20s.png) | 2026-08-24T03:30:44Z
+- [09m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/09m40s.png) | 2026-08-24T03:30:44Z
+- [10m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/10m00s.png) | 2026-08-24T03:30:44Z
+- [10m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/10m20s.png) | 2026-08-24T03:30:44Z
+- [10m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/10m40s.png) | 2026-08-24T03:30:44Z
+- [11m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/11m00s.png) | 2026-08-24T03:30:44Z
+- [11m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/11m20s.png) | 2026-08-24T03:30:44Z
+- [11m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/11m40s.png) | 2026-08-24T03:30:44Z
+- [12m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/12m00s.png) | 2026-08-24T03:30:44Z
+- [12m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/12m20s.png) | 2026-08-24T03:30:44Z
+- [12m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/12m40s.png) | 2026-08-24T03:30:44Z
+- [13m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/13m00s.png) | 2026-08-24T03:30:44Z
+- [13m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/13m20s.png) | 2026-08-24T03:30:44Z
+- [13m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/13m40s.png) | 2026-08-24T03:30:44Z
+- [14m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/14m00s.png) | 2026-08-24T03:30:44Z
+- [14m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/14m20s.png) | 2026-08-24T03:30:44Z
+- [14m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/14m40s.png) | 2026-08-24T03:30:44Z
+- [15m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/15m00s.png) | 2026-08-24T03:30:44Z
+
+## wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/ (45)
+
+- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/00m00s.png) | 2026-08-24T03:30:44Z
+- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/00m20s.png) | 2026-08-24T03:30:44Z
+- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/00m40s.png) | 2026-08-24T03:30:44Z
+- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/01m00s.png) | 2026-08-24T03:30:44Z
+- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/01m20s.png) | 2026-08-24T03:30:44Z
+- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/01m40s.png) | 2026-08-24T03:30:44Z
+- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/02m00s.png) | 2026-08-24T03:30:44Z
+- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/02m20s.png) | 2026-08-24T03:30:44Z
+- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/02m40s.png) | 2026-08-24T03:30:44Z
+- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/03m00s.png) | 2026-08-24T03:30:44Z
+- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/03m20s.png) | 2026-08-24T03:30:44Z
+- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/03m40s.png) | 2026-08-24T03:30:44Z
+- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/04m00s.png) | 2026-08-24T03:30:44Z
+- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/04m20s.png) | 2026-08-24T03:30:44Z
+- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/04m40s.png) | 2026-08-24T03:30:44Z
+- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/05m00s.png) | 2026-08-24T03:30:44Z
+- [05m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/05m20s.png) | 2026-08-24T03:30:44Z
+- [05m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/05m40s.png) | 2026-08-24T03:30:44Z
+- [06m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/06m00s.png) | 2026-08-24T03:30:44Z
+- [06m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/06m20s.png) | 2026-08-24T03:30:44Z
+- [06m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/06m40s.png) | 2026-08-24T03:30:44Z
+- [07m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/07m00s.png) | 2026-08-24T03:30:44Z
+- [07m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/07m20s.png) | 2026-08-24T03:30:44Z
+- [07m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/07m40s.png) | 2026-08-24T03:30:44Z
+- [08m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/08m00s.png) | 2026-08-24T03:30:44Z
+- [08m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/08m20s.png) | 2026-08-24T03:30:44Z
+- [08m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/08m40s.png) | 2026-08-24T03:30:44Z
+- [09m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/09m00s.png) | 2026-08-24T03:30:44Z
+- [09m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/09m20s.png) | 2026-08-24T03:30:44Z
+- [09m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/09m40s.png) | 2026-08-24T03:30:44Z
+- [10m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/10m00s.png) | 2026-08-24T03:30:44Z
+- [10m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/10m20s.png) | 2026-08-24T03:30:44Z
+- [10m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/10m40s.png) | 2026-08-24T03:30:44Z
+- [11m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/11m00s.png) | 2026-08-24T03:30:44Z
+- [11m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/11m20s.png) | 2026-08-24T03:30:44Z
+- [11m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/11m40s.png) | 2026-08-24T03:30:44Z
+- [12m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/12m00s.png) | 2026-08-24T03:30:44Z
+- [12m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/12m20s.png) | 2026-08-24T03:30:44Z
+- [12m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/12m40s.png) | 2026-08-24T03:30:44Z
+- [13m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/13m00s.png) | 2026-08-24T03:30:44Z
+- [13m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/13m20s.png) | 2026-08-24T03:30:44Z
+- [13m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/13m40s.png) | 2026-08-24T03:30:44Z
+- [14m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/14m00s.png) | 2026-08-24T03:30:44Z
+- [14m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/14m20s.png) | 2026-08-24T03:30:44Z
+- [14m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/14m40s.png) | 2026-08-24T03:30:44Z
+
+## wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/ (28)
+
+- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/00m00s.png) | 2026-08-24T03:30:44Z
+- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/00m20s.png) | 2026-08-24T03:30:44Z
+- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/00m40s.png) | 2026-08-24T03:30:44Z
+- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/01m00s.png) | 2026-08-24T03:30:44Z
+- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/01m20s.png) | 2026-08-24T03:30:44Z
+- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/01m40s.png) | 2026-08-24T03:30:44Z
+- [01m56s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/01m56s.png) | 2026-08-24T03:30:44Z
+- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/02m00s.png) | 2026-08-24T03:30:44Z
+- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/02m20s.png) | 2026-08-24T03:30:44Z
+- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/02m40s.png) | 2026-08-24T03:30:44Z
+- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/03m00s.png) | 2026-08-24T03:30:44Z
+- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/03m20s.png) | 2026-08-24T03:30:44Z
+- [03m21s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/03m21s.png) | 2026-08-24T03:30:44Z
+- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/03m40s.png) | 2026-08-24T03:30:44Z
+- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/04m00s.png) | 2026-08-24T03:30:44Z
+- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/04m20s.png) | 2026-08-24T03:30:44Z
+- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/04m40s.png) | 2026-08-24T03:30:44Z
+- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/05m00s.png) | 2026-08-24T03:30:44Z
+- [05m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/05m20s.png) | 2026-08-24T03:30:44Z
+- [05m24s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/05m24s.png) | 2026-08-24T03:30:44Z
+- [05m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/05m40s.png) | 2026-08-24T03:30:44Z
+- [06m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/06m00s.png) | 2026-08-24T03:30:44Z
+- [06m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/06m20s.png) | 2026-08-24T03:30:44Z
+- [06m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/06m40s.png) | 2026-08-24T03:30:44Z
+- [07m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/07m00s.png) | 2026-08-24T03:30:44Z
+- [07m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/07m20s.png) | 2026-08-24T03:30:44Z
+- [07m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/07m40s.png) | 2026-08-24T03:30:44Z
+- [08m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/08m00s.png) | 2026-08-24T03:30:44Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 
@@ -415,7 +762,7 @@ _合計 1352 ファイル_
 - [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-24T01:21:49Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-24T01:09:12Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
-- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-24T02:44:03Z
+- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-24T03:26:52Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T10:00:16Z
 - [gf2-helen-rest-room-motion-v22.md](wiki/builds/gf2-helen-rest-room-motion-v22.md) | 2026-07-27T00:02:48Z
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z

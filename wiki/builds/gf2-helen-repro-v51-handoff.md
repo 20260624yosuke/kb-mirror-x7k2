@@ -378,6 +378,31 @@ sources:
       （ゲーム通信への介入のため別承認・リスク評価が必要）。
     - **成果物blend無変更**。
 
+60. **逆引き地図・孤児bundle・CAB依存グラフ（`f114`/`f115`/`f116`・2026-08-24夜）**:
+    - **`f114_lighting_bundle_atlas.py`**: 照明を持つ938bundle全件に
+      「カタログ上どのアドレス可能物の依存か」をラベル付け。**室内シーンの照明構成パターンが
+      手元に多数実在**と判明（Playroom Lobby GFMB=504灯、Machineroom night=804灯、
+      **ASMR Safehouse07B GFMB**、SIM resident rooms、Motor_Room 等。
+      いずれも RenderSettings 1＋LightmapSettings 1＋probe＋Light数十〜800 の構成）。
+    - **孤児bundle=711本を検出**（現行カタログ2種のどちらからも参照されない＝旧資源版由来の可能性）。
+      うち22本が照明オブジェクトを持ち、6本はscene型(RenderSettings+LightmapSettings)。
+      `f115_orphan_scene_identify.py` で識別した結果、**寮/寝室を示す名前フラグは無く**
+      汎用インテリア系（floor/wall/chair）。寮旧版ではなかった。
+    - **`f116_cab_graph.py`**: 全13,539bundleから AssetBundle.m_Name／m_Dependencies を取得し
+      CAB依存グラフを構築（辺108,627本・解決75,554本・70%・行は
+      `intermediate/f116-cab-graph-rows.json` に永続化）。
+      寮probe CAB(`29933d6c…`)への静的参照は0件だったが、**店頭probeの対照も0件**であり
+      （グラフ自体は解決率70%で機能）、これは「寮scene不在」ではなく
+      **probeが実行時キーロードされていること（実行時ログのprobe切替行）と整合する**。
+      ヘレンprefab(disk `60cd095a…`)への参照もローカル0件＝参照側bundleが欠損している例があり、
+      「静的参照なし≠対象不在」であることを対照つきで確認した。
+    - **この時点での正しい結論の強さ**: 「H0157固有の直接光実値は手元の
+      バイト・オブジェクト・カタログ・CAB依存グラフの4方法で不検出」まで。
+      プロジェクト中断の根拠にはならない（未試行ルートが残る:
+      応答書き換え強制DL／Assembly-CSharpのLoadRoomById経路解析(E2/E3の続き)／将来の配信）。
+    - **成果物blend無変更**。証拠 `logs/f114-lighting-bundle-atlas.json` /
+      `logs/f115-orphan-scene-identify.json` / `logs/f116-cab-graph.json`。
+
 ---
 
 ## 3. 独立 checker（2026-08-19 2回目）の指摘 — **2026-08-20 に全件処理済み**

@@ -9239,5 +9239,9 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 実施: `video_ingest_gate.py check --phase complete` PASS → index.md 行更新
   (映像観測 56 枚) → frontmatter `visual_ingested: 2026-08-24` + manifest `completed` 付与
   → 再検査 PASS。フレーム56枚(`wiki/assets/frames/coloso-hide-ch05-male-female-proportion/`)。
+- snapshot 取扱い(8/23 完成分 hide ch02/ch03・sasa ch01 と同じ前例): 抽出時 baseline を
+  `snapshot-pre.json`(2026-08-23, 非retrofit)へ退避し、flag 反映後の現状を `snapshot.json`
+  (retrofit)として再記録。raw/動画 SHA-256 は退避前後で一致を機械確認済み。
+  最終 check は本文非破壊が遡及基準(節の存在確認)で判定される旨を warning として明示。
 - 更新: `index.md`, `log.md`, `wiki/sources/coloso-hide-ch05-male-female-proportion.md`,
   `wiki/assets/frames/coloso-hide-ch05-male-female-proportion/manifest.json`

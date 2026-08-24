@@ -1,0 +1,28 @@
+あなたは画像読取のみを担当するリサーチタスクです。コードは書かず、ファイルの作成・変更も一切しないでください。
+以下の 12枚の PNG を Read ツールで1枚ずつ開き、画面上で確認できる事実だけを日本語で記録してください:
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/07m20s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/07m40s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/08m00s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/08m20s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/08m40s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/09m00s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/09m20s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/09m40s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/10m00s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/10m20s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/10m40s.png
+/var/folders/mx/08ffsjl11dnc3yxc_76clv940000gn/T/opencode/yejji-ch05/p2/frames/11m00s.png
+
+厳守ルール:
+- 上記以外のファイル・ディレクトリは一切読まない。検索(grep/glob)も不要。wiki 配下や元動画ページの参照は禁止。
+- 画面に表示されていない数値・意味・文脈を推測しない。
+- スライド内の文字は原文どおり(ハングルならハングル)。訳さない。読めない文字は「判読不能」。
+- CLIP STUDIO PAINT の画面なら、キャンバス上の被写体(球体/コップ/グラス等の透明・半透明物体)、塗りの進行状態、表示倍率、Brush Size 等も記す。
+- 各フレームに確信度(high/medium/low)を付ける。
+
+出力形式(各フレーム1ブロック、簡潔に。全枚数を優先):
+<ファイル名>
+確信度: high|medium|low
+観測: <画面上の事実>
+
+全12枚分を必ず返してください。
