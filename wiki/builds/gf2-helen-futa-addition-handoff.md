@@ -212,6 +212,7 @@ sources: []
 | calm-garden（03futa-helen-json.json） | 08-23 20:07頃 | S30/S40 所見を**会話テキストのみに**記録 → S50読込直後に停止。所見がログ依存で消失 |
 | glowing-otter（04.json） | 08-23 20:33頃 | S50 の3枚を読了した直後・報告前に **network_error** 死亡（トークン0・step-startのみ） |
 | nimble-comet（05_futa helen.json） | 08-23 21:27頃 | S50所見のwiki永続化・Inbox申告・コンタクトシート生成まで成功 → **シート提示直前に APIError 503**（Upstream endpoint unavailable）。シート自体はディスクに残存 |
+| （品質相談・モーション選定セッション 2026-08-24） | 08-24 午後 | /hold で品質相談→§8 方針確定→抽出計画v1→独立レビュー「要修正」→v2承認→7本抽出・検証・独立監査「合格」→**H0149選定→正常完了**（死亡なし）。「別セッションで進める」指示で本ページを仕上げて引き継ぎ |
 | （再開セッション・本行を書いたセッション） | 08-23 21:51〜22時台 | シート提示・BVH貫通実測・wiki訂正まで完了。基準カード提示中に武田さんが中断 → 「引き継ぎ資料を作成・別のセクションで話を進める」指示で**正常な区切り終了**（死亡ではない） |
 | （本ページ管理中のセッション） | 08-23 10時〜 | **作業のたびにこのページを更新すること** |
 
@@ -233,6 +234,9 @@ sources: []
 | コンタクトシート（9枚一覧） | 同 `07_futa-helen/reports/previews/phaseA_contact_sheet.png` |
 | プレビュー画像（素材選定時） | 同 `07_futa-helen/reports/previews/`（`gracy_shaft_cluster_viewA/B/C.png` が最新版） |
 | ヘレン本体 blend（触らない） | 同 `06_repro-v51/blends/helen-h0157-repro.blend` |
+| **整備室モーション選定の産物一式** | `05_helen-motion-library/library-v2-fidelity/barrack-preview-20260824/`（プレビュー7本・検証JSON・監査記録）。**H0149 の baked blend** = 同 `runs/h0149__ssr0101__SRC__run1.blend`（Action 名 `LIFE_H0149_HelenSSR0101_Barracksp_Behave_Stretch__ssr0101__SRC`・439帧）。mp4 = 同 `previews/videos/H0149__ssr0101__SRC.mp4` |
+| 選定計画書（v2・選定記録済み） | 同 `07_futa-helen/reports/BARRACK-MOTION-PREVIEW-PLAN-2026-08-24.md` |
+| モーション台帳 | `05_helen-motion-library/helen-motion-catalog.md`（H0149 は L158。frame_count の正本は `library-v2-fidelity/inventory-v2.sqlite` の v2_records） |
 
 ## 5. 触ってはいけないもの
 
@@ -300,6 +304,40 @@ sources: []
   監査渡し計画書自体がバイアス経路・preflight依存の障害点処理欠落＋minor7）→
   **全件反映の v2 としてユーザー承認済み**、実行開始。
   計画書正本: プロジェクト側 `07_futa-helen/reports/BARRACK-MOTION-PREVIEW-PLAN-2026-08-24.md`。
+- 2026-08-24（続き）: **選定完了 → 引き継ぎ仕上げ**。計画v2の全工程（E1前提確認→preflightは
+  スコープ判断でユーザー承認のうえ続行→ゲート回避複製で抽出→validate_action/shape_validate
+  全7本PASS→V4/V5/V6全PASS→中立ドシアによる独立監査「合格」major0）を完了。
+  武田さんがプレビュー実物を視聴のうえ **H0149 Barracksp_Behave_Stretch を選定**。
+  §2⑤⑦に陳腐化標識・§3にセッション行・§4に産物パス・**§9（v4開始手順）新設**。
+  武田さんの指示「別セッションで進めるから引き継ぎ資料を作って」により本ページを確定状態へ。
+
+## 9. 次セッションの開始手順（移植計画 v4）
+
+> [!info] 次セッションはここから
+> ① 本ページ §0・§2 警告・§8・§9 を読む → ② プロジェクト直下 `run-state.json` を読む
+> → ③ 下記の入力と要件で**計画 v1 を作成** → ④ サブエージェント独立レビュー（バイアス制御:
+> 承認状況を伏せて品質のみ判定・本プロジェクトの前例と同じ方式）→ ⑤ 指摘反映の v2 で
+> 武田さんの承認カードを取る → ⑥ 承認後に実装開始。
+
+- **v4 の目的**: 裸futaヘレン × H0149（Barracksp_Behave_Stretch・439帧）× 揺れ物理 の
+  第一目標シーンを、機械検証込みで完成させる。§8 の方針（動くシーン正本・勃起固定・裸先行）に従う。
+- **v4 計画が答えるべき論点（未決事項）**:
+  1. オブジェクトのリグ・ウェイト（クラスタは vertex_groups=0 で未搬入 — §2①）
+  2. スケールの再評価（S30/S40/S50 相当の寸法を**動く状態**で比較する方法）
+  3. 揺れ物理の設計（骨構造・揺れ範囲・H0149 の大きな体動に対する追従）
+  4. 裸体の表示方法（P1_cloth_lod0 等の服メッシュ非表示の範囲・裸足版 Dorm の扱い）
+  5. 合否の機械門の再設計（静止 G4/G5 は最終合否根拠から外れる — 動きベースの門へ。
+     G1〜G3 幾何系は転用可、体メッシュ非水密問題への3方向多数決も転用可 — §2⑥）
+  6. 品質判断用レンダの仕様（EEVEE/Cycles・材質 `GF_c_HelenSSR0101_slg_body` 流用 — §2②）
+- **v4 の入力ファイル**: §4 の表参照（H0149 baked blend・クラスタ blend・work blend・
+  モーション台帳・v51 正本）。
+- **プロセス要件（過去の失敗からの必須事項）**:
+  - 計画は完成形（§8）から順に決め、基準・技術を先行固定しない
+  - 機械検証を計画に組み込み、verify の PASS が「幾何＋衝突（＋動き）」を意味するようにする
+  - レンダの目視所見を物理妥当性の根拠にしない
+  - サブエージェント監査には承認状況・期待を渡さない（中立ドシア方式 — barrack-preview の
+    `reports/audit-dossier.md` が書式例）
+  - 作業の各段階で本ページと `run-state.json` を更新してから次へ進む（§3 の教訓）
 
 ## 8. 完成形方針（2026-08-24 決定・品質相談の産物）
 
