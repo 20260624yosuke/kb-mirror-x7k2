@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1667 ファイル_
+_合計 1668 ファイル_
 
 ## root/ (11)
 
@@ -724,8 +724,9 @@ _合計 1667 ファイル_
 - [ye-jji-ch04-p4-12m40s.png](wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-12m40s.png) | 2026-08-23T00:22:33Z
 - [ye-jji-ch04-p4-18m00s.png](wiki/assets/frames/coloso-ye-jji-ch04-volume/ye-jji-ch04-p4-18m00s.png) | 2026-08-23T00:22:33Z
 
-## wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ (14)
+## wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ (15)
 
+- [ye-jji-ch05-p1-00m00s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p1-00m00s.png) | 2026-08-24T06:53:14Z
 - [ye-jji-ch05-p1-00m20s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p1-00m20s.png) | 2026-08-23T09:15:06Z
 - [ye-jji-ch05-p1-01m40s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p1-01m40s.png) | 2026-08-23T09:15:06Z
 - [ye-jji-ch05-p1-02m20s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p1-02m20s.png) | 2026-08-23T09:15:07Z
