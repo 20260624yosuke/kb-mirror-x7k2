@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1976 ファイル_
+_合計 1983 ファイル_
 
 ## root/ (11)
 
@@ -649,6 +649,16 @@ _合計 1976 ファイル_
 - [hide-ch03-15m20s.png](wiki/assets/frames/coloso-hide-ch03-line-practice/hide-ch03-15m20s.png) | 2026-08-23T02:17:23Z
 - [hide-ch03-16m00s.png](wiki/assets/frames/coloso-hide-ch03-line-practice/hide-ch03-16m00s.png) | 2026-08-23T02:17:23Z
 - [hide-ch03-16m40s.png](wiki/assets/frames/coloso-hide-ch03-line-practice/hide-ch03-16m40s.png) | 2026-08-23T02:17:23Z
+
+## wiki/assets/frames/coloso-hide-ch04-body-basics/ (7)
+
+- [hide-ch04-04m33s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-04m33s.png) | 2026-08-24T07:45:01Z
+- [hide-ch04-08m40s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-08m40s.png) | 2026-08-24T07:45:02Z
+- [hide-ch04-10m40s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-10m40s.png) | 2026-08-24T07:45:02Z
+- [hide-ch04-12m20s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-12m20s.png) | 2026-08-24T07:45:02Z
+- [hide-ch04-14m00s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-14m00s.png) | 2026-08-24T07:45:02Z
+- [hide-ch04-17m40s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-17m40s.png) | 2026-08-24T07:45:03Z
+- [hide-ch04-19m20s.png](wiki/assets/frames/coloso-hide-ch04-body-basics/hide-ch04-19m20s.png) | 2026-08-24T07:45:03Z
 
 ## wiki/assets/frames/coloso-hide-ch05-male-female-proportion/ (56)
 
