@@ -13,7 +13,7 @@ _合計 1666 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-24T04:21:11Z
+- [index.md](root/index.md) | 2026-08-24T04:55:56Z
 - [log.md](root/log.md) | 2026-08-24T04:21:03Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
@@ -1517,8 +1517,8 @@ _合計 1666 ファイル_
 - [coloso-marse-ch02-course-outline.md](wiki/sources/coloso-marse-ch02-course-outline.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch03-work-environment.md](wiki/sources/coloso-marse-ch03-work-environment.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch04-reference-trend-face-stock.md](wiki/sources/coloso-marse-ch04-reference-trend-face-stock.md) | 2026-08-23T01:33:34Z
-- [coloso-marse-ch05-fetish-face.md](wiki/sources/coloso-marse-ch05-fetish-face.md) | 2026-08-23T12:24:51Z
-- [coloso-marse-ch06-fetish-upper-body.md](wiki/sources/coloso-marse-ch06-fetish-upper-body.md) | 2026-08-23T12:24:51Z
+- [coloso-marse-ch05-fetish-face.md](wiki/sources/coloso-marse-ch05-fetish-face.md) | 2026-08-24T04:53:31Z
+- [coloso-marse-ch06-fetish-upper-body.md](wiki/sources/coloso-marse-ch06-fetish-upper-body.md) | 2026-08-24T04:53:31Z
 - [coloso-marse-ch07-fetish-lower-full-body.md](wiki/sources/coloso-marse-ch07-fetish-lower-full-body.md) | 2026-08-23T12:24:51Z
 - [coloso-marse-ch08-focus-first-composition.md](wiki/sources/coloso-marse-ch08-focus-first-composition.md) | 2026-06-01T03:44:37Z
 - [coloso-marse-ch09-feminine-pose.md](wiki/sources/coloso-marse-ch09-feminine-pose.md) | 2026-06-01T03:39:48Z
