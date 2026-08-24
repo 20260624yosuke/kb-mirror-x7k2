@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1666 ファイル_
+_合計 1667 ファイル_
 
 ## root/ (11)
 
@@ -20,6 +20,10 @@ _合計 1666 ファイル_
 ## wiki/_attachments/gf2-costume-inventory/ (1)
 
 - [report.md](wiki/_attachments/gf2-costume-inventory/report.md) | 2026-08-24T04:07:08Z
+
+## wiki/_attachments/gf2-skin-genre-map/ (1)
+
+- [report.md](wiki/_attachments/gf2-skin-genre-map/report.md) | 2026-08-24T06:03:05Z
 
 ## wiki/analyses/ (58)
 
