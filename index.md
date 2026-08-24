@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1983 ファイル_
+_合計 2057 ファイル_
 
 ## root/ (11)
 
@@ -809,6 +809,72 @@ _合計 1983 ファイル_
 - [marse-ch04-02m40s.png](wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/marse-ch04-02m40s.png) | 2026-08-23T00:42:05Z
 - [marse-ch04-03m00s.png](wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/marse-ch04-03m00s.png) | 2026-08-23T00:42:05Z
 
+## wiki/assets/frames/coloso-marse-ch05-fetish-face/ (19)
+
+- [marse-ch05-00m00s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-00m00s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-00m20s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-00m20s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-00m40s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-00m40s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-00m53s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-00m53s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-01m00s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-01m00s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-01m14s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-01m14s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-01m20s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-01m20s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-01m25s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-01m25s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-01m40s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-01m40s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-02m00s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-02m00s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-02m20s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-02m20s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-02m40s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-02m40s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-02m45s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-02m45s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-03m00s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-03m00s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-03m20s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-03m20s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-03m40s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-03m40s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-04m00s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-04m00s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-04m20s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-04m20s.png) | 2026-08-24T04:53:31Z
+- [marse-ch05-04m40s.png](wiki/assets/frames/coloso-marse-ch05-fetish-face/marse-ch05-04m40s.png) | 2026-08-24T04:53:31Z
+
+## wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/ (19)
+
+- [marse-ch06-00m00s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-00m00s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-00m20s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-00m20s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-00m40s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-00m40s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-01m00s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-01m00s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-01m20s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-01m20s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-01m40s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-01m40s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-02m00s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-02m00s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-02m20s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-02m20s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-02m40s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-02m40s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-02m54s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-02m54s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-03m00s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-03m00s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-03m20s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-03m20s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-03m40s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-03m40s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-03m55s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-03m55s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-04m00s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-04m00s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-04m09s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-04m09s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-04m20s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-04m20s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-04m40s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-04m40s.png) | 2026-08-24T04:53:31Z
+- [marse-ch06-05m00s.png](wiki/assets/frames/coloso-marse-ch06-fetish-upper-body/marse-ch06-05m00s.png) | 2026-08-24T04:53:31Z
+
+## wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/ (19)
+
+- [marse-ch07-00m00s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-00m00s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-00m10s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-00m10s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-00m20s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-00m20s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-00m40s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-00m40s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-01m00s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-01m00s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-01m20s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-01m20s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-01m40s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-01m40s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-02m00s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-02m00s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-02m20s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-02m20s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-02m35s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-02m35s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-02m40s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-02m40s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-03m00s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-03m00s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-03m20s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-03m20s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-03m21s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-03m21s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-03m40s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-03m40s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-04m00s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-04m00s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-04m20s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-04m20s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-04m40s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-04m40s.png) | 2026-08-24T07:36:08Z
+- [marse-ch07-05m00s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-05m00s.png) | 2026-08-24T07:36:08Z
+
 ## wiki/assets/frames/coloso-sasa-ch01-intro/ (10)
 
 - [sasa-ch01-00m40s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-00m40s.png) | 2026-08-23T08:19:16Z
@@ -821,6 +887,26 @@ _合計 1983 ファイル_
 - [sasa-ch01-08m20s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-08m20s.png) | 2026-08-23T08:19:16Z
 - [sasa-ch01-09m00s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-09m00s.png) | 2026-08-23T08:19:16Z
 - [sasa-ch01-10m00s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-10m00s.png) | 2026-08-23T08:19:16Z
+
+## wiki/assets/frames/coloso-sasa-ch02-insight-memo/ (17)
+
+- [sasa-ch02-00m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-00m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-01m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-01m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-01m40s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-01m40s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-02m20s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-02m20s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-03m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-03m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-04m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-04m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-05m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-05m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-06m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-06m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-07m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-07m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-08m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-08m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-09m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-09m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-10m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-10m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-10m20s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-10m20s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-10m40s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-10m40s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-11m00s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-11m00s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-11m20s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-11m20s.png) | 2026-08-24T05:23:20Z
+- [sasa-ch02-11m40s.png](wiki/assets/frames/coloso-sasa-ch02-insight-memo/sasa-ch02-11m40s.png) | 2026-08-24T05:23:20Z
 
 ## wiki/assets/frames/coloso-ye-jji-ch02-contrast/ (11)
 
@@ -1843,9 +1929,9 @@ _合計 1983 ファイル_
 - [coloso-marse-ch02-course-outline.md](wiki/sources/coloso-marse-ch02-course-outline.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch03-work-environment.md](wiki/sources/coloso-marse-ch03-work-environment.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch04-reference-trend-face-stock.md](wiki/sources/coloso-marse-ch04-reference-trend-face-stock.md) | 2026-08-23T01:33:34Z
-- [coloso-marse-ch05-fetish-face.md](wiki/sources/coloso-marse-ch05-fetish-face.md) | 2026-08-24T04:53:31Z
-- [coloso-marse-ch06-fetish-upper-body.md](wiki/sources/coloso-marse-ch06-fetish-upper-body.md) | 2026-08-24T04:53:31Z
-- [coloso-marse-ch07-fetish-lower-full-body.md](wiki/sources/coloso-marse-ch07-fetish-lower-full-body.md) | 2026-08-24T07:36:08Z
+- [coloso-marse-ch05-fetish-face.md](wiki/sources/coloso-marse-ch05-fetish-face.md) | 2026-08-24T08:39:27Z
+- [coloso-marse-ch06-fetish-upper-body.md](wiki/sources/coloso-marse-ch06-fetish-upper-body.md) | 2026-08-24T08:39:27Z
+- [coloso-marse-ch07-fetish-lower-full-body.md](wiki/sources/coloso-marse-ch07-fetish-lower-full-body.md) | 2026-08-24T08:39:27Z
 - [coloso-marse-ch08-focus-first-composition.md](wiki/sources/coloso-marse-ch08-focus-first-composition.md) | 2026-06-01T03:44:37Z
 - [coloso-marse-ch09-feminine-pose.md](wiki/sources/coloso-marse-ch09-feminine-pose.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch10-arms-gaze-guide.md](wiki/sources/coloso-marse-ch10-arms-gaze-guide.md) | 2026-06-01T03:39:48Z
@@ -1890,7 +1976,7 @@ _合計 1983 ファイル_
 - [coloso-nekojira-ch26-summary-advice.md](wiki/sources/coloso-nekojira-ch26-summary-advice.md) | 2026-06-22T12:48:42Z
 - [coloso-nekojira-product-page.md](wiki/sources/coloso-nekojira-product-page.md) | 2026-08-22T13:10:17Z
 - [coloso-sasa-ch01-intro.md](wiki/sources/coloso-sasa-ch01-intro.md) | 2026-08-23T08:43:21Z
-- [coloso-sasa-ch02-insight-memo.md](wiki/sources/coloso-sasa-ch02-insight-memo.md) | 2026-08-24T05:23:20Z
+- [coloso-sasa-ch02-insight-memo.md](wiki/sources/coloso-sasa-ch02-insight-memo.md) | 2026-08-24T08:39:27Z
 - [coloso-sasa-ch03-growth-mechanism.md](wiki/sources/coloso-sasa-ch03-growth-mechanism.md) | 2026-06-10T13:16:52Z
 - [coloso-sasa-ch04-foundation-theory.md](wiki/sources/coloso-sasa-ch04-foundation-theory.md) | 2026-06-10T13:16:52Z
 - [coloso-sasa-ch05-observation.md](wiki/sources/coloso-sasa-ch05-observation.md) | 2026-06-10T13:16:52Z
