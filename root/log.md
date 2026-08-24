@@ -9333,3 +9333,21 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 成果物: プロジェクト側 reports/BARRACK-MOTION-PREVIEW-PLAN-2026-08-24.md(v1→v2)。
 - 更新: [[gf2-helen-futa-addition-handoff]](§8新設・§2警告更新・変更履歴),
   プロジェクト run-state.json(current_phase/next_action/acceptance_criterion), 本ログ。
+
+## [2026-08-24] ingest | marse ch05/ch06 フェチの入れ方 映像観測追加(バッチ再開・temp退避から完成)
+
+- 依頼: [[coloso-batch-resume-handoff]] タスク1-2/1-3。8/23 死亡バッチの盲検読了報告(obs-ch05.md /
+  obs-ch06.md、第2読者=サブエージェント)と temp 抽出フレーム19枚ずつを引き継いで完成させた。
+- temp 退避: `<TEMP>/marse-visual/`(ch05/ch06/ch07+obs)を
+  `wiki/assets/_staging_batch_resume_20260824/` へコピー(sasa/ye_jji 分も同時退避、計281フレーム)。
+  全章完成後に staging ごと削除予定。
+- 実施: フレーム19枚ずつを `marse-chNN-MMmSSs.png` に改名本保存 → manifest v1 構築
+  (video SHA-256/観測19件/recheck 3件) → source へ映像観測節追記(5列表・単一動画のため動画列なし)
+  → `visual_ingested` + manifest `completed` → snapshot を snapshot-pre.json(抽出時 baseline)退避の
+  うえ retrofit 再記録(raw/動画 SHA-256 前後一致を機械確認) → ゲート check --phase complete PASS。
+- 第2読者照合(原寸再読で確定): ch05-02m45s は第2読者の「正面」を誤りとし初観測どおり横顔で確定。
+  ch06-01m20s は初観測の「白タンクトップ/伏せ姿」を誤りとし「白キャミソール/直立+図解配置」へ修正
+  (corrected)。ch06-02m00s は初観測の「遷移中・画像未表示」を誤りとし「3列スライド表示済み・
+  表記はずり落ちた」へ修正(corrected)。
+- 更新: `index.md`, `log.md`, `wiki/sources/coloso-marse-ch05-fetish-face.md`,
+  `wiki/sources/coloso-marse-ch06-fetish-upper-body.md`, 両章 `wiki/assets/frames/*/`(frames+manifest+snapshot一式)
