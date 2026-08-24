@@ -9193,3 +9193,25 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 新セッション再開手順: 正本(特に§6推奨作業順序)を読む → 判断待ち①(A1表示経路修正の承認)から処理。
 - 更新: `index.md`, `log.md`, `wiki/builds/gf2-helen-repro-v51-handoff.md`(§6へ統合),
   `wiki/builds/gf2-helen-repro-v51-next-steps.md`(削除)
+
+## [2026-08-24] build | gf2-char-extract Step 0（他キャラ原作抽出・在庫台帳）完了
+
+- 依頼: ヘレンの光再現が停止中のため、武田さんが「他キャラの形を原作から並列抽出したい」と提案。
+  hold で方針v2・計画v2.1を承認済み（2026-08-23）。計画書は gf2-helen-starlit-waltz/reports/PLAN-CHAR-EXTRACT-2026-08-23.md。
+- 計画は武田さんの指示で2回強化: 「品質は機械検証スクリプトで」→ サブエージェント独立監査
+  （major6/minor7。誤引用2件・循環検証リスク・Python環境衝突等を指摘され v2 で修正）、
+  「引き継ぎ資料を作れ」→ wiki 正本＋段階追記運用を追加(v2.1)。
+- 実装: 新プロジェクト `gf2-char-extract/`。00a ModelConfigData.protobufウォーク →
+  00b 全local bundle展開走査(needle449×トークン集合積) → 00c UnityPyオブジェクト級分類(最長一致帰属)
+  → 00d 対照試験＋サマリ。実行環境は anaconda3 python3.11.7 固定(lz4必須関所)・quality-gate plan PASS。
+- 実測: 18,568本のうちUnityFS 13,536本を展開走査、ヒット5,321ファイル75,115オブジェクト・エラー0。
+  レアリティ行を持つ113族のうち complete_shape=69族。Helen=mesh138/tex126/face有り/dorm有りで既知事実と一致、
+  衣装材質の少なさ(mat8 vs Sabrina45)も既知欠損と整合。陽性・陰性対照 ALL PASS。
+- 教訓（実測）: macOS multiprocessing は spawn なので worker 用グローバルを import 時に構築すること。
+  asset名は c_<Char>_slg_... の `_` 区切りで現れるためトークン照合に `_` 分割が必要
+  （この抜けで Helen ヒット12→92ファイル）。AFS2/CRI コンテナ5,032本は生バイト走査のみ＝既知の限界。
+- 成果物: [[gf2-char-extract-handoff]](新規wiki正本)、`gf2-char-extract/ledger/char-inventory.json`、
+  `gf2-char-extract/reports/inventory-summary.md`、`ledger/inventory-controls.json`。
+- 次の問い: Step 1 抽出ドライバ（決定性試験→b01/c01/d02参数化→機械突合+replay試験）へ進むか、
+  新セッションで続けるか。
+- 更新: `index.md`, `log.md`, `wiki/builds/gf2-char-extract-handoff.md`(新規), プロジェクト側一式
