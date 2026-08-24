@@ -9304,3 +9304,32 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   突合は handoff 経由で後日行う。
 - 未決: パイロット候補の決定、SkinType テーブル解読の要否、ox期限内の通す範囲。
 - 更新: index.md, log.md, 上記新規3ファイル。
+
+## [2026-08-24] query | MacBook内蔵SSD空き6%化の原因調査と解放(VMバンドル+スナップショット削除)
+
+- 依頼: 「内蔵SSDの空きが6%しかない。20%は確保してたはず」の調査 → 深掘り調査 → Claude VMバンドル10GBの正体質問 → 削除実施。
+- 調査: df/du/diskutil/sysctlで使用マップ全量実測。コンテナ245GB中ユーザ97G・/Applications20G・スワップ12G
+  (swapfile0〜10、実使用10GB)・/private15G・/opt9.5G。exiliumゲーム41GBは外付けSSD側マウントで非該当。
+- 特定: 主犯は①Claude デスクトップのclaudevm.bundle 10GB(Cowork隔離モード用Linux VM。普段のClaude Codeは
+  ネイティブバイナリでVM非経由＝稼働プロセスのパスで確認)②スワップ肥大③当日のTMローカルスナップショット④キャッシュ約9GB。
+- 実施: claudevm.bundle削除(直後は空き不変)→ スナップショット2件削除(tmutil deletelocalsnapshotsは日付形式で指定)で
+  空き11.4→25.1GB(+13.7GB)。教訓: ファイル削除後も当日スナップショットが残ると空きが返らない。
+- 未実施候補: 再起動(スワップ約10GB)・キャッシュ数GB・anaconda3 5.5G・Spotlight再構築。
+- 成果物: wiki/analyses/macbook-internal-ssd-storage-investigation-2026-08-24.md(新規)。
+- 更新: index.md, log.md, 上記新規ファイル。
+
+## [2026-08-24] query | gf2-helen futa 品質相談→完成形方針確定・整備室モーション選定開始(hold)
+
+- 依頼: 「オブジェクトの品質について詳細を詰める」/hold 起動。引き継ぎページ§2⑦の入口から再開。
+- 経緯: 切り分けカード→不満は「タック姿・位置」のみ(素材#7・寸法・ディテールは不満なし)と判明。
+  武田さん指摘「回答が場当たり的。何がどうなって何を形にしたいかがズレてる」を受け、L1〜L4の階層で
+  完成形を先に確定する方式へ変更。L1=動くシーン正本/L2=裸先行・勃起固定(着衣切替・布反応は棚上げ)。
+  直後に「整備室コンテンツの立ちポーズをするfutaヘレンが見たい」と第一目標シーンを具体化(整備士→整備室の訂正)。
+- 実測: モーション台帳700本に「整備士/整備室」名クリップなし→Barrack系H0146-H0156(SSR0101系)を候補特定。
+  web調査で整備室=Refitting Room(公式)を確認。rest-room-v2.2/tools の抽出パイプライン実物確認。
+- 計画v1作成→サブエージェント独立レビュー(バイアス防止: 承認状況伏せ・品質のみ判定)→
+  総合判定「要修正」major4(rest-roomゲートで7本全員抽出不能/検証構成が既存validatorより弱い/
+  監査渡し計画書自体がバイアス経路/preflight障害点処理欠落)+minor7 → 全件反映のv2として承認済み・実行開始。
+- 成果物: プロジェクト側 reports/BARRACK-MOTION-PREVIEW-PLAN-2026-08-24.md(v1→v2)。
+- 更新: [[gf2-helen-futa-addition-handoff]](§8新設・§2警告更新・変更履歴),
+  プロジェクト run-state.json(current_phase/next_action/acceptance_criterion), 本ログ。
