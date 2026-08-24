@@ -314,6 +314,16 @@ sources:
     完全一致0・陽性対照両版合格)。E3=`logs/e3-room-trace.json`: RoomById 18件(Load8/Release10、
     N=101/104/106/201/202)の近接表、計数はW2と完全一致。E4=backup volume走査はFDA許可待ち。
     計画正本 `reports/LIGHT-DATA-EXTRACTION-PLAN-2026-08-23.md`。既存ファイル無変更
+57. **E4 backup volume走査を実施（2026-08-24朝・FDA付与後）**:
+    TCC解除により読めるようになった2台を走査した結果、**ゲームのAssetBundlesは存在しない**。
+    HDD_バックアップ(932Gi): ゲームコンテナ(com.haoplay.game.ios.exilium)自体は存在するが
+    **LocalCache が空** — TimeMachine がキャッシュディレクトリをバックアップ対象から除外しているため。
+    ユーザー領域の *.bundle 486本はすべて Apple システム/アプリプラグイン由来(UnityFS 0本)、
+    ドルフロ2本体.app のコピーも無し。HDD_バックアップ_macbookpro(466Gi・2026-05-27):
+    ゲーム導入前のため痕跡ゼロ。欠損bundle104本の完全一致0件 → f85 の falsifier 条項は不発火、
+    前回の「無し」結論を確定。**scene root `d128870a…` の回収ルートは『将来の配信待ち』のみ残る**
+    (run-state next_action どおり)。証拠 `logs/e4-backup-volume-scan.json` +
+    生find出力 `logs/e4-evidence/*.txt`。抽出計画v2(E0〜E4)はこれで全工程完走
 
 ---
 
