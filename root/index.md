@@ -1357,6 +1357,7 @@
 
 ## Analyses
 
+- [[gf2-costume-inventory-and-selection-session-2026-08-24]] — gf2 キャラ×服装一覧(56キャラ×125バリアント・代替スキン69コード)を実データから作成し「どのキャラのどの服を抽出するか」選定相談を記録。スキン番号↔表示名↔ジャンル対応は未解読(Table/*.bytes解析が次の一手)、並行稼働のStep1セッションとは handoff 正本経由でのみ突合する方針 (source-backed, 2026-08-24)
 - [[gf2-helen-light-extract-execution-20260824]] — 原作照明データ抽出(E0〜E3)の実行結果サマリ。焼き込みlightmap2枚+cubemap3枚+LUTを実画像化(reports/lighting-extract 984項目・正対照合格)、cache版DLLにLoadRoomByIdログ書式3件実在、bind/probe位置はscene root依存で欠落=適用時approximation必須、E4はFDA待ち (source-backed, 2026-08-24)
 - [[gf2-helen-lighting-diagnosis-summary-20260823]] — ヘレン再現blendの照明診断サマリ(HTML要約)。ビューポート保存設定10画面すべてシーン灯OFFで森HDRIのみ・ramp入力37材質とも固定Z軸で灯に追従しない・直接光実値0件はblocked・照明の合否基準自体が未定義、の4点をf110実測で確定 (source-backed, 2026-08-23)
 

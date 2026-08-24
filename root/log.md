@@ -9287,3 +9287,20 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: wiki/builds/gf2-char-extract-handoff.md, index.md(同), run-state.json(step1-done),
   quality-gate.json(verifier欄をStep1実績へ更新)。
 - 次の問い: Step 2 パイロット2体の指名(complete一覧から・性質違い推奨)。
+
+## [2026-08-24] query | gf2 キャラ×服装一覧作成と抽出選定相談（opencode・並行セッション調整）
+
+- 依頼: 武田さんが「服装を作画資料として抽出したい。ox期限もあるのでどのキャラを書き起こすか相談したい」と /hold で起動。
+- 経緯: 選定基準=推し・描きたい服優先(目標は複数体、理想は全キャラ)。dorm質問への訂正「スキンかどうかの軸」をうけ
+  web リサーチ(IOP Wiki/Gamerch)したがバージョン差検証不足を指摘され、「ハルシネーションは調査不足が原因。どうケアできる?」へ回答
+  (①実データ読解②出典格付け③確度ラベル④実機共同確認の4層)。
+- サブエージェント調査: ゲーム実データからキャラ×所持衣装一覧を作成。GunData.bytes 59体のデフォルトコード、
+  衣装バリアント174コード→56キャラ×125バリアント行(代替スキン69)。命名規則 <キャラ><SSR/SR>01<番号> は Helen で陽性対照 PASS。
+  SkinType 分類文字列(Swimsuit/Romantic等)の存在確認。ただしコード↔表示名↔ジャンル対応は全部未解読(Table/*.bytes解析が次の一手)。
+- 成果物: wiki/analyses/gf2-costume-inventory-and-selection-session-2026-08-24.md(新規)、
+  wiki/_attachments/gf2-costume-inventory/{table.json,report.md,intermediate.json}(tempから複製し恒久化)。
+- 並行セッション調整: gf2-char-extract の Step1 は別セッションが稼働(本日 step1-done 記録あり)のため、
+  本セッションでは handoff 正本・run-state.json・プロジェクトフォルダを一切変更せず、独立 analysis ページに記録。
+  突合は handoff 経由で後日行う。
+- 未決: パイロット候補の決定、SkinType テーブル解読の要否、ox期限内の通す範囲。
+- 更新: index.md, log.md, 上記新規3ファイル。

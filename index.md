@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1663 ファイル_
+_合計 1665 ファイル_
 
 ## root/ (11)
 
@@ -13,11 +13,15 @@ _合計 1663 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-24T03:57:59Z
-- [log.md](root/log.md) | 2026-08-24T03:58:14Z
+- [index.md](root/index.md) | 2026-08-24T04:07:49Z
+- [log.md](root/log.md) | 2026-08-24T04:08:03Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
-## wiki/analyses/ (56)
+## wiki/_attachments/gf2-costume-inventory/ (1)
+
+- [report.md](wiki/_attachments/gf2-costume-inventory/report.md) | 2026-08-24T04:07:08Z
+
+## wiki/analyses/ (57)
 
 - [art-canvas-asuna-reference-axis-map.md](wiki/analyses/art-canvas-asuna-reference-axis-map.md) | 2026-06-14T16:03:54Z
 - [asuna-maid-costume-structure.md](wiki/analyses/asuna-maid-costume-structure.md) | 2026-06-24T01:38:06Z
@@ -39,6 +43,7 @@ _合計 1663 ファイル_
 - [eagle-vector-db-personalized-folder-sort-2026-07-02.md](wiki/analyses/eagle-vector-db-personalized-folder-sort-2026-07-02.md) | 2026-07-02T07:03:58Z
 - [feedback-granularity-ai-precision.md](wiki/analyses/feedback-granularity-ai-precision.md) | 2026-06-01T03:43:32Z
 - [firefox-x-profile-scroll-jump-root-cause-2026-08-03.md](wiki/analyses/firefox-x-profile-scroll-jump-root-cause-2026-08-03.md) | 2026-08-03T08:46:15Z
+- [gf2-costume-inventory-and-selection-session-2026-08-24.md](wiki/analyses/gf2-costume-inventory-and-selection-session-2026-08-24.md) | 2026-08-24T04:07:34Z
 - [gf2-costume-reference-feasibility-2026-08-23.md](wiki/analyses/gf2-costume-reference-feasibility-2026-08-23.md) | 2026-08-23T01:10:44Z
 - [gf2-helen-bikini-harness-loop-application-2026-08-09.md](wiki/analyses/gf2-helen-bikini-harness-loop-application-2026-08-09.md) | 2026-08-09T10:41:23Z
 - [gf2-helen-bone-hierarchy-missing-2026-08-10.md](wiki/analyses/gf2-helen-bone-hierarchy-missing-2026-08-10.md) | 2026-08-10T14:36:07Z
@@ -762,7 +767,7 @@ _合計 1663 ファイル_
 - [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-24T03:57:31Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-24T01:09:12Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
-- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-24T03:51:35Z
+- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-24T04:07:27Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T10:00:16Z
 - [gf2-helen-rest-room-motion-v22.md](wiki/builds/gf2-helen-rest-room-motion-v22.md) | 2026-07-27T00:02:48Z
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z
