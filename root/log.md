@@ -9384,3 +9384,22 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: [[gf2-helen-futa-addition-handoff]](§8選定済み化・§2警告更新),
   プロジェクト run-state.json, BARRACK-MOTION-PREVIEW-PLAN 変更履歴, 本ログ。
 - 次工程: 移植計画 v4 改定(別承認・サブエージェント独立レビュー込み)。
+
+## [2026-08-24] ingest | ye_jji ch05 多様なテクスチャー描写 映像観測174枚追加(バッチ再開・p4-I読取から完成)
+
+- 依頼: [[coloso-batch-resume-handoff]] タスク2-2。8/23 の oxloop 分割読取12タスク完了分(p1〜p3+p4前半)を
+  引き継ぎ、未実施だった p4-I(2/2)を読取して完成させた。
+- 実測: 1章=4分割動画(05_01〜05_04.mov)/raw も4ページ(v2.3 分割動画形式)。抽出174枚は全パートで
+  読取済み(p1:51/p2:50/p3:45/p4:28)だったため「全観測を結合」=全174枚を保存(未使用ゼロ)。
+  ただし p1-12m20s は第1読者が読み飛ばし(12枚と報告しつつ11枚分)だったため本セッションが追加読取。
+- 読取: p4-I の13枚(04m00s〜08m00s)をサブエージェントが盲検読取(05m24s は 8/23 の IB backup あり)。
+  recheck 要件(174×10%=18枚)のため、別サブエージェント2件+原寸再読で21フレームを独立再確認。
+- 照合で6行を修正(corrected): p1-15m00s 講座見出し「間違いない→間違いノート」/p2-02m40s・03m00s は
+  初観測が CSP UI と記載したが実態はスライド全画面/p3-02m00s はフレーム取り違え(青紫半透明オブジェ+固有の色字幕が正)/
+  p3-02m20s レイヤー番号 104→84/p3-04m20s 字幕(「表面の粗さ」は 04m40s の画面)。
+- 実施: フレーム174枚を `ye-jji-ch05-pN-MMmSSs.png` で本保存(既存14枚は staging とバイト一致を機械確認)→
+  manifest v2.3 分割形式(videos[]+extraction[]+観測174件+recheck 22件)→ source へ映像観測節追記
+  (6列表・動画列入り、raw 4ページとの対応関係を明記)→ `visual_ingested` + `completed` →
+  snapshot 退避+retrofit 再記録(raw 4ページ/動画4本の SHA-256 前後一致を機械確認)→ ゲート PASS。
+- 更新: `index.md`, `log.md`, `wiki/sources/coloso-ye-jji-ch05-texture-basic.md`,
+  `wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/`(frames174枚+manifest+snapshot一式)
