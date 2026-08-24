@@ -1289,6 +1289,7 @@
 
 ユーザー所有の成果物・運用システム・自作ツール・自動化・実装済み/実装予定ワークフロー。
 
+- [[gf2-helen-repro-v51-next-steps]] — ヘレン再現v5.1の「次にやること」ロードマップ(2026-08-24時点)。経緯サマリ(#54〜#57)と優先順(A1表示経路修正→A2 v2候補目視判断→A3同構図シート→B ramp方向追従化→C抽出資産適用(approximation必須)→D合否基準明文化→E脇境界再確認)、後回し(P2ストッキング・scene root配信待ち)、判断待ち4件を整理。正本handoff§6への展開ページで衝突時は正本優先 (source-backed, 2026-08-24)
 - [[kimi-code-artifact-location]] — Kimi Code 専用: ファイルや Wiki ページを作成/更新したとき、報告の先頭に場所を明示するルール (new 2026-08-19)
 - [[context-harness]] — Codex CLI・Codex Desktop・Claude CodeのREQ、根拠区分、未完了、却下仮説、成果物、所有権を外部JSONへ保存する共通基盤。固定release 0.1.11をMac本体へobserve-only導入済み。63自動試験と破棄可能PRODUCT_GATEに合格し、Desktop/CLI誤分類、metadata未flushのephemeral CLI分類、診断payloadのcommand引数保存を修正。Codex hook trust、Desktop実機、Claude通常応答、製品別長時間、完全自動main sessionは未確認のため全製品とも日常運用不可 (updated 2026-08-13)
 - [[codex-claude-code-official-import-plan]] — Claude Code環境をOpenAI公式 `Import from another agent` でCodexへ試験導入する実行計画。Desktop Importを本線、CLI `/import` を50 chats制限つき予備線に分け、Import前証拠固定・最小バックアップ・1プロジェクト試験・Import後監査・Automatic updatesのON判定・ロールバック条件を明文化。対象は最近もっとも使われている `LLM Knowledge Base _01`、Automatic updatesは監査通過までOFF (new 2026-08-13)

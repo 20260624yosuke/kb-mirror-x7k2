@@ -9168,3 +9168,17 @@ E3=logs/e3-room-trace.json(RoomById18件近接表・W2計数と完全一致)。E
 - 更新: `index.md`, `log.md`,
   `wiki/analyses/gf2-helen-light-extract-execution-20260824.md`(新規),
   `wiki/builds/gf2-helen-repro-v51-handoff.md`(#56)
+
+
+## [2026-08-24] query | ヘレン再現 次にやることロードマップページの作成
+
+武田さんの依頼「次にやることを経緯込みで引き継ぎ資料として作成・wikiとの整合性維持」に対応。
+新規 wiki/builds/gf2-helen-repro-v51-next-steps.md: 正本handoffへの展開ページとして
+経緯(#54〜#57参照・数値は引用のみ)・優先順つき次アクション(A1表示経路修正が最優先=目視判断の土台、
+A2 v2候補目視判断、A3同構図シート、B ramp方向追従化、C抽出資産適用はapproximation必須、
+D合否基準明文化、E脇境界再確認)・後回しリスト・判断待ち4件。
+整合性維持のため正本側も更新: §6 冒頭にロードマップ導線を追記、backup volume 行を
+E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待ちのみ)。衝突時は正本優先を両者に明記。
+- 更新: `index.md`, `log.md`,
+  `wiki/builds/gf2-helen-repro-v51-next-steps.md`(新規),
+  `wiki/builds/gf2-helen-repro-v51-handoff.md`(§6 導線+backup行更新)

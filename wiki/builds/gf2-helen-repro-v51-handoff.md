@@ -452,7 +452,10 @@ checker の全文は会話に残っていないので、**上の表がすべて*
 他に曖昧な点はない（止め方＝監査を不合格にする／検出語／要求する証拠＝陽性対照を含む5点／
 再現試験の条件は、すべて4節で確定している）。
 
-## 6. 現在の停止点（**2026-08-23 夜更新**・原本LLDB attach 1回はOSに拒否・再試行せず技術的停止）
+## 6. 現在の停止点（**2026-08-24 更新**・原本LLDB attach 1回はOSに拒否・再試行せず技術的停止）
+
+> 「この先の全体像・優先順」は [[gf2-helen-repro-v51-next-steps]] ロードマップへ展開。
+> この表は停止点そのものの正本。衝突したらこちらが優先。
 
 | 対象 | 状態 | 再開条件 |
 |---|---|---|
@@ -460,7 +463,7 @@ checker の全文は会話に残っていないので、**上の表がすべて*
 | 輪郭線のclip.xy後段 | 世界座標入力へ実装・条件付き機械検証済み | checker指摘を反映済み。Helen固有width・ZBias・H0157 camera・見た目は別検証 |
 | q/P22の規約 | Metal reversed-Zから式を確定 | H0157原作カメラのnear/farを回収後、数値を置換 |
 | H0157 scene | `conversation_attested; original_lldb_attach_refused; no_retry; no_breakpoint_installed; runtime_gate_failed` | 2026-08-22 14:31に原本PID 30908へLLDB attachを1回試行したが`Not allowed to attach`。計画どおり再試行なし。Developer Mode変更、`sudo`、再署名、注入、追加ツールは本計画外なので行わない。別の明示計画がない限りruntime traceは技術的停止 |
-| backup volume 点検 | HDD_02はゲームデータ無し。**HDD_バックアップ系2台は macOS TCC 拒否中**（`ledger/backup-volume-access-20260823.json`） | 武田さんがシステム設定→プライバシーとセキュリティでフルディスクアクセス付与 → 残り2台を再走査 |
+| backup volume 点検 | **完結（2026-08-24・#57）**: FDA付与後に2台とも走査済み。ゲームAssetBundles無し(TimeMachineがLocalCacheを除外)。HDD_02込みで全3台確定 | なし — scene root 回収は将来の配信待ちのみ |
 | 階調表の材質対応 | `source_recovery_blocked`。prefab root `7648416f…bundle` は **`f100` の3レベル走査でも不検出**（参照すらない）。renderer→material→ramp抽出は入力待ち。silkstock ramp割当ては機械根拠が無く推測禁止（武田さん判断ならDEC）。ストッキング表示(P2)は**第1段合格後の展開時に改めて計画**（G13/DRESS決定済み） | prefab root実データの入手（CDN残りルート/backup volume readable化）。または武田さんの目視判断で割当てを決める |
 | 機械ハーネス f46〜f72 | 起動保留ではない。毎回の監査対象 | 継続実行 |
 
