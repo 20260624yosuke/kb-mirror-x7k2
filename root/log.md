@@ -9182,3 +9182,14 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: `index.md`, `log.md`,
   `wiki/builds/gf2-helen-repro-v51-next-steps.md`(新規),
   `wiki/builds/gf2-helen-repro-v51-handoff.md`(§6 導線+backup行更新)
+
+
+## [2026-08-24] query | ロードマップページを正本§6へ統合(二重管理の解消)
+
+武田さんの指摘「引き継ぎ資料を改めて作る必要はあったか・混乱しそう」を受け、
+前エントリで新設した gf2-helen-repro-v51-next-steps.md を削除し、固有内容のみ
+正本 gf2-helen-repro-v51-handoff.md §6 へ統合(推奨作業順序A1〜E・後回しリスト・判断待ち4項)。
+§6 冒頭のロードマップへのポインタ引用も削除。情報の場所は正本1つに戻った。
+新セッション再開手順: 正本(特に§6推奨作業順序)を読む → 判断待ち①(A1表示経路修正の承認)から処理。
+- 更新: `index.md`, `log.md`, `wiki/builds/gf2-helen-repro-v51-handoff.md`(§6へ統合),
+  `wiki/builds/gf2-helen-repro-v51-next-steps.md`(削除)
