@@ -34,14 +34,14 @@ sources: []
 
 ## 2. 現在位置（2026-08-24 時点）
 
-> [!warning] 【最新】次セッションはここから再開する（2026-08-24 方針確定後）
-> 品質改善相談が完了し、**完成形方針が §8 として確定済み**（L1=動くシーン正本／裸先行／勃起固定）。
-> S30タック配置は正式廃止。旧「着衣切替」「布反応」決定は棚上げ（§8参照）。
-> 現在位置: **第一目標シーンの正本モーション決定済み = H0149 Barracksp_Behave_Stretch**
-> （2026-08-24 武田さんがプレビュー実物を視聴して選定・§8参照）。
-> **次の作業: 移植計画 v4 改定**（裸futaヘレン×H0149×物理。別承認・サブエージェント独立レビュー込み）。
-> **開始手順は §9**（読む順・v4が答えるべき論点・プロセス要件を記載）。
-> 選定の産物と監査記録は `library-v2-fidelity/barrack-preview-20260824/`。
+> [!warning] 【最新】移植計画 v4 v2 承認済み（2026-08-24）→ Phase 0 実装中
+> 移植計画 v4 の正本: プロジェクト側 `07_futa-helen/reports/TRANSPLANT-PLAN-V4-2026-08-24.md`
+> （v2・独立レビュー major3/minor5 全件反映・武田さんカード承認済み）。
+> 当日の構造的事実: **H0149 blend は v51系と別リグ**（MMD系 `GirlsFrontline HelenSSR0101`・
+> 432骨・単一統合メッシュ70k vert）。v51系は胴体表層が衣装メッシュのため裸化不能。
+> 計画の推奨は **Route A = H0149 blend 複製をシーンベースにする**（確定は Phase 0 の
+> E1 裸化テスト後の関所カード①で行う）。
+> 現在位置: **Phase 0（ベース複製＋E1前提測定）**。次の関所: カード① Route 確定。
 > 機械検証の旧正本 `reports/gates-check-phaseA2-2026-08-24.json` は幾何としては有効だが、
 > §8 方針により最終合否根拠からは外れる（中間チェックに転用）。
 > `run-state.json` がプロジェクト直下にあり、機械可読の現在位置を常に保持する。
@@ -237,6 +237,7 @@ sources: []
 | ヘレン本体 blend（触らない） | 同 `06_repro-v51/blends/helen-h0157-repro.blend` |
 | **整備室モーション選定の産物一式** | `05_helen-motion-library/library-v2-fidelity/barrack-preview-20260824/`（プレビュー7本・検証JSON・監査記録）。**H0149 の baked blend** = 同 `runs/h0149__ssr0101__SRC__run1.blend`（Action 名 `LIFE_H0149_HelenSSR0101_Barracksp_Behave_Stretch__ssr0101__SRC`・439帧）。mp4 = 同 `previews/videos/H0149__ssr0101__SRC.mp4` |
 | 選定計画書（v2・選定記録済み） | 同 `07_futa-helen/reports/BARRACK-MOTION-PREVIEW-PLAN-2026-08-24.md` |
+| **移植計画 v4 正本** | 同 `07_futa-helen/reports/TRANSPLANT-PLAN-V4-2026-08-24.md`（v2承認済み・Phase 0実行中） |
 | モーション台帳 | `05_helen-motion-library/helen-motion-catalog.md`（H0149 は L158。frame_count の正本は `library-v2-fidelity/inventory-v2.sqlite` の v2_records） |
 
 ## 5. 触ってはいけないもの
@@ -311,6 +312,16 @@ sources: []
   武田さんがプレビュー実物を視聴のうえ **H0149 Barracksp_Behave_Stretch を選定**。
   §2⑤⑦に陳腐化標識・§3にセッション行・§4に産物パス・**§9（v4開始手順）新設**。
   武田さんの指示「別セッションで進めるから引き継ぎ資料を作って」により本ページを確定状態へ。
+- 2026-08-24: **移植計画 v4 v1 作成 → 独立レビュー「要修正」（major3/minor5）→ 全件反映の
+  v2 が武田さんカード承認**。v1作成前の実測で重大事実を発見: **H0149 blend は v51系と別リグ**
+  （MMD系 `GirlsFrontline HelenSSR0101`・432骨・単一統合メッシュ70,658vert・EEVEE_NEXT設定済み・
+  二次物理ベイク済み）。v51系は胴体表層が衣装メッシュ（P1_cloth_lod0）のため裸シーン構造的に不能
+  → 計画に論点0「シーンベース選択（Route A推奨/B非推奨）」を新設、確定はPhase 0関所カード①。
+  レビュー反映内容: M1スケール基準統一（一様係数0.30/0.40/0.50）／M2閾値循環検証禁止
+  （校正ラン→凍結→合否ラン分離）／M3 G9最近接距離主指標化＋フレーム標本仕様固定／
+  minor5件（材質隠蔽方式・修飾子順序明記・bone heat失敗時リカバリ・旧G4/G5実施Phase・
+  ライセンス方針）。正本: プロジェクト側 `07_futa-helen/reports/TRANSPLANT-PLAN-V4-2026-08-24.md`。
+  現在位置: Phase 0 実行中（ベース複製＋E1前提測定→カード①）。
 
 ## 8. 完成形方針（2026-08-24 決定・品質相談の産物）
 
