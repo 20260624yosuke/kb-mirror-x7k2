@@ -344,6 +344,40 @@ sources:
     後処理: f42/f43確認画像3枚を新blendから撮り直し、f45比較JSON取り直し
     （原作肌÷髪 3.52 対 現行 2.7・参考値）、f46 record取り直し＋check=**PASS**。
 
+59. **「まだ探す」方針での再探索を実施（`f112`/`f113`・2026-08-24夕・武田さん方針決定
+    「妥協＝プロジェクトの中断」を受けて）**:
+    - **`f112_dorm_light_source_parse.py deep`**: 寮scene名文字列を持つ唯一のapp同梱
+      `29684a9f…bundle` をオブジェクトレベルで完全パース → 中身は
+      **LightProbes 1＋ParticleSystem 16体のみ**。Light 0・RenderSettings 0。
+      **LightProbes の `m_Data.m_Tetrahedralization` に四面体実データが実在**
+      （tetrahedra 18個・probe座標8点・neighbors・重み行列・m_HullRays）。
+      **#53の「tetraはフラグのみで実データ空」を訂正** — f99台帳がm_Dataを見ず係数のみ
+      抽出していたのが原因。これによりSH照明は層別平均近似ではなく
+      **tetrahedral 補間の真値計算が可能**になる。
+    - **`f112 … census`（P2・手元全13,539bundleの照明型センサス・multiprocessing）**:
+      **Light 41,461個／RenderSettings 887個／ReflectionProbe 646個／LightProbes 308個** が
+      938 bundleに実在（エラー3件<5%・陽性対照=Light総数>1000 合格）。
+      「光そのものがローカルに無い」わけではないことが確定。
+    - **依存186本との突合**: 寮scene候補の実在依存で照明オブジェクトを持つのは
+      probe bundle 2本のみ（Light 0・RS 0）。旧記録「実在186本中Light 0件」を
+      より強い方法で独立再確認。
+    - **`f113_dorm_scene_catalog_map.py`**: カタログ全レコード走査
+      （cache252,589件/app50,125件・unityエントリ1,707/104）。
+      **dorm系はGFMBの1scene＋bathroom(l_dorm_bathroom)のみ**。
+      managed側が持つ基本path `06Aimo_Dorm.unity`（非GFMB）は
+      **どちらのカタログにもアドレス可能エントリとして存在しない**。
+      DormResファミリーの寝室プレハブも不在。→「実行時は別sceneの方を読んでいる」説は
+      カタログ上は不支持。
+    - 実行時ログの `[Lounge] Load Scene Task:XXXXXXXXXX(n)` は難読化IDでbundle名に解けない。
+    - **結論の強さ**: 「寮の直接光(RenderSettings/Light)は、手元全データへの
+      バイトレベル・オブジェクトレベル・カタログ地図の3方法で不検出」まで。
+      絶対の否定ではない。証拠 `logs/f112-dorm-bundle-deep.json` /
+      `logs/f112-local-light-census.json` / `logs/f113-dorm-scene-catalog-map.json` /
+      `logs/f113b-dormres-entries.json`。
+    - **残る能的ルート**: プロキシ応答書き換えによるクライアント自身への強制DL
+      （ゲーム通信への介入のため別承認・リスク評価が必要）。
+    - **成果物blend無変更**。
+
 ---
 
 ## 3. 独立 checker（2026-08-19 2回目）の指摘 — **2026-08-20 に全件処理済み**
@@ -508,8 +542,10 @@ checker の全文は会話に残っていないので、**上の表がすべて*
 **後回し・待ち**: P2ストッキング(第1段合格後)／scene root・prefab root・Helen材質設定
 (回収ルートは将来の配信待ちのみ=#57確定)／silkstock ramp割当て(推測禁止のまま)
 
-**判断待ちリスト**: ~~①A1実施承認~~（2026-08-24に実施済み=#58） ②**A2目視判断(meansh/low) ←次はこれ**
-③B着手可否 ④C可否(approximation受け入れ)
+**判断待ちリスト**: ~~①A1実施承認~~（2026-08-24に実施済み=#58） ②**A2目視判断(meansh/low)**
+または **A2′: tetra真値によるv3候補を先に作るかの判断**（#59で四面体実データが見つかったため、
+近似ではなく真値補間の候補が作れる。作ってから目視する方が比較対象が強くなる）
+③B着手可否 ④C可否(approximation受け入れ→tetra真値で一部解消可) ⑤強制DLルートの可否
 
 照明リグ流用・白ランプ・body ramp流用・現状維持から選ばせる問題ではない。原作対応が取れるまで適用しない。
 
