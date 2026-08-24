@@ -9273,3 +9273,17 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `index.md`(同), `wiki/assets/frames/coloso-hide-ch05-male-female-proportion/`
 - 次の問い: ye_jji ch05 を並行セッションとどちらが担当するか(両計画に含まれる)。
   nekojira ch03 は本パイプラインのパイロットのみ。
+
+## [2026-08-24] ingest | gf2-char-extract Step 1 完了(抽出ドライバ+機械突合12項目PASS)
+- wiki/builds/gf2-char-extract-handoff.md を段階追記(Step 1 節・捨てた判断4件・教訓7件)。
+  10_extract_char.py(抽出→Blender headless構築→台帳まで)と20_diff_char_blend.py
+  (blend対原作の機械突合12項目+replay否定試験11系統)を実装し、Helen/HelenSSR01で実測:
+  突合ALL PASS/決定性 canonical_manifest_sha 確定/replay PASS。
+- 成果物: gf2-char-extract/blends/Helen-HelenSSR01-repro.blend(SHA先頭16 1ac90c8280146076)、
+  ledger/{diff-Helen-HelenSSR01,determinism-probe,extract-Helen-HelenSSR01,cab-bundle-index}.json、
+  intermediate/Helen.HelenSSR01/(manifest+skeleton+textures127枚)。
+- 既知の限界: 骨の親160本未解決(AF2S/CRI内プレハブ由来・推定では埋めない)/
+  材質slot201個未解決(missing_inputs・忠実量産から除外対象)。
+- 更新: wiki/builds/gf2-char-extract-handoff.md, index.md(同), run-state.json(step1-done),
+  quality-gate.json(verifier欄をStep1実績へ更新)。
+- 次の問い: Step 2 パイロット2体の指名(complete一覧から・性質違い推奨)。
