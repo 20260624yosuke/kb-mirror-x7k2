@@ -13,8 +13,8 @@ _合計 1666 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-24T04:55:56Z
-- [log.md](root/log.md) | 2026-08-24T04:57:46Z
+- [index.md](root/index.md) | 2026-08-24T05:24:38Z
+- [log.md](root/log.md) | 2026-08-24T05:25:24Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -1564,7 +1564,7 @@ _合計 1666 ファイル_
 - [coloso-nekojira-ch26-summary-advice.md](wiki/sources/coloso-nekojira-ch26-summary-advice.md) | 2026-06-22T12:48:42Z
 - [coloso-nekojira-product-page.md](wiki/sources/coloso-nekojira-product-page.md) | 2026-08-22T13:10:17Z
 - [coloso-sasa-ch01-intro.md](wiki/sources/coloso-sasa-ch01-intro.md) | 2026-08-23T08:43:21Z
-- [coloso-sasa-ch02-insight-memo.md](wiki/sources/coloso-sasa-ch02-insight-memo.md) | 2026-08-23T12:24:51Z
+- [coloso-sasa-ch02-insight-memo.md](wiki/sources/coloso-sasa-ch02-insight-memo.md) | 2026-08-24T05:23:20Z
 - [coloso-sasa-ch03-growth-mechanism.md](wiki/sources/coloso-sasa-ch03-growth-mechanism.md) | 2026-06-10T13:16:52Z
 - [coloso-sasa-ch04-foundation-theory.md](wiki/sources/coloso-sasa-ch04-foundation-theory.md) | 2026-06-10T13:16:52Z
 - [coloso-sasa-ch05-observation.md](wiki/sources/coloso-sasa-ch05-observation.md) | 2026-06-10T13:16:52Z

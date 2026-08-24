@@ -9351,3 +9351,22 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   表記はずり落ちた」へ修正(corrected)。
 - 更新: `index.md`, `log.md`, `wiki/sources/coloso-marse-ch05-fetish-face.md`,
   `wiki/sources/coloso-marse-ch06-fetish-upper-body.md`, 両章 `wiki/assets/frames/*/`(frames+manifest+snapshot一式)
+
+## [2026-08-24] ingest | sasa ch02 気づきメモ 映像観測追加(バッチ再開・11m20s以降の読取再開から完成)
+
+- 依頼: [[coloso-batch-resume-handoff]] タスク2-1。8/23 停止セッションの既存観測(00:00〜10:00の12行)に
+  続き、未読取フレームを読取して完成させた。
+- 実測の訂正: handoff 記載の「総長17:51」は画面UIの表記で、ファイル実測 duration は 713.4秒(11:53)。
+  抽出36枚(handoff は37枚と記載したが実測36)はファイル全域をカバー済みで、未読取は
+  10m20s/10m40s/11m00s/11m20s/11m40s の5枚だった(handoff の「11m20s以降」より3枚多い)。
+- 読取: 5枚は本セッションが直接読取(10m20s=10m00sと同一/10m40s=まとめスライド新出/
+  11m00s=ミニ課題節/11m20s・11m40s=同一)。既存12行のうち4枚(00m00s/06m00s/08m00s/10m00s)を
+  第2読者(サブエージェント)が盲検再確認。
+- 照合結果: 06m00s の「負けを認めろ」は原寸再読で初観測どおり確定(第2読者の「認める」を修正)、
+  「テキトー」のキ字形も3点で確定し旧行の要確認表記を解消。00m00s の「17:51表記」は第2読者も
+  再現(画面事実として維持、manifest にファイル実測との乖離を記録)。
+- 実施: フレーム17枚を `sasa-ch02-MMmSSs.png` で本保存 → manifest v1(観測17件+recheck 4件)→
+  source へ映像観測節追記 → `visual_ingested` + `completed` → snapshot 退避+retrofit 再記録
+  (raw/動画 SHA-256 一致確認) → ゲート check --phase complete PASS。
+- 更新: `index.md`, `log.md`, `wiki/sources/coloso-sasa-ch02-insight-memo.md`,
+  `wiki/assets/frames/coloso-sasa-ch02-insight-memo/`(frames+manifest+snapshot一式)
