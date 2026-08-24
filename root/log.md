@@ -9403,3 +9403,26 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   snapshot 退避+retrofit 再記録(raw 4ページ/動画4本の SHA-256 前後一致を機械確認)→ ゲート PASS。
 - 更新: `index.md`, `log.md`, `wiki/sources/coloso-ye-jji-ch05-texture-basic.md`,
   `wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/`(frames174枚+manifest+snapshot一式)
+
+## [2026-08-24] query | futa-helen 引き継ぎ資料の確定(別セッション移行前)
+
+- 依頼: 武田さん「別セッションで進めるから引き継ぎ資料を作って」。
+- 実施: [[gf2-helen-futa-addition-handoff]] を次セッション開始可能な状態へ仕上げ。
+  ①§2⑤⑦に陳腐化/完了標識(hidden基準廃止・相談完了の指向先§8) ②§3に本セッションの行
+  (正常完了・死亡なし) ③§4に選定産物パス(H0149 baked blend/mp4・計画書・台帳) ④§7に
+  選定完了〜引き継ぎ仕上げの履歴 ⑤**§9 新設**(次セッションの開始手順: 読む順・v4が答えるべき
+  論点6項目・プロセス要件5項目) ⑥§2警告から§9への参照。
+- 次セッションの入口: 本ページ §9 → run-state.json → v4計画v1作成 → 独立レビュー → 承認カード。
+
+## [2026-08-24] ingest | marse ch07 下半身と全身に使えるフェチ 映像観測追加(バッチ再開・未読取19枚から完成)
+
+- 依頼: [[coloso-batch-resume-handoff]] タスク2-3。抽出のみだった 19 枚を盲検読取して完成させた。
+- 読取: サブエージェントが全19枚を盲検読取(スライド4枚: 下半身フェチ前半/座り太もも+ホットパンツ/
+  全身フェチ 汗・日焼け後・濡れ透け/ホクロ/熱気+冒頭黒・終端フェードアウト)。
+- recheck: 第2読者サブエージェントが2回とも network_error で失敗したため、本セッションの原寸再読3枚
+  (00m10s/02m20s/04m20s)で代替し、全て初観測どおり確認(manifest に代替方法を明記)。
+- 実施: フレーム19枚を `marse-ch07-MMmSSs.png` で本保存 → manifest v1(観測19件+recheck 3件)→
+  source へ映像観測節追記 → `visual_ingested` + `completed` → snapshot 退避+retrofit 再記録
+  (raw/動画 SHA-256 一致確認) → ゲート check --phase complete PASS。
+- 更新: `index.md`, `log.md`, `wiki/sources/coloso-marse-ch07-fetish-lower-full-body.md`,
+  `wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/`(frames+manifest+snapshot一式)
