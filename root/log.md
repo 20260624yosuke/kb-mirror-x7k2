@@ -9370,3 +9370,17 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   (raw/動画 SHA-256 一致確認) → ゲート check --phase complete PASS。
 - 更新: `index.md`, `log.md`, `wiki/sources/coloso-sasa-ch02-insight-memo.md`,
   `wiki/assets/frames/coloso-sasa-ch02-insight-memo/`(frames+manifest+snapshot一式)
+
+## [2026-08-24] query | 整備室モーション選定完了 H0149(hold継続セッション)
+
+- 選定: 武田さんがプレビュー実物(コンタクトシート+60fps mp4)を視聴のうえ、
+  **H0149 c_HelenSSR0101_Barracksp_Behave_Stretch**(整備室系ストレッチ7.3秒・439帧)を
+  第一目標シーンの正本モーションに選定。
+- 品質記録: 抽出〜検証(validate_action/shape_validate全7本PASS)〜V4/V5/V6全PASS〜
+  独立監査「合格」(major0・minor2は非ブロッキング、minor1は監査後に解消)。
+  plausibility fail 4本(H0149含む)は監査役がスパイク帧を抽出目視し動画上の破綻なしと判定。
+- 産物: library-v2-fidelity/barrack-preview-20260824/(プレビュー7本・検証JSON・
+  audit-dossier・independent-audit.json・v4-v5-v6-checks.json・preflight-barrack.json)。
+- 更新: [[gf2-helen-futa-addition-handoff]](§8選定済み化・§2警告更新),
+  プロジェクト run-state.json, BARRACK-MOTION-PREVIEW-PLAN 変更履歴, 本ログ。
+- 次工程: 移植計画 v4 改定(別承認・サブエージェント独立レビュー込み)。
