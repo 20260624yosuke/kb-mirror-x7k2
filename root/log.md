@@ -9436,3 +9436,25 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   recheck 7件・代替方法を明記) → ゲート check --phase complete PASS(snapshot-pre.json を retrofit 基準に使用)。
 - source 本文は原則無変更(flag も 2026-07-15 のまま)。index 行に復元日を追記。
 - 更新: `index.md`, `log.md`, `wiki/assets/frames/coloso-hide-ch04-body-basics/`(PNG 7枚+manifest.json)
+
+## [2026-08-24] query | gf2 スキン×ジャンル対応表と選定相談（セッション再開・Step1整合）
+
+- 依頼: 死亡した選定相談セッションの再開。裏作業(スキン×ジャンル対応表)の完成、
+  公式X(@EXILIUMJP)のスキン情報との紐付け、HTMLビューアでの確認、経緯の記録、
+  並行セッションの Step 1 完了との整合。
+- 実施: Table/*.bytes 解読(ClothesData 146/146・SkinTypeData 6/6・ClothesDutyData 21クラス、
+  ただしスキン個別ジャンル割当フィールドは不検出→意味ジャンルは IOP Wiki 単源 inferred)。
+  公式X紐付け 37/61 スキン行(完全一致のみ・wikiru→fxtwitter 経路・全URL実測確認)。
+  画像149枚をローカル保存しオフライン化。
+- 失敗と教訓: HTMLビューアは4版作って全部不合格。根本原因は JS 起動即クラッシュ
+  (ROWS.map is not a function・埋め込みJSONがオブジェクトなのに配列アクセス)で、
+  画像・テーマ系の仮説は全て外れ。武田さん指示で監査スクリプト audit-render.mjs
+  (Headless Chrome 実描画検証)を作り PASS を確認してから返す運用に変更。
+  最終判断は武田さん「品質良くない、自分で探す」でビューア不採用(データ表は残置)。
+- 選定相談: 武田さんの序列直感「服装>ポーズ>体型>パーツ>顔」= 立体感の把握+手持ちスキル差分。
+  資料の基準は未確定のまま。パイロット2体の指名は未決(自力で探す方針に変更)。
+- 整合: 並行セッションが Step 1 完了(ドライバ・突合12項目PASS・Helen/HelenSSR01実測)。
+  本セッションの命名規則・HelenSSR01=基本衣装の扱いは整合。台帳 bundle_hits は旧走査値なので
+  抽出可否の最終判定は Step 1 ドライバ結果を優先、と記録。
+- 更新: `index.md`, `log.md`, `wiki/analyses/gf2-costume-inventory-and-selection-session-2026-08-24.md`(追記),
+  `wiki/_attachments/gf2-skin-genre-map/`(table.json/viewer.html/img//audit-render.mjs)
