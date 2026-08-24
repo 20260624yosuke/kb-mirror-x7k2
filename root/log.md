@@ -9229,3 +9229,15 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   新セッション用コピペ指示文を収録。temp 揮発性のため退避必須を明記。
 - 更新: `index.md`, `log.md`, `wiki/builds/coloso-batch-resume-handoff.md`(新規)
 - 次の問い: コピペ指示文を新セッションへ投入し、タスク1(hide ch05 完成)から再開。
+
+## [2026-08-24] ingest | hide ch05 男女の比率の違い 映像観測追加(バッチ再開・反映待ちから完成)
+
+- 依頼: [[coloso-batch-resume-handoff]] タスク1-1。8/23 死亡バッチの再開点から hide ch05 を完成させた。
+- 実測(ディスク正本): 引き継ぎ資料の「manifest draft」より先へ進んでおり、manifest は
+  status=complete・観測56件・recheck 6件(corrected 2件含む)まで完成、source ページにも
+  映像観測節56行が反映済みだった。残作業は台帳と flag のみ。
+- 実施: `video_ingest_gate.py check --phase complete` PASS → index.md 行更新
+  (映像観測 56 枚) → frontmatter `visual_ingested: 2026-08-24` + manifest `completed` 付与
+  → 再検査 PASS。フレーム56枚(`wiki/assets/frames/coloso-hide-ch05-male-female-proportion/`)。
+- 更新: `index.md`, `log.md`, `wiki/sources/coloso-hide-ch05-male-female-proportion.md`,
+  `wiki/assets/frames/coloso-hide-ch05-male-female-proportion/manifest.json`

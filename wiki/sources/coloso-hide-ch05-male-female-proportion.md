@@ -10,6 +10,7 @@ status: active
 confidence: high
 evidence_level: source-backed
 last_reviewed: 2026-06-01
+visual_ingested: 2026-08-24
 ---
 
 # coloso hide ch05 ― 男女の比率の違い
