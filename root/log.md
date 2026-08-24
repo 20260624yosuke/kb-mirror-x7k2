@@ -9426,3 +9426,13 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   (raw/動画 SHA-256 一致確認) → ゲート check --phase complete PASS。
 - 更新: `index.md`, `log.md`, `wiki/sources/coloso-marse-ch07-fetish-lower-full-body.md`,
   `wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/`(frames+manifest+snapshot一式)
+
+## [2026-08-24] ingest | hide ch04 人物を描く前に知っておいてほしいこと フレームPNG復元(B修復)
+
+- 依頼: [[coloso-batch-resume-handoff]] タスク3。2026-07-15 完成分の参照 PNG 7枚が全滅していたため復元。
+- 実施: 元動画(04.mp4)から観測表の7時刻(04m33s/08m40s/10m40s/12m20s/14m00s/17m40s/19m20s)で
+  ffmpeg 再抽出 → 元のファイル名で本保存 → 全7枚を原寸再読し観測表と一致を確認(色分けパーツ構成/
+  寸法表示/ポーズ素体、全て一致) → manifest.json を再構築(completed は元完了日 2026-07-15 を維持、
+  recheck 7件・代替方法を明記) → ゲート check --phase complete PASS(snapshot-pre.json を retrofit 基準に使用)。
+- source 本文は原則無変更(flag も 2026-07-15 のまま)。index 行に復元日を追記。
+- 更新: `index.md`, `log.md`, `wiki/assets/frames/coloso-hide-ch04-body-basics/`(PNG 7枚+manifest.json)
