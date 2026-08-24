@@ -60,9 +60,9 @@ CAB・サイズ2世代照合(0本)の3面から確定。有効な否定として
 <td style="border:1px solid rgba(127,127,127,.4);padding:6px;"><code>logs/e3-room-trace.json</code></td>
 </tr>
 <tr>
-<td style="border:1px solid rgba(127,127,127,.4);padding:6px;"><b>E4</b> backup volume走査</td>
-<td style="border:1px solid rgba(127,127,127,.4);padding:6px;">未実施 — <b>フルディスクアクセス許可待ち</b>(システム設定→プライバシーとセキュリティ)</td>
-<td style="border:1px solid rgba(127,127,127,.4);padding:6px;">—</td>
+<td style="border:1px solid rgba(127,127,127,.4);padding:6px;"><b>E4</b> backup volume走査<br>(2026-08-24朝 完走)</td>
+<td style="border:1px solid rgba(127,127,127,.4);padding:6px;"><b>ゲームAssetBundles無し</b> — HDD_バックアップはゲームコンテナ自体は存在するが LocalCache が空(TimeMachineのキャッシュ除外)。*.bundle 486本は全てApple等の非ゲーム由来。macbookpro側(05-27)はゲーム導入前で痕跡ゼロ。欠損104本の一致0件 → scene root 回収ルートは「将来の配信待ち」のみ残る</td>
+<td style="border:1px solid rgba(127,127,127,.4);padding:6px;"><code>logs/e4-backup-volume-scan.json</code></td>
 </tr>
 </table>
 
@@ -71,7 +71,7 @@ CAB・サイズ2世代照合(0本)の3面から確定。有効な否定として
 <ol>
 <li><b>抽出物のBlender適用は別計画</b> — lightmap/probe/LUT/post24/SH8 の材料は揃った。
 ただし bind・probe位置が無いため「どこに何を置くか」は候補から選ぶ判断が残り、適用物は approximation 明示。</li>
-<li><b>FDA許可が出たら E4</b> — backup volume 2台の走査で scene root が見つかる可能性が残る。</li>
+<li><b>E4 完走(08-24)</b> — backup volume にゲームデータ無しと確定。scene root の回収ルートは将来の配信待ちのみ。</li>
 <li><b>既存の停止点は変わりなし</b> — v2候補blend(meansh/low)の目視判断待ち。
 本抽出はその判断材料の補強（SH環境光の原作側データ強化）。</li>
 </ol>
