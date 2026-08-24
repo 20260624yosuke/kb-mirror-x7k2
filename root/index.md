@@ -141,7 +141,7 @@
 - [[coloso-hide-ch01-intro]] — 自己紹介 / 講座コンセプト(metadata-only) (ingested 2026-06-01)
 - [[coloso-hide-ch02-line-drawing]] — 線の引き方(腕全体の線 / 画数 / アニメ作業速度) (ingested 2026-06-01)
 - [[coloso-hide-ch03-line-practice]] — 長い線を引く練習(肩・肘・筆圧・波線) (ingested 2026-06-01)
-- [[coloso-hide-ch04-body-basics]] — 人体の大まかなパーツと 8 頭身比率 (ingested 2026-06-01, 映像観測 7 枚 2026-07-15)
+- [[coloso-hide-ch04-body-basics]] — 人体の大まかなパーツと 8 頭身比率 (ingested 2026-06-01, 映像観測 7 枚 2026-07-15、PNG 復元 2026-08-24)
 - [[coloso-hide-ch05-male-female-proportion]] — 男女の比率差・シルエット差 (ingested 2026-06-01, 映像観測 56 枚 2026-08-24)
 - [[coloso-hide-ch06-toushin-character]] — 頭身別の描き分けと比率誇張 (ingested 2026-06-01)
 - [[coloso-hide-ch07-gesture-drawing-1]] — ジェスチャードローイング基礎(metadata-only) (ingested 2026-06-01)
