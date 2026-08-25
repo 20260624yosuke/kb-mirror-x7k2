@@ -9880,3 +9880,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 検収カード: NN対応表「表どおり承認」・無音20本「実行せず未完了記録」(NN38幻聴出力5種の削除込み)・バッチ承認。「動画見当たらない」→NN01は音声専用(m4a)と説明しNN37で再生確認(N1クリア)。
 - バッチ: 音声あり残り18本を1本ずつ実行し 18/18成功・失敗0・空文字0。NN13のみタイムアウト中断(成果物ゼロを確認)→クリーン再実行でOK。最終監査 A0-A6 全講座 PASS、quality-gate batch PASS(ne-on family ブロックのみ更新)。
 - 更新: `raw/_coloso/2024_04_24_ne-on/`(40ページ+mapping.json+_attachments), `wiki/builds/coloso-intake/reports/2026-08-25-2024_04_24_ne-on-audit.md`, `wiki/builds/coloso-intake/quality-gate.json`(ne-on family のみ), `log.md`
+
+## [2026-08-25] ingest | coloso 映像ingest batch2 ひづるめ B2 パイロット ch15(絵画をイラストへ変換する・分割4本)
+
+- 依頼: 武田さんの「タスクを進めてほしい」(ひづるめ担当セッション)。quality-gate の hizurume-b2-practice1 family はパイロット ch15 承認まで量産停止のため、B2 パイロット 1 章のみ実施(B2 残り ch17/18/19 は承認まで未着手)。
+- 手順: dry-run → snapshot(抽出前・4 動画)→ 抽出(20秒間隔+文字起こし誘導 p1:17/p2:11/p3:16/p4:13 時刻)→ 盲検読取サブエージェント19体(220ブロック回収)→ 10秒間隔全帯域スイープ(p1 91+p2 93+p3 91+p4 48=323枚・盲検読取11体)→ 未観測画面6件を補完(p1 07:10 ソローリャ絵全画面/p2 11:30 ショートカットキー設定/p3 00:50 塗りつぶし設定/p3 12:30 消去カテゴリ/p4 06:10 ブラシ先端形状の選択/p4 07:50「Coloso.」エンドカード)→ 第2読者23枚(10.2%・2体)→ 不一致1件(p1 02m40s「方々」)+読み揺れ数件を原寸クロップ(2〜5倍)で確定 → manifest → source 節挿入(動画列付き6列表)。
+- 完了: フレーム226枚を `hizurume-ch15-0N-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致・孤児ゼロ)→ manifest(videos[]4本+動画ごと extraction[]+recheck 23 entries=confirmed 22・corrected 1)→ source 節を6列表で挿入(挿入以外の本文は非変更・frontmatter に visual_ingested 2026-08-25 付与)。
+- 観測の要点: 油彩画史スライド(写実主義 vs 印象派・画家5名+作品名キャプション)/ Google Arts & Culture の使い方(スライド内説明・ブラウザ実演なし)/ ソローヤ・クロイヤー・ヤン・ステーンの3画家スライド/ 試し描き実演(帆の質感→服の皺への応用)/「絵画をイラスト風に変換する」スライド(力場の青・混合率70:30/40:60・面積ではなく融合比)/ ブラシ作り実演4種(Gペン設定/油彩風混色/水彩風/情報ブラシ)・サブツール詳細の各カテゴリ実演・素材登録(zara)・輝度を透明度に変換・ショートカットキー設定。
+- 更新: `wiki/sources/coloso-hizurume-ch15-painting-to-illustration.md`, `wiki/assets/frames/coloso-hizurume-ch15-painting-to-illustration/`(manifest.json+snapshot.json+png226枚), `index.md`, `log.md`
+- 次の一手: 独立レビュー(パイロット ch15)の承認受取まで B2 の量産は停止(レビュー指示文は武田さんへ渡し済みの報告に同梱)。
