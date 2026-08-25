@@ -10,6 +10,14 @@ last_reviewed: 2026-08-24
 
 # Coloso 映像ingest バッチ再開 引き継ぎ資料(2026-08-24)
 
+> [!note] 完了記録(2026-08-24)
+> 本資料のタスク1〜3は全て完了(ゲート check --phase complete 全7章 PASS・`visual_ingested` 付与・
+> index/log 更新・inbox 申告済み)。実測での訂正: sasa ch02 の未読取は「11m20s以降」でなく
+> 10m20s〜11m40s の5枚(抽出36枚・総長はファイル実測11:53で画面表記17:51と乖離)、
+> ye_jji ch05 は抽出174枚=読取174枚で全保存(p1-12m20s の読み飛ばしを発見・追加読取)、
+> marse ch07 は19枚全読取。temp 依存分は全て KB 側へ退避済みで staging は削除済み。
+> 詳細は log.md の 2026-08-24 ingest 各エントリ。本資料は記録として保持(status: active のまま)。
+
 ## 目的と現在地
 
 ox(opencode) サーバーエラーで死亡した **8/23 の並列 ingest バッチ群**(hide/sasa/marse/ye_jji の

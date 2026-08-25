@@ -3,7 +3,7 @@ type: build
 status: active
 confidence: high
 evidence_level: source-backed
-last_reviewed: 2026-08-23
+last_reviewed: 2026-08-24
 sources:
   - gf2-helen-repro-v51-run
 ---
@@ -58,9 +58,11 @@ sources:
 
 ## 1. 成果物と現在位置
 
-- 成果物 `blends/helen-h0157-repro.blend` — **SHA-256 `b52df9e45e471db3…`**
-  （**2026-08-24・A1表示経路修正で保存ビュー設定のみ変更**。形状・材質・灯パラメータは不変。
-  直前版は `_pre-f111-view-lights/`。その前は `f95` で足元を `_Fight`(ハイヒール)→`_Dorm`(裸足) へ切替・武田さん承認）
+- 成果物 `blends/helen-h0157-repro.blend` — **SHA-256 `6be9540d20791a12…`**
+  （**2026-08-25・#63原作シェーダコード再現を反映**。材質の出力が
+  `albedo×RampMap(U=NdotL,V=0.125)×MainLightColor + albedo×SH(N)×RMO.b` の
+  原作構造へ変更。直前版は `_pre-f127-shaderrepro/helen-h0157-repro__b52df9e45e471db3.blend`。
+  その前は `_pre-f111-view-lights/`（A1表示経路修正））
 - **GATE 14 PASS / 1 FAIL**（`G10`）。判定は一度も緩めていない（G13は2026-08-23に裸足切替でPASS復帰）
 - 機械監査（`f50`）: 事実 **57件**（2026-08-22夜時点）。最終再監査結果を11節に記録
 - 既存 blend 25個（`rest-room-v2.2/blends/`）は**全件無傷**（`a01 verify` で確認）
@@ -76,6 +78,7 @@ sources:
 | `blends/_pre-f77-world-clip/helen-h0157-repro__be227dbc790bfcaf.blend` | **世界座標化直前。f77だけ戻すならここ** |
 | `blends/_pre-f95-dorm-feet/helen-h0157-repro__b1214f28194caddf.blend` | **足元切替(f95)直前。f95だけ戻すならここ** |
 | `blends/_pre-f111-view-lights/helen-h0157-repro__e0ba175651c20251.blend` | **A1表示経路修正(f111)直前。開いたときの見え方（HDRI写真のみ）を戻すならここ** |
+| `blends/_pre-f127-shaderrepro/helen-h0157-repro__b52df9e45e471db3.blend` | **原作シェーダコード再現反映(#63/#64)直前。白飛びHDRI見え方に戻すならここ** |
 | `blends/_candidate-ramp-neutralized/` | 階調表の既定値を白にした**候補版**（成果物ではない） |
 
 ---
@@ -378,21 +381,6 @@ sources:
       （ゲーム通信への介入のため別承認・リスク評価が必要）。
     - **成果物blend無変更**。
 
-62. **改善サイクル第1弾（`f120`・2026-08-24深夜・武田さん承認「成果物向上につながるために
-    進めてください」）**: 武田さんの指摘「監査に抜けがあるから成果物が向上しない」を受け、
-    ①**改善監査の新設**: 標準カメラ(face/full・カメラ位置を台帳に記録し再現可能)でのレンダ＋
-    参考値の時系列台帳 `logs/improvement-trend.json` を開設。以後の変更は毎回ここへ積み
-    「前版比で縮まったか」を追えるようにした（合否は引き続き目視・運用ルール6）。
-    ②**B案(ramp方向追従化)を実装**: 37材質すべての階調表入力を
-    固定Z軸 → `normalize(LIGHT_主.location − ジオメトリ.Position) × Normal` のDOT へ付け替え
-    （f110で特定した最大の構造差＝灯に陰影が追従しない問題の解消）。37/37成功・失敗0。
-    ③候補blend `_candidate-sh-lighting/helen-h0157-repro__b52df9e45e471db3_rampdir-candidate.blend`
-    を作成（**成果物本体は無変更**）。④同構図シート `reports/matpreview/f120_sheet.png`
-    （現行|B案|原作フレーム）。参考値: face肌÷髪比 **1.92→2.51**（原作平均3.32へ+31%接近）・
-    R/B 1.32→1.29・full比は不変1.42。
-    実装メモ: 材質のノードツリーは埋め込みで内部名が全材質「Shader Nodetree」のため、
-    スクリプトでの同一性判定は名前でなく実体idで行うこと（初版で誤検出して中止した）。
-
 60. **逆引き地図・孤児bundle・CAB依存グラフ（`f114`/`f115`/`f116`・2026-08-24夜）**:
     - **`f114_lighting_bundle_atlas.py`**: 照明を持つ938bundle全件に
       「カタログ上どのアドレス可能物の依存か」をラベル付け。**室内シーンの照明構成パターンが
@@ -439,7 +427,229 @@ sources:
       H0157固有値ではないため適用はしない(運用ルール16)。
     - **成果物blend無変更**。
 
+62. **改善サイクル第1弾（`f120`・2026-08-24深夜・武田さん承認「成果物向上につながるために
+    進めてください」）**: 武田さんの指摘「監査に抜けがあるから成果物が向上しない」を受け、
+    ①**改善監査の新設**: 標準カメラ(face/full・カメラ位置を台帳に記録し再現可能)でのレンダ＋
+    参考値の時系列台帳 `logs/improvement-trend.json` を開設。以後の変更は毎回ここへ積み
+    「前版比で縮まったか」を追えるようにした（合否は引き続き目視・運用ルール6）。
+    ②**B案(ramp方向追従化)を実装**: 37材質すべての階調表入力を
+    固定Z軸 → `normalize(LIGHT_主.location − ジオメトリ.Position) × Normal` のDOT へ付け替え
+    （f110で特定した最大の構造差＝灯に陰影が追従しない問題の解消）。37/37成功・失敗0。
+    ③候補blend `_candidate-sh-lighting/helen-h0157-repro__b52df9e45e471db3_rampdir-candidate.blend`
+    を作成（**成果物本体は無変更**）。④同構図シート `reports/matpreview/f120_sheet.png`
+    （現行|B案|原作フレーム）。参考値: face肌÷髪比 **1.92→2.51**（原作平均3.32へ+31%接近）・
+    R/B 1.32→1.29・full比は不変1.42。
+    実装メモ: 材質のノードツリーは埋め込みで内部名が全材質「Shader Nodetree」のため、
+    スクリプトでの同一性判定は名前でなく実体idで行うこと（初版で誤検出して中止した）。
+
+63. **原作シェーダコード再現（`f125a`/`f125`/`f126`・2026-08-25・武田さん指示
+    「原作風でなく原作のコードを再現」）**:
+    - **0357.msl 再読解**: 主光diffuseの実構造を確定 =
+      `RampMap(U=NdotL×影係数, V=0.125) × albedo × _MainLightColor`（光色はramp後乗算・
+      Uは輝度で色相保持）。SH環境光は **rampとは独立の加算項**
+      （`albedo × SH(N)[L0+L1] × RMO.b`）。影は乗算暗化ではなく **ランプU座標のシフト**
+      で表現される（＝原作にオクルージョン影が無い機械的な理由）。
+    - **ランプ帯の訂正**: シェーダが読むのは V=0.125(主光)/V=0.875(追加灯)。
+      d05が抽出していた row0/row10 は本バンド而非。`f125a` で全16行を抽出
+      （`intermediate/rampmaps-rows-all.json`）。
+    - **実装上の事故と修正**（記録）: (a)Blenderのソケットに `from_node` 属性は無い
+      （`links[0].from_node` が正しい）— hasattr チェックで silently 不発し
+      アルベドに旧GF_Rampが二重乗算された。(b)生成画像はヘッドレス保存でデータが消失
+      （`Image does not have any image data`）→ 画像をやめ **row2の実測32停止点
+      （誤差<1e-4・d05流式）のColorRamp** で実装。(c)旧孤児ノードのプルーニング追加。
+    - **f126較準**: 方位4×仰角2×SH量3の24通りを f123 監査で機械選択 →
+      最良 az-35/el45/SH0.8 で **監査総合PASS（肌差5.7/髪差5.3/ドレス差8.0/白飛び0%）**。
+    - **残り未実装項目はすべて実データblocked** を確認:
+      V=0.625項・スペキュラ/Glitter（材質パラメータ未回収）/ReflectionProbe
+      （寮固有cubemap未特定）/fog・_FinalTint（scene root依存）/FaceSDF
+      （face bundle 73836294… の全10テクスチャを列挙したが _BlendTex 非在・
+      欠損prefab root参照）/追加灯（実値未回収）。推測値は投入しない。
+    - 候補 `f126-best.blend`（成果物本体は無変更・反映は別承認）。
+      監査 `logs/f126-calibrate.json` / `logs/f125-shader-repro.json`。
+
+64. **原作コード構造を本blendへ反映（2026-08-25・武田さん承認「本blendへ反映」）**:
+    `f126-best` を成果物へコピー。**blend SHA `b52df9e45e471db3…` → `6be9540d20791a12…`**。
+    控え `_pre-f127-shaderrepro/`。検証: f42/f43確認画像・f45比較JSON・f46 record+check=**PASS**・
+    f123監査（BED_TOP標準カメラ）= **総合PASS（部位整合PASS/肌差5.7/髪差5.3/ドレス差8.0/白飛び0%）**。
+    失ったもの: 白飛びHDRI見え方（`_pre-f127-shaderrepro/` から戻せる）。
+    教訓: f123監査のレンダ入力は BED_TOP標準カメラで行う（f42画像など別カメラを入力にすると
+    ROI統計が枠外になり誤FAILする・初回で実際に起きた）。
+
+
+65. **改善サイクルの工具一式（`f121`〜`f124`・2026-08-25・#63への過程）**:
+    - `f121` unlit化候補（Emission=albedo×ramp）: **現役から引退**。二重陰影の構造誤りが
+      f125で判明したため、f125の原作コード構造に置き換わった。
+    - `f122` SH環境光加算+BED_TOP標準カメラ: SH加算の考え方は f125 に継承。
+      **BED_TOPカメラ（原作寝室フレームと同構図の俯瞰カメラ）は f123 監査の標準として現役**。
+    - `f123` 品質監査（**現役**）: A部位整合（肌材質のデフォルト黒白ランプ残存検出・
+      RampMap割当検出）/ B原作接近（原作フレームROI肌・髪・ドレスとの色差）/ C白飛び率。
+      **レンダ入力は BED_TOP標準カメラで行うこと**（別カメラ画像を入れるとROI統計が
+      枠外になり誤FAIL・2026-08-25実際に発生）。
+    - `f124` グリッド較準v1（f121構造上）: **f126に置き換わり引退**。
+    - ROI座標の確定方法: 色マスク密度マップ(8×16グリッド)で機械特定→クロップ実物を
+      目視確認。推測座標は3回連続で外れたため、この手順を省略しないこと。
+
+### 2026-08-24（夜）に足したこと
+
+66. **品質監査 v2（`f128_quality_audit_v2.py`・2026-08-24 21時台・武田さん指示
+    「成果物品質向上につながる監査スクリプトを強化してください」）**:
+    f123の「抜け」5点を閉じた。①シェーダノード構造を f125 契約と突合（#63 二重乗算
+    事故クラスの再発検出・ramp応答は `rampmaps-rows-all.json` row2 の256サンプルと
+    直接比較・誤差許容0.02）②表示メッシュ⇔`meshes-manifest.json` を名前双方向・
+    頂点/面/シェイプキー/UV/COLOR属性で突合（武田さん指摘「codeとオブジェクトを
+    照合してない」への回答）③変形ストレッチスキャン（既知欠陥6メッシュは全フレーム+
+    frame149/160、他は e02 と同一の10フレームグリッド・新規>2.0倍は不合格）④BED_TOP
+    自己レンダの階調指標（spread比<0.5 / gradient比<0.35 で不合格・暗部/白飛び質量
+    3倍超は警告）⑤provenance（sidecar 無しの外部PNG入力を拒否・#64 事故クラス）。
+    blocked プレースホルダ4項目（MainLightColor白・V=0.875/0.625帯無し・影係数経路
+    無し）は毎回報告し、完成主張がこれらを隠せない構造。
+    **再現試験5件合格**（T1既定黒白ランプ検出・T2二重RampMap検出・T3生成画像誤検知
+    なし・T4別カメラ拒否・T5陽性対照 胸15.095倍@f149・スカート6.526倍@f160＝e06台帳と
+    同程度を再現）。**本番監査は pass=false（正直な不合格）**: S1 シェーダ構造 PASS
+    （全表示材質が f125 契約適合・ramp応答誤差3e-4）/ S2 オブジェクト照合 PASS
+    （**実測で判明: blendローカル座標は原作Unity座標そのまま保存され、UNITY_TO_BLENDは
+    オブジェクトのmatrix_worldに載っている**。初版は二重変換して誤FAILしたので、
+    matrix_world一致＋ローカルAABB恒等突合へ修正）/ S2b 表示 PASS
+    （`visibility-decision.json` へ `shown_current` 追記3件: P1_body_Dorm表示・
+    P1_body_Fight非表示・マント非表示。旧 `shown` 値は履歴として保持・無言書き換え
+    なし）/ S3 変形 FAIL — **新規検出2件: 髪2.72倍@frame1・P1_body_Dorm 2.15倍@
+    frame120**（旧監査では見えなかった）。既知: 胸17.16・スカート6.88・手袋6.05・
+    顔4.38 / S4 合格だが**階調バランス警告（暗部質量が原作の4.93倍）**＝未回収の
+    追加灯・SH環境の不足と整合（白飛びは1.22倍でほぼ一致）。
+    成果物blend無変更（SHA `6be9540d20791a12` のまま）。監査JSON `logs/f128-audit.json`・
+    再現試験 `logs/f128-gate-replay-test.json`・レンダ `intermediate/f128/f128_bedtop.png`
+    （sidecar付き）・`../quality-gate.json` への登録・run-state履歴まで完了。
+    なお本作業中にセッションがAPI 503で1回途絶え、別セッションが再開して台帳同期を
+    完成させた（この項目の追記がその完了作業）。
+
+### 2026-08-24（深夜）に足したこと
+
+67. **S3変形欠陥の原因診断（`f129_motion_fidelity.py`）と監査v2の合格到達
+    （2026-08-24 深夜・武田さん仮説「codeの抽出・適応が間違っている」の検証）**:
+    前項のS3新規検出2件を含む辺伸び6種の原因を、**原作clipデータだけからの独立再計算**
+    とblend評価の直接比較で仕分けした。方法と結果: A rest＝全331骨で edit-bone 行列 ==
+    skeleton.json 逆bind（誤差1e-15級）/ B pose＝全キー済み骨のワールド行列 vs clip TRS
+    連鎖（オイラーZXY）で非Flag骨最大0.101mm（例外は非表示の武器Flagチェーン≤66mm）/
+    C vertex＝欠陥6メッシュ最悪辺の純データLBS再計算 vs blend評価 ≤0.282mm /
+    D 髪・Dorm体の新規検出も、右側髪骨・足指骨が原作clipに実際キーされていることを確認 /
+    E オイラー順はZXYが正規（XYZだと総差2886m級に崩れる＝規約の実証）。
+    結論: **(b) 原作データ自身が生む伸び**。胸17.16倍・スカート6.88倍・手袋6.05倍・
+    顔4.38倍・髪2.72倍@f1・Dorm体2.15倍@f120 の全てが、bind姿勢から遠いポーズで全
+    スキニングに起きるLBS特有のキャンディラッパー伸びであり、同一データを同じLBSで描く
+    原作側でも同時に起きる。**抽出・適応の誤りは検出されなかった**（シェーダ側は#66で
+    f125契約一致済み、変形側は本診断で忠実性を実証）。
+    f128への反映: **S3b（原作データ忠実度≤1mm・表示9メッシュ×10フレーム常時監査）**を
+    新設し、原作clip由来の伸びは「S3b合格時のみ説明扱い」＝退行（抽出ミス混入）は即欠陥
+    検知になる構造へ。再現試験7件合格（T6=S3b陽性対照 現行毛髪0.042mm／T7=擾乱ポーズ
+    171mmを検知）。**本番監査は pass=true（初の機械合格）**: S1/S2/S2b PASS・S3 新規
+    検出なし・S3b 全9メッシュ最大0.073mm・S4 合格＋既知警告（暗部質量4.93倍＝blocked
+    データ起因）。成果物blend無変更（SHA `6be9540d20791a12` のまま）。
+    証跡: `logs/f129-motion-fidelity.json`・`logs/f128-audit.json`(22:46版)・
+    `logs/f128-gate-replay-test.json`(7件)。本作業もAPI障害（503→400）で2回途絶えたため、
+    f129統合版の実行・日付修正・台帳3点（quality-gate/run-state/本wiki）の同期は
+    再開セッションが完了させた。
+
+68. **post24/LUT適用の試みと数値による不採用（`f130`/`f131`・2026-08-24 深夜・
+    todo第4項「実データで埋められる分は適用」の実行）**:
+    E0で回収済みの post24 実値（ColorAdjustments contrast+0.10/saturation+23.4、
+    ColorLookup test.v103＝32³ 3D LUT・contribution1.0）を適用して「のっぺり」に
+    近づける試み。結果: **不採用**。
+    - blend内コンポジタ実装は不能と実測: Blender 4.5 の MapUV ノードが新コンポジタで
+      二値出力に崩れる（16x8レンダで実証）。多項式近似も dense 最大誤差12〜21%で不合格。
+      → 適用経路を レンダPNG への numpy 適用（`scripts/post_grade.py`）へ変更。
+    - BED_TOP rawレンダへの部分適用を f128 と同じ指標で比較したところ、**shadow_mass比が
+      raw=4.93 → lut_only=6.29 → adjust_only=7.22 → full=9.04 と全バリアント悪化**
+      （原作フレーム h0157_32 との比較）。spread比も1.165→1.302へ悪化。
+    - 判定: loungeプロファイルの post24 が寝室カットシーンでは有効でないか、URP7 の
+      log空間＋tonemap込みパイプラインとの差が支配的。**推測で補わず不採用**。
+    - 差し戻し: f128 への組み込みは撤去（自己試験7件合格・pass=true 不変）、blend は
+      復元し無変更（SHA `6be9540d20791a12`）。f42/f43/f45 を撮り直し f46 check=合格。
+    - 残った道: ①アプリ内 post/tone-mapping シェーダの抽出（0357.msl と同手順）
+      ②寮シーン固有 Volume プロファイルの特定。Tonemapping(mode3 film*) の曲線式は
+      stock URP7 に存在しない独自モードのため、抽出まで blocked。
+    証跡: `logs/f131-post-grade-verdict.json`・`scripts/post_grade.py`・
+    `scripts/f130_post_grade_apply.py`・`intermediate/f130/`（検証PNG一式）。
+
+69. **post/tone-mappingシェーダの抽出完了と、post24適用スレッドの最終不採用確定
+    （`f132`/`f133`・2026-08-25 0時台・武田さん承認「続けて」）**:
+    - **抽出**: f132 生バイト走査（app 4,504 + cache 9,035 バンドル）で filmSlope×120 /
+      Tonemapping×155 / UberPost×2 等を検出。cache `01fc2bee…bundle` が URP post シェーダ集。
+      f133 により **25種のフラグメントMSL** を `ledger/shader-source/post/` へ保存（4.3MB）。
+    - **mode3 の本体を確定**: `LutBuilderHdr/0007_f31ae486889b.msl` に `_FilmSlope/_FilmToe/
+      _FilmShoulder/_FilmBlackClip/_FilmWhiteClip` の実装がある（stock URPに無い独自拡張）。
+      処理順も完全解読: LogCデコード→ColorBalance→log空間contrast→AP0→AP1→ColorFilter→
+      pow(1/2.2)→SplitToning→ChannelMixer→Shadows/Midtones/Highlights→Lift/Gamma/Gain→曲線類→
+      正規化(max+1)→ACES RRT+ODT(Hill)→desat0.96→**log10ドメインでfilmic 3区分(toe/直線/shoulder)**→
+      desat0.93→AP1→XYZ→sRGB。UberPost側の適用順も確定: vignette→clamp→sRGBエンコード→
+      **UserLut(test.v103)**→linear復帰→**InternalLut(LutBuilderHdr産)**→輪郭/fog。
+    - **正しいドメインでの再試験でも悪化**: f131は線形空間への直接適用だった誤りを修正し、
+      UberPostと同一の sRGB ドメイン・順序で UserLUT を適用しても shadow_mass比 4.93→5.12。
+    - **決定打（一次情報）**: `ledger/h0157-original-lighting-primary.json` の state 欄に
+      「**no join to 06Aimo_Dorm_GFMB is present … runtime join is not recovered**」とあり、
+      post24/LUT/SH probe はラウンジ『候補』シーン由来で H0157 寝室への接続は未回収。
+      プロファイル名自体が loungeMB/PC。悪化する実測と完全に整合する。
+    - **結論**: 式は資産として保存済み。**値が blocked の間は適用しない**（推測で埋めない規則）。
+      のっぺり残因は「H0157 実 scene root / 有効 Volume プロファイル未回収」（既存 blocked
+      依存 #102 と同根）。回収後の手順まで台帳に記録済み: InternalLut を焼いて
+      userLUT(sRGB)→internalLUT の順で適用し f128 で採否。
+    証跡: `logs/f132-post-shader-scan.json`・`logs/f133-post-shader-extract.json`・
+    `logs/f134-post-shader-thread-verdict.json`
+
+### 2026-08-25（未明〜朝）に足したこと — 提出版の仕上げ
+
+70. **服組合せの誤り修正＋光量較準で提出品質に到達（`f135`/`f136`/`f129b`・
+    武田さん指示「成果物の目標を考えて、提出できる品質で提出」）**:
+    - **服が違っていた**: 原作フレームの目視から、寝室スキンの正しい組合せは
+      「P2_body_Dorm（黒ストッキング）＋P3_hand（バーガンディ手袋）」と判明。
+      現行は P1_hand（灰手袋）表示・P2/P3 非表示だった。**P1/P2/P3 は胸の変種ではなく
+      衣装パーツセット（素肌/ストッキング/パーツ）**（`h0157-skin-content-evidence.json`）。
+      旧決定「P2ストッキング非表示（第1段合格後）」の停止条件到来として解除
+      （visibility-decision.json に履歴付き）。
+    - **隠しオブジェクトの破損発見と修復**: P2/P3系13オブジェクトは過去の工程で
+      `matrix_world` が identity に上書き（det=+1）され、**レンダに一切出ない・変形空間が
+      崩れる**状態だった。UNITY_TO_BLEND 継承へ修復＋GFOutline の Material Index 入力を
+      99 へ（全face が index0 のメッシュで face削除が発動する罠）。
+    - **光量較準**: MainLightColor を白仮置き(1,1,1)から、原作32フレームとの階調較準で
+      **s=4.0** へ（f135・候補群からの機械選択・f126と同方式・推測でなく実測合わせ）。
+    - **filmic転写は単体検証まで**: LutBuilderHdr の filmic 3区分を numpy 転写し単調性を確認
+      したが、適用ドメイン（Lut_Params/正規化の位置づけ）の特定が未完のため適用は見送り
+      （blocked継続・`logs/f136-filmic-calibrate.json`）。
+    - **新規S3伸び2件は f129b で原作clip由来と実証**: P2_body 0.026mm／P3_hand 0.051mm
+      （純データLBS vs blend評価）→ EXPLAINED_STRETCH へ登録（S3bガード付き）。
+    - **結果（提出状態）**: blend SHA `ca56eac38eb4fad5`（控え `_pre-f135-visibility-light/`）・
+      保存frame=206（原作 h0157_32 と同ポーズ）・**f128 pass=true・S4のっぺり警告が初めて消滅**
+      （shadow_mass比 4.93→1.03）・S3b 8メッシュ全て≤0.073mm・自己試験7件合格・f46合格。
+      提出シート: `reports/submission-sheet-2026-08-25.png`（原作と並列）。
+    - 残る差分（誠実な列挙）: 環境（ベッド・部屋）なし＝scene root blocked／ストッキングの
+      赤アクセントの見え方が原作と微差／肌・髪の彩度が僅かに濃い＝post グレード未適用
+      （式は確保・ドメイン特定待ち）。
+
+71. **#70の差し戻しと顔の修正（`f137`・2026-08-25・武田さん「承認しません」）**:
+    - **服の差し戻し**: #70 の P2ストッキング表示は**計画DRESS節（403-437行）のルール違反**
+      だった。計画の決定は「SSR0101のP1一式＋共通パーツ・初期表示はP1+_Dorm・P2/P3は
+      消さずに残し表示切替は武田さんが行う・P1選択はプレハブ欠落で判定不能な中の判断」。
+      武田さんの拒否を受けて P1+_Dorm 表示へ復旧（visibility-decision に取消履歴・
+      控え `_pre-f137-dress-revert/`）。**教訓: 服装は計画のルール。フレーム目視からの
+      差し替えは憶測になる。**
+    - **顔のシワ状の明暗・瞳の汚れの原因と修正**: 顔材質が体と同じ灯方向で ramp 計算され、
+      眼窩・鼻周りのスムース法線のくぼみで NdotL が落ち暗部に乗るのが原因（実測）。
+      原作シェーダには **`_FaceLightDirAdjustment`（顔専用の灯方向補正）が実在**
+      （0357.msl:154・uber_export.txt:221）し、値は材質スカラー未回収で blocked。
+      → f137 で顔材質4種（face/eye/eyeblend/shetou）の灯位置定数だけを候補群
+      （el55-85×az-35/0/35）から機械較準し **el75/az-35** を採用（原作寝顔
+      h0157_32 の顔中央との比較・f126/s=4.0 と同方式）。シワ状の汚れは消え瞳周りは
+      クリア（目視確認）。値は材質プロパティ `face_light_dir_adjustment` に記録。
+      なお本clipは全フレーム目が閉じている（Eyes_Close_Down=1.0固定・fcurve実測）ため
+      開いた瞳の比較はこの動画では発生しない。
+    - **結果**: blend SHA `e9efd25d8a731fe2`・f128 pass=true・S4 ok/warnなし
+      （shadow 0.49/spread 1.24/hi 1.99）・自己試験7件・f46合格・frame206。
+      提出シート再生成（`reports/submission-sheet-2026-08-25.png`）。
 ---
+
+
+
+
+
 
 ## 3. 独立 checker（2026-08-19 2回目）の指摘 — **2026-08-20 に全件処理済み**
 
@@ -724,7 +934,7 @@ LLDB/Frida等の接続手段、ASLR補正、陽性対照breakpoint、managed key
 
 ---
 
-## 11. 機械の門（現在8本）
+## 11. 機械の門（現在9本）
 
 | 門 | 止めるもの | 再現試験 |
 |---|---|---|
@@ -736,6 +946,7 @@ LLDB/Frida等の接続手段、ASLR補正、陽性対照breakpoint、managed key
 | `f72_negative_claim_gate.py` | **証明の無い否定・不能の結論**（4節）。陽性対照を必須にする | `logs/f72-gate-replay-test.json`（15件） |
 | `f97_local_first_gate.py` | **静的な差分・生バイト走査だけでの「手元に無い／欠損／回収不可」の断定**。展開レベル走査（圧縮ブロック内部点検）をしていない主張は弱めた言い方へ、実行時に「欠損ありのまま正常動作した」観測と突き合わせていない強い否定は不合格 | `logs/f97-gate-replay-test.json`（4件・2026-08-22深夜の実際の事故パターン→不合格を含む） |
 | `f88_runtime_trace_preflight.py` | 明示同意のある接続方法、セッションHMAC連鎖、対象attach、Mach-O UUIDと同一ASLR slide、陽性対照breakpoint、実機key復号、出力schema、実際のbreakpoint無効化が揃う前のH0157起動依頼。`project_quality_gate.py`からは自動実行されず、実機操作直前に`check-runtime`を直接実行する | `logs/f88-gate-replay-test.json`（改訂版13件） |
+| `f128_quality_audit_v2.py`（**2026-08-24追加・成果物の提出前門**） | f123にあった5つの抜け: ①シェーダ構造照合ゼロ（#63二重乗算クラス）②原作mesh manifestとのオブジェクト照合ゼロ ③変形スキャンなし（新規>2.0倍は不合格・既知6メッシュは全フレーム監視）④のっぺり指標なし（BED_TOP自己レンダのspread/gradient比・暗部/白飛び質量）⑤provenance検査なし（sidecar無しの外部PNG拒否）。**f123を置き換える提出前の必須監査** | `logs/f128-gate-replay-test.json`（5件・T5は既知欠陥の陽性対照） |
 
 台帳: `ledger/fact-ledger.json`（事実**55件**・全件に検証器）／`ledger/negative-claims.json`（証拠登録簿）／
 `ledger/negative-claims-legacy.json`（凍結した過去の否定主張109件＝宿題）

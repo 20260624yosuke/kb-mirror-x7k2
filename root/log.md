@@ -9458,3 +9458,136 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   抽出可否の最終判定は Step 1 ドライバ結果を優先、と記録。
 - 更新: `index.md`, `log.md`, `wiki/analyses/gf2-costume-inventory-and-selection-session-2026-08-24.md`(追記),
   `wiki/_attachments/gf2-skin-genre-map/`(table.json/viewer.html/img//audit-render.mjs)
+
+## [2026-08-24] ingest | Coloso 映像ingest バッチ再開 全7章完了(拡張子修正・staging削除・最終検収)
+
+- 依頼: [[coloso-batch-resume-handoff]] のタスク1〜3が全完了。完了記録は同ページ冒頭の callout に追記済み。
+- 完成章(全てゲート check --phase complete PASS・`visual_ingested` 付与・index/log 更新・inbox 申告済み):
+  hide ch05(56枚)/marse ch05(19枚)/marse ch06(19枚)/sasa ch02(17枚)/ye_jji ch05(174枚)/
+  marse ch07(19枚)/hide ch04 PNG復元(7枚)。合計保存フレーム311枚。
+- 実測での訂正(引き継ぎ資料よりディスク正本): sasa ch02 の未読取は 10m20s〜11m40s の5枚
+  (総長はファイル実測 11:53 で画面表記 17:51 と乖離)/ye_jji ch05 は抽出174枚=読取174枚で全保存
+  (p1-12m20s の第1読者読み飛ばしを発見・本セッションが追加読取)/ye_jji の再確認で6行を修正
+  (フレーム取り違え2件・字幕誤読2件・見出し文字・レイヤー番号)。
+- 品質修正(全章完了後の最終検収で発見): marse ch05/ch06/ch07・sasa ch02 の4章で保存フレーム名と
+  source 埋め込みから `.png` 拡張子が欠落(74ファイル)。Obsidian で画像表示されない実害があるため、
+  ファイル改名+manifest の frame 名+source 埋め込みを修正し、4章のゲートを再実行して PASS を確認。
+  教訓: ゲートの存在検査は「表と実ファイルの一致」を見るため拡張子欠落のような同型ミスを検出できない
+  (最終検収で人の目を入れる価値)。
+- temp 退避分(`wiki/assets/_staging_batch_resume_20260824/`、281フレーム166MB)は全章の本保存完了を
+  確認して削除。未使用フレーム(抽出36枚のうち未観測18枚など)は設計どおり保存せず廃棄。
+- 更新: `log.md`(本エントリ), `wiki/builds/coloso-batch-resume-handoff.md`(完了記録)
+
+## [2026-08-24] build | Coloso 映像ingest batch2 計画承認(残り全講座118章)と引き継ぎ資料新設
+
+- 依頼: 武田さん「残っている対象の講座を全てingestして欲しい。私に回答を戻した=計画に監査が抜ける
+  穴がある。解決して承認カードを出せ。コンテキストが多いので残りは別セッションで、整合を崩さない
+  引き継ぎ資料を作れ」。
+- 穴の特定(実測): batch1 完了報告で「ひづるめ計画に従えば進められる」と回答したが、同計画が要求する
+  ch12 パイロットのユーザーレビュー承認が未実施(log.md:8966)だった。また残対象はひづるめに限らず
+  5講座118章(hide 23/hizurume 24/marse 18/sasa 34/ye_jji 19・動画あり分)で、全体を管理する計画と
+  機械ゲートが存在しなかった。
+- 解決(承認カードで承認済み・条件=独立レビュー指示文の同梱): ①機械品質ゲート
+  `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json` を新設(project_quality_gate.py
+  --phase plan PASS。families=ひづるめ B1〜B4+各講座残りの8群、停止条件7条)②群パイロット制
+  (各講座先頭1章→ゲートPASS→ユーザー承認→同群量産。ひづるめは未承認の ch12 レビューから開始)
+  ③各章 inbox 申告・群完了ごと台帳確認。
+- 成果物: [[coloso-visual-ingest-batch2-handoff]](新規)。実行順序・1章あたり正規手順・
+  **バイアス排除設計の独立レビュー指示文**(実行者の自己報告を信用させず、レビュアー自身が
+  ゲート再実行+ffmpeg で動画と直接突き合わせ+抽出漏れ検査まで行う。コピペ用)・
+  batch1 の追加落とし穴5条(読み飛ばし/フレーム取り違え/typoバリアント/network_error代替/
+  temp退避/並行log追記/ゲート盲点)・新セッション用コピペ指示文を収録。
+- 更新: `index.md`, `log.md`, `wiki/builds/coloso-visual-ingest-batch2-handoff.md`(新規),
+  `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json`(新規)
+- 次の問い: 新セッションでコピペ指示文を実行し、ひづるめ ch12 レビュー案内から開始。
+
+## [2026-08-24] query | ひづるめ ch12 パイロット独立レビュー(503停止からの再開・条件付き承認→修正適用)
+
+- 依頼: batch2-handoff のレビュー指示文による ch12 パイロットの独立レビュー。前セッションは
+  最終判定出力直前に APIError 503 で死亡(手順1〜5済・ev-034濁点検査のクロップ未読取)ため、
+  同一セッションで再開して完遂。
+- レビュー実施: ゲート再実行 PASS(自実行)/動画 SHA-256 自己計算一致/同時刻8枚が保存フレームと
+  バイト一致/観測文9件と画面比較で一致/シーンチェンジ全検出(p1 43回・p2 92回)+ギャップ9枚読取で
+  知識欠落なし/量・台帳整合(47枚=47観測=47行、日付4か所一致)。
+- 発見(修正指示): ①ev-040(07:38)「ばかし遠近法」は誤読→「ぼかし遠近法」(頭文字は上部横棒が両縦棒に
+  渡るほ行字形。同スライド1行目「法は大きく」の「は」と原寸比較で確定。manifest recheck の「=ば再確認」も誤り)
+  ②ev-041(08:00)「ばかすだけ」→「ぼかすだけ」③ev-034『とかし(頭字判読不能)』→『とかし』(頭文字は
+  原寸クロップで判読可能)④凡例の引用例「ばかし遠近法」→「ぼかし遠近法」。
+  一方 ev-034『ぼかし』・ev-032『ぼかし、落かし』・01:30型板『ぼかし』は原寸検査の結果ぼで正しい
+  (レビュー途中に私が「ばかしでは」と一時疑ったが最終確定はぼ)。
+- 修正適用: source 3行+凡例を訂正、manifest recheck 07m38s を confirmed→corrected に訂正 →
+  gate complete 再 PASS。判定は**条件付き承認**→修正完了によりひづるめ B1 開始条件を満たす。
+- 更新: `wiki/sources/coloso-hizurume-ch12-gaze-guidance.md`(ev-034/ev-040/ev-041 行・凡例)、
+  `wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/manifest.json`(recheck 1件 corrected)、
+  `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json`(b1 notes に ch12 レビュー完了を記録)、
+  `wiki/builds/coloso-visual-ingest-batch2-handoff.md`(現在地・コピペ指示文を ch12 レビュー済みに更新)、
+  `log.md`(index は観測枚数・日付不変のため無変更)
+- 次の一手: ひづるめ B1 パイロット ch06(coloso-hizurume-ch06-drawing-types)の実施 → 独立レビュー →
+  承認後 B1 残り(07/09/13/14)。他講座パイロット(hide ch06/marse ch08/sasa ch03/ye_jji ch06)は並行着手可。
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 ひづるめ B1 パイロット ch06(映像観測18枚)
+
+- 依頼: batch2-handoff の現在地どおり、ひづるめ B1 パイロット ch06(coloso-hizurume-ch06-drawing-types、06.mp4 単一動画・246.4秒)を実施。
+- 手順: dry-run(SHA-256 a6197698…dd3c・110,386,231バイト)→ snapshot(抽出前)→ temp 抽出18枚(20秒間隔+文字起こし誘導 00:44/01:08/01:12/02:13/02:56)→ KB 側 staging(`wiki/assets/_staging_batch2_20260825/`)へ退避 → 盲検読取サブエージェント2体(各9枚、18ブロック回収=抽出数と一致)→ 第2読者3枚(00m44s/01m12s/02m56s)。
+- 発見と訂正: 第2読者が 02m56s で初観測と不一致 → 原寸再読(ffmpeg 176s 直接抽出+staging ファイル直読)の結果、**初観測サブエージェントBの後半5行(02m56s〜04m00s)が1フレーム前倒しの隣接フレーム取り違え**(落とし穴#13 の実害)と判明。該当5行+02m20s(選択レイヤー193→190)+01m12s(小文字「1影 要所ぼかし」・「固有色 陰影 透明ピクセルロック」・パネル4「乗算 全部塗りつぶし」=初観測「発光」の誤読)を原寸クロップで確定・訂正し、manifest recheck に corrected 7件+confirmed 1件を記録。読取Aの1回目は network_error で再試行成功(#15)。
+- 完了: フレーム18枚を `hizurume-ch06-MMmSSs.png` で本保存(.png 付き)→ manifest(status complete・completed 2026-08-25)→ source 節を byte 保持で挿入 → index.md 更新。
+- 更新: `wiki/sources/coloso-hizurume-ch06-drawing-types.md`, `wiki/assets/frames/coloso-hizurume-ch06-drawing-types/`(manifest.json+snapshot.json+png18枚), `index.md`, `log.md`
+- 次の一手: ch06 のレビュー指示文を武田さんへ渡し、承認 verdict を受取るまで B1 残り(07/09/13/14)に進まない(停止条件)。
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 ひづるめ B1 パイロット ch06 独立レビュー完了・修正適用(ev-019 追加)
+
+- 経緯: ch06 パイロット(前エントリ)の独立レビューを opencode が実施。判定は**条件付き承認**(既存18行は全て正確: 11時刻を動画から再抽出し PSNR=∞ でフレーム一致・記述一致、10秒間隔全帯域スイープ+シーン変化検出で知識欠落は1件のみ)。
+- レビュー発見: ①02:56.1〜02:58.8 の約2.7秒、節タイトルカード「私(ひづるめ)の描き方」(眼鏡の少女イラスト拡大クロップ+白地黒文字)が20秒間隔と文字起こし誘導の隙間に落ちて未観測 ②ev-009 のグリザイユ2 末行「グレー 陰影を細かく」は誤読で正しくは「グレー 陰影 決められた明度」(原寸クロップ3倍で確定。「陰影を細かく」はグリザイユ1 末行) ③動画末尾(04:05.5確認)の「Coloso.」ロゴ・冒頭(約00:01〜00:03.5)の焼き込みプレイヤーバー+著作権テキストは知識情報なし。
+- 修正適用: 02:57 フレームを本保存(hizurume-ch06-02m57s.png・SHA-256 114c13ab…76e5e)+ev-019 行追加、ev-009 行を source/manifest 両方で訂正、manifest に recheck 2件(01m40s corrected/02m57s confirmed)と targeted_times・カウント 18→19 を追記、方式行・凡例・index.md(19枚)を更新。
+- 検証: `video_ingest_gate.py check --phase complete` 再実行 → PASS(retrofit 注記は従前どおり)。
+- 更新: `wiki/sources/coloso-hizurume-ch06-drawing-types.md`, `wiki/assets/frames/coloso-hizurume-ch06-drawing-types/`(manifest.json+png追加1枚), `index.md`, `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json`(b1 notes), `wiki/builds/coloso-visual-ingest-batch2-handoff.md`(現在地・コピペ指示文), `log.md`
+- 次の一手: ひづるめ B1 残り(ch07/09/13/14)の量産着手可。各章で gate complete PASS+台帳更新を維持する。
+## [2026-08-25] query | 他キャラ展開への教訓引き継ぎ確認（gf2-character-repro-pipeline 更新）
+
+- 武田さんの問い「他キャラを作るときの教訓は引き継げるように記録しているのか」への対応。
+- `wiki/builds/gf2-character-repro-pipeline.md` に Helen提出（2026-08-25）の教訓を追記:
+  ルール4件（DRESS節遵守・P1/P2/P3=衣装セット・blocked値の機械較準・表情fcurve実測）、
+  手順5件（顔灯方向補正_f137・f129系診断・ramp暗部・f128複製の固有箇所・post24不採用）、
+  落とし穴3件追加（matrix_world破壊・GFOutline MI・MapUV崩壊）、スクリプト在庫6件追加。
+- 正本: [[gf2-character-repro-pipeline]] / Helen側の経緯は [[gf2-helen-repro-v51-handoff]] #70/#71
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 ひづるめ B1 ch07 構図(映像観測37枚)
+
+- 依頼: batch2-handoff の B1 残り量産(量産承認済み)の1章目。coloso-hizurume-ch07-composition(07.mp4 単一・522.5秒)。
+- 手順: dry-run(SHA-256 2b61ff14…d850・239,032,591バイト)→ snapshot(抽出前)→ temp 抽出37枚(20秒間隔+文字起こし誘導 00:28/01:10/01:31/01:53/03:41/03:56/04:06/04:17/05:55/06:26)→ KB 側 staging(`wiki/assets/_staging_batch2_b1rest_20260825/ch07/`)へ退避(raw ページ・動画 SHA-256 の退避前後一致を機械確認)→ 盲検読取サブエージェント3体(13+12+12枚、37ブロック回収=抽出数と一致)→ 第2読者6枚(00m00s/00m28s/02m40s/04m06s/06m26s/08m40s、min要件4枚を上回る)。
+- 発見と訂正: 不一致3件(00m28s ツールパネル「ブラサイズ70.0」→原寸クロップで「7.0」・04m06s 赤線詳細→「赤い縦線+下端に白い短い横線(カーソル)」・06m26s「円4つ」→「人物3体」)と同一スライド横断の表記揺れ1件(「埋もれない/理もれない」→02m20s フレームの原寸クロップで「埋」に確定)を統括側の原寸クロップ(ffmpeg 直接再抽出+2〜3倍拡大)で訂正。manifest recheck に corrected 4件+confirmed 2件を記録。
+- 完了: フレーム37枚を `hizurume-ch07-MMmSSs.png` で本保存(.png 付き)→ manifest(status complete・completed 2026-08-25)→ source 節を byte 保持で挿入 → index.md 更新。
+- 更新: `wiki/sources/coloso-hizurume-ch07-composition.md`, `wiki/assets/frames/coloso-hizurume-ch07-composition/`(manifest.json+snapshot.json+png37枚), `index.md`, `log.md`
+- 次の一手: 同様の手順で ch09(分割2本)→ ch13(分割2本)→ ch14 を実施。各章で gate complete PASS+10秒間隔全帯域スイープを実施する。
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 marse 群パイロット ch08 どこを見せたいのか最初に決めておく(映像観測7枚)
+
+- 依頼: batch2 の marse 群パイロット。coloso-marse-ch08-focus-first-composition(08.mp4 単一・463.4秒・SHA-256 8ef3cb33…768・212,122,074バイト)。
+- 手順: dry-run → snapshot(抽出前)→ temp 抽出27枚(20秒間隔+文字起こし誘導 00:50/01:31/02:55)→ KB 側 staging(`wiki/assets/_staging_batch2_20260825/marse-ch08/`)へ退避 → 盲検読取サブエージェント2体(14+13枚、27ブロック回収=抽出数と一致)→ 第2読者は保存7枚全件を盲検再読取(min要件 max(3,10%)=3枚を上回る)。
+- **marse 群固有の運用(本パイロットで確立)**: スライド講義型で同一スライドが長く持続するため、**同一スライドの重複フレームは保存せず廃棄**(抽出27→保存7、廃棄20枚=黒導入1/タイトル持続4/①持続4/②持続5/③持続4/④持続3...のうち初出以外)。廃棄分の読取結果は「同一スライド」確認にのみ使用し、manifest note と source 運用注記に明記。
+- 完成宣言前の自己点検: 動画全帯域を10秒間隔でスイープ(47枚、staging `marse-ch08-sweep/`)+ffmpeg シーン変化検出(0:03/1:29/2:54/4:38/6:18/7:42)を実施。観測表に載らないスライド・画面はなし(ひづるめ ch06 で実害のあった短時間スライド取りこぼしは本動画では発生せず、全スライド持続30秒以上を機械・ビジョンの両面で確認)。
+- 発見と訂正: 不一致1件(①スライド左図の「背中の翼」を第1読者Aが記載・第2読者が言及せず)→ 原寸クロップ2倍読取で翼状の羽が実在すると確定(confirmed・服装細部=片側肩出し/白カフス/ニーソックス/紐状の帯も補強)。corrected / marked-uncertain はゼロ。
+- 完了: フレーム7枚を `marse-ch08-MMmSSs.png` で本保存(.png 付き)→ manifest(status complete・completed 2026-08-25)→ source 節を byte 保持で挿入 → gate complete PASS 確認後に visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認。
+- 更新: `wiki/sources/coloso-marse-ch08-focus-first-composition.md`, `wiki/assets/frames/coloso-marse-ch08-focus-first-composition/`(manifest.json+snapshot.json+snapshot-pre.json+png7枚), `index.md`, `log.md`
+- 次の一手: ch08 のレビュー指示文を武田さんへ渡す。承認 verdict 受取まで marse 群残り17章(ch01〜03/09〜22)に進まない(停止条件)。
+
+## [2026-08-25] query | 配置復元が「アプリ未起動で全滅・数分固まり」する問題の修正と復元パターン2本化
+
+- 依頼: 「配置復元スクリプトがエラーになる。根本からおかしくなった。解決して」。
+- 診断(実測): 2026-08-25 09:52〜09:58 の3回の復元は全て `saved=10 current=0` のまま 180〜300秒待って失敗。原因は Obsidian 未起動でボタンを押したこと(当日の Obsidian プロセス活動ゼロ・クラッシュ報告なし・ログイン項目未登録)。復元フローは Obsidian フェーズが汎用フェーズの通過ゲートになっており、アプリを起動する処理は無かった。yabai・保存データ・本体ロジックは正常(前日まで exit 0)。
+- 修正: ①Obsidian 未起動の秒速判定(pgrep、待ちループに入らない) ②Obsidian フェーズを通過ゲートから報告に降格(失敗しても汎用は続行) ③汎用の「窓0個」時は成功扱い(照合0件拒否は current>0 のみ維持) ④多重起動防止ロック(死んだ PID は自動回収) ⑤新入口 `tools/restore_full_layout.sh`(閉じている対象アプリをバンドルID基準で順次起動してから復元、Raycast「配置を全部復元（閉じているアプリも起動）」追加)。バンドルIDは osascript で実測解決(ChatGPT/Codex は同一バンドル com.openai.codex)。osascript の running 確認は終了コードでなく出力で判定する必要があった(実機検証で発見した混入バグ)。
+- 正本差し替え: 武田さんが保存一覧で選択した「13. ◎ 2026-08-06 09:55(窓49/健全)」へ汎用正本を差し替え。`window_layout_versions.py restore` は Obsidian 側も巻き戻すため使わず、汎用1ファイルのみ手動差し替え(旧正本 2026-08-21 18:03 版は backups/overwritten-20260821-1803-before-rollback-* へ退避)。仕様の罠を記録: save-before-<ts> の中身は1つ前の保存、一覧日時は内部 created_at 由素。8/6 版の実体は save-before-20260807-080633(同内容が他2件)。
+- 検証(実機): py_compile/bash -n/ユニットテスト27件(新規回帰テストは旧コードで落ちる)合格。A: Obsidian 未起動で通常復元=14.3秒で完了(従来300秒待ち→失敗)。B: Obsidian 起動時ドライラン=退行なし。C: 全復元を限定2アプリ=ジャーナル起動→配置、Obsidian 自動起動→復元、exit 0。ロック: 同時2実行で2つ目即抜け・1つ目完走。差し替え後の最終復元=exit 0。
+- 未確認: 全17アプリの一斉自動起動は初回実使用が初めて(限定2アプリのみ実測)。復元後の画面見た目の武田さん確認はまだ。
+- 更新: `tools/restore_obsidian_layout_with_wait.sh`, `tools/restore_supported_window_layout.sh`, `tools/all_window_layout_restore.py`, `tools/tests/test_all_window_layout_restore.py`, `tools/restore_full_layout.sh`(新規), `~/.config/raycast-scripts/restore_full_layout.sh`(新規), `tools/window-layout-state/all-windows-latest.json`(正本差し替え), `wiki/builds/window-layout-restore.md`, `log.md`
+- 次の問い: 全復元ボタンの初回実使用で全アプリ起動経路が意図どおりか。復元後の画面見た目が定位置か。
+
+## [2026-08-25] ingest | Raycast File Search スコープ拡張(SSD 全体+HDD_02・build ページ新設)
+
+- 依頼: 「レイキャストからファイルパスやファイル名で検索、展開までできるように。現実的に可能か検討して」→ 相談のうえ hold で方針・計画の 2 段承認を取得し実施。
+- 調査(実測): Spotlight は全ボリューム有効(`mdutil -sa`、外付 SSD の .blend 998 件を mdfind 2.4 秒検出)。Raycast 2.0.5 File Search v2 は Search Scopes 対応。Blender 本体は `/Applications` でなく SSD 内 `02_ソフトウェア/Blender.app`(初回の「未導入」判定を訂正)。
+- 実施: 武田さんが Settings → File Search → Search Scopes へ `SSD_M.2_Realtek RTL9210 NVME Media_` と `HDD_02` を追加(手作業・案内方式)。バックアップ HDD 2 本は重複ノイズ回避のため意図的に除外。索引構築は LLM 側が監視(CPU 合計+index ディレクトリ du を 30 秒サンプリング、設定画面に進捗 UI 無しのため)、CPU 250%→0%・231MB 安定(+63MB)で完了判定。
+- 検証: `.blend` を Raycast から検索して直起動できることを武田さんが実機確認(「だいぶ使用感いい」)。md→Obsidian 表示(⌘K → Open With)は未試行、HDD_02 側ヒットは未試験。
+- 更新: `wiki/builds/raycast-file-search-scope.md`(新規), `index.md`, `log.md`
+- 次の問い: md を Obsidian で開く導線が実際に機能するか(次回 md を開くときに確認)。
+- 追記(ch07): 完成前の10秒間隔全帯域スイープ(53枚+シーン変化検出19箇所)で未観測画面4件(00:10 節タイトル「構図」/00:50 ラベル「花・人・白い服」/03:50 ラフ+放射状パース線/08:30 まとめスライド)を発見 → ffmpeg 直接抽出+盲検読取で ev-038〜ev-041 を追加(37→41枚)。00m10s のレイヤー名「これまでの講座」は原寸クロップで確定(初読「下書き」を訂正)。manifest・source 節・index を更新し gate complete 再 PASS。

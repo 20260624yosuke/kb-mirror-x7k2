@@ -110,8 +110,8 @@
 - [[coloso-hizurume-ch03-books-tools]] — 推薦書(ソッカ/Vision 等)+ 推薦 Coloso 講座(晃田ヒカ) (ingested 2026-06-01)
 - [[coloso-hizurume-ch04-sns-strategy]] — バズの原理 / NG 行動 / 流行の掴み方 / 0→2 万人手順 / 8 万いいねレシピ (ingested 2026-06-01)
 - [[coloso-hizurume-ch05-environment-setup]] — 大きいキャンバス / カラーレイヤー / ショートカット効率化 (ingested 2026-06-01)
-- [[coloso-hizurume-ch06-drawing-types]] — 塗りの種類比較 + 力場起点の描き方 (ingested 2026-06-01)
-- [[coloso-hizurume-ch07-composition]] — 構図は 1→2 / 浮く構図 / アイレベル法(ye_jji と射程差) (ingested 2026-06-01)
+- [[coloso-hizurume-ch06-drawing-types]] — 塗りの種類比較 + 力場起点の描き方 (ingested 2026-06-01, 映像観測 19 枚 2026-08-25)
+- [[coloso-hizurume-ch07-composition]] — 構図は 1→2 / 浮く構図 / アイレベル法(ye_jji と射程差) (ingested 2026-06-01, 映像観測41枚 2026-08-25)
 - [[coloso-hizurume-ch08-anatomy-basics]] — 人体は暗記 / 質→量→質 / 描きながら学ぶ (ingested 2026-06-01)
 - [[coloso-hizurume-ch09-light-shadow-color]] — バリュー値 25 / 反射 / SSS / 散乱 / 色収差(理論最濃) (ingested 2026-06-01)
 - [[coloso-hizurume-ch10-efficient-practice]] — 写真模写 6 効果 + 4 ルール / 黒の弊害 (ingested 2026-06-01)
@@ -179,7 +179,7 @@
 - [[coloso-marse-ch05-fetish-face]] — フェチの定義 + 顔周り(前髪・口に入る髪・耳の透過・うなじ・乱れ髪・耳かけ) (ingested 2026-06-01, 映像観測 19 枚 2026-08-24)
 - [[coloso-marse-ch06-fetish-upper-body]] — 上半身フェチ(服と肌の隙間・胸の変形・血管・肩紐・文字) (ingested 2026-06-01, 映像観測 19 枚 2026-08-24)
 - [[coloso-marse-ch07-fetish-lower-full-body]] — 下半身/全身フェチ(締め付け・汗・日焼け跡・濡れ透け・ほくろ・熱気) (ingested 2026-06-01, 映像観測 19 枚 2026-08-24)
-- [[coloso-marse-ch08-focus-first-composition]] — 見せたい箇所を最初に決め、構図・光・腕・小物・背景を逆算する (ingested 2026-06-01)
+- [[coloso-marse-ch08-focus-first-composition]] — 見せたい箇所を最初に決め、構図・光・腕・小物・背景を逆算する (ingested 2026-06-01, 映像観測 7 枚 2026-08-25)
 - [[coloso-marse-ch09-feminine-pose]] — 腰反り S 字を軸にした女性らしいポーズ 6 パターン (ingested 2026-06-01)
 - [[coloso-marse-ch10-arms-gaze-guide]] — 腕を胸への視線誘導ツールとして使うポーズ集 (ingested 2026-06-01)
 - [[coloso-marse-ch11-rough]] — 夏ビーチ作例のラフ、3 分割法、胴体 2 ボックス (ingested 2026-06-01)
@@ -1289,6 +1289,7 @@
 
 ユーザー所有の成果物・運用システム・自作ツール・自動化・実装済み/実装予定ワークフロー。
 
+- [[raycast-file-search-scope]] — Raycast File Search のスコープに SSD_M.2 全体+HDD_02 を追加し、ファイル名検索→`.blend` 直起動までを実現。Spotlight 全ボリューム有効の実測を根拠に標準機能のみで構築、バックアップ HDD は重複ノイズ回避で意図的に除外。索引監視は CPU+du サンプリングで実施、md→Obsidian 表示は未試行 (new 2026-08-25)
 - [[kimi-code-artifact-location]] — Kimi Code 専用: ファイルや Wiki ページを作成/更新したとき、報告の先頭に場所を明示するルール (new 2026-08-19)
 - [[context-harness]] — Codex CLI・Codex Desktop・Claude CodeのREQ、根拠区分、未完了、却下仮説、成果物、所有権を外部JSONへ保存する共通基盤。固定release 0.1.11をMac本体へobserve-only導入済み。63自動試験と破棄可能PRODUCT_GATEに合格し、Desktop/CLI誤分類、metadata未flushのephemeral CLI分類、診断payloadのcommand引数保存を修正。Codex hook trust、Desktop実機、Claude通常応答、製品別長時間、完全自動main sessionは未確認のため全製品とも日常運用不可 (updated 2026-08-13)
 - [[codex-claude-code-official-import-plan]] — Claude Code環境をOpenAI公式 `Import from another agent` でCodexへ試験導入する実行計画。Desktop Importを本線、CLI `/import` を50 chats制限つき予備線に分け、Import前証拠固定・最小バックアップ・1プロジェクト試験・Import後監査・Automatic updatesのON判定・ロールバック条件を明文化。対象は最近もっとも使われている `LLM Knowledge Base _01`、Automatic updatesは監査通過までOFF (new 2026-08-13)
@@ -1316,6 +1317,7 @@
 - [[oxloop-parallel-agent-loop]] — opencode CLI 駆動の並列マルチエージェントループ(`tools/oxloop/loop.sh`)。planner→アーム並列実行(cwd物理分離)→verifier→FIXES繰り越しループ。判定権限は loop.sh が保持(VERIFIED は verifier rc0×全アーム成功×PROGRESS.log非空×REPORT必須節grep の機械条件のみ)。完了時 REPORT を成果物Inboxへ自動申告。3段階試験合格・実運用未開始 (new 2026-08-23)
 - [[coloso-visual-ingest-resume-inventory]] — サーバーエラーで停止した coloso 映像ingest バッチの棚卸し。完全健康9章・壊れた状態6章(hide ch04 PNG全滅・marse ch05〜07/sasa ch02 幽霊flag 等)・未着手約118章・動画無しblocked約45章を実測。会話上の完了主張とディスク実態の食い違いが最大の教訓 (new 2026-08-23)
 - [[coloso-batch-resume-handoff]] — 8/23並列バッチ死亡セッション(hide/sasa/marse/ye_jji 4講座同時走行)の再開点を temp 実測で固定した引き継ぎ資料。反映待ち3章(hide ch05 manifest draft完成/marse ch05・06 盲検読了)→読取途中3章(sasa ch02 11m20s以降/ye_jji ch05 p4-Iのみ/marse ch07 未読取)→hide ch04 PNG復元の順序・共通手順・新セッション用コピペ指示文付き。temp成果物は揮発性のため退避必須 (new 2026-08-24)
+- [[coloso-visual-ingest-batch2-handoff]] — 残り全講座118章(hide 23/hizurume 24/marse 18/sasa 34/ye_jji 19)の映像ingest承認済み計画。監査構造(機械品質ゲート quality-gate.json plan PASS・群パイロット制・ひづるめ ch12 レビューから開始)・バイアス排除設計の独立レビュー指示文(コピペ用)・batch1 の追加落とし穴5条・新セッション用コピペ指示文を収録 (new 2026-08-24)
 - [[plan-gate-skill]] — 明示起動だけで使う計画承認専用ゲート。Codexは `request_user_input`、Claude Codeは `AskUserQuestion` で `card_id`/`plan_sha256` 付き承認カードを保存し、無回答・空回答・タイムアウト相当・古いカードを承認や中断にしない。高リスク計画は `gpt-5.6-terra` medium 事前監査後にだけ提示。承認後は実装せず停止 (updated 2026-08-13)
 - [[canvas-reference-tools]] — Obsidian Canvas を PureRef 代替の参照画像ボードとして使うための自作プラグイン。v0.5.6で `__light.canvas` を作業正本にし、v0.5.7で選択画像をテキストへ線(edge)でつなぐ機能を追加、v0.5.8〜0.5.25で MY-ART Canvas ギャラリー([[myart-canvas-gallery]])を拡張。v0.5.20〜0.5.21で整頓間隔設定化・Cmd+クリック複数選択・createdAt記録・右クリックジャンル別サブメニューを実装、2026-07-14時点でギャラリーの並び替え(更新順/名前順/追加日順)も実機確認済み。2026-07-12 の Obsidian 終了停止は本プラグイン単体主因ではないと切り分け、この vault の運用対策として終了ガードを実装 (updated 2026-07-14)
 - [[canvas-idea-cultivation-workflow]] — なぜ Obsidian の窓を大量に常時開くか(=各Canvasが「育て中のアイデア」で、閉じると忘れる/着想のシームレスさ優先)の正本。Canvas=PureRef代替の画像資料ビュー、Eagle(画像管理)との役割差、平岡雄太のNotionアイデア術との関係、重さ問題への含意(一次レバーは__light軽量化)を記録 (new 2026-07-01)
@@ -1413,6 +1415,7 @@
 - [[eagle-save-script-use-cases-2026-06-17]] — Eagle保存スクリプトを「保存した瞬間の文脈を失わない入口」として使う候補整理。反応数・出典・保存理由・重複検出を優先し、自動分類や確定タグ付けは後回し (ai-hypothesis, 2026-06-17)
 - [[asuna-maid-costume-structure]] — アスナ風メイド衣装を、白い胸当てパネル・紺V字パーツ・エプロン・ガーター風ストラップに分けて作画用に整理。Grok候補URLの優先度と追加検索語も分類 (ai-hypothesis, 2026-06-23)
 - [[gf2-helen-repro-v51-run]] — HELEN-REPRO v5.1 の実行記録（正本）。輪郭線clip.xyの世界座標化とMetal reversed-Z導出は反映済み。HybridCLR一次解析と保存runtime logでGFMB/Helen寮の併存を確認。改訂f88は6入口・2 phase・cleanup必須へ実装したが、2026-08-22の原本LLDB attach 1回はOSが拒否したため再試行せず技術的停止。breakpointとtraceは無く、scene load requestは未観測。候補照明・RampSettingは新規適用せず、scene/prefab rootと照明値は未回収。現行blendの既存推測AREA灯3つと既定階調は残存 (source-backed+user-stated, 2026-08-22)
+- [[gf2-character-repro-pipeline]] — キャラ再現パイプライン（コードから他キャラを抽出する導線）。H0157で検証済みの手法を横展開する手順書: カタログ走査→一次データ抽出(RampMap全16行/LightProbes/シェーダ)→f125構造での材質構築→f123機械監査→グリッド較準。blocked項目一覧とBlender落とし穴(ソケットfrom_node無・生成画像データ消失・孤児ノード)を含む (source-backed, 2026-08-25)
 - [[gf2-helen-repro-v51-handoff]] — HELEN-REPRO v5.1 のセッション引き継ぎ資料（HANDOFF）。2026-08-23に作業フォルダ `06_repro-v51/reports/` から wiki へ実体ごと移動（武田さん決定）。読む順序・セッション作業ログ49件・f72門の仕様・8本の機械の門一覧・運用ルール短縮版を含む。数値の正本は [[gf2-helen-repro-v51-run]] 側で、`run-state.json` の `handoff_file` がこのページを指す (source-backed, 2026-08-23)
 - [[gf2-char-extract-handoff]] — **他キャラ原作抽出プロジェクト（gf2-char-extract）の引き継ぎ正本**。ヘレンの光再現が停止中の間に、他キャラの形（メッシュ+骨+テクスチャ）を原作データから並列抽出する量産導線を作る計画。計画v2.1はhold承認済み・独立レビュー(major6/minor7)反映済み。**Step 1 完了**: 抽出ドライバ `10_extract_char.py`（抽出→Blender headless構築→台帳まで1本）＋機械突合 `20_diff_char_blend.py`（12項目）を実装し、Helen/HelenSSR01 で **突合ALL PASS・決定性 canonical_manifest_sha 確定・replay否定試験11系統PASS** を実測。成果物blend（201オブジェクト/骨375/テクスチャ127枚）は `gf2-char-extract/blends/`。骨の親160本と材質slot201個はAFS2/CRI由来で未解決（推定で埋めず記録）。**次は Step 2 パイロット2体の武田さん指名→目視承認**。光・輪郭線・ramp・アニメは deferred (source-backed, 2026-08-24)
 - [[gf2-helen-futa-addition-handoff]] — ヘレン陰部追加プロジェクト（07_futa-helen）の引き継ぎ資料。素材=#7 Gracyanne Futa2 採用済み。Phase A-v2 完了後 S30 却下→品質相談を経て **§8 完成形方針確定**（L1=動くシーン正本／裸シーン先行／勃起固定／旧hidden基準・S30タック廃止・着衣切替と布反応は棚上げ）。第一目標シーン＝裸futaヘレン×整備室系モーション（H0146〜H0156 から選定、抽出計画 v2 承認済み）。セッション死亡履歴と「成功報告の直後に更新する」運用ルールを含む (source-backed, 2026-08-24)

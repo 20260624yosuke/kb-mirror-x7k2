@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 2057 ファイル_
+_合計 1816 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 2057 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-24T08:32:45Z
-- [log.md](root/log.md) | 2026-08-24T08:33:17Z
+- [index.md](root/index.md) | 2026-08-25T02:40:04Z
+- [log.md](root/log.md) | 2026-08-25T02:40:04Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -238,353 +238,6 @@ _合計 2057 ファイル_
 - [x-eagle-project-current-state-interference-audit-2026-06-24.md](wiki/analyses/x-eagle-project-current-state-interference-audit-2026-06-24.md) | 2026-06-24T15:01:17Z
 - [ye-jji-course-roi-for-growing-character-artist.md](wiki/analyses/ye-jji-course-roi-for-growing-character-artist.md) | 2026-07-07T00:55:52Z
 
-## wiki/assets/_staging_batch_resume_20260824/marse-visual/ (2)
-
-- [obs-ch05.md](wiki/assets/_staging_batch_resume_20260824/marse-visual/obs-ch05.md) | 2026-08-24T03:30:44Z
-- [obs-ch06.md](wiki/assets/_staging_batch_resume_20260824/marse-visual/obs-ch06.md) | 2026-08-24T03:30:44Z
-
-## wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/ (15)
-
-- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/00m00s.png) | 2026-08-24T03:30:44Z
-- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/00m20s.png) | 2026-08-24T03:30:44Z
-- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/00m40s.png) | 2026-08-24T03:30:44Z
-- [00m48s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/00m48s.png) | 2026-08-24T03:30:44Z
-- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/01m00s.png) | 2026-08-24T03:30:44Z
-- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/01m20s.png) | 2026-08-24T03:30:44Z
-- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/01m40s.png) | 2026-08-24T03:30:44Z
-- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/02m00s.png) | 2026-08-24T03:30:44Z
-- [02m07s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/02m07s.png) | 2026-08-24T03:30:44Z
-- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/02m20s.png) | 2026-08-24T03:30:44Z
-- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/02m40s.png) | 2026-08-24T03:30:44Z
-- [02m44s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/02m44s.png) | 2026-08-24T03:30:44Z
-- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/03m00s.png) | 2026-08-24T03:30:44Z
-- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/03m20s.png) | 2026-08-24T03:30:44Z
-- [obs-notes.md](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch04/obs-notes.md) | 2026-08-24T03:30:44Z
-
-## wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/ (19)
-
-- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/00m00s.png) | 2026-08-24T03:30:44Z
-- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/00m20s.png) | 2026-08-24T03:30:44Z
-- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/00m40s.png) | 2026-08-24T03:30:44Z
-- [00m53s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/00m53s.png) | 2026-08-24T03:30:44Z
-- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/01m00s.png) | 2026-08-24T03:30:44Z
-- [01m14s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/01m14s.png) | 2026-08-24T03:30:44Z
-- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/01m20s.png) | 2026-08-24T03:30:44Z
-- [01m25s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/01m25s.png) | 2026-08-24T03:30:44Z
-- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/01m40s.png) | 2026-08-24T03:30:44Z
-- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/02m00s.png) | 2026-08-24T03:30:44Z
-- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/02m20s.png) | 2026-08-24T03:30:44Z
-- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/02m40s.png) | 2026-08-24T03:30:44Z
-- [02m45s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/02m45s.png) | 2026-08-24T03:30:44Z
-- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/03m00s.png) | 2026-08-24T03:30:44Z
-- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/03m20s.png) | 2026-08-24T03:30:44Z
-- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/03m40s.png) | 2026-08-24T03:30:44Z
-- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/04m00s.png) | 2026-08-24T03:30:44Z
-- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/04m20s.png) | 2026-08-24T03:30:44Z
-- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch05/04m40s.png) | 2026-08-24T03:30:44Z
-
-## wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/ (19)
-
-- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/00m00s.png) | 2026-08-24T03:30:44Z
-- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/00m20s.png) | 2026-08-24T03:30:44Z
-- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/00m40s.png) | 2026-08-24T03:30:44Z
-- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/01m00s.png) | 2026-08-24T03:30:44Z
-- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/01m20s.png) | 2026-08-24T03:30:44Z
-- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/01m40s.png) | 2026-08-24T03:30:44Z
-- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/02m00s.png) | 2026-08-24T03:30:44Z
-- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/02m20s.png) | 2026-08-24T03:30:44Z
-- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/02m40s.png) | 2026-08-24T03:30:44Z
-- [02m54s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/02m54s.png) | 2026-08-24T03:30:44Z
-- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/03m00s.png) | 2026-08-24T03:30:44Z
-- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/03m20s.png) | 2026-08-24T03:30:44Z
-- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/03m40s.png) | 2026-08-24T03:30:44Z
-- [03m55s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/03m55s.png) | 2026-08-24T03:30:44Z
-- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/04m00s.png) | 2026-08-24T03:30:44Z
-- [04m09s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/04m09s.png) | 2026-08-24T03:30:44Z
-- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/04m20s.png) | 2026-08-24T03:30:44Z
-- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/04m40s.png) | 2026-08-24T03:30:44Z
-- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch06/05m00s.png) | 2026-08-24T03:30:44Z
-
-## wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/ (19)
-
-- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/00m00s.png) | 2026-08-24T03:30:44Z
-- [00m10s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/00m10s.png) | 2026-08-24T03:30:43Z
-- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/00m20s.png) | 2026-08-24T03:30:44Z
-- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/00m40s.png) | 2026-08-24T03:30:44Z
-- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/01m00s.png) | 2026-08-24T03:30:44Z
-- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/01m20s.png) | 2026-08-24T03:30:44Z
-- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/01m40s.png) | 2026-08-24T03:30:44Z
-- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/02m00s.png) | 2026-08-24T03:30:44Z
-- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/02m20s.png) | 2026-08-24T03:30:44Z
-- [02m35s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/02m35s.png) | 2026-08-24T03:30:44Z
-- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/02m40s.png) | 2026-08-24T03:30:43Z
-- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/03m00s.png) | 2026-08-24T03:30:43Z
-- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/03m20s.png) | 2026-08-24T03:30:43Z
-- [03m21s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/03m21s.png) | 2026-08-24T03:30:44Z
-- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/03m40s.png) | 2026-08-24T03:30:44Z
-- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/04m00s.png) | 2026-08-24T03:30:44Z
-- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/04m20s.png) | 2026-08-24T03:30:44Z
-- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/04m40s.png) | 2026-08-24T03:30:44Z
-- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/marse-visual/ch07/05m00s.png) | 2026-08-24T03:30:44Z
-
-## wiki/assets/_staging_batch_resume_20260824/sasa-batch/ (1)
-
-- [ch02-observations.md](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02-observations.md) | 2026-08-24T03:30:44Z
-
-## wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/ (36)
-
-- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/00m00s.png) | 2026-08-24T03:30:44Z
-- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/00m20s.png) | 2026-08-24T03:30:44Z
-- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/00m40s.png) | 2026-08-24T03:30:44Z
-- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/01m00s.png) | 2026-08-24T03:30:44Z
-- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/01m20s.png) | 2026-08-24T03:30:44Z
-- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/01m40s.png) | 2026-08-24T03:30:44Z
-- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/02m00s.png) | 2026-08-24T03:30:44Z
-- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/02m20s.png) | 2026-08-24T03:30:44Z
-- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/02m40s.png) | 2026-08-24T03:30:44Z
-- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/03m00s.png) | 2026-08-24T03:30:44Z
-- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/03m20s.png) | 2026-08-24T03:30:44Z
-- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/03m40s.png) | 2026-08-24T03:30:44Z
-- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/04m00s.png) | 2026-08-24T03:30:44Z
-- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/04m20s.png) | 2026-08-24T03:30:44Z
-- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/04m40s.png) | 2026-08-24T03:30:44Z
-- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/05m00s.png) | 2026-08-24T03:30:44Z
-- [05m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/05m20s.png) | 2026-08-24T03:30:44Z
-- [05m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/05m40s.png) | 2026-08-24T03:30:44Z
-- [06m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/06m00s.png) | 2026-08-24T03:30:44Z
-- [06m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/06m20s.png) | 2026-08-24T03:30:44Z
-- [06m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/06m40s.png) | 2026-08-24T03:30:44Z
-- [07m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/07m00s.png) | 2026-08-24T03:30:44Z
-- [07m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/07m20s.png) | 2026-08-24T03:30:44Z
-- [07m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/07m40s.png) | 2026-08-24T03:30:44Z
-- [08m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/08m00s.png) | 2026-08-24T03:30:44Z
-- [08m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/08m20s.png) | 2026-08-24T03:30:44Z
-- [08m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/08m40s.png) | 2026-08-24T03:30:44Z
-- [09m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/09m00s.png) | 2026-08-24T03:30:44Z
-- [09m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/09m20s.png) | 2026-08-24T03:30:44Z
-- [09m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/09m40s.png) | 2026-08-24T03:30:44Z
-- [10m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/10m00s.png) | 2026-08-24T03:30:44Z
-- [10m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/10m20s.png) | 2026-08-24T03:30:44Z
-- [10m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/10m40s.png) | 2026-08-24T03:30:44Z
-- [11m00s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/11m00s.png) | 2026-08-24T03:30:44Z
-- [11m20s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/11m20s.png) | 2026-08-24T03:30:44Z
-- [11m40s.png](wiki/assets/_staging_batch_resume_20260824/sasa-batch/ch02/11m40s.png) | 2026-08-24T03:30:44Z
-
-## wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ (26)
-
-- [TASK_18_ch05-p1_読取2_4(欠落分).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_18_ch05-p1_%E8%AA%AD%E5%8F%962_4%28%E6%AC%A0%E8%90%BD%E5%88%86%29.completed.txt) | 2026-08-24T03:30:45Z
-- [TASK_18_ch05-p1_読取2_4(欠落分).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_18_ch05-p1_%E8%AA%AD%E5%8F%962_4%28%E6%AC%A0%E8%90%BD%E5%88%86%29.prompt.txt) | 2026-08-24T03:30:45Z
-- [TASK_18_ch05-p2_読取B(2_4).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_18_ch05-p2_%E8%AA%AD%E5%8F%96B%282_4%29.prompt.txt) | 2026-08-24T03:30:45Z
-- [TASK_18_ch05-p2_読取C(3_4).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_18_ch05-p2_%E8%AA%AD%E5%8F%96C%283_4%29.completed.txt) | 2026-08-24T03:30:45Z
-- [TASK_18_ch05-p2_読取C(3_4).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_18_ch05-p2_%E8%AA%AD%E5%8F%96C%283_4%29.prompt.txt) | 2026-08-24T03:30:45Z
-- [TASK_19_ch05-p2_読取A(1_4).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_19_ch05-p2_%E8%AA%AD%E5%8F%96A%281_4%29.completed.txt) | 2026-08-24T03:30:45Z
-- [TASK_19_ch05-p2_読取A(1_4).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_19_ch05-p2_%E8%AA%AD%E5%8F%96A%281_4%29.prompt.txt) | 2026-08-24T03:30:45Z
-- [TASK_19_ch05-p2_読取D(4_4).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_19_ch05-p2_%E8%AA%AD%E5%8F%96D%284_4%29.completed.txt) | 2026-08-24T03:30:45Z
-- [TASK_19_ch05-p2_読取D(4_4).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_19_ch05-p2_%E8%AA%AD%E5%8F%96D%284_4%29.prompt.txt) | 2026-08-24T03:30:45Z
-- [TASK_20_ch05-p2_読取B(2_4)再試行.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_20_ch05-p2_%E8%AA%AD%E5%8F%96B%282_4%29%E5%86%8D%E8%A9%A6%E8%A1%8C.completed.txt) | 2026-08-24T03:30:45Z
-- [TASK_20_ch05-p2_読取B(2_4)再試行.prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_20_ch05-p2_%E8%AA%AD%E5%8F%96B%282_4%29%E5%86%8D%E8%A9%A6%E8%A1%8C.prompt.txt) | 2026-08-24T03:30:45Z
-- [TASK_20_ch05-p3_読取E(1_3).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_20_ch05-p3_%E8%AA%AD%E5%8F%96E%281_3%29.completed.txt) | 2026-08-24T03:30:45Z
-- [TASK_20_ch05-p3_読取E(1_3).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_20_ch05-p3_%E8%AA%AD%E5%8F%96E%281_3%29.prompt.txt) | 2026-08-24T03:30:45Z
-- [TASK_21_ch05-p3_読取G(3_3).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_21_ch05-p3_%E8%AA%AD%E5%8F%96G%283_3%29.prompt.txt) | 2026-08-24T03:30:45Z
-- [TASK_21_ch05-p4_読取H(1_2).completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_21_ch05-p4_%E8%AA%AD%E5%8F%96H%281_2%29.completed.txt) | 2026-08-24T03:30:45Z
-- [TASK_21_ch05-p4_読取H(1_2).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_21_ch05-p4_%E8%AA%AD%E5%8F%96H%281_2%29.prompt.txt) | 2026-08-24T03:30:45Z
-- [TASK_22_ch05-p4_読取I(2_2).prompt.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/TASK_22_ch05-p4_%E8%AA%AD%E5%8F%96I%282_2%29.prompt.txt) | 2026-08-24T03:30:45Z
-- [ch05-p1_読取1_4.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p1_%E8%AA%AD%E5%8F%961_4.completed.txt) | 2026-08-24T03:30:45Z
-- [ch05-p1_読取2_4.error.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p1_%E8%AA%AD%E5%8F%962_4.error.txt) | 2026-08-24T03:30:45Z
-- [ch05-p1_読取3_4.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p1_%E8%AA%AD%E5%8F%963_4.completed.txt) | 2026-08-24T03:30:45Z
-- [ch05-p1_読取4_4.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p1_%E8%AA%AD%E5%8F%964_4.completed.txt) | 2026-08-24T03:30:45Z
-- [ch05-p1_読取4_4.error.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p1_%E8%AA%AD%E5%8F%964_4.error.txt) | 2026-08-24T03:30:45Z
-- [ch05-p2_読取2_4.running.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p2_%E8%AA%AD%E5%8F%962_4.running.txt) | 2026-08-24T03:30:45Z
-- [ch05-p3_読取F_2_3.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p3_%E8%AA%AD%E5%8F%96F_2_3.completed.txt) | 2026-08-24T03:30:45Z
-- [ch05-p3_読取G_3_3.completed.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p3_%E8%AA%AD%E5%8F%96G_3_3.completed.txt) | 2026-08-24T03:30:45Z
-- [ch05-p4_読取IB.backup.txt](wiki/assets/_staging_batch_resume_20260824/yejji-ch05-recovered/ch05-p4_%E8%AA%AD%E5%8F%96IB.backup.txt) | 2026-08-24T03:30:45Z
-
-## wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/ (51)
-
-- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/00m00s.png) | 2026-08-24T03:30:44Z
-- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/00m20s.png) | 2026-08-24T03:30:44Z
-- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/00m40s.png) | 2026-08-24T03:30:44Z
-- [00m57s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/00m57s.png) | 2026-08-24T03:30:44Z
-- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/01m00s.png) | 2026-08-24T03:30:44Z
-- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/01m20s.png) | 2026-08-24T03:30:44Z
-- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/01m40s.png) | 2026-08-24T03:30:44Z
-- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/02m00s.png) | 2026-08-24T03:30:44Z
-- [02m18s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/02m18s.png) | 2026-08-24T03:30:44Z
-- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/02m20s.png) | 2026-08-24T03:30:44Z
-- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/02m40s.png) | 2026-08-24T03:30:44Z
-- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/03m00s.png) | 2026-08-24T03:30:44Z
-- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/03m20s.png) | 2026-08-24T03:30:44Z
-- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/03m40s.png) | 2026-08-24T03:30:44Z
-- [03m56s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/03m56s.png) | 2026-08-24T03:30:44Z
-- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/04m00s.png) | 2026-08-24T03:30:44Z
-- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/04m20s.png) | 2026-08-24T03:30:44Z
-- [04m39s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/04m39s.png) | 2026-08-24T03:30:44Z
-- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/04m40s.png) | 2026-08-24T03:30:44Z
-- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/05m00s.png) | 2026-08-24T03:30:44Z
-- [05m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/05m20s.png) | 2026-08-24T03:30:44Z
-- [05m33s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/05m33s.png) | 2026-08-24T03:30:44Z
-- [05m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/05m40s.png) | 2026-08-24T03:30:44Z
-- [06m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/06m00s.png) | 2026-08-24T03:30:44Z
-- [06m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/06m20s.png) | 2026-08-24T03:30:44Z
-- [06m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/06m40s.png) | 2026-08-24T03:30:44Z
-- [07m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/07m00s.png) | 2026-08-24T03:30:44Z
-- [07m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/07m20s.png) | 2026-08-24T03:30:44Z
-- [07m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/07m40s.png) | 2026-08-24T03:30:44Z
-- [08m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/08m00s.png) | 2026-08-24T03:30:44Z
-- [08m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/08m20s.png) | 2026-08-24T03:30:44Z
-- [08m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/08m40s.png) | 2026-08-24T03:30:44Z
-- [09m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/09m00s.png) | 2026-08-24T03:30:44Z
-- [09m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/09m20s.png) | 2026-08-24T03:30:44Z
-- [09m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/09m40s.png) | 2026-08-24T03:30:44Z
-- [10m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/10m00s.png) | 2026-08-24T03:30:44Z
-- [10m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/10m20s.png) | 2026-08-24T03:30:44Z
-- [10m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/10m40s.png) | 2026-08-24T03:30:44Z
-- [11m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/11m00s.png) | 2026-08-24T03:30:44Z
-- [11m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/11m20s.png) | 2026-08-24T03:30:44Z
-- [11m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/11m40s.png) | 2026-08-24T03:30:44Z
-- [12m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/12m00s.png) | 2026-08-24T03:30:44Z
-- [12m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/12m20s.png) | 2026-08-24T03:30:44Z
-- [12m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/12m40s.png) | 2026-08-24T03:30:44Z
-- [13m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/13m00s.png) | 2026-08-24T03:30:44Z
-- [13m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/13m20s.png) | 2026-08-24T03:30:44Z
-- [13m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/13m40s.png) | 2026-08-24T03:30:44Z
-- [14m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/14m00s.png) | 2026-08-24T03:30:44Z
-- [14m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/14m20s.png) | 2026-08-24T03:30:44Z
-- [14m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/14m40s.png) | 2026-08-24T03:30:44Z
-- [15m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p1/frames/15m00s.png) | 2026-08-24T03:30:44Z
-
-## wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/ (50)
-
-- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/00m00s.png) | 2026-08-24T03:30:44Z
-- [00m13s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/00m13s.png) | 2026-08-24T03:30:44Z
-- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/00m20s.png) | 2026-08-24T03:30:44Z
-- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/00m40s.png) | 2026-08-24T03:30:44Z
-- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/01m00s.png) | 2026-08-24T03:30:44Z
-- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/01m20s.png) | 2026-08-24T03:30:44Z
-- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/01m40s.png) | 2026-08-24T03:30:44Z
-- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/02m00s.png) | 2026-08-24T03:30:44Z
-- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/02m20s.png) | 2026-08-24T03:30:44Z
-- [02m39s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/02m39s.png) | 2026-08-24T03:30:44Z
-- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/02m40s.png) | 2026-08-24T03:30:44Z
-- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/03m00s.png) | 2026-08-24T03:30:44Z
-- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/03m20s.png) | 2026-08-24T03:30:44Z
-- [03m33s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/03m33s.png) | 2026-08-24T03:30:44Z
-- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/03m40s.png) | 2026-08-24T03:30:44Z
-- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/04m00s.png) | 2026-08-24T03:30:44Z
-- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/04m20s.png) | 2026-08-24T03:30:44Z
-- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/04m40s.png) | 2026-08-24T03:30:44Z
-- [04m51s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/04m51s.png) | 2026-08-24T03:30:44Z
-- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/05m00s.png) | 2026-08-24T03:30:44Z
-- [05m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/05m20s.png) | 2026-08-24T03:30:44Z
-- [05m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/05m40s.png) | 2026-08-24T03:30:44Z
-- [06m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/06m00s.png) | 2026-08-24T03:30:44Z
-- [06m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/06m20s.png) | 2026-08-24T03:30:44Z
-- [06m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/06m40s.png) | 2026-08-24T03:30:44Z
-- [07m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/07m00s.png) | 2026-08-24T03:30:44Z
-- [07m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/07m20s.png) | 2026-08-24T03:30:44Z
-- [07m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/07m40s.png) | 2026-08-24T03:30:44Z
-- [08m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/08m00s.png) | 2026-08-24T03:30:44Z
-- [08m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/08m20s.png) | 2026-08-24T03:30:44Z
-- [08m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/08m40s.png) | 2026-08-24T03:30:44Z
-- [09m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/09m00s.png) | 2026-08-24T03:30:44Z
-- [09m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/09m20s.png) | 2026-08-24T03:30:44Z
-- [09m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/09m40s.png) | 2026-08-24T03:30:44Z
-- [10m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/10m00s.png) | 2026-08-24T03:30:44Z
-- [10m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/10m20s.png) | 2026-08-24T03:30:44Z
-- [10m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/10m40s.png) | 2026-08-24T03:30:44Z
-- [11m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/11m00s.png) | 2026-08-24T03:30:44Z
-- [11m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/11m20s.png) | 2026-08-24T03:30:44Z
-- [11m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/11m40s.png) | 2026-08-24T03:30:44Z
-- [12m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/12m00s.png) | 2026-08-24T03:30:44Z
-- [12m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/12m20s.png) | 2026-08-24T03:30:44Z
-- [12m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/12m40s.png) | 2026-08-24T03:30:44Z
-- [13m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/13m00s.png) | 2026-08-24T03:30:44Z
-- [13m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/13m20s.png) | 2026-08-24T03:30:44Z
-- [13m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/13m40s.png) | 2026-08-24T03:30:44Z
-- [14m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/14m00s.png) | 2026-08-24T03:30:44Z
-- [14m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/14m20s.png) | 2026-08-24T03:30:44Z
-- [14m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/14m40s.png) | 2026-08-24T03:30:44Z
-- [15m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p2/frames/15m00s.png) | 2026-08-24T03:30:44Z
-
-## wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/ (45)
-
-- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/00m00s.png) | 2026-08-24T03:30:44Z
-- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/00m20s.png) | 2026-08-24T03:30:44Z
-- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/00m40s.png) | 2026-08-24T03:30:44Z
-- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/01m00s.png) | 2026-08-24T03:30:44Z
-- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/01m20s.png) | 2026-08-24T03:30:44Z
-- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/01m40s.png) | 2026-08-24T03:30:44Z
-- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/02m00s.png) | 2026-08-24T03:30:44Z
-- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/02m20s.png) | 2026-08-24T03:30:44Z
-- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/02m40s.png) | 2026-08-24T03:30:44Z
-- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/03m00s.png) | 2026-08-24T03:30:44Z
-- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/03m20s.png) | 2026-08-24T03:30:44Z
-- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/03m40s.png) | 2026-08-24T03:30:44Z
-- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/04m00s.png) | 2026-08-24T03:30:44Z
-- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/04m20s.png) | 2026-08-24T03:30:44Z
-- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/04m40s.png) | 2026-08-24T03:30:44Z
-- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/05m00s.png) | 2026-08-24T03:30:44Z
-- [05m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/05m20s.png) | 2026-08-24T03:30:44Z
-- [05m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/05m40s.png) | 2026-08-24T03:30:44Z
-- [06m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/06m00s.png) | 2026-08-24T03:30:44Z
-- [06m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/06m20s.png) | 2026-08-24T03:30:44Z
-- [06m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/06m40s.png) | 2026-08-24T03:30:44Z
-- [07m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/07m00s.png) | 2026-08-24T03:30:44Z
-- [07m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/07m20s.png) | 2026-08-24T03:30:44Z
-- [07m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/07m40s.png) | 2026-08-24T03:30:44Z
-- [08m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/08m00s.png) | 2026-08-24T03:30:44Z
-- [08m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/08m20s.png) | 2026-08-24T03:30:44Z
-- [08m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/08m40s.png) | 2026-08-24T03:30:44Z
-- [09m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/09m00s.png) | 2026-08-24T03:30:44Z
-- [09m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/09m20s.png) | 2026-08-24T03:30:44Z
-- [09m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/09m40s.png) | 2026-08-24T03:30:44Z
-- [10m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/10m00s.png) | 2026-08-24T03:30:44Z
-- [10m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/10m20s.png) | 2026-08-24T03:30:44Z
-- [10m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/10m40s.png) | 2026-08-24T03:30:44Z
-- [11m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/11m00s.png) | 2026-08-24T03:30:44Z
-- [11m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/11m20s.png) | 2026-08-24T03:30:44Z
-- [11m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/11m40s.png) | 2026-08-24T03:30:44Z
-- [12m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/12m00s.png) | 2026-08-24T03:30:44Z
-- [12m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/12m20s.png) | 2026-08-24T03:30:44Z
-- [12m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/12m40s.png) | 2026-08-24T03:30:44Z
-- [13m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/13m00s.png) | 2026-08-24T03:30:44Z
-- [13m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/13m20s.png) | 2026-08-24T03:30:44Z
-- [13m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/13m40s.png) | 2026-08-24T03:30:44Z
-- [14m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/14m00s.png) | 2026-08-24T03:30:44Z
-- [14m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/14m20s.png) | 2026-08-24T03:30:44Z
-- [14m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p3/frames/14m40s.png) | 2026-08-24T03:30:44Z
-
-## wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/ (28)
-
-- [00m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/00m00s.png) | 2026-08-24T03:30:44Z
-- [00m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/00m20s.png) | 2026-08-24T03:30:44Z
-- [00m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/00m40s.png) | 2026-08-24T03:30:44Z
-- [01m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/01m00s.png) | 2026-08-24T03:30:44Z
-- [01m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/01m20s.png) | 2026-08-24T03:30:44Z
-- [01m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/01m40s.png) | 2026-08-24T03:30:44Z
-- [01m56s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/01m56s.png) | 2026-08-24T03:30:44Z
-- [02m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/02m00s.png) | 2026-08-24T03:30:44Z
-- [02m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/02m20s.png) | 2026-08-24T03:30:44Z
-- [02m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/02m40s.png) | 2026-08-24T03:30:44Z
-- [03m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/03m00s.png) | 2026-08-24T03:30:44Z
-- [03m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/03m20s.png) | 2026-08-24T03:30:44Z
-- [03m21s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/03m21s.png) | 2026-08-24T03:30:44Z
-- [03m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/03m40s.png) | 2026-08-24T03:30:44Z
-- [04m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/04m00s.png) | 2026-08-24T03:30:44Z
-- [04m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/04m20s.png) | 2026-08-24T03:30:44Z
-- [04m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/04m40s.png) | 2026-08-24T03:30:44Z
-- [05m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/05m00s.png) | 2026-08-24T03:30:44Z
-- [05m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/05m20s.png) | 2026-08-24T03:30:44Z
-- [05m24s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/05m24s.png) | 2026-08-24T03:30:44Z
-- [05m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/05m40s.png) | 2026-08-24T03:30:44Z
-- [06m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/06m00s.png) | 2026-08-24T03:30:44Z
-- [06m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/06m20s.png) | 2026-08-24T03:30:44Z
-- [06m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/06m40s.png) | 2026-08-24T03:30:44Z
-- [07m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/07m00s.png) | 2026-08-24T03:30:44Z
-- [07m20s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/07m20s.png) | 2026-08-24T03:30:44Z
-- [07m40s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/07m40s.png) | 2026-08-24T03:30:44Z
-- [08m00s.png](wiki/assets/_staging_batch_resume_20260824/yejji-ch05/p4/frames/08m00s.png) | 2026-08-24T03:30:44Z
-
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 
 - [hide-ch02-00m20s.png](wiki/assets/frames/coloso-hide-ch02-line-drawing/hide-ch02-00m20s.png) | 2026-08-23T01:21:03Z
@@ -718,6 +371,72 @@ _合計 2057 ファイル_
 - [hide-ch05-02-04m40s.png](wiki/assets/frames/coloso-hide-ch05-male-female-proportion/hide-ch05-02-04m40s.png) | 2026-08-24T00:44:41Z
 - [hide-ch05-02-05m20s.png](wiki/assets/frames/coloso-hide-ch05-male-female-proportion/hide-ch05-02-05m20s.png) | 2026-08-24T00:44:41Z
 - [hide-ch05-02-05m26s.png](wiki/assets/frames/coloso-hide-ch05-male-female-proportion/hide-ch05-02-05m26s.png) | 2026-08-24T00:44:41Z
+
+## wiki/assets/frames/coloso-hizurume-ch06-drawing-types/ (19)
+
+- [hizurume-ch06-00m00s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-00m00s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-00m20s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-00m20s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-00m40s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-00m40s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-00m44s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-00m44s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-01m00s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-01m00s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-01m08s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-01m08s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-01m12s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-01m12s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-01m20s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-01m20s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-01m40s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-01m40s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-02m00s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-02m00s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-02m13s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-02m13s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-02m20s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-02m20s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-02m40s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-02m40s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-02m56s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-02m56s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-02m57s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-02m57s.png) | 2026-08-24T17:16:17Z
+- [hizurume-ch06-03m00s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-03m00s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-03m20s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-03m20s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-03m40s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-03m40s.png) | 2026-08-24T16:21:39Z
+- [hizurume-ch06-04m00s.png](wiki/assets/frames/coloso-hizurume-ch06-drawing-types/hizurume-ch06-04m00s.png) | 2026-08-24T16:21:39Z
+
+## wiki/assets/frames/coloso-hizurume-ch07-composition/ (41)
+
+- [hizurume-ch07-00m00s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-00m00s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-00m10s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-00m10s.png) | 2026-08-25T02:25:41Z
+- [hizurume-ch07-00m20s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-00m20s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-00m28s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-00m28s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-00m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-00m40s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-00m50s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-00m50s.png) | 2026-08-25T02:25:41Z
+- [hizurume-ch07-01m00s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-01m00s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-01m10s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-01m10s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-01m20s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-01m20s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-01m31s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-01m31s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-01m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-01m40s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-01m53s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-01m53s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-02m00s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-02m00s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-02m20s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-02m20s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-02m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-02m40s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-03m00s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-03m00s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-03m20s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-03m20s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-03m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-03m40s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-03m41s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-03m41s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-03m50s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-03m50s.png) | 2026-08-25T02:25:41Z
+- [hizurume-ch07-03m56s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-03m56s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-04m00s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-04m00s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-04m06s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-04m06s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-04m17s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-04m17s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-04m20s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-04m20s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-04m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-04m40s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-05m00s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-05m00s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-05m20s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-05m20s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-05m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-05m40s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-05m55s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-05m55s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-06m00s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-06m00s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-06m20s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-06m20s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-06m26s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-06m26s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-06m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-06m40s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-07m00s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-07m00s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-07m20s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-07m20s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-07m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-07m40s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-08m00s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-08m00s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-08m20s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-08m20s.png) | 2026-08-25T01:37:11Z
+- [hizurume-ch07-08m30s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-08m30s.png) | 2026-08-25T02:25:41Z
+- [hizurume-ch07-08m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-08m40s.png) | 2026-08-25T01:37:11Z
 
 ## wiki/assets/frames/coloso-hizurume-ch11-force-field/ (29)
 
@@ -874,6 +593,16 @@ _合計 2057 ファイル_
 - [marse-ch07-04m20s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-04m20s.png) | 2026-08-24T07:36:08Z
 - [marse-ch07-04m40s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-04m40s.png) | 2026-08-24T07:36:08Z
 - [marse-ch07-05m00s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-05m00s.png) | 2026-08-24T07:36:08Z
+
+## wiki/assets/frames/coloso-marse-ch08-focus-first-composition/ (7)
+
+- [00m00s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/00m00s.png) | 2026-08-25T02:12:42Z
+- [00m20s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/00m20s.png) | 2026-08-25T02:12:42Z
+- [01m31s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/01m31s.png) | 2026-08-25T02:12:42Z
+- [02m55s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/02m55s.png) | 2026-08-25T02:12:42Z
+- [04m40s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/04m40s.png) | 2026-08-25T02:12:42Z
+- [06m20s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/06m20s.png) | 2026-08-25T02:12:42Z
+- [07m40s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/07m40s.png) | 2026-08-25T02:12:42Z
 
 ## wiki/assets/frames/coloso-sasa-ch01-intro/ (10)
 
@@ -1149,7 +878,7 @@ _合計 2057 ファイル_
 - [ye-jji-ch05-p4-07m40s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p4-07m40s.png) | 2026-08-24T06:59:39Z
 - [ye-jji-ch05-p4-08m00s.png](wiki/assets/frames/coloso-ye-jji-ch05-texture-basic/ye-jji-ch05-p4-08m00s.png) | 2026-08-24T06:59:39Z
 
-## wiki/builds/ (70)
+## wiki/builds/ (73)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -1165,9 +894,10 @@ _合計 2057 ファイル_
 - [codex-handoff-eagle-clip-operations.md](wiki/builds/codex-handoff-eagle-clip-operations.md) | 2026-07-06T13:02:41Z
 - [codex-handoff-raw-ingest-batch.md](wiki/builds/codex-handoff-raw-ingest-batch.md) | 2026-07-07T00:55:14Z
 - [codexbar.md](wiki/builds/codexbar.md) | 2026-07-14T11:51:42Z
-- [coloso-batch-resume-handoff.md](wiki/builds/coloso-batch-resume-handoff.md) | 2026-08-24T02:57:06Z
+- [coloso-batch-resume-handoff.md](wiki/builds/coloso-batch-resume-handoff.md) | 2026-08-24T08:45:42Z
 - [coloso-ingest-coverage-audit.md](wiki/builds/coloso-ingest-coverage-audit.md) | 2026-07-07T01:00:00Z
 - [coloso-parallel-ingest-project.md](wiki/builds/coloso-parallel-ingest-project.md) | 2026-08-24T03:50:44Z
+- [coloso-visual-ingest-batch2-handoff.md](wiki/builds/coloso-visual-ingest-batch2-handoff.md) | 2026-08-25T00:17:51Z
 - [coloso-visual-ingest-resume-inventory.md](wiki/builds/coloso-visual-ingest-resume-inventory.md) | 2026-08-23T12:03:30Z
 - [context-harness.md](wiki/builds/context-harness.md) | 2026-08-13T15:35:51Z
 - [deliverable-inbox.md](wiki/builds/deliverable-inbox.md) | 2026-08-22T23:47:34Z
@@ -1177,10 +907,11 @@ _合計 2057 ファイル_
 - [eagle-dedup-merge-2026-07-07.md](wiki/builds/eagle-dedup-merge-2026-07-07.md) | 2026-07-09T11:29:46Z
 - [eagle-folder-sort.md](wiki/builds/eagle-folder-sort.md) | 2026-07-04T14:37:29Z
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
-- [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-24T03:57:31Z
-- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-24T08:26:13Z
+- [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-25T02:23:46Z
+- [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T01:10:45Z
+- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-25T01:33:59Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
-- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-24T04:07:27Z
+- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-25T00:58:30Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T10:00:16Z
 - [gf2-helen-rest-room-motion-v22.md](wiki/builds/gf2-helen-rest-room-motion-v22.md) | 2026-07-27T00:02:48Z
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z
@@ -1216,9 +947,10 @@ _合計 2057 ファイル_
 - [pureref-notion-link-workflow.md](wiki/builds/pureref-notion-link-workflow.md) | 2026-05-30T07:51:11Z
 - [pureref-personal-fork.md](wiki/builds/pureref-personal-fork.md) | 2026-06-22T12:49:33Z
 - [pureref-session-restore.md](wiki/builds/pureref-session-restore.md) | 2026-06-15T14:10:13Z
+- [raycast-file-search-scope.md](wiki/builds/raycast-file-search-scope.md) | 2026-08-25T02:29:47Z
 - [screenshot-path-clipboard.md](wiki/builds/screenshot-path-clipboard.md) | 2026-07-05T13:38:07Z
 - [video-visual-ingest-design.md](wiki/builds/video-visual-ingest-design.md) | 2026-08-22T15:15:37Z
-- [window-layout-restore.md](wiki/builds/window-layout-restore.md) | 2026-08-17T06:12:55Z
+- [window-layout-restore.md](wiki/builds/window-layout-restore.md) | 2026-08-25T02:20:04Z
 - [x-eagle-free-save-pilot.md](wiki/builds/x-eagle-free-save-pilot.md) | 2026-08-03T08:46:15Z
 - [x-eagle-idea-workbench.md](wiki/builds/x-eagle-idea-workbench.md) | 2026-06-25T09:50:10Z
 
@@ -1902,13 +1634,13 @@ _合計 2057 ファイル_
 - [coloso-hizurume-ch03-books-tools.md](wiki/sources/coloso-hizurume-ch03-books-tools.md) | 2026-05-31T15:34:26Z
 - [coloso-hizurume-ch04-sns-strategy.md](wiki/sources/coloso-hizurume-ch04-sns-strategy.md) | 2026-05-31T15:35:00Z
 - [coloso-hizurume-ch05-environment-setup.md](wiki/sources/coloso-hizurume-ch05-environment-setup.md) | 2026-05-31T15:44:24Z
-- [coloso-hizurume-ch06-drawing-types.md](wiki/sources/coloso-hizurume-ch06-drawing-types.md) | 2026-05-31T15:37:19Z
-- [coloso-hizurume-ch07-composition.md](wiki/sources/coloso-hizurume-ch07-composition.md) | 2026-05-31T15:37:43Z
+- [coloso-hizurume-ch06-drawing-types.md](wiki/sources/coloso-hizurume-ch06-drawing-types.md) | 2026-08-24T17:17:30Z
+- [coloso-hizurume-ch07-composition.md](wiki/sources/coloso-hizurume-ch07-composition.md) | 2026-08-25T02:40:39Z
 - [coloso-hizurume-ch08-anatomy-basics.md](wiki/sources/coloso-hizurume-ch08-anatomy-basics.md) | 2026-05-31T15:40:35Z
 - [coloso-hizurume-ch09-light-shadow-color.md](wiki/sources/coloso-hizurume-ch09-light-shadow-color.md) | 2026-05-31T15:41:15Z
 - [coloso-hizurume-ch10-efficient-practice.md](wiki/sources/coloso-hizurume-ch10-efficient-practice.md) | 2026-05-31T15:44:53Z
 - [coloso-hizurume-ch11-force-field.md](wiki/sources/coloso-hizurume-ch11-force-field.md) | 2026-08-22T13:55:29Z
-- [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-08-22T19:46:28Z
+- [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-08-24T14:51:14Z
 - [coloso-hizurume-ch13-illusion-and-lies.md](wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md) | 2026-05-31T15:48:49Z
 - [coloso-hizurume-ch14-simplification.md](wiki/sources/coloso-hizurume-ch14-simplification.md) | 2026-05-31T15:49:11Z
 - [coloso-hizurume-ch15-painting-to-illustration.md](wiki/sources/coloso-hizurume-ch15-painting-to-illustration.md) | 2026-05-31T15:53:02Z
@@ -1932,7 +1664,7 @@ _合計 2057 ファイル_
 - [coloso-marse-ch05-fetish-face.md](wiki/sources/coloso-marse-ch05-fetish-face.md) | 2026-08-24T08:39:27Z
 - [coloso-marse-ch06-fetish-upper-body.md](wiki/sources/coloso-marse-ch06-fetish-upper-body.md) | 2026-08-24T08:39:27Z
 - [coloso-marse-ch07-fetish-lower-full-body.md](wiki/sources/coloso-marse-ch07-fetish-lower-full-body.md) | 2026-08-24T08:39:27Z
-- [coloso-marse-ch08-focus-first-composition.md](wiki/sources/coloso-marse-ch08-focus-first-composition.md) | 2026-06-01T03:44:37Z
+- [coloso-marse-ch08-focus-first-composition.md](wiki/sources/coloso-marse-ch08-focus-first-composition.md) | 2026-08-25T02:15:26Z
 - [coloso-marse-ch09-feminine-pose.md](wiki/sources/coloso-marse-ch09-feminine-pose.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch10-arms-gaze-guide.md](wiki/sources/coloso-marse-ch10-arms-gaze-guide.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch11-rough.md](wiki/sources/coloso-marse-ch11-rough.md) | 2026-06-01T03:39:48Z
