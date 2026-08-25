@@ -9735,3 +9735,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完了: フレーム79枚を `hide-ch11-pN-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致・孤児ゼロ・ev-001〜ev-079 連番)→ manifest(videos[]+動画ごと extraction[]+recheck 8 entries)→ source 節を動画列付き 6 列表で byte 保持挿入 → gate complete PASS → visual_ingested 付与 → snapshot-pre.json 退避+--retrofit 再記録 → 最終 gate PASS 再確認 → 独立点検(拡張子・孤児・3重照合)PASS。raw ページ・動画は snapshot 取得時から非変更(SHA-256 機械確認済み)。
 - 更新: `wiki/sources/coloso-hide-ch11-3d-figure-tips.md`, `wiki/assets/frames/coloso-hide-ch11-3d-figure-tips/`(manifest.json+snapshot.json+snapshot-pre.json+png79枚), `index.md`, `log.md`
 - 次の一手: 同セッションの残り対象 ch12・ch13・ch14 へ継続(パイロット確立手順どおり)。
+## [2026-08-25] ingest | gf2-char-extract v8.1 足パーツ解消＋独立監査再実施
+
+- 足問題の正体確定(原作データ実測): Dusevnyj の既定表示はタイツ筒のみで、足・靴は派生タグ付きメッシュ(`cloth_lod0_Fight` 10934v=ハイカットスニーカー)に存在し上位パートと幾何連続。Helen/Sabrina の _Dorm も同構造=3キャラ共通設計・SMR は AFS2/CRI 内で権威可視性無し。
+- gap_filling_subpart 規約新設(ce_build_blend.plan_visibility): 地面浮上欠けを幾何連続的に埋める派生メッシュを頂点数最大の1つだけ既定表示(データ駆動・Sabrina は本体足込みのため不適用)→ ground_gap 0.112→0.015 解消・スニーカー表示をレンダーで確認。
+- 独立サブエージェント監査(API回復後)再実施 → **Dusevnyj/Sabrina とも「条件付き提出可」**(白残り=台帳通り・台帳に無い白は皆無)。
+- 監査 major 2件対応: M-A(canonical の非表示分 world_bbox が hide で depsgraph 評価外の生値→hide解除+update+saved_hides 元値記録。解除中に記録すると hide 全員 False で3体全FAILになる副作用を実測検出し解決)/M-B(submission へ untextured_when_switched 追加)。
+- 実測: 3体 PASS(20 checks)/conditional・self-test 23系統 PASS(Dusevnyj/Sabrina)・決定性 PASS(2体)・レンダーシート再生成(白面積率0.0)。
+- 更新: `wiki/builds/gf2-char-extract-handoff.md`(v8.1節・再開点・変更履歴), `gf2-char-extract/run-state.json`, `quality-gate.json`, ledger/diff-*.json 3体, blends 3体(再構築), scripts/{ce_build_blend,20_diff_char_blend}.py
+- 次の一手: 武田さんの2体目視承認(conditional 開示承認込み)→Step3 バッチ計画
