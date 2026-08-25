@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 3073 ファイル_
+_合計 3074 ファイル_
 
 ## root/ (11)
 
@@ -1962,7 +1962,7 @@ _合計 3073 ファイル_
 - [codexbar.md](wiki/builds/codexbar.md) | 2026-07-14T11:51:42Z
 - [coloso-batch-resume-handoff.md](wiki/builds/coloso-batch-resume-handoff.md) | 2026-08-24T08:45:42Z
 - [coloso-ingest-coverage-audit.md](wiki/builds/coloso-ingest-coverage-audit.md) | 2026-07-07T01:00:00Z
-- [coloso-intake-design.md](wiki/builds/coloso-intake-design.md) | 2026-08-25T09:39:19Z
+- [coloso-intake-design.md](wiki/builds/coloso-intake-design.md) | 2026-08-25T11:07:03Z
 - [coloso-parallel-ingest-project.md](wiki/builds/coloso-parallel-ingest-project.md) | 2026-08-24T03:50:44Z
 - [coloso-visual-ingest-batch2-handoff.md](wiki/builds/coloso-visual-ingest-batch2-handoff.md) | 2026-08-25T08:32:41Z
 - [coloso-visual-ingest-resume-inventory.md](wiki/builds/coloso-visual-ingest-resume-inventory.md) | 2026-08-23T12:03:30Z
@@ -1976,7 +1976,7 @@ _合計 3073 ファイル_
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
 - [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-25T10:36:54Z
 - [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T03:22:36Z
-- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-25T09:31:28Z
+- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-25T11:08:09Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
 - [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-25T11:05:24Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T10:00:16Z
@@ -2023,7 +2023,7 @@ _合計 3073 ファイル_
 
 ## wiki/builds/coloso-intake/ (1)
 
-- [parallel-session-brief.md](wiki/builds/coloso-intake/parallel-session-brief.md) | 2026-08-25T09:39:24Z
+- [parallel-session-brief.md](wiki/builds/coloso-intake/parallel-session-brief.md) | 2026-08-25T11:07:09Z
 
 ## wiki/builds/coloso-intake/reports/ (3)
 
@@ -2031,9 +2031,10 @@ _合計 3073 ファイル_
 - [2026-08-25-ixy-2-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2-representative-comparison.md) | 2026-08-25T08:41:50Z
 - [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
 
-## wiki/builds/coloso-visual-ingest-batch2/review/ (3)
+## wiki/builds/coloso-visual-ingest-batch2/review/ (4)
 
 - [2026-08-25-hide-ch06-pilot-review-and-fix-confirm.md](wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hide-ch06-pilot-review-and-fix-confirm.md) | 2026-08-25T04:55:20Z
+- [2026-08-25-hizurume-b1-review.md](wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-review.md) | 2026-08-25T11:07:47Z
 - [2026-08-25-marse-ch08-pilot-review-and-fix-confirm.md](wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-marse-ch08-pilot-review-and-fix-confirm.md) | 2026-08-25T04:26:39Z
 - [2026-08-25-yejji-ch06-pilot-review.md](wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-yejji-ch06-pilot-review.md) | 2026-08-25T05:00:31Z
 
