@@ -21,7 +21,7 @@
 - [[coloso-ye-jji-ch04-volume]] — 量感描写(陰影 7 要素 + ランベルト法則 + 形態力) + c04 PDF & JPG (re-ingested 2026-05-17)
 - [[coloso-ye-jji-ch05-texture-basic]] — テクスチャー 5 区分(正反射/透明/半透明/混合反射/異方性) + c05 PDF (re-ingested 2026-05-17、違法性→異方性訂正、映像観測 174 枚 2026-08-24)
 - [[coloso-ye-jji-ch06-texture-applied]] — 4 小物実習(ポーション/靴/ぬいぐるみ/ハンバーガー) (re-ingested 2026-05-17、映像観測 280 枚 2026-08-25)
-- [[coloso-ye-jji-ch07-color-basic]] — 高彩度 3 ポイント(SSS/明暗境界/同系色光) + 色模写 + c07 PDF (re-ingested 2026-05-17)
+- [[coloso-ye-jji-ch07-color-basic]] — 高彩度 3 ポイント(SSS/明暗境界/同系色光) + 色模写 + c07 PDF (re-ingested 2026-05-17、映像観測 108 枚 2026-08-25)
 - [[coloso-ye-jji-ch08-color-applied]] — 思考・補助・環境の 3 ライト + 4 シーン実習 + 巨匠 2 点分析 + c08 PDF (re-ingested 2026-05-17)
 - [[coloso-ye-jji-ch09-density]] — 密度を下げる 3 段階(階調削減 + 空気遠近 + コントラスト低下) + カップ階調実習 (re-ingested 2026-05-17)
 - [[coloso-ye-jji-ch10-blank]] — 余白を埋める 3 技(構成段階で考慮 / グラデーション / 点要素 3 つ以上を距離差で配置) (re-ingested 2026-05-17)

@@ -9706,3 +9706,13 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完了: フレーム8枚を `marse-ch10-MMmSSs.png` で本保存(.png 付き)→ manifest(status complete)→ source 節を byte 保持で挿入 → gate complete PASS → visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認。
 - 更新: `wiki/sources/coloso-marse-ch10-arms-gaze-guide.md`, `wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/`(manifest.json+snapshot.json+snapshot-pre.json+png8枚), `index.md`, `log.md`
 - 次の一手: ch11(11.mp4 単一・493秒)へ続く。marse 群 残り11章(全13章中2章完了)。
+## [2026-08-25] ingest | coloso ye_jji ch07 多彩な色味の活用(基礎編)(映像 ingest・ye_jji 群量産1章目)
+
+- 依頼: パイロット ch06 の無条件承認を受けた ye_jji 群量産の1章目。coloso-ye-jji-ch07-color-basic(07_1.mov 1063.1秒+07_2.mov 734.6秒の2本分割・raw も2ページ)。
+- 手順: dry-run(SHA-256 c1f8b939…d142/c3e2f1ad…ea90)→ snapshot(抽出前・videos[] で2本記録)→ temp 抽出(20秒間隔89枚+文字起こし誘導19時刻=108枚: p1 66/p2 42)→ staging 退避 → 盲検読取サブエージェント8体(108ブロック回収=抽出数一致・パート落ちなし)→ 第2読者11枚(ceil(108×10%))。
+- 事故と復旧: network_error によるサブエージェント失敗が計5回発生したが全て再試行で回収(本セッションの原寸再読代替は不要)。
+- 発見と訂正: corrected 1件(p1-17m40s の選択レイヤー。第2読者の「Layer 56」が正で、原寸クロップ再読で確定・表行修正。第1読者の「Layer 55 Copy 付近ハイライト」は誤読)。confirmed 10件。manifest recheck に記録。
+- 章の特記: 理論章のためスライド・写真観察素材・図解が多く、誘導13+6箇所でスライド切替(光と色/彩度/限界/活用法/錯視の5節+3体デモ+ケーキ模写)を押さえた。
+- 完成宣言前の自己点検: 全パートの奇数10秒位置90枚をスイープ読取。**注目(観測表に載っていない別画面)0件**。※スイープのプロンプト列挙を手書きした際に一部ファイルの読み飛ばし(31枚)が発生したが、実ファイル一覧との機械照合で検出し全て追加読取済み(教訓: スイープ対象リストは必ず機械生成して渡す)。
+- 完了: フレーム108枚を `ye-jji-ch07-pN-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致・孤児ゼロ)→ manifest(videos[]+動画ごと extraction[]+recheck 11 entries)→ source 節を動画列付き 6 列表で byte 保持挿入 → gate complete PASS → visual_ingested 付与 → snapshot-pre.json 退避+--retrofit 再記録 → 最終 gate PASS 再確認予定。raw・動画は snapshot 取得時から非変更(SHA-256 機械確認)。
+- 更新: `wiki/sources/coloso-ye-jji-ch07-color-basic.md`, `wiki/assets/frames/coloso-ye-jji-ch07-color-basic/`(manifest.json+snapshot.json+snapshot-pre.json+png108枚), `index.md`, `log.md`
