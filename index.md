@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 2816 ファイル_
+_合計 2856 ファイル_
 
 ## root/ (11)
 
@@ -13,7 +13,7 @@ _合計 2816 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T08:11:31Z
+- [index.md](root/index.md) | 2026-08-25T08:43:18Z
 - [log.md](root/log.md) | 2026-08-25T08:35:32Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
@@ -1016,6 +1016,47 @@ _合計 2816 ファイル_
 - [marse-ch10-05m17s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-05m17s.png) | 2026-08-25T06:35:42Z
 - [marse-ch10-06m32s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-06m32s.png) | 2026-08-25T06:41:41Z
 
+## wiki/assets/frames/coloso-marse-ch11-rough/ (38)
+
+- [marse-ch11-00m00s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-00m00s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-00m12s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-00m12s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-00m20s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-00m20s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-00m40s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-00m40s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-00m54s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-00m54s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-01m00s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-01m00s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-01m20s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-01m20s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-01m36s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-01m36s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-01m40s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-01m40s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-02m00s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-02m00s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-02m20s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-02m20s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-02m40s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-02m40s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-03m00s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-03m00s.png) | 2026-08-25T08:39:05Z
+- [marse-ch11-03m12s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-03m12s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-03m20s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-03m20s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-03m37s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-03m37s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-03m40s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-03m40s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-04m00s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-04m00s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-04m09s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-04m09s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-04m20s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-04m20s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-04m40s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-04m40s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-05m00s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-05m00s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-05m01s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-05m01s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-05m20s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-05m20s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-05m40s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-05m40s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-06m00s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-06m00s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-06m12s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-06m12s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-06m19s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-06m19s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-06m20s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-06m20s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-06m23s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-06m23s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-06m40s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-06m40s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-07m00s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-07m00s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-07m20s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-07m20s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-07m39s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-07m39s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-07m40s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-07m40s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-08m00s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-08m00s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-08m06s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-08m06s.png) | 2026-08-25T08:39:06Z
+- [marse-ch11-08m13s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-08m13s.png) | 2026-08-25T08:39:06Z
+
 ## wiki/assets/frames/coloso-sasa-ch01-intro/ (10)
 
 - [sasa-ch01-00m40s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-00m40s.png) | 2026-08-23T08:19:16Z
@@ -1764,6 +1805,11 @@ _合計 2816 ファイル_
 ## wiki/builds/coloso-intake/ (1)
 
 - [parallel-session-brief.md](wiki/builds/coloso-intake/parallel-session-brief.md) | 2026-08-25T06:49:37Z
+
+## wiki/builds/coloso-intake/reports/ (2)
+
+- [2026-08-25-ixy-2-final-audit.txt](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2-final-audit.txt) | 2026-08-25T08:40:24Z
+- [2026-08-25-ixy-2-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2-representative-comparison.md) | 2026-08-25T08:41:50Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/review/ (3)
 
