@@ -9661,3 +9661,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: `wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md`, `wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/`(manifest.json+snapshot.json+png99枚), `index.md`, `log.md`
 - 次の一手: 10秒間隔全帯域スイープ(p1 92枚+p2 65枚)→ 補完 → gate complete PASS → visual_ingested 付与。
 - 追記(ch13): 10秒間隔全帯域スイープ(p1 92枚+p2 65枚)で未観測状態5件(04:30 連想は環境依存の囲み/08:50 質感は嘘がつきやすい追記/10:10 明暗境界線の立体感を高める3画像状態/14:30 ミー散乱多用の追記/15:10 Coloso ウェブプレーヤーの端末画面)を発見 → ev-100〜ev-104 を追加(99→104枚)。p2 は補完なし。動画が Coloso ウェブプレーヤーの2倍速画面収録であることを ev-104 で確認。manifest・source 節・index を更新。
+## [2026-08-25] query | coloso ye_jji ch06 パイロット独立レビューの承認記録(batch2 ye_jji 群)
+
+- 別セッション独立レビュアーの判定: **承認(ye_jji 群残り14章の量産可)**。機械検証再実行 PASS・突き合わせ10枚全一致・抽出漏れ15カ所検査で未収載画面ゼロ・台帳整合。修正必須 0件(参考記載2件は修正不要)。
+- 判定の正本を `wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-yejji-ch06-pilot-review.md` として保存(レビュアー報告原文保持)。
+- `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json` の yejji-remaining に承認フィールドを記録(representative_input/output・comparison_evidence・source_compared/user_accepted/batch_safe: true/approved_by: user/approved_at/approval_evidence/accepted_gaps)。`--phase batch` は yejji-remaining への指摘 0(全体 FAIL の残りはひづるめ family 等の未記録分で他セッション管轄)。
+- 引き継ぎ資料の現在地に ye_jji ch06 承認済みを追記。ye_jji 群残りの量産開始条件を満たす。
+- 触ったページ: [[coloso-visual-ingest-batch2-handoff]] / `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json` / `review/2026-08-25-yejji-ch06-pilot-review.md`(新規) / `log.md`
