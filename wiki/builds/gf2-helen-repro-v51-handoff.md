@@ -741,6 +741,47 @@ sources:
     4. S6〜S9 の監査門実装
     5. スペキュラ実装（V=0.625帯・係数較準）
     6. 修正→f128再実行→提出シート再生成
+
+74. **#73引き継ぎ作業順序のD2/D3/D1調査を実施（`f139`〜`f144`・2026-08-25午後・
+    武田さん選択「指ポーズ層の追加調査を先に」「FaceSDF の所在をさらに調査」）**:
+    - **D2 額の生え際 — テクスチャ説は不成立に更新**: 手元全量13,548bundleを
+      展開レベル走査（`f139`・f98方式・pipeline_valid=true・陽性対照3件合格）した結果、
+      hair_d/hair_spc の別バリアント・アルファ付き本物は**不検出**。
+      手元の髪系Texture2D実体は face bundle `73836294…` に集約（7本）。
+      元データレベル（UnityPy・ASTCデコード後）で **alpha は全255**（PNG抽出時の欠落ではない）。
+      → 生え際の薄さの原因候補は「メッシュ形状/シェーダ側」へ更新（S8 門の比較対象）。
+    - **D3 顔の涙跡状の筋 — FaceSDF は手元に無いことを全量で確定**: `f139b` により
+      Helen/Helena 系の face_sdf は手元全量で不検出。他キャラ（Nemesis/Peritya）は
+      材質設定TextAssetに `Resource/Player/<Char>/_Face/Textures/c_<Char>_face_sdf.png`
+      の参照が実在し命名規約を確認。Nemesis材質bundleの中身は AssetBundle+TextAsset のみ
+      （テクスチャ実体は別bundle）。Helen の顔材質設定自体が prefab root 依存で未回収につき
+      **FaceSDF適用は引き続き回収待ち（blocked）**。筋の近似緩和は未実施（武田さん選択）。
+    - **D1 指の鉤爪 — 原因を機械確定**:
+      1. clip は指1・手首をキーせず（bind固定・全フレーム差分≤2.9°）、指2/3だけ
+         **Euler（m_LocalEulerHint・attr=4）で可変（-48〜-140°）**。全Helen clipで
+         指1はbind同一（0〜0.4°）＝データ設計。他clip（Bedroom_0601等）でも指1はbind固定。
+      2. blend は clip を忠実に適用（f129 再確認・全骨ワールド≤0.101mm）。
+      3. **指2のローカルY軸は bindpose/prefab rest のどちらでもワールド+Z＝指の長軸** →
+         clipのY回転-80°は「ねじれ」として効き、これが鉤爪状の見た目の正体。
+      4. **Helena_dorm prefab 骨階層が手元に実在**（`555cc03f…bundle`・Transform578/
+         SkinnedMeshRenderer34/Avatar2）。指1 rest（3.8〜18.4°）は Avatar `m_DefaultPose`
+         と数値まで一致。ただし bindpose（skeleton.json）の指1（11.9〜13.8°）とは
+         値も軸も異なる。HandPose構造は Helen Avatar には無し（Eber動物系のみ・
+         `f142` で7,569ヒットは全て動物Avatar系）＝**指ポーズ層は手元に存在しない**。
+      5. **決着実験（`f144`）**: 指2/3回転の5案レンダ比較（原作f63と同構図）で、
+         原作に最接近は **「D案＝Y回転をZ軸（曲げ軸）へ付け替え」**、次いで
+         「B案＝ねじれ半分」。A案（clipどおりのねじれ）は鉤爪・C案（ゼロ）は開きすぎ。
+      6. 結論: 原作ランタイムの指2/3 Euler評価は**曲げとして働いており**、
+         bindpose軸でのY解釈（ねじれ）が鉤爪の原因。修正は「Eulerの軸付け替え」で
+         原作準拠に近づく（DECではなく見た目比較に基づく規約確定の作業・複数フレーム検証が次）。
+    - **成果物blend無変更（SHA `41b54b818aafb41e`）**。
+      証跡: `logs/f139-hair-facesdf-scan.json` / `logs/f139-texture-alpha-census.json` /
+      `logs/f139b-facesdf-census.json` / `logs/f142-handpose-scan.json` /
+      `logs/f143-avatar-locate.json` / `logs/f143b-helena-avatar-defaultpose.json` /
+      `reports/d1-hands-compare/`（`f144_case_A〜E.png`・`blend_f206_origangle.png`）。
+    - **次の一手**: ①D案（Y→Z曲げ付け替え）をパイプラインに組み込む候補を作り
+      複数フレーム・両手で原作比較→blend反映は別承認 ②S6〜S9 監査門実装
+      ③スペキュラ実装（V=0.625帯） ④D2はS8門（髪被覆比較）へ統合して検証。
 ---
 
 ---
