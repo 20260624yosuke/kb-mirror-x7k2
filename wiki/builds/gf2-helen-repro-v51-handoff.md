@@ -840,6 +840,28 @@ sources:
     - **次の一手**: ①スペキュラ実装（V=0.625帯・係数較準・候補blend→本blend反映は別承認）
       ②f128 再実行→提出シート再生成 ③S6/S8 は原因項目（postグレード/D2）の解決後に
       同一門で自動的に復帰判定される。
+
+77. **スペキュラ第一段：原作式を候補blendへ実装（`f153_specular_candidate.py`・
+    2026-08-25夜・#73 作業順序5）**:
+    - 原作 0357.msl 行614-700（UseRampMap 分岐）を register trace し、主光スペキュラ経路を
+      Blender ノードで移植: rough=RMO.r / metal=RMO.g、D_iso=(r2/max(NoH²r⁴+1−NoH²,1e-4))²、
+      Vis=min(0.5/max(NoL·G1V(NoV)+NoV·G1V(NoL),1e-4),1)、F=1−(1−F0g)(1−VoH)^5、
+      specVal=Vis_H·clamp(D·Vis·r4c/Vis_H,0,1)/r4c、spec=min(F·specVal,10)×specColor×
+      ramp(V=0.125)、出力=diffuse+spec×10。33材質ビルド0失敗。
+    - **本blend無変更（SHA `04ef8b79b3fa5b64`）**。候補は
+      `blends/_candidate-specular/helen-h0157-repro__04ef8b79b3fa5b64_f153-specular.blend`。
+    - **初回較準（DIELECTRIC=0.004）の実測**: ドレス mean 59.2→66.3・top1%輝度が255に到達
+      （原作は220.4・>240ゼロ）＝**過強**。顔白飛び 39.3%→47.2%へ悪化。
+      S7手門は変化なし合格。見比べシート
+      `reports/matpreview/f153_sheet.png`（原作/現行/候補・ドレスROI/顔ROI）。
+    - **構造的な緊張**: post グレード未適用（既知blocked）のまま光を足すと、原作は
+      ロールオフする場所で当方だけ飽和する。スペキュラ較準は post グレード回収と
+      独立ではない。
+    - 近似として記録（入力未回収）: `_AnisotropicGXX=0`（iso分枝のみ）/ Glitter=OFF /
+      ReflectionProbe・V=0.625環境スペキュラ項=未実装 / DIELECTRIC=較準定数。
+    - 証跡: `logs/f153-specular-candidate.json`・`reports/matpreview/f153_frame206.png`。
+    - **武田さんの判断待ち**: A=較準を下げて候補調整継続 / B=postグレード回収まで
+      反映保留 / C=現状で反映（非推奨・見た目が過強）。
 ---
 
 ---

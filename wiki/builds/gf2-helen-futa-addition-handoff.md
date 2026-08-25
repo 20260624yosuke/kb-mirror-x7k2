@@ -34,29 +34,20 @@ sources: []
 
 ## 2. 現在位置（2026-08-25 時点・引き継ぎ最新）
 
-> [!warning] 【最新・ここから再開】K3完了・差し戻し申請の回答待ち(2026-08-25 20時台)
+> [!warning] 【最新・ここから再開】K3完了・**K4実行中**(2026-08-25 20時台)
 > **経緯**: K計画v2(論客最終判定「本承認」+武田さん実行承認・blend非接触)のもと
-> K1完了 → K2基準文書完成(`CLOTH-INTEGRATION-CRITERIA-2026-08-25.md`・全13門確定) →
-> **K3監査v8完了**(セッション18=21_futa-gf2-helen.json。503死亡から再開)。
-> - **K3結果**: 実検査は **C1/C3 のみFAIL・他9門PASS**。
->   負試験は初回D1/D2/D3が不発(検知器が鈍い)→ 強化版で **全11検知器が人工FAIL確認OK**
->   (`NEG_ALL_CONFIRMED=True`)。D3はp05指標へ変更、D1は合成布パット負試験
->   (静的実布↔カリ襟帯は39.2mm離隔のため剛体腐敗では不発と実測)
-> - **C1 FAILの正体**: 下着84+スカート94面ペア貫通(最小0.04mm)。
->   根元〜z1.057の左前側面。**Phase P下着彫り+Phase Cスカート工程前の既知状態の初数値化**
->   (K段階はblend非接触のため解消不能)
-> - **C3 FAILの正体**: 接触源はShaft.001の**下腹部グレーズ**(z1.039・アンカー10-14cm地点0.05mm)。
->   19.68cm勃起のbelly-restとして解剖学的に自然。門の意図ゾーン(太もも・会陰)は
->   金玉23mm/軸4-8cm帯8mm+とクリア → 検知器の意図ずれ
-> - **現在位置**: 承認済み報告文言「C2を除く全門PASS」はC1/C3 FAILにより使用不能。
->   **差し戻し申請カードを武田さんへ提示済み・回答待ち**。
->   案A(推奨)=C1/C3をPhase持ち越し分類へ+C3検知器を意図どおり再定義+文言改定→K4 /
->   案B=FAIL門ありのままK4(視覚判定1回消費リスク) / 案C=配置調整(blend改変・範囲外)
-> - **回答後**: 案Aなら K4ビューティーレンダ3枚+シート+自己診断チェックリスト→承認カード
->
-> **K計画の承認範囲(論客最終判定より)**: 作業開始の許可のみ。成果物の最終合否はK4以降の
-> 武田さんの目。ai-hypothesis暫定閾値の数値の正しさは未承認(provisional:true)。
-> 視覚判定は上限3回(初回+再提示2回)、3回不通過で工程停止→方針相談。
+> K1完了 → K2基準文書完成 → **K3監査v8.1完了**。
+> - **K3結果(v8.1)**: 実検査は **C3=PASS(23.21mm)・他8門PASS、C1のみFAIL(carry_over)**。
+>   負試験は **全11検知器が人工FAIL確認OK**(`NEG_ALL_CONFIRMED=True`)。
+> - **差戻し申請→武田さんが「案A」承認**: C1=測定のみ・解消はPhase P下着彫り+Phase Cスカート
+>   (classification=carry_over_to_PhaseP_PhaseC)/C3検知器を恥丘線より下のみ判定へ再定義
+>   (下腹部のbelly-restグレーズ z1.039・0.05mm は自然形態のため対象外)/
+>   報告文言「**C1(Phase P/C持ち越し)・C2(Phase C持ち越し)を除く全門PASS**」へ改定済み。
+>   負試験強化: D3=p05指標/D1=合成布パット(静的実布↔カリ襟帯39.2mm離隔を実測)/
+>   C3=合成肉パット(剛体腐敗では恥丘線下11mm以上維持を実測・股下に自然な空気通路)
+> - **K4実行中**: ビューティーレンダ3枚(H0149代表フレームf220)+コンタクトシート+
+>   自己診断チェックリスト6項目 → 承認カード。**視覚判定 初回(上限3回の1回目)**。
+>   不合格時は指摘をチェックリスト項目番号に紐付け・3回不通過で工程停止→方針相談
 >
 > **Phase S までの状態(背景・確定済み)**: サイズ=S50(19.68cm)。配置はクラスタ構造解析準拠。
 > 機械検査 v7.1 全門PASS(P1基部vs恥丘2.2cm/P5立上がり45.01°/P8ボール下がり-14.5°/
@@ -66,16 +57,17 @@ sources: []
 > **正本ファイル一覧**(すべてプロジェクト側 `07_futa-helen/reports/`):
 > - 計画: `TRANSPLANT-PLAN-V41-2026-08-24.md`(v3・承認済み)
 > - 構造解析: `v41-cluster-anatomy.json`(**設置基準の正本**・全裸版でも流用)
-> - 機械検査(v7.1): `v41-phaseS-checks.json` / K3監査(v8): `v8-k3-checks.json`
+> - 機械検査(v7.1): `v41-phaseS-checks.json` / K3監査(v8.1): `v8-k3-checks.json`
 > - 配置記録: `v41-phaseS-build.json` / スケール基準: `v41-phaseS-scale-basis.json`(39.36cm実測)
 > - 独立レビュー: `v41-independent-review-round1.md`/`round2.md` / 承認経緯: `v41-plan-approval-evidence.md`
 > - 比較レンダ: `reports/previews/v41-phaseS/`(S50-FINAL-phaseS.png・CONTACT-SHEET・mp4群)
 > - E1: `v4-e1-prereq.json` / 体ソース調査: `v4-bodysource-survey-2026-08-24.json`
 > - **K計画要約HTML**: `K-plan-summary-2026-08-25.html`(Inbox申告済み・短ID `i08258d8`)
 > - **K1産物**: `v42-source-anatomy.json` + `previews/v42-anatomy/`(注釈レンダ3枚)
-> - **K2産物**: `CLOTH-INTEGRATION-CRITERIA-2026-08-25.md`(全13門・帰属・実行Phase確定)
-> - **K3産物**: `v8_k3_audit.py` + `v8-k3-checks.json` + `v8-negative-tests.log` +
->   `v8-k3-diag-c1c3.json` + 負試験キャリブレーション記録(`v8_k3_negprobe.py`/`v8_k3_negprobe2.py`)
+> - **K2産物**: `CLOTH-INTEGRATION-CRITERIA-2026-08-25.md`(全13門確定+差戻し承認を変遷に記録)
+> - **K3産物**: `v8_k3_audit.py`(v8.1) + `v8-k3-checks.json` + `v8-negative-tests.log` +
+>   `v8-k3-diag-c1c3.json` + キャリブレーション記録(`v8_k3_negprobe*.py`)
+> - **K4産物**: `reports/previews/v42-k4/`(ビューティーレンダ+シート) ※作成中
 > - 萎え調査: `FLACCID-INVESTIGATION-2026-08-25.md`(§7参照・制作は棚上げどおり)`
 
 > [!warning] 技術教訓(次セッションで必ず読む・同じ罠を避けること)
@@ -178,6 +170,11 @@ sources: []
 
 ## 7. 変更履歴
 
+- 2026-08-25 20時台(続き): **差戻し「案A」承認→K3 v8.1確定・K4開始**。
+  武田さんが案A(C1/C3持ち越し分類+文言改定)をカード承認。K2文書に変遷記録、
+  監査v8.1へ反映(C3=恥丘線下のみ判定でPASS 23.21mm/C1=carry_over/文言改定)。
+  C3負試験は剛体腐敗が到達不能(股下の空気通路を実測)のため合成肉パット方式。
+  **NEG_ALL_CONFIRMED=True**。K4(ビューティーレンダ3枚+シート+チェックリスト)実行中。
 - 2026-08-25 20時台: **K2・K3完了・差し戻し申請提示(セッション18=21_futa-gf2-helen.json)**。
   セッション18はK2文書作成完了後のタイポ修正中にPC再起動→再開してK2完成→K3監査v8作成・
   初回実行でkill_dupバグ検出→修正+C3診断追加の直後に**APIError 503で死亡**(19:47)。

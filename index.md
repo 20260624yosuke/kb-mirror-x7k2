@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 3076 ファイル_
+_合計 3232 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 3076 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T11:17:11Z
-- [log.md](root/log.md) | 2026-08-25T11:17:49Z
+- [index.md](root/index.md) | 2026-08-25T11:32:38Z
+- [log.md](root/log.md) | 2026-08-25T11:35:59Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -1978,9 +1978,9 @@ _合計 3076 ファイル_
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
 - [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-25T10:36:54Z
 - [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T03:22:36Z
-- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-25T11:08:09Z
+- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-25T11:31:43Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
-- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-25T11:05:24Z
+- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-25T11:33:15Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T10:00:16Z
 - [gf2-helen-rest-room-motion-v22.md](wiki/builds/gf2-helen-rest-room-motion-v22.md) | 2026-07-27T00:02:48Z
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z
@@ -2264,6 +2264,168 @@ _合計 3076 ファイル_
 - [19m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch08/p3/19m20s.png) | 2026-08-25T07:59:20Z
 - [19m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch08/p3/19m40s.png) | 2026-08-25T07:59:21Z
 - [20m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch08/p3/20m00s.png) | 2026-08-25T07:59:21Z
+
+## wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/ (70)
+
+- [00m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/00m00s.png) | 2026-08-25T11:25:37Z
+- [00m06s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/00m06s.png) | 2026-08-25T11:25:37Z
+- [00m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/00m20s.png) | 2026-08-25T11:25:37Z
+- [00m35s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/00m35s.png) | 2026-08-25T11:25:37Z
+- [00m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/00m40s.png) | 2026-08-25T11:25:37Z
+- [01m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/01m00s.png) | 2026-08-25T11:25:37Z
+- [01m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/01m20s.png) | 2026-08-25T11:25:37Z
+- [01m21s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/01m21s.png) | 2026-08-25T11:25:37Z
+- [01m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/01m40s.png) | 2026-08-25T11:25:37Z
+- [01m47s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/01m47s.png) | 2026-08-25T11:25:37Z
+- [02m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/02m00s.png) | 2026-08-25T11:25:37Z
+- [02m15s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/02m15s.png) | 2026-08-25T11:25:37Z
+- [02m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/02m20s.png) | 2026-08-25T11:25:37Z
+- [02m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/02m40s.png) | 2026-08-25T11:25:37Z
+- [02m41s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/02m41s.png) | 2026-08-25T11:25:37Z
+- [03m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/03m00s.png) | 2026-08-25T11:25:37Z
+- [03m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/03m20s.png) | 2026-08-25T11:25:37Z
+- [03m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/03m40s.png) | 2026-08-25T11:25:37Z
+- [04m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/04m00s.png) | 2026-08-25T11:25:37Z
+- [04m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/04m20s.png) | 2026-08-25T11:25:37Z
+- [04m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/04m40s.png) | 2026-08-25T11:25:37Z
+- [05m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/05m00s.png) | 2026-08-25T11:25:37Z
+- [05m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/05m20s.png) | 2026-08-25T11:25:37Z
+- [05m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/05m40s.png) | 2026-08-25T11:25:37Z
+- [05m51s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/05m51s.png) | 2026-08-25T11:25:38Z
+- [06m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/06m00s.png) | 2026-08-25T11:25:38Z
+- [06m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/06m20s.png) | 2026-08-25T11:25:38Z
+- [06m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/06m40s.png) | 2026-08-25T11:25:37Z
+- [07m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/07m00s.png) | 2026-08-25T11:25:37Z
+- [07m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/07m20s.png) | 2026-08-25T11:25:37Z
+- [07m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/07m40s.png) | 2026-08-25T11:25:37Z
+- [07m46s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/07m46s.png) | 2026-08-25T11:25:37Z
+- [08m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/08m00s.png) | 2026-08-25T11:25:37Z
+- [08m11s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/08m11s.png) | 2026-08-25T11:25:37Z
+- [08m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/08m20s.png) | 2026-08-25T11:25:37Z
+- [08m25s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/08m25s.png) | 2026-08-25T11:25:37Z
+- [08m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/08m40s.png) | 2026-08-25T11:25:37Z
+- [09m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/09m00s.png) | 2026-08-25T11:25:37Z
+- [09m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/09m20s.png) | 2026-08-25T11:25:37Z
+- [09m33s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/09m33s.png) | 2026-08-25T11:25:38Z
+- [09m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/09m40s.png) | 2026-08-25T11:25:37Z
+- [10m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/10m00s.png) | 2026-08-25T11:25:37Z
+- [10m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/10m20s.png) | 2026-08-25T11:25:37Z
+- [10m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/10m40s.png) | 2026-08-25T11:25:37Z
+- [11m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/11m00s.png) | 2026-08-25T11:25:37Z
+- [11m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/11m20s.png) | 2026-08-25T11:25:37Z
+- [11m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/11m40s.png) | 2026-08-25T11:25:37Z
+- [11m43s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/11m43s.png) | 2026-08-25T11:25:37Z
+- [12m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/12m00s.png) | 2026-08-25T11:25:37Z
+- [12m14s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/12m14s.png) | 2026-08-25T11:25:38Z
+- [12m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/12m20s.png) | 2026-08-25T11:25:37Z
+- [12m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/12m40s.png) | 2026-08-25T11:25:37Z
+- [12m49s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/12m49s.png) | 2026-08-25T11:25:37Z
+- [13m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/13m00s.png) | 2026-08-25T11:25:37Z
+- [13m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/13m20s.png) | 2026-08-25T11:25:37Z
+- [13m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/13m40s.png) | 2026-08-25T11:25:37Z
+- [13m41s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/13m41s.png) | 2026-08-25T11:25:37Z
+- [14m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/14m00s.png) | 2026-08-25T11:25:37Z
+- [14m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/14m20s.png) | 2026-08-25T11:25:37Z
+- [14m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/14m40s.png) | 2026-08-25T11:25:37Z
+- [15m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/15m00s.png) | 2026-08-25T11:25:37Z
+- [15m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/15m20s.png) | 2026-08-25T11:25:37Z
+- [15m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/15m40s.png) | 2026-08-25T11:25:37Z
+- [16m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/16m00s.png) | 2026-08-25T11:25:38Z
+- [16m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/16m20s.png) | 2026-08-25T11:25:38Z
+- [16m36s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/16m36s.png) | 2026-08-25T11:25:38Z
+- [16m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/16m40s.png) | 2026-08-25T11:25:37Z
+- [17m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/17m00s.png) | 2026-08-25T11:25:37Z
+- [17m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/17m20s.png) | 2026-08-25T11:25:37Z
+- [17m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p1/17m40s.png) | 2026-08-25T11:25:37Z
+
+## wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/ (86)
+
+- [00m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/00m00s.png) | 2026-08-25T11:25:38Z
+- [00m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/00m20s.png) | 2026-08-25T11:25:38Z
+- [00m28s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/00m28s.png) | 2026-08-25T11:25:38Z
+- [00m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/00m40s.png) | 2026-08-25T11:25:38Z
+- [01m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/01m00s.png) | 2026-08-25T11:25:38Z
+- [01m09s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/01m09s.png) | 2026-08-25T11:25:38Z
+- [01m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/01m20s.png) | 2026-08-25T11:25:38Z
+- [01m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/01m40s.png) | 2026-08-25T11:25:38Z
+- [02m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/02m00s.png) | 2026-08-25T11:25:38Z
+- [02m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/02m20s.png) | 2026-08-25T11:25:38Z
+- [02m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/02m40s.png) | 2026-08-25T11:25:38Z
+- [02m42s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/02m42s.png) | 2026-08-25T11:25:38Z
+- [02m59s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/02m59s.png) | 2026-08-25T11:25:38Z
+- [03m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/03m00s.png) | 2026-08-25T11:25:38Z
+- [03m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/03m20s.png) | 2026-08-25T11:25:38Z
+- [03m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/03m40s.png) | 2026-08-25T11:25:38Z
+- [04m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/04m00s.png) | 2026-08-25T11:25:38Z
+- [04m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/04m20s.png) | 2026-08-25T11:25:38Z
+- [04m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/04m40s.png) | 2026-08-25T11:25:38Z
+- [04m58s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/04m58s.png) | 2026-08-25T11:25:38Z
+- [05m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/05m00s.png) | 2026-08-25T11:25:38Z
+- [05m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/05m20s.png) | 2026-08-25T11:25:38Z
+- [05m21s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/05m21s.png) | 2026-08-25T11:25:38Z
+- [05m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/05m40s.png) | 2026-08-25T11:25:38Z
+- [06m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/06m00s.png) | 2026-08-25T11:25:38Z
+- [06m16s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/06m16s.png) | 2026-08-25T11:25:38Z
+- [06m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/06m20s.png) | 2026-08-25T11:25:38Z
+- [06m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/06m40s.png) | 2026-08-25T11:25:38Z
+- [07m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/07m00s.png) | 2026-08-25T11:25:38Z
+- [07m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/07m20s.png) | 2026-08-25T11:25:38Z
+- [07m35s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/07m35s.png) | 2026-08-25T11:25:38Z
+- [07m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/07m40s.png) | 2026-08-25T11:25:38Z
+- [08m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/08m00s.png) | 2026-08-25T11:25:38Z
+- [08m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/08m20s.png) | 2026-08-25T11:25:38Z
+- [08m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/08m40s.png) | 2026-08-25T11:25:38Z
+- [08m41s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/08m41s.png) | 2026-08-25T11:25:38Z
+- [09m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/09m00s.png) | 2026-08-25T11:25:38Z
+- [09m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/09m20s.png) | 2026-08-25T11:25:38Z
+- [09m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/09m40s.png) | 2026-08-25T11:25:38Z
+- [09m42s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/09m42s.png) | 2026-08-25T11:25:38Z
+- [10m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/10m00s.png) | 2026-08-25T11:25:38Z
+- [10m03s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/10m03s.png) | 2026-08-25T11:25:38Z
+- [10m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/10m20s.png) | 2026-08-25T11:25:38Z
+- [10m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/10m40s.png) | 2026-08-25T11:25:38Z
+- [11m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/11m00s.png) | 2026-08-25T11:25:38Z
+- [11m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/11m20s.png) | 2026-08-25T11:25:38Z
+- [11m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/11m40s.png) | 2026-08-25T11:25:38Z
+- [12m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/12m00s.png) | 2026-08-25T11:25:38Z
+- [12m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/12m20s.png) | 2026-08-25T11:25:38Z
+- [12m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/12m40s.png) | 2026-08-25T11:25:38Z
+- [12m41s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/12m41s.png) | 2026-08-25T11:25:38Z
+- [13m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/13m00s.png) | 2026-08-25T11:25:38Z
+- [13m16s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/13m16s.png) | 2026-08-25T11:25:38Z
+- [13m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/13m20s.png) | 2026-08-25T11:25:38Z
+- [13m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/13m40s.png) | 2026-08-25T11:25:38Z
+- [14m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/14m00s.png) | 2026-08-25T11:25:38Z
+- [14m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/14m20s.png) | 2026-08-25T11:25:38Z
+- [14m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/14m40s.png) | 2026-08-25T11:25:38Z
+- [15m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/15m00s.png) | 2026-08-25T11:25:38Z
+- [15m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/15m20s.png) | 2026-08-25T11:25:38Z
+- [15m27s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/15m27s.png) | 2026-08-25T11:25:38Z
+- [15m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/15m40s.png) | 2026-08-25T11:25:38Z
+- [16m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/16m00s.png) | 2026-08-25T11:25:38Z
+- [16m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/16m20s.png) | 2026-08-25T11:25:38Z
+- [16m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/16m40s.png) | 2026-08-25T11:25:38Z
+- [17m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/17m00s.png) | 2026-08-25T11:25:38Z
+- [17m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/17m20s.png) | 2026-08-25T11:25:38Z
+- [17m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/17m40s.png) | 2026-08-25T11:25:38Z
+- [17m53s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/17m53s.png) | 2026-08-25T11:25:38Z
+- [18m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/18m00s.png) | 2026-08-25T11:25:38Z
+- [18m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/18m20s.png) | 2026-08-25T11:25:38Z
+- [18m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/18m40s.png) | 2026-08-25T11:25:38Z
+- [19m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/19m00s.png) | 2026-08-25T11:25:38Z
+- [19m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/19m20s.png) | 2026-08-25T11:25:38Z
+- [19m23s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/19m23s.png) | 2026-08-25T11:25:38Z
+- [19m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/19m40s.png) | 2026-08-25T11:25:38Z
+- [20m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/20m00s.png) | 2026-08-25T11:25:38Z
+- [20m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/20m20s.png) | 2026-08-25T11:25:38Z
+- [20m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/20m40s.png) | 2026-08-25T11:25:38Z
+- [21m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/21m00s.png) | 2026-08-25T11:25:38Z
+- [21m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/21m20s.png) | 2026-08-25T11:25:38Z
+- [21m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/21m40s.png) | 2026-08-25T11:25:39Z
+- [22m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m00s.png) | 2026-08-25T11:25:38Z
+- [22m06s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m06s.png) | 2026-08-25T11:25:38Z
+- [22m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m20s.png) | 2026-08-25T11:25:38Z
+- [22m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m40s.png) | 2026-08-25T11:25:38Z
 
 ## wiki/concepts/ (404)
 
@@ -2948,12 +3110,12 @@ _合計 3076 ファイル_
 - [coloso-hizurume-ch06-drawing-types.md](wiki/sources/coloso-hizurume-ch06-drawing-types.md) | 2026-08-24T17:17:30Z
 - [coloso-hizurume-ch07-composition.md](wiki/sources/coloso-hizurume-ch07-composition.md) | 2026-08-25T02:40:39Z
 - [coloso-hizurume-ch08-anatomy-basics.md](wiki/sources/coloso-hizurume-ch08-anatomy-basics.md) | 2026-05-31T15:40:35Z
-- [coloso-hizurume-ch09-light-shadow-color.md](wiki/sources/coloso-hizurume-ch09-light-shadow-color.md) | 2026-08-25T03:51:19Z
+- [coloso-hizurume-ch09-light-shadow-color.md](wiki/sources/coloso-hizurume-ch09-light-shadow-color.md) | 2026-08-25T11:29:11Z
 - [coloso-hizurume-ch10-efficient-practice.md](wiki/sources/coloso-hizurume-ch10-efficient-practice.md) | 2026-05-31T15:44:53Z
 - [coloso-hizurume-ch11-force-field.md](wiki/sources/coloso-hizurume-ch11-force-field.md) | 2026-08-22T13:55:29Z
 - [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-08-24T14:51:14Z
-- [coloso-hizurume-ch13-illusion-and-lies.md](wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md) | 2026-08-25T05:31:14Z
-- [coloso-hizurume-ch14-simplification.md](wiki/sources/coloso-hizurume-ch14-simplification.md) | 2026-08-25T08:02:07Z
+- [coloso-hizurume-ch13-illusion-and-lies.md](wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md) | 2026-08-25T11:29:32Z
+- [coloso-hizurume-ch14-simplification.md](wiki/sources/coloso-hizurume-ch14-simplification.md) | 2026-08-25T11:31:21Z
 - [coloso-hizurume-ch15-painting-to-illustration.md](wiki/sources/coloso-hizurume-ch15-painting-to-illustration.md) | 2026-05-31T15:53:02Z
 - [coloso-hizurume-ch16-speed-up.md](wiki/sources/coloso-hizurume-ch16-speed-up.md) | 2026-05-31T15:53:23Z
 - [coloso-hizurume-ch17-dark-painting-1.md](wiki/sources/coloso-hizurume-ch17-dark-painting-1.md) | 2026-05-31T15:56:47Z
