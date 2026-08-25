@@ -9789,3 +9789,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 次セッションの最優先: Dusevnyj 肌色修正(候補: 顔アトラス肌領域パッチへの UV 再マップ/P1_body_d 肌色領域利用/ramp・SSS 相当の解明)→ Dusevnyj+Sabrina の正式目視承認(conditional 開示込み)→ Step3 バッチ計画。
 - 更新: `wiki/builds/gf2-char-extract-handoff.md`(承認履歴 v8.2 行・再開点更新), `gf2-char-extract/run-state.json`
 - 正本の所在: [[gf2-char-extract-handoff]] / 成果物: `gf2-char-extract/blends/{Dusevnyj,Sabrina}-*-repro.blend` + `blends/README.md`(切替手順)
+
+## [2026-08-25] query | coloso ひづるめ B1 群(4章)映像 ingest 独立レビュー・条件付き承認
+
+- 別セッション独立レビュアーの判定: **条件付き承認**。gate 4章分再実行すべて PASS・突合28枚全一致(時刻・被写体・文字・レイヤー状態)・全帯域10秒スイープを自実施・台帳整合。差し戻し級の問題(虚偽・時刻不一致・解釈混入・大量欠落)は 0 件。
+- 修正必須 1 件: **ch09 p2 01:43〜01:51 に未収載スライド「色収差」**(本文「色収差はレンズ内の色の波長の違いによって起きます。」+レンズ屈折 X 字図+イラスト例)。10秒スイープのサンプル(01:40/01:50)が両方外れたため未検出。ev-091 として追加が必要。
+- 軽微 2 件(記載補完のみ・フレーム追加は ch14 のみ): ch13 p2 00:02〜00:13 に前パート末尾スライド(ev-055 同内容)の継続表示が未記載 / ch14 末尾 08:35 前後の水色フェードアウト+08:38「Coloso.」エンドカードが未記載。
+- 軽微(修正不要): log の ch07 スイープ追記行が無関係エントリ内に混入(内容は正しい)。
+- 判定の正本を `wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-review.md` として保存(修正指示 A〜C にパス・コマンド・観測文骨子を同梱)。修正適用は実行セッション、適用後は別セッションの独立レビュアーによる修正確認を経て承認確定(前例: marse ch08 と同じ流れ)。quality-gate.json の hizurume B1 承認記録は修正確認 PASS 後に入れる。
+- 触ったページ: `review/2026-08-25-hizurume-b1-review.md`(新規) / `log.md`

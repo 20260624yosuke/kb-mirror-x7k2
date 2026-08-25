@@ -13,8 +13,8 @@ _合計 3074 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T09:01:37Z
-- [log.md](root/log.md) | 2026-08-25T10:38:15Z
+- [index.md](root/index.md) | 2026-08-25T11:17:11Z
+- [log.md](root/log.md) | 2026-08-25T11:17:49Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -3060,7 +3060,7 @@ _合計 3074 ファイル_
 - [coloso-ye-jji-ch05-texture-basic.md](wiki/sources/coloso-ye-jji-ch05-texture-basic.md) | 2026-08-24T07:20:18Z
 - [coloso-ye-jji-ch06-texture-applied.md](wiki/sources/coloso-ye-jji-ch06-texture-applied.md) | 2026-08-25T04:10:08Z
 - [coloso-ye-jji-ch07-color-basic.md](wiki/sources/coloso-ye-jji-ch07-color-basic.md) | 2026-08-25T07:33:29Z
-- [coloso-ye-jji-ch08-color-applied.md](wiki/sources/coloso-ye-jji-ch08-color-applied.md) | 2026-08-25T10:24:57Z
+- [coloso-ye-jji-ch08-color-applied.md](wiki/sources/coloso-ye-jji-ch08-color-applied.md) | 2026-08-25T11:16:59Z
 - [coloso-ye-jji-ch09-density.md](wiki/sources/coloso-ye-jji-ch09-density.md) | 2026-06-22T12:48:42Z
 - [coloso-ye-jji-ch10-blank.md](wiki/sources/coloso-ye-jji-ch10-blank.md) | 2026-06-22T12:48:42Z
 - [coloso-ye-jji-ch11-mistake-note.md](wiki/sources/coloso-ye-jji-ch11-mistake-note.md) | 2026-06-22T12:48:42Z
