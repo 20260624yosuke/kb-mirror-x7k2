@@ -9809,3 +9809,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完成宣言前の自己点検: 全パートの奇数10秒位置167枚(p1 53/p2 53/p3 61)を機械生成リストでスイープ読取。**注目候補は全て既存観測表の該当行でカバー(追加抽出0件)**。併せて作業ファイル名を原寸クロップで「색감 실습.jpg」「색감 실습2.jpg」に確定し、表内の読み揺れ(섭취/실험/삽습/석갈 석슬)を実名へ統一修正。手書きメモ見出し「냉색 대비」も再確認(スイープ読者の「난색」は誤読)。
 - 完了: フレーム216枚を `ye-jji-ch08-pN-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致・孤児ゼロ)→ manifest(videos[]+動画ごと extraction[]+recheck 23 entries)→ source 節を動画列付き 6 列表で byte 保持挿入 → gate complete PASS → visual_ingested 付与 → snapshot-pre.json 退避済み+--retrofit 再記録 → 最終 gate PASS。raw・動画は snapshot 取得時から非変更(SHA-256 機械確認)。
 - 更新: `wiki/sources/coloso-ye-jji-ch08-color-applied.md`, `wiki/assets/frames/coloso-ye-jji-ch08-color-applied/`(manifest.json+snapshot.json+snapshot-pre.json+png216枚), `index.md`, `log.md`
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 ひづるめ B1 独立レビュー修正適用(ch09 ev-091 追加・ch13 継続表示注記・ch14 ev-052 追加)
+
+- 依頼: B1 群(4章)独立レビュー(条件付き承認・`wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-review.md`)の修正指示 A〜C を実行セッションとして適用。
+- A(ch09・必須): p2 01:46 フレームを ffmpeg 直接抽出し本保存(`hizurume-ch09-02-01m46s.png`・SHA-256 0abdcc65…80e62)+ ev-091 行追加。観測文は統括側が実フレーム+原寸クロップで確認。**レビュー骨子の本文「色収差はレンズ内の色の波長の違いによって起きます。」は実フレームでは「色収差はレンズ内の色の波長の屈折によりできます。」のため実フレームどおり記載**(骨子との差異は修正確認レビューでの照合点)。ツール「油彩獣毛 鶴」50.0px/98%・選択フォルダー291 も実読取。manifest(observations 91件・p2 targeted_times+01:46・カウント33→34・recheck 10件)・方式行・index(90→91枚)を更新。
+- B(ch13・推奨): ev-057 観測文の末尾に「直後〜00:13 までは前パート末尾スライド「とにかく、見る相手に連想させよう…」[ev-055 と同内容]の継続表示・既収録のため追加フレームなし」を追記。00:05 を直接抽出して継続表示を実確認。フレーム追加なし・台帳枚数の変動なし。
+- C(ch14・推奨・方式1): 08:38 フレームを ffmpeg 直接抽出し本保存(`hizurume-ch14-08m38s.png`・SHA-256 152afb63…fa8d3)+ ev-052 行追加(「Coloso.」エンドカード+08:35 前後の水色フェードアウト描写)。08:35 も統括側が直接抽出して視認(水色地・薄文字判読不能・透かし「web_in_box_mail-973965」視認)。manifest(observations 52件・targeted_times+08:38・カウント51→52・recheck 8件)・方式行・凡例(末尾 08:35〜 水色フェードアウト→エンドカード→暗転)・index(51→52枚)を更新。
+- gate `--phase complete` 再実行: ch09/ch13/ch14 とも PASS(retrofit 警告のみ・レビュー記載どおり FAIL ではない)。次の手順は別セッションの独立レビュアーによる修正確認。quality-gate.json の hizurume B1 承認記録は修正確認 PASS 後に入れる。
+- 更新: `wiki/sources/coloso-hizurume-ch09-light-shadow-color.md`, `wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md`, `wiki/sources/coloso-hizurume-ch14-simplification.md`, `wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/`(manifest.json+png追加1枚), `wiki/assets/frames/coloso-hizurume-ch14-simplification/`(manifest.json+png追加1枚), `index.md`, `wiki/builds/coloso-visual-ingest-batch2-handoff.md`(現在地・修正確認指示文), `log.md`

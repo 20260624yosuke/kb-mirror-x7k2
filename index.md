@@ -14,7 +14,7 @@ _合計 3232 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-25T11:32:38Z
-- [log.md](root/log.md) | 2026-08-25T11:35:59Z
+- [log.md](root/log.md) | 2026-08-25T11:45:06Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -1966,7 +1966,7 @@ _合計 3232 ファイル_
 - [coloso-ingest-coverage-audit.md](wiki/builds/coloso-ingest-coverage-audit.md) | 2026-07-07T01:00:00Z
 - [coloso-intake-design.md](wiki/builds/coloso-intake-design.md) | 2026-08-25T11:23:28Z
 - [coloso-parallel-ingest-project.md](wiki/builds/coloso-parallel-ingest-project.md) | 2026-08-24T03:50:44Z
-- [coloso-visual-ingest-batch2-handoff.md](wiki/builds/coloso-visual-ingest-batch2-handoff.md) | 2026-08-25T08:32:41Z
+- [coloso-visual-ingest-batch2-handoff.md](wiki/builds/coloso-visual-ingest-batch2-handoff.md) | 2026-08-25T11:45:05Z
 - [coloso-visual-ingest-resume-inventory.md](wiki/builds/coloso-visual-ingest-resume-inventory.md) | 2026-08-23T12:03:30Z
 - [context-harness.md](wiki/builds/context-harness.md) | 2026-08-13T15:35:51Z
 - [deliverable-inbox.md](wiki/builds/deliverable-inbox.md) | 2026-08-22T23:47:34Z

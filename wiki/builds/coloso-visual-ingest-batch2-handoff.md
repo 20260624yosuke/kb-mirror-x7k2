@@ -95,6 +95,48 @@ video-visual-ingest v2.3 ワークフローで映像観測層を追加する。
 記入例(ひづるめ ch12 の場合): slug=`coloso-hizurume-ch12-gaze-guidance`、
 元動画=`raw/_coloso/2026_05_31_ひづるめ/_attachments/12_01.mp4 と 12_02.mp4(2本とも確認)`。
 
+## 修正確認指示文(コピペ用・ひづるめ B1 用・2026-08-25)
+
+条件付き承認(`wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-review.md`)の
+修正指示 A〜C 適用後の修正確認。別の新規セッションに貼って使う。
+
+```text
+あなたは coloso 映像ingest ひづるめ B1 群の「修正確認」担当・独立レビュアーです。実行セッションの報告を信用せず、一次資料(動画)と成果物を自分で直接比較して判定してください。
+
+背景:
+- 条件付き承認の正本レビュー: wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-review.md(修正指示 A〜C を同梱)
+- 実行セッションが A〜C を適用済み。あなたの仕事は「修正が指示どおり・実フレームどおりに適用されたか」の確認。
+
+手順(順に実行し、各手順の結果を記録):
+1. 上記レビュー正本を読み、修正指示 A〜C の内容を把握する。
+2. A(ch09・必須): wiki/sources/coloso-hizurume-ch09-light-shadow-color.md の ev-091 行(p2 01:46)について、
+   ffmpeg -ss 01:46 -i "raw/_coloso/2026_05_31_ひづるめ/_attachments/09_02.mp4" -frames:v 1 /tmp/confirm-a.png
+   で自分も抽出し、観測文(タイトル「色収差」・レンズの線図・イラスト・ツール・選択レイヤー)と見比べる。
+   ★照合点: レビュー骨子の本文は「色収差はレンズ内の色の波長の違いによって起きます。」だったが、
+   適用後の ev-091 は「色収差はレンズ内の色の波長の屈折によりできます。」(実フレームどおり主張)。
+   実フレームの文面を自分の目で確定し、どちらが正しいか判定すること(実フレーム優先)。
+3. B(ch13): wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md の ev-057 行末尾の注記(直後〜00:13 は
+   前パート末尾スライド[ev-055 同内容]の継続表示)について、
+   ffmpeg -ss 00:05 -i "raw/_coloso/2026_05_31_ひづるめ/_attachments/13_02.mp4" -frames:v 1 /tmp/confirm-b.png
+   で継続表示の実在を確認する。
+4. C(ch14): wiki/sources/coloso-hizurume-ch14-simplification.md の ev-052 行(08:38)について、
+   ffmpeg -ss 08:38 -i "raw/_coloso/2026_05_31_ひづるめ/_attachments/14_01.mp4" -frames:v 1 /tmp/confirm-c1.png
+   ffmpeg -ss 08:35 -i "raw/_coloso/2026_05_31_ひづるめ/_attachments/14_01.mp4" -frames:v 1 /tmp/confirm-c2.png
+   で「Coloso.」エンドカードと 08:35 の水色フェードアウト描写を確認する。凡例・方式行・index(52枚)も照合。
+5. 機械検証の再実行(3章とも自分の実行で PASS を確認・slug を読み替えて 3 回):
+   python3 tools/video_ingest_gate.py check --manifest wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/manifest.json --source wiki/sources/coloso-hizurume-ch09-light-shadow-color.md --snapshot wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/snapshot.json --phase complete --index index.md --log log.md
+6. 台帳整合: index.md(ch09 91枚/ch13 104枚/ch14 52枚)・log.md の修正適用エントリ・各 manifest の
+   observations 数(91/104/52)と recheck 数(10/12/8)の一致を確認。
+7. 判定: 「PASS(B1 群の承認確定)/要修正(箇所と内容を列挙)」を返す。
+   - PASS の場合: 判定の正本を wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-fix-confirm.md
+     として保存し、log.md に [YYYY-MM-DD] query エントリで記録。そのうえで
+     wiki/builds/coloso-visual-ingest-batch2/quality-gate.json の hizurume-b1-theory family に
+     修正確認 PASS の承認確定記録(判定ファイルを証拠として)を追記する。
+   - 要修正の場合: 成果物を修正せず、修正指示を列挙して停止する(修正適用は実行セッションの仕事)。
+
+注意: 確認対象外のページ・他ファミリーのファイルは書き換えないこと。
+```
+
 ## 1章あたりの正規手順(v2.3・batch1 実績を反映)
 
 1. dry-run → snapshot(抽出前・retrofit は付けない)→ temp 抽出。
@@ -133,14 +175,16 @@ video-visual-ingest v2.3 ワークフローで映像観測層を追加する。
 
 ## 現在地(2026-08-25 実測・B1 量産完了後に更新)
 
-- **ひづるめ B1 群(06/07/09/13/14)の量産完了(2026-08-25)**: ch07 41枚/6再確認・ch09 90枚/9再確認・
-  ch13 104枚/12再確認・ch14 51枚/7再確認。全章 gate complete PASS・visual_ingested 付与・inbox 申告済み
+- **ひづるめ B1 群(06/07/09/13/14)の量産完了(2026-08-25)**: ch07 41枚/6再確認・ch09 91枚/10再確認・
+  ch13 104枚/12再確認・ch14 52枚/8再確認。全章 gate complete PASS・visual_ingested 付与・inbox 申告済み
   (i0825007/i0825faf/i0825435 ほか)。10秒スイープ補完(ch07 4件/ch09 1件/ch13 5件/ch14 5件)と
   原寸クロップ訂正は各 manifest/log に記録。ch14 のスイープ読取はサブエージェント503障害のため
   統括側直接読取で代替(落とし穴#15・recheck.method に明記)。staging(`_staging_batch2_b1rest_20260825`)は
   落とし穴#16 どおり削除済み。quality-gate.json の hizurume-b1-theory family に承認記録を記入
   (batch フェーズは他 family 未承認のため全体としては仍て FAIL = 正常)。
-  **B1 群の独立レビュー指示文を実行セッションが武田さんへ提出済み。verdict 待ち。**
+  **B1 群の独立レビュー(2026-08-25・条件付き承認)の修正指示 A〜C を適用済み
+  (ch09 ev-091「色収差」追加・ch13 継続表示注記・ch14 ev-052 末尾エンドカード追加・3章 gate 再 PASS)。
+  別セッション独立レビュアーによる修正確認の PASS 受取まで承認確定待ち。**
 - **ひづるめ ch06 パイロット(B1)の独立レビュー完了(2026-08-25)**: 条件付き承認。
   修正点(ev-019 追加: 02:57 の節タイトルカード「私(ひづるめ)の描き方」抽出漏れ補完、
   ev-009 のグリザイユ2 末行「グレー 陰影を細かく」→「グレー 陰影 決められた明度」訂正、
@@ -148,7 +192,9 @@ video-visual-ingest v2.3 ワークフローで映像観測層を追加する。
   ユーザーの進行指示済み → **B1 残り(07/09/13/14)の量産開始条件を満たす**。
   レビュー手法(11時刻 PSNR 再抽出+10秒間隔全帯域スイープ+シーン変化検出)は
   「20秒間隔の隙間に落ちる 3 秒級スライド」を実検出した。以後のレビューでもスイープ併用を推奨。
-- 次の一手: **B1 群の独立レビュー verdict を受取る**。以後、ひづるめ B2(ch15 パイロット)へ。
+- 次の一手: **B1 群の修正確認(別セッション独立レビュアー)の PASS を受取る**(指示文は本ファイル
+  「修正確認指示文(コピペ用・ひづるめ B1 用・2026-08-25)」節。PASS 後の quality-gate 記録は確認セッションが行う)
+  → ひづるめ B2(ch15 パイロット)へ。
   他講座パイロット(hide ch06 / marse ch08 / sasa ch03 / ye_jji ch06)は並行着手可。
 - 講師別の並行セッション開始指示文は「セッション開始指示文(コピペ用・講師別)」節に追加済み(2026-08-25)。
 - 完了(visual_ingested 済み)16章: hide ch02〜05 / hizurume ch11・12 / marse ch04〜07 / sasa ch01・02 / ye_jji ch02〜05
