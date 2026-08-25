@@ -25,7 +25,7 @@
 - [[coloso-ye-jji-ch08-color-applied]] — 思考・補助・環境の 3 ライト + 4 シーン実習 + 巨匠 2 点分析 + c08 PDF (re-ingested 2026-05-17、映像観測 216 枚 2026-08-25)
 - [[coloso-ye-jji-ch09-density]] — 密度を下げる 3 段階(階調削減 + 空気遠近 + コントラスト低下) + カップ階調実習 (re-ingested 2026-05-17、映像観測 156 枚 2026-08-25)
 - [[coloso-ye-jji-ch10-blank]] — 余白を埋める 3 技(構成段階で考慮 / グラデーション / 点要素 3 つ以上を距離差で配置) (re-ingested 2026-05-17、映像観測 49 枚 2026-08-25)
-- [[coloso-ye-jji-ch11-mistake-note]] — Section 4 締めくくり: セルフチェックリスト → ✕ 抽出 → 修正実演の自己フィードバックループ + c11 チェックリスト JPG (re-ingested 2026-05-17)
+- [[coloso-ye-jji-ch11-mistake-note]] — Section 4 締めくくり: セルフチェックリスト → ✕ 抽出 → 修正実演の自己フィードバックループ + c11 チェックリスト JPG (re-ingested 2026-05-17、映像観測 145 枚 2026-08-26)
 - [[coloso-ye-jji-ch12-color-rough]] — Section 5 開始: カラーラフ 4 工程(参考収集 → 配色 → 明暗 → 全体バリュー)+ ビーチキャラ 22 分実演 (re-ingested 2026-05-17)
 - [[coloso-ye-jji-ch13-lineart]] — 線画は最小限(形の輪郭のみ、線は影のデフォルメ)、自然物 vs 人工物の描き分け (re-ingested 2026-05-17)
 - [[coloso-ye-jji-ch14-coloring-process]] — 色塗り 6 工程の公式工程表(c14 PDF 起点) + 主題→背景順序 + スポイト中心ワークフロー (re-ingested 2026-05-17)

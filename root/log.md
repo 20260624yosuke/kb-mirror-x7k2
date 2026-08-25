@@ -9889,3 +9889,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 観測の要点: 油彩画史スライド(写実主義 vs 印象派・画家5名+作品名キャプション)/ Google Arts & Culture の使い方(スライド内説明・ブラウザ実演なし)/ ソローヤ・クロイヤー・ヤン・ステーンの3画家スライド/ 試し描き実演(帆の質感→服の皺への応用)/「絵画をイラスト風に変換する」スライド(力場の青・混合率70:30/40:60・面積ではなく融合比)/ ブラシ作り実演4種(Gペン設定/油彩風混色/水彩風/情報ブラシ)・サブツール詳細の各カテゴリ実演・素材登録(zara)・輝度を透明度に変換・ショートカットキー設定。
 - 更新: `wiki/sources/coloso-hizurume-ch15-painting-to-illustration.md`, `wiki/assets/frames/coloso-hizurume-ch15-painting-to-illustration/`(manifest.json+snapshot.json+png226枚), `index.md`, `log.md`
 - 次の一手: 独立レビュー(パイロット ch15)の承認受取まで B2 の量産は停止(レビュー指示文は武田さんへ渡し済みの報告に同梱)。
+## [2026-08-26] ingest | coloso ye_jji ch11 間違いノートの作成(映像 ingest・ye_jji 群量産5章目・セッション復旧完了)
+
+- 依頼: ye_jji 群残り11章量産の2章目(前セッション ses_fc6e5b8c… が第2読者完了直後に停止したため、エクスポート json+opencode.db から全読取結果を回収して本セッションで再開)。
+- 対象: coloso-ye-jji-ch11-mistake-note(11_1.mov 1063.6秒+11_2.mov 748.8秒の2本分割・raw も2ページ)。
+- 前セッション実施済み: dry-run(SHA-256 d67d1edb…eb82/812c5a5f…08a5)→ snapshot → 抽出145枚(p1 82+p2 63)→ staging 退避 → 盲検読取12体145ブロック(P1-C のみ応答途切れ→DB復旧)→ 第2読者15枚。
+- 本セッションの復旧と完成作業: 読取結果をエクスポート/DBから全量保全 → 完成宣言前スイープ(奇数10秒位置90枚=p1 53+p2 37・機械生成リスト・7体)→ 不一致確定クロップ3件(t=166s/t=210s/02m51s原寸)→ フレーム145枚本保存(`ye-jji-ch11-pN-MMmSSs.png`)→ manifest(videos[]+extraction[]+observations[]145件+recheck17entries)→ source 節挿入(動画列付き6列表)→ gate complete PASS → visual_ingested 付与。
+- 発見と訂正: corrected 1件=チェックリスト「4.質感描写」行の△を第1読取が見落とし(02m40s時点では未記入→02:46クロップ・スイープ02m50s・02m51s原寸再読の3点で△出現を確定・表行修正)。marked-uncertain 1件=03m28s の緑○の行帰属(「透過光の描写」行 vs「5-1.過度に描写されていないか」行で読取が割れ、原寸クロップでも確定不能・要確認表記)。スイープ検出の02m30s頃イラスト上の緑矢印注記は抽出フレーム原寸再読で不在確認(短時間の一時的描画)。
+- 特記事項: タイトルバーのハングル文書名(오만복도/오만노트/우산노트 등)は読取ごとに揺れが極めて大きいため凡例で一括注記。手書きメモ窓は判読不能基本。14m44s(p1)で手書きメモ文書がアクティブ化(Navigator サムネイル切替)。p2 後半は Layer 5〜8 を順次追加しながら透過光・海・波の泡を仕上げる工程。
+- 更新: `wiki/sources/coloso-ye-jji-ch11-mistake-note.md`, `wiki/assets/frames/coloso-ye-jji-ch11-mistake-note/`(manifest.json+snapshot.json+png145枚), `index.md`, `log.md`

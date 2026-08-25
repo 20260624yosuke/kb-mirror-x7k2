@@ -8,6 +8,7 @@ ingested: 2026-05-13
 re_ingested: 2026-05-17
 tags: [coloso, illustration, self-review, checklist, retouch]
 parent: coloso-ye-jji-illustration-course
+visual_ingested: 2026-08-26
 ---
 
 # ye_jji_11. 間違いノートの作成
@@ -164,7 +165,6 @@ Section 4 の締めくくり。**ここまで学んだ全理論を 1 枚のセ�
 - 「カラーラフを横に置く」運用が ch10 / ch12 から本章まで一貫して登場 → 講師のコアプラクティス
 - このチェックリストを wiki の `wiki/analyses/` に再構成すると、今後の自己評価の道具になりそう(Nekojira のチェックリスト [[nekojira-feedback-checklist]] と統合運用できる可能性)
 - 公式チェックリスト JPG 自体に番号タイポがある事実は地味だが、wiki に正しい番号構造を残しておく価値がある
-
 ## 映像観測(フレーム由来)
 
 - 抽出日: 2026-08-25 / 元動画: [[11_1.mov]]・[[11_2.mov]](1章=2分割、SHA-256 は manifest 参照)
