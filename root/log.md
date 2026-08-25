@@ -9606,6 +9606,7 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 公開リスクの残存(選択A): git 履歴には311件が残る。SHA-pinned URL は無期限取得可能。完全消去は repo 削除→再作成のみ(未実施・了承済み)。
 - 更新: `~/Library/Application Support/ObsidianBridge/bridge_sync.py`, `wiki/builds/obsidian-bridge-chatgpt-mirror.md`, `log.md`
 - 次の問い: 公開ミラーの履歴消去(repo再作成)を実施するかどうか。
+- 決定(同日・武田さん承認): 履歴は現状維持。repo再作成は見送し(残存内容は公開予定素材の前段階が大半/PAT再許可と読み取り中断のコストを回避)。将来実施する場合は PAT 差し替えとセット。
 
 ## [2026-08-25] ingest | coloso hide ch06 頭身ごとのキャラクターの特徴と描き分け(映像 ingest・batch2 hide 群パイロット)
 
