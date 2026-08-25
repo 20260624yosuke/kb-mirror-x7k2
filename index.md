@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 2338 ファイル_
+_合計 2339 ファイル_
 
 ## root/ (11)
 
@@ -1487,8 +1487,9 @@ _合計 2338 ファイル_
 - [x-eagle-free-save-pilot.md](wiki/builds/x-eagle-free-save-pilot.md) | 2026-08-03T08:46:15Z
 - [x-eagle-idea-workbench.md](wiki/builds/x-eagle-idea-workbench.md) | 2026-06-25T09:50:10Z
 
-## wiki/builds/coloso-visual-ingest-batch2/review/ (1)
+## wiki/builds/coloso-visual-ingest-batch2/review/ (2)
 
+- [2026-08-25-hide-ch06-pilot-review-and-fix-confirm.md](wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hide-ch06-pilot-review-and-fix-confirm.md) | 2026-08-25T04:55:20Z
 - [2026-08-25-marse-ch08-pilot-review-and-fix-confirm.md](wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-marse-ch08-pilot-review-and-fix-confirm.md) | 2026-08-25T04:26:39Z
 
 ## wiki/concepts/ (404)
