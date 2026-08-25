@@ -335,6 +335,42 @@ sources:
 | gap_filling の「stem グループ毎に1つ」初版選抜 | body1_Dorm(2306v)と cloth_Fight(10934v)の両方を拾って二重表示する初版から、**全候補中で最詳細の1つのみ**へ変更。靴が二重に重なる事故を防止 | 初版ロジックに戻すと Dusevnyj で z-fighting FAIL（可視完全重複検出が引っかかる） |
 | canonical の hide 解除なし計測（M-A 修正前） | 非表示オブジェクトの world_bbox が世界座標として正しくなる。**blend を開いた見た目は一切変わらない**（記録値のみの修正） | 修正前へ戻すと将来「非表示派生の配置」を検査する際に誤判定する（監査 M-A のとおり） |
 
+### 肌色フォールバック・3点差し戻し対応（2026-08-25・v8.2・現行）
+
+> v8.1 の目視承認カードで武田さんが **3点を指摘して差し戻し**: ①「Dusevnyj の着せ替えを Blender 上でどう切り替えるのか分からない」②「サブリナがつま先を立ててるのが気になった。靴の有無を探して」③「このキャラの肌色が肌色じゃなかったので修正して」。
+
+**② Sabrina つま先立ち・靴の有無（原作データ実測で決着・変更なし）**:
+
+| 事実 | 実測 |
+|---|---|
+| 靴メッシュは原作に存在しない | Sabrina 族の shoe/boot/foot/sock/sandal/heel 系 Mesh = **0件**。足パーツは `body_lod0_Dorm/Fight` のみ |
+| `body_lod0_Dorm` は重複パーツ | body_lod0 の y<0.173 部分（2662頂点）と**頂点・UV 完全一致**（表示しても重なるだけ） |
+| つま先立ち＝原作 rest ポーズそのもの | body_lod0 の y<0.10 の頂点が前方（z+）に寄っている＝爪先が前に出た rest で焼かれている。ゲーム内はアニメ/IK で立たせている（アニメは本プロジェクト全体で deferred） |
+
+→ Sabrina は裸足デザイン・rest は原作データのまま（rest を立位へ改変するとスキンが壊れるリスク＋原作改変のため実施しない）。
+
+**③ 肌色フォールバック規約（v8.2・武田さん指示「修正して」への実装）**:
+
+| 種別 | 対象 | 方法 | 根拠（データ駆動） |
+|---|---|---|---|
+| `r4_uv_atlas_face` | `slg_body`（まつげオーバーレイ）・`boby`（眉） | **顔アトラスのテクスチャをそのまま流用** | 両メッシュの UV が face 使用領域（0.006..0.994）内にある実測。slg_body の UV 領域はアトラス上段＝まつげの暗色（RGB 22-39）で正しい |
+| `skin_color` | `P1_cloth3.sub0/sub1`（＝白かった手） | 顔アトラス肌領域（頬・額・首の3点）サンプル平均色 **RGB(239.8, 198.7, 180.8)**＝sRGB(0.9404, 0.7793, 0.709) の単色マテリアル | UV が全面の独立アトラスで原作にテクスチャが無いため。単色・陰影なし＝**approximation**（台帳記録済み・開示対象） |
+
+- 共通規約は `ce_common.skin_fallback_kind`（builder/verifier 同一実装・resolve_texture_stem 二重実装の前例どおり）。布（hip3）は対象外＝known_untextured 継続
+- **実測**: Dusevnyj の known_untextured が **5部位 → 1部位（hip3 のみ）**。レンダーで左手が肌色化・white_ratio 0.0 を確認
+- **self-test**: 新ケース「肌フォールバックslotを素に戻す」を追加。初版は捕捉先を visible_texture_coverage にして FAIL 化せず（単色肌は索引解決ではないため known_untextured に落ちる）→ **捕捉先を submesh_slots（期待ラベル不一致）へ修正**して FAIL 化確認。両体 24ケース PASS
+
+**① 着せ替え切替手順**: `blends/README.md` を新設（アウトライナで `parts_P1` のチェックを外し `parts_P2/P3` にチェック。common は髪・顔・武器の共通部品で触らない）。handoff 本節にも記載。
+
+**v8.2 実測**: 3体とも突合 PASS(20検査)/conditional・self-test 24系統 PASS(Dusevnyj/Sabrina)・決定性 PASS(Dusevnyj)・レンダーシート再生成(白面積率 0.0)。
+
+#### v8.2 で捨てた判断とその見え方
+
+| 捨てたもの | 手元でどう変わるか | 戻せるか |
+|---|---|---|
+| slg_body/boby/手を白（known_untextured）のままにする方式 | Dusevnyj の手・首元が肌色になる。**白のまま戻すと武田さん指摘が再発** | skin_fallback ブロックを外せば戻る。hip3（布）は意図的に白のまま |
+| つま先立ち rest の立位への改変 | **実施していない**。原作 rest のまま（ゲーム内ポーズはアニメ領域 deferred）。改変するとスキンウェイトが壊れるリスク | 該当なし（未実施） |
+
 ## 2. 承認履歴
 
 | 日付 | カード | 結果 |
@@ -354,13 +390,14 @@ sources:
 | 2026-08-25 | 目視承認カード(v6・2体) | **差し戻し**「成果物両方確認。足のあたりの造形が甘い。**何をもってキャラ全体とするかその基準がない=監査スクリプトの抜け**。別セッションでここから再開したい・引き継ぎ資料を作成して」 |
 | 2026-08-25 | 完全性基準 v7 案（C1〜C5） | **承認しない**「サブエージェントに採用計画をレビューさせて。計画作成者が**バイアスがかからない・成果物向上につながるレビュー指示**で送れ」 → 独立レビュー verdict 要修正（major 5件） |
 | 2026-08-25 | 完全性基準 v8 案（独立レビュー major 反映版） | **承認（実装へ）** |
-| ― | （v8 実装後の自律作業: 足問題解消→独立監査→M-A/M-B 対応。次は武田さんの目視承認） | |
+| 2026-08-25 | 目視承認カード(v8.1・2体) | **差し戻し（3点）**「①Dusevnyj の着せ替えを Blender 上でどう切り替えるのか分からない ②サブリナがつま先を立ててるのが気になった・靴の有無を探して ③このキャラの肌色が肌色じゃなかったので修正して」 → v8.2 で対応（②は原作データ実測で決着・変更なし） |
+| ― | （v8.2 対応完了。次は武田さんの目視承認・再提出） | |
 
-### 次セッションの再開点（2026-08-25 v8.1 から）
+### 次セッションの再開点（2026-08-25 v8.2 から）
 
-1. **2体の目視承認を取る（最優先・武田さんの手番）**: Dusevnyj/DusevnyjSSR0101・Sabrina/SabrinaSSR0101 とも機械突合20項目 PASS＋独立監査「条件付き提出可」。Blender で開いて確認を。**conditional 開示承認が提出条件**: Dusevnyj＝known_untextured 5部位(右手・胸元・cloth3/hip3・slg_body・boby)＋権威外slot 64＋P2/P3 切替時の白 20部位、Sabrina＝権威外slot 13（全slot が texmatch=推定一致）。レンダーシートは `reports/sheets/{Dusevnyj,Sabrina}-SSR0101/`
+1. **2体の目視承認を取る（最優先・武田さんの手番）**: Dusevnyj/DusevnyjSSR0101・Sabrina/SabrinaSSR0101 とも機械突合20項目 PASS。**conditional 開示承認が提出条件**: Dusevnyj＝known_untextured 1部位（hip3・腰布）＋権威外slot＋P2/P3 切替時の白 20部位＋**肌フォールバック2種の approximation 承認**（手＝単色肌色・slg_body/boby＝顔アトラス流用）、Sabrina＝権威外slot 13（全slot が texmatch=推定一致）。レンダーシートは `reports/sheets/{Dusevnyj,Sabrina}-SSR0101/`、切替手順は `blends/README.md`
 2. 承認後 → Step 3 バッチ計画（別承認・`25_gate_sync.py` で quality-gate 接続済み。batch phase には families[].user_accepted/batch_safe/approved_* の記入が必要）
-3. 残課題（非ブロッキング）: handoff D1 節の記述と現行 build log の規約名ずれ（監査 minor 1・次回更新時に正す）／AFS2/CRI 内 prefab の権威可視性・材質対応の将来的な解決
+3. 残課題（非ブロッキング）: AFS2/CRI 内 prefab の権威可視性・材質対応の将来的な解決／Sabrina つま先立ち rest は原作データのまま（アニメ領域 deferred・改変は武田さん判断を仰ぐ）
 
 ## 3. 実装メモ（スクリプト構成）
 
@@ -416,6 +453,7 @@ sources:
 - **2026-08-25（監査強化v4・アルファ/ゴミ修正＋独立監査新設）**: 2回目の差し戻し「ゴミオブジェクト・バリ・のっぺり・監査抜け・サブエージェント監査もやれ」→ 機械精査で E1（全材質アルファ未接続 = バリ状ゴミの正体）・E2（OverviewCam 残存 = ゴミオブジェクトの正体）・E3（既定 PBR ハイライト）・E4（監査の配線/型検査欠落）を特定 → アルファ CLIP カットアウト・カメラ廃止・マット化・新検査2項目＋self-test 16系統で修正。**独立サブエージェント監査**を運用新設 → 判定: Sabrina 提出可・Dusevnyj 条件付き（白い右手=P1_cloth3/hip3 は原作データにテクスチャ無し）。3体 v4 再構築→突合16項目 PASS→決定性 PASS。**目視承認は未取得**
 - **2026-08-25（v5・ハードカットアウト/ramp陰影）**: 3回目の差し戻し「指摘箇所が直っていない」→ 原因は v4 の CLIP 指定が Blender 4.5 EEVEE Next で無効（例外握り潰し）だったこと＋DITHERED ディザのビューポートざらつき＋ramp 陰影未実装 → Alpha を Math ノードで二値化するハードカットアウトに変更・原作 ramp テクスチャ実在材質（髪等）に v51 実績レシピで陰影配線。3体 v5 再構築→突合16項目 PASS→決定性 PASS。独立サブエージェント監査は API障害(503×3)で技術的停止（担当者監査で代行・Sabrina 欠陥ゼロ）。**目視承認は未取得**
 - **2026-08-25（v6・浮き骨スパイク非表示）**: 4回目の差し戻しで武田さんスクショを分析 → 「バリ」の正体=未解決親の骨が体の外に浮いてスパイク表示（v51 正本は親完全解決のため表示で正しかった・実物ダンプで確認）→ 未解決親>0 の間はアーマチュアを非表示保存する規約＋監査新検査 open_state_cleanliness＋self-test 17系統。3体 v6 再構築→突合17項目 PASS→決定性 PASS。**目視承認は未取得**
+- **2026-08-25（v8.2・肌色フォールバック＋3点差し戻し対応）**: v8.1 目視承認カードで武田さんが3点を指摘し差し戻し → ②Sabrina つま先立ち・靴は原作データ実測で決着（靴メッシュ 0件・body_lod0_Dorm は本体足部分と頂点UV完全一致の重複パーツ・つま先立ちは原作 rest ポーズ＝アニメ領域 deferred で変更なし）／③肌色は **肌フォールバック規約 v8.2** を新設（`ce_common.skin_fallback_kind` 共通規約: slg_body/boby＝顔アトラス流用 r4_uv_atlas_face・手 P1_cloth3＝顔アトラス肌領域サンプル色 RGB(239.8,198.7,180.8) の単色マテリアル approximation）→ Dusevnyj known_untextured 5→1部位（hip3 のみ）・レンダーで左手が肌色化・white_ratio 0.0。self-test は新ケース追加時に捕捉先を visible_texture_coverage→submesh_slots へ修正（単色肌は索引解決ではないため coverage では FAIL 化しない実測）→ 両体 24ケース PASS／①着せ替え切替手順は `blends/README.md` 新設。3体 PASS(20 checks)/conditional・決定性 PASS。**次は武田さんの2体目視承認（肌フォールバック approximation 承認込み）**
 - **2026-08-25（v8.1・足パーツ解消＋独立監査再実施）**: v8 が機械捕捉した Dusevnyj blocked（地面浮上＝足欠落）を原作データ調査で解決 — 足・靴は派生タグ付きメッシュ（`cloth_lod0_Fight` 10934v 等）に存在し上位パートと幾何連続（Helen/Sabrina の _Dorm も同構造の3キャラ共通設計・SMR は AFS2/CRI 内のため権威可視性無し）。`plan_visibility` へ **gap_filling_subpart 規約**新設（地面浮上欠けを幾何連続的に埋める派生メッシュを最詳細1つだけ既定表示・Sabrina は本体足込みのため不適用）→ ground_gap 0.112→0.015 解消・スニーカー表示をレンダーで確認。独立サブエージェント監査（API 回復後）再実施 → **両体「条件付き提出可」**（白残り=台帳通り・台帳に無い白は皆無）。監査 major 2件対応: M-A（非表示分の world_bbox が hide で depsgraph 評価外の生値 → hide 解除+update で計測。解除中に記録すると hide が全員 False になる副作用を3体全 FAIL の実測で検出し元値記録方式で解決）・M-B（submission へ P2/P3 切替時の白部位 `untextured_when_switched` 追加）。3体 PASS(20 checks)/conditional・self-test 23系統 PASS(2体)・決定性 PASS(2体)・レンダーシート再生成(白面積率0.0)。**次は武田さんの2体目視承認（conditional 開示承認込み）→ Step 3 バッチ計画**
 - **2026-08-25（v8・完全性基準の実装＋計画審査への独立レビュー適用）**: v6 差し戻し「完全性基準が無い=監査抜け」に対し v7 案（C1〜C5）を承認カード提示 → 武田さんが「メインエージェントはバイアス無きよう成果物向上につながる指示でサブエージェントにレビューさせよ」と承認せず → 独立レビュー実施、verdict **要修正**（M1: Dusevnyj 足ジオメトリ不在の反例で v7 が ALL PASS／M2: census 突合無しでは D1 クラス検出不可／M3: manifest AABB の空間不一致／M4: 再オープン検査と提出条件の漏れ／M5: known_untextured 証明の走査境界）。major 全反映の v8 を承認いただき実装: canonical へ world_bbox 追加・新検査3本（census_completeness／geometry_world_coverage〔地面接触基準含む〕／variant_detail_divergence）＋submission 判定＋self-test 21系統＋`25_gate_sync.py`（quality-gate 接続）。実測: Sabrina/Helen 全20検査 PASS(conditional)・**Dusevnyj は blocked（下端0.112m浮上＝足問題を初めて機械捕捉）**・決定性 PASS。目視承認は未取得（次は足問題のスクショ照合→2体再提出）
 - **2026-08-25（v6 確認・次セッションへ引き継ぎ）**: 武田さんが v6 両方を確認（骨スパイク消滅は確認）。ただし承認未取得で 2 指摘: ①**足のあたりの造形が甘い** ②**「何をもってキャラ全体とするか」の完全性基準が無い=監査抜け**。別セッションで再開するため本ページ「次セッションの再開点」に作業を記録済み

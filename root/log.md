@@ -9772,3 +9772,13 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完了: フレーム38枚を `marse-ch11-MMmSSs.png` で本保存(.png 付き)→ manifest(status complete・recheck 6枚 confirmed5+corrected1)→ source 節を byte 保持で挿入 → gate complete PASS → visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認。
 - 更新: `wiki/sources/coloso-marse-ch11-rough.md`, `wiki/assets/frames/coloso-marse-ch11-rough/`(manifest.json+snapshot.json+snapshot-pre.json+png38枚), `index.md`, `log.md`
 - 次の一手: ch12(12_01+12_02 の2本・905+1199秒)へ続く。marse 群 残り10章(全13章中3章完了)。
+## [2026-08-25] ingest | gf2-char-extract v8.2 肌色フォールバック＋3点差し戻し対応
+
+- 武田さん3点差し戻し(①着せ替え切替方法 ②Sabrina つま先立ち・靴 ③Dusevnyj 肌色)への対応。
+- ②原作データ実測で決着: 靴メッシュ 0件・body_lod0_Dorm は本体足部分と頂点UV完全一致の重複パーツ・つま先立ちは原作 rest ポーズ(アニメ領域 deferred)→変更なし。
+- ③肌フォールバック規約 v8.2 新設(ce_common.skin_fallback_kind 共通): slg_body/boby=顔アトラス流用(r4_uv_atlas_face)・手 P1_cloth3=顔アトラス肌領域サンプル色 RGB(239.8,198.7,180.8) 単色(approximation)→ Dusevnyj known_untextured 5→1(hip3 のみ)・レンダーで左手肌色化・white_ratio 0.0。
+- self-test: 新ケース追加時に捕捉先を visible_texture_coverage→submesh_slots へ修正(単色肌は索引解決ではないため coverage では FAIL 化しない実測)→両体 24ケース PASS。
+- ①着せ替え切替手順: blends/README.md 新設。
+- 実測: 3体 PASS(20 checks)/conditional・決定性 PASS(Dusevnyj)。
+- 更新: `wiki/builds/gf2-char-extract-handoff.md`(v8.2節・承認履歴・再開点・変更履歴), `gf2-char-extract/run-state.json`, scripts/{ce_common,ce_build_blend,20_diff_char_blend}.py, blends/README.md(新規), blends 3体(再構築), ledger/diff-*.json 3体
+- 次の一手: 武田さんの2体目視承認(肌フォールバック approximation 承認込み)→Step3 バッチ計画
