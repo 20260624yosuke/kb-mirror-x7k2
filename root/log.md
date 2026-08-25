@@ -9605,3 +9605,13 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 公開リスクの残存(選択A): git 履歴には311件が残る。SHA-pinned URL は無期限取得可能。完全消去は repo 削除→再作成のみ(未実施・了承済み)。
 - 更新: `~/Library/Application Support/ObsidianBridge/bridge_sync.py`, `wiki/builds/obsidian-bridge-chatgpt-mirror.md`, `log.md`
 - 次の問い: 公開ミラーの履歴消去(repo再作成)を実施するかどうか。
+
+## [2026-08-25] ingest | coloso hide ch06 頭身ごとのキャラクターの特徴と描き分け(映像 ingest・batch2 hide 群パイロット)
+
+- 依頼: batch2 の hide 群パイロット。coloso-hide-ch06-toushin-character(06.mp4 単一・921.2秒・SHA-256 6b70194e…f28f・418,477,010バイト)。
+- 手順: dry-run → snapshot(抽出前)→ temp 抽出47枚(20秒間隔)→ KB 側 staging(`tools/ingest-parallel/tasks/coloso-hide-ch06-toushin-character/staging/`)へ退避(落とし穴#16)→ 盲検読取サブエージェント4体(13/13/13/8枚、47ブロック回収=抽出数一致)→ 第2読者5枚(max(3,10%)=5)。
+- 発見と訂正: 不一致2件を原寸クロップ再読で訂正(corrected)— 07m20s レイヤーフォルダ Folder 3→4、11m40s Folder 6→7。15m00s は第2読者の「ジャーバン」読みを原寸クロップで却下し シャーペン を確定(confirmed)。アプリ UI の透かし文字列は読みが揺れるため全行「判読不能」扱いに統一。途中で PC 再起動があったが staging 退避済みでフレーム零損失(再開後 raw・動画・source の SHA-256 を機械再確認)。
+- 完成宣言前の自己点検(hide 群パイロットで確立する手順): 動画全帯域を10秒間隔でスイープ(46点)+各点と隣接20秒グリッドの PSNR 機械照合(min<28dB を27点検出)+ffmpeg シーン変化検出(1m52s/12m13s)。両隣と一致しない画面型スイッチ候補を盲検読取し、**未観測画面4件**(00:10 節タイトルカード「人物画の基礎知識その③/頭身ごとのキャラクターの特徴と描き分け」/01:10「理想の体型」ラベル付き図解/01:30 男女2体比較図解/13:10 ヒロイン例のシルエット表示状態)を発見 → ffmpeg 直接抽出+盲検読取で ev-048〜ev-051 追加(抽出47→保存51)。ひづるめ ch06 で実害確認済みだった 20 秒間隔取りこぼし対策を、文字起こしが当てにならない画面でも機能する形(動画だけから観測を起こす手順)として確立。
+- 完了: フレーム51枚を `hide-ch06-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致)→ manifest(status complete・completed 2026-08-25)→ source 節を byte 保持で挿入 → gate complete PASS 確認後に visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認。raw ページ・動画は snapshot 取得時から非変更(SHA-256 機械確認済み)。
+- 更新: `wiki/sources/coloso-hide-ch06-toushin-character.md`, `wiki/assets/frames/coloso-hide-ch06-toushin-character/`(manifest.json+snapshot.json+snapshot-pre.json+png51枚), `index.md`, `log.md`
+- 次の一手: ch06 のレビュー指示文を武田さんへ渡す。承認 verdict 受取まで hide 群残り22章(ch07〜27 のうち動画あり22章)に進まない(停止条件)。
