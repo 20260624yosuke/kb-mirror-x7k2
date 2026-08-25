@@ -9615,3 +9615,13 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完了: フレーム51枚を `hide-ch06-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致)→ manifest(status complete・completed 2026-08-25)→ source 節を byte 保持で挿入 → gate complete PASS 確認後に visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認。raw ページ・動画は snapshot 取得時から非変更(SHA-256 機械確認済み)。
 - 更新: `wiki/sources/coloso-hide-ch06-toushin-character.md`, `wiki/assets/frames/coloso-hide-ch06-toushin-character/`(manifest.json+snapshot.json+snapshot-pre.json+png51枚), `index.md`, `log.md`
 - 次の一手: ch06 のレビュー指示文を武田さんへ渡す。承認 verdict 受取まで hide 群残り22章(ch07〜27 のうち動画あり22章)に進まない(停止条件)。
+## [2026-08-25] query | Futa2.blend の萎え情報調査（レイヤーではなくシェイプキーに実在）
+
+- 触ったページ: [[gf2-helen-futa-addition-handoff]](§7に変更履歴追記)
+- プロジェクト側産物: `07_futa-helen/reports/FLACCID-INVESTIGATION-2026-08-25.md`・
+  `reports/previews/flaccid-investigation/`(レンダ6枚)・調査スクリプト3本
+- 要旨: 萎え情報はレイヤー/コレクションではなくキャラ体メッシュのシェイプキー380個中
+  男性器関連89種として実在(Scrotum_Flacid/Shaft Shorten/包皮系等)。現保存状態は
+  D__BarbosaXXX=1.0 の勃起。抽出済みクラスタはSK=0で萎え不可・再抽出が必要。
+  メモリ上レシピ実験で短縮・膨張低下は確認、角度は形状焼き付きで別途リグ工作が必要。
+  方針「萎え系は別セッション分離」どおり棚卸し止まり。
