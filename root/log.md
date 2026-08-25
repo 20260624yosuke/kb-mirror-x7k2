@@ -9782,3 +9782,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 実測: 3体 PASS(20 checks)/conditional・決定性 PASS(Dusevnyj)。
 - 更新: `wiki/builds/gf2-char-extract-handoff.md`(v8.2節・承認履歴・再開点・変更履歴), `gf2-char-extract/run-state.json`, scripts/{ce_common,ce_build_blend,20_diff_char_blend}.py, blends/README.md(新規), blends 3体(再構築), ledger/diff-*.json 3体
 - 次の一手: 武田さんの2体目視承認(肌フォールバック approximation 承認込み)→Step3 バッチ計画
+## [2026-08-25] ingest | gf2-char-extract v8.2 目視結果記録＋プロジェクト区切り(セッション引き継ぎ)
+
+- v8.2 目視承認カードの結果: **承認は未取得**。武田さん判断「サブリナはとりあえず現時点ではいいや。Dusevnyj は肌の色が変だから修正して。いずれも原作再現ではない。でも現時点でこのプロジェクトではここまででいいや」→ プロジェクトは現時点で区切り。
+- Sabrina: 容認(承認カード上の承認は未選択)。Dusevnyj: 肌色修正指示が残存(v8.2 単色肌フォールバックは陰影・質感なしの限界)。
+- 次セッションの最優先: Dusevnyj 肌色修正(候補: 顔アトラス肌領域パッチへの UV 再マップ/P1_body_d 肌色領域利用/ramp・SSS 相当の解明)→ Dusevnyj+Sabrina の正式目視承認(conditional 開示込み)→ Step3 バッチ計画。
+- 更新: `wiki/builds/gf2-char-extract-handoff.md`(承認履歴 v8.2 行・再開点更新), `gf2-char-extract/run-state.json`
+- 正本の所在: [[gf2-char-extract-handoff]] / 成果物: `gf2-char-extract/blends/{Dusevnyj,Sabrina}-*-repro.blend` + `blends/README.md`(切替手順)
