@@ -782,6 +782,40 @@ sources:
     - **次の一手**: ①D案（Y→Z曲げ付け替え）をパイプラインに組み込む候補を作り
       複数フレーム・両手で原作比較→blend反映は別承認 ②S6〜S9 監査門実装
       ③スペキュラ実装（V=0.625帯） ④D2はS8門（髪被覆比較）へ統合して検証。
+
+75. **D1指の鉤爪を修正し本blendへ反映（`f145`〜`f152`系・2026-08-25夕〜夜・
+    武田さん承認「本blendへ反映する（推奨）」）**:
+    - **f145の不具合を発見・解決**: fcurve 生キーからの変換は、評価後 pose と
+      quaternion の符号がずれるため、右手の見た目が f144（pose直接版）と不一致になった。
+      `f151` で「frame_set → fcurve 評価後の pose を読む → 変換 → keyframe_insert +
+      前キーと dot<0 なら -q で符号連続化」の pose ベース方式に変更して解消。
+    - **案H（fingeraxis-H）を本blendへ反映**: blend SHA
+      **`41b54b818aafb41e` → `04ef8b79b3fa5b64`**。
+      控え `blends/_pre-f152-fingeraxis/helen-h0157-repro__41b54b818aafb41e.blend`。
+      変換仕様: 指2/3（Finger2/Finger3・Toe除く20骨・6,000キー）の pose quaternion の
+      軸を (0,0,±1) へ付け替え。右手は D案どおり・左手は鏡像補正（符号反転）。
+      clip 生値が (180,y,180) 形のキー（Index3_L 等・216キー）は軸符号を反転して正規化
+      （Index だけ真っ直ぐになる問題の対処）。
+    - **指軸決定の正本** `ledger/finger-axis-decision.json` を作成。clip からの
+      **意図的な逸脱**であること・証拠連鎖・変換仕様・戻し方を明記。
+    - **f128 改修（S3b に指軸変換を組み込み）**:
+      ①純データLBS側にも指2/3の軸付け替え変換を適用（attr=4 の (180,y,180) 正規化 +
+      attr=2/4 両方の軸付け替え。ThumbFinger2/3 は quaternion binding のため attr=2 側が必須だった）
+      ②指骨ウェイト頂点の偏差は「意図的逸脱」として `max_intentional_finger_dev_mm` に
+      分離報告し、core 偏差（≤1mm）で合否。退行（抽出ミス混入）は core 側と T7 で検知。
+      自己試験7件合格（T6 現行blend≤1mm・T7 擾乱171mm検知）。
+    - **本番 f128 pass=true**: S1/S2/S2b PASS・S3 unexplained 空・S3b
+      P1_hand core **0.0358mm**（指の意図的逸脱 30.73mm は毎回報告）・S4 警告なし。
+    - **f46 合格**: f42 確認画像10枚を新 blend から撮り直し → f45 比較JSON
+      （肌÷髪 現行4.57 vs 原作3.52・参考値）→ f46 record + check=合格。
+    - **提出シート再生成**: `reports/submission-sheet-2026-08-25.png`
+      （原作 h0157_32 と並列・指の鉤爪解消を確認）。
+    - **残る差（誠実な列挙）**: 左手の指2本がやや伸び気味（原作 h32L の完全な拳との微差）/
+      環境（ベッド・部屋）なし＝scene root blocked / post グレード未適用（式は確保・ドメイン特定待ち）。
+    - **次の一手**: ①S6〜S9 監査門実装（顔/指/髪被覆/スペキュラの見た目比較門）
+      ②スペキュラ実装（V=0.625帯・係数較準） ③左手の微差の原因追及は指1 rest 差
+      （prefab 3.8〜18.4° vs bind 11.9〜13.8°）の可能性・数値比較は bindpose の
+      mesh_world が未確定のため保留中。
 ---
 
 ---
