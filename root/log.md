@@ -9752,3 +9752,13 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json` の hizurume-b1-theory family に承認記録を記入(代表入出力・比較証拠・user 承認・承認根拠=ch06 条件付き承認+進行指示)。batch フェーズは他 family(b2/b3/b4/sasa ほか)未承認のため全体としては仍て FAIL = 正常な現状表示。
 - `wiki/builds/coloso-visual-ingest-batch2-handoff.md` の現在地を B1 量産完了後に更新。
 - 次の一手: B1 群の独立レビュー指示文を武田さんへ提出(本文は報告に同梱)→ verdict 受取後、ひづるめ B2(ch15 パイロット)へ。
+
+## [2026-08-25] ingest | coloso-intake イクシー_2 全23本完了(検収承認・gate batch/complete PASS)
+
+- 検収: 武田さん「問題なさそうだね。タスクを進めていいです。」→ quality-gate families[ixy-2-pilot] に受入記録(approved_by: user / batch_safe: true / 承認根拠を approval_evidence に保存)。
+- 本処理: 残り21本(02〜22)を1本ずつ文字起こし、失敗0。全23本が5種生成物+逐語節つきで完成。
+- 最終監査: tools/coloso_intake_audit.py A0-A6 全講座 PASS → `wiki/builds/coloso-intake/reports/2026-08-25-ixy-2-final-audit.txt` に保存。
+- ゲート: `--phase batch` PASS / `--phase complete` PASS(verifier.method=independent-tool・comparison_evidence=`reports/2026-08-25-ixy-2-representative-comparison.md`)。
+- 並列展開: 残り6講座用の別セッション手順書 `wiki/builds/coloso-intake/parallel-session-brief.md`(講師名凍結→dry-run承認→intake→代表1〜2本検収→残り全本の各講座フローとコピペ文)を新規作成。
+- 更新: `raw/_coloso/2025_09_27_ixy_2/`(21ページ追記), `wiki/builds/coloso-intake/quality-gate.json`, `reports/`2件, `parallel-session-brief.md`(新規), `index.md`, `log.md`
+- 次の一手: 武田さんが各講座のコピペ文を別セッションへ投入。完了セッションは brief の共通手順7で gate batch を自分の family 分だけ通す。
