@@ -9625,3 +9625,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   D__BarbosaXXX=1.0 の勃起。抽出済みクラスタはSK=0で萎え不可・再抽出が必要。
   メモリ上レシピ実験で短縮・膨張低下は確認、角度は形状焼き付きで別途リグ工作が必要。
   方針「萎え系は別セッション分離」どおり棚卸し止まり。
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 ひづるめ B1 ch09 光と影と色(映像観測89枚・分割2本)
+
+- 依頼: B1 残り量産の2章目。coloso-hizurume-ch09-light-shadow-color(09_01.mp4 935.0秒+09_02.mp4 409.8秒・通し観測)。
+- 手順: dry-run(SHA-256 f3971c91…8d80/98c5ec5f…041c)→ snapshot(videos[] で2本記録)→ パートごとに temp 抽出(p1: 20秒間隔47枚+文字起こし誘導10時刻=57枚、p2: 21枚+11時刻=32枚)→ staging 退避(raw・両動画 SHA-256 一致を機械確認)→ 盲検読取サブエージェント8体(89ブロック回収=抽出数と一致、パート落ちなし)→ 第2読者9枚。
+- 発見と訂正: corrected 2件(p2 01m40s フォルダー名「光と影と色」・p2 04m20s「曇った」)+付随確定1件(フォルダー299直下のレイヤー名「赤緑青とレイヤーがあると思いま…」=第2読者の「明暗差レイヤーがあると良い説」は折りたたみ中の誤読)+初観測間の表記揺れ1件(p1「なるべく」)を原寸クロップで確定。confirmed 6件。manifest recheck に記録。
+- 完了: フレーム89枚を `hizurume-ch09-{01,02}-MMmSSs.png` で本保存(.png 付き)→ manifest(videos[]+動画ごと extraction[])→ source 節を動画列付き 6 列表で byte 保持挿入 → index.md 更新。
+- 更新: `wiki/sources/coloso-hizurume-ch09-light-shadow-color.md`, `wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/`(manifest.json+snapshot.json+png89枚), `index.md`, `log.md`
+- 次の一手: 10秒間隔全帯域スイープ(p1 47枚+p2 21枚)→ 補完があれば追加 → gate complete PASS → visual_ingested 付与。
