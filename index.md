@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 2360 ファイル_
+_合計 2361 ファイル_
 
 ## root/ (11)
 
@@ -869,15 +869,16 @@ _合計 2360 ファイル_
 - [marse-ch09-06m16s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-06m16s.png) | 2026-08-25T05:03:16Z
 - [marse-ch09-07m40s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-07m40s.png) | 2026-08-25T05:03:16Z
 
-## wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/ (7)
+## wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/ (8)
 
 - [marse-ch10-00m00s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-00m00s.png) | 2026-08-25T06:35:42Z
 - [marse-ch10-00m20s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-00m20s.png) | 2026-08-25T06:35:42Z
 - [marse-ch10-00m46s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-00m46s.png) | 2026-08-25T06:35:42Z
 - [marse-ch10-01m54s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-01m54s.png) | 2026-08-25T06:35:42Z
-- [marse-ch10-03m00s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-03m00s.png) | 2026-08-25T06:35:42Z
+- [marse-ch10-03m06s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-03m06s.png) | 2026-08-25T06:41:41Z
 - [marse-ch10-04m23s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-04m23s.png) | 2026-08-25T06:35:42Z
 - [marse-ch10-05m17s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-05m17s.png) | 2026-08-25T06:35:42Z
+- [marse-ch10-06m32s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-06m32s.png) | 2026-08-25T06:41:41Z
 
 ## wiki/assets/frames/coloso-sasa-ch01-intro/ (10)
 
@@ -2231,7 +2232,7 @@ _合計 2360 ファイル_
 - [coloso-marse-ch07-fetish-lower-full-body.md](wiki/sources/coloso-marse-ch07-fetish-lower-full-body.md) | 2026-08-24T08:39:27Z
 - [coloso-marse-ch08-focus-first-composition.md](wiki/sources/coloso-marse-ch08-focus-first-composition.md) | 2026-08-25T03:10:38Z
 - [coloso-marse-ch09-feminine-pose.md](wiki/sources/coloso-marse-ch09-feminine-pose.md) | 2026-08-25T05:18:50Z
-- [coloso-marse-ch10-arms-gaze-guide.md](wiki/sources/coloso-marse-ch10-arms-gaze-guide.md) | 2026-06-01T03:39:48Z
+- [coloso-marse-ch10-arms-gaze-guide.md](wiki/sources/coloso-marse-ch10-arms-gaze-guide.md) | 2026-08-25T06:46:05Z
 - [coloso-marse-ch11-rough.md](wiki/sources/coloso-marse-ch11-rough.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch12-underdrawing-perspective.md](wiki/sources/coloso-marse-ch12-underdrawing-perspective.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch13-lineart.md](wiki/sources/coloso-marse-ch13-lineart.md) | 2026-06-01T03:39:48Z
