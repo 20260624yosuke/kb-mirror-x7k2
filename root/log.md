@@ -9852,3 +9852,13 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完成宣言前の自己点検: 全パートの奇数10秒位置121枚(p1 53/p2 68)を機械生成リストでスイープ読取。**注目候補は全て既存観測表の該当行でカバー(追加抽出0件)**。provider エラー3回(スイープ初回バッチ)は間隔置き+小分割で回収。
 - 完了: フレーム156枚を `ye-jji-ch09-pN-MMmSSs.png` で本保存(.png 付き・孤児ゼロ)→ manifest(videos[]+extraction[]+recheck 16 entries)→ source 節を動画列付き 6 列表で byte 保持挿入 → gate complete PASS → visual_ingested 付与 → --retrofit 再記録 → 最終 gate PASS。raw・動画非変更(SHA-256 機械確認)。
 - 更新: `wiki/sources/coloso-ye-jji-ch09-density.md`, `wiki/assets/frames/coloso-ye-jji-ch09-density/`(manifest.json+snapshot.json+snapshot-pre.json+png156枚), `index.md`, `log.md`
+
+## [2026-08-25] ingest | coloso-intake 2024_04_22_ixy intake82本+代表文字起こし・検収承認(バッチは12/82で中断保存)
+
+- /hold で起動。講師名正綴をカードで「ixy」に凍結(M5)・ソートキー name を承認し dry-run対応表を確定(wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md)。
+- intake: 82ページ+82symlink+mapping.json 生成。監査 A0-A6 不合格0(reports/2026-08-25-ixy-2024-audit.md)。
+- 検収: Obsidian symlink 実再生「再生できた」(N1実証)+逐語目視+監査PASS でカード承認。代表逐語=NN80(/21/21_編集.mov)。
+- nospeech 判定 4本(01/04/10/12.MP4)=Whisper発話ゼロ検出。ページ追記なし=未完扱い(R7)。晃田ヒカセッションの知見(mp4無音+m4a構造)と整合。
+- バッチ文字起こしは GPU並列競合(ne-on/雨傘ゆん/晃田ヒカセッション同時実行)で所要約18h超過見込み→武田さん判断で 12/82(ok8+nospeech4) にて中断。runner+state を reports/ に同梱し再開可能(wiki/builds/coloso-intake/reports/ixy-2024-batch-runner.py + 2026-08-25-ixy-2024-batch-state.jsonl)。
+- quality-gate.json の ixy-2024 ブロックのみ targeted edit(user_accepted=true, batch_safe=false, 受入証拠・known_gaps 記録)。--phase batch PASS。受入証拠の正本=reports/2026-08-25-ixy-2024-representative-comparison.md。
+
