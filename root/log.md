@@ -9635,3 +9635,4 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完了: フレーム89枚を `hizurume-ch09-{01,02}-MMmSSs.png` で本保存(.png 付き)→ manifest(videos[]+動画ごと extraction[])→ source 節を動画列付き 6 列表で byte 保持挿入 → index.md 更新。
 - 更新: `wiki/sources/coloso-hizurume-ch09-light-shadow-color.md`, `wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/`(manifest.json+snapshot.json+png89枚), `index.md`, `log.md`
 - 次の一手: 10秒間隔全帯域スイープ(p1 47枚+p2 21枚)→ 補完があれば追加 → gate complete PASS → visual_ingested 付与。
+- 追記(ch09): 10秒間隔全帯域スイープ(p1 94枚+p2 41枚)で未観測画面1件(p2 04:50 フィルターギャラリーの色ずれダイアログ[放射状/平行・強さ40])を発見 → ev-090 を追加(89→90枚)。p1 は補完なし。manifest・source 節・index を更新。

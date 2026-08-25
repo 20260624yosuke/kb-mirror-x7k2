@@ -113,7 +113,7 @@
 - [[coloso-hizurume-ch06-drawing-types]] — 塗りの種類比較 + 力場起点の描き方 (ingested 2026-06-01, 映像観測 19 枚 2026-08-25)
 - [[coloso-hizurume-ch07-composition]] — 構図は 1→2 / 浮く構図 / アイレベル法(ye_jji と射程差) (ingested 2026-06-01, 映像観測41枚 2026-08-25)
 - [[coloso-hizurume-ch08-anatomy-basics]] — 人体は暗記 / 質→量→質 / 描きながら学ぶ (ingested 2026-06-01)
-- [[coloso-hizurume-ch09-light-shadow-color]] — バリュー値 25 / 反射 / SSS / 散乱 / 色収差(理論最濃) (ingested 2026-06-01, 映像観測89枚 2026-08-25・分割動画09_01+09_02)
+- [[coloso-hizurume-ch09-light-shadow-color]] — バリュー値 25 / 反射 / SSS / 散乱 / 色収差(理論最濃) (ingested 2026-06-01, 映像観測90枚 2026-08-25・分割動画09_01+09_02)
 - [[coloso-hizurume-ch10-efficient-practice]] — 写真模写 6 効果 + 4 ルール / 黒の弊害 (ingested 2026-06-01)
 - [[coloso-hizurume-ch11-force-field]] — 絵の力場(焦点コントロール)= 視線誘導の前提 / 光側・影側優先 (ingested 2026-06-01, 映像観測29枚 2026-06-11)
 - [[coloso-hizurume-ch12-gaze-guidance]] — 視線誘導 = メイン + サブ(造語)、9 手法、明暗比較連鎖 / 補色強調 / 調和対比 (ingested 2026-06-01, 映像観測47枚 2026-08-23・分割動画12_01+12_02)

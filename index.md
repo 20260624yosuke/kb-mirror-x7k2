@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1957 ファイル_
+_合計 1958 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 1957 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T03:32:23Z
-- [log.md](root/log.md) | 2026-08-25T03:42:45Z
+- [index.md](root/index.md) | 2026-08-25T03:51:02Z
+- [log.md](root/log.md) | 2026-08-25T03:51:02Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -492,7 +492,7 @@ _合計 1957 ファイル_
 - [hizurume-ch07-08m30s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-08m30s.png) | 2026-08-25T02:25:41Z
 - [hizurume-ch07-08m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-08m40s.png) | 2026-08-25T01:37:11Z
 
-## wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/ (89)
+## wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/ (90)
 
 - [hizurume-ch09-01-00m00s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-01-00m00s.png) | 2026-08-25T02:43:02Z
 - [hizurume-ch09-01-00m20s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-01-00m20s.png) | 2026-08-25T02:43:02Z
@@ -575,6 +575,7 @@ _合計 1957 ファイル_
 - [hizurume-ch09-02-04m00s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-04m00s.png) | 2026-08-25T02:43:02Z
 - [hizurume-ch09-02-04m20s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-04m20s.png) | 2026-08-25T02:43:02Z
 - [hizurume-ch09-02-04m40s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-04m40s.png) | 2026-08-25T02:43:02Z
+- [hizurume-ch09-02-04m50s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-04m50s.png) | 2026-08-25T03:47:12Z
 - [hizurume-ch09-02-05m00s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-05m00s.png) | 2026-08-25T02:43:02Z
 - [hizurume-ch09-02-05m11s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-05m11s.png) | 2026-08-25T02:43:02Z
 - [hizurume-ch09-02-05m20s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-05m20s.png) | 2026-08-25T02:43:02Z
@@ -1784,7 +1785,7 @@ _合計 1957 ファイル_
 - [coloso-hizurume-ch06-drawing-types.md](wiki/sources/coloso-hizurume-ch06-drawing-types.md) | 2026-08-24T17:17:30Z
 - [coloso-hizurume-ch07-composition.md](wiki/sources/coloso-hizurume-ch07-composition.md) | 2026-08-25T02:40:39Z
 - [coloso-hizurume-ch08-anatomy-basics.md](wiki/sources/coloso-hizurume-ch08-anatomy-basics.md) | 2026-05-31T15:40:35Z
-- [coloso-hizurume-ch09-light-shadow-color.md](wiki/sources/coloso-hizurume-ch09-light-shadow-color.md) | 2026-08-25T03:32:08Z
+- [coloso-hizurume-ch09-light-shadow-color.md](wiki/sources/coloso-hizurume-ch09-light-shadow-color.md) | 2026-08-25T03:51:19Z
 - [coloso-hizurume-ch10-efficient-practice.md](wiki/sources/coloso-hizurume-ch10-efficient-practice.md) | 2026-05-31T15:44:53Z
 - [coloso-hizurume-ch11-force-field.md](wiki/sources/coloso-hizurume-ch11-force-field.md) | 2026-08-22T13:55:29Z
 - [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-08-24T14:51:14Z
