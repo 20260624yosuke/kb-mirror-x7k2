@@ -10,6 +10,7 @@ status: active
 confidence: high
 evidence_level: source-backed
 last_reviewed: 2026-06-01
+visual_ingested: 2026-08-25
 ---
 
 # coloso hide ch06 ― 頭身ごとのキャラクターの特徴と描き分け
