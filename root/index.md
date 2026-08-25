@@ -150,7 +150,7 @@
 - [[coloso-hide-ch10-solid-drawing-practice]] — 箱・円柱の立体練習(metadata-only) (ingested 2026-06-01)
 - [[coloso-hide-ch11-3d-figure-tips]] — 人物を立体的に描く 4 ポイント(ターニングエッジ / ラッピングライン / 短縮法 / オーバーラップ) (ingested 2026-06-01, 映像観測 79 枚 2026-08-25)
 - [[coloso-hide-ch12-three-mass-blocking]] — 頭・胸郭・骨盤の 3 大質量ブロック (ingested 2026-06-01, 映像観測 88 枚 2026-08-25)
-- [[coloso-hide-ch13-limb-blocking]] — 四肢を軸・板・円柱で構築する (ingested 2026-06-01)
+- [[coloso-hide-ch13-limb-blocking]] — 四肢を軸・板・円柱で構築する (ingested 2026-06-01, 映像観測 74 枚 2026-08-25)
 - [[coloso-hide-ch14-figure-perspective]] — 人物と複数人物を同一パースへ配置する (ingested 2026-06-01)
 - [[coloso-hide-ch15-head-structure-simplification]] — 頭部の構造と単純化(脳頭蓋 + 顔面頭蓋 / 顔ランドマーク / 解剖学は道具) (pilot 2026-06-01)
 - [[coloso-hide-ch16-neck-structure]] — 首まわりの構造と単純化(僧帽筋 / 鎖骨 / 胸鎖乳突筋) (ingested 2026-06-01)

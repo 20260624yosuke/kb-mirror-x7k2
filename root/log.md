@@ -9898,3 +9898,9 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 発見と訂正: corrected 1件=チェックリスト「4.質感描写」行の△を第1読取が見落とし(02m40s時点では未記入→02:46クロップ・スイープ02m50s・02m51s原寸再読の3点で△出現を確定・表行修正)。marked-uncertain 1件=03m28s の緑○の行帰属(「透過光の描写」行 vs「5-1.過度に描写されていないか」行で読取が割れ、原寸クロップでも確定不能・要確認表記)。スイープ検出の02m30s頃イラスト上の緑矢印注記は抽出フレーム原寸再読で不在確認(短時間の一時的描画)。
 - 特記事項: タイトルバーのハングル文書名(오만복도/오만노트/우산노트 등)は読取ごとに揺れが極めて大きいため凡例で一括注記。手書きメモ窓は判読不能基本。14m44s(p1)で手書きメモ文書がアクティブ化(Navigator サムネイル切替)。p2 後半は Layer 5〜8 を順次追加しながら透過光・海・波の泡を仕上げる工程。
 - 更新: `wiki/sources/coloso-ye-jji-ch11-mistake-note.md`, `wiki/assets/frames/coloso-ye-jji-ch11-mistake-note/`(manifest.json+snapshot.json+png145枚), `index.md`, `log.md`
+## [2026-08-25] ingest | coloso hide ch13 立体を意識して人物を描く②(映像 ingest・batch2 hide 群量産 3章目)
+
+- 依頼: ユーザー承認(ch13→ch14 連続実行)にもとづく hide 群残り 2 章の映像 ingest。ch13(13_01.mp4 903.8秒・13_02.mp4 552.8秒・分割2本)。
+- 手順: dry-run(--video 2回指定)→ snapshot(videos[] 2本記録)→ 抽出(p1=46枚・p2=28枚)→ KB staging 退避 → 盲検読取 74/74(サブエージェント3枚逐次。プロバイダ障害1回+「3枚のうち最終1枚のみ返却」の落とし穴#12が3バッチ発生、未返却分は都度小バッチ再読で回収)→ 第2読者8枚=max(3,10%切り上げ)(confirmed 4件・corrected 4件: p1/00m20s 選択サブツール 消しゴム→さっくり、p1/05m40s 選択サブツール 表示色を取得→スポイト、p2/00m00s タイトルバー 13_3.png→02-Sheet(明る化クロップ)、p2/09m00s 第1読者「09.psd」記録は全面誤読→原寸再確認で「写真から全身ポーズを描く練習*」画面に差し替え。なお p1/09m20s の Layer 5 Copy vs Layer 3 Copy は原寸クロップで第1読者が正しいと確定=第2読者誤読)。
+- 完了: フレーム74枚を `hide-ch13-pN-MMmSSs.png` で本保存(表/ファイル/manifest の3か所一致・孤児ゼロ・ev-001〜ev-074 連番)→ manifest(videos[]+動画ごと extraction[]+recheck 8 entries)→ source 節を動画列付き 6 列表で byte 保持挿入(挿入以外の本文は snapshot ハッシュと一致を機械確認)。
+- 更新: `wiki/sources/coloso-hide-ch13-limb-blocking.md`, `wiki/assets/frames/coloso-hide-ch13-limb-blocking/`(manifest.json+snapshot.json+png74枚), `index.md`, `log.md`
