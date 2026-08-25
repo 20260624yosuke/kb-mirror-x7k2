@@ -9686,3 +9686,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完了: フレーム7枚を `marse-ch09-MMmSSs.png` で本保存(.png 付き)→ manifest(status complete)→ source 節を byte 保持で挿入 → gate complete PASS → visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認。
 - 更新: `wiki/sources/coloso-marse-ch09-feminine-pose.md`, `wiki/assets/frames/coloso-marse-ch09-feminine-pose/`(manifest.json+snapshot.json+snapshot-pre.json+png7枚), `index.md`, `log.md`
 - 次の一手: ch10(10.mp4 単一・392秒)へ続く。marse 群は ch09〜ch22 の動画あり12章が残り(全13章中1章完了)。
+
+## [2026-08-25] ingest | coloso-intake 設計v2+監査基盤+イクシー_2パイロット(検収待ち)
+
+- 経緯: HDD_02 の未取り込みColoso講座7講座(約400本)の移植を自動化する依頼。武田さんの指示で計画をサブエージェントが独立レビュー(subagent 2回 provider エラー後3回目で成功)→ verdict「修正後に採用可」、must-fix 5件(M1 transcribeがsymlink解決し出力がHDD側へ飛ぶ/M2 元ファイルにNN無し/M3 講座ごとファミリ承認/M4 設置層明記/M5 講師名凍結)+should-fix 6件反映の v2 を承認。パイロット=イクシー_2・講師名正綴=ixy で凍結。
+- 実装: 設計正本 [[coloso-intake-design]] / `tools/coloso_intake.py`(骨格生成・推測処理ゼロ) / `tools/coloso_intake_audit.py`(A0-A6、逐語本文はjsonから再計算照合) / `tools/coloso_transcribe.py` へ symlink 非解決パッチ(M1) / `wiki/builds/coloso-intake/quality-gate.json`(plan PASS・families 7講座)。
+- 実測: パイロット intake 23ページ+23 symlink+mapping.json 作成 → 監査 A0-A6 全講座 PASS(対象表との動画数一致含む) → 代表 01.mov(824.7秒)・23.mov(243.8秒) を文字起こし、5種生成物はKB側 _attachments/ に落ちることを確認(M1パッチ有効) → 再監査 PASS。
+- 未検証: symlink動画の Obsidian 再生(N1・検収項目)/NN順序と公式章順の一致(M2・検収項目)/残り6講座は各講座の代表承認が未了(M3)。
+- 更新: `wiki/builds/coloso-intake-design.md`(新規), `wiki/builds/coloso-intake/quality-gate.json`(新規), `tools/coloso_intake.py`(新規), `tools/coloso_intake_audit.py`(新規), `tools/coloso_transcribe.py`(パッチ), `raw/_coloso/2025_09_27_ixy_2/`(23ページ+symlink+mapping.json), `index.md`, `log.md`
+- 次の一手: 武田さん検収(NN対応表承認・Obsidian再生確認・代表ページ目視)→ 承認なら quality-gate families[ixy-2-pilot] へ受入記録→残り22本の文字起こし→他6講座は各講座で講師名凍結+ソートキー決定+代表1〜2本承認のうえ展開。

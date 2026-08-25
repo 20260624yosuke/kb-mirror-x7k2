@@ -1336,6 +1336,7 @@
 - [[azookey-symbol-input-customization]] — azooKey 日本語入力中に `_`、`*`、`#`、`・・ -> /`、`ーー -> -`、`＋＋ -> +`、`0。0`〜`9。9 -> 0.0`〜`9.9` を扱うカスタム入力テーブル。外側とコンテナ内の両方の設定ファイルを400行・同一SHAへ同期し、2026-07-10 にユーザー実機確認済み。今後は二重保存先の同期と SHA 照合を必須手順として扱う。`おー -> oh` は変換エンジン側のクセとして要調査 (updated 2026-07-10)
 - [[keyclack]] — klakk 置き換えの自作打鍵音メニューバーアプリ。15パック(Topre含む)、CoreAudioデバイス固定＋自動復帰、音量2段構え(マスター+パック別)、キーリピート抑制、修飾キーフィルタ、アプリ別ミュート。2026-07-11 に Chrome 前面時の無音真因を `mutedApps` と特定し、前面アプリ無音状態の可視化と解除を追加。実機で動作中 (updated 2026-07-11)
 - [[video-visual-ingest-design]] — 講座動画の映像レイヤー ingest 設計正本 v2.3。機械品質ゲート `tools/video_ingest_gate.py`(snapshot/check 常時必須・不一致は両方許容・記録必須・遡及モード)に加え分割動画対応(snapshot `--video` 反復・manifest `videos[]`・観測表動画列入り 6 列)を追加。モデル固定を解除済み、ch11 パイロット+2026-08-22 遡及再確認済み (updated 2026-08-23)
+- [[coloso-intake-design]] — HDD未取り込みColoso講座7講座(約400本)を raw/_coloso へ逐語移植するパイプライン設計 v2。本文は whisper 逐語のみ(LLM書き換え禁止)、symlink実体参照、監査スクリプト A0-A6 がルールと1:1対応。独立レビュー must-fix 5件反映済み。イクシー_2(23本)パイロット intake 完了・監査 PASS・代表2本文字起こし済み、NN対応表と Obsidian 再生は検収待ち (new 2026-08-25)
 - [[hizurume-visual-ingest-handoff-plan]] — ひづるめ講座の未取り込み25章へ映像層を追加する別セッション向け引き継ぎプラン。パイロット=ch12→承認後4バッチ、対象対応表・盲検読取テンプレ・落とし穴・停止点を収録 (user-stated, 2026-08-22)
 - [[codex-handoff-raw-ingest-batch]] — Codex 引き継ぎ用。raw/ 残り一括 ingest 手順の正本。2026-06-22 に本処理完了(X83 + 記事5 + Claude Code記事2、対話ログ2は既存確認) (done 2026-06-22)
 - [[coloso-ingest-coverage-audit]] — raw/_coloso の Markdown(マークダウン形式の文章) 299件の対応表。既存source対応済み290件、追補候補1件、映像ingest対象1件、重複4件、低情報保留3件を分類 (new 2026-06-22)
