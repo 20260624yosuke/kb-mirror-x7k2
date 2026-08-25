@@ -9619,6 +9619,7 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完了: フレーム51枚を `hide-ch06-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致)→ manifest(status complete・completed 2026-08-25)→ source 節を byte 保持で挿入 → gate complete PASS 確認後に visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認。raw ページ・動画は snapshot 取得時から非変更(SHA-256 機械確認済み)。
 - 更新: `wiki/sources/coloso-hide-ch06-toushin-character.md`, `wiki/assets/frames/coloso-hide-ch06-toushin-character/`(manifest.json+snapshot.json+snapshot-pre.json+png51枚), `index.md`, `log.md`
 - 次の一手: ch06 のレビュー指示文を武田さんへ渡す。承認 verdict 受取まで hide 群残り22章(ch07〜27 のうち動画あり22章)に進まない(停止条件)。
+- 追記(レビュー対応): 独立レビューの判定は **条件付き承認**(機械検証 PASS・突き合わせ7時刻一致・抽出漏れ4点の指摘なし・台帳4点一致。修正2点=ev-046 のサブツール列挙漏れ[シャーペンとデザイン鉛筆の間にシルバーペン行・グレー表示]とハイライト表記[選択中は粗い鉛筆、シャーペン行のハイライトはポイント相当])。同日、source 行+凡例+manifest(observation/recheck corrected エントリ/method/note)へ反映し gate complete 再 PASS。hide 群量産は修正反映の確認後に可。
 ## [2026-08-25] query | Futa2.blend の萎え情報調査（レイヤーではなくシェイプキーに実在）
 
 - 触ったページ: [[gf2-helen-futa-addition-handoff]](§7に変更履歴追記)
