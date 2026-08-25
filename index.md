@@ -1617,7 +1617,7 @@ _合計 2516 ファイル_
 - [coloso-ingest-coverage-audit.md](wiki/builds/coloso-ingest-coverage-audit.md) | 2026-07-07T01:00:00Z
 - [coloso-intake-design.md](wiki/builds/coloso-intake-design.md) | 2026-08-25T05:53:23Z
 - [coloso-parallel-ingest-project.md](wiki/builds/coloso-parallel-ingest-project.md) | 2026-08-24T03:50:44Z
-- [coloso-visual-ingest-batch2-handoff.md](wiki/builds/coloso-visual-ingest-batch2-handoff.md) | 2026-08-25T05:06:25Z
+- [coloso-visual-ingest-batch2-handoff.md](wiki/builds/coloso-visual-ingest-batch2-handoff.md) | 2026-08-25T07:36:04Z
 - [coloso-visual-ingest-resume-inventory.md](wiki/builds/coloso-visual-ingest-resume-inventory.md) | 2026-08-23T12:03:30Z
 - [context-harness.md](wiki/builds/context-harness.md) | 2026-08-13T15:35:51Z
 - [deliverable-inbox.md](wiki/builds/deliverable-inbox.md) | 2026-08-22T23:47:34Z
