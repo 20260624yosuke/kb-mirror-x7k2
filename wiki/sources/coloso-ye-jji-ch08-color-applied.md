@@ -7,6 +7,7 @@ source_path: raw/_coloso/01_coloso_ye_jji/ye_jji_08. 多彩な色味の活用_01
 supplementary: [raw/_coloso/01_coloso_ye_jji/c08_要約ノート.pdf, raw/_coloso/01_coloso_ye_jji/ye_jji_08. 多彩な色味の活用_資料.md]
 ingested: 2026-05-13
 re_ingested: 2026-05-17
+visual_ingested: 2026-08-25
 tags: [coloso, illustration, color, lighting, key-fill-ambient]
 parent: coloso-ye-jji-illustration-course
 ---

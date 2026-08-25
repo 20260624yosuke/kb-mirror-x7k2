@@ -9798,3 +9798,14 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 軽微(修正不要): log の ch07 スイープ追記行が無関係エントリ内に混入(内容は正しい)。
 - 判定の正本を `wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-review.md` として保存(修正指示 A〜C にパス・コマンド・観測文骨子を同梱)。修正適用は実行セッション、適用後は別セッションの独立レビュアーによる修正確認を経て承認確定(前例: marse ch08 と同じ流れ)。quality-gate.json の hizurume B1 承認記録は修正確認 PASS 後に入れる。
 - 触ったページ: `review/2026-08-25-hizurume-b1-review.md`(新規) / `log.md`
+
+## [2026-08-25] ingest | coloso ye_jji ch08 多彩な色味の活用(応用編・照明)(映像 ingest・ye_jji 群量産2章目)
+
+- 依頼: パイロット ch06 無条件承認+ch07 完了を受けた ye_jji 群量産の2章目。coloso-ye-jji-ch08-color-applied(08_1.mov 1064.3秒+08_2.mov 1063.3秒+08_3.mov 1217.1秒の3本分割・raw も3ページ)。
+- 手順: dry-run(SHA-256 eef0b5a4…25ba/7a5dc039…9cd0/6232a7fc…e357)→ snapshot(抽出前・videos[] で3本記録)+snapshot-pre 退避→ temp 抽出(20秒間隔169枚+文字起こし誘導47時刻=216枚: p1 72/p2 68/p3 76)→ staging 退避 → 盲検読取サブエージェント(216ブロック回収=抽出数一致・パート落ちなし。provider エラー3回は再試行で回収)→ 第2読者23枚(ceil(216×10%))。
+- 事故と復旧: **PC 再起動でセッションが1回中断**したが、staging への事前退避(落とし穴16)によりフレーム216枚・抽出 manifest が無傷で、読取結果も会話コンテキストに保持されていたため再抽出ゼロで再開。
+- 発見と訂正: corrected 4件 — ①p1-04m00s の黒帯ラベル末尾は画面右端で物理的に切れていることが原寸クロップで確定(両読者の「暗部の形を描写する役割」/「反射を描写する役割」はいずれも切れ部分への推読・表記から削除)②p1-17m12s Brush Size 50.6→59.6(原寸クロップ確定)③p2-05m20s 選択レイヤー 입술/명암 両誤読→암부 Copy 系に確定(末尾数字のみ画素不足で要確認表記)④p3-15m40s RGB R値 73→173(HSV・スウォッチと整合)。confirmed 19件。manifest recheck に記録。
+- 章の特記: 前半は理論スライド(太陽光vs人工光/直射・反射・拡散光/「直射光 > 反射光 > 拡散光」要約ノート/照明の種類)、後半は CSP 実演(屋外昼→夜街灯→ネオン+リムライト→室内の4照明設定、フラゴナール「目隠し鬼」とモネ「セーヌ川の春」の分析適用、補色対比・彩度対比・コントラスト低減のオリジナルカラー応用、昔の絵(색감 실습.jpg ひまわり少女)レタッチ)。終盤 19m40s 以降は講師の Safari(coloso.jp 講座ページ・ch11 間違いノートの案内)を観測。
+- 完成宣言前の自己点検: 全パートの奇数10秒位置167枚(p1 53/p2 53/p3 61)を機械生成リストでスイープ読取。**注目候補は全て既存観測表の該当行でカバー(追加抽出0件)**。併せて作業ファイル名を原寸クロップで「색감 실습.jpg」「색감 실습2.jpg」に確定し、表内の読み揺れ(섭취/실험/삽습/석갈 석슬)を実名へ統一修正。手書きメモ見出し「냉색 대비」も再確認(スイープ読者の「난색」は誤読)。
+- 完了: フレーム216枚を `ye-jji-ch08-pN-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致・孤児ゼロ)→ manifest(videos[]+動画ごと extraction[]+recheck 23 entries)→ source 節を動画列付き 6 列表で byte 保持挿入 → gate complete PASS → visual_ingested 付与 → snapshot-pre.json 退避済み+--retrofit 再記録 → 最終 gate PASS。raw・動画は snapshot 取得時から非変更(SHA-256 機械確認)。
+- 更新: `wiki/sources/coloso-ye-jji-ch08-color-applied.md`, `wiki/assets/frames/coloso-ye-jji-ch08-color-applied/`(manifest.json+snapshot.json+snapshot-pre.json+png216枚), `index.md`, `log.md`

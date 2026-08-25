@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 3074 ファイル_
+_合計 3076 ファイル_
 
 ## root/ (11)
 
@@ -574,7 +574,7 @@ _合計 3074 ファイル_
 - [hizurume-ch07-08m30s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-08m30s.png) | 2026-08-25T02:25:41Z
 - [hizurume-ch07-08m40s.png](wiki/assets/frames/coloso-hizurume-ch07-composition/hizurume-ch07-08m40s.png) | 2026-08-25T01:37:11Z
 
-## wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/ (90)
+## wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/ (91)
 
 - [hizurume-ch09-01-00m00s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-01-00m00s.png) | 2026-08-25T02:43:02Z
 - [hizurume-ch09-01-00m20s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-01-00m20s.png) | 2026-08-25T02:43:02Z
@@ -644,6 +644,7 @@ _合計 3074 ファイル_
 - [hizurume-ch09-02-01m29s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-01m29s.png) | 2026-08-25T02:43:02Z
 - [hizurume-ch09-02-01m40s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-01m40s.png) | 2026-08-25T02:43:02Z
 - [hizurume-ch09-02-01m43s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-01m43s.png) | 2026-08-25T02:43:02Z
+- [hizurume-ch09-02-01m46s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-01m46s.png) | 2026-08-25T11:20:31Z
 - [hizurume-ch09-02-01m52s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-01m52s.png) | 2026-08-25T02:43:02Z
 - [hizurume-ch09-02-02m00s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-02m00s.png) | 2026-08-25T02:43:02Z
 - [hizurume-ch09-02-02m20s.png](wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/hizurume-ch09-02-02m20s.png) | 2026-08-25T02:43:02Z
@@ -856,7 +857,7 @@ _合計 3074 ファイル_
 - [hizurume-ch13-02-10m33s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-02-10m33s.png) | 2026-08-25T03:53:09Z
 - [hizurume-ch13-02-10m40s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-02-10m40s.png) | 2026-08-25T03:53:09Z
 
-## wiki/assets/frames/coloso-hizurume-ch14-simplification/ (51)
+## wiki/assets/frames/coloso-hizurume-ch14-simplification/ (52)
 
 - [hizurume-ch14-00m00s.png](wiki/assets/frames/coloso-hizurume-ch14-simplification/hizurume-ch14-00m00s.png) | 2026-08-25T05:36:41Z
 - [hizurume-ch14-00m20s.png](wiki/assets/frames/coloso-hizurume-ch14-simplification/hizurume-ch14-00m20s.png) | 2026-08-25T05:36:41Z
@@ -908,6 +909,7 @@ _合計 3074 ファイル_
 - [hizurume-ch14-08m20s.png](wiki/assets/frames/coloso-hizurume-ch14-simplification/hizurume-ch14-08m20s.png) | 2026-08-25T05:36:42Z
 - [hizurume-ch14-08m28s.png](wiki/assets/frames/coloso-hizurume-ch14-simplification/hizurume-ch14-08m28s.png) | 2026-08-25T05:36:42Z
 - [hizurume-ch14-08m30s.png](wiki/assets/frames/coloso-hizurume-ch14-simplification/hizurume-ch14-08m30s.png) | 2026-08-25T07:06:27Z
+- [hizurume-ch14-08m38s.png](wiki/assets/frames/coloso-hizurume-ch14-simplification/hizurume-ch14-08m38s.png) | 2026-08-25T11:20:31Z
 - [hizurume-ch14-08m40s.png](wiki/assets/frames/coloso-hizurume-ch14-simplification/hizurume-ch14-08m40s.png) | 2026-08-25T05:36:42Z
 
 ## wiki/assets/frames/coloso-marse-ch04-reference-trend-face-stock/ (5)
@@ -1962,7 +1964,7 @@ _合計 3074 ファイル_
 - [codexbar.md](wiki/builds/codexbar.md) | 2026-07-14T11:51:42Z
 - [coloso-batch-resume-handoff.md](wiki/builds/coloso-batch-resume-handoff.md) | 2026-08-24T08:45:42Z
 - [coloso-ingest-coverage-audit.md](wiki/builds/coloso-ingest-coverage-audit.md) | 2026-07-07T01:00:00Z
-- [coloso-intake-design.md](wiki/builds/coloso-intake-design.md) | 2026-08-25T11:07:03Z
+- [coloso-intake-design.md](wiki/builds/coloso-intake-design.md) | 2026-08-25T11:23:28Z
 - [coloso-parallel-ingest-project.md](wiki/builds/coloso-parallel-ingest-project.md) | 2026-08-24T03:50:44Z
 - [coloso-visual-ingest-batch2-handoff.md](wiki/builds/coloso-visual-ingest-batch2-handoff.md) | 2026-08-25T08:32:41Z
 - [coloso-visual-ingest-resume-inventory.md](wiki/builds/coloso-visual-ingest-resume-inventory.md) | 2026-08-23T12:03:30Z
@@ -3060,7 +3062,7 @@ _合計 3074 ファイル_
 - [coloso-ye-jji-ch05-texture-basic.md](wiki/sources/coloso-ye-jji-ch05-texture-basic.md) | 2026-08-24T07:20:18Z
 - [coloso-ye-jji-ch06-texture-applied.md](wiki/sources/coloso-ye-jji-ch06-texture-applied.md) | 2026-08-25T04:10:08Z
 - [coloso-ye-jji-ch07-color-basic.md](wiki/sources/coloso-ye-jji-ch07-color-basic.md) | 2026-08-25T07:33:29Z
-- [coloso-ye-jji-ch08-color-applied.md](wiki/sources/coloso-ye-jji-ch08-color-applied.md) | 2026-08-25T11:16:59Z
+- [coloso-ye-jji-ch08-color-applied.md](wiki/sources/coloso-ye-jji-ch08-color-applied.md) | 2026-08-25T11:18:59Z
 - [coloso-ye-jji-ch09-density.md](wiki/sources/coloso-ye-jji-ch09-density.md) | 2026-06-22T12:48:42Z
 - [coloso-ye-jji-ch10-blank.md](wiki/sources/coloso-ye-jji-ch10-blank.md) | 2026-06-22T12:48:42Z
 - [coloso-ye-jji-ch11-mistake-note.md](wiki/sources/coloso-ye-jji-ch11-mistake-note.md) | 2026-06-22T12:48:42Z
