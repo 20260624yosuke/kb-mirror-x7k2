@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 2337 ファイル_
+_合計 2338 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 2337 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T04:09:11Z
-- [log.md](root/log.md) | 2026-08-25T04:22:48Z
+- [index.md](root/index.md) | 2026-08-25T04:28:03Z
+- [log.md](root/log.md) | 2026-08-25T04:28:56Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -1487,6 +1487,10 @@ _合計 2337 ファイル_
 - [x-eagle-free-save-pilot.md](wiki/builds/x-eagle-free-save-pilot.md) | 2026-08-03T08:46:15Z
 - [x-eagle-idea-workbench.md](wiki/builds/x-eagle-idea-workbench.md) | 2026-06-25T09:50:10Z
 
+## wiki/builds/coloso-visual-ingest-batch2/review/ (1)
+
+- [2026-08-25-marse-ch08-pilot-review-and-fix-confirm.md](wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-marse-ch08-pilot-review-and-fix-confirm.md) | 2026-08-25T04:26:39Z
+
 ## wiki/concepts/ (404)
 
 - [300-day-problem-solving.md](wiki/concepts/300-day-problem-solving.md) | 2026-06-01T03:40:22Z
@@ -2138,7 +2142,7 @@ _合計 2337 ファイル_
 - [coloso-hide-ch03-line-practice.md](wiki/sources/coloso-hide-ch03-line-practice.md) | 2026-08-23T09:04:49Z
 - [coloso-hide-ch04-body-basics.md](wiki/sources/coloso-hide-ch04-body-basics.md) | 2026-07-15T09:03:40Z
 - [coloso-hide-ch05-male-female-proportion.md](wiki/sources/coloso-hide-ch05-male-female-proportion.md) | 2026-08-24T03:24:41Z
-- [coloso-hide-ch06-toushin-character.md](wiki/sources/coloso-hide-ch06-toushin-character.md) | 2026-08-25T03:41:20Z
+- [coloso-hide-ch06-toushin-character.md](wiki/sources/coloso-hide-ch06-toushin-character.md) | 2026-08-25T04:31:02Z
 - [coloso-hide-ch07-gesture-drawing-1.md](wiki/sources/coloso-hide-ch07-gesture-drawing-1.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch08-gesture-drawing-2.md](wiki/sources/coloso-hide-ch08-gesture-drawing-2.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch09-perspective-basics.md](wiki/sources/coloso-hide-ch09-perspective-basics.md) | 2026-05-31T17:38:22Z

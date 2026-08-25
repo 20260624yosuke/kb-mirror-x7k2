@@ -9575,6 +9575,7 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 次の一手(修正後): レビュアー(opencode セッション)が必須1・2の修正内容を確認 → PASS で marse 群17章の量産開始。量産時は 10秒スイープの最終サンプル〜動画終端を必ず個別目視し、ffmpeg シーン変化検出の閾値は 0.1 を使う(今回の漏れの再発防止)。
 - 進行(2026-08-25): 武田さんが修正確認の方法として「別セッションのレビュアーを待つ」を選択。確認用レビュー指示文を `review-marse-ch08-fix-confirm-instructions.md` として作成。量産対象はレビュー文書の「17章」ではなく実測では動画あり13章・21本・245分(ch01〜03 は raw ページ・動画とも無し)。PASS verdict 受取まで marse 群残りの量産には進まない。
 - 修正確認(2026-08-25): 別セッションの独立レビュアーが確認用指示文どおりに検証し **PASS(量産開始可)** を判定。gate 再実行 PASS・7:42.5/7:37.5/7:39/4:42/7:41.5 の自前抽出で突き合わせ・8枚全 PNG ハッシュ一致・虚偽訂正3箇所と 7:38 追加の確認・台帳整合まで実施。レビュアー推奨: 量産時の再発防止策(スイープ終端個別目視・閾値0.1)の実施を次回レビューで確認すること。→ marse 群残り13章の量産を開始。
+- 品質ゲート(2026-08-25): `quality-gate.json` に marse-remaining ファミリーの承認記録(代表入出力・原作比較証拠 `review/2026-08-25-marse-ch08-pilot-review-and-fix-confirm.md`・approved_by user)を記入し、verifier.method を independent-agent に整理。`--phase batch` は未承認ファミリー(ひづるめ B2〜B4・yejji・hide・sasa)のフィールド欠落で FAIL 継続(全群のパイロット承認後まで構造的に PASS 不可能)。marse については stop_conditions の「ゲート complete PASS+ユーザー明示承認」を満たし、ひづるめ B1 と同じ群別前例どおり marse 群のみ量産を進める。
 
 ## [2026-08-25] query | 配置復元が「アプリ未起動で全滅・数分固まり」する問題の修正と復元パターン2本化
 
@@ -9648,3 +9649,13 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完了: フレーム280枚を `ye-jji-ch06-pN-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致・孤児ゼロ)→ manifest(videos[]+動画ごと extraction[]+recheck 28 entries)→ source 節を動画列付き 6 列表で byte 保持挿入(初回挿入時に余分な空行で本文非破壊 FAIL → 空行除去で解消)→ gate complete PASS → visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認予定。raw ページ・動画は snapshot 取得時から非変更(SHA-256 機械確認済み)。
 - 更新: `wiki/sources/coloso-ye-jji-ch06-texture-applied.md`, `wiki/assets/frames/coloso-ye-jji-ch06-texture-applied/`(manifest.json+snapshot.json+snapshot-pre.json+png280枚), `index.md`, `log.md`
 - 次の一手: ch06 のレビュー指示文を武田さんへ渡す。承認 verdict 受取まで ye_jji 群残り14章(ch07〜23 のうち動画あり)に進まない(停止条件)。
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 ひづるめ B1 ch13 錯覚と嘘(映像観測99枚・分割2本)
+
+- 依頼: B1 残り量産の3章目。coloso-hizurume-ch13-illusion-and-lies(13_01.mp4 912.4秒+13_02.mp4 641.3秒・通し観測)。
+- 手順: dry-run(SHA-256 5e24d2e9…c31d/60e5cf99…4ac)→ snapshot(videos[])→ パートごとに temp 抽出(p1: 46枚+10時刻=56枚、p2: 33枚+10時刻=43枚)→ staging 退避(raw・両動画 SHA 一致を機械確認)→ 盲検読取サブエージェント9体(99ブロック回収=抽出数と一致、パート落ちなし)→ 第2読者10枚。
+- 特記: 本講座の動画には焼き込みプレイヤーUI(下部・2x表示・タイマーはファイル時間の約2倍で進む)が常時あり、凡例と note に記載。
+- 発見と訂正: corrected 2件(p2 07m20s: 冬群5円[第2読者6円は誤算]・選択フォルダー652[初観測650/第2読者651を訂正]・最上位フォルダ名「錯覚とウソ」[両読者の誤読を訂正]/p2 09m33s: 中央矩形はやや縦長・選択フォルダー668[初観測669を訂正]・テキストレイヤー名「描く人が、絵を見た人にと…」)を原寸クロップで確定。confirmed 8件。
+- 完了: フレーム99枚を `hizurume-ch13-{01,02}-MMmSSs.png` で本保存 → manifest(videos[]+動画ごと extraction[])→ source 節を6列表で byte 保持挿入 → index.md 更新。
+- 更新: `wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md`, `wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/`(manifest.json+snapshot.json+png99枚), `index.md`, `log.md`
+- 次の一手: 10秒間隔全帯域スイープ(p1 92枚+p2 65枚)→ 補完 → gate complete PASS → visual_ingested 付与。
