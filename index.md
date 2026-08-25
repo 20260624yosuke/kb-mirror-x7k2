@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 3388 ファイル_
+_合計 3476 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 3388 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T11:32:38Z
-- [log.md](root/log.md) | 2026-08-25T11:45:06Z
+- [index.md](root/index.md) | 2026-08-25T12:43:54Z
+- [log.md](root/log.md) | 2026-08-25T12:53:14Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -507,6 +507,97 @@ _合計 3388 ファイル_
 - [hide-ch11-02-08m00s.png](wiki/assets/frames/coloso-hide-ch11-3d-figure-tips/hide-ch11-02-08m00s.png) | 2026-08-25T07:51:32Z
 - [hide-ch11-02-08m20s.png](wiki/assets/frames/coloso-hide-ch11-3d-figure-tips/hide-ch11-02-08m20s.png) | 2026-08-25T07:51:32Z
 - [hide-ch11-02-08m40s.png](wiki/assets/frames/coloso-hide-ch11-3d-figure-tips/hide-ch11-02-08m40s.png) | 2026-08-25T07:51:32Z
+
+## wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/ (88)
+
+- [hide-ch12-01-00m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-00m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-00m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-00m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-00m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-00m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-01m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-01m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-01m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-01m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-01m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-01m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-02m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-02m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-02m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-02m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-02m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-02m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-03m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-03m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-03m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-03m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-03m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-03m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-04m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-04m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-04m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-04m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-04m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-04m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-05m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-05m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-05m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-05m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-05m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-05m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-06m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-06m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-06m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-06m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-06m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-06m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-07m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-07m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-07m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-07m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-07m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-07m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-08m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-08m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-08m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-08m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-08m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-08m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-09m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-09m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-09m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-09m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-09m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-09m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-10m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-10m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-10m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-10m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-10m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-10m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-11m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-11m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-11m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-11m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-11m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-11m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-12m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-12m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-12m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-12m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-12m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-12m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-13m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-13m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-13m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-13m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-13m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-13m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-14m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-14m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-14m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-14m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-14m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-14m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-01-15m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-01-15m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-02-00m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-00m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-02-00m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-00m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-02-00m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-00m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-02-01m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-01m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-02-01m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-01m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-02-01m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-01m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-02-02m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-02m00s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-02-02m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-02m20s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-02-02m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-02m40s.png) | 2026-08-25T12:43:02Z
+- [hide-ch12-02-03m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-03m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-03m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-03m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-03m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-03m40s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-04m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-04m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-04m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-04m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-04m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-04m40s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-05m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-05m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-05m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-05m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-05m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-05m40s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-06m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-06m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-06m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-06m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-06m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-06m40s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-07m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-07m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-07m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-07m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-07m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-07m40s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-08m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-08m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-08m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-08m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-08m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-08m40s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-09m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-09m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-09m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-09m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-09m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-09m40s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-10m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-10m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-10m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-10m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-10m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-10m40s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-11m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-11m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-11m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-11m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-11m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-11m40s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-12m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-12m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-12m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-12m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-12m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-12m40s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-13m00s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-13m00s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-13m20s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-13m20s.png) | 2026-08-25T12:43:03Z
+- [hide-ch12-02-13m40s.png](wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/hide-ch12-02-13m40s.png) | 2026-08-25T12:43:03Z
 
 ## wiki/assets/frames/coloso-hizurume-ch06-drawing-types/ (19)
 
@@ -3243,7 +3334,7 @@ _合計 3388 ファイル_
 - [coloso-hide-ch09-perspective-basics.md](wiki/sources/coloso-hide-ch09-perspective-basics.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch10-solid-drawing-practice.md](wiki/sources/coloso-hide-ch10-solid-drawing-practice.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch11-3d-figure-tips.md](wiki/sources/coloso-hide-ch11-3d-figure-tips.md) | 2026-08-25T08:08:52Z
-- [coloso-hide-ch12-three-mass-blocking.md](wiki/sources/coloso-hide-ch12-three-mass-blocking.md) | 2026-08-25T12:39:46Z
+- [coloso-hide-ch12-three-mass-blocking.md](wiki/sources/coloso-hide-ch12-three-mass-blocking.md) | 2026-08-25T12:50:52Z
 - [coloso-hide-ch13-limb-blocking.md](wiki/sources/coloso-hide-ch13-limb-blocking.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch14-figure-perspective.md](wiki/sources/coloso-hide-ch14-figure-perspective.md) | 2026-05-31T17:38:22Z
 - [coloso-hide-ch15-head-structure-simplification.md](wiki/sources/coloso-hide-ch15-head-structure-simplification.md) | 2026-05-31T17:22:22Z
@@ -3269,7 +3360,7 @@ _合計 3388 ファイル_
 - [coloso-hizurume-ch06-drawing-types.md](wiki/sources/coloso-hizurume-ch06-drawing-types.md) | 2026-08-24T17:17:30Z
 - [coloso-hizurume-ch07-composition.md](wiki/sources/coloso-hizurume-ch07-composition.md) | 2026-08-25T02:40:39Z
 - [coloso-hizurume-ch08-anatomy-basics.md](wiki/sources/coloso-hizurume-ch08-anatomy-basics.md) | 2026-05-31T15:40:35Z
-- [coloso-hizurume-ch09-light-shadow-color.md](wiki/sources/coloso-hizurume-ch09-light-shadow-color.md) | 2026-08-25T11:29:11Z
+- [coloso-hizurume-ch09-light-shadow-color.md](wiki/sources/coloso-hizurume-ch09-light-shadow-color.md) | 2026-08-25T12:49:40Z
 - [coloso-hizurume-ch10-efficient-practice.md](wiki/sources/coloso-hizurume-ch10-efficient-practice.md) | 2026-05-31T15:44:53Z
 - [coloso-hizurume-ch11-force-field.md](wiki/sources/coloso-hizurume-ch11-force-field.md) | 2026-08-22T13:55:29Z
 - [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-08-24T14:51:14Z

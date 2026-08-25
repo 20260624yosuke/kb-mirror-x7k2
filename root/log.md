@@ -9818,3 +9818,19 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - C(ch14・推奨・方式1): 08:38 フレームを ffmpeg 直接抽出し本保存(`hizurume-ch14-08m38s.png`・SHA-256 152afb63…fa8d3)+ ev-052 行追加(「Coloso.」エンドカード+08:35 前後の水色フェードアウト描写)。08:35 も統括側が直接抽出して視認(水色地・薄文字判読不能・透かし「web_in_box_mail-973965」視認)。manifest(observations 52件・targeted_times+08:38・カウント51→52・recheck 8件)・方式行・凡例(末尾 08:35〜 水色フェードアウト→エンドカード→暗転)・index(51→52枚)を更新。
 - gate `--phase complete` 再実行: ch09/ch13/ch14 とも PASS(retrofit 警告のみ・レビュー記載どおり FAIL ではない)。次の手順は別セッションの独立レビュアーによる修正確認。quality-gate.json の hizurume B1 承認記録は修正確認 PASS 後に入れる。
 - 更新: `wiki/sources/coloso-hizurume-ch09-light-shadow-color.md`, `wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md`, `wiki/sources/coloso-hizurume-ch14-simplification.md`, `wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/`(manifest.json+png追加1枚), `wiki/assets/frames/coloso-hizurume-ch14-simplification/`(manifest.json+png追加1枚), `index.md`, `wiki/builds/coloso-visual-ingest-batch2-handoff.md`(現在地・修正確認指示文), `log.md`
+## [2026-08-25] ingest | coloso hide ch12 立体を意識して人物を描く①(映像 ingest・batch2 hide 群量産 2章目・セッション再開完了)
+
+- 依頼: セッション15→18→24 と 3 回に分断された ch12 映像 ingest の再開・完了。セッション24は盲検読取 88/88 完了・第2読者 recheck の原寸クロップ確定の途中(p1/05m40s のレイヤーパネル読取直後)で停止していた。
+- 再開時の状態把握: 盲検読取 88 枚の記録は `ch12_blind_reads.md`(救出 22 枚)+`ch12_blind_reads_new.md`(新規 66 枚)に無事残存。recheck 9 枚のうち照合済み 5 枚(一致 4・誤照合解消 1)、未確定 4 点(p1/05m40s・p1/13m20s・p2/06m00s+表から漏れていた p2/11m20s)。原寸クロップは作成済みで未読。
+- 再開後の確定: 4 点とも第2読者が正しく第1読者誤りと判明 → corrected。p1/05m40s(選択レイヤー Layer 1→Layer 2・シート上段=正面系/下段=背面系・選択サブツール「さっくり」/Brush size 250)、p1/13m20s(最上行 Layer 6→Layer 5・Layer 4 目オフ)、p2/06m00s(選択レイヤー Layer 3→Folder 3 内 Layer 5・しゃがみ/前屈姿の見落とし)、p2/11m20s(選択レイヤー Layer 13→Layer 15)。加えて同型誤記の記録連鎖追認として p1/14m00s(Layer 6→Layer 5)を原寸クロップで訂正。全て source 行に反映。
+- 完了: フレーム 88 枚を `hide-ch12-pN-MMmSSs.png`(01/02 ゼロ埋め)で本保存(.png 付き・表/ファイル/manifest の 3 か所一致・孤児ゼロ・ev-001〜ev-088 連番)→ manifest(videos[]+動画ごと extraction[]+recheck 10 entries=confirmed 5・corrected 5)→ source 節を動画列付き 6 列表で byte 保持挿入(挿入以外の本文は snapshot ハッシュと一致を機械確認)。
+- 経過の注意: 並行して別講座 ch12(39:51 動画)の救出ディレクトリ(`ch12-recovery/`)が別セッション系統から作成されていたが、本タスク(hide ch12・906s/820s の分割 2 本)とは無関係のため触れず。
+- 更新: `wiki/sources/coloso-hide-ch12-three-mass-blocking.md`, `wiki/assets/frames/coloso-hide-ch12-three-mass-blocking/`(manifest.json+snapshot.json+png88枚), `index.md`, `log.md`
+## [2026-08-25] ingest | coloso ひづるめ B1 修正確認レビュー指摘の訂正適用(ch09 ev-091 ツール名 1 字)
+
+- 依頼: 修正確認レビュー(別セッション独立レビュアー)の判定「要修正(1 件)」の適用(武田さんが「このセッションで修正適用→再確認は新セッション」を選択)。指摘内容: ev-091 のツール名「油彩獣毛 鶴」は誤読で、実フレームは「油彩**狸**毛 鶴」。
+- 確定方法(レビュアー検証): 01:46/01:48/01:55 の 3 時刻抽出+4〜12 倍クロップに加え、UI 静止区間 8 秒の 40 フレーム平均化(`tmix=frames=40`+6 倍 lanczos)で圧縮ノイズを低減 → 字形は細幅の左右分割(⺨+里)=狸で一貫。同フォント同サイズ(Hiragino Sans GB)で「油彩狸毛/油彩獣毛」を参照レンダリング比較し、獣(19 画の幅広密集字)はこの字形になり得ないことを確認。「狸毛」は実在する画筆の毛質(狸混毛油彩筆等・一般知識として補強)。本文「波長の屈折によりできます」は実フレームどおりで正しい(★照合点は適用済みの記載が正解・レビュー骨子が誤読)。
+- 適用: source ev-091 行と manifest ev-091 observation の「油彩獣毛 鶴」→「油彩狸毛 鶴」(1 字・両者同期)。manifest recheck の 01m46s エントリ note に訂正経緯を追記(verdict は第2読者確認として confirmed のまま・訂正は修正確認レビュー由来)。本ログ 1 つ前の修正適用エントリ(A 項)内の「油彩獣毛 鶴」表記は append-only のため改変せず、本エントリで訂正。
+- gate `--phase complete` 再実行(ch09): PASS(retrofit 警告のみ)。ch13/ch14 は本訂正と無関係のため再実行せず(直近 PASS から変更なし)。
+- 次の一手: 別セッションの独立レビュアーによる再確認(1 字訂正の実フレーム適用確認のみ)→ PASS で B1 群承認確定(判定ファイル `wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-fix-confirm.md` 保存+log+quality-gate.json の hizurume-b1-theory family へ承認記録)。
+- 更新: `wiki/sources/coloso-hizurume-ch09-light-shadow-color.md`, `wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/manifest.json`, `log.md`
