@@ -9726,3 +9726,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 訂正: ev-013 の「左向き横顔」を「右向き横顔」へ訂正(02m10s/02m30s の原寸再読による)。
 - 更新: `wiki/sources/coloso-hizurume-ch14-simplification.md`, `wiki/assets/frames/coloso-hizurume-ch14-simplification/`(manifest.json+snapshot.json+png51枚), `index.md`, `log.md`
 - 次の一手: retrofit snapshot 再記録 → visual_ingested 付与 → 最終 gate → inbox 申告 → B1 群(4章)の独立レビュー指示文をユーザーへ提出。
+
+## [2026-08-25] ingest | coloso hide ch11 人物を立体的に描くためのコツ(映像 ingest・batch2 hide 群量産 1章目)
+
+- 依頼: hide 群パイロット承認後の量産開始。coloso-hide-ch11-3d-figure-tips(11_01.mp4 931.3秒・11_02.mp4 529.1秒・分割2本、v2.3 分割動画パス)。
+- 手順: dry-run(動画2本のため --video を2回指定し解決)→ snapshot(videos[] 2本記録)→ temp 抽出(p1=47枚・p2=27枚)→ KB staging 退避 → 盲検読取(サブエージェント。プロバイダ障害が連続したため逐次実行+小分割に切り替えて回収、p1 47/47・p2 27/27)→ 第2読者8枚=max(3,10%切り上げ)(confirmed 7件・corrected 1件: 06m40s の選択レイヤー Layer 4→Layer 3 を原寸クロップで確定・source 行反映)→ 10秒間隔全帯域スイープ点検(p1 46点+p2 26点の PSNR 機械照合 min<28dB+ffmpeg シーン検出 p1: 0m03s/3m49s/5m33s/5m41s/6m07s/6m14s/6m24s/7m31s/15m28s、p2: 0m36s/2m11s)→ 中間画面検証読取14点(隣接20秒フレーム記録で「同一画面の描き込み進行」と判明した点は対象外)→ 未観測画面5件発見(p1 00:10 節タイトルカード「第11講/人物を立体的に描くためのコツ」・00:30 スライド「面の意識(ターニングエッジ)について」・13:10 スライド「短縮法とは何か?」/p2 00:10 円柱5本+赤ガイド線の図解・02:10 写真+赤い関節人形風デッサン重ね)。
+- セッション中断と復旧: 盲検読取 p2-B(14枚)の起動直後にプロバイダ障害でセッション停止。セッションエクスポート(json)から p1 全47枚+p2-A 13枚の読取結果を保全し、新セッションで p2-B 14枚を再読取して統合(フレーム零損失・staging 退避済みが効いた)。
+- 完了: フレーム79枚を `hide-ch11-pN-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致・孤児ゼロ・ev-001〜ev-079 連番)→ manifest(videos[]+動画ごと extraction[]+recheck 8 entries)→ source 節を動画列付き 6 列表で byte 保持挿入 → gate complete PASS → visual_ingested 付与 → snapshot-pre.json 退避+--retrofit 再記録 → 最終 gate PASS 再確認 → 独立点検(拡張子・孤児・3重照合)PASS。raw ページ・動画は snapshot 取得時から非変更(SHA-256 機械確認済み)。
+- 更新: `wiki/sources/coloso-hide-ch11-3d-figure-tips.md`, `wiki/assets/frames/coloso-hide-ch11-3d-figure-tips/`(manifest.json+snapshot.json+snapshot-pre.json+png79枚), `index.md`, `log.md`
+- 次の一手: 同セッションの残り対象 ch12・ch13・ch14 へ継続(パイロット確立手順どおり)。
