@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 3477 ファイル_
+_合計 3479 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 3477 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T12:43:54Z
-- [log.md](root/log.md) | 2026-08-25T13:08:54Z
+- [index.md](root/index.md) | 2026-08-25T13:11:58Z
+- [log.md](root/log.md) | 2026-08-25T13:13:00Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -2277,11 +2277,13 @@ _合計 3477 ファイル_
 
 - [parallel-session-brief.md](wiki/builds/coloso-intake/parallel-session-brief.md) | 2026-08-25T11:07:09Z
 
-## wiki/builds/coloso-intake/reports/ (3)
+## wiki/builds/coloso-intake/reports/ (5)
 
 - [2026-08-25-ixy-2-final-audit.txt](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2-final-audit.txt) | 2026-08-25T08:40:24Z
 - [2026-08-25-ixy-2-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2-representative-comparison.md) | 2026-08-25T08:41:50Z
+- [2026-08-25-ixy-2024-audit.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-audit.md) | 2026-08-25T13:10:02Z
 - [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
+- [2026-08-25-ixy-2024-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-representative-comparison.md) | 2026-08-25T13:11:23Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/review/ (5)
 
@@ -3476,7 +3478,7 @@ _合計 3477 ファイル_
 - [coloso-ye-jji-ch06-texture-applied.md](wiki/sources/coloso-ye-jji-ch06-texture-applied.md) | 2026-08-25T04:10:08Z
 - [coloso-ye-jji-ch07-color-basic.md](wiki/sources/coloso-ye-jji-ch07-color-basic.md) | 2026-08-25T07:33:29Z
 - [coloso-ye-jji-ch08-color-applied.md](wiki/sources/coloso-ye-jji-ch08-color-applied.md) | 2026-08-25T11:18:59Z
-- [coloso-ye-jji-ch09-density.md](wiki/sources/coloso-ye-jji-ch09-density.md) | 2026-08-25T12:30:35Z
+- [coloso-ye-jji-ch09-density.md](wiki/sources/coloso-ye-jji-ch09-density.md) | 2026-08-25T13:13:19Z
 - [coloso-ye-jji-ch10-blank.md](wiki/sources/coloso-ye-jji-ch10-blank.md) | 2026-06-22T12:48:42Z
 - [coloso-ye-jji-ch11-mistake-note.md](wiki/sources/coloso-ye-jji-ch11-mistake-note.md) | 2026-06-22T12:48:42Z
 - [coloso-ye-jji-ch12-color-rough.md](wiki/sources/coloso-ye-jji-ch12-color-rough.md) | 2026-06-22T12:48:42Z

@@ -6,6 +6,7 @@ date: 2026-03-28
 source_path: raw/_coloso/01_coloso_ye_jji/ye_jji_09. 密度を下げる_01.md, _02.md, _資料.md
 ingested: 2026-05-13
 re_ingested: 2026-05-17
+visual_ingested: 2026-08-25
 tags: [coloso, illustration, background, density, tone-reduction, atmospheric-perspective]
 parent: coloso-ye-jji-illustration-course
 ---

@@ -9834,3 +9834,21 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - gate `--phase complete` 再実行(ch09): PASS(retrofit 警告のみ)。ch13/ch14 は本訂正と無関係のため再実行せず(直近 PASS から変更なし)。
 - 次の一手: 別セッションの独立レビュアーによる再確認(1 字訂正の実フレーム適用確認のみ)→ PASS で B1 群承認確定(判定ファイル `wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-fix-confirm.md` 保存+log+quality-gate.json の hizurume-b1-theory family へ承認記録)。
 - 更新: `wiki/sources/coloso-hizurume-ch09-light-shadow-color.md`, `wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/manifest.json`, `log.md`
+
+## [2026-08-25] query | coloso ひづるめ B1 修正再確認 PASS(承認確定)
+
+- 依頼: 前回修正確認レビューの要修正 1 件(ch09 ev-091 ツール名「獣」→「狸」)の再適用確認(別セッション独立レビュアー・修正再確認担当)。成果物の修正は行わず確認のみ。
+- 検証(レビュアー自実行): ① source ev-091 行の「油彩狸毛 鶴」確認 ② `ffmpeg -ss 01:46 -t 8 … tmix=frames=40,crop=180:36:1632:142,6倍 lanczos` で自前抽出し字形突合(⺨+里=狸・細幅左右分割・鶴で一致、保存済みフレーム同一座標クロップとも一致)③ `video_ingest_gate.py check --phase complete` 自実行 → PASS(retrofit 警告のみ)④ manifest ev-091 observation と source の同期・recheck 01m46s エントリ note の訂正記録・log 訂正エントリ(9829 行)を確認。
+- 判定: **PASS(追加修正指示 0 件)**。ひづるめ B1 群(06/07/09/13/14)の修正確認完了・承認確定。判定正本は [[coloso-visual-ingest-batch2-handoff]] 系の `wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-fix-confirm.md`。
+- quality-gate.json の hizurume-b1-theory family に承認確定記録を追記(approval_evidence+notes・証拠=判定ファイル)。
+- 更新: `wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hizurume-b1-fix-confirm.md`(新規), `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json`, `log.md`
+
+## [2026-08-25] ingest | coloso ye_jji ch09 密度を下げる(映像 ingest・ye_jji 群量産3章目)
+
+- 依頼: ye_jji 群量産の3章目。coloso-ye-jji-ch09-density(09_1.mov 1064.5秒+09_2.mov 1361.5秒の2本分割・raw も2ページ)。
+- 手順: dry-run(SHA-256 e563d3a2…90b/ee45173d…0f3a)→ snapshot+snapshot-pre 退避 → temp 抽出(20秒間隔121枚+文字起こし誘導35時刻=156枚: p1 70/p2 86)→ staging 退避 → 盲検読取サブエージェント13体(156ブロック回収=抽出数一致。p1 はバッチ分割ミスで1区間を二重読取したが欠落はゼロ・全70枚カバー確認)→ 第2読者16枚(ceil(156×10%))。
+- 発見と訂正: corrected 2件 — ①p2-07m20s の選択レイヤー「Layer 16 Copy」→原寸クロップ再読で「Layer 16」に確定(直上行が Copy)②p2-19m23s の選択レイヤーは第2読者の「Layer 40」ではなく「Layer 13 Copy 2」相当のハングル混表記行と確定(同一レイヤーの他16行も表記統一)。confirmed 14件(p2-11m20s の S36%/S38% 揺れは crop 再読で S36% 確認・表記変更なし)。
+- 章の特記: 前半は理論スライド(ラフな仕上げの悪例/コントラスト低下だけの2問題点/空気遠近法/계조란? 図解)+カップ実習(5階調→3階調)+山実習、後半は遠景の階調削減(木と岩壁の区別→シルエット1トーン)+雲(手前多階調/奥2階調+空色帯び)・空グラデーション・湖2トーン+昔のイラスト(白ドレス少女と蝶・欧風街並み)のリタッチ、22m40s は Coloso ロゴ。ドキュメント名「9장 명도 낮추기」は各読取で読み揺れが大きくヘッダ凡例に注記。
+- 完成宣言前の自己点検: 全パートの奇数10秒位置121枚(p1 53/p2 68)を機械生成リストでスイープ読取。**注目候補は全て既存観測表の該当行でカバー(追加抽出0件)**。provider エラー3回(スイープ初回バッチ)は間隔置き+小分割で回収。
+- 完了: フレーム156枚を `ye-jji-ch09-pN-MMmSSs.png` で本保存(.png 付き・孤児ゼロ)→ manifest(videos[]+extraction[]+recheck 16 entries)→ source 節を動画列付き 6 列表で byte 保持挿入 → gate complete PASS → visual_ingested 付与 → --retrofit 再記録 → 最終 gate PASS。raw・動画非変更(SHA-256 機械確認)。
+- 更新: `wiki/sources/coloso-ye-jji-ch09-density.md`, `wiki/assets/frames/coloso-ye-jji-ch09-density/`(manifest.json+snapshot.json+snapshot-pre.json+png156枚), `index.md`, `log.md`
