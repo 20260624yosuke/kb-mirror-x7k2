@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 1816 ファイル_
+_合計 1817 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 1816 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T02:40:04Z
-- [log.md](root/log.md) | 2026-08-25T02:40:04Z
+- [index.md](root/index.md) | 2026-08-25T03:11:10Z
+- [log.md](root/log.md) | 2026-08-25T03:11:40Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -594,7 +594,7 @@ _合計 1816 ファイル_
 - [marse-ch07-04m40s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-04m40s.png) | 2026-08-24T07:36:08Z
 - [marse-ch07-05m00s.png](wiki/assets/frames/coloso-marse-ch07-fetish-lower-full-body/marse-ch07-05m00s.png) | 2026-08-24T07:36:08Z
 
-## wiki/assets/frames/coloso-marse-ch08-focus-first-composition/ (7)
+## wiki/assets/frames/coloso-marse-ch08-focus-first-composition/ (8)
 
 - [00m00s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/00m00s.png) | 2026-08-25T02:12:42Z
 - [00m20s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/00m20s.png) | 2026-08-25T02:12:42Z
@@ -603,6 +603,7 @@ _合計 1816 ファイル_
 - [04m40s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/04m40s.png) | 2026-08-25T02:12:42Z
 - [06m20s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/06m20s.png) | 2026-08-25T02:12:42Z
 - [07m40s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/07m40s.png) | 2026-08-25T02:12:42Z
+- [07m43s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/07m43s.png) | 2026-08-25T03:07:06Z
 
 ## wiki/assets/frames/coloso-sasa-ch01-intro/ (10)
 
@@ -911,7 +912,7 @@ _合計 1816 ファイル_
 - [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T01:10:45Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-25T01:33:59Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
-- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-25T00:58:30Z
+- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-25T03:07:44Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T10:00:16Z
 - [gf2-helen-rest-room-motion-v22.md](wiki/builds/gf2-helen-rest-room-motion-v22.md) | 2026-07-27T00:02:48Z
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z
@@ -938,7 +939,7 @@ _合計 1816 ファイル_
 - [mmd-library-full-fidelity-rebuild-plan.md](wiki/builds/mmd-library-full-fidelity-rebuild-plan.md) | 2026-08-03T08:33:41Z
 - [multi-site-image-search.md](wiki/builds/multi-site-image-search.md) | 2026-06-15T14:10:13Z
 - [myart-canvas-gallery.md](wiki/builds/myart-canvas-gallery.md) | 2026-07-14T11:33:11Z
-- [obsidian-bridge-chatgpt-mirror.md](wiki/builds/obsidian-bridge-chatgpt-mirror.md) | 2026-08-22T17:16:41Z
+- [obsidian-bridge-chatgpt-mirror.md](wiki/builds/obsidian-bridge-chatgpt-mirror.md) | 2026-08-25T03:09:39Z
 - [obsidian-direct-open-entrypoint.md](wiki/builds/obsidian-direct-open-entrypoint.md) | 2026-08-22T12:22:28Z
 - [obsidian-miller-columns.md](wiki/builds/obsidian-miller-columns.md) | 2026-08-22T14:53:52Z
 - [obsidian-ui-improvement-roadmap.md](wiki/builds/obsidian-ui-improvement-roadmap.md) | 2026-08-22T14:54:16Z
@@ -1664,7 +1665,7 @@ _合計 1816 ファイル_
 - [coloso-marse-ch05-fetish-face.md](wiki/sources/coloso-marse-ch05-fetish-face.md) | 2026-08-24T08:39:27Z
 - [coloso-marse-ch06-fetish-upper-body.md](wiki/sources/coloso-marse-ch06-fetish-upper-body.md) | 2026-08-24T08:39:27Z
 - [coloso-marse-ch07-fetish-lower-full-body.md](wiki/sources/coloso-marse-ch07-fetish-lower-full-body.md) | 2026-08-24T08:39:27Z
-- [coloso-marse-ch08-focus-first-composition.md](wiki/sources/coloso-marse-ch08-focus-first-composition.md) | 2026-08-25T02:15:26Z
+- [coloso-marse-ch08-focus-first-composition.md](wiki/sources/coloso-marse-ch08-focus-first-composition.md) | 2026-08-25T03:10:38Z
 - [coloso-marse-ch09-feminine-pose.md](wiki/sources/coloso-marse-ch09-feminine-pose.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch10-arms-gaze-guide.md](wiki/sources/coloso-marse-ch10-arms-gaze-guide.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch11-rough.md](wiki/sources/coloso-marse-ch11-rough.md) | 2026-06-01T03:39:48Z

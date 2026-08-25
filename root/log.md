@@ -9564,12 +9564,15 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 
 - 依頼: batch2 の marse 群パイロット。coloso-marse-ch08-focus-first-composition(08.mp4 単一・463.4秒・SHA-256 8ef3cb33…768・212,122,074バイト)。
 - 手順: dry-run → snapshot(抽出前)→ temp 抽出27枚(20秒間隔+文字起こし誘導 00:50/01:31/02:55)→ KB 側 staging(`wiki/assets/_staging_batch2_20260825/marse-ch08/`)へ退避 → 盲検読取サブエージェント2体(14+13枚、27ブロック回収=抽出数と一致)→ 第2読者は保存7枚全件を盲検再読取(min要件 max(3,10%)=3枚を上回る)。
-- **marse 群固有の運用(本パイロットで確立)**: スライド講義型で同一スライドが長く持続するため、**同一スライドの重複フレームは保存せず廃棄**(抽出27→保存7、廃棄20枚=黒導入1/タイトル持続4/①持続4/②持続5/③持続4/④持続3...のうち初出以外)。廃棄分の読取結果は「同一スライド」確認にのみ使用し、manifest note と source 運用注記に明記。
-- 完成宣言前の自己点検: 動画全帯域を10秒間隔でスイープ(47枚、staging `marse-ch08-sweep/`)+ffmpeg シーン変化検出(0:03/1:29/2:54/4:38/6:18/7:42)を実施。観測表に載らないスライド・画面はなし(ひづるめ ch06 で実害のあった短時間スライド取りこぼしは本動画では発生せず、全スライド持続30秒以上を機械・ビジョンの両面で確認)。
+- **marse 群固有の運用(本パイロットで確立)**: スライド講義型で同一スライドが長く持続するため、**同一スライドの重複フレームは保存せず廃棄**(抽出27→保存7、廃棄20枚=タイトル持続4/①持続4/②持続5/③持続4/④持続3...のうち初出以外)。廃棄分の読取結果は「同一スライド」確認にのみ使用し、manifest note と source 運用注記に明記。
+- 完成宣言前の自己点検: 動画全帯域を10秒間隔でスイープ(47枚、staging `marse-ch08-sweep/`)+ffmpeg シーン変化検出(0:03/1:29/2:54/4:38/6:18/7:38/7:42)を実施。【2026-08-25 レビューで訂正】当時「観測表に載らないスライド・画面はなし」と記録したが、これは誤り。実際には 7:42〜終端(7:43.37)に macOS デスクトップの画面収録(講義知識外の録画残尾)があり、10秒スイープの最終サンプル〜動画終端の個別目視が抜けていたために見逃された(下の修正記録のとおり ev-008 として収載済み)。スライド自体の取りこぼしが無かった点(全スライド持続30秒以上)は正しい。初回記録のシーン検出リストは 7:38(④→アウトロ)を欠いていたため上記に追加。
 - 発見と訂正: 不一致1件(①スライド左図の「背中の翼」を第1読者Aが記載・第2読者が言及せず)→ 原寸クロップ2倍読取で翼状の羽が実在すると確定(confirmed・服装細部=片側肩出し/白カフス/ニーソックス/紐状の帯も補強)。corrected / marked-uncertain はゼロ。
 - 完了: フレーム7枚を `marse-ch08-MMmSSs.png` で本保存(.png 付き)→ manifest(status complete・completed 2026-08-25)→ source 節を byte 保持で挿入 → gate complete PASS 確認後に visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認。
 - 更新: `wiki/sources/coloso-marse-ch08-focus-first-composition.md`, `wiki/assets/frames/coloso-marse-ch08-focus-first-composition/`(manifest.json+snapshot.json+snapshot-pre.json+png7枚), `index.md`, `log.md`
 - 次の一手: ch08 のレビュー指示文を武田さんへ渡す。承認 verdict 受取まで marse 群残り17章(ch01〜03/09〜22)に進まない(停止条件)。
+- 修正(2026-08-25・レビュー条件付き承認を受けて実施): ①レビューで動画末尾 7:42〜7:43.37(約1.4秒)の macOS デスクトップ画面収録(Safari 2 窓で coloso.jp・講義知識外の録画残尾)が未文書化と判明 → 07:43 のフレームを `07m43s.png` として追加保存し観測表に ev-008 として収載(保存7→8枚)。上記自己点検・manifest note・source 運用注記の「観測漏れ/載らない画面なし」の虚偽3箇所を訂正し、シーン検出リストに 7:38 を追加。②ev-005 の引用字をスライド実表記どおり「誰かに賞ったであろう」へ修正+「(スライドでは『賞った』)」注記(スライド側の誤字。3倍クロップで自確認済み)。③推奨修正: ev-005 右下の薄文字を4倍クロップで部分判読(「gfish | 1925-2076231」風の透かしID)を追記、上記廃棄内訳の「黒導入1」を除去(黒導入フレームは ev-001 として保存済みで、内訳合計21が廃棄20と不合だった)、ev-007 にロゴ上昇アニメ途中フレームの注記を追加(7:41.5 の検証フレームで下端の揃った完成形を自確認)。④`video_ingest_gate.py snapshot --retrofit` で基準ハッシュを再記録し、`check --phase complete` が PASS。
+- 更新(修正分): `wiki/sources/coloso-marse-ch08-focus-first-composition.md`, `wiki/assets/frames/coloso-marse-ch08-focus-first-composition/`(manifest.json+snapshot.json+png1枚追加), `index.md`, `log.md`
+- 次の一手(修正後): レビュアー(opencode セッション)が必須1・2の修正内容を確認 → PASS で marse 群17章の量産開始。量産時は 10秒スイープの最終サンプル〜動画終端を必ず個別目視し、ffmpeg シーン変化検出の閾値は 0.1 を使う(今回の漏れの再発防止)。
 
 ## [2026-08-25] query | 配置復元が「アプリ未起動で全滅・数分固まり」する問題の修正と復元パターン2本化
 
@@ -9591,3 +9594,14 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: `wiki/builds/raycast-file-search-scope.md`(新規), `index.md`, `log.md`
 - 次の問い: md を Obsidian で開く導線が実際に機能するか(次回 md を開くときに確認)。
 - 追記(ch07): 完成前の10秒間隔全帯域スイープ(53枚+シーン変化検出19箇所)で未観測画面4件(00:10 節タイトル「構図」/00:50 ラベル「花・人・白い服」/03:50 ラフ+放射状パース線/08:30 まとめスライド)を発見 → ffmpeg 直接抽出+盲検読取で ev-038〜ev-041 を追加(37→41枚)。00m10s のレイヤー名「これまでの講座」は原寸クロップで確定(初読「下書き」を訂正)。manifest・source 節・index を更新し gate complete 再 PASS。
+
+## [2026-08-25] build | ObsidianBridge 通知連発(209連敗)の回復と git_phase 冪等化・_staging* 同期対象外
+
+- 依頼: 「昨日の夜から ObsidianBridge 連続3回失敗の通知が来る。解決して」。クリスタ(CLIP STUDIO/PAINT)が復元対象かの質問にも回答(両方対象・パレットは位置のみ等の既知制限付き)。
+- 診断(実測): 最終成功 2026-08-24 17:42。git_phase の削除適用中に PC が落ちて半適用(index に削除済み・未コミット331件)が固定され、以後「index に無いパスへの git rm --cached」が毎回 exit 128。副作用として一時 ingest ステージング311件(画像+日本語名txt)が約17時間公開ミラー上に生きたまま。
+- レビュー(独立サブエージェント): go-with-changes。①--ignore-unmatch 単独では日本語パス26件が quotepath 八進エスケープで silent no-op になり15分で再燃(スクラッチrepo実験)②フィルタ先入れ手順(逆順だと worktree 待機の555枚が新規公開されうる)③漏洩実測は311件④15分静穏確認の追加を指摘され全部採用。
+- 修正: bridge_sync.py ①expand_scope+明示行に _staging* 除外フィルタ(先適用) ②git_phase を git add -A 方式へ置換(変化判定→add→diff --cached ガード→commit→push) ③連敗通知を1時間に1回に間引き。
+- 検証(実機): 修正後最初の launchd 同期(12:07:03)で commit+push 完了(390 files changed、追加/更新/削除の全経路を同一コミットで通過)。手動実行はロックで正しくスキップ。git status 0件・index/HEAD に _staging 0件・raw URL 404化を確認。15分後の静穏再確認は実施時に追記。
+- 公開リスクの残存(選択A): git 履歴には311件が残る。SHA-pinned URL は無期限取得可能。完全消去は repo 削除→再作成のみ(未実施・了承済み)。
+- 更新: `~/Library/Application Support/ObsidianBridge/bridge_sync.py`, `wiki/builds/obsidian-bridge-chatgpt-mirror.md`, `log.md`
+- 次の問い: 公開ミラーの履歴消去(repo再作成)を実施するかどうか。
