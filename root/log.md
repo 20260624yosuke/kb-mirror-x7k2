@@ -9716,3 +9716,13 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完成宣言前の自己点検: 全パートの奇数10秒位置90枚をスイープ読取。**注目(観測表に載っていない別画面)0件**。※スイープのプロンプト列挙を手書きした際に一部ファイルの読み飛ばし(31枚)が発生したが、実ファイル一覧との機械照合で検出し全て追加読取済み(教訓: スイープ対象リストは必ず機械生成して渡す)。
 - 完了: フレーム108枚を `ye-jji-ch07-pN-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致・孤児ゼロ)→ manifest(videos[]+動画ごと extraction[]+recheck 11 entries)→ source 節を動画列付き 6 列表で byte 保持挿入 → gate complete PASS → visual_ingested 付与 → snapshot-pre.json 退避+--retrofit 再記録 → 最終 gate PASS 再確認予定。raw・動画は snapshot 取得時から非変更(SHA-256 機械確認)。
 - 更新: `wiki/sources/coloso-ye-jji-ch07-color-basic.md`, `wiki/assets/frames/coloso-ye-jji-ch07-color-basic/`(manifest.json+snapshot.json+snapshot-pre.json+png108枚), `index.md`, `log.md`
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 ひづるめ B1 ch14 シンプルとは洗練の極み(映像観測51枚)
+
+- 依頼: B1 残り量産の4章目(最終)。coloso-hizurume-ch14-simplification(14_01.mp4 520.6秒・単一動画)。
+- 手順: dry-run(SHA-256 64bb5af5…b7ae)→ snapshot → temp 抽出(26枚+文字起こし誘導20時刻=46枚)→ staging 退避 → 盲検読取サブエージェント4体(46ブロック回収=抽出数と一致)→ 第2読者5枚(confirmed 5件・不一致0件)→ フレーム46枚を `hizurume-ch14-MMmSSs.png` で本保存 → manifest → source 節を5列表で byte 保持挿入 → gate complete PASS。
+- セッション中断と復旧: 組み立て直前で API 503 によりセッションが2回連続停止。盲検読取4体・第2読者の結果はセッションエクスポート(json)から全量保全し、3セッション目で検証のうえ組み立てを再開した。
+- スイープ: 10秒間隔全帯域スイープ(53枚)で未観測状態5件(01:50 2枚構成の過渡状態/03:30 3枚目頭部の赤楕円/06:10 球の無彩色化+ズーム53.3%/07:10 図形1内側の一時的な赤楕円/08:30 カラーサークル+フォルダー703・レイヤー1398)を発見 → ev-047〜ev-051 を追加(46→51枚)。スイープ読取はサブエージェント503障害のため統括側が直接読取で代替(落とし穴#15・recheck.method に明記)。再確認2枚(06m10s/08m30s)を原寸クロップで追加し計7枚(min要件6枚)。
+- 訂正: ev-013 の「左向き横顔」を「右向き横顔」へ訂正(02m10s/02m30s の原寸再読による)。
+- 更新: `wiki/sources/coloso-hizurume-ch14-simplification.md`, `wiki/assets/frames/coloso-hizurume-ch14-simplification/`(manifest.json+snapshot.json+png51枚), `index.md`, `log.md`
+- 次の一手: retrofit snapshot 再記録 → visual_ingested 付与 → 最終 gate → inbox 申告 → B1 群(4章)の独立レビュー指示文をユーザーへ提出。
