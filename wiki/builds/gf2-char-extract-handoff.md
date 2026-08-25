@@ -3,7 +3,7 @@ type: build
 status: active
 confidence: high
 evidence_level: source-backed
-last_reviewed: 2026-08-24
+last_reviewed: 2026-08-25
 sources:
   - gf2-helen-repro-v51-handoff
 ---
@@ -301,15 +301,15 @@ sources:
 | 2026-08-25 | 目視承認カード(v3・2体) | **差し戻し**「ゴミみたいなオブジェクト・バリみたいな部分・監査スクリプトに抜けがある・サブエージェントにも客観監査させろ・のっぺりしている」 |
 | 2026-08-25 | 目視承認カード(v4・2体) | **差し戻し**「サブリナをblenderで開いた。指摘箇所が直っていない。解決して」 |
 | 2026-08-25 | 目視承認カード(v5・2体) | **差し戻し**「スクショ付きでバリを指摘（正体=浮き骨）・Helen正本の詳細を理解しているか・場当たり的修正は困る・監査を再度強化」 |
-| 2026-08-25 | 目視承認カード(v6・2体) | **差し戻し（今回）**「成果物両方確認。足のあたりの造形が甘い。**何をもってキャラ全体とするかその基準がない=監査スクリプトの抜け**。別セッションでここから再開したい・引き継ぎ資料を作成して」 |
-| ― | （次セッション: 完全性基準の定義と監査実装 → 足の造形調査 → 再提出） | |
+| 2026-08-25 | 目視承認カード(v6・2体) | **差し戻し**「成果物両方確認。足のあたりの造形が甘い。**何をもってキャラ全体とするかその基準がない=監査スクリプトの抜け**。別セッションでここから再開したい・引き継ぎ資料を作成して」 |
+| 2026-08-25 | 完全性基準 v7 案（C1〜C5） | **承認しない**「サブエージェントに採用計画をレビューさせて。計画作成者が**バイアスがかからない・成果物向上につながるレビュー指示**で送れ」 → 独立レビュー verdict 要修正（major 5件） |
+| 2026-08-25 | 完全性基準 v8 案（独立レビュー major 反映版） | **承認（実装へ）** |
 
-### 次セッションの再開点（2026-08-25 v6 から）
+### 次セッションの再開点（2026-08-25 v8 実装完了から）
 
-1. **「キャラ全体」の完全性基準を定義して監査に実装する**（武田さん指摘の監査抜け）。案: ①原作 prefab/SMR の部位リスト（顔・髪・眉・まつげ・体・手足・衣装・武器）と抽出物の対応表を作り「欠落部位ゼロ」を機械判定 ②known_untextured は「原作データに存在しない」ことの証明付きで列挙 ③体域 AABB から大きく外れた浮遊メッシュの検出。基準案は承認カードで武田さんの合意を取ってから実装
-2. **足のあたりの造形を調査**（武田さん指摘）。候補: Dusevnyj の白い足首〜足（P1_body1=足領域が known_untextured）、靴・足のジオメトリの崩れ、タイツのテクスチャ境界。スクショを貰って特定するのが最短
-3. 独立サブエージェント監査の再実施（API 回復後。503 で 3 回失敗した継続タスク）
-4. 上記を解決して Dusevnyj+Sabrina の 2 体を再提出 → 目視承認 → Step 3 バッチ計画（別承認）
+1. **足問題の決着（最優先）**: v8 監査が Dusevnyj を `blocked` 判定（下端 0.112m 浮上＝足・靴ジオメトリ不在を機械捕捉）。原作ゲーム画面での見え方スクショ 1 枚をいただければ「原作仕様（タイツ筒表現）か欠落か」が決着する。仕様なら ground 基準に known-issue 扱いの例外規約を追加（別承認）、欠落なら抽出側の修正
+2. 独立サブエージェント監査の再実施（API 回復後。503 で 3 回失敗した継続タスク。v8 台帳＝diff report の submission/census/geometry/divergence 各節を実読材料にする）
+3. Dusevnyj+Sabrina の 2 体再提出 → 目視承認（v8 の submission=conditional 項目＝known_untextured・権威外slot の開示承認を含む）→ Step 3 バッチ計画（別承認・quality-gate batch phase 接続は `25_gate_sync.py` 済）
 
 ## 3. 実装メモ（スクリプト構成）
 
@@ -327,9 +327,10 @@ sources:
 | `scripts/15_determinism_probe.py` | 決定性試験（byte SHA / canonical manifest SHA の実測判定） | 完了（canonical_manifest_sha 採用） |
 | `scripts/ce_build_blend.py` | Blender側ビルダ（サブメッシュ分離・素スロット・来歴焼き込み・canonical生成） | 完了 |
 | `scripts/_dump_blend.py` | blend再オープンダンプ（検証器の観測側） | 完了 |
-| `scripts/20_diff_char_blend.py` | **機械突合検証器**（12項目＋texmatch材質の画像実在照合＋replay否定試験 `--self-test` 12系統） | 完了（3体 ALL PASS） |
+| `scripts/20_diff_char_blend.py` | **機械突合検証器**（20検査＋submission 判定＋replay否定試験 `--self-test` 21系統。v8 で完全性基準 C1改/C2改/C3改/C5改 実装） | 完了（Sabrina/Helen PASS・Dusevnyj blocked=足問題機械捕捉） |
 | `scripts/render_char_sheet.py` | レンダーシート生成（正面/斜め45/側面＋scene_variants 派生。監査A4対応） | 完了 |
 | `scripts/combine_sheet.py` | シート3面合成（Blender内蔵PILが無いため anaconda 側で実行） | 完了 |
+| `scripts/25_gate_sync.py` | diff台帳→quality-gate.json known_gaps の冪等同期（v8 C5改・accepted_gaps は不変） | 完了 |
 
 - 対象範囲の機械的定義: `(SSR|SR|UR)\d{2,}` バリアント行を持つベース族のみ（113族・敵NPC除外）
 - Python 方針: UnityPy/lz4 系は `/opt/anaconda3/bin/python3` 3.11.7 固定＋`.python-deps`。stdlib のみの新規スクリプトは python3 3.14。**Blender 4.5.11 LTS** は `common_ce.BLENDER` 固定
@@ -363,6 +364,7 @@ sources:
 - **2026-08-25（監査強化v4・アルファ/ゴミ修正＋独立監査新設）**: 2回目の差し戻し「ゴミオブジェクト・バリ・のっぺり・監査抜け・サブエージェント監査もやれ」→ 機械精査で E1（全材質アルファ未接続 = バリ状ゴミの正体）・E2（OverviewCam 残存 = ゴミオブジェクトの正体）・E3（既定 PBR ハイライト）・E4（監査の配線/型検査欠落）を特定 → アルファ CLIP カットアウト・カメラ廃止・マット化・新検査2項目＋self-test 16系統で修正。**独立サブエージェント監査**を運用新設 → 判定: Sabrina 提出可・Dusevnyj 条件付き（白い右手=P1_cloth3/hip3 は原作データにテクスチャ無し）。3体 v4 再構築→突合16項目 PASS→決定性 PASS。**目視承認は未取得**
 - **2026-08-25（v5・ハードカットアウト/ramp陰影）**: 3回目の差し戻し「指摘箇所が直っていない」→ 原因は v4 の CLIP 指定が Blender 4.5 EEVEE Next で無効（例外握り潰し）だったこと＋DITHERED ディザのビューポートざらつき＋ramp 陰影未実装 → Alpha を Math ノードで二値化するハードカットアウトに変更・原作 ramp テクスチャ実在材質（髪等）に v51 実績レシピで陰影配線。3体 v5 再構築→突合16項目 PASS→決定性 PASS。独立サブエージェント監査は API障害(503×3)で技術的停止（担当者監査で代行・Sabrina 欠陥ゼロ）。**目視承認は未取得**
 - **2026-08-25（v6・浮き骨スパイク非表示）**: 4回目の差し戻しで武田さんスクショを分析 → 「バリ」の正体=未解決親の骨が体の外に浮いてスパイク表示（v51 正本は親完全解決のため表示で正しかった・実物ダンプで確認）→ 未解決親>0 の間はアーマチュアを非表示保存する規約＋監査新検査 open_state_cleanliness＋self-test 17系統。3体 v6 再構築→突合17項目 PASS→決定性 PASS。**目視承認は未取得**
+- **2026-08-25（v8・完全性基準の実装＋計画審査への独立レビュー適用）**: v6 差し戻し「完全性基準が無い=監査抜け」に対し v7 案（C1〜C5）を承認カード提示 → 武田さんが「メインエージェントはバイアス無きよう成果物向上につながる指示でサブエージェントにレビューさせよ」と承認せず → 独立レビュー実施、verdict **要修正**（M1: Dusevnyj 足ジオメトリ不在の反例で v7 が ALL PASS／M2: census 突合無しでは D1 クラス検出不可／M3: manifest AABB の空間不一致／M4: 再オープン検査と提出条件の漏れ／M5: known_untextured 証明の走査境界）。major 全反映の v8 を承認いただき実装: canonical へ world_bbox 追加・新検査3本（census_completeness／geometry_world_coverage〔地面接触基準含む〕／variant_detail_divergence）＋submission 判定＋self-test 21系統＋`25_gate_sync.py`（quality-gate 接続）。実測: Sabrina/Helen 全20検査 PASS(conditional)・**Dusevnyj は blocked（下端0.112m浮上＝足問題を初めて機械捕捉）**・決定性 PASS。目視承認は未取得（次は足問題のスクショ照合→2体再提出）
 - **2026-08-25（v6 確認・次セッションへ引き継ぎ）**: 武田さんが v6 両方を確認（骨スパイク消滅は確認）。ただし承認未取得で 2 指摘: ①**足のあたりの造形が甘い** ②**「何をもってキャラ全体とするか」の完全性基準が無い=監査抜け**。別セッションで再開するため本ページ「次セッションの再開点」に作業を記録済み
 - **2026-08-24（Step 2 パイロット）**: 武田さん指名の DusevnyjSSR0101・SabrinaSSR0101 を抽出→機械突合 **12項目 ALL PASS**。過程で①原作データの完全重複面が Blender で面ズレを起こす問題を dedupe 規約（extractor と検証器の同一規約・台帳記録付き）で解決、②両面ポリゴン境界での Blender 法線ゼロ化（表現限界）を非表現 corner 除外規約（件数記録・1%上限付き）で解決。Helen 回帰 PASS・self-test 再実行 PASS。目視承認は未取得（次は武田さんの Blender 確認）
 - **2026-08-24（Step 1）**: 抽出ドライバ〜機械突合を実装し Helen/HelenSSR01 で実測。突合12項目ALL PASS・決定性 canonical_manifest_sha 確定・replay否定試験11系統PASS。捨てた判断4件を同ページに記録。run-state.json を step1-done へ更新。
