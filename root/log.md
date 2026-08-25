@@ -9668,3 +9668,21 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json` の yejji-remaining に承認フィールドを記録(representative_input/output・comparison_evidence・source_compared/user_accepted/batch_safe: true/approved_by: user/approved_at/approval_evidence/accepted_gaps)。`--phase batch` は yejji-remaining への指摘 0(全体 FAIL の残りはひづるめ family 等の未記録分で他セッション管轄)。
 - 引き継ぎ資料の現在地に ye_jji ch06 承認済みを追記。ye_jji 群残りの量産開始条件を満たす。
 - 触ったページ: [[coloso-visual-ingest-batch2-handoff]] / `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json` / `review/2026-08-25-yejji-ch06-pilot-review.md`(新規) / `log.md`
+## [2026-08-25] ingest | gf2-char-extract 完全性基準 v8 の承認・実装（v6 差し戻し対応）
+
+- 経緯: v6 差し戻し「足の造形が甘い／何をもってキャラ全体とするか基準がない=監査抜け」→ v7 案(C1〜C5)を承認カード提示 → 武田さん「計画作成者はバイアス無きよう成果物向上につながる指示でサブエージェントにレビューさせよ」→ 独立レビュー verdict 要修正(major 5件: M1 足ジオメトリ不在反例/M2 census 突合欠如/M3 manifest AABB 空間不一致/M4 再オープン検査と提出条件漏れ/M5 known_untextured 走査境界) → major 全反映の **v8 を承認**いただき実装。
+- 実装: canonical へ world_bbox 追加・20_diff_char_blend.py 新検査3本(census_completeness/geometry_world_coverage〔地面接触基準 0.05m〕/variant_detail_divergence)+submission 判定(ready|conditional|blocked)+scan_boundary 付記+self-test 21系統+`25_gate_sync.py`(quality-gate 接続・新規)。
+- 実測: Sabrina/Helen 全20検査 PASS(conditional)。**Dusevnyj blocked — 下端0.112m浮上=足・靴ジオメトリ不在を初めて機械捕捉**(高詳細派生 _Dorm/_Drom body1 826→2306v 等5組は原作フラグで非アクティブ=開示材料として台帳化)。self-test PASS(21 cases・Sabrina)/決定性 PASS(Dusevnyj)。
+- 更新: `wiki/builds/gf2-char-extract-handoff.md`(v8節・承認履歴2行・再開点更新・変更履歴), `gf2-char-extract/run-state.json`, `gf2-char-extract/quality-gate.json`(known_gaps 同期), ledger/diff-*.json 3体, scripts/25_gate_sync.py(新規)
+- 次の一手: 足問題の公式スクショ照合(仕様か欠落か決着)→独立サブエージェント監査再実施→2体再提出
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 marse 群量産 ch09 女性らしいポーズを描くためには(映像観測7枚)
+
+- 依頼: marse 群パイロット ch08 の修正確認 PASS(別セッションレビュアー)を受けた量産の1章目。coloso-marse-ch09-feminine-pose(09.mp4 単一・461.9秒・SHA-256 91dc2768…978c・210,911,902バイト)。
+- 手順: dry-run → snapshot(抽出前)→ temp 抽出29枚(20秒間隔+文字起こし誘導 00:49/01:38/03:12/04:45/06:16)→ KB 側 staging(`wiki/assets/_staging_batch2_marse_prod_20260825/ch09/`)へ退避 → 盲検読取サブエージェント2体(15+14枚、29ブロック回収=抽出数と一致。1体が provider エラーで2回落ちたため計3回実行)→ スイープ: 10秒間隔46枚+終端2秒間隔8枚+459.5〜終端の密フレーム6枚を別サブエージェントが目視(レビュー指示の再発防止策を適用)+ffmpeg シーン変化検出 閾値0.1(0:03.8/1:33.8/4:43.9/7:38.7)。
+- 構成: 黒導入(0:00)→スライド「女性らしいポーズとは」(0:03.8〜1:33.8)→「よく使う女性らしいポーズの例」座り3ポーズ+箇条書きA(1:33.8〜3:11頃)→同一レイアウトで箇条書きB採用条件に切替(3:12〜4:43.9)→勝ちポーズ3図+箇条書きC(4:43.9〜6:16頃)→同一レイアウトで箇条書きD採用条件に切替(6:16〜7:38.7)→Coloso ロゴアウトロ(7:38.7〜終端)。スライド2枚は箇条書き差し替え型のため、同一レイアウトの箇条書き切替を別画面として保存(計7枚・重複22枚廃棄)。
+- 終端確認: 459.5〜461.9秒を個別目視し、460.3秒以降は完成形「Coloso.」ロゴの静止で終わることを確認。**ch08 型の画面収録残尾はなかった**。
+- 発見と訂正: 箇条書きの1字揺れ2件を2倍クロップで確定(ev-005「腰が沿っている」=さんずい+鉛の右旁+口で「沿」/ev-006「埋めれる」+3項目構成。第1読者Bの「治っている」・第2読者単体の「埋められる」4項目読みは誤読、初回観測どおり採用)。recheck 3枚(max(3,10%))はすべて confirmed。
+- 完了: フレーム7枚を `marse-ch09-MMmSSs.png` で本保存(.png 付き)→ manifest(status complete)→ source 節を byte 保持で挿入 → gate complete PASS → visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認。
+- 更新: `wiki/sources/coloso-marse-ch09-feminine-pose.md`, `wiki/assets/frames/coloso-marse-ch09-feminine-pose/`(manifest.json+snapshot.json+snapshot-pre.json+png7枚), `index.md`, `log.md`
+- 次の一手: ch10(10.mp4 単一・392秒)へ続く。marse 群は ch09〜ch22 の動画あり12章が残り(全13章中1章完了)。
