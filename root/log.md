@@ -9871,3 +9871,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完成宣言前の自己点検: 奇数10秒位置36枚を機械生成リストで抽出し実ファイル照合(missing/extra ゼロ)のうえ盲検読取。**注目0件**(01m10s 等の中間状態は同スライド描き込み進行として既存行でカバー)。スイープ照合から発見した 03m10s 花びら散布は 03m20s marked-uncertain の確定材料に使用。
 - 完了: フレーム49枚を `ye-jji-ch10-MMmSSs.png` で本保存(.png 付き・孤児ゼロ)→ manifest(recheck 7 entries)→ source 節を5列表で byte 保持追記 → index 更新 → gate complete PASS 予定 → visual_ingested 付与 → retrofit 再記録 → 最終 gate PASS。raw・動画非変更(SHA-256 機械確認)。
 - 更新: `wiki/sources/coloso-ye-jji-ch10-blank.md`, `wiki/assets/frames/coloso-ye-jji-ch10-blank/`(manifest.json+snapshot.json+png49枚), `index.md`, `log.md`
+
+## [2026-08-25] ingest | coloso-intake 2024_04_24_ne-on intake40本+文字起こし20本完了・検収承認(無音20本は未完記録)
+
+- /hold で起動。講師名正綴をカードで「ne-on」に凍結(M5)・ソートキー name を承認し dry-run 対応表を確定(timestampキーはファイル名にCamX形式が無く同一順になることを2回のdry-runで実証)。
+- メディア構造を実測(afinfo全40本一括計測): m4a約64kbps=講義音声18本/章動画mp4+RPReplay約2.1kbps=実質無音20本/A001 mov約335kbps=音声あり2本(武田さんによればカメラ撮影の講座記録)。
+- 代表: NN01(m4a)成功・NN37(.mov)成功・NN38(RPReplay)は幻聴フィラーのみで本文0行→「未完(無音)」。ツールの節追記ガードは設計どおり作動。
+- 検収カード: NN対応表「表どおり承認」・無音20本「実行せず未完了記録」(NN38幻聴出力5種の削除込み)・バッチ承認。「動画見当たらない」→NN01は音声専用(m4a)と説明しNN37で再生確認(N1クリア)。
+- バッチ: 音声あり残り18本を1本ずつ実行し 18/18成功・失敗0・空文字0。NN13のみタイムアウト中断(成果物ゼロを確認)→クリーン再実行でOK。最終監査 A0-A6 全講座 PASS、quality-gate batch PASS(ne-on family ブロックのみ更新)。
+- 更新: `raw/_coloso/2024_04_24_ne-on/`(40ページ+mapping.json+_attachments), `wiki/builds/coloso-intake/reports/2026-08-25-2024_04_24_ne-on-audit.md`, `wiki/builds/coloso-intake/quality-gate.json`(ne-on family のみ), `log.md`

@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 3528 ファイル_
+_合計 3529 ファイル_
 
 ## root/ (11)
 
@@ -14,7 +14,7 @@ _合計 3528 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-25T14:10:37Z
-- [log.md](root/log.md) | 2026-08-25T14:11:01Z
+- [log.md](root/log.md) | 2026-08-25T14:58:52Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -2329,8 +2329,9 @@ _合計 3528 ファイル_
 
 - [parallel-session-brief.md](wiki/builds/coloso-intake/parallel-session-brief.md) | 2026-08-25T11:07:09Z
 
-## wiki/builds/coloso-intake/reports/ (5)
+## wiki/builds/coloso-intake/reports/ (6)
 
+- [2026-08-25-2024_04_24_ne-on-audit.md](wiki/builds/coloso-intake/reports/2026-08-25-2024_04_24_ne-on-audit.md) | 2026-08-25T14:57:39Z
 - [2026-08-25-ixy-2-final-audit.txt](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2-final-audit.txt) | 2026-08-25T08:40:24Z
 - [2026-08-25-ixy-2-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2-representative-comparison.md) | 2026-08-25T08:41:50Z
 - [2026-08-25-ixy-2024-audit.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-audit.md) | 2026-08-25T13:10:02Z
