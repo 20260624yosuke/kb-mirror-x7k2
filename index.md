@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 2339 ファイル_
+_合計 2352 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 2339 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T04:28:03Z
-- [log.md](root/log.md) | 2026-08-25T04:32:07Z
+- [index.md](root/index.md) | 2026-08-25T04:59:17Z
+- [log.md](root/log.md) | 2026-08-25T04:59:17Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -667,7 +667,7 @@ _合計 2339 ファイル_
 - [hizurume-ch12-02-11m00s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-11m00s.png) | 2026-08-22T15:28:38Z
 - [hizurume-ch12-02-11m48s.png](wiki/assets/frames/coloso-hizurume-ch12-gaze-guidance/hizurume-ch12-02-11m48s.png) | 2026-08-22T19:06:41Z
 
-## wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/ (99)
+## wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/ (104)
 
 - [hizurume-ch13-01-00m00s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-00m00s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-00m10s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-00m10s.png) | 2026-08-25T03:53:08Z
@@ -687,6 +687,7 @@ _合計 2339 ファイル_
 - [hizurume-ch13-01-03m40s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-03m40s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-04m00s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-04m00s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-04m20s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-04m20s.png) | 2026-08-25T03:53:08Z
+- [hizurume-ch13-01-04m30s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-04m30s.png) | 2026-08-25T04:47:47Z
 - [hizurume-ch13-01-04m36s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-04m36s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-04m40s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-04m40s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-04m50s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-04m50s.png) | 2026-08-25T03:53:08Z
@@ -705,10 +706,12 @@ _合計 2339 ファイル_
 - [hizurume-ch13-01-08m00s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-08m00s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-08m20s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-08m20s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-08m40s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-08m40s.png) | 2026-08-25T03:53:08Z
+- [hizurume-ch13-01-08m50s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-08m50s.png) | 2026-08-25T04:47:48Z
 - [hizurume-ch13-01-09m00s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-09m00s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-09m20s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-09m20s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-09m40s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-09m40s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-10m00s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-10m00s.png) | 2026-08-25T03:53:08Z
+- [hizurume-ch13-01-10m10s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-10m10s.png) | 2026-08-25T04:47:49Z
 - [hizurume-ch13-01-10m20s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-10m20s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-10m28s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-10m28s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-10m40s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-10m40s.png) | 2026-08-25T03:53:08Z
@@ -723,8 +726,10 @@ _合計 2339 ファイル_
 - [hizurume-ch13-01-13m40s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-13m40s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-14m00s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-14m00s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-14m20s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-14m20s.png) | 2026-08-25T03:53:08Z
+- [hizurume-ch13-01-14m30s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-14m30s.png) | 2026-08-25T04:47:49Z
 - [hizurume-ch13-01-14m40s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-14m40s.png) | 2026-08-25T03:53:08Z
 - [hizurume-ch13-01-15m00s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-15m00s.png) | 2026-08-25T03:53:08Z
+- [hizurume-ch13-01-15m10s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-01-15m10s.png) | 2026-08-25T04:47:50Z
 - [hizurume-ch13-02-00m00s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-02-00m00s.png) | 2026-08-25T03:53:09Z
 - [hizurume-ch13-02-00m17s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-02-00m17s.png) | 2026-08-25T03:53:09Z
 - [hizurume-ch13-02-00m20s.png](wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/hizurume-ch13-02-00m20s.png) | 2026-08-25T03:53:09Z
@@ -853,6 +858,16 @@ _合計 2339 ファイル_
 - [06m20s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/06m20s.png) | 2026-08-25T02:12:42Z
 - [07m40s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/07m40s.png) | 2026-08-25T02:12:42Z
 - [07m43s.png](wiki/assets/frames/coloso-marse-ch08-focus-first-composition/07m43s.png) | 2026-08-25T03:07:06Z
+
+## wiki/assets/frames/coloso-marse-ch09-feminine-pose/ (7)
+
+- [marse-ch09-00m00s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-00m00s.png) | 2026-08-25T05:03:16Z
+- [marse-ch09-00m20s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-00m20s.png) | 2026-08-25T05:03:16Z
+- [marse-ch09-01m38s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-01m38s.png) | 2026-08-25T05:03:16Z
+- [marse-ch09-03m12s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-03m12s.png) | 2026-08-25T05:03:16Z
+- [marse-ch09-04m45s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-04m45s.png) | 2026-08-25T05:03:16Z
+- [marse-ch09-06m16s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-06m16s.png) | 2026-08-25T05:03:16Z
+- [marse-ch09-07m40s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-07m40s.png) | 2026-08-25T05:03:16Z
 
 ## wiki/assets/frames/coloso-sasa-ch01-intro/ (10)
 
@@ -1440,7 +1455,7 @@ _合計 2339 ファイル_
 - [eagle-dedup-merge-2026-07-07.md](wiki/builds/eagle-dedup-merge-2026-07-07.md) | 2026-07-09T11:29:46Z
 - [eagle-folder-sort.md](wiki/builds/eagle-folder-sort.md) | 2026-07-04T14:37:29Z
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
-- [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-25T02:23:46Z
+- [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-25T05:02:35Z
 - [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T03:22:36Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-25T03:25:05Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
@@ -1487,10 +1502,11 @@ _合計 2339 ファイル_
 - [x-eagle-free-save-pilot.md](wiki/builds/x-eagle-free-save-pilot.md) | 2026-08-03T08:46:15Z
 - [x-eagle-idea-workbench.md](wiki/builds/x-eagle-idea-workbench.md) | 2026-06-25T09:50:10Z
 
-## wiki/builds/coloso-visual-ingest-batch2/review/ (2)
+## wiki/builds/coloso-visual-ingest-batch2/review/ (3)
 
 - [2026-08-25-hide-ch06-pilot-review-and-fix-confirm.md](wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-hide-ch06-pilot-review-and-fix-confirm.md) | 2026-08-25T04:55:20Z
 - [2026-08-25-marse-ch08-pilot-review-and-fix-confirm.md](wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-marse-ch08-pilot-review-and-fix-confirm.md) | 2026-08-25T04:26:39Z
+- [2026-08-25-yejji-ch06-pilot-review.md](wiki/builds/coloso-visual-ingest-batch2/review/2026-08-25-yejji-ch06-pilot-review.md) | 2026-08-25T05:00:31Z
 
 ## wiki/concepts/ (404)
 
@@ -2179,7 +2195,7 @@ _合計 2339 ファイル_
 - [coloso-hizurume-ch10-efficient-practice.md](wiki/sources/coloso-hizurume-ch10-efficient-practice.md) | 2026-05-31T15:44:53Z
 - [coloso-hizurume-ch11-force-field.md](wiki/sources/coloso-hizurume-ch11-force-field.md) | 2026-08-22T13:55:29Z
 - [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-08-24T14:51:14Z
-- [coloso-hizurume-ch13-illusion-and-lies.md](wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md) | 2026-08-25T04:24:19Z
+- [coloso-hizurume-ch13-illusion-and-lies.md](wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md) | 2026-08-25T04:59:17Z
 - [coloso-hizurume-ch14-simplification.md](wiki/sources/coloso-hizurume-ch14-simplification.md) | 2026-05-31T15:49:11Z
 - [coloso-hizurume-ch15-painting-to-illustration.md](wiki/sources/coloso-hizurume-ch15-painting-to-illustration.md) | 2026-05-31T15:53:02Z
 - [coloso-hizurume-ch16-speed-up.md](wiki/sources/coloso-hizurume-ch16-speed-up.md) | 2026-05-31T15:53:23Z

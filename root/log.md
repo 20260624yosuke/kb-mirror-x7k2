@@ -9660,3 +9660,4 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 完了: フレーム99枚を `hizurume-ch13-{01,02}-MMmSSs.png` で本保存 → manifest(videos[]+動画ごと extraction[])→ source 節を6列表で byte 保持挿入 → index.md 更新。
 - 更新: `wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md`, `wiki/assets/frames/coloso-hizurume-ch13-illusion-and-lies/`(manifest.json+snapshot.json+png99枚), `index.md`, `log.md`
 - 次の一手: 10秒間隔全帯域スイープ(p1 92枚+p2 65枚)→ 補完 → gate complete PASS → visual_ingested 付与。
+- 追記(ch13): 10秒間隔全帯域スイープ(p1 92枚+p2 65枚)で未観測状態5件(04:30 連想は環境依存の囲み/08:50 質感は嘘がつきやすい追記/10:10 明暗境界線の立体感を高める3画像状態/14:30 ミー散乱多用の追記/15:10 Coloso ウェブプレーヤーの端末画面)を発見 → ev-100〜ev-104 を追加(99→104枚)。p2 は補完なし。動画が Coloso ウェブプレーヤーの2倍速画面収録であることを ev-104 で確認。manifest・source 節・index を更新。

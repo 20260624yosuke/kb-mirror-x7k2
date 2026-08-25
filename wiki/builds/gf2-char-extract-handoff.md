@@ -239,6 +239,52 @@ sources:
 - self-test 17系統 PASS・決定性 PASS・全レンダー白面積率 0.0
 - 骨の親解決自体（AFS2/CRI 内プレハブの解析）は**既知の難題**（v51 でも苦戦した領域・武田さんも認知済み）。解決できれば自動的に骨は表示される
 
+### 監査強化v8・完全性基準の実装（2026-08-25・現行）
+
+> v6 差し戻しの指摘「**何をもってキャラ全体とするか基準がない＝監査スクリプトの抜け**」への回答。v7 案（C1〜C5）を作成して承認カードに出したところ武田さんが**「承認しない。計画を作ったメインエージェントがバイアスのかからない・成果物向上につながるレビュー指示でサブエージェントにレビューさせる」**と指示 → 独立サブエージェント監査（E5 運用を計画審査に拡大）を実施 → verdict **要修正**（major 5件）→ 反映した v8 案を承認カードで提示 → **武田さん「v8 承認・実装へ」**。
+
+**独立レビューの主要指摘（major）と対応**:
+
+| # | 指摘 | 実測根拠 | v8 での対応 |
+|---|---|---|---|
+| M1 | v7 は「基準 ALL PASS なのに不完全」の反例を捕捉できない。Dusevnyj の既定表示には**足・靴のジオメトリ自体が無い**（P1_body1 はタイツ筒 826v のみ・足形状 2306v は非表示 Dorm/Drom 版にのみ存在） | 孤立レンダー＋diff-dump 実測 | **地面接触基準**： 可視セット下端が root(z=0) から 0.05m 超＝末端欠落疑いで FAIL。実測 Dusevnyj 0.112 / Sabrina 0.012 / Helen −0.001 |
+| M2 | C1 の対応表は抽出器と同じスコープ定義を使うため D1 クラス（選び方の漏れ）を構造的に検出できない | mesh_candidates＝kept+dropped で完全整合（118件）を確認しつつ、同名重複スキップ 642件の記録欠如を実測 | **census 3方突合**： Step0 census 台帳↔検証器族走査↔blend。採用メッシュと同名・別内容の重複のみ FAIL、頭部・体幹系のスコープ外残置は D1 監視として列挙 |
+| M3 | manifest の AABB はローカル空間で世界配置と不一致（Sabrina body y=0.37..1.08 に対しレンダーは足まで表示）→ 体域推定が誤判定 | extract-manifest 実測 | **保存済みblend再オープン・世界座標 AABB**（canonical に world_bbox 追加）。manifest AABB は使用禁止 |
+| M4 | 「修正が実表示に届くか」の検査が無い＝v4/v5 型差し戻しの再発経路。提出条件が「C1〜C4 PASS」のみだと E1/E4 クラスが規約上漏れる | handoff v5 節 | 観測経路は元々 `_dump_blend.py`・`render_char_sheet.py` 共に `bpy.ops.wm.open_mainfile`（再オープン方式）であることを **submission.rule に明文化**＋提出条件を「全検査（既存17＋新規3）PASS」へ修正 |
+| M5 | known_untextured の証明は族トークンフィルタ＋AFS2/CRI 未走査 5,032本の内側の話。「原作に存在しない」は過大主張 | texture-manifest 実測 | `scan_boundary` を機械可読で付記。「走査範囲内に存在しないことの記録」へ表記修正 |
+
+**v8 実装**:
+
+| 項目 | 内容 |
+|---|---|
+| `ce_build_blend.canonical_of_scene` | MESH に `world_bbox`（matrix_world 変換後の8角 min/max）を追加。canonical 形式進化（blend バイト自体は不変・SHA 表記は v6 値のまま有効） |
+| `20_diff_char_blend.py` 新検査① | `census_completeness`（C1改）： census↔族走査↔blend 3方突合＋同名重複スキップ台帳化＋採用名前の内容指標（頂点数）不一致検出 |
+| 同② | `geometry_world_coverage`（C3改）： 世界座標で縦方向カバレッジ欠け帯（>6%身長）＋浮遊メッシュ（体域交差率<0.02）＋地面浮上（下端>0.05m） |
+| 同③ | `variant_detail_divergence`（情報提供・collapsed_scale_bones 前例）： 同一パート派生(_Dorm/_Fight 等)が基本版の2倍超・差200頂点超なら列挙。「より詳細な版が原作フラグで非アクティブ」の開示材料。Dusevnyj で5組検出（body1 826→2306、cloth 446→10934 等） |
+| submission 判定 | `ready` / `conditional`（known_untextured・権威外slot・gaps あり→開示承認が提出条件）/ `blocked`(FAIL)。全 slot が非権威（texmatch=推定一致）という独立監査 major 指摘も unresolved_slots 数値として反映 |
+| self-test | 17→**21系統**（blendメッシュ名破壊／可視メッシュ浮遊／地面浮上／expected側メッシュ削除の4ケース追加。expected 側破壊は初・D1 クラス逆方向の捕捉確認） |
+| `25_gate_sync.py` 新設 | diff 台帳→quality-gate.json families[].known_gaps へ冪等同期（`[v8:<char>/<variant>]` 接頭辞。accepted_gaps は触らない）。batch/complete phase 判定との接続 |
+
+**v8 実測（2026-08-25・現行）**:
+
+| キャラ | 突合 | submission | 特記事項 |
+|---|---|---|---|
+| Dusevnyj/DusevnyjSSR0101 | **FAIL (19/20 checks)** | **blocked** | `geometry_world_coverage` FAIL＝下端 0.112m 浮上＝**足・靴ジオメトリ不在を初めて機械捕捉**（武田さん「足の造形が甘い」の正体候補。原作仕様か否かは公式スクショ照合で決着） |
+| Sabrina/SabrinaSSR0101 | PASS (20 checks) | conditional | 未テクスチャゼロ・権威外slot 13 |
+| Helen/HelenSSR01（内部回帰） | PASS (20 checks) | conditional | 回帰継続 |
+
+- self-test: **21 cases PASS**（Sabrina 実施。Dusevnyj は素状態が既知 FAIL のため前提不成立＝検証器が正しく機能している証拠として分離）
+- 決定性: PASS（canonical_identical=true・Dusevnyj で再実測）
+- 足問題の開示材料: P1_body1(lod0, 826v)に対し _Dorm/_Drom 版は 2306v の高詳細版が存在するが**原作の可視性フラグでは非アクティブ**。原作ゲーム画面での見え方（スクショ 1 枚）が「仕様か欠落か」の決着手順
+
+#### v8 で捨てた判断とその見え方
+
+| 捨てたもの | 手元でどう変わるか | 戻せるか |
+|---|---|---|
+| v7 案の C3（manifest AABB ベースの体域判定） | 世界座標での正しい判定になった。manifest AABB を使うと脚全体欠落の誤検知（M3 実測）が出る | なし（誤検知の原因。戻す理由が無い） |
+| 同名重複の全面 FAIL（v8 初版の過剰発火） | 汎用名（Plane001/Object001 等・共有bundle由来）の同名異内容は台帳記録のみになり、census_completeness が正当な PASS を返す。**採用(expected)名前と同名の別内容だけが FAIL** | 初版ロジックへ戻すと Dusevnyj/Sabrina/Helen とも誤 FAIL する（30件超の無害重複を捕捉） |
+| 「帯カバレッジだけで末端欠落を見る」方式 | 地面接触基準の併用により「足ごと無い」型の欠落も捕捉。帯カバレッジ単独では Dusevnyj 足欠けは検出できない（タイツ筒が Z 帯を埋めるため）を実測で確認済み | 帯カバレッジは腰抜け等の中間帯欠落ガードとして併存 |
+
 ## 2. 承認履歴
 
 | 日付 | カード | 結果 |

@@ -117,7 +117,7 @@
 - [[coloso-hizurume-ch10-efficient-practice]] — 写真模写 6 効果 + 4 ルール / 黒の弊害 (ingested 2026-06-01)
 - [[coloso-hizurume-ch11-force-field]] — 絵の力場(焦点コントロール)= 視線誘導の前提 / 光側・影側優先 (ingested 2026-06-01, 映像観測29枚 2026-06-11)
 - [[coloso-hizurume-ch12-gaze-guidance]] — 視線誘導 = メイン + サブ(造語)、9 手法、明暗比較連鎖 / 補色強調 / 調和対比 (ingested 2026-06-01, 映像観測47枚 2026-08-23・分割動画12_01+12_02)
-- [[coloso-hizurume-ch13-illusion-and-lies]] — 絵の嘘 / 連想錯覚 / 色の感情(波長遠近法)/ 重い軽い表現の方法 (ingested 2026-06-01, 映像観測99枚 2026-08-25・分割動画13_01+13_02)
+- [[coloso-hizurume-ch13-illusion-and-lies]] — 絵の嘘 / 連想錯覚 / 色の感情(波長遠近法)/ 重い軽い表現の方法 (ingested 2026-06-01, 映像観測104枚 2026-08-25・分割動画13_01+13_02)
 - [[coloso-hizurume-ch14-simplification]] — シンプルは洗練の極み + S03 復習クイズ (ingested 2026-06-01)
 - [[coloso-hizurume-ch15-painting-to-illustration]] — 絵画→イラスト混合率 / 巨匠模写 / ブラシ作り (ingested 2026-06-01)
 - [[coloso-hizurume-ch16-speed-up]] — 速度は質から / 「彩度上げると良くなる」の正体 / レイヤー一桁 (ingested 2026-06-01)
