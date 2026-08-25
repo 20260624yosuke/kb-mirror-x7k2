@@ -9695,3 +9695,14 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 未検証: symlink動画の Obsidian 再生(N1・検収項目)/NN順序と公式章順の一致(M2・検収項目)/残り6講座は各講座の代表承認が未了(M3)。
 - 更新: `wiki/builds/coloso-intake-design.md`(新規), `wiki/builds/coloso-intake/quality-gate.json`(新規), `tools/coloso_intake.py`(新規), `tools/coloso_intake_audit.py`(新規), `tools/coloso_transcribe.py`(パッチ), `raw/_coloso/2025_09_27_ixy_2/`(23ページ+symlink+mapping.json), `index.md`, `log.md`
 - 次の一手: 武田さん検収(NN対応表承認・Obsidian再生確認・代表ページ目視)→ 承認なら quality-gate families[ixy-2-pilot] へ受入記録→残り22本の文字起こし→他6講座は各講座で講師名凍結+ソートキー決定+代表1〜2本承認のうえ展開。
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 marse 群量産 ch10 胸に視線が誘導する腕の描き方(映像観測8枚)
+
+- 依頼: marse 群量産の2章目。coloso-marse-ch10-arms-gaze-guide(10.mp4 単一・392.9秒・SHA-256 5e6cecff…7f4・179,739,168バイト)。
+- 手順: dry-run → snapshot(抽出前)→ temp 抽出35枚(20秒間隔+文字起こし誘導15時刻 00:46〜05:47)→ staging 退避 → 盲検読取サブエージェント3体分(12+12+11。provider エラーが多発し分割・間隔置きで計6回実行、35ブロック回収=抽出数と一致)→ スイープ: 10秒間隔40枚+終端2秒間隔6枚+390.5〜終端の密フレーム5枚を別サブエージェントが目視+ffmpeg シーン変化検出 閾値0.1(0:03.5/0:45.0/1:53.8/3:04.9/4:22.1/5:16.4)。
+- 構成: 黒導入→S1導入スライド「胸に視線が誘導する腕の描き方」→3列ギャラリースライド5種(ずれた衣装を戻す/衣装をずらす/顔と胸を腕で分断 → 胸を隠す/胸に挟む/両手で囲む → 手を添える/腕を挟む/物で押し付ける → ズボンを脱ぐ/タオルで隠す/肩紐を上げる → 腕で胸を寄せる/手で汗を仰ぐ/濡れた肌を拭く。計15点のイラスト/線画)→約391.7秒からフェードでColosoロゴ。保存8枚・重複27枚廃棄。
+- 発見と訂正: **第1読者Bのフレーム取り違え1件**(落とし穴13の再現) — 03m00s を次スライド S4 と読取したが、第2読者再読・シーン検出時刻(3:04.9 遷移)・文字起こし(3:05 で話題移り)の三方照合で 03m00s は S3 継続と確定。S4 初出を 03m06s に修正し recheck に corrected 記録。
+- 終端確認: 390.5〜392.9秒を個別目視し、約391.7秒にスライド→黒のフェード、終端は完成形「Coloso.」ロゴと確定。**フェードが緩く ffmpeg シーン変化検出 閾値0.1では未検出** — 終端個別目視規則(レビュー指示)が実利を発揮した事例。ch08 型の画面収録残尾はなし。導入部約0〜15秒に動画プレーヤー風の操作バーが一時重畳(10秒スイープで確認、20秒以降消滅)を manifest note に記録。
+- 完了: フレーム8枚を `marse-ch10-MMmSSs.png` で本保存(.png 付き)→ manifest(status complete)→ source 節を byte 保持で挿入 → gate complete PASS → visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認。
+- 更新: `wiki/sources/coloso-marse-ch10-arms-gaze-guide.md`, `wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/`(manifest.json+snapshot.json+snapshot-pre.json+png8枚), `index.md`, `log.md`
+- 次の一手: ch11(11.mp4 単一・493秒)へ続く。marse 群 残り11章(全13章中2章完了)。

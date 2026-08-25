@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 2361 ファイル_
+_合計 2362 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 2361 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T06:24:11Z
-- [log.md](root/log.md) | 2026-08-25T06:24:26Z
+- [index.md](root/index.md) | 2026-08-25T06:46:25Z
+- [log.md](root/log.md) | 2026-08-25T06:46:51Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -1513,6 +1513,10 @@ _合計 2361 ファイル_
 - [window-layout-restore.md](wiki/builds/window-layout-restore.md) | 2026-08-25T02:20:04Z
 - [x-eagle-free-save-pilot.md](wiki/builds/x-eagle-free-save-pilot.md) | 2026-08-03T08:46:15Z
 - [x-eagle-idea-workbench.md](wiki/builds/x-eagle-idea-workbench.md) | 2026-06-25T09:50:10Z
+
+## wiki/builds/coloso-intake/ (1)
+
+- [parallel-session-brief.md](wiki/builds/coloso-intake/parallel-session-brief.md) | 2026-08-25T06:49:37Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/review/ (3)
 

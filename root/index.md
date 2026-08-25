@@ -181,7 +181,7 @@
 - [[coloso-marse-ch07-fetish-lower-full-body]] — 下半身/全身フェチ(締め付け・汗・日焼け跡・濡れ透け・ほくろ・熱気) (ingested 2026-06-01, 映像観測 19 枚 2026-08-24)
 - [[coloso-marse-ch08-focus-first-composition]] — 見せたい箇所を最初に決め、構図・光・腕・小物・背景を逆算する (ingested 2026-06-01, 映像観測 8 枚 2026-08-25)
 - [[coloso-marse-ch09-feminine-pose]] — 腰反り S 字を軸にした女性らしいポーズ 6 パターン (ingested 2026-06-01, 映像観測 7 枚 2026-08-25)
-- [[coloso-marse-ch10-arms-gaze-guide]] — 腕を胸への視線誘導ツールとして使うポーズ集 (ingested 2026-06-01)
+- [[coloso-marse-ch10-arms-gaze-guide]] — 腕を胸への視線誘導ツールとして使うポーズ集 (ingested 2026-06-01, 映像観測 8 枚 2026-08-25)
 - [[coloso-marse-ch11-rough]] — 夏ビーチ作例のラフ、3 分割法、胴体 2 ボックス (ingested 2026-06-01)
 - [[coloso-marse-ch12-underdrawing-perspective]] — 下描き、アイレベル輪切りパース、顔素材、塗りで服/髪を取る (ingested 2026-06-01)
 - [[coloso-marse-ch13-lineart]] — 線画(metadata-only) (ingested 2026-06-01)
