@@ -9637,3 +9637,13 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: `wiki/sources/coloso-hizurume-ch09-light-shadow-color.md`, `wiki/assets/frames/coloso-hizurume-ch09-light-shadow-color/`(manifest.json+snapshot.json+png89枚), `index.md`, `log.md`
 - 次の一手: 10秒間隔全帯域スイープ(p1 47枚+p2 21枚)→ 補完があれば追加 → gate complete PASS → visual_ingested 付与。
 - 追記(ch09): 10秒間隔全帯域スイープ(p1 94枚+p2 41枚)で未観測画面1件(p2 04:50 フィルターギャラリーの色ずれダイアログ[放射状/平行・強さ40])を発見 → ev-090 を追加(89→90枚)。p1 は補完なし。manifest・source 節・index を更新。
+## [2026-08-25] ingest | coloso ye_jji ch06 多様なテクスチャー描写(応用編)(映像 ingest・batch2 ye_jji 群パイロット)
+
+- 依頼: batch2 の ye_jji 群パイロット。coloso-ye-jji-ch06-texture-applied(06_01〜06_05.mov の5本分割・計5079秒・raw も5ページ)。
+- 手順: dry-run(SHA-256 03ab41b6…8cf6/2b3df71c…5d76/bd928ebd…330b/91201913…8688/6499b494…43f0)→ snapshot(抽出前・videos[] で5本記録)→ パートごとに temp 抽出(20秒間隔258枚+文字起こし誘導24時刻=280枚: p1 50/p2 59/p3 59/p4 56/p5 56)→ KB 側 staging(`wiki/assets/_staging_batch2_20260825/coloso-ye-jji-ch06-texture-applied/`)へ退避(落とし穴#16)→ 盲検読取サブエージェント20体(14枚×20、280ブロック回収=抽出数一致・パート落ちなし)→ 第2読者28枚(ceil(280×10%))。
+- 事故と復旧: 途中で PC 再起動 → staging 退避済みでフレーム零損失。盲検3タスク(chunk_ak/ao/ap)は応答が最終メッセージに載らなかったが、`~/.local/share/opencode/opencode.db` の part テーブルから本文を全量復旧(落とし穴#10 の手順)。
+- 発見と訂正: corrected 1件(p2-07m14s を第1読者が靴セクションと誤帰属=隣接フレーム取り違え(落とし穴#13)。動画434s 直接抽出の原寸再読で「27.0%・4小物・字幕『30分ほどポーションを…』・Screen Layer 42」に確定)。原寸再読確定2件(p3-04m40s 選択レイヤーは Layer 46=第1読者が正、p5-16m17s 選択行は Folder 1=第1読者が正。いずれも第2読者の誤読を原寸で却下)。confirmed 25件。manifest recheck に記録。
+- 完成宣言前の自己点検: 全パートの奇数10秒位置253枚をスイープ読取(異常画面検出)。観測表に載っていないスライド・解説画面は **0件**(Safari/coloso.jp 画面・Coloso エンドカードは既に観測表収録済み)。No Signal 録画グリッチを4箇所追加確認(p1-00m30s/p1-02m30s/p2-02m10s/p3-10m10s・知識なし、観測表既収録の3箇所と合わせ計7箇所)。
+- 完了: フレーム280枚を `ye-jji-ch06-pN-MMmSSs.png` で本保存(.png 付き・表/ファイル/manifest の3か所一致・孤児ゼロ)→ manifest(videos[]+動画ごと extraction[]+recheck 28 entries)→ source 節を動画列付き 6 列表で byte 保持挿入(初回挿入時に余分な空行で本文非破壊 FAIL → 空行除去で解消)→ gate complete PASS → visual_ingested 付与 → snapshot を snapshot-pre.json へ退避のうえ --retrofit で再記録 → 最終 gate PASS 再確認予定。raw ページ・動画は snapshot 取得時から非変更(SHA-256 機械確認済み)。
+- 更新: `wiki/sources/coloso-ye-jji-ch06-texture-applied.md`, `wiki/assets/frames/coloso-ye-jji-ch06-texture-applied/`(manifest.json+snapshot.json+snapshot-pre.json+png280枚), `index.md`, `log.md`
+- 次の一手: ch06 のレビュー指示文を武田さんへ渡す。承認 verdict 受取まで ye_jji 群残り14章(ch07〜23 のうち動画あり)に進まない(停止条件)。

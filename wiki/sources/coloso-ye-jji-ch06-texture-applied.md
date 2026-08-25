@@ -7,6 +7,7 @@ source_path: raw/_coloso/01_coloso_ye_jji/ye_jji_06. 多様なテクスチャー
 supplementary: [raw/_coloso/01_coloso_ye_jji/ye_jji_06. 多様なテクスチャー描写_資料.md]
 ingested: 2026-05-13
 re_ingested: 2026-05-17
+visual_ingested: 2026-08-25
 tags: [coloso, illustration, texture, materials, props]
 parent: coloso-ye-jji-illustration-course
 ---
@@ -94,7 +95,6 @@ raw md ファイル 06_01〜_05 のタイトルは「多様なテクスチャー
 
 > [!note] 訂正済み (re-ingest 2026-05-17)
 > 旧 wiki の章タイトル「多様なテクスチャー描写(応用編、全 5 部)」は raw 上の章名表記とは異なる(raw は「02 - 様々な小物の描写」と続編表記)。本 wiki ページが付けた「応用編」は本講座構造の整理として有用なので維持するが、Coloso 公式の章番号は連番 6 ではなく ch05 の続編という位置付け。
-
 ## 映像観測(フレーム由来)
 
 - 抽出日: 2026-08-25 / 元動画: [[06_01.mov]]・[[06_02.mov]]・[[06_03.mov]]・[[06_04.mov]]・[[06_05.mov]](1章=5分割、SHA-256 は manifest 参照)
