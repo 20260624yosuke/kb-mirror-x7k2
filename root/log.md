@@ -9744,3 +9744,11 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 実測: 3体 PASS(20 checks)/conditional・self-test 23系統 PASS(Dusevnyj/Sabrina)・決定性 PASS(2体)・レンダーシート再生成(白面積率0.0)。
 - 更新: `wiki/builds/gf2-char-extract-handoff.md`(v8.1節・再開点・変更履歴), `gf2-char-extract/run-state.json`, `quality-gate.json`, ledger/diff-*.json 3体, blends 3体(再構築), scripts/{ce_build_blend,20_diff_char_blend}.py
 - 次の一手: 武田さんの2体目視承認(conditional 開示承認込み)→Step3 バッチ計画
+
+## [2026-08-25] ingest | Coloso 映像ingest batch2 ひづるめ B1 群完了処理(台帳整合・staging 削除・quality-gate 承認記録)
+
+- B1 群(ch06/07/09/13/14)の群完了確認: 4章の png 数=manifest 観測数=source 参照数(孤児フレーム0・未manifest 0)、gate complete PASS 4/4、visual_ingested 4/4、index 行 4/4 を機械確認。
+- 落とし穴#16 どおり `wiki/assets/_staging_batch2_b1rest_20260825/`(626枚)を削除(20秒間隔抽出分は全て本保存と byte 一致を照合済み)。
+- `wiki/builds/coloso-visual-ingest-batch2/quality-gate.json` の hizurume-b1-theory family に承認記録を記入(代表入出力・比較証拠・user 承認・承認根拠=ch06 条件付き承認+進行指示)。batch フェーズは他 family(b2/b3/b4/sasa ほか)未承認のため全体としては仍て FAIL = 正常な現状表示。
+- `wiki/builds/coloso-visual-ingest-batch2-handoff.md` の現在地を B1 量産完了後に更新。
+- 次の一手: B1 群の独立レビュー指示文を武田さんへ提出(本文は報告に同梱)→ verdict 受取後、ひづるめ B2(ch15 パイロット)へ。
