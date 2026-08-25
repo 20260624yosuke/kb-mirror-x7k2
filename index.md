@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 2353 ファイル_
+_合計 2360 ファイル_
 
 ## root/ (11)
 
@@ -868,6 +868,16 @@ _合計 2353 ファイル_
 - [marse-ch09-04m45s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-04m45s.png) | 2026-08-25T05:03:16Z
 - [marse-ch09-06m16s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-06m16s.png) | 2026-08-25T05:03:16Z
 - [marse-ch09-07m40s.png](wiki/assets/frames/coloso-marse-ch09-feminine-pose/marse-ch09-07m40s.png) | 2026-08-25T05:03:16Z
+
+## wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/ (7)
+
+- [marse-ch10-00m00s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-00m00s.png) | 2026-08-25T06:35:42Z
+- [marse-ch10-00m20s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-00m20s.png) | 2026-08-25T06:35:42Z
+- [marse-ch10-00m46s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-00m46s.png) | 2026-08-25T06:35:42Z
+- [marse-ch10-01m54s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-01m54s.png) | 2026-08-25T06:35:42Z
+- [marse-ch10-03m00s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-03m00s.png) | 2026-08-25T06:35:42Z
+- [marse-ch10-04m23s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-04m23s.png) | 2026-08-25T06:35:42Z
+- [marse-ch10-05m17s.png](wiki/assets/frames/coloso-marse-ch10-arms-gaze-guide/marse-ch10-05m17s.png) | 2026-08-25T06:35:42Z
 
 ## wiki/assets/frames/coloso-sasa-ch01-intro/ (10)
 
