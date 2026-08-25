@@ -9862,3 +9862,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - バッチ文字起こしは GPU並列競合(ne-on/雨傘ゆん/晃田ヒカセッション同時実行)で所要約18h超過見込み→武田さん判断で 12/82(ok8+nospeech4) にて中断。runner+state を reports/ に同梱し再開可能(wiki/builds/coloso-intake/reports/ixy-2024-batch-runner.py + 2026-08-25-ixy-2024-batch-state.jsonl)。
 - quality-gate.json の ixy-2024 ブロックのみ targeted edit(user_accepted=true, batch_safe=false, 受入証拠・known_gaps 記録)。--phase batch PASS。受入証拠の正本=reports/2026-08-25-ixy-2024-representative-comparison.md。
 
+## [2026-08-25] ingest | coloso ye_jji ch10 余白を埋める(映像 ingest・ye_jji 群量産4章目)
+
+- 依頼: ye_jji 群量産の4章目。coloso-ye-jji-ch10-blank(10.mov 721.13秒・単一動画・raw も1ページ)。
+- 手順: dry-run(SHA-256 5401a1dc…dd4e)→ snapshot+snapshot-pre 退避 → temp 抽出(20秒間隔37枚+文字起こし誘導12時刻=49枚)→ staging 退避 → 盲検読取サブエージェント4体(13+12+12+12=49ブロック回収=抽出数一致)→ 第2読者5枚(max(3,ceil(49×10%)))。
+- 発見と訂正: corrected 1件 — p-04m00s は第1読取が元絵の浮遊シルエットを未記載だったため、原寸クロップ再読で茨/草葉状シルエット(元絵の一部)+紫ハート尾を確認し補完訂正(鳥は未追加も確定)。marked-uncertain 1件 — 03m20s の浮遊花びらは原寸クロップ+3倍ズームで「空ゼロ」を高確信確認したが直前直後の時刻と連続しないため該当行に要確認表記。confirmed 5件。
+- 章の特記: 理論スライド3節(構成段階で彩色考慮=カラーラフ完成版まで段階表示/グラデーション ビフォーアフター/点の活用)+実習2本(メイド2人イラストへ鳥6羽分散配置・変形/選択 UI 操作、キョンシー風少女へ鬼火3個配置)。11m40s のみ鬼火要素が一時非表示(両読者一致・比較表示と判断)。
+- 完成宣言前の自己点検: 奇数10秒位置36枚を機械生成リストで抽出し実ファイル照合(missing/extra ゼロ)のうえ盲検読取。**注目0件**(01m10s 等の中間状態は同スライド描き込み進行として既存行でカバー)。スイープ照合から発見した 03m10s 花びら散布は 03m20s marked-uncertain の確定材料に使用。
+- 完了: フレーム49枚を `ye-jji-ch10-MMmSSs.png` で本保存(.png 付き・孤児ゼロ)→ manifest(recheck 7 entries)→ source 節を5列表で byte 保持追記 → index 更新 → gate complete PASS 予定 → visual_ingested 付与 → retrofit 再記録 → 最終 gate PASS。raw・動画非変更(SHA-256 機械確認)。
+- 更新: `wiki/sources/coloso-ye-jji-ch10-blank.md`, `wiki/assets/frames/coloso-ye-jji-ch10-blank/`(manifest.json+snapshot.json+png49枚), `index.md`, `log.md`

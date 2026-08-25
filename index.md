@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 3479 ファイル_
+_合計 3528 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 3479 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-25T13:11:58Z
-- [log.md](root/log.md) | 2026-08-25T13:22:36Z
+- [index.md](root/index.md) | 2026-08-25T14:10:37Z
+- [log.md](root/log.md) | 2026-08-25T14:11:01Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -2196,6 +2196,58 @@ _合計 3479 ファイル_
 - [ye-jji-ch09-p2-22m20s.png](wiki/assets/frames/coloso-ye-jji-ch09-density/ye-jji-ch09-p2-22m20s.png) | 2026-08-25T12:30:35Z
 - [ye-jji-ch09-p2-22m40s.png](wiki/assets/frames/coloso-ye-jji-ch09-density/ye-jji-ch09-p2-22m40s.png) | 2026-08-25T12:30:35Z
 
+## wiki/assets/frames/coloso-ye-jji-ch10-blank/ (49)
+
+- [ye-jji-ch10-00m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-00m00s.png) | 2026-08-25T13:30:36Z
+- [ye-jji-ch10-00m12s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-00m12s.png) | 2026-08-25T13:31:24Z
+- [ye-jji-ch10-00m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-00m20s.png) | 2026-08-25T13:30:37Z
+- [ye-jji-ch10-00m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-00m40s.png) | 2026-08-25T13:30:37Z
+- [ye-jji-ch10-00m55s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-00m55s.png) | 2026-08-25T13:31:24Z
+- [ye-jji-ch10-01m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-01m00s.png) | 2026-08-25T13:30:39Z
+- [ye-jji-ch10-01m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-01m20s.png) | 2026-08-25T13:30:41Z
+- [ye-jji-ch10-01m30s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-01m30s.png) | 2026-08-25T13:31:25Z
+- [ye-jji-ch10-01m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-01m40s.png) | 2026-08-25T13:30:42Z
+- [ye-jji-ch10-02m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-02m00s.png) | 2026-08-25T13:30:43Z
+- [ye-jji-ch10-02m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-02m20s.png) | 2026-08-25T13:30:45Z
+- [ye-jji-ch10-02m25s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-02m25s.png) | 2026-08-25T13:31:26Z
+- [ye-jji-ch10-02m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-02m40s.png) | 2026-08-25T13:30:46Z
+- [ye-jji-ch10-03m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-03m00s.png) | 2026-08-25T13:30:47Z
+- [ye-jji-ch10-03m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-03m20s.png) | 2026-08-25T13:30:48Z
+- [ye-jji-ch10-03m31s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-03m31s.png) | 2026-08-25T13:31:28Z
+- [ye-jji-ch10-03m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-03m40s.png) | 2026-08-25T13:30:49Z
+- [ye-jji-ch10-03m52s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-03m52s.png) | 2026-08-25T13:31:29Z
+- [ye-jji-ch10-04m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-04m00s.png) | 2026-08-25T13:30:50Z
+- [ye-jji-ch10-04m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-04m20s.png) | 2026-08-25T13:30:52Z
+- [ye-jji-ch10-04m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-04m40s.png) | 2026-08-25T13:30:54Z
+- [ye-jji-ch10-05m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-05m00s.png) | 2026-08-25T13:30:55Z
+- [ye-jji-ch10-05m13s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-05m13s.png) | 2026-08-25T13:31:31Z
+- [ye-jji-ch10-05m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-05m20s.png) | 2026-08-25T13:30:59Z
+- [ye-jji-ch10-05m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-05m40s.png) | 2026-08-25T13:31:01Z
+- [ye-jji-ch10-06m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-06m00s.png) | 2026-08-25T13:31:03Z
+- [ye-jji-ch10-06m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-06m20s.png) | 2026-08-25T13:31:06Z
+- [ye-jji-ch10-06m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-06m40s.png) | 2026-08-25T13:31:08Z
+- [ye-jji-ch10-06m53s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-06m53s.png) | 2026-08-25T13:31:32Z
+- [ye-jji-ch10-07m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-07m00s.png) | 2026-08-25T13:31:09Z
+- [ye-jji-ch10-07m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-07m20s.png) | 2026-08-25T13:31:10Z
+- [ye-jji-ch10-07m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-07m40s.png) | 2026-08-25T13:31:11Z
+- [ye-jji-ch10-08m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-08m00s.png) | 2026-08-25T13:31:12Z
+- [ye-jji-ch10-08m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-08m20s.png) | 2026-08-25T13:31:13Z
+- [ye-jji-ch10-08m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-08m40s.png) | 2026-08-25T13:31:15Z
+- [ye-jji-ch10-09m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-09m00s.png) | 2026-08-25T13:31:16Z
+- [ye-jji-ch10-09m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-09m20s.png) | 2026-08-25T13:31:17Z
+- [ye-jji-ch10-09m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-09m40s.png) | 2026-08-25T13:31:18Z
+- [ye-jji-ch10-09m52s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-09m52s.png) | 2026-08-25T13:31:33Z
+- [ye-jji-ch10-10m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-10m00s.png) | 2026-08-25T13:31:18Z
+- [ye-jji-ch10-10m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-10m20s.png) | 2026-08-25T13:31:19Z
+- [ye-jji-ch10-10m36s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-10m36s.png) | 2026-08-25T13:31:34Z
+- [ye-jji-ch10-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-10m40s.png) | 2026-08-25T13:31:20Z
+- [ye-jji-ch10-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-11m00s.png) | 2026-08-25T13:31:21Z
+- [ye-jji-ch10-11m20s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-11m20s.png) | 2026-08-25T13:31:21Z
+- [ye-jji-ch10-11m24s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-11m24s.png) | 2026-08-25T13:31:34Z
+- [ye-jji-ch10-11m40s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-11m40s.png) | 2026-08-25T13:31:22Z
+- [ye-jji-ch10-11m45s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-11m45s.png) | 2026-08-25T13:31:35Z
+- [ye-jji-ch10-12m00s.png](wiki/assets/frames/coloso-ye-jji-ch10-blank/ye-jji-ch10-12m00s.png) | 2026-08-25T13:31:23Z
+
 ## wiki/builds/ (74)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -3479,7 +3531,7 @@ _合計 3479 ファイル_
 - [coloso-ye-jji-ch07-color-basic.md](wiki/sources/coloso-ye-jji-ch07-color-basic.md) | 2026-08-25T07:33:29Z
 - [coloso-ye-jji-ch08-color-applied.md](wiki/sources/coloso-ye-jji-ch08-color-applied.md) | 2026-08-25T11:18:59Z
 - [coloso-ye-jji-ch09-density.md](wiki/sources/coloso-ye-jji-ch09-density.md) | 2026-08-25T13:13:19Z
-- [coloso-ye-jji-ch10-blank.md](wiki/sources/coloso-ye-jji-ch10-blank.md) | 2026-06-22T12:48:42Z
+- [coloso-ye-jji-ch10-blank.md](wiki/sources/coloso-ye-jji-ch10-blank.md) | 2026-08-25T14:11:42Z
 - [coloso-ye-jji-ch11-mistake-note.md](wiki/sources/coloso-ye-jji-ch11-mistake-note.md) | 2026-06-22T12:48:42Z
 - [coloso-ye-jji-ch12-color-rough.md](wiki/sources/coloso-ye-jji-ch12-color-rough.md) | 2026-06-22T12:48:42Z
 - [coloso-ye-jji-ch13-lineart.md](wiki/sources/coloso-ye-jji-ch13-lineart.md) | 2026-06-22T12:48:42Z
