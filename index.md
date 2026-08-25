@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 2856 ファイル_
+_合計 2857 ファイル_
 
 ## root/ (11)
 
@@ -1743,7 +1743,7 @@ _合計 2856 ファイル_
 - [codexbar.md](wiki/builds/codexbar.md) | 2026-07-14T11:51:42Z
 - [coloso-batch-resume-handoff.md](wiki/builds/coloso-batch-resume-handoff.md) | 2026-08-24T08:45:42Z
 - [coloso-ingest-coverage-audit.md](wiki/builds/coloso-ingest-coverage-audit.md) | 2026-07-07T01:00:00Z
-- [coloso-intake-design.md](wiki/builds/coloso-intake-design.md) | 2026-08-25T05:53:23Z
+- [coloso-intake-design.md](wiki/builds/coloso-intake-design.md) | 2026-08-25T09:39:19Z
 - [coloso-parallel-ingest-project.md](wiki/builds/coloso-parallel-ingest-project.md) | 2026-08-24T03:50:44Z
 - [coloso-visual-ingest-batch2-handoff.md](wiki/builds/coloso-visual-ingest-batch2-handoff.md) | 2026-08-25T08:32:41Z
 - [coloso-visual-ingest-resume-inventory.md](wiki/builds/coloso-visual-ingest-resume-inventory.md) | 2026-08-23T12:03:30Z
@@ -1804,12 +1804,13 @@ _合計 2856 ファイル_
 
 ## wiki/builds/coloso-intake/ (1)
 
-- [parallel-session-brief.md](wiki/builds/coloso-intake/parallel-session-brief.md) | 2026-08-25T06:49:37Z
+- [parallel-session-brief.md](wiki/builds/coloso-intake/parallel-session-brief.md) | 2026-08-25T09:39:24Z
 
-## wiki/builds/coloso-intake/reports/ (2)
+## wiki/builds/coloso-intake/reports/ (3)
 
 - [2026-08-25-ixy-2-final-audit.txt](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2-final-audit.txt) | 2026-08-25T08:40:24Z
 - [2026-08-25-ixy-2-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2-representative-comparison.md) | 2026-08-25T08:41:50Z
+- [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/review/ (3)
 
