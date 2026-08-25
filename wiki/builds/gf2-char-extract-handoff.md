@@ -371,6 +371,38 @@ sources:
 | slg_body/boby/手を白（known_untextured）のままにする方式 | Dusevnyj の手・首元が肌色になる。**白のまま戻すと武田さん指摘が再発** | skin_fallback ブロックを外せば戻る。hip3（布）は意図的に白のまま |
 | つま先立ち rest の立位への改変 | **実施していない**。原作 rest のまま（ゲーム内ポーズはアニメ領域 deferred）。改変するとスキンウェイトが壊れるリスク | 該当なし（未実施） |
 
+### 着せ替え切替不能の修正（2026-08-25・v8.3・現行）
+
+> 武田さんが blend を開いて README どおりに P1 解除→P2 チェックを操作したが**「服装が切り替わらない」**と報告。機械精査の結果、**P2/P3 の中身に個別 hide フラグが焼き付いており、コレクションのチェック操作では出てこない**構造的欠陥と確定（README の手順と実装の食い違い。レンダーシートの set_P2/P3 だけは個別フラグ直接操作で撮影していたため正しく見えていた = 監査の盲点）。承認カードで **A案（ビルダー修正＋再構築＋検証器対応）を実施**。
+
+**v8.3 修正**:
+
+| 問題 | 修正 |
+|---|---|
+| P2/P3 代替衣装がフォルダチェックで出ない（個別 hide 焼き付き） | **P2/P3 はレイヤー除外（チェックOFF状態）で保存**へ変更。中身の個別フラグは解除。チェックを入れるだけで中身が出る。セット内に vd=True（原作 active）が混ざる場合は従来どおり個別 hide を優先（D3 規約維持・データ駆動） |
+| 検証器が hide_viewport 単一参照で除外方式を「可視」と誤判定 | `_is_visible()`（hide と canonical 新設 `excluded` フィールドの OR）へ統一。canonical は計測中だけ除外を解除する M-A 方式の拡張で正しい world_bbox を記録。self-test は「非表示P2候補を可視化」を除外解除の再現へ書き換え（24系統・両体 PASS） |
+| レンダーシートの set_P2/P3 撮影が除外方式で空白になる | 開いた直後に除外を hide へ実体化してから撮影（ディスク上の blend は不変） |
+| ドライバが Blender 例外後も**前回の残 build log で偽成功報告**（v8.3 作業中の実障害） | 成功判定に「build_log/blend が開始時刻より新しい」ことを追加（教訓④の再発防止） |
+
+**v8.3 実測（2026-08-25・現行）**:
+
+| キャラ | blend SHA(先頭16) | 突合 | レンダー目視 |
+|---|---|---|---|
+| Dusevnyj/DusevnyjSSR0101 | `a2ee94dd9832a6c5` | PASS (20 checks) / conditional | P1 セーラー服・P2 タンクトップ＋白ボディスーツ・P3 透けトップ＋コルセット＋ショーツの **3着が完全に切替表示**（set_P1/P2/P3 レンダーで確認） |
+| Sabrina/SabrinaSSR0101 | `d8212738ab4ff867` | PASS (20 checks) / conditional | P2/P3 候補無しのため既定表示のみ（変化なし） |
+| Helen/HelenSSR01（内部回帰） | `2a23a94b48368ff8` | PASS (20 checks) / conditional | 回帰継続 |
+
+- self-test: **24 cases PASS**（Dusevnyj/Sabrina。Sabrina の3ケース SKIP は対象部位が存在しないため正常）・決定性 PASS（canonical_identical=true・2体再実測）
+- canonical 形式進化: objects に `excluded` フィールド追加（旧 dump との非互換。旧検証器では新blendを正しく判定できない）
+- **武田さんへの操作案内**: [blends/README.md](/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/blends/README.md) の手順（parts_P1 のチェックを外す→parts_P2/P3 にチェック）が**そのまま機能する**。`scene_variants`/`src_disabled` は中身が個別非表示のまま（触らない想定）
+
+#### v8.3 で捨てた判断とその見え方
+
+| 捨てたもの | 手元でどう変わるか | 戻せるか |
+|---|---|---|
+| P2/P3 の「オブジェクト個別 hide で保存」方式 | blend を開いた瞬間の見た目は不変（どちらも非表示）。**違いはチェック操作で衣装が出ること**。canonical に excluded が増えるため SHA は全て新しくなった（メッシュ・テクスチャ・材質は不変） | ce_build_blend.py の hide_mode ブロック＋検証器 _is_visible＋render の実体化ブロックを旧方式へ戻して再構築（README の手順は再び効かなくなる） |
+| ドライバの「build_log 存在だけ」の成功判定 | Blender が例外で死んだ時に**偽成功を報告しなくなる**（v8.3 作業中に旧ログで偽成功を出した実測）。失敗時は確実に停止する | 判定条件を exists のみへ戻す（偽成功の再発を引き受けることになる・戻す理由無し） |
+
 ## 2. 承認履歴
 
 | 日付 | カード | 結果 |
@@ -392,11 +424,13 @@ sources:
 | 2026-08-25 | 完全性基準 v8 案（独立レビュー major 反映版） | **承認（実装へ）** |
 | 2026-08-25 | 目視承認カード(v8.1・2体) | **差し戻し（3点）**「①Dusevnyj の着せ替えを Blender 上でどう切り替えるのか分からない ②サブリナがつま先を立ててるのが気になった・靴の有無を探して ③このキャラの肌色が肌色じゃなかったので修正して」 → v8.2 で対応（②は原作データ実測で決着・変更なし） |
 | 2026-08-25 | 目視承認カード(v8.2・2体) | **承認は未取得・現時点で区切り**「サブリナはとりあえず現時点ではいいや。Dusevnyj は肌の色が変だから修正して。いずれも原作再現ではない。でも現時点でこのプロジェクトではここまででいいや。セッション切り替えるから引き継ぎ資料を作成して」 |
+| 2026-08-25 | 着せ替え不能の対応カード（A: ビルダー修正＋再構築 / B: コード触らず手順書のみ / 中止） | **A承認**「ビルダー修正＋再構築」 |
 
-### 次セッションの再開点（2026-08-25 v8.2 目視結果を受けて）
+### 次セッションの再開点（2026-08-25 v8.3 着せ替え修正を挟んで更新）
 
-**プロジェクトの現在地**: 武田さんの判断は「**ここまででいいや**」（現時点での区切り）。ただし**完成承認は未取得**。Sabrina は「とりあえず現時点ではいいや」(容認)・Dusevnyj は**肌色修正指示が残存**・両体とも「原作再現としては未完成」との評価。
+**プロジェクトの現在地**: 武田さんの判断は「**ここまででいいや**」（現時点での区切り）。ただし**完成承認は未取得**。Sabrina は「とりあえず現時点ではいいや」(容認)・Dusevnyj は**肌色修正指示が残存**・両体とも「原作再現としては未完成」との評価。v8.3 で着せ替え切替不能（README 手順が効かない構造的欠陥）は解消済み — **武田さん自身の Blender での切替確認が次の目視承認カードの一部**。
 
+0. **着せ替え切替の実機確認（v8.3・追加）**: 新blend（SHA `a2ee94dd9832a6c5` / `d8212738ab4ff867`）を開き、README 手順（parts_P1 解除→parts_P2/P3 チェック）で Dusevnyj の3着が切り替わるか武田さんに確認していただく。レンダー側では set_P1/P2/P3 で3着の完全表示をこちらで確認済み
 1. **Dusevnyj 肌色の修正（最優先の残課題）**: v8.2 の単色肌フォールバック（RGB 0.9404/0.7793/0.709）は「肌の色が変」との指摘が残った（単色＝陰影・質感なしの限界）。次の一手候補: ①顔アトラスの肌領域から小パッチを切り出し UV をそこへ再マップ（質感付き・データ駆動）②P1_body_d（体テクスチャ）の肌色領域を利用 ③原作シェーダの ramp/SSS 相当の解明（deferred 領域との兼ね合い）。対象は P1_cloth3.sub0/sub1（手）
 2. **2体の正式な目視承認は未取得**: Sabrina は容認だが承認カード上の「承認」は未選択。Dusevnyj 修正後に改めてカードを出す。conditional 開示（Dusevnyj＝hip3 白・権威外slot・P2/P3 切替時白 20部位＋肌フォールバック approximation／Sabrina＝権威外slot 13）の承認もセット
 3. 承認後 → Step 3 バッチ計画（別承認・`25_gate_sync.py` で quality-gate 接続済み。batch phase には families[].user_accepted/batch_safe/approved_* の記入が必要）
@@ -448,8 +482,11 @@ sources:
 - **Step 2 追加（2026-08-24）**: blends/{Dusevnyj-DusevnyjSSR0101,Sabrina-SabrinaSSR0101}-repro.blend ／ intermediate/{Dusevnyj.DusevnyjSSR0101,Sabrina.SabrinaSSR0101}/ ／ ledger/{extract-,diff-}{Dusevnyj-DusevnyjSSR0101,Sabrina-SabrinaSSR0101}.json ／ logs/build-{Dusevnyj-DusevnyjSSR0101,Sabrina-SabrinaSSR0101}*{.json,.blender.log,.canonical.json}。**修正**: scripts/ce_extract.py（重複面 dedupe・台帳項目追加）・scripts/20_diff_char_blend.py（同一 dedupe 規約＋Blender 非表現 corner 除外）
 - **監査修正・白モデル修正 追加（2026-08-24）**: scripts/render_char_sheet.py・scripts/combine_sheet.py（新規）／reports/sheets/{Dusevnyj-SSR0101,Sabrina-SSR0101,Helen-SSR01}/（シート＋variants レンダー）／logs/_diff-dump-*.json。**修正（再構築を伴う）**: scripts/ce_extract.py（LOD フィルタ修正）・scripts/ce_build_blend.py（コレクション分け・naming_match テクスチャ・テクスチャパス解決・canonical materials 欄）・scripts/20_diff_char_blend.py（tex_index 解決統一・texmatch 画像実在照合・self-test 12系統化）。blends 3体・ledger diff 3体・determinism-probe は再生成
 - **完全性基準 v8 追加（2026-08-25）**: scripts/25_gate_sync.py（新規）。**修正**: scripts/ce_build_blend.py（canonical_of_scene へ world_bbox 追加＝canonical 形式進化・blend バイト不変）・scripts/20_diff_char_blend.py（SourceExpectations 同名重複台帳＋新検査3本＋submission 判定＋scan_boundary 付記＋self-test 21系統）。ledger/diff-*.json 3体・determinism-probe・quality-gate.json(known_gaps) 再生成
+- **着せ替え切替修正 v8.3 追加（2026-08-25）**: **修正（再構築を伴う）**: scripts/ce_build_blend.py（plan_visibility へ hide_mode=collection・run() の parts_P2/P3 レイヤー除外保存・canonical_of_scene の除外計測対応＝canonical に objects[].excluded 追加で形式進化）・scripts/20_diff_char_blend.py（_is_visible 実効可視性へ統一・show_p2 ケースを除外解除の再現へ書き換え）・scripts/render_char_sheet.py（開いた直後に除外を hide へ実体化）・scripts/10_extract_char.py（成功判定に build_log/blend の鮮度要求を追加＝偽成功防止）・blends/README.md（v8.3 手順・注意書き）。blends 3体・ledger diff 3体・determinism-probe・quality-gate.json(known_gaps)・reports/sheets 2体 再生成
 
 ## 6. 変更履歴
+
+- **2026-08-25（v8.3・着せ替え切替不能の修正）**: 武田さんが README どおりにチェック操作しても**「服装が切り替わらない」**と報告 → 機械精査で P2/P3 中身の個別 hide 焼き付き（README 手順と実装の食い違い・レンダーシートだけ個別フラグ操作で撮影していたため監査をすり抜けた）を確定 → 承認カード A案で修正: P2/P3 をレイヤー除外（チェックOFF）保存へ変更・検証器を実効可視性（hide＋excluded）へ統一・canonical に excluded 追加・レンダー側は除外を実体化して撮影。過程でドライバが Blender 例外後に**前回残ログで偽成功を報告する実障害**も発生 → 成功判定に鮮度要求を追加。3体再構築→突合20項目 PASS/conditional→self-test 24ケース PASS→決定性 PASS→set_P1/P2/P3 レンダーで Dusevnyj の3着切替を目視確認。**次は武田さんの実機切替確認＋Dusevnyj 肌色修正（残課題）→正式目視承認**
 
 - **2026-08-24（監査修正・白モデル修正）**: 武田さんの品質不良指摘 → v51 基準の監査で A1（LODフィルタ無効・Step1からの潜在バグ）/A2（可視性未取得）/A3（テクスチャ未貼り）/A4（見た目検査なし）を検出 → 承認カード「全部やる」「全部入れて切替可能に」で修正。再構築後のレンダーシートで白モデルを発見 → 根本原因（manifest の png 欄を CWD 相対 exists() で評価し画像ノード生成が黙ってスキップ。検証器はラベル一致しか見ず PASS）を特定し builder/検証器を修正（canonical に materials 欄追加・self-test 12系統化）。3体再構築→突合 PASS→決定性 PASS→レンダー目視でテクスチャ乗り確認。**目視承認は未取得（次は武田さんの Blender 確認）**
 - **2026-08-25（監査強化・差し戻し修正）**: 武田さんが Dusevnyj blend を開いて「全然ダメ・監査が甘すぎる・監査スクリプトを強化して」と差し戻し → 調査で D1（頭部共有パーツ face/boby の抽出漏れ — 顔・眉は基本コード stem 族管理）・D2（naming_match 厳密一致の3クラス取りこぼし）・D3（既定可視性で P1/P2/P3 全候補が同時表示）・D4（監査が見た目の白を数えていない）を特定 → 共通規約 resolve_texture_stem（R1/R2/R3）・add_base_head_parts・P1既定表示・新検査2項目＋self-test 14系統・レンダーシート全面強化（白面積率・孤立ビュー・Pセット比較）を実装。3体再構築→突合 PASS（Dusevnyj 顔・髪が復活/Sabrina 未テクスチャゼロ）→決定性 PASS。併せて「ヘレンは依頼していない」を調査・確認（正しかった）→ Helen は成果物から外し内部回帰検証専用に。**目視承認は未取得（次は武田さんの Dusevnyj+Sabrina 2体確認）**
