@@ -9,6 +9,7 @@ tags: [Coloso, 人体ドローイング, パース, 複数人物]
 status: active
 confidence: high
 evidence_level: source-backed
+visual_ingested: 2026-08-26
 last_reviewed: 2026-06-01
 ---
 
@@ -106,9 +107,9 @@ last_reviewed: 2026-06-01
 | ev-051 | 14_02.mp4 | 16:20 | ![[wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-16m20s.png]] | high | キャンバス左右の背景に大きな斜めの直線が描き足され、建物・壁面の骨格線が現れる。 |
 | ev-052 | 14_02.mp4 | 16:40 | ![[wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-16m40s.png]] | high | 左右の壁面が台形の大きな面として整えられ、両側に壁のある通路状の空間にまとまる。消しゴム(サイズ70.0)、拡大率36.6%。 |
 | ev-053 | 14_02.mp4 | 17:40 | ![[wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-17m40s.png]] | high | 黒背景の中央に白い「Coloso.」ロゴ(ピリオドは黄色)の終端カード。下部に赤帯。ソフトUI非表示。 |
-
 ## 関連リンク
 
 - [[coloso-hide-ch12-three-mass-blocking]]
 - [[coloso-hide-ch13-limb-blocking]]
 - [[coloso-hide-human-drawing-course]]
+

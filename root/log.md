@@ -9957,4 +9957,7 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: `wiki/sources/coloso-ye-jji-ch12-color-rough.md`(映像観測節新設163行+`visual_ingested: 2026-08-26`),
   `wiki/assets/frames/coloso-ye-jji-ch12-color-rough/manifest.json`(status complete),
   `index.md`, `log.md`
-- 検証: `tools/video_ingest_gate.py check --phase complete` の結果は gate 実行後に本エントリへ追記。
+- 検証: `tools/video_ingest_gate.py check --phase complete` → **PASS**(EXIT=0)。本文非破壊は
+  snapshot 時の原文(末尾空行2つ・sha `aba1e0d4…`)と head+tail 再構成で厳密一致を確認。
+  映像観測節は「## 関連リンク」直前へ挿入(gate の節分割仕様上、head+tail が原文と一致する位置)。
+  PASS 後に frontmatter へ `visual_ingested: 2026-08-26` を付与(設計 v2.3 の手順どおり)。
