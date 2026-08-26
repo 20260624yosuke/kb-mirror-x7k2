@@ -3,7 +3,7 @@ type: build
 status: active
 confidence: high
 evidence_level: source-backed
-last_reviewed: 2026-08-24
+last_reviewed: 2026-08-26
 sources:
   - gf2-helen-repro-v51-run
 ---
@@ -913,6 +913,28 @@ sources:
     - **次の一手**: 回収ルートは従来どおり ①プロキシ応答書き換えによる強制DL
       （要別承認・リスク評価）②LoadRoomById経路解析（E2/E3の続き）③将来の配信待ち。
       #73残項目の順序（postグレード回収→f153再較準→f128再実行→シート再生成）は不変。
+
+81. **f155 app同梱未解析領域の走査を実施（`f155_app_aotres_scan.py`・2026-08-25深夜・
+    run-state履歴#81・武田さん選択「①app同梱aa/iOS＋Data直下」）**:
+    - #79報告への武田さん指摘「まだローカルで解析してない箇所があるはず」を受け、
+      app wrapper内の未走査領域を開けた。
+    - **`Data/Raw/aa/iOS` の4bundle**（計22.8MB・特に `aotres_scenes_all` 22.7MB＝AOTシーンリソース）:
+      f98方式で完全展開成功（4/4・予定サイズ一致＝展開パイプラインの検証合格）。
+      オブジェクトレベル列挙の結果、中身はランチャー/ブートUI群
+      （Trans_AudioSettingPanel・Btn_ExitGame・UICamera・MSAAToggle等）＋AOT補助で、
+      **scene root / prefab root / `06Aimo_Dorm` / HelenSSR0101 はこの範囲では不検出**。
+      RenderSettings×2/LightProbes×4 はブートsceneの汎用設定。
+    - **Data直下 `resources.assets`(53MB)/`globalgamemanagers.assets` 等もUnityPyで全パース**:
+      globalgamemanagers＝MonoScript登録簿14,534件、resources＝UI資産4,036件で
+      照明型オブジェクト実体0（生バイト一致LightProbes×40等はクラス名文字列と判明）。
+    - → **app同梱の当該残り領域にも目的データ（blocked項目の依存データ）は無い**ことを
+      オブジェクトレベルまで含め確認（探索範囲は上記の通り・app全体の絶対否定ではない）。
+    - 成果物blend無変更（SHA `04ef8b79b3fa5b64`・2026-08-26に現物再計算で確認済み）。
+      証跡: `ledger/h0157-app-aotres-scan-v1.json`・`scripts/f155_app_aotres_scan.py`。
+    - **残る未解析候補（武田さんの選択待ち）**: ③コンテナ内ファイル群
+      （Version_Ex1.bin 237KB・DownSizeTemp部分zip3本・ClientRes_iOS/2.12.4517ハッシュdir
+      1,102ファイル）／⑤BinFile/Table目的別スイープ／②LoadRoomById経路解析／
+      ④GFF秘密レコード末尾完全解読。
 
 ---
 
