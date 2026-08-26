@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4195 ファイル_
+_合計 4281 ファイル_
 
 ## root/ (11)
 
@@ -3016,10 +3016,11 @@ _合計 4195 ファイル_
 - [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
 - [2026-08-25-ixy-2024-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-representative-comparison.md) | 2026-08-25T13:11:23Z
 
-## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (2)
+## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (3)
 
 - [read-p1-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-a.md) | 2026-08-26T07:15:44Z
 - [read-p1-b.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-b.md) | 2026-08-26T07:22:39Z
+- [read-p1-c.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-c.md) | 2026-08-26T07:27:00Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/ (1)
 
@@ -3419,6 +3420,97 @@ _合計 4195 ファイル_
 - [22m06s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m06s.png) | 2026-08-25T11:25:38Z
 - [22m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m20s.png) | 2026-08-25T11:25:38Z
 - [22m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m40s.png) | 2026-08-25T11:25:38Z
+
+## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (1)
+
+- [STATE.md](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/STATE.md) | 2026-08-26T07:23:52Z
+
+## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/ (84)
+
+- [00m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/00m00s.png) | 2026-08-26T07:27:45Z
+- [00m06s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/00m06s.png) | 2026-08-26T07:28:07Z
+- [00m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/00m20s.png) | 2026-08-26T07:27:45Z
+- [00m33s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/00m33s.png) | 2026-08-26T07:28:07Z
+- [00m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/00m40s.png) | 2026-08-26T07:27:45Z
+- [01m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/01m00s.png) | 2026-08-26T07:27:46Z
+- [01m02s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/01m02s.png) | 2026-08-26T07:28:07Z
+- [01m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/01m20s.png) | 2026-08-26T07:27:46Z
+- [01m33s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/01m33s.png) | 2026-08-26T07:28:08Z
+- [01m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/01m40s.png) | 2026-08-26T07:27:46Z
+- [02m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/02m00s.png) | 2026-08-26T07:27:47Z
+- [02m02s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/02m02s.png) | 2026-08-26T07:28:08Z
+- [02m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/02m20s.png) | 2026-08-26T07:27:47Z
+- [02m32s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/02m32s.png) | 2026-08-26T07:28:08Z
+- [02m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/02m40s.png) | 2026-08-26T07:27:47Z
+- [02m42s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/02m42s.png) | 2026-08-26T07:28:08Z
+- [03m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/03m00s.png) | 2026-08-26T07:27:47Z
+- [03m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/03m20s.png) | 2026-08-26T07:27:48Z
+- [03m29s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/03m29s.png) | 2026-08-26T07:28:08Z
+- [03m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/03m40s.png) | 2026-08-26T07:27:48Z
+- [04m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/04m00s.png) | 2026-08-26T07:27:49Z
+- [04m08s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/04m08s.png) | 2026-08-26T07:28:09Z
+- [04m12s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/04m12s.png) | 2026-08-26T07:28:09Z
+- [04m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/04m20s.png) | 2026-08-26T07:27:49Z
+- [04m24s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/04m24s.png) | 2026-08-26T07:28:09Z
+- [04m30s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/04m30s.png) | 2026-08-26T07:28:10Z
+- [04m36s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/04m36s.png) | 2026-08-26T07:28:10Z
+- [04m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/04m40s.png) | 2026-08-26T07:27:50Z
+- [05m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/05m00s.png) | 2026-08-26T07:27:50Z
+- [05m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/05m20s.png) | 2026-08-26T07:27:50Z
+- [05m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/05m40s.png) | 2026-08-26T07:27:51Z
+- [05m43s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/05m43s.png) | 2026-08-26T07:28:11Z
+- [05m47s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/05m47s.png) | 2026-08-26T07:28:11Z
+- [06m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/06m00s.png) | 2026-08-26T07:27:51Z
+- [06m09s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/06m09s.png) | 2026-08-26T07:28:11Z
+- [06m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/06m20s.png) | 2026-08-26T07:27:52Z
+- [06m27s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/06m27s.png) | 2026-08-26T07:28:12Z
+- [06m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/06m40s.png) | 2026-08-26T07:27:52Z
+- [07m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/07m00s.png) | 2026-08-26T07:27:53Z
+- [07m11s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/07m11s.png) | 2026-08-26T07:28:12Z
+- [07m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/07m20s.png) | 2026-08-26T07:27:53Z
+- [07m25s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/07m25s.png) | 2026-08-26T07:28:13Z
+- [07m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/07m40s.png) | 2026-08-26T07:27:53Z
+- [08m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/08m00s.png) | 2026-08-26T07:27:54Z
+- [08m05s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/08m05s.png) | 2026-08-26T07:28:13Z
+- [08m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/08m20s.png) | 2026-08-26T07:27:54Z
+- [08m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/08m40s.png) | 2026-08-26T07:27:55Z
+- [09m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/09m00s.png) | 2026-08-26T07:27:55Z
+- [09m01s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/09m01s.png) | 2026-08-26T07:28:14Z
+- [09m04s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/09m04s.png) | 2026-08-26T07:28:14Z
+- [09m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/09m20s.png) | 2026-08-26T07:27:56Z
+- [09m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/09m40s.png) | 2026-08-26T07:27:56Z
+- [10m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/10m00s.png) | 2026-08-26T07:27:56Z
+- [10m01s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/10m01s.png) | 2026-08-26T07:28:14Z
+- [10m08s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/10m08s.png) | 2026-08-26T07:28:15Z
+- [10m16s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/10m16s.png) | 2026-08-26T07:28:15Z
+- [10m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/10m20s.png) | 2026-08-26T07:27:57Z
+- [10m21s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/10m21s.png) | 2026-08-26T07:28:16Z
+- [10m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/10m40s.png) | 2026-08-26T07:27:57Z
+- [11m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/11m00s.png) | 2026-08-26T07:27:58Z
+- [11m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/11m20s.png) | 2026-08-26T07:27:58Z
+- [11m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/11m40s.png) | 2026-08-26T07:27:59Z
+- [12m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/12m00s.png) | 2026-08-26T07:27:59Z
+- [12m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/12m20s.png) | 2026-08-26T07:28:00Z
+- [12m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/12m40s.png) | 2026-08-26T07:28:00Z
+- [13m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/13m00s.png) | 2026-08-26T07:28:00Z
+- [13m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/13m20s.png) | 2026-08-26T07:28:01Z
+- [13m23s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/13m23s.png) | 2026-08-26T07:28:16Z
+- [13m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/13m40s.png) | 2026-08-26T07:28:01Z
+- [14m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/14m00s.png) | 2026-08-26T07:28:02Z
+- [14m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/14m20s.png) | 2026-08-26T07:28:02Z
+- [14m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/14m40s.png) | 2026-08-26T07:28:03Z
+- [15m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/15m00s.png) | 2026-08-26T07:28:03Z
+- [15m11s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/15m11s.png) | 2026-08-26T07:28:17Z
+- [15m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/15m20s.png) | 2026-08-26T07:28:04Z
+- [15m22s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/15m22s.png) | 2026-08-26T07:28:17Z
+- [15m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/15m40s.png) | 2026-08-26T07:28:04Z
+- [15m47s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/15m47s.png) | 2026-08-26T07:28:17Z
+- [16m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/16m00s.png) | 2026-08-26T07:28:05Z
+- [16m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/16m20s.png) | 2026-08-26T07:28:05Z
+- [16m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/16m40s.png) | 2026-08-26T07:28:05Z
+- [17m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/17m00s.png) | 2026-08-26T07:28:06Z
+- [17m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/17m20s.png) | 2026-08-26T07:28:06Z
+- [17m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/17m40s.png) | 2026-08-26T07:28:06Z
 
 ## wiki/concepts/ (404)
 
