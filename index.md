@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 3976 ファイル_
+_合計 3977 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 3976 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-26T04:51:23Z
-- [log.md](root/log.md) | 2026-08-26T04:51:36Z
+- [index.md](root/index.md) | 2026-08-26T06:20:00Z
+- [log.md](root/log.md) | 2026-08-26T06:20:24Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -177,7 +177,7 @@ _合計 3976 ファイル_
 - [ff1f7d2ce8c8.png](wiki/_attachments/gf2-skin-genre-map/img/ff1f7d2ce8c8.png) | 2026-08-24T07:20:08Z
 - [ff3ebc7f241b.png](wiki/_attachments/gf2-skin-genre-map/img/ff3ebc7f241b.png) | 2026-08-24T07:20:07Z
 
-## wiki/analyses/ (59)
+## wiki/analyses/ (60)
 
 - [art-canvas-asuna-reference-axis-map.md](wiki/analyses/art-canvas-asuna-reference-axis-map.md) | 2026-06-14T16:03:54Z
 - [asuna-maid-costume-structure.md](wiki/analyses/asuna-maid-costume-structure.md) | 2026-06-24T01:38:06Z
@@ -224,6 +224,7 @@ _合計 3976 ファイル_
 - [obsidian-canvas-pdf-embed-avoid-2026-06-27.md](wiki/analyses/obsidian-canvas-pdf-embed-avoid-2026-06-27.md) | 2026-06-27T13:01:03Z
 - [obsidian-canvas-plugin-mvp-review.md](wiki/analyses/obsidian-canvas-plugin-mvp-review.md) | 2026-05-30T09:04:58Z
 - [obsidian-canvas-ui-lightweight-plan-2026-06-26.md](wiki/analyses/obsidian-canvas-ui-lightweight-plan-2026-06-26.md) | 2026-07-01T08:10:28Z
+- [opencode-interrupted-tasks-20260826.md](wiki/analyses/opencode-interrupted-tasks-20260826.md) | 2026-08-26T06:18:39Z
 - [ox-video-read-comparison-hizurume-ch11.md](wiki/analyses/ox-video-read-comparison-hizurume-ch11.md) | 2026-08-22T12:56:47Z
 - [projects-dashboard.md](wiki/analyses/projects-dashboard.md) | 2026-07-09T11:29:46Z
 - [raycast-v2-migration-2026-08-22.md](wiki/analyses/raycast-v2-migration-2026-08-22.md) | 2026-08-22T12:57:19Z

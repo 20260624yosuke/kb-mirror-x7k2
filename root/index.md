@@ -1361,6 +1361,7 @@
 
 ## Analyses
 
+- [[opencode-interrupted-tasks-20260826]] — opencode 中断タスクの全容把握。履歴DB925セッションを実測し Coloso7講座の映像ingest進捗(28/190章)・intake文字起こし134/285本・GF2系の待ち構造を確定、A-2文字起こし151本をリソース優先で保留に決定(1本中央5〜6分×151本=13〜15時間・GPU6GBの実測付き)、CPU負荷原因はvideo_frames.pyの1枚1ffmpeg起動と特定、二重死亡したマーセch12を読取7割済みまで救出(rescue-summary.md)。別セッション4本(ye_jji/hide/マーセ/ひづるめ修正)進行中 (source-backed, 2026-08-26)
 - [[finder-column-mechanism-analysis]] — Miller Columns 完全化の事前解析。真のスワップは不可能・NSBrowser 埋め込みは「可能だが脆い」で非推奨→JS移植が正攻法(Path Finder等も同路線)、Finder挙動仕様草案(現プラグインはシングルクリックで開く点がFinderと逆)、psdサムネ実測成功/clip はQuickLookプロバイダ不在で失敗、を実測込みで確定 (source-backed, 2026-08-26)
 - [[macbook-internal-ssd-storage-investigation-2026-08-24]] — 内蔵SSD空き6%化の原因調査。使用マップ全量実測(ユーザ97G/App20G/スワップ12G等)し、Claude VMバンドル10GB+当日のTMローカルスナップショットを削除して空き11.4→25.1GBへ回復。普段のClaude CodeはVM非経由のネイティブ実行、削除後も空きが増えない場合はスナップショットがブロックしている点を記録 (source-backed, 2026-08-24)
 - [[gf2-costume-inventory-and-selection-session-2026-08-24]] — gf2 キャラ×服装一覧(56キャラ×125バリアント・代替スキン69コード)を実データから作成し「どのキャラのどの服を抽出するか」選定相談を記録。午後に再開し Table/*.bytes 解読(ClothesData146件・SkinType5テーマ・ClothesDuty21クラス)・公式X(@EXILIUMJP)スキン紹介37/61本紐付け・スキン×ジャンル対応表(wiki/_attachments/gf2-skin-genre-map/)まで到達。HTMLビューアはJSクラッシュ→監査スクリプト導入で修正したが武田さん不採用(自分で探す方針)。資料の基準(優先度原理)は未確定。Step1完了(Helen実測PASS)と命名規則は整合 (source-backed, 2026-08-24)
