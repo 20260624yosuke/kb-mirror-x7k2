@@ -9,6 +9,7 @@ tags: [coloso, 人体ドローイング, 頭部, 解剖, 単純化, hide]
 status: active
 confidence: high
 evidence_level: source-backed
+visual_ingested: 2026-08-26
 last_reviewed: 2026-06-01
 ---
 
@@ -55,10 +56,9 @@ last_reviewed: 2026-06-01
 
 ## 映像観測(フレーム由来)
 
-- 進捗: パート1・2 完了(15_01+15_02)。パート3(15_03)は次セッションで実施予定
 - 抽出日: 2026-08-26 / 元動画: [[_attachments/15_01.mp4]] + [[_attachments/15_02.mp4]] + [[_attachments/15_03.mp4]](分割 3 本)
 - 元動画 SHA-256: `56d170a12dd1a89df7f92d63e27a09b5a27d980cb1c21b30fd8507da217ccb87`(15_01) / `5adcd66de4e24c5456e1d6861707ea693a9c437d4fa56067349763f34455fe4b`(15_02) / `4a685456fbdd19924b824407cd2ceb2d33fa956e6eb313ee0ad61a04dc241b96`(15_03)
-- 方式: 20秒間隔抽出 / p1 抽出46枚・読取46枚・保存24枚+p2 抽出46枚・読取46枚・保存15枚(バッチ退避方式: 読取結果を wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ へ逐次退避)
+- 方式: 20秒間隔抽出 / p1 抽出46枚・保存24枚 + p2 抽出46枚・保存15枚 + p3 抽出51枚・保存15枚(読取143枚・計54枚)(バッチ退避方式: 読取結果を wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ へ逐次退避)
 - 設計版: video-visual-ingest-design v2.3 / 読取モデル: opencode/x-preview-f-free (ox-alpha)(盲検読取はサブエージェント分割回し、第2読者4枚=max(3,10%切り上げ))
 - 凡例: 画面上で確認できた事実のみ。判読できない文字は「判読不能」と記載。時刻は各動画内の時刻。冒頭は頭蓋骨写真素材への色分け注記パート、後半は多角度スケッチのデモ。アプリ UI に薄い透かし状文字列が出るが読みが安定しないため「判読不能」扱い。
 
@@ -103,6 +103,21 @@ last_reviewed: 2026-06-01
 | ev-037 | 15_02.mp4 | 12:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-02-12m40s.png]] | high | 中央の円に薄い水色ガイド線(円を貫く縦線+複数横線+円下方向への線)を描き足し。 |
 | ev-038 | 15_02.mp4 | 13:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-02-13m20s.png]] | high | 左に灰色面塗り+楕円形耳2つの頭部立体スケッチ。中央右に大きな薄い円+水色十字ガイド+黒直線ポリゴンで眉・鼻・頬の稜線ブロック。 |
 | ev-039 | 15_02.mp4 | 14:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-02-14m20s.png]] | high | 左に精緻化された頭部(耳+稜線増)、中央に新しい頭部下描き(大きな円+水色ガイド+右側に水色楕円=側頭面塗り+縦直線群)。 |
+| ev-040 | 15_03.mp4 | 0:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-00m20s.png]] | high | キャンバス左に完成済み多面体構造ヘッド(灰色面塗り+黒線)、右に正面頭部の作成途中(青い補助線=楕円・十字ガイド、顔右半分に薄い水色の面)。粗い鉛筆40.0。 |
+| ev-041 | 15_03.mp4 | 1:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-01m20s.png]] | high | 右頭部から青補助線と水色の面が消え黒線のみの清書状態。耳の輪郭追加。複製レイヤー上で作業。 |
+| ev-042 | 15_03.mp4 | 2:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-02m40s.png]] | high | 別ドキュメント「241003-Birthday-Pack-10.png*」。白いタンクトップの女性がスツールに座る写真素材を白抜け表示。下部にクレジット表記(FREE TO USE…/PATREON.COM/JOOKPUBSTOCK)。 |
+| ev-043 | 15_03.mp4 | 3:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-03m20s.png]] | high | 女性写真の頭部に赤鉛筆で頭蓋楕円・目線・鼻・口・顎の補助線。粗い鉛筆90.0、Layer 4 選択、拡大率90%。 |
+| ev-044 | 15_03.mp4 | 4:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-04m00s.png]] | high | 写真レイヤー非表示、白地に赤〜ピンクの線画のみ(面構成・耳・首・肩)。Gペン70.0、Layer 3(35%)選択。 |
+| ev-045 | 15_03.mp4 | 5:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-05m00s.png]] | high | 別ドキュメント(DSC_0305…jpg)。両手を頭の後ろに回した男性写真(フェード済み)の頭部に赤い楕円+顔中心縦線の描写開始。 |
+| ev-046 | 15_03.mp4 | 6:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-06m20s.png]] | high | 顎〜首〜鎖骨まわりまで赤い輪郭線を拡大(首左右の線+鎖骨寄りの斜線)。 |
+| ev-047 | 15_03.mp4 | 6:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-06m40s.png]] | high | 写真非表示で白地+線画のみ。眼窩と鼻の三角帯に薄ピンク塗り。新規 Layer 4(35%)選択、Gペン70.0へ切替。 |
+| ev-048 | 15_03.mp4 | 8:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-08m00s.png]] | high | 別キャンバス(タイトルバーは「kaonokakikata*」=顔の描き方 と読める)に白背景+青い線のみの頭部下書き2つ。粗い鉛筆25.0、Layer 73 選択。 |
+| ev-049 | 15_03.mp4 | 9:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-09m00s.png]] | high | 左頭部で鼻・唇・顎の凸凹を含む側面輪郭をほぼ通しで描写、頭頂に大きな弧を追加。 |
+| ev-050 | 15_03.mp4 | 11:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-11m00s.png]] | high | 左頭部内部を明るいグレーで塗り分け(首まで含む)。消しゴムへ切替、新規 Layer 74 選択。 |
+| ev-051 | 15_03.mp4 | 11:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-11m40s.png]] | high | 濃グレー塗りが拡大し頭蓋〜あご・首の影まで大部分を塗り分け。塗りつぶし(Tolerance 5.0)、Layer 75。 |
+| ev-052 | 15_03.mp4 | 12:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-12m20s.png]] | high | 右正面頭部に水平ガイド線数本(眉・目・鼻・口高さ)+縦中心線を描き足し。粗い鉛筆へ戻り Folder 37 内 Layer 76。 |
+| ev-053 | 15_03.mp4 | 14:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-14m40s.png]] | high | 正面頭部全体を白〜薄グレーで塗り、ペン入れ風の滑らかな黒線へ置換(目・鼻・口・耳・首まで整う)。Gペン70.0、新規 Layer 78。 |
+| ev-054 | 15_03.mp4 | 15:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-15m00s.png]] | high | 左右両頭部とも黒線線画+灰色塗りが完成。目・鼻・口・耳・首の線入り。Gペン70.0、Layer 78 選択。 |
 ## 関連リンク
 
 - [[coloso-hide-human-drawing-course]] — 講座メタ

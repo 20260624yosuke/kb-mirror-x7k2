@@ -9977,3 +9977,15 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 決定内容: パイロットの独立レビューを新規コンテキストのサブエージェント(実行セッションの記憶なし・動画から自前再抽出で突合)が実施し、その PASS をもって同群の量産開始条件とする。ユーザーの事前承認は不要、群完了後に成果物 Inbox で事後確認。`quality-gate.json` の stop_conditions と新設の approval_delegation に記録。
 - 適用開始: ch15(B2 パイロット)の独立レビューから。以降 B2(ch17/18/19)→ B3(ch20→21/22/23)→ B4(ch24→01/03/04/05/08/10/16/25/26)。ch02(分割動画)は個別相談扱いのまま最後に持ち越す。
 - 中断対策: 設計 v2.4 の staging 永続化+STATE.md 再開点+章単位確定(log 追記→次章)を適用。サブエージェント 503 はリトライ後統括側直接読取へ切替。
+## [2026-08-26] ingest | coloso hide ch15 映像ingest(バッチ退避方式・3パート完走)
+
+- 対象: [[coloso-hide-ch15-head-structure-simplification]](15_01+15_02+15_03、計約47分)。
+  サーバエラー対策として1動画パートごとに完走させ、盲検読取結果を
+  `wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p*.md` へバッチ単位で逐次退避(実エラー5回をゼロ損失で回収)。
+- 読取: 抽出143枚→盲検143枚(サブエージェント13バッチ)→保存54枚(p1:24/p2:15/p3:15)。
+- 再確認: 第2読者8枚=max(3,10%)×2回。7枚 confirmed・1件 corrected
+  (キャンバス名「kaotikokakata」→「kaonokakikata*」=顔の描き方、と確定)。
+  ツール名・フォルダ番号の読取揺れ4件は観測文から該当細部を除外する方針で処理。
+- 更新: `wiki/sources/coloso-hide-ch15-head-structure-simplification.md`(映像観測節54行),
+  `wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/manifest.json`,
+  `wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/progress.md`(新規)
