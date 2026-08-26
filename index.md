@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4473 ファイル_
+_合計 4493 ファイル_
 
 ## root/ (11)
 
@@ -734,7 +734,7 @@ _合計 4473 ファイル_
 - [hide-ch14-02-16m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-16m40s.png) | 2026-08-26T06:24:48Z
 - [hide-ch14-02-17m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-17m40s.png) | 2026-08-26T06:24:48Z
 
-## wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/ (39)
+## wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/ (54)
 
 - [hide-ch15-01-00m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-00m20s.png) | 2026-08-26T07:36:01Z
 - [hide-ch15-01-00m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-00m40s.png) | 2026-08-26T07:36:01Z
@@ -775,6 +775,21 @@ _合計 4473 ファイル_
 - [hide-ch15-02-12m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-02-12m40s.png) | 2026-08-26T08:19:21Z
 - [hide-ch15-02-13m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-02-13m20s.png) | 2026-08-26T08:19:21Z
 - [hide-ch15-02-14m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-02-14m20s.png) | 2026-08-26T08:19:21Z
+- [hide-ch15-03-00m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-00m20s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-01m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-01m20s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-02m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-02m40s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-03m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-03m20s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-04m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-04m00s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-05m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-05m00s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-06m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-06m20s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-06m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-06m40s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-08m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-08m00s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-09m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-09m00s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-11m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-11m00s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-11m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-11m40s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-12m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-12m20s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-14m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-14m40s.png) | 2026-08-26T08:39:39Z
+- [hide-ch15-03-15m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-03-15m00s.png) | 2026-08-26T08:39:39Z
 
 ## wiki/assets/frames/coloso-hizurume-ch06-drawing-types/ (19)
 
@@ -3058,7 +3073,7 @@ _合計 4473 ファイル_
 - [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
 - [2026-08-25-ixy-2024-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-representative-comparison.md) | 2026-08-25T13:11:23Z
 
-## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (16)
+## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (18)
 
 - [progress.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/progress.md) | 2026-08-26T07:45:23Z
 - [read-p1-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-a.md) | 2026-08-26T07:15:44Z
@@ -3076,6 +3091,8 @@ _合計 4473 ファイル_
 - [read-p3-b.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p3-b.md) | 2026-08-26T08:27:30Z
 - [read-p3-c.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p3-c.md) | 2026-08-26T08:29:33Z
 - [read-p3-d.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p3-d.md) | 2026-08-26T08:34:26Z
+- [read-p3-e.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p3-e.md) | 2026-08-26T08:35:56Z
+- [read-p3-f.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p3-f.md) | 2026-08-26T08:37:48Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/ (1)
 
@@ -3477,7 +3494,7 @@ _合計 4473 ファイル_
 - [22m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m20s.png) | 2026-08-25T11:25:38Z
 - [22m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m40s.png) | 2026-08-25T11:25:38Z
 
-## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (6)
+## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (9)
 
 - [STATE.md](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/STATE.md) | 2026-08-26T07:50:16Z
 - [observations_p1_b1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b1.txt) | 2026-08-26T08:11:33Z
@@ -3485,6 +3502,9 @@ _合計 4473 ファイル_
 - [observations_p1_b3.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b3.txt) | 2026-08-26T08:17:55Z
 - [observations_p1_b4.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b4.txt) | 2026-08-26T08:24:39Z
 - [observations_p1_b5.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b5.txt) | 2026-08-26T08:29:31Z
+- [observations_p2_b2.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p2_b2.txt) | 2026-08-26T08:38:51Z
+- [observations_p2_b3.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p2_b3.txt) | 2026-08-26T08:39:04Z
+- [observations_p3_b1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p3_b1.txt) | 2026-08-26T08:38:46Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/ (84)
 
