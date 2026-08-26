@@ -423,6 +423,24 @@ sources:
 
 **解決の選択肢**（承認カードへ）: ①P3_body のみ UV証拠（Jaccard 0.81・r4 規約の拡張）で P1_body_d を適用し残りは known_untextured 維持 ②ランタイム組み立ての逆工程（catalog解析＋ModelConfigData スキーマ解読）を別計画で調査 ③ゲーム画面スクショを正解資料として提供いただき照合 ④現状維持（known_untextured 開示済み）
 
+### バックアップボリュームのゲームデータ探索（2026-08-26・完結）
+
+> 前セッションの停止地点「バックアップボリュームが読めるようになっている（2026-08-26 朝のスナップショットあり）。中にゲームデータがあるか探索します」の続き。全ボリューム読み取り専用・find は -xdev＋120秒区切り。詳細記録: `gf2-char-extract/reports/backup-volume-game-data-scan-2026-08-26.json`
+
+**結論（弱い形・断定なし）**: `/Volumes/HDD_バックアップ` の完了スナップショット `2026-08-26-103352.previous` の**この範囲ではゲームデータ不検出**。ただし方法の有効性は陽性対照で確認済みで、不検出の理由は構造的に説明がつく。
+
+| # | 事実 | 実測 |
+|---|---|---|
+| 1 | バックアップは内蔵 'Macintosh HD - Data' 専用 | `backup_manifest.plist` の volumeStoreInfo が同ボリューム1本のみ |
+| 2 | スナップショット内にゲームコンテナのスケルトンは存在 | `com.haoplay.game.ios.exilium`（Preferences/Saved State 等の小ファイルのみ） |
+| 3 | しかし `Documents/LocalCache` は**空ディレクトリ** | 現行ではここに41GBが見えるが、実態はマウントポイント |
+| 4 | ゲームデータ本体は別デバイスの独立APFSボリューム | `GFL2Data`（disk7s2・44.5GB・外付けM.2 SSD・UUID E3201924-…）を LaunchAgent `com.takedayousuke.gfl2-data-mount.plist` が LocalCache へマウントする設計（バックアップ内にも plist あり・マウントスクリプト本体は未収録） |
+| 5 | 陽性対照 | 同一find方式（-xdev・iname）で snapshot 内の既知 `logXAYY.log`・`…iosmac.savedState` を検出(rc=0)。現行側 `.bundle` 先頭16バイト=UnityFS も実測 |
+| 6 | 他スナップショット・他の復元導線 | `.interrupted`（コンテナ8件のみ）・`.inprogress`（ほぼ空）にも無し。**GFL2Data 自体の APFS スナップショットは 0 個** |
+
+- 探索範囲: スナップショット全トップレベル領域＋ユーザー配下サブエリアごとに走査。完走領域はすべて不検出（`.bundle` ヒットはアプリ内蔵フレームワーク・Homebrew 等のみ）。部分走査（120秒打ち切り）と拒否（private/var/root 等の Permission denied）・欠落（snapshot 内 ~/Library/{Caches,Logs,Application Scripts}・~/.local/bin は未収録）は report JSON に明記
+- **プロジェクトへの影響なし**: ゲームデータ本体は現役で GFL2Data ボリュームに存在（AssetBundles_IOS/ClientRes_iOS/Table/BinFile 等を実確認・UnityFS 実測）。バックアップ依存の抽出継続導線は不要
+
 ## 2. 承認履歴
 
 | 日付 | カード | 結果 |
@@ -503,8 +521,11 @@ sources:
 - **監査修正・白モデル修正 追加（2026-08-24）**: scripts/render_char_sheet.py・scripts/combine_sheet.py（新規）／reports/sheets/{Dusevnyj-SSR0101,Sabrina-SSR0101,Helen-SSR01}/（シート＋variants レンダー）／logs/_diff-dump-*.json。**修正（再構築を伴う）**: scripts/ce_extract.py（LOD フィルタ修正）・scripts/ce_build_blend.py（コレクション分け・naming_match テクスチャ・テクスチャパス解決・canonical materials 欄）・scripts/20_diff_char_blend.py（tex_index 解決統一・texmatch 画像実在照合・self-test 12系統化）。blends 3体・ledger diff 3体・determinism-probe は再生成
 - **完全性基準 v8 追加（2026-08-25）**: scripts/25_gate_sync.py（新規）。**修正**: scripts/ce_build_blend.py（canonical_of_scene へ world_bbox 追加＝canonical 形式進化・blend バイト不変）・scripts/20_diff_char_blend.py（SourceExpectations 同名重複台帳＋新検査3本＋submission 判定＋scan_boundary 付記＋self-test 21系統）。ledger/diff-*.json 3体・determinism-probe・quality-gate.json(known_gaps) 再生成
 - **着せ替え切替修正 v8.3 追加（2026-08-25）**: **修正（再構築を伴う）**: scripts/ce_build_blend.py（plan_visibility へ hide_mode=collection・run() の parts_P2/P3 レイヤー除外保存・canonical_of_scene の除外計測対応＝canonical に objects[].excluded 追加で形式進化）・scripts/20_diff_char_blend.py（_is_visible 実効可視性へ統一・show_p2 ケースを除外解除の再現へ書き換え）・scripts/render_char_sheet.py（開いた直後に除外を hide へ実体化）・scripts/10_extract_char.py（成功判定に build_log/blend の鮮度要求を追加＝偽成功防止）・blends/README.md（v8.3 手順・注意書き）。blends 3体・ledger diff 3体・determinism-probe・quality-gate.json(known_gaps)・reports/sheets 2体 再生成
+- **バックアップ探索 追加（2026-08-26）**: reports/backup-volume-game-data-scan-2026-08-26.json（新規）／run-state.json（backup_volume_scan_2026_08_26 欄追加）。**変更なし（読み取り専用遵守）**: /Volumes/HDD_バックアップ・GFL2Data(disk7s2)・現行ゲームコンテナ一式
 
 ## 6. 変更履歴
+
+- **2026-08-26（バックアップボリュームのゲームデータ探索・完結）**: 前セッション停止地点「バックアップボリューム（2026-08-26 朝スナップショット）にゲームデータがあるか探索」を実施 → `/Volumes/HDD_バックアップ` の完了スナップショット `2026-08-26-103352.previous` は内蔵 'Macintosh HD - Data' 専用バックアップ（manifest 実測）で**この範囲ではゲームデータ不検出**。コンテナ `com.haoplay.game.ios.exilium` のスケルトンはあるが LocalCache は空 = ゲームデータ本体は外付けSSDの独立APFSボリューム `GFL2Data`（disk7s2・44.5GB）を LaunchAgent がサンドボックスの LocalCache へマウントする設計のため、バックアップ対象外。陽性対照（同一find方式で既知ファイル検出）と現行側 UnityFS マジック実測で方法は有効だったことを確認。GFL2Data 自体の APFS スナップショットは 0 個。**手元データは失われておらず抽出継続に支障なし** — 記録: `reports/backup-volume-game-data-scan-2026-08-26.json`・run-state.json 更新。プロジェクト本来の次は変わらず「武田さんの実機切替確認＋Dusevnyj 肌色修正→正式目視承認」
 
 - **2026-08-25（v8.3・着せ替え切替不能の修正）**: 武田さんが README どおりにチェック操作しても**「服装が切り替わらない」**と報告 → 機械精査で P2/P3 中身の個別 hide 焼き付き（README 手順と実装の食い違い・レンダーシートだけ個別フラグ操作で撮影していたため監査をすり抜けた）を確定 → 承認カード A案で修正: P2/P3 をレイヤー除外（チェックOFF）保存へ変更・検証器を実効可視性（hide＋excluded）へ統一・canonical に excluded 追加・レンダー側は除外を実体化して撮影。過程でドライバが Blender 例外後に**前回残ログで偽成功を報告する実障害**も発生 → 成功判定に鮮度要求を追加。3体再構築→突合20項目 PASS/conditional→self-test 24ケース PASS→決定性 PASS→set_P1/P2/P3 レンダーで Dusevnyj の3着切替を目視確認。**次は武田さんの実機切替確認＋Dusevnyj 肌色修正（残課題）→正式目視承認**
 
