@@ -9928,3 +9928,11 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   自動追従)は実装済み・未確認。ただし武田さん「他は試してないけど、今は問題感じない」。
   品質ゲート complete は引き続き FAIL(全項目の実機承認がないため・意図どおり)。
 - 更新: `wiki/builds/obsidian-miller-columns.md`, `index.md`, `log.md`
+## [2026-08-26] query | opencode 中断タスクの全容把握とマーセch12救出
+
+- 経緯: PC 再起動によるセッション中断で「何が止まってるか分からない」問題を受け、履歴 DB(opencode.db・アクティブ925セッション)を実測して現行タスクを確定。
+- 確定: Coloso 映像ingest 28/190章・intake 文字起こし 134/285 本・GF2系はK4判定待ちが頂点。CPU負荷原因=video_frames.py の1枚1ffmpeg起動。移動遅延は coloso-intake 設計v2 で解決済み。
+- 決定(武田さん): A-2 文字起こし151本を保留(リソース優先)→ [[coloso-intake-design]] 変遷へ記録済み。A-1 既存講座の映像読み取りは続行承認。
+- 救出: マーセ ch12 を二重死亡から回収。実態=ch12-01 完走・ch12-02 盲検71枚まで完走・sweep120枚未完。18バッチ63,189文字を `wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/` へ退避。
+- 進行: 別セッション4本(ひづるめ修正A〜C／マーセch12／ye_jji ch12／hide ch14)を開始済み。
+- 更新: `wiki/analyses/opencode-interrupted-tasks-20260826.md`(新規), `index.md`, `wiki/builds/coloso-intake-design.md`, `wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/rescue-summary.md`(新規), `opencode-task-dashboard.html`(不採用)

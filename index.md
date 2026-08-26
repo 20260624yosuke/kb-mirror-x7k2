@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 3977 ファイル_
+_合計 4030 ファイル_
 
 ## root/ (11)
 
@@ -677,6 +677,62 @@ _合計 3977 ファイル_
 - [hide-ch13-02-08m20s.png](wiki/assets/frames/coloso-hide-ch13-limb-blocking/hide-ch13-02-08m20s.png) | 2026-08-25T16:21:05Z
 - [hide-ch13-02-08m40s.png](wiki/assets/frames/coloso-hide-ch13-limb-blocking/hide-ch13-02-08m40s.png) | 2026-08-25T16:21:05Z
 - [hide-ch13-02-09m00s.png](wiki/assets/frames/coloso-hide-ch13-limb-blocking/hide-ch13-02-09m00s.png) | 2026-08-25T16:21:05Z
+
+## wiki/assets/frames/coloso-hide-ch14-figure-perspective/ (53)
+
+- [hide-ch14-01-00m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-00m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-00m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-00m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-01m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-01m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-01m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-01m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-01m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-01m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-02m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-02m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-03m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-03m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-03m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-03m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-04m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-04m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-05m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-05m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-05m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-05m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-06m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-06m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-06m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-06m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-06m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-06m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-07m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-07m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-07m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-07m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-07m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-07m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-08m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-08m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-09m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-09m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-09m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-09m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-09m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-09m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-10m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-10m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-10m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-10m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-11m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-11m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-12m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-12m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-12m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-12m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-01-14m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-01-14m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-00m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-00m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-01m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-01m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-02m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-02m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-03m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-03m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-04m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-04m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-04m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-04m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-05m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-05m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-05m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-05m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-06m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-06m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-08m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-08m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-08m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-08m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-08m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-08m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-09m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-09m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-09m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-09m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-09m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-09m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-10m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-10m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-10m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-10m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-11m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-11m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-12m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-12m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-12m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-12m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-13m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-13m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-14m00s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-14m00s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-15m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-15m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-16m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-16m20s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-16m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-16m40s.png) | 2026-08-26T06:24:48Z
+- [hide-ch14-02-17m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-17m40s.png) | 2026-08-26T06:24:48Z
 
 ## wiki/assets/frames/coloso-hizurume-ch06-drawing-types/ (19)
 
