@@ -1012,6 +1012,50 @@ sources:
     - 成果物blend無変更（SHA `04ef8b79b3fa5b64`・2026-08-26に現物2回確認）。
       証跡: `logs/f157-container-files-sweep.json`・`scripts/f157_container_files_sweep.py`。
 
+### 2026-08-26（昼〜午後）に足したこと — #85委譲の3本（f159/f161/f160）
+
+85. **f159 .uコンテナ追尾部解析を実施（`f159_u_tail_analysis.py`・2026-08-26午後・#85委譲a）**:
+    - **結論＝追尾部はゼロパディングで情報なし（強い形で同定）**:
+      `B==6×A` が38/38で厳密成立／tail先頭12Bはヘッダ12Bの完全複製38/38／残り全ゼロを
+      チャンク検証済み／エントロピー≈0.0bit/byte／CLIメタデータ(BSJB/#Strings/#US/#Blob/#~)・
+      PK/UnityFS/GFF\0/MZ/zstd/lz4/xz/gzip等のマジック0件・deflate全オフセット試験不発／
+      `_AOT.u`と`_HUDll.u`の5組はファイル全体がバイト完全一致。
+    - → **難読化マップ仮説をこの範囲で棄却**。f156のMemberRef範囲外indexは
+      平文PE内部要因（難読化名前プール等）の可能性を残す。
+    - 表記訂正: f157の「magic `0x2FD6D54F`」はバイト列左から読みで、u32 LE実値＝**`0x4FD5D62F`**。
+      追尾部合計実測 **336,627,200B**（先行記載の約200MBより大）。
+    - 陽性対照: prefixハッシュ==平文全ファイルハッシュ 38/38。親がサンプル3本で独立再現。
+    - 不確定: なぜ正確に6倍を事前確保するか（ローダー確保ポリシー不明）・実行時書き換えの有無。
+    - 成果物blend無変更。証跡: `logs/f159-u-tail-analysis.json`・`scripts/f159_u_tail_analysis.py`。
+
+86. **f161 Version_Ex1.bin形式特定を実施（`f161_version_ex1_decode.py`・2026-08-26午後・#85委譲c）— 解読成功**:
+    - 暗号化＝**ファイル名自身「Version_Ex1.bin」（15バイト）を周期繰り返しXOR鍵とする難読化**。
+    - 平文＝単一の有効JSON: `Criware`音声目録46サブキー（vo/time_chapter系・`.gf` 2,072件）＋
+      `Assetbundle` barrackanim md5名簿131件。平文SHA256 `ce72f877f29e29172a80…d4e45a`。
+    - **blocked関連針（scene root/prefab root/catalog/HelenSSR0101/06Aimo_Dorm）は平文中0件**
+      ＝Helen回収には直結しない（#84と整合）。変換試行計8,504件、周期15の列別charset重み
+      XOR solveで鍵復元。
+    - 陽性対照6件全合格（Caesar+37完全復元／Vigenère "haoplay" 鍵復元一致率1.0／xor55／
+      位置依存add／負対照0検出／7bit往復）。親が同一手順でjson.loads成功・SHA一致を独立再現。
+    - 不確定: 鍵=ファイル名が仕様か偶然かは本ファイル単独では判定不能。
+    - 成果物blend無変更。証跡: `logs/f161-version-ex1-decode.json`・`scripts/f161_version_ex1_decode.py`。
+
+87. **f160 GFF秘密レコード末尾解読を実施（`f160_gff_secret_tail.py`・2026-08-26午後・#85委譲b）— 解読不成立（弱い形）**:
+    - URL行9,033件(v26111)の末尾212Bは**統計的にランダムと区別不能**
+      （エントロピー7.9999bit/byte・全列256値出現・行間XOR共通ゼロ領域なし・カウンタ列なし
+      |r|<0.03・新旧同名行の末尾不一致）。
+    - ハッシュ照合battery＝入力14種×ダイジェスト{MD5,SHA1,SHA256,CRC32}×位置全域×表現3種で
+      新版n=50 5,200組合せ＋旧版n=30 1,830組合せの全て0ヒット →
+      **鍵付きハッシュ/HMAC/対称鍵暗号のいずれかと整合し、鍵無しでは解読不能**。
+    - 副次発見: ①col0＝平文の長さバイト（URL行43/catalog .hash 27/.bin,.cfg 26）＝
+      **f154の「5バイトマジック」記述を訂正**（f154ファイル・台帳は未改変）
+      ②旧版v21899のlen=0行2,110件は**tombstone**（URL全文とpayload残置・長さだけ0化）・
+      活性4,503＋2,110=6,613でf154の「裸ハッシュ6,613」計数と完全整合。
+    - 陽性対照2件合格: f154パーサ流用でURL台帳9,033/9,033再展開／合成レコードに植えた既知MD5を
+      solverが周期鍵復元のうえ検出。
+    - → GFF秘密テーブル(QSeY/csHt含む)ルートは「鍵入手なしては解読不能」まで確定。
+    - 成果物blend無変更。証跡: `logs/f160-gff-secret-tail.json`・`scripts/f160_gff_secret_tail.py`。
+
 ---
 
 ---
