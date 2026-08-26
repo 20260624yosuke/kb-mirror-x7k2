@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4495 ファイル_
+_合計 4496 ファイル_
 
 ## root/ (11)
 
@@ -14,7 +14,7 @@ _合計 4495 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-26T08:44:19Z
-- [log.md](root/log.md) | 2026-08-26T08:43:43Z
+- [log.md](root/log.md) | 2026-08-26T08:52:56Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -3015,7 +3015,7 @@ _合計 4495 ファイル_
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
 - [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-26T05:28:46Z
 - [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T03:22:36Z
-- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-26T06:40:28Z
+- [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-26T08:51:13Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
 - [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-26T06:52:06Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T10:00:16Z
@@ -3498,7 +3498,7 @@ _合計 4495 ファイル_
 - [22m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m20s.png) | 2026-08-25T11:25:38Z
 - [22m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m40s.png) | 2026-08-25T11:25:38Z
 
-## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (10)
+## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (11)
 
 - [STATE.md](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/STATE.md) | 2026-08-26T07:50:16Z
 - [observations_p1_b1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b1.txt) | 2026-08-26T08:11:33Z
@@ -3510,6 +3510,7 @@ _合計 4495 ファイル_
 - [observations_p2_b2.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p2_b2.txt) | 2026-08-26T08:38:51Z
 - [observations_p2_b3.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p2_b3.txt) | 2026-08-26T08:39:04Z
 - [observations_p3_b1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p3_b1.txt) | 2026-08-26T08:38:46Z
+- [observations_p3_b3.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p3_b3.txt) | 2026-08-26T08:53:24Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/ (84)
 
@@ -4430,7 +4431,7 @@ _合計 4495 ファイル_
 - [coloso-hizurume-ch12-gaze-guidance.md](wiki/sources/coloso-hizurume-ch12-gaze-guidance.md) | 2026-08-24T14:51:14Z
 - [coloso-hizurume-ch13-illusion-and-lies.md](wiki/sources/coloso-hizurume-ch13-illusion-and-lies.md) | 2026-08-25T11:29:32Z
 - [coloso-hizurume-ch14-simplification.md](wiki/sources/coloso-hizurume-ch14-simplification.md) | 2026-08-25T11:31:21Z
-- [coloso-hizurume-ch15-painting-to-illustration.md](wiki/sources/coloso-hizurume-ch15-painting-to-illustration.md) | 2026-08-25T15:27:02Z
+- [coloso-hizurume-ch15-painting-to-illustration.md](wiki/sources/coloso-hizurume-ch15-painting-to-illustration.md) | 2026-08-26T08:51:42Z
 - [coloso-hizurume-ch16-speed-up.md](wiki/sources/coloso-hizurume-ch16-speed-up.md) | 2026-05-31T15:53:23Z
 - [coloso-hizurume-ch17-dark-painting-1.md](wiki/sources/coloso-hizurume-ch17-dark-painting-1.md) | 2026-05-31T15:56:47Z
 - [coloso-hizurume-ch18-painting-technique-2.md](wiki/sources/coloso-hizurume-ch18-painting-technique-2.md) | 2026-05-31T15:57:08Z

@@ -1,0 +1,14 @@
+10m40s.png || high || CLIP STUDIO PAINT EX。タイトルバー「살림(선화)* (3148 x 4970px 350dpi 66.6%)」。キャンバスは全体表示で、パフェグラスを持つ長髪少女の線画(下塗りは薄く、線画途中。帽子は輪郭のみ)。左上に参照用の別画像ウィンドウ「Illustration* (1992 x 3113px 72dpi 133.1%)」でブーツと蝶の脚部分を表示。サブツール「G型 2」選択(一覧にわわ太郎/IMPASTO/square texture brush等)、Tool property: Brush Size 66.9、Opacity 100。レイヤーパネルは Layer 44(100% Normal)を選択、上位に Folder 3 Normal Copy 2(赤Xアイコン)、Layer 32〜48、Folder 3、Paper。キャンバス下部右寄りに薄い透かし文字「web.in.box.m...」(一部判読)。字幕なし。
+11m00s.png || high || 前フレーム(10m40s)と同一ドキュメント。表示が顔中心に拡大・回転(キャンバスが菱形傾き、Navigator 角度 -36.8)。サブツールは G型系一覧(원형/파스텔/G형/낙서G형/oil pen/G型/G형 3)、Tool property: Brush Size 12.0、Hardness スライダー。レイヤーパネルに新規 Layer 48(100% Normal)が追加・選択。焼き込み字幕「きれいに外郭線だけトレースしていきます。」
+11m20s.png || high || 前フレーム(11m00s)と同一画面。移動・回転ツール選択(サブツール「이동/손/회전」)、Tool property: Snap angle 45°。Navigator 角度 -95.3 まで回転。Layer 48 選択のまま。字幕なし。
+11m40s.png || high || 前フレーム(11m20s)と同一画面。ブラシ系サブツールに戻る(G型系、Tool property: Brush Size 12.0、Hardness)。Navigator 角度 0.0 でキャンバス正立・全身表示。帽子に蝶の髪飾りの線画が追加され、Layer 49(100% Normal)が新規・選択。キャンバス中部に薄い透かし文字(判読不能)。字幕なし。
+12m00s.png || high || 前フレーム(11m40s)と同一画面。再び移動・回転ツール(Snap angle 45°)、Navigator 角度 -28.9 で傾き表示・顔中心。帽子の蝶飾り周辺を拡大、Layer 48 選択。字幕なし。
+12m20s.png || high || 前フレーム(12m00s)と同一画面。ブラシ G型(Brush Size 12.0、Hardness)に戻る。Navigator -2.2 でほぼ正立、上半身+パフェグラス表示。帽子の蝶飾り線画が完成気味。Layer 49 選択。字幕なし。
+12m40s.png || high || 前フレーム(12m20s)と同一画面。消しゴムツール(サブツール「자우개」系、부드러운 자우개等)選択、Tool property: Brush Size 58.4、Anti-aliasing。レイヤー選択が Layer 44 へ移動。Navigator 2.2、ほぼ正立の全身表示。右上に薄い透かし文字(判読不能)。字幕なし。
+13m00s.png || high || 前フレーム(12m40s)と同一画面。消しゴム(자우개系、Brush Size 58.4)のまま、Layer 49 選択。Navigator -2.2、全身表示で線画の清書を継続。字幕なし。
+13m20s.png || high || 前フレーム(13m00s)と同一画面。ズームアウトしタイトルバー 32.7%(Navigator 32.7、角度 2.2)。ブラシ G型(Brush Size 12.0、Hardness)。全身表示で脚に蝶・植物模様の飾り線画が追加されている。Layer 49 選択。字幕なし。
+13m40s.png || high || 前フレーム(13m20s)と同一画面。消しゴム(자우개系、Brush Size 58.4、Anti-aliasing)。レイヤーパネルがスクロールし Folder 3 展開部(Layer 43/42/41 Soft light/Color balance 1/Layer 40/33/23/4/7_2 等)が見える。Layer 44 選択。Navigator -2.2・32.7。キャンバス左中部に薄い透かし文字「web.in.box.m...9739...」(一部判読)。字幕なし。
+14m00s.png || high || 前フレーム(13m40s)と同一画面。ズームインしタイトルバー 60.5%(Navigator 60.5、角度 2.2)。消しゴム(자우개系、Brush Size 58.4)のまま、上半身中心の表示で線画修正。Layer 44 選択、Folder 3 展開表示。字幕なし。
+14m20s.png || high || 前フレーム(14m00s)と同一画面。消しゴム(자우개系、Brush Size 58.4)のまま。タイトルバー 55.0%(Navigator 55.0、角度 4.2)でやや傾き・縮小。Layer 44 選択。字幕なし。
+14m40s.png || high || 前フレーム(14m20s)と同一画面。ズームアウトしタイトルバー 25.0%(Navigator 25.0、角度 4.2)、全身が傾いたまま全体表示。移動・回転ツール(이동/손/회転、Snap angle 45°)。キャンバス上部に透かし文字「web.in.box.mail-973965」が判読可能。Layer 46 選択。字幕なし。
+15m00s.png || high || 前フレーム(14m40s)と同一画面。ブラシ G型(Brush Size 25.0、Hardness)に戻る。タイトルバー 60.5%(Navigator 60.5、角度 18.2)で強く傾けた上半身表示、顔・帽子の蝶飾り周辺を清書中。Layer 46 選択。焼き込み字幕「受講生の皆さんは、大体私より速いと思います。」

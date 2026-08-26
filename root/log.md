@@ -9989,3 +9989,11 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: `wiki/sources/coloso-hide-ch15-head-structure-simplification.md`(映像観測節54行),
   `wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/manifest.json`,
   `wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/progress.md`(新規)
+
+## [2026-08-26] ingest | coloso 映像ingest batch2 ひづるめ ch15 パイロット独立レビュー・修正適用(B2 開始条件成立)
+
+- レビュー: 独立レビュアー(新規コンテキスト・サブエージェント)が gate 自実行+突合 15 枚(PSNR 全一致)+10 秒スイープ 322 枚(aHash 閾値超 13 枚全目視)を実施 → **条件付き承認**。判定正本は `wiki/builds/coloso-visual-ingest-batch2/review/2026-08-26-hizurume-ch15-pilot-review.md`。未観測画面状態ゼロ・解釈混入ゼロ。
+- 修正適用(実行セッションが実フレーム再抽出のうえ自目視で確定してから適用): ①ev-091/092/093(15_02 06:20/06:25/06:40) 選択フォルダー「751」→「747」(380/385/400 秒抽出・青反転行とカーソル位置を原寸 2 倍クロップで確認) ②ev-216(15_04 05:51) 黒い円「6個」→「5個」(351 秒抽出で目視カウント)。source 4 行+manifest observations 4 件を同期。
+- 追加確認: 同表記のある ev-094(06:54)/ev-096(07:18) は実フレームで選択=フォルダー751 を確認し**修正せず**(この間に選択が 747→751 へ移っているため、レビュー指摘 3 枚だけが誤り)。
+- 台帳備考: log の ch15 ingest エントリ「p1:17 時刻」は manifest 実数 18 が正(source ページ側が正・append-only のため本エントリで訂正)。
+- gate 再実行 → **PASS (complete)**。レビューの条件を満たしたため、承認委譲方針(2026-08-26 ユーザー決定・quality-gate.json approval_delegation)により **B2(ch17/18/19) の量産開始条件成立**。
