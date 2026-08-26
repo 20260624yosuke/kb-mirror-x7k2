@@ -484,6 +484,47 @@ sources:
 
 **次**: 武田さんの目視承認（Dusevnyj v8.4＋Sabrina 正式・conditional 開示込み）→ Step3 バッチ計画（別承認）。
 
+### v8.5・共有 body_d 適用と生成物の全廃（2026-08-26 夕・現行）
+
+> v8.4 目視承認カードで武田さんが**承認せず**: 「まだ肌色に関して再現できていない＝原作再現できていない。肌だけの指摘ではなく**計画と監査スクリプトの詰めが甘い**。原因を考えろ」→ 続けて色照合案（ゲーム内UIアイコンとの定量比較）も**承認せず**: 「codeに存在しないやつで何ができんの。**お前はクリエイターじゃなくてエディター。codeを抽出して再現しろ**」。
+
+**原因（機械実測で確定）**:
+
+| # | 事実 | 実測 |
+|---|---|---|
+| 1 | 原作の生肌（手・脚等）は**全キャラ共有テクスチャ `body_d`/`body_n`**（キャラ名プレフィックス無し）をランタイムで割り当てている | texture2d-inventory.json（61,733件台帳）から共有テクスチャを特定・バンドル `42554ccee…`（LocalCache）から抽出。**胴体・四肢・手・足・爪まで描かれた生肌アトラス** |
+| 2 | 決定打: メッシュUVが body_d 空間にそのまま一致 | P1_cloth3(手)の UV0 を body_d に重ねると**指・爪の描画に整然一致**。P3_body/P3_body_trans/P3_body_Dorm も同様（サンプル色一様・R-IQR 9-11・膝の陰影まで一致） |
+| 3 | v8.2（顔色の単色塗り）・v8.4（顔アトラス額クロップのタイルパッチ）は**どちらも代用品＝創作**だった | キャラ族データ内に肌テクスチャが無い＝「名前で引けない」の正体が共有テクスチャだった。計画が「族内での名前解決」問題と限定したのが根本誤り |
+| 4 | 監査の欠陥: 色の出所の正しさを検査する項目がゼロ | 「何か貼られたか」しか見ないため代用品を3回とも PASS。white_ratio は吹き飛び白しか数えず「肌が変」は原理的に検出不能だった |
+
+**v8.5 修正**:
+
+| 項目 | 内容 |
+|---|---|
+| `ce_common.py` | 肌フォールバック規約を **r6_shared_body_atlas** へ変更（`SHARED_BODY_ATLAS_RE` = P1_cloth3/P3_body 系・`SHARED_BODY_BUNDLE`/`SHARED_BODY_TEXTURES` 定数）。SKIN_PATCH_* は廃止 |
+| `ce_extract.py` | `extract_shared_body_atlas` 新設 — 共有バンドルから body_d/body_n を `shared-textures/` へ抽出し **provenance.json**（バンドルSHA256・pngSHA256・path_id）を記録。extract-manifest にも記録 |
+| `ce_build_blend.py` | `_make_skin_patch_material` 削除（生成物ロジックの完全排除）。slot 規約 r6（ラベル `shared_body_<stem>`）・材質に `gf_provenance` 焼き込み |
+| `20_diff_char_blend.py` | 期待slot規約を r6 に対応＋**新検査 `texture_source_purity`**: blend 内の全画像は source bundle 由来（族 textures/ ∪ 共有 body_d/body_n）のみ許可、**生成テクスチャは FAIL**（創作の混入を機械捕捉）。self-test 24→**25ケース**（「材質の画像を生成物に差し替える」追加） |
+
+**v8.5 実測（2026-08-26 夕・現行）**:
+
+| キャラ | blend SHA(先頭16) | 突合 | 備考 |
+|---|---|---|---|
+| Dusevnyj | `3e511d00881b3497` | **PASS / conditional** | 手・脚がゲーム本来の肌（指・爪・膝の陰影付き）。known_untextured=hip3 のみ |
+| Helen（内部回帰） | `1dd308b36c0b9bef` | **PASS / conditional** | P3_body_trans が skin_patch→shared_body へ |
+| Sabrina | 変更なし | **PASS / conditional** | フォールバック対象slot無し。純度検査 PASS＝生成物ゼロの証明 |
+
+- self-test 25ケース PASS ×3体・決定性 PASS（canonical_identical=true）・レンダーシート再生成（白面積率 0.0）・gate_sync ok
+- 制作担当が目視: P3 脚は原作テクスチャ本来の質感（膝の赤み・グラデーション）・P1 手は指爪つきの実肌
+- **残る限界**: ゲーム独自の陰影（ramp/SSS/環境光）は deferred のまま。albedo が原作ソースになったため色・柄は原作データそのもの
+
+#### v8.5 で捨てた判断とその見え方
+
+| 捨てたもの | 手元でどう変わるか | 戻せるか |
+|---|---|---|
+| v8.4 の顔クロップ肌パッチ（生成テクスチャ） | 生肌が原作の共有アトラスになる。**生成物は創作**という武田さん方針で廃止 | 戻すべきでない（純度検査が生成物を FAIL させるため戻すと検査も外すことになる） |
+| 「肌問題は族内の名前解決問題」という計画の枠組み | テクスチャ探査の対象がゲーム全体の共有空間に広がった（61,733件台帳の活用） | 枠組みに戻す理由は無い（誤りだった） |
+
 ## 2. 承認履歴
 
 | 日付 | カード | 結果 |
@@ -564,11 +605,13 @@ sources:
 - **監査修正・白モデル修正 追加（2026-08-24）**: scripts/render_char_sheet.py・scripts/combine_sheet.py（新規）／reports/sheets/{Dusevnyj-SSR0101,Sabrina-SSR0101,Helen-SSR01}/（シート＋variants レンダー）／logs/_diff-dump-*.json。**修正（再構築を伴う）**: scripts/ce_extract.py（LOD フィルタ修正）・scripts/ce_build_blend.py（コレクション分け・naming_match テクスチャ・テクスチャパス解決・canonical materials 欄）・scripts/20_diff_char_blend.py（tex_index 解決統一・texmatch 画像実在照合・self-test 12系統化）。blends 3体・ledger diff 3体・determinism-probe は再生成
 - **完全性基準 v8 追加（2026-08-25）**: scripts/25_gate_sync.py（新規）。**修正**: scripts/ce_build_blend.py（canonical_of_scene へ world_bbox 追加＝canonical 形式進化・blend バイト不変）・scripts/20_diff_char_blend.py（SourceExpectations 同名重複台帳＋新検査3本＋submission 判定＋scan_boundary 付記＋self-test 21系統）。ledger/diff-*.json 3体・determinism-probe・quality-gate.json(known_gaps) 再生成
 - **着せ替え切替修正 v8.3 追加（2026-08-25）**: **修正（再構築を伴う）**: scripts/ce_build_blend.py（plan_visibility へ hide_mode=collection・run() の parts_P2/P3 レイヤー除外保存・canonical_of_scene の除外計測対応＝canonical に objects[].excluded 追加で形式進化）・scripts/20_diff_char_blend.py（_is_visible 実効可視性へ統一・show_p2 ケースを除外解除の再現へ書き換え）・scripts/render_char_sheet.py（開いた直後に除外を hide へ実体化）・scripts/10_extract_char.py（成功判定に build_log/blend の鮮度要求を追加＝偽成功防止）・blends/README.md（v8.3 手順・注意書き）。blends 3体・ledger diff 3体・determinism-probe・quality-gate.json(known_gaps)・reports/sheets 2体 再生成
-- **バックアップ探索 追加（2026-08-26）**: reports/backup-volume-game-data-scan-2026-08-26.json（新規）／run-state.json（backup_volume_scan_2026_08_26・discovered_state_2026_08_26_noon・audit_script_confirm_paths 欄追加）。**修正（2026-08-26 同日）**: scripts/20_diff_char_blend.py（main に confirm_paths 必須化を追加・compare/self_test は非変更）。**変更なし（読み取り専用遵守）**: /Volumes/HDD_バックアップ・GFL2Data(disk7s2)・現行ゲームコンテナ一式
+- **バックアップ探索 追加（2026-08-26）**: reports/backup-volume-game-data-scan-2026-08-26.json（新規）／run-state.json（backup_volume_scan_2026_08_26・discovered_state_2026_08_26_noon・audit_script_confirm_paths・recovery_v84・v85_shared_body_atlas 欄追加）。**修正（2026-08-26 同日）**: scripts/20_diff_char_blend.py（confirm_paths 必須化＋r6 期待slot対応＋texture_source_purity 新設＋self-test 25ケース）・scripts/ce_common.py（r6 規約・SKIN_PATCH_* 廃止）・scripts/ce_extract.py（extract_shared_body_atlas 新設）・scripts/ce_build_blend.py（skin_patch 削除・shared_body_atlas 対応）。blends 3体（Dusevnyj 3e511d00…/Helen 1dd308b3…/Sabrina 変更なし）・ledger diff 3体・determinism-probe・quality-gate・reports/sheets 再生成。intermediate/<char>.<variant>/shared-textures/ 新設。**変更なし（読み取り専用遵守）**: /Volumes/HDD_バックアップ・GFL2Data(disk7s2)・現行ゲームコンテナ一式
 
 ## 6. 変更履歴
 
-- **2026-08-26（v8.4 肌パッチ・Dusevnyj 復旧完遂）**: 武田さんが「成果物は Blender オブジェクトの品質」と指摘し承認カードで **A案（肌色修正込みで復旧）** を承認 → ①朝の Helen FAIL をデータ不完全起因と機械特定（.bundle は3体とも 0欠け・欠けは音声/動画のみ）②Helen 再diff PASS で v8.4 ビルダを検証済みに ③Dusevnyj をフル再抽出→再構築（新SHA `b56f8152a51ae1c0`）→ 突合 PASS(20)/conditional・self-test 24ケース・決定性 PASS・シート再生成（白面積率0.0・肌パッチで顔/手/脚が自然肌色を制作担当が目視確認）④Sabrina も PASS 再確認。**次は武田さんの目視承認 → Step3**
+- **2026-08-26（v8.5・共有 body_d 適用と生成物の全廃）**: v8.4 を武田さんが承認せず「まだ肌色は再現できていない・計画と監査スクリプトの詰めが甘い・**codeを抽出して再現しろ・クリエイターじゃなくてエディター**」→ 機械調査で原因確定: 原作の生肌は全キャラ共有テクスチャ `body_d`（プレフィックス無し・バンドル 42554ccee…）のランタイム割り当てで、手の UV は指・爪まで body_d に整然一致。v8.2 単色・v8.4 顔パッチは両方とも代用品＝創作だった。修正: r6_shared_body_atlas 規約（ce_common/ce_extract/ce_build_blend）＋検証器に **texture_source_purity**（生成テクスチャは FAIL）新設・self-test 25ケース化。3体再構築→全て PASS/conditional・決定性 PASS・シート再生成。**教訓: 「データに無いものは作らない。探し方が悪かっただけ」**
+
+- **2026-08-26（v8.4 肌パッチ・Dusevnyj 復旧完遂）**: 武田さんが「成果物は Blender オブジェクトの品質」と指摘し承認カードで **A案（肌色修正込みで復旧）** を承認 → ①朝の Helen FAIL をデータ不完全起因と機械特定（.bundle は3体とも 0欠け・欠けは音声/動画のみ）②Helen 再diff PASS で v8.4 ビルダを検証済みに ③Dusevnyj をフル再抽出→再構築（新SHA `b56f8152a51ae1c0`）→ 突合 PASS(20)/conditional・self-test 24ケース・決定性 PASS・シート再生成（白面積率0.0・肌パッチで顔/手/脚が自然肌色を制作担当が目視確認）④Sabrina も PASS 再確認。**※この v8.4 肌パッチは直後の差し戻しで v8.5 に置き換えられた**
 
 - **2026-08-26（監査スクリプトへ confirm_paths 必須化・v8.4 中断状態の発見）**: 武田さん指示「確認してほしいときはファイルパスを明示するように監査スクリプトに加えて」→ `20_diff_char_blend.py` の submission に **confirm_paths**（成果物8パスの exists 付き機械列挙・exists=false は提出不可）を新設し標準出力にも印字。動作確認の単体実行で **Dusevnyj blend 消失を検出** → 精査の結果、02:06-02:11 の空blend事故（LocalCache 一時消滅が契機・v8.3 正本は上書き喪失・quarantine 隔離済み）と、09:25-09:36 の v8.4 肌パッチ作業中断痕跡（Helen diff FAIL/blocked のまま）を発見。run-state/handoff を実態へ訂正。Sabrina は無傷。ゲームデータ本体は現在手元にあり再DL不要
 
