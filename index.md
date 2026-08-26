@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4193 ファイル_
+_合計 4194 ファイル_
 
 ## root/ (11)
 
@@ -3015,6 +3015,10 @@ _合計 4193 ファイル_
 - [2026-08-25-ixy-2024-audit.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-audit.md) | 2026-08-25T13:10:02Z
 - [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
 - [2026-08-25-ixy-2024-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-representative-comparison.md) | 2026-08-25T13:11:23Z
+
+## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (1)
+
+- [read-p1-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-a.md) | 2026-08-26T07:15:44Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/ (1)
 
