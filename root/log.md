@@ -9948,7 +9948,7 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: `wiki/sources/coloso-hide-ch14-figure-perspective.md`(映像観測節新設53行+`visual_ingested: 2026-08-26`),
   `wiki/assets/frames/coloso-hide-ch14-figure-perspective/manifest.json`(status complete),
   `index.md`, `log.md`
-- 検証: `tools/video_ingest_gate.py check --phase complete` の結果は gate 実行後に本エントリへ追記。
+- 検証: `tools/video_ingest_gate.py check --phase complete` → **PASS**(retrofit snapshot 遡及基準・本文非破壊は節の存在確認のみ)。抽出前の snapshot は `snapshot-pre.json` として保持。
 ## [2026-08-26] ingest | coloso ye_jji ch12 映像ingest(前セッション中断からの再開・完走)
 
 - 経緯: 前セッション(ses_fc6867a5fffeW4b231H0eMFXlk)で ch12 のフレーム抽出(p1 72+p2 93=165枚・staging 退避済み)まで完了し盲検読取の最初で停止。staging は一時ディレクトリごと揮発していたため、`wiki/assets/frames/coloso-ye-jji-ch12-color-rough/snapshot.json`(動画 SHA-256 一致を dry-run で再確認)を根拠に 12_1(71枚)/12_2(92枚) を再抽出。前回報告との差3枚は --at 重複時刻の統合。
