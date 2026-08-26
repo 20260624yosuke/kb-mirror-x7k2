@@ -2721,7 +2721,7 @@ _合計 3975 ファイル_
 - [codexbar.md](wiki/builds/codexbar.md) | 2026-07-14T11:51:42Z
 - [coloso-batch-resume-handoff.md](wiki/builds/coloso-batch-resume-handoff.md) | 2026-08-24T08:45:42Z
 - [coloso-ingest-coverage-audit.md](wiki/builds/coloso-ingest-coverage-audit.md) | 2026-07-07T01:00:00Z
-- [coloso-intake-design.md](wiki/builds/coloso-intake-design.md) | 2026-08-25T11:23:28Z
+- [coloso-intake-design.md](wiki/builds/coloso-intake-design.md) | 2026-08-26T06:03:46Z
 - [coloso-parallel-ingest-project.md](wiki/builds/coloso-parallel-ingest-project.md) | 2026-08-24T03:50:44Z
 - [coloso-visual-ingest-batch2-handoff.md](wiki/builds/coloso-visual-ingest-batch2-handoff.md) | 2026-08-25T15:30:31Z
 - [coloso-visual-ingest-resume-inventory.md](wiki/builds/coloso-visual-ingest-resume-inventory.md) | 2026-08-23T12:03:30Z
