@@ -53,6 +53,41 @@ last_reviewed: 2026-06-01
 - 原 transcript の「眼下」は文脈上 **眼窩** と補正した。
 - ch15 末尾のデフォルメキャラの顔の凹凸パートは、現パイロットでは章全体の要約に留め、詳細 concept 化は保留。
 
+## 映像観測(フレーム由来)
+
+- 進捗: パート1/3 完了(15_01)。パート2・3 は次セッションで実施予定
+- 抽出日: 2026-08-26 / 元動画: [[_attachments/15_01.mp4]] + [[_attachments/15_02.mp4]] + [[_attachments/15_03.mp4]](分割 3 本)
+- 元動画 SHA-256: `56d170a12dd1a89df7f92d63e27a09b5a27d980cb1c21b30fd8507da217ccb87`(15_01) / `5adcd66de4e24c5456e1d6861707ea693a9c437d4fa56067349763f34455fe4b`(15_02) / `4a685456fbdd19924b824407cd2ceb2d33fa956e6eb313ee0ad61a04dc241b96`(15_03)
+- 方式: 20秒間隔抽出 / p1 抽出46枚・読取46枚・保存24枚(バッチ退避方式: 読取結果を wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ へ逐次退避)
+- 設計版: video-visual-ingest-design v2.3 / 読取モデル: opencode/x-preview-f-free (ox-alpha)(盲検読取はサブエージェント分割回し、第2読者4枚=max(3,10%切り上げ))
+- 凡例: 画面上で確認できた事実のみ。判読できない文字は「判読不能」と記載。時刻は各動画内の時刻。冒頭は頭蓋骨写真素材への色分け注記パート、後半は多角度スケッチのデモ。アプリ UI に薄い透かし状文字列が出るが読みが安定しないため「判読不能」扱い。
+
+| evidence_id | 動画 | 時刻 | frame | 確信度 | 画面の観測(事実のみ) |
+|---|---|---|---|---|---|
+| ev-001 | 15_01.mp4 | 0:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-00m20s.png]] | high | CLIP STUDIO PAINT EX の白キャンバス中央に黒文字で「第15講」「頭部の構造と単純化」のタイトル。消しゴムツール選択(Brush Size 80.0)、拡大率36.6%。 |
+| ev-002 | 15_01.mp4 | 0:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-00m40s.png]] | high | キャンバス上部に2行テキスト。黒字「人物画を描く →中身(骨格・筋肉)の把握は大切だが…」、赤字「骨や筋肉の名前を全て詳細に知っている必要はない」。 |
+| ev-003 | 15_01.mp4 | 1:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-01m20s.png]] | high | 正面・側面の頭蓋骨写真が白キャンバスに2枚並ぶ。スポイトツール選択。「フォルダー 1」内に「Multiply レイヤー 2」「IMG_1867 のコピー 2」等のレイヤー群。 |
+| ev-004 | 15_01.mp4 | 1:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-01m40s.png]] | high | 頭蓋骨2枚が薄い水色に着色され、正面像上に黒の細線で円(楕円)+縦横の直線ガイド+顔輪郭風の曲線を重ね描き。粗い鉛筆(30.0/大理石)、「100 % Normal レイヤー 2」選択。 |
+| ev-005 | 15_01.mp4 | 2:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-02m00s.png]] | high | 頭蓋骨写真が消え、簡略化スケッチ2つ(正面=卵形+顎部、側面=楕円+縦基準線)。正面は上部薄緑・頬〜顎ピンク、側面も薄緑で塗り分け。塗りつぶし(Tolerance 5.0)、「Multiply Layer 1」選択。 |
+| ev-006 | 15_01.mp4 | 2:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-02m20s.png]] | high | 頭蓋骨写真に戻り、正面像の両眼窩を赤で塗り「眼窩」と赤字注記。塗りつぶし(Tolerance 5.0)、描画色赤、Folder 2 内 Multiply レイヤー選択。 |
+| ev-007 | 15_01.mp4 | 2:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-02m40s.png]] | high | 正面像の鼻腔を赤で塗り「鼻腔」注記追加。側面像の頭頂部沿いに赤い曲線+「側頭稜」ラベル。Gペン(80.0)へ切替。 |
+| ev-008 | 15_01.mp4 | 3:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-03m00s.png]] | high | 正面像の眉弓に淡い紫塗り+「眼窩上隆起」、鼻骨に緑塗り+「鼻骨」、上顎周辺に黄緑輪郭+「上顎骨」と色分け注記が増える。 |
+| ev-009 | 15_01.mp4 | 3:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-03m20s.png]] | high | 正面像の頬骨・上顎部を黄緑と黄色で範囲塗り+「頬骨」注記。側面像の頬骨弓をオレンジ/山吹色で塗り「頬骨弓」ラベル。 |
+| ev-010 | 15_01.mp4 | 3:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-03m40s.png]] | high | 正面像の下顎全体を青紫(藍色)で塗り「下顎骨」。側面像も下顎同色、頬骨弓後端に赤丸+「外耳道」ラベル。 |
+| ev-011 | 15_01.mp4 | 4:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-04m00s.png]] | high | 色分け済み頭蓋骨2面の全景。赤注記「眼窩上隆起」「頬骨」「下顎角」と、側面頭蓋の頭頂から後頭へ回り込む赤い線。Gペン80.0、Multiply レイヤー選択。 |
+| ev-012 | 15_01.mp4 | 4:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-04m40s.png]] | high | キャンバス白紙になり、淡いグレーの円(頭蓋土台)+縦横中心補助線+円上下端の短い横線を描いた直後。粗い鉛筆40.0、新規レイヤー選択。 |
+| ev-013 | 15_01.mp4 | 5:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-05m20s.png]] | high | 両眼窩相当の大きな楕円2つ+眉弓部の横線+口位置の横線が追加され、頭蓋正面の主要パーツが揃う。粗い鉛筆40.0。 |
+| ev-014 | 15_01.mp4 | 6:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-06m00s.png]] | high | 正面スケッチ完成し薄グレー塗り(眼窩・鼻腔等)、左へ縮小配置。右側に新しい円(側面用土台)+下方向補助線の描写開始。作業レイヤー切替。 |
+| ev-015 | 15_01.mp4 | 7:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-07m00s.png]] | high | 表示縮小。完成した正面(左)+側面(中央)+右に3つ目の土台として傾いた円+縦の長い中心線+横補助線の描写開始。ナビゲーターに頭部サムネイル3つ。 |
+| ev-016 | 15_01.mp4 | 8:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-08m40s.png]] | high | 傾き顔に歯列(グリッド状)+頬骨弓+眼窩の灰色塗りが描き込まれペン入れ調に。Gペン(90.0)へ戻り新規レイヤー追加。 |
+| ev-017 | 15_01.mp4 | 9:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-09m20s.png]] | high | キャンバス左下に4つ目=真上から見た頭蓋(上面図)出現。灰色卵形シルエット+中央正中線+左右対称ガイド円。選択範囲系ツール表示、ナビゲーター4つ。 |
+| ev-018 | 15_01.mp4 | 10:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-10m00s.png]] | high | 下段中央に5つ目=後ろから見た頭蓋(背面図)出現。頭頂部ギザギザの縫合線+灰色塗り+首・顎のブロック状補助形状。Gペン、ナビゲーター5つ。 |
+| ev-019 | 15_01.mp4 | 10:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-10m40s.png]] | high | 下段右に6つ目=下から見た頭蓋(下面図)の作画開始。外側円形輪郭+中央小円+上端波形線。粗い鉛筆40.0、ナビゲーター6つ。 |
+| ev-020 | 15_01.mp4 | 11:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-11m00s.png]] | high | 頭蓋スケッチ6つが2行3列(正面・側面・斜め/上面・下面・背面寄り)で並び、それぞれ灰色塗り+黒線画の完成状態。消しゴム「硬め」70.0。 |
+| ev-021 | 15_01.mp4 | 12:40 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-12m40s.png]] | high | 頭蓋スケッチ周囲に変換用バウンディングボックス+「OK/Cancel」ボタン=拡大縮小操作中。Scale ratio W65%/H65%、縦横比保持、Interpolation: Hard edges。 |
+| ev-022 | 15_01.mp4 | 13:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-13m00s.png]] | high | キャンバス中央に大きな円形頭部下描き(縦横補助線+顔中心線+横ガイド線)。左上に完成済み頭蓋スケッチ(灰陰影)を参照配置。粗い鉛筆40.0、36.6%。 |
+| ev-023 | 15_01.mp4 | 14:20 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-14m20s.png]] | high | 中央に新しい頭部下描き(円+前方に張り出す箱形ガイド・傾いた構図)を黒鉛筆で開始。左列に完成済み頭蓋スケッチ上下2つ。 |
+| ev-024 | 15_01.mp4 | 15:00 | ![[wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-15m00s.png]] | high | 歯列・上顎の塊、顎輪郭、側頭部の穴(耳孔位置と思える楕円)などの線を追加し、頭蓋の立体構造が詳細化。 |
 ## 関連リンク
 
 - [[coloso-hide-human-drawing-course]] — 講座メタ

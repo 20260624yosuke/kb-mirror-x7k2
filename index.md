@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4441 ファイル_
+_合計 4442 ファイル_
 
 ## root/ (11)
 
@@ -14,7 +14,7 @@ _合計 4441 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-26T06:41:47Z
-- [log.md](root/log.md) | 2026-08-26T07:32:44Z
+- [log.md](root/log.md) | 2026-08-26T07:46:50Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -3043,8 +3043,9 @@ _合計 4441 ファイル_
 - [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
 - [2026-08-25-ixy-2024-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-representative-comparison.md) | 2026-08-25T13:11:23Z
 
-## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (5)
+## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (6)
 
+- [progress.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/progress.md) | 2026-08-26T07:45:23Z
 - [read-p1-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-a.md) | 2026-08-26T07:15:44Z
 - [read-p1-b.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-b.md) | 2026-08-26T07:22:39Z
 - [read-p1-c.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-c.md) | 2026-08-26T07:27:00Z
@@ -4344,7 +4345,7 @@ _合計 4441 ファイル_
 - [coloso-hide-ch12-three-mass-blocking.md](wiki/sources/coloso-hide-ch12-three-mass-blocking.md) | 2026-08-25T12:50:52Z
 - [coloso-hide-ch13-limb-blocking.md](wiki/sources/coloso-hide-ch13-limb-blocking.md) | 2026-08-25T16:22:58Z
 - [coloso-hide-ch14-figure-perspective.md](wiki/sources/coloso-hide-ch14-figure-perspective.md) | 2026-08-26T07:01:19Z
-- [coloso-hide-ch15-head-structure-simplification.md](wiki/sources/coloso-hide-ch15-head-structure-simplification.md) | 2026-05-31T17:22:22Z
+- [coloso-hide-ch15-head-structure-simplification.md](wiki/sources/coloso-hide-ch15-head-structure-simplification.md) | 2026-08-26T07:42:39Z
 - [coloso-hide-ch16-neck-structure.md](wiki/sources/coloso-hide-ch16-neck-structure.md) | 2026-05-31T17:46:47Z
 - [coloso-hide-ch17-thorax-clavicle-scapula.md](wiki/sources/coloso-hide-ch17-thorax-clavicle-scapula.md) | 2026-05-31T17:46:47Z
 - [coloso-hide-ch18-chest-structure.md](wiki/sources/coloso-hide-ch18-chest-structure.md) | 2026-05-31T17:46:47Z
