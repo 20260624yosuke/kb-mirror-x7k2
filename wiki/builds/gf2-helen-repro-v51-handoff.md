@@ -936,6 +936,82 @@ sources:
       1,102ファイル）／⑤BinFile/Table目的別スイープ／②LoadRoomById経路解析／
       ④GFF秘密レコード末尾完全解読。
 
+### 2026-08-26（昼）に足したこと — #81残候補のサブエージェント並列（f156/f157/f158）
+
+82. **f158 BinFile/Table目的別スイープを実施（`f158_binfile_table_sweep.py`・2026-08-26昼・
+    #81残候補⑤・武田さんがサブエージェント並列を承認）**:
+    - 対象: `Data/Table`(3,745ファイル・517,256,246B)＋`Data/BinFile`(1,228ファイル・43,908,633B)
+      ＝計**4,973ファイル全量**をUTF-8/UTF-16LE針走査＋形式分類
+      （f79形式3,689本／部分budget27本／行0件94本／生protobuf `.bt` 1,160本／未解析1本＝BTVersion.txt）。
+      **app側(`SnqxExilium.app/Data`)に Table/BinFile は存在しないことを実測。**
+    - 陽性対照3件合格: DormRoomData.bytes(SHA `b0df91ac…`)の9行パースがf118回収値と完全一致／
+      同一検出器で武器室・卧室・浴室を再検出／ModelConfigData.bytes の HelenSSR0101 検出。
+    - **照明系針はこの範囲では不検出**: RenderSettings/ReflectionProbe/LightProbes/LightmapSettings/
+      SphericalHarmonics、FaceSDF/_BlendTex/face_sdf、Tetrahedralization（大小文字両方）、
+      RampSetting/RampMap/silkstock/_ramp、ColorAdjustments/ColorLookup/Tonemapping/VolumeProfile
+      の各針0件。`.unity`ヒット15ファイルはChess/Sim活動シーンのみで
+      06Aimo_Dorm/DormRoom/PlayerDorm針は0件。
+    - 新規回収: `PartsResourceData.bytes` 433行中288行がP2_/P3_部品名（id+部品名のみで資産パス無し）、
+      `ClothesData.bytes`(intl) 1106701行(HelenSSR01/HelenSSR0101)、
+      `AudioModelData.bytes` 106701→HelenSSR0101/Gun_SG行、
+      ItemData/StoreGoodData の `Item_ClothesMod_HelenSSR01_P2_Hand/P3_Hand…`(id 67010102/03等)。
+      H0157/c_HelenSSR0101針は0件。
+    - 成果物blend無変更（SHA `04ef8b79b3fa5b64`）。証跡: `logs/f158-binfile-table-sweep.json`・
+      `scripts/f158_binfile_table_sweep.py`。
+
+83. **f156 LoadRoomById経路解析の続きを実施（`f156_loadroombyid_il.py`・2026-08-26昼・#81残候補②）**:
+    - cache版Assembly-CSharp.dll.bytes(SHA一致確認)に加え**app版PE/metadata全域へ拡大**
+      （#US 31,006文字列・method body 147,157/208,494・TypeRef/MemberRef表直接パース・
+      raw token近接走査・変換候補2,050種）。
+    - 陽性対照6件合格: E2ログ書式5件をoffset/tokenまで一致再検出
+      （0x700069EF/450C4/4513A/45048/451B4）／基本scene path両版完全一致／
+      enum `MGJDBDABFIJ` Dorm_bedroom=12·weapon=13·bathroom=14を自前Constant経路で再導出／
+      DormRoomData全9行＋formation106701行(col10=`c_{0}_Bedroom_01_Idle`)・皮膚1106701は
+      formation106706行col16／対照DLL LogiPluginServiceTool identity ret復号率0.979・IL終端96/96／
+      誤変換(xorFF)で0.0崩壊＝scorer感度証明。
+    - 発見: ①既知#US token値はraw bytes内に72+token・裸tokenとも**両版0件**＝token値自体が
+      コードストリーム外にも再配置されていない ②単純変換2,050候補の最高ret復号率は
+      **cache21.5%/app24.2%**（<0.30閾値）＝試験した単純変換族では平文化しない
+      ③**MemberRef.Classのcoded indexが表範囲外の行が大量実在**
+      （cache 26,206/69,752・app 51,636）＝難読化器独自番号空間
+      ④#US語彙: `.unity`完全パス61件・動的結合部品（`_GFPC.unity`/`_GFMB.unity`/`.unity`）・
+      **`Assets/ArtsResource/Scene/Aimo/06Aimo_Dorm/06Aimo_Dorm.unity`（token 0x700664BE）**・
+      `Assets/ArtsResource/DormRes/I_dorm_bedroom/animation/clips/` prefix・
+      `[LobbyScene] LoadingEnd:加载房间完成 {0}` 等を実在確認
+      ⑤Data側規則: DormFormationData col10=`c_{0}_Bedroom_01_Idle`型・DromInteractData col8=
+      `c_{0}_Bedroom_0101`型（{0}=モデル名でtimeline clip命名・scene addressではない）。
+    - 回答の強さ: (a)呼出し経路＝「配信バイトのままでは読めなかった」まで（弱い形・
+      method名LoadRoomByIdは#Strings不在）(b)組み立て式本体＝未回収（Data側テンプレートまで）。
+      鍵付きストリーム暗号の存在否定ではない。「joinが導出不可能」とは主張しない。
+      先行twin `logs/f156-loadroombyid-route.json`（同朝10:51の死亡セッション産）は参照のみ未改変。
+    - 成果物blend無変更。証跡: `logs/f156-loadroombyid-il.json`・`scripts/f156_loadroombyid_il.py`。
+
+84. **f157 コンテナ内ファイル群スイープを実施（`f157_container_files_sweep.py`・2026-08-26昼・#81残候補③）**:
+    - 実測: `Version_Ex1.bin`(237,525B・SHA `7df8a984…`)＝**形式未確定**
+      （GFF\0/UnityFS/PK/MZ不在・全バイト<0x80・128種・エントロピー6.68・XOR全数/Caesar mod128/
+      bit反転/7bitアンパック/delta差分のいずれでも既知シグネチャ・針不検出）。
+      DownSizeTemp 3本＝**0バイトスタブ**（`.zip.download`未完了・展開対象なし）。
+      ClientRes_iOS/2.12.4517(1,102ファイル・477,762,751B): A5CF dir 1,031本＝XOR 0xFF復号で
+      **Lua 5.3 bytecode 1,030本＋平文テキスト1本**、Codes 71本＝平文PE(MZ@0)33本＋
+      **`.u`コンテナ38本**。
+    - **`.u`形式の実測**: 先頭12B＝[u32 LE magic `0x2FD6D54F`][u32 A][u32 B]・B≡size−12・
+      **先頭Aバイトは同名平文.dll.bytesとハッシュまで完全一致**・残りB−Aバイト
+      （計約200MB）は未同定ペイロード（Assembly-CSharp.dll.bytes_HUDll.uでは125,355,520B）。
+      DownSizeTempスタブ名(BT/Codes/A5CF…)とClientRes配下実体dirが構造的に対応。
+    - 強い針（scene root `d128870a…`/CAB-5dde1387…/prefab root `7648416f…`/CAB-38db6dba…/
+      catalog hash/HelenSSR0101/06Aimo_Dorm）は生・XOR復号後ドメイン双方で0件。
+      GFMB等の弱一致はCodes DLL内難読化名前プール騒音（62箇所・文脈採取済み）。
+      Helen/Aimo/lightProbes追加針もクラス名・UIパネル名・エンジンAPI名
+      （UIHelenMainPanel/AimoDynamicWorldTile/get_lightProbes等）でasset参照ではない。
+    - 陽性対照4件合格: app同梱`29684a9f…bundle`を同一UnityFS展開器で展開し
+      06Aimo_Dorm_GFMB/GFMB_lightProbesを検出／Lua magic 1030/1031一致／PE分類33≥30／
+      スタブ3本0バイト確認。
+    - 結論の強さ: 「Version_Ex1.bin全域・DownSizeTemp実体0B・ClientRes 1,102ファイルの
+      生+復号後ドメインでは、blocked依存の実体も着地手がかりも見つからなかった」まで。
+      絶対否定ではない。**残る未同定: `.u`追尾部約200MB・Version_Ex1.bin内部形式。**
+    - 成果物blend無変更（SHA `04ef8b79b3fa5b64`・2026-08-26に現物2回確認）。
+      証跡: `logs/f157-container-files-sweep.json`・`scripts/f157_container_files_sweep.py`。
+
 ---
 
 ---

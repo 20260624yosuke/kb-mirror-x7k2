@@ -441,6 +441,27 @@ sources:
 - 探索範囲: スナップショット全トップレベル領域＋ユーザー配下サブエリアごとに走査。完走領域はすべて不検出（`.bundle` ヒットはアプリ内蔵フレームワーク・Homebrew 等のみ）。部分走査（120秒打ち切り）と拒否（private/var/root 等の Permission denied）・欠落（snapshot 内 ~/Library/{Caches,Logs,Application Scripts}・~/.local/bin は未収録）は report JSON に明記
 - **プロジェクトへの影響なし**: ゲームデータ本体は現役で GFL2Data ボリュームに存在（AssetBundles_IOS/ClientRes_iOS/Table/BinFile 等を実確認・UnityFS 実測）。バックアップ依存の抽出継続導線は不要
 
+### v8.4 中断状態と Dusevnyj blend 喪失の発見（2026-08-26 昼・実ファイル精査）
+
+> バックアップ探索セッションが監査スクリプト改修の動作確認をした際、`blends/Dusevnyj-DusevnyjSSR0101-repro.blend` が**存在しない**ことを検出 → 周辺を実ファイル実測で精査した結果、run-state/handoff（v8.3 完了待ちの記録）と実態が乖離していることが判明。**本節は痕跡の列挙であり、v8.4 の内容や Helen FAIL の原因は未調査**。
+
+| # | 事実 | 実測 |
+|---|---|---|
+| 1 | **Dusevnyj v8.3 blend は失われた** | `blends/_quarantine_empty_20260826/` に 02:06/02:11 保存の objects=0 空 blend 2本が隔離済み。同README: 「LocalCache 消滅状態で再構築が走り空blend化・正常 v8.3 (a2ee94dd9832a6c5) は上書きで喪失。復旧路=ゲームデータ再取得後 `10_extract_char.py --char Dusevnyj --variant DusevnyjSSR0101` 再実行」 |
+| 2 | **v8.4 肌パッチらしき作業が FAIL/blocked で中断** | `logs/_regression_v84_{Helen,Helen_b,Sabrina}.*`(09:25)・Helen 再構築(09:29)・`diff-Helen-HelenSSR01.json`(09:30 更新・**FAIL/blocked**)・`reports/sheets/Helen-SSR01_v84/`(09:36)。09:36 以後の作業痕跡なし |
+| 3 | Sabrina は無傷 | blend 08-25 20:45 のまま・diff も PASS/conditional のまま |
+| 4 | ゲームデータは現在手元にある | GFL2Data(disk7s2) マウント済み・AssetBundles_IOS 等実在（同日昼のバックアップ探索時に確認）。02:06 の事故は LocalCache 一時消滅が契機と推定されるが**推測に過ぎない** |
+
+**次の一手候補**（実行は未実施・承認待ち）: ①Sabrina を現状保存のまま温存 ②Dusevnyj は quarantine README の復旧路どおり再構築（v8.4 肌パッチ込みならその規約の承認が必要）③中断された v8.4 Helen 作業は FAIL 状態から再開 or 方針確認
+
+### 監査スクリプトへの「成果物パス明示」組み込み（2026-08-26・武田さん指示）
+
+> 武田さん指示「毎回ファイルパスを提示しないから、確認してほしいときはファイルパスを明示するようにこのプロジェクトの監査スクリプトに加えて」。
+
+- **変更**: `scripts/20_diff_char_blend.py` main() — submission に **`confirm_paths`** 欄を新設。blend / blends README / sheet_front.png / sheet-audit.json / sheets dir / diff 台帳 / build log / run-state の8パスを機械列挙し **exists フラグ付き**で記録。`rule` に「武田さんに確認を依頼する報告では confirm_paths の実在パスをそのまま明示添付する（exists=false を残したまま提出しない）」を追記。標準出力にも confirm_paths 一覧を印字し、報告文への転記漏れを構造的に防ぐ
+- **検証**: py_compile OK・confirm_paths ロジックを Dusevnyj 実値で単体実行（この動作確認が上記 blend 消失の検出契機になった）。compare()/self_test は非変更のため突合ロジック・self-test 24系統は不変
+- 効果: 以後の提出報告には必ず実在確認済みパスが付く。「パス無しの成果物報告」は検証器出力段階で不可能になる
+
 ## 2. 承認履歴
 
 | 日付 | カード | 結果 |
@@ -525,7 +546,9 @@ sources:
 
 ## 6. 変更履歴
 
-- **2026-08-26（バックアップボリュームのゲームデータ探索・完結）**: 前セッション停止地点「バックアップボリューム（2026-08-26 朝スナップショット）にゲームデータがあるか探索」を実施 → `/Volumes/HDD_バックアップ` の完了スナップショット `2026-08-26-103352.previous` は内蔵 'Macintosh HD - Data' 専用バックアップ（manifest 実測）で**この範囲ではゲームデータ不検出**。コンテナ `com.haoplay.game.ios.exilium` のスケルトンはあるが LocalCache は空 = ゲームデータ本体は外付けSSDの独立APFSボリューム `GFL2Data`（disk7s2・44.5GB）を LaunchAgent がサンドボックスの LocalCache へマウントする設計のため、バックアップ対象外。陽性対照（同一find方式で既知ファイル検出）と現行側 UnityFS マジック実測で方法は有効だったことを確認。GFL2Data 自体の APFS スナップショットは 0 個。**手元データは失われておらず抽出継続に支障なし** — 記録: `reports/backup-volume-game-data-scan-2026-08-26.json`・run-state.json 更新。プロジェクト本来の次は変わらず「武田さんの実機切替確認＋Dusevnyj 肌色修正→正式目視承認」
+- **2026-08-26（監査スクリプトへ confirm_paths 必須化・v8.4 中断状態の発見）**: 武田さん指示「確認してほしいときはファイルパスを明示するように監査スクリプトに加えて」→ `20_diff_char_blend.py` の submission に **confirm_paths**（成果物8パスの exists 付き機械列挙・exists=false は提出不可）を新設し標準出力にも印字。動作確認の単体実行で **Dusevnyj blend 消失を検出** → 精査の結果、02:06-02:11 の空blend事故（LocalCache 一時消滅が契機・v8.3 正本は上書き喪失・quarantine 隔離済み）と、09:25-09:36 の v8.4 肌パッチ作業中断痕跡（Helen diff FAIL/blocked のまま）を発見。run-state/handoff を実態へ訂正。Sabrina は無傷。ゲームデータ本体は現在手元にあり再DL不要
+
+- **2026-08-26（バックアップボリュームのゲームデータ探索・完結）**: 前セッション停止地点「バックアップボリューム（2026-08-26 朝スナップショット）にゲームデータがあるか探索」を実施 → `/Volumes/HDD_バックアップ` の完了スナップショット `2026-08-26-103352.previous` は内蔵 'Macintosh HD - Data' 専用バックアップ（manifest 実測）で**この範囲ではゲームデータ不検出**。コンテナ `com.haoplay.game.ios.exilium` のスケルトンはあるが LocalCache は空 = ゲームデータ本体は外付けSSDの独立APFSボリューム `GFL2Data`（disk7s2・44.5GB）を LaunchAgent がサンドボックスの LocalCache へマウントする設計のため、バックアップ対象外。陽性対照（同一find方式で既知ファイル検出）と現行側 UnityFS マジック実測で方法は有効だったことを確認。GFL2Data 自体の APFS スナップショットは 0 個。記録: `reports/backup-volume-game-data-scan-2026-08-26.json`
 
 - **2026-08-25（v8.3・着せ替え切替不能の修正）**: 武田さんが README どおりにチェック操作しても**「服装が切り替わらない」**と報告 → 機械精査で P2/P3 中身の個別 hide 焼き付き（README 手順と実装の食い違い・レンダーシートだけ個別フラグ操作で撮影していたため監査をすり抜けた）を確定 → 承認カード A案で修正: P2/P3 をレイヤー除外（チェックOFF）保存へ変更・検証器を実効可視性（hide＋excluded）へ統一・canonical に excluded 追加・レンダー側は除外を実体化して撮影。過程でドライバが Blender 例外後に**前回残ログで偽成功を報告する実障害**も発生 → 成功判定に鮮度要求を追加。3体再構築→突合20項目 PASS/conditional→self-test 24ケース PASS→決定性 PASS→set_P1/P2/P3 レンダーで Dusevnyj の3着切替を目視確認。**次は武田さんの実機切替確認＋Dusevnyj 肌色修正（残課題）→正式目視承認**
 
