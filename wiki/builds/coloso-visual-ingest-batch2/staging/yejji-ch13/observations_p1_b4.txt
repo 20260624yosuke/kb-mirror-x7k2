@@ -1,0 +1,17 @@
+09m40s.png || medium || CLIP STUDIO PAINT EX。タイトルバー「살즘(선화)* (3148 x 4970px 350dpi 73.3%)」。左にリファレンス用フローティングウィンドウ「Illustration* (1892 x 3113px 72dpi 80.7%)」で、完成イラスト(白いドレスの白髪少女がパフェグラスを持つ姿)を表示、リファレンス画像上に透かし「web.in.box_mail-973965」。キャンバスは線画段階で、顔の両目・鼻・口の線画と大きな帽子/リボンの輪郭、右側にパフェグラスの下描き。Sub Toolパネルは鉛筆系(연필/파스텔判読不能/G펜/낙서判読不能/oil pen/選択中G펜)。Tool property: Brush Size 12.0、Hardnessスライダー。レイヤーパネル: 100 % Normal「Folder 3 Copy」(赤Xマーク付き) / 選択中100% Normal「Layer 45」 / 「Layer 44」 / 100 % Color「Layer 32」 / 15 % Normal「Folder 3」 / 「Paper」。焼き込み字幕なし。
+10m00s.png || medium || 前フレーム(09m40s)と同一画面。変化点: Sub Toolパネルが移動系(레이어 이동=レイヤー移動を選択、他に봉투내判読不能/그라디判読不能)に切り替わり、Tool property「레이어 이동」にModeと「Move the object at the click」チェックボックス。顔周囲に破線の楕円選択範囲が出現、キャンバス上に選択系ツールのフローティングパレットが表示。
+10m01s.png || medium || 前フレーム(10m00s)と同一画面。目視できる変化なし(顔の楕円選択範囲、移動系Sub Tool、フローティング選択パレット、Layer 45選択のいずれも同様)。
+10m08s.png || medium || 前フレーム(10m01s)と同一画面。変化点: 顔の選択範囲が解除され破線なし。Sub Toolパネルが選択範囲系(선택 범위/직사각형 선택/타원 선택/꺾은선 선택/選択中올가미 선택=なげなわ選択/選択判読不能/判読不能/승련判読不能)に切り替わり、Tool property「올가미 선택」にSelection modeとAnti-alias。レイヤーパネルでLayer 44がハイライト(カーソルがレイヤーパネル上)。キャンバスに薄く透かし「web.in.Box_mail-973965」。
+10m16s.png || medium || 前フレーム(10m08s)と同一画面。変化点: キャンバスが移動・回転され顔が大きく斜め構図で表示(Navigator角度-13.4)。Sub Toolが鉛筆系(G펜選択)に戻りBrush Size 12.0。選択中レイヤーがLayer 44。キャンバスに透かし「web.in.box_mail-973965」。
+10m20s.png || medium || 前フレーム(10m16s)と同一画面。変化点: Sub Toolパネルが消しゴム系(자우개グループ、ソフト系サブツールを選択)に切り替わり、Tool property「소프트 지우개」Brush Size 27.3、Anti-alias。Navigator角度3.5。選択中レイヤーはLayer 44のまま。
+10m21s.png || medium || 前フレーム(10m20s)と同一画面。変化点: Sub Toolが鉛筆系(G펜選択)に戻りBrush Size 12.0。キャンバスは顔のクロップアップで手のひらカーソルが表示。Navigator角度3.5。選択中レイヤーLayer 44。
+10m40s.png || medium || 前フレーム(10m21s)と同一画面。変化点: キャンバスが回転(Navigator角度7.1)。レイヤーパネルに新規「100 % Normal Layer 46」がLayer 45の上に追加され選択中。顔にかかる前髪・髪の線画が進行。キャンバスに薄く透かし「web.in.box_ma判読不能973965」。
+11m00s.png || medium || 前フレーム(10m40s)と同一画面。変化点: 前髪・目元まわりの髪の線画がさらに進行。Navigator角度7.1。Layer 46選択、G펜、Brush Size 12.0のまま。
+11m20s.png || medium || 前フレーム(11m00s)と同一画面。変化点: キャンバスが大きく回転(Navigator角度26.2)。顔・前髪の線画が進行。Layer 46選択のまま。
+11m40s.png || medium || 前フレーム(11m20s)と同一画面。変化点: Navigator角度8.4。レイヤーパネルでLayer 45の表示が「32 % Normal Layer 45」になり不透明度が32%に下がった模様。Layer 46選択で顔まわりの線画継続。
+12m00s.png || medium || 前フレーム(11m40s)と同一画面。変化点: キャンバスが逆方向に回転(Navigator角度-8.4)。Layer 46選択、Layer 45は32%のまま。髪・肩の線画継続。キャンバス右下付近に薄く透かし「web.in.box_mail-973965」。
+12m20s.png || medium || 前フレーム(12m00s)と同一画面。変化点: Sub Toolパネルが移動・回転系(이동/손/選択中회전=回転)に切り替わり、Tool property「회전」に「Snap angle 45도」チェックボックス。Navigator角度12.8。Layer 46選択のまま。
+12m40s.png || medium || 前フレーム(12m20s)と同一画面。変化点: Sub Toolが鉛筆系(G펜選択)に戻りBrush Size 12.0。Navigator角度-5.2。顔・肩・右側のパフェグラス周辺の線画が進行。Layer 46選択。
+13m00s.png || medium || 前フレーム(12m40s)と同一画面。変化点: Navigator角度-12.1。肩に流れる髪の線画が進行。キャンバス左中央に透かし「web.in.box_mail-973965」が比較的明瞭に見える。Layer 46選択。
+13m20s.png || medium || 前フレーム(13m00s)と同一画面。変化点: Navigator角度0.0になりキャンバスが水平に戻る。顔・帽子・右側パフェグラスの線画が進行。Layer 46選択、G펜、Brush Size 12.0のまま。
+13m23s.png || medium || 前フレーム(13m20s)と同一画面。変化点: ズームアウトしタイトルバー表示が「살즘(선화)* (3148 x 4970px 350dpi 59.4%)」に変化(Navigator 59.4、角度-14.4)。上半身全体が視野に入り、顔・髪・ドレス・グラスを持つ腕の線画が確認できる。Sub Toolが이동系(회전)に切り替わりTool property「회전」Snap angle 45도。Layer 46選択。

@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4466 ファイル_
+_合計 4469 ファイル_
 
 ## root/ (11)
 
@@ -3058,7 +3058,7 @@ _合計 4466 ファイル_
 - [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
 - [2026-08-25-ixy-2024-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-representative-comparison.md) | 2026-08-25T13:11:23Z
 
-## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (12)
+## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (14)
 
 - [progress.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/progress.md) | 2026-08-26T07:45:23Z
 - [read-p1-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-a.md) | 2026-08-26T07:15:44Z
@@ -3072,6 +3072,8 @@ _合計 4466 ファイル_
 - [read-p2-d.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p2-d.md) | 2026-08-26T08:10:16Z
 - [read-p2-e.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p2-e.md) | 2026-08-26T08:17:17Z
 - [read-p2-f.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p2-f.md) | 2026-08-26T08:18:50Z
+- [read-p3-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p3-a.md) | 2026-08-26T08:24:16Z
+- [read-p3-b.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p3-b.md) | 2026-08-26T08:27:30Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/ (1)
 
@@ -3472,12 +3474,13 @@ _合計 4466 ファイル_
 - [22m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m20s.png) | 2026-08-25T11:25:38Z
 - [22m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m40s.png) | 2026-08-25T11:25:38Z
 
-## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (4)
+## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (5)
 
 - [STATE.md](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/STATE.md) | 2026-08-26T07:50:16Z
 - [observations_p1_b1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b1.txt) | 2026-08-26T08:11:33Z
 - [observations_p1_b2.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b2.txt) | 2026-08-26T08:17:39Z
 - [observations_p1_b3.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b3.txt) | 2026-08-26T08:17:55Z
+- [observations_p1_b4.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b4.txt) | 2026-08-26T08:24:39Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/ (84)
 
