@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4194 ファイル_
+_合計 4195 ファイル_
 
 ## root/ (11)
 
@@ -2998,7 +2998,7 @@ _合計 4194 ファイル_
 - [pureref-session-restore.md](wiki/builds/pureref-session-restore.md) | 2026-06-15T14:10:13Z
 - [raycast-file-search-scope.md](wiki/builds/raycast-file-search-scope.md) | 2026-08-25T02:29:47Z
 - [screenshot-path-clipboard.md](wiki/builds/screenshot-path-clipboard.md) | 2026-07-05T13:38:07Z
-- [video-visual-ingest-design.md](wiki/builds/video-visual-ingest-design.md) | 2026-08-22T15:15:37Z
+- [video-visual-ingest-design.md](wiki/builds/video-visual-ingest-design.md) | 2026-08-26T07:22:59Z
 - [window-layout-restore.md](wiki/builds/window-layout-restore.md) | 2026-08-26T02:41:12Z
 - [x-eagle-free-save-pilot.md](wiki/builds/x-eagle-free-save-pilot.md) | 2026-08-03T08:46:15Z
 - [x-eagle-idea-workbench.md](wiki/builds/x-eagle-idea-workbench.md) | 2026-06-25T09:50:10Z
@@ -3016,9 +3016,10 @@ _合計 4194 ファイル_
 - [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
 - [2026-08-25-ixy-2024-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-representative-comparison.md) | 2026-08-25T13:11:23Z
 
-## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (1)
+## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (2)
 
 - [read-p1-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-a.md) | 2026-08-26T07:15:44Z
+- [read-p1-b.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-b.md) | 2026-08-26T07:22:39Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/ (1)
 

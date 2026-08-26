@@ -5,8 +5,8 @@ status: active
 confidence: high
 evidence_level: user-stated
 created: 2026-06-11
-last_reviewed: 2026-08-23
-version: "2.3"
+last_reviewed: 2026-08-26
+version: "2.4"
 sources: []
 ---
 
@@ -49,8 +49,12 @@ sources: []
 
 - 既定間隔は 20 秒。短時間の画面変化は文字起こしの時刻を `--at` で追加指定する。
 - `--start` と `--end` で対象範囲を限定する。範囲外の `--at` はエラーにする。
-- 抽出フレームはシステム一時ディレクトリに作り、観測と結び付いたものだけ `wiki/assets/frames/<source-slug>/` に保存する。
-- 未使用フレームは保存せず、処理後に削除する。
+- 抽出フレームは **vault 内の永続 staging**(`wiki/builds/coloso-visual-ingest-batch2/staging/<章スラッグ>/`)に作る。
+  システム一時ディレクトリは PC 再起動で揮発し、ch11/ch12 で抽出済みフレームの再抽出が発生したため廃止(2026-08-26)。
+- 観測と結び付いたものだけ `wiki/assets/frames/<source-slug>/` に保存する。
+- 未使用フレームは保存せず、処理後に削除する。保存分確定後、staging も削除してよい。
+- 盲検読取の結果はバッチごとに `staging/<章>/observations_pN_batchX.txt` へ即時書き込みし、
+  会話の中だけに持たない。進捗は `staging/<章>/STATE.md` に記録し、中断後の再開点を機械的に残す。
 - PNG は動画解像度のまま保存する。
 
 ## 分割動画(1 章に複数の動画)の扱い(v2.3)
@@ -133,6 +137,9 @@ sources: []
 
 ## 変更履歴
 
+- v2.4 (2026-08-26): staging を vault 内永続場所へ移設(一時ディレクトリ廃止)。盲検読取結果の
+  バッチ単位ディスク書き込みと `STATE.md` による再開点記録を追加。発端: PC 再起動でのセッション中断が
+  繰り返され、ch11/ch12 で一時 staging の揮発→再抽出、マーセ ch12 では DB からの手動救出が発生。
 - v2.3 (2026-08-23): 分割動画(1 章に複数の動画)対応。snapshot の `--video` 反復指定、
   manifest `videos[]` / 動画ごと `extraction[]`、観測表への動画列追加(複数動画ページのみ)、
   フレーム名へのパート番号導入、`visual_ingested` は全動画完了時のみ。
