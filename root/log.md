@@ -9936,3 +9936,16 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 救出: マーセ ch12 を二重死亡から回収。実態=ch12-01 完走・ch12-02 盲検71枚まで完走・sweep120枚未完。18バッチ63,189文字を `wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/` へ退避。
 - 進行: 別セッション4本(ひづるめ修正A〜C／マーセch12／ye_jji ch12／hide ch14)を開始済み。
 - 更新: `wiki/analyses/opencode-interrupted-tasks-20260826.md`(新規), `index.md`, `wiki/builds/coloso-intake-design.md`, `wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/rescue-summary.md`(新規), `opencode-task-dashboard.html`(不採用)
+## [2026-08-26] ingest | coloso hide ch14 映像ingest(前セッション中断からの再開・完走)
+
+- 経緯: 前セッション(ses_fc73c7e0cffekTOu6J71JvP4S2)で ch14 の dry-run→snapshot→抽出→staging 退避まで
+  完了し盲検読取の最初で停止(01m40s のみ返却)。staging フレームは一時ディレクトリごと揮発していたため、
+  snapshot.json(動画 SHA-256 一致を dry-run で再確認)を根拠に 14_01(47枚)/14_02(54枚) を再抽出。
+- 読取: 盲検読取をサブエージェント6分割で全101枚完走。観測に紐づく53枚(p1:27/p2:26)のみ保存し残り破棄。
+- 再確認: 新規コンテキスト第2読者8枚=max(3,10%切り上げ)。7枚 confirmed・1枚 marked-uncertain
+  (ev-046=14_02 12:00 のタイトルバー ファイル名「パース*/バース*」判読不一致→行に要確認表記)。
+  選択レイヤー番号は2箇所で読取不一致のため観測文から除外する方針を採用。
+- 更新: `wiki/sources/coloso-hide-ch14-figure-perspective.md`(映像観測節新設53行+`visual_ingested: 2026-08-26`),
+  `wiki/assets/frames/coloso-hide-ch14-figure-perspective/manifest.json`(status complete),
+  `index.md`, `log.md`
+- 検証: `tools/video_ingest_gate.py check --phase complete` の結果は gate 実行後に本エントリへ追記。
