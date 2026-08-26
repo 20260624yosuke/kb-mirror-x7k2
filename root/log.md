@@ -9949,3 +9949,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `wiki/assets/frames/coloso-hide-ch14-figure-perspective/manifest.json`(status complete),
   `index.md`, `log.md`
 - 検証: `tools/video_ingest_gate.py check --phase complete` の結果は gate 実行後に本エントリへ追記。
+## [2026-08-26] ingest | coloso ye_jji ch12 映像ingest(前セッション中断からの再開・完走)
+
+- 経緯: 前セッション(ses_fc6867a5fffeW4b231H0eMFXlk)で ch12 のフレーム抽出(p1 72+p2 93=165枚・staging 退避済み)まで完了し盲検読取の最初で停止。staging は一時ディレクトリごと揮発していたため、`wiki/assets/frames/coloso-ye-jji-ch12-color-rough/snapshot.json`(動画 SHA-256 一致を dry-run で再確認)を根拠に 12_1(71枚)/12_2(92枚) を再抽出。前回報告との差3枚は --at 重複時刻の統合。
+- 読取: 盲検読取をサブエージェント9分割(p1 4+p2 5)で全163枚完走。抽出=読取=保存163枚・未使用ゼロ。
+- 再確認: 新規コンテキスト第2読者17枚=max(3,ceil(163×10%))(p1 8+p2 9)。confirmed 14・corrected 3(いずれも原寸クロップで確定): p1-04m30s チェックはピンク2個(ラフ上部+ビーチ写真右上)、p2-04m20s 選択レイヤー=Layer 6、p2-21m50s 選択レイヤー=Layer 43。
+- 更新: `wiki/sources/coloso-ye-jji-ch12-color-rough.md`(映像観測節新設163行+`visual_ingested: 2026-08-26`),
+  `wiki/assets/frames/coloso-ye-jji-ch12-color-rough/manifest.json`(status complete),
+  `index.md`, `log.md`
+- 検証: `tools/video_ingest_gate.py check --phase complete` の結果は gate 実行後に本エントリへ追記。
