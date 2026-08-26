@@ -525,6 +525,59 @@ sources:
 | v8.4 の顔クロップ肌パッチ（生成テクスチャ） | 生肌が原作の共有アトラスになる。**生成物は創作**という武田さん方針で廃止 | 戻すべきでない（純度検査が生成物を FAIL させるため戻すと検査も外すことになる） |
 | 「肌問題は族内の名前解決問題」という計画の枠組み | テクスチャ探査の対象がゲーム全体の共有空間に広がった（61,733件台帳の活用） | 枠組みに戻す理由は無い（誤りだった） |
 
+### v9.1・見た目仕上げ工程の port 完遂（2026-08-26 夜・現行）
+
+> 武田さん承認「切り出しの後に『ゲームと同じ見た目に仕上げる工程』を足す」＋「ロビー照明を抽出」。
+> v51（ヘレン再現プロジェクト）で実証済みの技術をキャラ抽出パイプラインへ一般化 port した。
+
+**port 内容**（全てゲームデータ由来・生成物なし）:
+
+| # | 要素 | 実装 |
+|---|---|---|
+| 1 | キャラ固有 RampSetting | 族バンドル内 MonoBehaviour（ramps/names）を読み、Unityグラデーション key0..7＋ctime（**16bit/65535 正規化**・初回はクランプバグで全1.0になったを実測修正）を Blenderカラーランプへ。割り当ては v51 d03 `ramp_for` 準拠（core部分一致＋同接頭辞優先）。Dusevnyj 7設定・Sabrina 3・Helen 11 |
+| 2 | SH環境照明 | **キャラ選択画面 04Aimo_SelectPlayer** の LightProbes（app Raw `3224cfb2b84e…`・8probe・焼き込みSH）を抽出し、v51 f103 実績式で導出（L2 SH 64方向評価→輝度上位4方向をSUN・DC→ambient・AMB=1.0/SUN=5.5・L0 をキャラ正面(-Y)へ yaw 整列） |
+| 3 | 材質シェーダ | ramp材質は `albedo × ramp(dot(N,L0))·sun` を **Emission 直出し**（原作シェーダは unlit 相当・物理ライトの二重掛けを排除＝実測で確定）。4太陽全加算は飽和するため ramp計算は最輝度 L0 のみ（v51 f43 同型）。非ramp材質（顔等・rampデータが存在しない）は物理照明 |
+| 4 | 検査 | 検証器に **shading_port** 新設（SH照明の存在＋rampソースを持つ材質の全配線を機械保証・「ゲームと同じ見た目になる要素の欠落」を以後機械捕捉）。self-test 24→**26ケース** |
+
+**実測結果（2026-08-26 20:15 現行）**:
+
+| キャラ | blend SHA(先頭16) | 突合 | self-test | シート |
+|---|---|---|---|---|
+| Dusevnyj | `50260288e83f0747` | **PASS / conditional** | 26ケース PASS | ゲーム相当のトゥーン陰影（膝の赤み・制服階調・スニーカー発光）を目視確認 |
+| Helen（内部回帰） | （同日再構築） | **PASS / conditional** | 26ケース PASS | カメラフレーミング課題あり（巨大クワッドがbboxに入る）＝内部回帰専用のため成果物影響なし・課題記録 |
+| Sabrina | （同日再構築） | **PASS / conditional** | 26ケース PASS | ゲーム相当（肌の発色・トゥーン陰影）を目視確認 |
+
+**インシデント（同日夜）**: PC再起動で GFL2Data がアンマウント→検証が朝と同じ「ソース読み取り不完全」シグネチャで FAIL→正規マウントスクリプトで復旧（ボリューム無傷・9,046バンドル）。マウントログには20回の失敗記録（再起動直後のディスク安定待ちと推定）。
+
+**残課題**: ①顔材質は ramp データが存在しないため物理照明（開示事項・ゲームの顔専用シェーダ GFCharFaceShadow は未解析）②Helen シートのカメラフレーミング③輪郭線・アニメは引き続き deferred。
+
+### v9・お手本レシピの port（RampSetting＋SH照明・2026-08-26 夕〜夜・現行）
+
+> 武田さんの承認カード回答「ビルドクオリティが低い。別プロジェクトでは再現できると証明済み。なぜ？」への言語化（お手本＝ヘレン再現プロジェクトの陰影・照明レシピを参照せず形だけ抽出する別パイプラインを作った＝運用ミス）を受け、**「切り出しの後にゲームと同じ見た目に仕上げる工程を足す」**を承認取得（15:03・完了後に別個承認判断の条件付き）して実施。
+
+**port したもの**（すべてゲームデータ由来・生成物ゼロ）:
+
+| # | 内容 | 実測 |
+|---|---|---|
+| 1 | キャラ固有 RampSetting 抽出（`ce_extract.extract_ramp_settings`） | 族バンドル808本を走査し RampSetting MonoBehaviour（Unityグラデ key0..7＋ctime位置）を読む。**Dusevnyj 7本**（hair/cloth/P3/P2_body2/weapon01/cloth01/P3_Pearl）・Helen 11本・Sabrina 0本（元データに無し） |
+| 2 | SH環境照明（`ce_extract.extract_sh_lighting`） | 寮シーン（v51が導出したもの）は暗すぎたため、ゲームデータ内の照明シーン34件から**キャラ鑑賞シーン（04Aimo_SelectPlayer / 03Aimo_Character_Gacha）の LightProbes を抽出**して置換 |
+| 3 | 材質レシピ（`ce_build_blend.ramp_setting_for`＋make_textured_material 拡張） | v51 d03 ramp_for 準拠の stem 一致＋同一接頭辞優先。ColorRamp を key+ctime から構築。**U=clamp(法線・L0方向)**（原作シェーダ OBS36「法線と光の内積」どおり。v51の固定Zは寝姿勢ヘレン用の簡略だった） |
+| 4 | 検証器対応 | SH_SUN_* ランプ許容・ramp配線検査（ramp_source 記録）・self-test 26ケース化 |
+| 5 | レンダー | blend 内の SH 照明をそのまま使用（SheetWorld で上書きしない）。SUN_SCALE は公式アイコン明るさにキャリブレーション |
+
+**途中で修正した事故**: ①ctime は 0-65535 の16bitスケール（1.0にクランプして全キー同位置になる事故）②ramp材質への物理ライト二重掛けで過剰露出 → ramp材質は計算色を出力 ③Blender日本語UIでノード名「背景」になり名前参照失敗 → 型参照へ ④PC再起動で GFL2Data マウント外れ → diskutil mount＋正規マウントスクリプトで復旧（内容無傷）
+
+**v9 実測（現行）**:
+
+| キャラ | blend SHA(先頭16) | 突合 | 備考 |
+|---|---|---|---|
+| Dusevnyj | `50260288e83f0747` | **PASS / conditional** | トゥーン階調・ゲーム相当の肌と義手を制作担当が目視確認 |
+| Helen（内部回帰） | `3d04efa9882c61e0` | **PASS / conditional** | シートは旗エフェクト平面（原作データにテクスチャ無し）でカメラが引ける問題あり＝v84時点からの既知問題・Helen は成果物外 |
+| Sabrina | `a02bc28dde2f7b7d` | **PASS / conditional** | ramp設定0本＝元データに無し・共有肌で自然発色 |
+
+- self-test 26ケース PASS ×3体・決定性 PASS・gate_sync ok・シート3体再生成
+- **残る限界**: 顔は ramp 設定が存在しない部位のため物理照明（明るさはアイコン基準でキャリブレーション）。輪郭線・アニメは引き続き deferred
+
 ## 2. 承認履歴
 
 | 日付 | カード | 結果 |
@@ -608,6 +661,11 @@ sources:
 - **バックアップ探索 追加（2026-08-26）**: reports/backup-volume-game-data-scan-2026-08-26.json（新規）／run-state.json（backup_volume_scan_2026_08_26・discovered_state_2026_08_26_noon・audit_script_confirm_paths・recovery_v84・v85_shared_body_atlas 欄追加）。**修正（2026-08-26 同日）**: scripts/20_diff_char_blend.py（confirm_paths 必須化＋r6 期待slot対応＋texture_source_purity 新設＋self-test 25ケース）・scripts/ce_common.py（r6 規約・SKIN_PATCH_* 廃止）・scripts/ce_extract.py（extract_shared_body_atlas 新設）・scripts/ce_build_blend.py（skin_patch 削除・shared_body_atlas 対応）。blends 3体（Dusevnyj 3e511d00…/Helen 1dd308b3…/Sabrina 変更なし）・ledger diff 3体・determinism-probe・quality-gate・reports/sheets 再生成。intermediate/<char>.<variant>/shared-textures/ 新設。**変更なし（読み取り専用遵守）**: /Volumes/HDD_バックアップ・GFL2Data(disk7s2)・現行ゲームコンテナ一式
 
 ## 6. 変更履歴
+
+- **2026-08-26（v9・お手本レシピ port 完遂）**: 「ゲームと同じ見た目に仕上げる工程を足す」を承認取得 → v51レシピを port（キャラ固有 RampSetting 抽出・SH照明＝キャラ鑑賞シーンのLightProbes・ramp U=法線・光方向の内積）。事故修正: ctime16bitスケール・物理ライト二重掛け・日本語UIノード名・GFL2Data再マウント。3体再構築→全検査 PASS・self-test 26ケース×3・決定性 PASS・シート再生成。Dusevnyj/Sabrina はゲーム相当の見た目を制作担当が目視確認。Helen シートは旗エフェクトの既知問題（成果物外）
+
+
+- **2026-08-26（v9.1・見た目仕上げ工程の port 完遂）**: 武田さん承認を得て v51 実績技術を一般化 port → キャラ固有 RampSetting（16bit ctime 正規化）＋キャラ選択画面の SH照明（f103 式）＋Emission 直出しシェーダ＋shading_port 検査新設（self-test 26ケース）。3体再構築→全検査 PASS/conditional・決定性 PASS。Dusevnyj/Sabrina のシートがゲーム相当の見た目になることを目視確認。PC再起動による GFL2Data アンマウント事故は正規マウントスクリプトで復旧（無傷）
 
 - **2026-08-26（v8.5・共有 body_d 適用と生成物の全廃）**: v8.4 を武田さんが承認せず「まだ肌色は再現できていない・計画と監査スクリプトの詰めが甘い・**codeを抽出して再現しろ・クリエイターじゃなくてエディター**」→ 機械調査で原因確定: 原作の生肌は全キャラ共有テクスチャ `body_d`（プレフィックス無し・バンドル 42554ccee…）のランタイム割り当てで、手の UV は指・爪まで body_d に整然一致。v8.2 単色・v8.4 顔パッチは両方とも代用品＝創作だった。修正: r6_shared_body_atlas 規約（ce_common/ce_extract/ce_build_blend）＋検証器に **texture_source_purity**（生成テクスチャは FAIL）新設・self-test 25ケース化。3体再構築→全て PASS/conditional・決定性 PASS・シート再生成。**教訓: 「データに無いものは作らない。探し方が悪かっただけ」**
 
