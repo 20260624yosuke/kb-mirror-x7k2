@@ -9911,3 +9911,11 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 解析結果: ①真のスワップ不可能(NSBrowser 経由の Electron 埋め込みは公式チュートリアル存在するが子窓ハック+更新追従リスクで非推奨)→ JS 移植が正攻法 ②Finder 挙動仕様草案を作成(シングルクリック=開かない等、現プラグインと逆の点を特定・未実測項目は印付き) ③先行クローン(Path Finder/SpanFinder/GitHub miller-columns)は全部自前再実装路線 ④qlmanage サムネ実測: psd 成功(512px PNG 即時)/clip 失敗(QuickLook プロバイダ不在・タイムアウト)→プレビュー対象は psd まで
 - 成果物: wiki/analyses/finder-column-mechanism-analysis.md(新規)
 - 次の一手: 武田さんの判断待ち(①シングルクリック挙動を Finder 流へ寄せるか ②解析に基づく実装計画(Tier 1+2+3)の承認)
+## [2026-08-26] build | Miller Columns v0.4.0 実装(Finder 流直接操作化・実機確認待ち)
+
+- 依頼: 「マジで使いにくい・完全してない」の言語化→サブエージェント計画レビュー→承認を経て実装。クリック挙動は武田さんが「Finder 流」(シングル=選択/ダブル=開く)をカードで決定。プレビュー込み一括(v0.4.0)もカード承認済み。
+- 前工程: 事前解析 [[finder-column-mechanism-analysis]](qlmanage psd 成功/clip 失敗の実測含む)、サブエージェント独立レビュー必須7点(ロールバック手順・data.json 加算移行・子プロセス排除(shell API)/execFile 引数配列・renameFile 専用移動・D&D 衝突/子孫ガード・移動 Undo・qlmanage 防御)を計画へ反映。
+- 実装内容: クリック Finder 流化、形式アイコン+拡張子ラベル、列ごとの幅(colWidths[] 加算移行・旧キー温存)、削除即反映+スクロール保全、D&D 移動(spring loading 600ms・同名中止・子孫禁止・Notice に元に戻す)、改名(インライン・拡張子除く選択)、新規フォルダ/ノート作成(作成後リネーム状態)、Finderで表示(open -R)、プレビュー列(画像/動画アプリ内・psd=qlmanage サムネ LRU200/tmpdir・md 冒頭12行・clip はアイコンのみ)。node --check PASS。
+- 制限の記録(実害発生後に対応): ドラッグ中オートスクロール無し・外部ドロップ拒否未実装・改名後の展開状態キー追従・マルチ窓での幅 last-write-wins・機能単位ロールバック不可(全体復帰のみ/プレビューのみトグル OFF 可)。
+- 更新: `.obsidian/plugins/miller-columns/`(main.js/styles.css/manifest.json v0.4.0+quality-gate.json 新設+v0.2.1.bak 一式), `wiki/builds/obsidian-miller-columns.md`, `index.md`, `log.md`
+- 次の一手: 武田さんの Obsidian 再読込→実機確認チェックリスト合格で運用開始判定。品質ゲート complete は実機確認後に通す。
