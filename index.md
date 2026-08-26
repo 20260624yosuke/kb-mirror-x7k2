@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4416 ファイル_
+_合計 4441 ファイル_
 
 ## root/ (11)
 
@@ -733,6 +733,33 @@ _合計 4416 ファイル_
 - [hide-ch14-02-16m20s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-16m20s.png) | 2026-08-26T06:24:48Z
 - [hide-ch14-02-16m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-16m40s.png) | 2026-08-26T06:24:48Z
 - [hide-ch14-02-17m40s.png](wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-17m40s.png) | 2026-08-26T06:24:48Z
+
+## wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/ (24)
+
+- [hide-ch15-01-00m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-00m20s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-00m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-00m40s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-01m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-01m20s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-01m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-01m40s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-02m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-02m00s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-02m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-02m20s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-02m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-02m40s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-03m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-03m00s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-03m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-03m20s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-03m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-03m40s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-04m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-04m00s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-04m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-04m40s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-05m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-05m20s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-06m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-06m00s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-07m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-07m00s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-08m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-08m40s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-09m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-09m20s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-10m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-10m00s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-10m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-10m40s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-11m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-11m00s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-12m40s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-12m40s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-13m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-13m00s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-14m20s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-14m20s.png) | 2026-08-26T07:36:01Z
+- [hide-ch15-01-15m00s.png](wiki/assets/frames/coloso-hide-ch15-head-structure-simplification/hide-ch15-01-15m00s.png) | 2026-08-26T07:36:01Z
 
 ## wiki/assets/frames/coloso-hizurume-ch06-drawing-types/ (19)
 
@@ -3016,12 +3043,13 @@ _合計 4416 ファイル_
 - [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
 - [2026-08-25-ixy-2024-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-representative-comparison.md) | 2026-08-25T13:11:23Z
 
-## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (4)
+## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (5)
 
 - [read-p1-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-a.md) | 2026-08-26T07:15:44Z
 - [read-p1-b.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-b.md) | 2026-08-26T07:22:39Z
 - [read-p1-c.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-c.md) | 2026-08-26T07:27:00Z
 - [read-p1-d1.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-d1.md) | 2026-08-26T07:32:45Z
+- [read-p1-d2.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-d2.md) | 2026-08-26T07:35:28Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/ (1)
 
