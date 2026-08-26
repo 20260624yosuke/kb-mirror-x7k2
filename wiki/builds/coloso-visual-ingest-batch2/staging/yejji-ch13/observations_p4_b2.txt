@@ -1,0 +1,17 @@
+05m40s.png || high || CLIP STUDIO PAINT EX。タイトルバー「살림(선화)* (3148 x 4970px 350dpi 44.4%)」。サブウィンドウ「Illustration* (1992 x 3113px 72dpi 133.1%)」に参考画像(ブーツと蝶)。キャンバスは白いドレスの少女がビーチチェアに座りアイスを持ち、白い箱の上に赤い缶。線画+淡い下塗り進行中。選択中ツールは線系、サブツール「직선(直線)」内「유선」表示、Tool property: 직선 / Brush Size 4.0 / Opacity 100。レイヤー: Layer 52(100% Normal)選択、上位に Folder 3 Copy 2、Layer 51、Layer 32(100% Color)、Folder 3、Layer 43。焼き込み字幕「六面体を描く時は特に パースが崩れないように注意してください。」。透かしは確認できず。
+06m00s.png || medium || 前フレーム(05m40s)と同一文書・同一タイトルバー(44.4%)。キャンバスが回転・傾いて表示され、缶・箱まわりの線画作業中。サブツール「자유께(自由手描き)」系が選択され筆リスト(묵짝함/연필等)表示、Tool property: Brush Size 92.9 / Anti-aliasing。Layer 52 選択のまま。字幕なし。
+06m20s.png || high || 同一文書、倍率30.2%。キャンバス全体表示(帽子・顔・アイス・チェアが見える)。サブツール「G펜(Gペン)」選択、リストに 연필/파스텔/G펜/낙서G펜/oil pen/G펜 3/Add sub tool。Tool property: Brush Size 31.8 / Hardness。Layer 53(100% Normal)選択。字幕なし。
+06m40s.png || high || 同一文書、倍率50.0%。キャンバス約45度回転、缶と白い箱にズーム。赤い缶に楕円口の線画が描き込まれ、箱の線画も進行。G펜選択、Brush Size 31.8 / Hardness。Layer 53 選択。字幕なし。
+07m00s.png || high || 同一文書、倍率50.0%。キャンバス回転解除、箱と缶にズーム。缶の線画(上面楕円含む)と箱の構造線が整っている。G펜、Brush Size 31.8 / Hardness。Layer 53 選択。字幕なし。
+07m20s.png || high || 同一文書、倍率50.0%。缶が複製され2本並ぶ。焼き込み字幕「コピーして後ろの缶まで描いていきます。」。レイヤー「Layer 53 Copy」選択。サブツール 자유께系、Brush Size 92.9 / Anti-aliasing。
+07m40s.png || high || 同一文書、倍率33.3%。キャンバス全体表示、帽子・顔・ドレスの線画がほぼ整う。Layer 54(100% Normal)選択、上位に Layer 53 Copy。G펜、Brush Size 17.0 / Hardness。キャンバス中央やや左に薄い灰色の透かし文字(web_in_box_mail…と読める断片、一部判読不能)。
+08m00s.png || high || 同一文書、倍率33.3%。カラー下塗りが非表示となり白背景+線画+灰色チェアのみの表示。Layer 54 選択。G펜、Brush Size 17.0 / Hardness。字幕なし。
+08m20s.png || high || 前フレーム(08m00s)と同一画面。Layer 54 選択、G펜、Brush Size 17.0。目立った変化なし。
+08m40s.png || high || 同一文書、倍率44.1%。線画のみの状態で人物にズーム。レイヤーパネルが再構成され Folder 4 が展開(Layer 49/48/47/46/45/44 を内包)、Layer 44 選択。Layer Property に「Mask expression / Show gradients: Yes」表示。G펜、Brush Size 17.0 / Hardness。字幕なし。
+09m00s.png || high || 同一文書、倍率30.2%。人物全体が中間灰(RGB 127,127,127)で塗りつぶされ、白背景と灰色の区分けが進む(線画は上に表示)。Layer 50(100% Normal)選択。Tool property: Brush Size 169.3 / Hardness。字幕なし。
+09m20s.png || high || 同一文書、倍率30.2%。新規フォルダ「Folder 5」が作成・選択・展開され、Folder 4 が下位に。灰色塗り継続中。Brush Size 169.3 / Hardness。字幕なし。
+09m40s.png || high || 同一文書、倍率25.0%。塗り(バケツ)系ツールに切り替え、サブツールリストは日本語(「Tマーカーベース塗」「ムラなし ベタ塗り」「ぬいぐるみ対策ブラシ」「隙間無く「閉じて塗る」ツール」「隙間無く「閉じて塗る」ツール 参考」等)。Tool property: Close gap チェック / Area scaling -1。新規 Layer 56 選択。描画色が明るい灰(RGB 216,216,216)。レイヤー最下部に Paper。字幕なし。
+10m00s.png || high || 同一文書、倍率44.4%。胴体・脚部にズーム、人物の灰色塗り分け進行。Layer 50 選択。Tool property: Brush Size 159.2 / Hardness。字幕なし。
+10m20s.png || high || 同一文書、倍率44.4%。前フレーム(10m00s)と同視点。Layer 50 選択、Brush Size 111.5 / Hardness。塗り分けわずかに進行。
+10m40s.png || high || 同一文書、倍率50.0%。顔・上半身にズーム、灰色塗り+線画。キャンバス左に薄い透かし文字(web_in_box_mail…、一部判読不能)。Layer 50 選択、Brush Size 111.5 / Hardness。字幕なし。
+11m00s.png || high || 同一文書、倍率66.6%。顔・帽子・アイスにズーム。灰色塗り分けと線画が整っている。Layer 50 選択、レイヤー Folder 4 展開(Layer 49〜44)、Brush Size 111.5 / Hardness。字幕なし。

@@ -1122,6 +1122,27 @@ sources:
     - 証跡: `logs/f164-outline-shell-test.json`・`scripts/f164_outline_shell_test.py`・
       `reports/d2-hairline/f164_*.png`。
 
+91. **f165 髪骨rest規約差の幾何検証を実施（`f165_hair_rest_convention.py`・2026-08-26夕方・候補なし・本blend無変更）**:
+    - Helena_dorm bundle（`555cc03f…`・Transform578/290名・m_DefaultPose entries=0で
+      Transform階層が唯一のrest源）と比較可能な髪チェーンは**7骨のみ**:
+      ローカルrest回転差 Hair_L01 178.600°／Hair_R01 123.299°／Hair_R03 30.528°／
+      Hair_L02 21.804°／Hair_L03 14.585°／Hair_R02 13.804°／Hair_L04 7.892°
+      （#74④指1と同型の「値も軸も異なる」差）。ただし**12/19骨(R04〜R16系)は
+      Helena_dorm自体に存在しない**（dorm髪リグ＝LB/RB/LF/RF/LM/RM/MB系の別トポロジ）。
+    - **決定的**: 髪メッシュの重みが乗る全20骨（髪19＋Head_M）および祖先6骨は
+      **H0157 clipに全キー済み**（未キー影響質量0%）＝Unityはキー済み骨へ既定値/restを乗さないため、
+      2規約の頂点位置差は **max 0.000000mm で完全一致** → first-hit割合も同一
+      （ROI 4,171本中 hair 31.86%・frontal 9.88/temporal_L 21.15/temporal_R 63.57%）。
+      陽性対照: 純データLBS vs blend評価 ≤0.0029mm・f164 depsgrid実測±3pp整合・
+      部位順序はf163レンダ実測と一致。
+    - → **rest規約仮説は説明力0%で不成立**。候補blendは作成せず。
+      **S8残差は (a)原作ランタイム髪物理上乗せ（attach拒否済み·blocked）＋
+      白飛び肌52.4pp（postグレードblocked）のみに縮退**
+      ＝S8はこれ以上ローカルでは動かせない位置まで確定した。
+    - 不確定: Helen本人(SSR0101)のprefab root未回収につき本結果は「Helena_dorm規約を
+      近似適用した場合」の検証。未キー反実仮想はHelen自身の既定値が必要で計算不能(blocked)。
+    - 証跡: `logs/f165-hair-rest-convention.json`・`logs/f165-helena-dorm-prefab-hair-rest.json`。
+
 ---
 
 ---

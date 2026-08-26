@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4496 ファイル_
+_合計 4507 ファイル_
 
 ## root/ (11)
 
@@ -3017,7 +3017,7 @@ _合計 4496 ファイル_
 - [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T03:22:36Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-26T08:51:13Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
-- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-26T06:52:06Z
+- [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-26T08:55:13Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-23T10:00:16Z
 - [gf2-helen-rest-room-motion-v22.md](wiki/builds/gf2-helen-rest-room-motion-v22.md) | 2026-07-27T00:02:48Z
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z
@@ -3097,6 +3097,17 @@ _合計 4496 ファイル_
 - [read-p3-d.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p3-d.md) | 2026-08-26T08:34:26Z
 - [read-p3-e.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p3-e.md) | 2026-08-26T08:35:56Z
 - [read-p3-f.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p3-f.md) | 2026-08-26T08:37:48Z
+
+## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch16/ (8)
+
+- [read-p1-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch16/read-p1-a.md) | 2026-08-26T08:56:29Z
+- [read-p1-b.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch16/read-p1-b.md) | 2026-08-26T08:56:55Z
+- [read-p1-c.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch16/read-p1-c.md) | 2026-08-26T08:57:25Z
+- [read-p1-d.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch16/read-p1-d.md) | 2026-08-26T08:57:58Z
+- [read-p1-e.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch16/read-p1-e.md) | 2026-08-26T08:58:27Z
+- [read-p1-f.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch16/read-p1-f.md) | 2026-08-26T08:58:49Z
+- [read-p1-g.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch16/read-p1-g.md) | 2026-08-26T08:59:15Z
+- [read-p1-h.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch16/read-p1-h.md) | 2026-08-26T08:59:30Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/ (1)
 
@@ -3498,7 +3509,7 @@ _合計 4496 ファイル_
 - [22m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m20s.png) | 2026-08-25T11:25:38Z
 - [22m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m40s.png) | 2026-08-25T11:25:38Z
 
-## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (11)
+## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (14)
 
 - [STATE.md](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/STATE.md) | 2026-08-26T07:50:16Z
 - [observations_p1_b1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b1.txt) | 2026-08-26T08:11:33Z
@@ -3510,7 +3521,10 @@ _合計 4496 ファイル_
 - [observations_p2_b2.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p2_b2.txt) | 2026-08-26T08:38:51Z
 - [observations_p2_b3.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p2_b3.txt) | 2026-08-26T08:39:04Z
 - [observations_p3_b1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p3_b1.txt) | 2026-08-26T08:38:46Z
+- [observations_p3_b2.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p3_b2.txt) | 2026-08-26T08:54:11Z
 - [observations_p3_b3.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p3_b3.txt) | 2026-08-26T08:53:24Z
+- [observations_p4_b1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p4_b1.txt) | 2026-08-26T08:56:43Z
+- [observations_p4_b2.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p4_b2.txt) | 2026-08-26T08:56:36Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/ (84)
 

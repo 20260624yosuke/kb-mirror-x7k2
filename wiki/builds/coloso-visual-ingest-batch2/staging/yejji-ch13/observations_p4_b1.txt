@@ -1,0 +1,17 @@
+00m00s || high || 動画プレーヤーの黒画面。中央に再生ボタン、ツールチップ「再生」。下部に 00:00 / 22:26、2x、音量スライダー。CLIP STUDIO PAINT 画面は未表示。
+00m20s || high || CLIP STUDIO PAINT EX。タイトルバー「살슬(삼화)* (3148 x 4970px 350dpi 29.7%)」。キャンバスは帽子の少女(アイスを持つ)の線画+淡い下塗り(空の水色)。左上にリファレンス画像(蝶付きブーツの脚)。Sub Tool「G펜」選択、Tool property: Brush Size 25.0、Hardness。レイヤーパネル: Layer 46 選択(100 % Normal)、Layer 45、Layer 44、100 %Color Layer 32、15 % Normal Folder 3(Layer 43、Layer 42、Layer 41 Soft light、Color balance 1)、Layer 40。焼き込み字幕「次にサンベッドを描いていきます。」
+00m40s || medium || 前フレーム(00m20s)と同一画面。変化点: ズーム 29.4%、レイヤーパネル最上部に新規「100 % Normal Layer 50」選択。キャンバス中央に薄い透かし文字「web.in.box.mail.973865」。字幕なし。
+01m00s || high || 前フレームと同一ドキュメント。変化点: ズーム 24.3%。Layer 50 が Free Transform 中。Tool property「Layer 50 / Editing transformation settings / Mode: Free Transform」、キャンバス下に OK / Cancel ボタン。サンベッドの線画を変形配置中。
+01m20s || medium || ズーム 27.5%。背景の下塗りが進行(空の青・遠景の緑が明確に)。サンベッドの白い線画が載る。選択レイヤー名が韓国語(判読不能、100 % Normal 表示)。Layer property パネル: Effect range: Image、Border effect、Thickness of edges 1.0、Edge color。字幕なし。
+01m40s || medium | 前フレームと同一画面。変化点: ビュー回転(ナビゲータ回転 -68.1)。色設定 104,104,104 / V 41%。Brush Size 91.9。サンベッド枠の白線を描き込み中。字幕なし。
+02m00s || high || Sub Tool が「지우개(消しゴム)」カテゴリに切替(목탄형/연필 지우개/부드러운/러프/벡터용/강한 지우개 等、「강한 지우개」行ハイライト)。Tool property: Brush Size 58.4、Anti-aliasing。色 255,255,255。回転 -59.8。レイヤー Layer 50 が 32 % Normal 表示。サンベッド線の消し込み。字幕なし。
+02m20s || high || 前フレームと同一画面。変化点: Brush Size 70.0、回転 -101.2。消しゴム作業継続。字幕なし。
+02m40s || medium || Sub Tool リストが別セットに切替: G펜 2、a208d9ed、IMPASTO、소프트저장(判読に揺れ)、square texture brush、전연、IMPASTO_ravioli、主線も木炭の厚塗りも一本、부드러운22。Tool property: Brush Size 17.0、Opacity 100。回転 -105.5。サンベッドの線描き込み。字幕なし。
+03m00s || medium || Sub Tool が直線系カテゴリ(직선 選択、타원/곡선/연속 직선 等が並ぶ)。Tool property: Brush Size 10.0、Opacity 100。回転 -41.3。定規(直線)でサンベッド枠線を描画中。字幕なし。
+03m20s || high || Sub Tool が G펜 系に戻る(연필/G펜/나스터G펜/oil pen/G펜/G펜 3)。Tool property: Brush Size 86.0、Hardness。回転 -64.7。レイヤーパネル最上部「100 % Normal Folder 3 Copy 2」にチェック。字幕なし。
+03m40s || medium || Sub Tool が直線系(직선)に切替。Tool property: Brush Size 7.0、Opacity 100。回転 53.3(逆方向へ回転)。サンベッド枠の直線描画。字幕なし。
+04m00s || high || Sub Tool が移動・回転系(이동/손바닥/회전、회전ハイライト)。Tool property: 회전、Snap angle 45도。ズーム 25.0%、回転 -38.2。Layer property の Thickness of edges が 2.0 に変化。字幕なし。
+04m20s || high || Sub Tool が 지우개(消しゴム)に戻る(강한 지우계 行ハイライト)。Tool property: Brush Size 70.0、Anti-aliasing。回転 -64.4。線の修正。字幕なし。
+04m40s || medium || Sub Tool が 직선(直線)。Tool property: Brush Size 7.0、Opacity 100。回転 -45.0。直線描画継続。字幕なし。
+05m00s || high || キャンバスが正立に戻る。ズーム 24.5%。Sub Tool G펜、Brush Size 86.0。レイヤーパネルに新規「100 % Normal Layer 51」が追加・選択。画面全体: 帽子少女+サンベッドの白線画が背景下塗りの上に完成しつつある状態。字幕なし。
+05m20s || high || 前フレームと同一画面。変化点: Sub Tool 지우개、Brush Size 92.9、ズーム 25.0%。Layer 51 選択のまま。焼き込み字幕「次に缶とアイスボックスを描いていきましょう。」
