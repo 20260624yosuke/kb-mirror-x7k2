@@ -9961,3 +9961,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   snapshot 時の原文(末尾空行2つ・sha `aba1e0d4…`)と head+tail 再構成で厳密一致を確認。
   映像観測節は「## 関連リンク」直前へ挿入(gate の節分割仕様上、head+tail が原文と一致する位置)。
   PASS 後に frontmatter へ `visual_ingested: 2026-08-26` を付与(設計 v2.3 の手順どおり)。
+
+## [2026-08-26] build | video_ingest_gate 本文非破壊検査の visual_ingested 行許容化(ch15 gate FAIL 解消)
+
+- 依頼: ひづるめ残り講座の状況確認で、B2 パイロット ch15 の gate complete が FAIL(「映像観測節の挿入以外に本文が変化」)していることを発見。進行のブロッカーのため修正を依頼され実施。
+- 原因: ch15 は batch2 初の fresh ingest(snapshot 時に観測節なし)で、厳格な head+tail ハッシュ照合が初めて働いた。実差分は観測節挿入+frontmatter `visual_ingested: 2026-08-25` 付与のみ(付与行を除いて再ハッシュすると snapshot の SHA と完全一致を確認)で、完成手続きの必須付与行を gate が許容していなかった構造的欠陥。
+- 修正: `tools/video_ingest_gate.py` の本文非破壊ハッシュから `visual_ingested:` 行を除外し、既存 snapshot の混在(行込み記録の ch12 など)に備えて strip 済み/生のどちらか一致で PASS へ変更。設計正本 [[video-visual-ingest-design]] の機械検査節と変更履歴(v2.4 同日追記)へも反映。
+- 検証: ひづるめ ingest 済み全 8 章(ch06/07/09/11/12/13/14/15)の gate complete を自実行 → **全章 PASS**(ch15 は FAIL→PASS 解消、ch12 は strip/生のどちらか一致で従来どおり PASS)。
+- 中断対策(武田さんからの相談対応): 設計 v2.4 の staging 永続化+STATE.md 再開点記録に加え、章単位の確定→log 追記→次章の順で進め、サブエージェント 503 はリトライ後統括側直接読取へ切替(ch14 前例)を今回の B2 量産から適用。
+- 次の一手: ch15 パイロットの独立レビュー(別セッション)承認受取まで B2(ch17/18/19)の量産は停止。レビュー依頼文は武田さんへ提示済み。
