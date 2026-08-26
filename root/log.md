@@ -10006,3 +10006,25 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 検証: `bash -n` 合格。偽 plan/偽 safety ハーネス3ケース（早期打ち切り／窓が出たら ready・退行なし／safety誤返信でも照合0件は復元しない）全合格。
 - 未確認: 今回 Obsidian が vault 選択画面だった起点。打ち切りの実機発症時終端確認。
 - 触ったページ: [[window-layout-restore]] / [[window-layout-state-restore]]（参照のみ） / `index.md` / `log.md`
+
+## [2026-08-26] query | helen futa プロジェクト行方不明調査 — 死亡セッション産物の発見と横比較シート作成
+
+- 症状: 武田さん「helen futaのプロジェクトが行方不明」。調査の結果、プロジェクト・台帳とも実在
+  ([[gf2-helen-futa-addition-handoff]] §2 + `07_futa-helen/run-state.json` 17:55版)。
+- 真因: 17:55 台帳更新後に**記録のないセッションが死亡**し、r3正面比較シート
+  (`r3cmp-b{15,30,45}-uw{ON,OFF}` + `CONTACT-SHEET-k4-r3-compare.png`・18:58)だけがディスクに残存。
+  スクリプト冒頭に「承認済み」「判定枠を消費しない」記載=修正方針承認は取得済みの可能性が高いが記録なし。
+  handoff §3 の死亡パターン(シート提示直前死亡)の再発。
+- 回答: カード再提示 → 武田さん回答「正面画像で全然わからない」+「下着ありのまま」。
+  **S2=下着ありのままを K4-VISUAL-STANDARD へ確定追記**(S1勃起上向きOKに続く第2号)。
+- 実施: 正面では反りが見えないため横プロファイル比較を新規作成
+  (`v42_k4_r3_side_compare.py` headless・blend非保存): `r3side-b{0,15,30,45}-uwON_f220.png`
+  + `CONTACT-SHEET-k4-r3-side.png`(0°=r2基準参考セル)。UV復元1572/1572・整列azim0.00°/elev45.00°
+  再確認・反り適用後弦仰角45.0/60.4/75.7/88.8°を実測。判定枠は未消費。
+- 更新: [[gf2-helen-futa-addition-handoff]](§2冒頭ブロック全面差し替え・§7夜エントリ・K4産物一覧),
+  `07_futa-helen/run-state.json`(21:30版), `07_futa-helen/reports/K4-VISUAL-STANDARD-2026-08-26.md`,
+  `index.md` は既存行の更新なし(内容変化は build ページ内で吸収)
+- 残った問い:
+  - (a) 上反りの程度 {0,15,30,45°} の選択(横シートで実施中)
+  - 選択後の確定版 r3 レンダ=最終提示(視覚判定枠ラスト1回を消費)
+  - 17:55以降に死亡した正体不明セッションの特定(opencode DB 側の履歴確認は未実施)
