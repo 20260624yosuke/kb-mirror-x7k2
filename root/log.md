@@ -9919,3 +9919,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 制限の記録(実害発生後に対応): ドラッグ中オートスクロール無し・外部ドロップ拒否未実装・改名後の展開状態キー追従・マルチ窓での幅 last-write-wins・機能単位ロールバック不可(全体復帰のみ/プレビューのみトグル OFF 可)。
 - 更新: `.obsidian/plugins/miller-columns/`(main.js/styles.css/manifest.json v0.4.0+quality-gate.json 新設+v0.2.1.bak 一式), `wiki/builds/obsidian-miller-columns.md`, `index.md`, `log.md`
 - 次の一手: 武田さんの Obsidian 再読込→実機確認チェックリスト合格で運用開始判定。品質ゲート complete は実機確認後に通す。
+## [2026-08-26] build | Miller Columns v0.4.0 部分実機確認(列幅の個別化のみ)
+
+- 経過: 武田さんが再読込せずに列幅を試し旧版(v0.2.1)の全列共通リサイズが発症。data.json に
+  colWidths/showPreview が無く columnWidth のみ更新されていたことで旧コード稼働と特定。
+  完全再読込(Reload app without saving)後に**列幅の個別化を実機確認**(武田さん「できた」)。
+- 状態: v0.4.0 他7項目(クリック Finder 流/D&D/改名/作成/Finderで表示/プレビュー/削除即反映/
+  自動追従)は実装済み・未確認。ただし武田さん「他は試してないけど、今は問題感じない」。
+  品質ゲート complete は引き続き FAIL(全項目の実機承認がないため・意図どおり)。
+- 更新: `wiki/builds/obsidian-miller-columns.md`, `index.md`, `log.md`
