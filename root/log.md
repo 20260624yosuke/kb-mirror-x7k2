@@ -9904,3 +9904,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 手順: dry-run(--video 2回指定)→ snapshot(videos[] 2本記録)→ 抽出(p1=46枚・p2=28枚)→ KB staging 退避 → 盲検読取 74/74(サブエージェント3枚逐次。プロバイダ障害1回+「3枚のうち最終1枚のみ返却」の落とし穴#12が3バッチ発生、未返却分は都度小バッチ再読で回収)→ 第2読者8枚=max(3,10%切り上げ)(confirmed 4件・corrected 4件: p1/00m20s 選択サブツール 消しゴム→さっくり、p1/05m40s 選択サブツール 表示色を取得→スポイト、p2/00m00s タイトルバー 13_3.png→02-Sheet(明る化クロップ)、p2/09m00s 第1読者「09.psd」記録は全面誤読→原寸再確認で「写真から全身ポーズを描く練習*」画面に差し替え。なお p1/09m20s の Layer 5 Copy vs Layer 3 Copy は原寸クロップで第1読者が正しいと確定=第2読者誤読)。
 - 完了: フレーム74枚を `hide-ch13-pN-MMmSSs.png` で本保存(表/ファイル/manifest の3か所一致・孤児ゼロ・ev-001〜ev-074 連番)→ manifest(videos[]+動画ごと extraction[]+recheck 8 entries)→ source 節を動画列付き 6 列表で byte 保持挿入(挿入以外の本文は snapshot ハッシュと一致を機械確認)。
 - 更新: `wiki/sources/coloso-hide-ch13-limb-blocking.md`, `wiki/assets/frames/coloso-hide-ch13-limb-blocking/`(manifest.json+snapshot.json+png74枚), `index.md`, `log.md`
+## [2026-08-26] query | Finder カラム構造解析(Miller Columns 完全化の事前調査)
+
+- 依頼: /hold で「Obsidian の Miller Columns プラグインがマジで使いにくい・完全してない」を言語化→実装の流れ。武田さんの指示「予想で作るな。finder をスワップしろ、できないなら限りなく構造を解析しろ」を受け、実装前解析を実施。
+- 経緯: 相談前半で縦ツリー vs カラムの言語化を試みたが、[[obsidian-miller-columns]] / [[obsidian-ui-improvement-roadmap]] に 2026-07-12 の同一課題の正本が既存(②親フォルダ視認性=自作プラグイン v0.2.0 実機確認済み)と判明し軌道修正。現状 v0.2.1(自動追従トグル)が実機確認待ち、v0.3.0 計画は承認済み未実装。「使いにくさ」の言語化=「見る専用カラム(D&D・改名・作成不可)なので結局命令コストに戻る」で合意。
+- 解析結果: ①真のスワップ不可能(NSBrowser 経由の Electron 埋め込みは公式チュートリアル存在するが子窓ハック+更新追従リスクで非推奨)→ JS 移植が正攻法 ②Finder 挙動仕様草案を作成(シングルクリック=開かない等、現プラグインと逆の点を特定・未実測項目は印付き) ③先行クローン(Path Finder/SpanFinder/GitHub miller-columns)は全部自前再実装路線 ④qlmanage サムネ実測: psd 成功(512px PNG 即時)/clip 失敗(QuickLook プロバイダ不在・タイムアウト)→プレビュー対象は psd まで
+- 成果物: wiki/analyses/finder-column-mechanism-analysis.md(新規)
+- 次の一手: 武田さんの判断待ち(①シングルクリック挙動を Finder 流へ寄せるか ②解析に基づく実装計画(Tier 1+2+3)の承認)
