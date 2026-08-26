@@ -462,6 +462,28 @@ sources:
 - **検証**: py_compile OK・confirm_paths ロジックを Dusevnyj 実値で単体実行（この動作確認が上記 blend 消失の検出契機になった）。compare()/self_test は非変更のため突合ロジック・self-test 24系統は不変
 - 効果: 以後の提出報告には必ず実在確認済みパスが付く。「パス無しの成果物報告」は検証器出力段階で不可能になる
 
+### v8.4 肌パッチ・Dusevnyj 復旧完遂（2026-08-26 午後・現行）
+
+> 武田さんの承認カードで **「A案: 肌色修正込みで復旧」** を取得して実施。前節で発見した中断状態を解消し、Dusevnyj を v8.4 肌パッチ込みで再構築 → 全検査 PASS まで完遂。
+
+**朝の FAIL の原因確定（環境起因・blend/ビルダの欠陥ではない）**: 09:30 Helen diff FAIL は検証実行時点でゲームデータが不完全だったため（census 30件「censusにあるが検証器族走査に無い」＋bones期待値不完全→unresolved=0 という矛盾シグネチャ）。データ完備後に再実行 → **PASS(20 checks)**。抽出に必要な .bundle は LocalCache＋アプリRaw の両ルート（ce_extract.py:52）合算で **3体とも 0欠け**（欠けていたのは音声 .acb / 動画 .usm / .acf のみ）を実測で確認。
+
+**v8.4 肌パッチ（r5）の内容**: `ce_common`/`ce_build_blend.py`（08-26 01:47-01:51 改変分）— 顔アトラス額のクリーン肌クロップ（UV 0.39,0.58–0.52,0.71）をミラータイルした**質感付き肌材質**。v8.2 単色肌（武田さん「肌の色が変」差し戻し）の置き換え。適用: 手(P1_cloth3.sub0/sub1)＋生肌部位(P3_body＋_Dorm)。UV不変・**approximation**（原作肌シェーダは deferred）。正解根拠=公式 ClothesMod アイコン（`intermediate/<char>.<variant>/clothesmod-icons/`）。
+
+**復旧の実測**:
+
+| 項目 | 実測 |
+|---|---|
+| Dusevnyj 再構築 | 10_extract_char でフル再抽出→再構築。**blend SHA256 先頭16 `b56f8152a51ae1c0`**・tex_failed=0・抽出自己検査 OK |
+| Dusevnyj 突合 | **PASS (20 checks) / conditional** — known_untextured=hip3 のみ・unresolved_slots 64・切替時白 17・gaps 0 |
+| Dusevnyj self-test / 決定性 | 24ケース PASS / canonical_identical=true |
+| Sabrina 再確認 | blend 変更なし・diff **PASS(20)/conditional**・self-test 24ケース PASS |
+| Helen（内部回帰） | v8.4 ビルド再diff **PASS(20)/conditional**（朝の FAIL を反証） |
+| レンダーシート | Dusevnyj 再生成（30枚・白面積率 0.0・set_P1/P2/P3 で3着切替）。制作担当が目視: 顔・手・P3脚が自然な肌色・スニーカー表示・義手質感 OK |
+| gate_sync | ok (known_gaps_total 5) |
+
+**次**: 武田さんの目視承認（Dusevnyj v8.4＋Sabrina 正式・conditional 開示込み）→ Step3 バッチ計画（別承認）。
+
 ## 2. 承認履歴
 
 | 日付 | カード | 結果 |
@@ -545,6 +567,8 @@ sources:
 - **バックアップ探索 追加（2026-08-26）**: reports/backup-volume-game-data-scan-2026-08-26.json（新規）／run-state.json（backup_volume_scan_2026_08_26・discovered_state_2026_08_26_noon・audit_script_confirm_paths 欄追加）。**修正（2026-08-26 同日）**: scripts/20_diff_char_blend.py（main に confirm_paths 必須化を追加・compare/self_test は非変更）。**変更なし（読み取り専用遵守）**: /Volumes/HDD_バックアップ・GFL2Data(disk7s2)・現行ゲームコンテナ一式
 
 ## 6. 変更履歴
+
+- **2026-08-26（v8.4 肌パッチ・Dusevnyj 復旧完遂）**: 武田さんが「成果物は Blender オブジェクトの品質」と指摘し承認カードで **A案（肌色修正込みで復旧）** を承認 → ①朝の Helen FAIL をデータ不完全起因と機械特定（.bundle は3体とも 0欠け・欠けは音声/動画のみ）②Helen 再diff PASS で v8.4 ビルダを検証済みに ③Dusevnyj をフル再抽出→再構築（新SHA `b56f8152a51ae1c0`）→ 突合 PASS(20)/conditional・self-test 24ケース・決定性 PASS・シート再生成（白面積率0.0・肌パッチで顔/手/脚が自然肌色を制作担当が目視確認）④Sabrina も PASS 再確認。**次は武田さんの目視承認 → Step3**
 
 - **2026-08-26（監査スクリプトへ confirm_paths 必須化・v8.4 中断状態の発見）**: 武田さん指示「確認してほしいときはファイルパスを明示するように監査スクリプトに加えて」→ `20_diff_char_blend.py` の submission に **confirm_paths**（成果物8パスの exists 付き機械列挙・exists=false は提出不可）を新設し標準出力にも印字。動作確認の単体実行で **Dusevnyj blend 消失を検出** → 精査の結果、02:06-02:11 の空blend事故（LocalCache 一時消滅が契機・v8.3 正本は上書き喪失・quarantine 隔離済み）と、09:25-09:36 の v8.4 肌パッチ作業中断痕跡（Helen diff FAIL/blocked のまま）を発見。run-state/handoff を実態へ訂正。Sabrina は無傷。ゲームデータ本体は現在手元にあり再DL不要
 
