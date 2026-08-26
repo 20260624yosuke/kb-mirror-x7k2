@@ -42,6 +42,7 @@ last_reviewed: 2026-06-01
 ## 不確実・要確認
 
 - chapter 14 は前半基礎の締めであり、人体細部の解剖学は ch15 以降へ移る。
+
 ## 映像観測(フレーム由来)
 
 - 抽出日: 2026-08-26 / 元動画: [[_attachments/14_01.mp4]] + [[_attachments/14_02.mp4]](分割 2 本)
@@ -111,4 +112,3 @@ last_reviewed: 2026-06-01
 - [[coloso-hide-ch12-three-mass-blocking]]
 - [[coloso-hide-ch13-limb-blocking]]
 - [[coloso-hide-human-drawing-course]]
-
