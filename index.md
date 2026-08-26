@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4804 ファイル_
+_合計 4871 ファイル_
 
 ## root/ (11)
 
@@ -1600,6 +1600,40 @@ _合計 4804 ファイル_
 - [marse-ch11-08m06s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-08m06s.png) | 2026-08-25T08:39:06Z
 - [marse-ch11-08m13s.png](wiki/assets/frames/coloso-marse-ch11-rough/marse-ch11-08m13s.png) | 2026-08-25T08:39:06Z
 
+## wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/ (31)
+
+- [marse-ch12-01-00m00s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-00m00s.png) | 2026-08-26T07:10:09Z
+- [marse-ch12-01-00m20s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-00m20s.png) | 2026-08-26T07:10:09Z
+- [marse-ch12-01-00m36s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-00m36s.png) | 2026-08-26T07:10:16Z
+- [marse-ch12-01-00m40s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-00m40s.png) | 2026-08-26T07:10:09Z
+- [marse-ch12-01-01m20s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-01m20s.png) | 2026-08-26T07:10:09Z
+- [marse-ch12-01-02m20s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-02m20s.png) | 2026-08-26T07:10:10Z
+- [marse-ch12-01-03m30s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-03m30s.png) | 2026-08-26T07:10:16Z
+- [marse-ch12-01-05m00s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-05m00s.png) | 2026-08-26T07:10:11Z
+- [marse-ch12-01-06m40s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-06m40s.png) | 2026-08-26T07:10:12Z
+- [marse-ch12-01-09m38s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-09m38s.png) | 2026-08-26T07:10:17Z
+- [marse-ch12-01-12m40s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-12m40s.png) | 2026-08-26T07:10:15Z
+- [marse-ch12-01-15m00s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-01-15m00s.png) | 2026-08-26T07:10:16Z
+- [marse-ch12-02-00m00s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-00m00s.png) | 2026-08-26T07:10:18Z
+- [marse-ch12-02-00m20s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-00m20s.png) | 2026-08-26T07:10:18Z
+- [marse-ch12-02-02m00s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-02m00s.png) | 2026-08-26T07:10:19Z
+- [marse-ch12-02-04m00s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-04m00s.png) | 2026-08-26T07:10:20Z
+- [marse-ch12-02-04m40s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-04m40s.png) | 2026-08-26T07:10:20Z
+- [marse-ch12-02-06m00s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-06m00s.png) | 2026-08-26T07:10:21Z
+- [marse-ch12-02-07m40s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-07m40s.png) | 2026-08-26T07:10:22Z
+- [marse-ch12-02-08m00s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-08m00s.png) | 2026-08-26T07:10:22Z
+- [marse-ch12-02-09m39s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-09m39s.png) | 2026-08-26T07:10:30Z
+- [marse-ch12-02-10m10s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-10m10s.png) | 2026-08-26T07:10:41Z
+- [marse-ch12-02-11m50s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-11m50s.png) | 2026-08-26T07:10:42Z
+- [marse-ch12-02-13m20s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-13m20s.png) | 2026-08-26T07:10:25Z
+- [marse-ch12-02-15m20s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-15m20s.png) | 2026-08-26T07:10:26Z
+- [marse-ch12-02-16m33s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-16m33s.png) | 2026-08-26T07:10:30Z
+- [marse-ch12-02-16m40s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-16m40s.png) | 2026-08-26T07:10:27Z
+- [marse-ch12-02-18m40s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-18m40s.png) | 2026-08-26T07:10:28Z
+- [marse-ch12-02-19m20s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-19m20s.png) | 2026-08-26T07:10:28Z
+- [marse-ch12-02-19m30s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-19m30s.png) | 2026-08-26T07:10:50Z
+- [marse-ch12-02-19m50s.png](wiki/assets/frames/coloso-marse-ch12-underdrawing-perspective/marse-ch12-02-19m50s.png) | 2026-08-26T07:10:50Z
+
 ## wiki/assets/frames/coloso-sasa-ch01-intro/ (10)
 
 - [sasa-ch01-00m40s.png](wiki/assets/frames/coloso-sasa-ch01-intro/sasa-ch01-00m40s.png) | 2026-08-23T08:19:16Z
@@ -3012,7 +3046,7 @@ _合計 4804 ファイル_
 - [ye-jji-ch12-p2-21m50s.png](wiki/assets/frames/coloso-ye-jji-ch12-color-rough/ye-jji-ch12-p2-21m50s.png) | 2026-08-26T06:31:45Z
 - [ye-jji-ch12-p2-22m00s.png](wiki/assets/frames/coloso-ye-jji-ch12-color-rough/ye-jji-ch12-p2-22m00s.png) | 2026-08-26T06:31:45Z
 
-## wiki/assets/frames/coloso-ye-jji-ch13-lineart/ (184)
+## wiki/assets/frames/coloso-ye-jji-ch13-lineart/ (218)
 
 - [ye-jji-ch13-p1-00m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p1-00m00s.png) | 2026-08-26T09:06:13Z
 - [ye-jji-ch13-p1-00m06s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p1-00m06s.png) | 2026-08-26T09:06:13Z
@@ -3198,6 +3232,40 @@ _合計 4804 ファイル_
 - [ye-jji-ch13-p3-14m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p3-14m20s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p3-14m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p3-14m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p3-15m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p3-15m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-00m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-00m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-00m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-00m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-00m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-00m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-01m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-01m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-01m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-01m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-01m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-01m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-02m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-02m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-02m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-02m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-02m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-02m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-03m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-03m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-03m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-03m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-03m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-03m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-04m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-04m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-04m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-04m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-04m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-04m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-05m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-05m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-05m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-05m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-05m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-05m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-06m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-06m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-06m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-06m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-06m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-06m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-07m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-07m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-07m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-07m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-07m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-07m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-08m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-08m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-08m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-08m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-08m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-08m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-09m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-09m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-09m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-09m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-09m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-09m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-10m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m00s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-10m20s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m20s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
+- [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
 ## wiki/builds/ (74)
 
@@ -3725,9 +3793,10 @@ _合計 4804 ファイル_
 - [22m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m20s.png) | 2026-08-25T11:25:38Z
 - [22m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch09/p2/22m40s.png) | 2026-08-25T11:25:38Z
 
-## wiki/builds/coloso-visual-ingest-batch2/staging/ch17/ (1)
+## wiki/builds/coloso-visual-ingest-batch2/staging/ch17/ (2)
 
 - [STATE.md](wiki/builds/coloso-visual-ingest-batch2/staging/ch17/STATE.md) | 2026-08-26T09:03:41Z
+- [observations_p1_batch1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/ch17/observations_p1_batch1.txt) | 2026-08-26T09:08:24Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/staging/ch17/p1/ (46)
 
@@ -3821,7 +3890,7 @@ _合計 4804 ファイル_
 - [12m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch17/p2/12m40s.png) | 2026-08-26T09:02:35Z
 - [13m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/ch17/p2/13m00s.png) | 2026-08-26T09:02:35Z
 
-## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (14)
+## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/ (15)
 
 - [STATE.md](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/STATE.md) | 2026-08-26T07:50:16Z
 - [observations_p1_b1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p1_b1.txt) | 2026-08-26T08:11:33Z
@@ -3837,6 +3906,7 @@ _合計 4804 ファイル_
 - [observations_p3_b3.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p3_b3.txt) | 2026-08-26T08:53:24Z
 - [observations_p4_b1.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p4_b1.txt) | 2026-08-26T08:56:43Z
 - [observations_p4_b2.txt](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/observations_p4_b2.txt) | 2026-08-26T08:56:36Z
+- [table_rows.md](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/table_rows.md) | 2026-08-26T09:06:15Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p1/ (84)
 
@@ -4782,7 +4852,7 @@ _合計 4804 ファイル_
 - [coloso-marse-ch09-feminine-pose.md](wiki/sources/coloso-marse-ch09-feminine-pose.md) | 2026-08-25T05:18:50Z
 - [coloso-marse-ch10-arms-gaze-guide.md](wiki/sources/coloso-marse-ch10-arms-gaze-guide.md) | 2026-08-25T06:46:05Z
 - [coloso-marse-ch11-rough.md](wiki/sources/coloso-marse-ch11-rough.md) | 2026-08-25T08:58:36Z
-- [coloso-marse-ch12-underdrawing-perspective.md](wiki/sources/coloso-marse-ch12-underdrawing-perspective.md) | 2026-06-01T03:39:48Z
+- [coloso-marse-ch12-underdrawing-perspective.md](wiki/sources/coloso-marse-ch12-underdrawing-perspective.md) | 2026-08-26T09:08:09Z
 - [coloso-marse-ch13-lineart.md](wiki/sources/coloso-marse-ch13-lineart.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch14-flat-color.md](wiki/sources/coloso-marse-ch14-flat-color.md) | 2026-06-01T03:39:48Z
 - [coloso-marse-ch15-shadow.md](wiki/sources/coloso-marse-ch15-shadow.md) | 2026-06-12T00:16:05Z
