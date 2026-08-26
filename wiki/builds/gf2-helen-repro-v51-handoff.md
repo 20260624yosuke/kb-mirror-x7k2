@@ -1102,6 +1102,26 @@ sources:
     - 成果物blend無変更。証跡: `logs/f163-hairline-cause.json`・`reports/d2-hairline/`・
       `ledger/f163-hair-material-props.json`。
 
+90. **f164 輪郭線殻による髪隠蔽仮説の検証を実施（`f164_outline_shell_test.py`・2026-08-26午後・候補のみ・本blend無変更）**:
+    - 前提訂正: 現行blendに **Solidify実装は存在しない**（solidify総数0）。殻はGeometry Nodes
+      2本/オブジェクト（`GFOutline`＝pre-Armature＋`GFOutlinePostSkin`＝post-Armature・
+      画面空間クランプ）で、対象25オブジェクト×2本=50モディファイア全てshow_render=true。
+      厚み入力は一様 0.0020312499m(2.03125mm)＝ORIGANGLEカメラ実測で≒1.585px
+      （原作帯1.2〜2.5px内）。
+    - **結果＝棄却・説明力−8.6%**: S8被覆率比 現行0.557 → 殻非表示候補**0.519（悪化）**
+      （白飛び肌+3.33pp）。first-hitレイキャスト4,171本でoutline_shellが最初に当たるのは
+      **0本(0.0%)＝殻は髪を隠していない**。白飛び画素∩殻 IoU 52.39%だが前面一致ゼロ。
+      副作用: S6 39.334%→41.877%（悪化）・S7/S9はPASS維持。候補blend不採用推奨。
+    - **残る謎の整理**: 髪ジオメトリはROI内に在る(f163)のに、フルレンダではその画素に
+      肌が前面に出る——そしてそれは輪郭線殻ではない(f164)。
+      ＝**顔の肌メッシュ自身が髪カードより手前にある＝髪カードが頭部後方へ退っている**状態。
+      f129でclip適用忠実度≤0.101mmは検証済みのため、残る候補は
+      (a)原作ランタイムの髪物理上乗せ（attach拒否済み・blocked）
+      (b)**髪骨のrest規約差（bindpose vs Helena_dorm prefab m_DefaultPose — #74④/#75で
+      指骨でも同型の未解決差を持つ）**。次の一手＝f165として(b)を幾何検証する。
+    - 証跡: `logs/f164-outline-shell-test.json`・`scripts/f164_outline_shell_test.py`・
+      `reports/d2-hairline/f164_*.png`。
+
 ---
 
 ---

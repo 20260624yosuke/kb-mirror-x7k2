@@ -42,16 +42,7 @@ last_reviewed: 2026-06-01
 ## 不確実・要確認
 
 - chapter 14 は前半基礎の締めであり、人体細部の解剖学は ch15 以降へ移る。
-
-## 関連リンク
-
-- [[coloso-hide-ch12-three-mass-blocking]]
-- [[coloso-hide-ch13-limb-blocking]]
-- [[coloso-hide-human-drawing-course]]
-
-
 ## 映像観測(フレーム由来)
-
 
 - 抽出日: 2026-08-26 / 元動画: [[_attachments/14_01.mp4]] + [[_attachments/14_02.mp4]](分割 2 本)
 - 元動画 SHA-256: `4b55bf954cb876b73c4dbb9d75e81022e9581519dde3108d81935fe87e302e1f`(14_01) / `1f50cca4dcadf4f33bc748dd0d7a132392d70a1d6367ddec82a79d40703e44f9`(14_02)
@@ -114,3 +105,10 @@ last_reviewed: 2026-06-01
 | ev-051 | 14_02.mp4 | 16:20 | ![[wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-16m20s.png]] | high | キャンバス左右の背景に大きな斜めの直線が描き足され、建物・壁面の骨格線が現れる。 |
 | ev-052 | 14_02.mp4 | 16:40 | ![[wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-16m40s.png]] | high | 左右の壁面が台形の大きな面として整えられ、両側に壁のある通路状の空間にまとまる。消しゴム(サイズ70.0)、拡大率36.6%。 |
 | ev-053 | 14_02.mp4 | 17:40 | ![[wiki/assets/frames/coloso-hide-ch14-figure-perspective/hide-ch14-02-17m40s.png]] | high | 黒背景の中央に白い「Coloso.」ロゴ(ピリオドは黄色)の終端カード。下部に赤帯。ソフトUI非表示。 |
+
+## 関連リンク
+
+- [[coloso-hide-ch12-three-mass-blocking]]
+- [[coloso-hide-ch13-limb-blocking]]
+- [[coloso-hide-human-drawing-course]]
+
