@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4445 ファイル_
+_合計 4446 ファイル_
 
 ## root/ (11)
 
@@ -3043,7 +3043,7 @@ _合計 4445 ファイル_
 - [2026-08-25-ixy-2024-dryrun.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-dryrun.md) | 2026-08-25T09:38:41Z
 - [2026-08-25-ixy-2024-representative-comparison.md](wiki/builds/coloso-intake/reports/2026-08-25-ixy-2024-representative-comparison.md) | 2026-08-25T13:11:23Z
 
-## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (9)
+## wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/ (10)
 
 - [progress.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/progress.md) | 2026-08-26T07:45:23Z
 - [read-p1-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p1-a.md) | 2026-08-26T07:15:44Z
@@ -3054,6 +3054,7 @@ _合計 4445 ファイル_
 - [read-p2-a.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p2-a.md) | 2026-08-26T07:51:20Z
 - [read-p2-b.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p2-b.md) | 2026-08-26T07:58:47Z
 - [read-p2-c.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p2-c.md) | 2026-08-26T08:02:50Z
+- [read-p2-d.md](wiki/builds/coloso-visual-ingest-batch2/hide-batch3/ch15/read-p2-d.md) | 2026-08-26T08:10:16Z
 
 ## wiki/builds/coloso-visual-ingest-batch2/marse-ch12-rescue/ (1)
 
