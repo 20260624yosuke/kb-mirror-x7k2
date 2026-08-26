@@ -1064,6 +1064,44 @@ sources:
     - → GFF秘密テーブル(QSeY/csHt含む)ルートは「鍵入手なしては解読不能」まで確定。
     - 成果物blend無変更。証跡: `logs/f160-gff-secret-tail.json`・`scripts/f160_gff_secret_tail.py`。
 
+### 2026-08-26（午後）に足したこと — 目的逆算の2本（f162/f163·#90委譲）
+
+88. **f162 ACES RRT/ODT完転写を実施（`f162_aces_rrtodt_transfer.py`・2026-08-26午後・候補のみ・本blend無変更）**:
+    - RRT+rednessの数式を `LutBuilderHdr/0007_f31ae486889b.msl` 行336-421から逐次転写
+      （AP1→AP0→q/s/d式→sat重みm→3区分red→全ch×(1+red)→色相角±180°折返し→赤近接度
+      smoothstep²×0.18msatをR加算→AP0→AP1。高速atan2多項式はarctan2と最大逸脱0.00066°/40kサンプル）。
+      挿入位置＝現行鎖の×kとdesat0.96の間。正規化c/(max+1)除外は#72判断どおり維持。
+    - numpy⇔コンポジタ一致 mean差0.473/255（RRTブロック単体の画素影響 mean 0.028/255）。
+    - **S6への効果は実測ほぼゼロ**: 白飛び率 現行39.334% → 候補39.325%。
+      S6合格は **k=0.4でのみ**(0.194% PASS)だが全身meanが64.1 vs 原作101.5で−37.4暗い。
+      k=0.7は全局mean一致(99.8 vs 101.5)のまま顔だけ飛ぶ。
+      → **白飛びの残因はトーンマップ段の欠落ではなく、輝度分配/InternalLut(blocked)側**と特定。
+    - k採否は絵の見比べ（運用ルール6）へ。候補blendは規則どおりk=0.4で保存
+      （`blends/_candidate-acesrt/helen-h0157-repro__04ef8b79b3fa5b64_f162-acesrt.blend`・
+      Math239ノード）。k=0.7行は結果JSON参照。S7〜S9退行なし。
+    - 証跡: `logs/f162-aces-rrtodt.json`・`reports/matpreview/f162_sheet.png`。
+
+89. **f163 D2生え際のメッシュ/シェーダ側原因追及を実施（`f163_hairline_cause.py`・2026-08-26午後）**:
+    - **棄却（実測つき）**: アルファクリップ説 — `_UseAlphaTest`/`_Cutoff`(既定0.15)は
+      uber_export.txt L13/L15に宣言実在だが、クリップ実体は
+      `fragment/GFCharForward/0217.msl` L226-228のみ・0357.msl自体はdiscard 0件・
+      **髪材質61件の全読みで全件アルファテスト無効**・テクスチャα全255×候補blendでΔ0.00pp。
+      面欠け説も不成立（manifest自己検査＋blend頂点/面数一致7931面）。
+    - **新規機械事実（部位別被覆率·S8 ROIで0.557を再現）**:
+      前頭部 原作80.0% vs 当方20.1%／側頭部L 93.9% vs 30.9%／側頭部R 71.9% vs **84.6%(当方が上)**。
+      当方の非髪画素内訳＝白飛び肌52.4pp（原作0）／実肌露出は逆に16.2pp少ない。
+      −1.5EVレンダでもS8は42.5%（比0.52）と回復せず＝劣化主部は白飛びではなく生え際そのもの。
+    - **幾何実測（決め手）**: 黒世界＋髪のみレンダではROI被覆88.7〜96.8%＝
+      **髪ジオメトリは在る。しかしフルレンダでは白飛び画素100%で肌が前面**
+      （corr(full,肌のみ)=0.991）＝**髪が顔面上に掛かっておらず、奥へ退っている/隠れている**。
+    - 副次: Helena_dorm prefab（手元実在）では髪renderer＝サブメッシュ2⇔材質スロット2だが
+      当方blendは両submeshを材質index0へ統合（submesh2=2,361面は前頭部寄り集中・COLOR_0.a未配線）
+      （`ledger/f163-helena-prefab-hair.json`）。
+    - 残る最有力仮説: **顔面の輪郭線殻（Solidify≈1mm押し出し）が顔面上の髪カードを隠している**
+      ＝f164で検証予定。原作ランタイム髪物理の有無はattach拒否済みのため観測不能（blocked）。
+    - 成果物blend無変更。証跡: `logs/f163-hairline-cause.json`・`reports/d2-hairline/`・
+      `ledger/f163-hair-material-props.json`。
+
 ---
 
 ---
