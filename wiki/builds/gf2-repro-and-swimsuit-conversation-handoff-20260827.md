@@ -10,6 +10,8 @@ sources:
   - gf2-char-extract-handoff
   - gf2-helen-repro-v51-handoff
   - gf2-helen-repro-v51-run
+  - gf2-helen-repro-plan-repair-model-routing-handoff-20260827
+  - gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827
   - gf2-costume-reference-feasibility-2026-08-23
   - gf2-helen-bikini-harness-loop-application-2026-08-09
   - gf2-sabrina-summer-bikini-no-frill-reference-build
@@ -196,6 +198,29 @@ sources:
 - 旧サブリナ型ビキニ計画を、未確認の新しい水着案の承認済み計画として扱わない。
 - 水着資料に、ヘレン完全原作再現と同じ照明・質感の完成条件を自動適用しない。
 - 機械検査のPASSを、原作一致やユーザーの用途合格へ読み替えない。
+
+## 8. 2026-08-27 分割後の正規再開入口
+
+このページは横断入口として残すが、以後は2案件を別セッションで扱う。詳細な再開入口は次の2ページ。
+
+1. [[gf2-helen-repro-plan-repair-model-routing-handoff-20260827]]
+   - 承認済みの目的と崩れた状態表示を分離する。
+   - 現行SHA、`f128`・`f152`、`f166`の停止点、状態修復順を固定する。
+   - `/Users/takedayousuke/llm-uploads/20260827-220708-未回収コード解析のモデル配分.md`を
+     正本に、LunaとSolの役割・証拠受け渡しを記録する。
+2. [[gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827]]
+   - Dusevnyj P3のビキニ上衣だけをHelenへ適合する新規案件。
+   - 白い透けブラウスとP3下衣は使わず、Helen既存のビキニ状下衣を残す。
+   - 中立＋代表姿勢を初期範囲にし、全モーションは将来の別承認拡張として残す。
+   - 旧サブリナ案件は技術と失敗例だけを再利用し、旧PASS・閾値・部品対応は流用しない。
+
+> [!warning] 分割時の承認状態
+> 「Helen既存下衣を残す」「中立＋代表姿勢」は`user-stated / selected / not-approved`。
+> 2ページに書かれた状態修復、モデル実行、ハーネス実装、候補制作、保存先は
+> `proposed / not-approved`であり、この分割記録を実装承認へ読み替えない。
+
+両ページ末尾には、次セッションで`/hold`を起動してそのまま貼れる再開プロンプトを収録した。
+このページより後続2ページを優先して再開する。
 
 ## 使わなかったもの・落とした情報
 
