@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4871 ファイル_
+_合計 4872 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 4871 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-27T09:39:14Z
-- [log.md](root/log.md) | 2026-08-27T09:41:16Z
+- [index.md](root/index.md) | 2026-08-27T09:58:23Z
+- [log.md](root/log.md) | 2026-08-27T09:59:11Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -3267,7 +3267,7 @@ _合計 4871 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (74)
+## wiki/builds/ (75)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -3309,6 +3309,7 @@ _合計 4871 ファイル_
 - [gf2-helen-starlit-waltz-3d-reference-build.md](wiki/builds/gf2-helen-starlit-waltz-3d-reference-build.md) | 2026-07-26T07:14:52Z
 - [gf2-mityl-game-motion-transfer.md](wiki/builds/gf2-mityl-game-motion-transfer.md) | 2026-08-05T07:25:03Z
 - [gf2-mityl-mirror-salute.md](wiki/builds/gf2-mityl-mirror-salute.md) | 2026-08-07T14:43:37Z
+- [gf2-repro-and-swimsuit-conversation-handoff-20260827.md](wiki/builds/gf2-repro-and-swimsuit-conversation-handoff-20260827.md) | 2026-08-27T09:59:11Z
 - [gf2-sabrina-summer-bikini-center-refine-attempt.md](wiki/builds/gf2-sabrina-summer-bikini-center-refine-attempt.md) | 2026-07-27T10:50:53Z
 - [gf2-sabrina-summer-bikini-no-frill-reference-build.md](wiki/builds/gf2-sabrina-summer-bikini-no-frill-reference-build.md) | 2026-07-27T10:50:53Z
 - [gfl2-external-data-mount.md](wiki/builds/gfl2-external-data-mount.md) | 2026-07-30T02:39:19Z
