@@ -3,7 +3,7 @@ type: build
 status: active
 confidence: high
 evidence_level: source-backed
-last_reviewed: 2026-08-25
+last_reviewed: 2026-08-27
 sources:
   - gf2-helen-repro-v51-handoff
 ---
@@ -24,11 +24,21 @@ sources:
 | 3 | 機械可読現在位置 | `gf2-char-extract/run-state.json` |
 | 4 | 品質ゲート | `gf2-char-extract/quality-gate.json`（plan PASS 済み） |
 
-## 1. 目的と現在地（2026-08-24 時点）
+## 1. 目的と現在地（2026-08-27 更新）
 
 - **目的**: 光の再現と独立に、ドルフロ2原作データから複数キャラの形（メッシュ＋骨＋テクスチャ）をBlenderへ抽出する量産導線を作る。光・輪郭線・RampMap・アニメは全て deferred
 - **経緯**: ヘレンの光再現が停止中（[[gf2-helen-lighting-diagnosis-summary-20260823]]）のため、武田さんが並列抽出を提案 → hold で方針v2・計画v2.1が承認（2026-08-23）
-- **現在位置**: **Step 1 完了（抽出ドライバ＋機械突合12項目PASS＋決定性実測＋replay否定試験11系統PASS、Helenで実測）**。次は Step 2（武田さんによるパイロット2体の指名 → 目視承認）
+- **現在位置（旧状態は superseded）**: **A案「セレクト画面実値 port」は承認済み。ポスト処理コードと較準値は保存済みだが、成果物再構築と検証は未実施。実装途中で技術的停止**（OpenCode セッション `ses_fc1e8e80bffecDco3ZHQ7Qtv31`）。
+
+### 2026-08-27 同期 — A案承認後のポスト処理port（事実転記）
+
+- 2026-08-26 22:13頃、ユーザーはカードで **「A案: セレクト画面実値 port」** を明示承認した。
+- その後、次の実在ファイルが更新された: `scripts/ce_post_chain.py`、`scripts/ce_post_chain_calibrate.py`、`scripts/ce_build_blend.py`、`scripts/20_diff_char_blend.py`。
+- `post_chain_present` 検査と、ポスト鎖を壊した場合に失敗する否定試験コードが追加されている。
+- `logs/post-chain-calibration.json` と `intermediate/post-chain-params.json` が存在する。固定画素集合による較準の保存値は **k=1.1 / contrast=0.1 / saturation=23.4 / grade=true**。
+- assistantは「3体を再構築します」と述べたが、DBで後続に確認できる実行は `10_extract_char.py --help` まで。3体の再構築、diff、self-test、再レンダ、目視比較の実行証拠は無い。
+- 対象プロジェクトのblendをmtimeで確認した結果、**2026-08-26 22:35以降に作られたblendは0件**。セッションは503で停止した。
+- `run-state.json` の `step2-pilot-dusevnyj-intrinsic-color-investigation-complete-post-port-proposal-awaiting-approval` は22:13の承認より古い状態であり、ここでは旧状態として扱う。`run-state.json` 自体は変更していない。
 
 ### Step 0 の主な実測結果（2026-08-24）
 

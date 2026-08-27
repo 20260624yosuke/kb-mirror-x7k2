@@ -3,7 +3,7 @@ type: build
 status: active
 confidence: high
 evidence_level: source-backed
-last_reviewed: 2026-08-23
+last_reviewed: 2026-08-27
 sources: []
 ---
 
@@ -23,6 +23,7 @@ sources: []
 - 改訂`f88`は6 scene入口、control/target二段、連続HMAC、action marker、全終了経cleanupへ更新し、静的scaffold、再現試験13件、別実装監査、`f50` 55/55、品質ゲート`plan`は合格。2026-08-22 14:31、武田さんの明示承認「1で準備できました。」を会話記録・非暗号的attestationとして結合し、原本PID 30908へLLDB attachを1回だけ試行したが、macOS/debugserverが`Not allowed to attach to process`で拒否。停止条件に従い再試行していない。attachは成立せずbreakpoint 0、trace JSONLなし、ゲームprocessは継続稼働を確認。runtime gateと品質ゲート`complete`はFAILのままで、scene load要求・ASLR実アドレス・陽性対照・target key群は未観測。
 - post-attach検証では、`f48`正本42件、`f72`今回変更3文と再現試験15件、変更対象LT-12/LT-15の個別検証が合格。`f72`全量監査は`f87/il2cpp_dumper_py`待機、`f50`全量再監査は`f81`の900秒上限到達後の同じ`f87`待機により技術的停止した。実装前の全量合格をpost-attach全量合格へ読み替えない。
 - 2026-08-22夜、上記の技術的停止は解消した（下の節）。`f90`が`f86`の抽出器のASCII限定を見つけてCJKログ行を数え直し、シーン切替probe行とHelen寮timelineの近接併存6窓・皮膚Id 1106701とModel `HelenSSR0101`の隣接対応を台帳化した（LT-16）。同じ実測で、寮のBedroom timeline再生を含むゲーム実施の際にAssetBundles_IOSへ新しいbundleは1本も落ちていなかった（LT-17・陽性対照つきでnegative-claimsへ登録済み）。全量監査は`f50` **57/57 PASS**・再現試験25件PASS、`f72` 強制22件PASS・再現試験15件PASS。`f46`は確認画像3枚の撮り直しと比較JSONの取り直しで**合格**に戻った。
+- 2026-08-26夜のf166初回全量棚卸しについては、下の2026-08-27節の状態が最新。最終正規化修正後の再走査・整合確認前に技術的停止しており、f166を最終完了・監査合格とは扱わない。強制DLは未承認。
 
 ## 作業場所（すべて実在確認済み）
 
@@ -1679,6 +1680,19 @@ v2 blendが既存灯を hide_render のみで hide_viewport を残していた�
 (f107/f108)は無影響。**前回「原作感がない」で見た f103候補blendも同じ欠陥持ち**のため目視判断は
 無効の可能性。f109bで既存灯両hide版へ再書き出し・blend内実測確認済み。
 
+
+## 2026-08-27 — f166コード資産棚卸しの同期
+
+親セッション `ses_fc4093be6ffeK5wnAZYgDrrUVf`、実作業子セッション `ses_fc212669affe1ryOajM6Xaul5g`、再試行セッション `ses_fc1a4b8feffey6oPHSir1B19I1`。ユーザー承認は「棚卸しのみ先に」であり、強制DL・監査強化・成果物blend変更は未承認。
+
+### 実在ファイルと初回結果
+
+- `scripts/f166_code_inventory.py`、`logs/f166-code-inventory.json`、`logs/f166-code-inventory-status.json`、`logs/f166-msl-per-bundle.json` が実在する。
+- 初回結果JSONは22:42頃の実行結果で、18,568 bundleを走査、MSL文書ユニーク7,726種、既存抽出との未一致7,424種。未一致内訳は fragment 5,553種、vertex 1,855種、kernel 63種。
+- 平文PE DLLは33本でメタデータ読取可能33本。Luaは1,031本（Lua 5.3ヘッダ確認1,030本、主チャンク定数抽出成功1,030本）。MonoScriptは14,534件、distinct assemblies 62。DLLとの部分突合は `possible_partial`。
+- 結果JSONでは、実行時点の `generated_at` は22:33:35頃、`finished_at` は22:42:48頃。status JSONは22:42:48頃の結果を `done` と記録している。
+- ただし `scripts/f166_code_inventory.py` はその後22:49頃にも変更されている。最終変更は既存post MSL末尾のメタデータ混入をNUL位置で正規化する修正で、この修正版による全量再実行・整合確認の証拠は無い。
+- したがって状態は **初回全量棚卸しは実行済み。大規模な未抽出コード群を検出。ただし最終正規化修正後の再走査・整合確認・Wiki同期前に技術的停止**。f166を最終完了・監査合格とは扱わない。2回目の子セッションはモデル非対応エラーで終了しており、完成根拠にしない。強制DLは未承認。
 
 ## 使わなかったもの・落とした情報
 

@@ -10066,3 +10066,9 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `v43-harness-gates-final.json`(凍結版)
 - 更新: [[gf2-helen-futa-addition-handoff]] §2/§7, `run-state.json`(01:40版), `v43_harness_run.py`
 - 残った問い: r5視覚判定(枠2/3)。合格→Phase P/C計画。
+
+## [2026-08-27] sync | 2026-08-26夜のOpenCode 2案件を既存Wikiへ同期
+
+- 更新: `wiki/builds/gf2-char-extract-handoff.md`、`wiki/builds/gf2-helen-repro-v51-handoff.md`、`wiki/builds/gf2-helen-repro-v51-run.md`、`index.md`。
+- 同期内容: GF2キャラ抽出のA案承認、ポスト処理コード・較準値保存、22:35以降のblend更新0件、再構築・検証未実施・503技術的停止。HELEN f166初回全量棚卸しの実測値、最終正規化修正後の再走査未実施、強制DL未承認を記録。
+- 根拠: OpenCode履歴DB（読み取り専用）、対象プロジェクトの実在ファイル・JSON・mtime。新規Wikiページは作成していない。
