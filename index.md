@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4879 ファイル_
+_合計 4880 ファイル_
 
 ## root/ (11)
 
@@ -3270,7 +3270,7 @@ _合計 4879 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (79)
+## wiki/builds/ (80)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -3313,6 +3313,7 @@ _合計 4879 ファイル_
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z
 - [gf2-helen-ssr0101-short-outfit-reference-build.md](wiki/builds/gf2-helen-ssr0101-short-outfit-reference-build.md) | 2026-07-27T00:17:22Z
 - [gf2-helen-starlit-waltz-3d-reference-build.md](wiki/builds/gf2-helen-starlit-waltz-3d-reference-build.md) | 2026-07-26T07:14:52Z
+- [gf2-helen-swimsuit-fit-plan-20260829.md](wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md) | 2026-08-28T17:27:15Z
 - [gf2-mityl-game-motion-transfer.md](wiki/builds/gf2-mityl-game-motion-transfer.md) | 2026-08-05T07:25:03Z
 - [gf2-mityl-mirror-salute.md](wiki/builds/gf2-mityl-mirror-salute.md) | 2026-08-07T14:43:37Z
 - [gf2-repro-and-swimsuit-conversation-handoff-20260827.md](wiki/builds/gf2-repro-and-swimsuit-conversation-handoff-20260827.md) | 2026-08-27T13:41:15Z
