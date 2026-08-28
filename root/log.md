@@ -10159,3 +10159,19 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   [[llm-vision-review-suspension-policy]]（新規）、[[llm-review-bottleneck-applied-2026-08-28]]（新規）、
   `index.md`、`log.md`、[[gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827]]（関連リンク追記のみ）。
 - 未承認・未実装: ハーネス、fixture、候補Blend、納品物。実装計画も依然として未承認。
+
+## [2026-08-28] query | 却下理由の機械判定化と、html スキル導入による現状HTML
+
+- 依頼: ①却下理由を機械判定へ落とす ②`mathbullet/skills` の `html` を導入し、その規約どおりのHTMLで現状を把握できるようにする。
+- 却下判定を実装: `wiki/builds/gf2-dusevnyj-p3-bikini-rejected-approaches.json`（規則9件）と
+  `tools/rejected_approaches_check.py`。各規則に却下日・武田さんの発言・理由・当たり判定・代替案・
+  **その規則が見ていないもの** を必須項目として持たせた。
+- 試験: 4回不承認になった旧計画（引き継ぎ資料 section 6〜7）を通して **R01/R02/R06 の3件でFAIL**、
+  規則に沿って書いた計画は **PASS**。検査自体が失敗したときは exit 2 で、PASS と誤解させない。
+- html スキル導入: `npx skills add mathbullet/skills --skill html`。npm キャッシュの権限破損（既知）で
+  一度失敗したため `npm_config_cache` を別ディレクトリへ向けて回避。`.agents/skills/html/` へ実体、
+  `.claude/skills/html` は symlink。
+- 成果物HTML: `wiki/_attachments/helen-swimsuit-status/20260828-helen-swimsuit-current-state.html`
+  （design-system を同梱、相対パスの実在を検証済み）。
+- 触ったページ: `log.md`、`index.md`、上記4ファイル（新規）。
+- 未承認・未実装: 実装計画、ハーネス本体、fixture、候補Blend、納品物。
