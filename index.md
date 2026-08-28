@@ -14,7 +14,7 @@ _合計 4876 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-28T11:47:16Z
-- [log.md](root/log.md) | 2026-08-28T11:46:55Z
+- [log.md](root/log.md) | 2026-08-28T12:49:11Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -3301,7 +3301,7 @@ _合計 4876 ファイル_
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
 - [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-27T09:39:14Z
 - [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T03:22:36Z
-- [gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md](wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md) | 2026-08-27T23:50:40Z
+- [gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md](wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md) | 2026-08-28T12:48:51Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-26T13:33:06Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
 - [gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md](wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md) | 2026-08-27T13:38:57Z

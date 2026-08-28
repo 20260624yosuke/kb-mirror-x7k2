@@ -10119,3 +10119,20 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: [[brainstorm-skill]]（新規・正本）、[[brainstorm-brainstorm-skill-design]]（新規・議論メモ）、`CLAUDE.md`、`AGENTS.md`、`index.md`、`~/.claude/skills/hold/SKILL.md`。
 - 根拠: Claude Code 公式フックドキュメント（v2.1.228）、実機のフック試験、`~/.claude/settings.json`。
 
+
+## [2026-08-28] query | Dusevnyj P3ビキニ上衣→Helen: 表面在庫の実測と revision 3 記録
+
+- 依頼: revision 2 を正本に、一次データの読み直しと専用監査ハーネスの実装計画。/hold で起動。
+- 実施(読み取り専用・原本変更なし): 両Blend の SHA、部品寸法、Helen Flat/General/Bend、f128変形、
+  骨名未解決を再照合し **revision 2 の記録が全項目一致**することを確認。加えて Helen 全mesh と
+  Dusevnyj P3 全mesh の **表面在庫**（submesh 単位の面数・開いた縁・seam・穴の位置）を実測。
+- 主な新事実: Blender は `02_ソフトウェア/Blender.app` 4.5.11 LTS ／ Helen の Action は15本で
+  旧18姿勢の H0176・H0705 は不在 ／ Flat・General・Bend は高さ同一で3つとも上半身の肌の殻を持つ ／
+  **肌と布は同一メッシュ内の submesh として同居**（オブジェクト非表示では穴が開く）／
+  上半身の肌 `cloth2_lod0_Flat#0` は閉じており開口は首・肩・腕の切り口のみ ／
+  P1構成では腰に幅292mm×奥行197mmの大穴 ／ Helen 自身の `P3_cloth_lod0#0/#1` が腰帯幅190/222mmで
+  パンツ状の候補(未確認) ／ ドナー `P3_cloth1_lod0` は seam 0 の独立した殻で抽出容易。
+- 結果: 計画を4回提示し**4回とも不承認**。武田さんの指示で中断し、経緯・発言・却下理由・実測値を
+  引き継ぎページへ記録した。ハーネス・fixture・候補Blend・納品物はいずれも未作成。
+- 更新: [[gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827]] を revision 3 へ（新 section 0 と
+  再開プロンプトを追加。旧 section 0 は「0旧」として保持）。
