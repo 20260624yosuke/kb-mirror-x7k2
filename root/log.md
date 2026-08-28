@@ -10110,3 +10110,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 実施: OpenCode.app 終了確認 → スクリプト実行（rsync + symlink + 旧 DB 削除）→ TM スナップショット削除で空き回収。内蔵 SSD 空き 18.8GB → 37.7GB（15.4%）。
 - 更新: [[macbook-internal-ssd-storage-investigation-2026-08-24]]（8/28 追記節）、`index.md`。
 - 根拠: 実機の `df`・`diskutil info`・`sqlite3` 出力、`~/bin/migrate-opencode.sh` のソース、`~/llm-uploads/20260828-092613--現状-全部.md`（ユーザー提供の経緯まとめ）。
+
+## [2026-08-28] ingest | brainstorm スキル新設（hold を一本化して休止）
+
+- 経緯: hold の挙動がおかしいという申し出。プランモードはやり取りをファイルに残せず、コンテキスト自動圧縮で武田さんの考えが消えて方針を伝え直すループが起きていた。「文言ルールではなく監査スクリプトで担保する」ことが武田さんの条件。
+- 実施: `~/.claude/skills/brainstorm/`（SKILL.md + brainstorm_guard.py）を新設。`~/.claude/settings.json` へ常駐フック3本（UserPromptSubmit 再注入 / SessionStart 再注入 / PreToolUse 未読ブロック）を追記（既存 context-harness 9本は無傷、バックアップ済み）。hold は Stop フックを外し `【休止】` を付けて残置。
+- 検証: 危険モード（bypassPermissions）で PreToolUse の deny が効くことを一時フックで実測。監査スクリプトの自動試験 22件すべて合格。**自動圧縮直後の SessionStart 発火は未検証（武田さんの実機確認待ち）。**
+- 更新: [[brainstorm-skill]]（新規・正本）、[[brainstorm-brainstorm-skill-design]]（新規・議論メモ）、`CLAUDE.md`、`AGENTS.md`、`index.md`、`~/.claude/skills/hold/SKILL.md`。
+- 根拠: Claude Code 公式フックドキュメント（v2.1.228）、実機のフック試験、`~/.claude/settings.json`。
+
