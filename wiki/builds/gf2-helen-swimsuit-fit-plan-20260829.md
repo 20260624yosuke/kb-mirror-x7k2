@@ -13,7 +13,7 @@ related:
   - "[[llm-vision-review-suspension-policy]]"
   - "[[llm-review-bottleneck-applied-2026-08-28]]"
 tags: [gf2, helen, dusevnyj, swimsuit, harness, plan]
-revision: 1
+revision: 2
 ---
 
 # Helen 水着化 — 適合手順と合否の物差し（実装計画）

@@ -12,8 +12,16 @@ scope:
 
 # Dusevnyj P3ビキニ上衣 → Helen 適合ハーネス（brainstorm）
 
-正本の引き継ぎ資料: `wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md`（revision 3）。
-このメモは、そこから再開する会話の記録。設計を会話で育てず、決まった順にここへ落とす。
+> [!important] 再開する場合の入口
+> **実装計画の正本は `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`。その section 0 に、
+> 関連ファイルの実パスと元データの絶対パスがまとまっている。** まずそちらを開くこと。
+> 作業ディレクトリは
+> `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01`。
+> 本文中の `[[slug]]` は Obsidian の記法で、実体は `wiki/` 配下の `<slug>.md`。
+
+旧入口の引き継ぎ資料: `wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md`（revision 3。
+0.4 と 0.5 は superseded）。
+このメモは、そこから再開した会話の記録。設計を会話で育てず、決まった順にここへ落とす。
 
 ## 武田さんの考え
 
