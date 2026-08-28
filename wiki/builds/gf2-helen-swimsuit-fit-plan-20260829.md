@@ -23,6 +23,77 @@ revision: 1
 > **武田さんの承認を受けていない。** 成果物（Blend）は作っていない。
 > **さらに独立レビュー（section 10）で6件の要修正が出ており、現状のままでは実装へ渡せない。**
 
+## 0. 再開の入口 — このファイルだけを渡された場合に読むもの
+
+> [!important] 本文中の `[[slug]]` は Obsidian の記法で、そのままではファイルを開けない。
+> 実体は `wiki/` 配下の `<slug>.md`。下の表に実パスを書いてあるので、そちらを使うこと。
+
+**作業ディレクトリ（以下の相対パスの起点）**
+
+```
+/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
+```
+
+### 0.1 必ず読むもの
+
+| 順 | パス | 何が書いてあるか |
+|---|---|---|
+| 1 | 本ファイル `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md` | 計画本体。**section 10 にレビュー指摘、section 11 に要修正6件** |
+| 2 | `wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md` | 経緯と武田さん本人の言葉。**失敗した測り方・撤回した合格・却下した案が全部数値で残っている** |
+
+### 0.2 背景として読むもの
+
+| パス | 何が書いてあるか |
+|---|---|
+| `wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md` | 旧入口（revision 3）。**0.4 と 0.5 に superseded の警告あり。そのまま従わないこと** |
+| `wiki/builds/llm-vision-review-suspension-policy.md` | LLM の画像判読を封印する方針。他2案件にも適用 |
+| `wiki/analyses/llm-review-bottleneck-applied-2026-08-28.md` | 人間のレビュー負荷を減らす観点からの計画点検 |
+
+### 0.3 実行するもの
+
+| パス | 役割 |
+|---|---|
+| `tools/helen_swimsuit_fit.py` | **採用手順の正本。** `python3 tools/helen_swimsuit_fit.py` で適合と判定、`--selftest` で G10 |
+| `tools/rejected_approaches_check.py` | 計画を提示する前に必ず通す関所 |
+| `wiki/builds/gf2-dusevnyj-p3-bikini-rejected-approaches.json` | 上の関所が読む却下規則9件 |
+| `tools/original_fit_band.py` | 原作から合格線を取る（**section 10.2 の指摘あり。判定側と測り方が違う**） |
+| `tools/g3_coverage_area_weighted.py` | 被覆の面積重み付け（**section 10.9 の指摘あり。G3a を計算しており G3b ではない**） |
+| `tools/helen_waist_coverage.py` | 腰帯の角度被覆率（G1） |
+| `tools/donor_fit_baseline.py` | ドナー原着装の基準値 |
+| `tools/donor_helen_body_diff.py` | ドナーと Helen の体型差 |
+| `tools/fit_method_*.py`（6本） | **途中経過の記録。採用手順ではない。参照しないこと** |
+
+### 0.4 元データ（作業ディレクトリの外・読み取り専用）
+
+```
+/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/intermediate
+```
+
+配下に `Dusevnyj.DusevnyjSSR0101/` `Helen.HelenSSR01/` `Sabrina.SabrinaSSR0101/` があり、
+それぞれの `meshes/*.npz` が頂点データ。`extract-manifest.json` に mesh ごとの submesh 構成。
+**書き換え禁止。**
+
+再構築済みの Blend（本計画では未使用・参照のみ）:
+
+```
+/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/blends/Dusevnyj-DusevnyjSSR0101-repro.blend
+/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/blends/helen-h0157-repro.blend
+```
+
+### 0.5 人が読む用の要約
+
+`wiki/_attachments/helen-swimsuit-status/20260829-helen-swimsuit-fit-review.html`
+（ブラウザで直接開ける。同ディレクトリの `design-system/` が必要）
+
+### 0.6 再開したらまずやること
+
+1. 上の 0.1 の2ファイルを読む。
+2. `python3 tools/helen_swimsuit_fit.py --selftest` と `python3 tools/helen_swimsuit_fit.py` を実行し、
+   section 5.2 の表と一致することを確かめる（一致するはず。10秒程度）。
+3. section 11 の要修正6件のうち、**まず G10 を作り直す**。現状は検出力ゼロで、
+   「3mmの浮きは体型差の帰結」という結論の根拠になっていない。
+4. 武田さんの承認なしに Blend を作らない。
+
 ## 1. 目的と非対象
 
 ### 目的
