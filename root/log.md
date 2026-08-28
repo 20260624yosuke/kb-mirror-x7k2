@@ -10103,3 +10103,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   decision-completeな実装計画を提示して`/hold`第2段階の計画承認カードで停止する。
 - 変更なし: Dusevnyj/Helen原本Blend、intermediate、旧Sabrina成果物、プロジェクトJSON、検査スクリプト、
   ハーネス、診断fixture、候補Blend、納品物。
+
+## [2026-08-28] query | opencode.db 14GB 肥大の外付け SSD 移行
+
+- 経緯: opencode.db が 4 日間の集中利用で 3.5GB → 14GB に肥大し、内蔵 SSD 空きが一時 5G（2%）まで圧迫。opencode 側セッションで重複ログ削除・VACUUM 済み DB（6.8GB）を外付けに準備済み、本セッション（Claude Code）で移行スクリプト `~/bin/migrate-opencode.sh` を実行。
+- 実施: OpenCode.app 終了確認 → スクリプト実行（rsync + symlink + 旧 DB 削除）→ TM スナップショット削除で空き回収。内蔵 SSD 空き 18.8GB → 37.7GB（15.4%）。
+- 更新: [[macbook-internal-ssd-storage-investigation-2026-08-24]]（8/28 追記節）、`index.md`。
+- 根拠: 実機の `df`・`diskutil info`・`sqlite3` 出力、`~/bin/migrate-opencode.sh` のソース、`~/llm-uploads/20260828-092613--現状-全部.md`（ユーザー提供の経緯まとめ）。

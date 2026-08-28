@@ -8,7 +8,7 @@ related: []
 status: active
 confidence: high
 evidence_level: source-backed
-last_reviewed: 2026-08-24
+last_reviewed: 2026-08-28
 ---
 
 ## 要約
@@ -91,6 +91,52 @@ Claude デスクトップの VM バンドル 10GB と Time Machine ローカル�
 なし(調査で捨てた情報はない。root 権限がないため .DocumentRevisions-V100 とスナップショット実サイズは直接測定できず、
 スナップショット分は削除前後の差分(+13.7GB)から裏取りした点のみ注記)。
 
+## [2026-08-28] opencode.db 14GB 肥大と外付け SSD 移行
+
+### 経緯
+
+8/24 時点で 3.5GB だった `~/.local/share/opencode/opencode.db` が、4 日間の集中利用
+（Coloso 映像 ingest 並列バッチ等）で **14GB に肥大**。内蔵 SSD 空きが一時 5G（2%）まで圧迫された。
+
+原因: 履歴本体（part テーブル 7.94GB / 108,747 行）と同内容のイベントログ（event テーブル 1.43GB / 203,194 行）の二重書き込み、および DB 内部断片化 4.06GB。
+
+### 事前に opencode 側セッションで実施した対応
+
+| 対応 | 効果 |
+|---|---|
+| Time Machine ローカルスナップショット削除 | +10GB 回収 |
+| event テーブルのログ複製 17 万件削除 | 履歴は無傷のまま DB 軽量化 |
+| WAL 肥大の切り詰め（7GB → 0） | +7GB 回収 |
+| ブラウザ等キャッシュ削除 | +9GB 回収 |
+| VACUUM 済み DB（6.8GB / 911 セッション / 89,725 parts）を外付け SSD に準備 | 移行先の検証完了 |
+
+### Claude Code セッション（本セッション）で実施した移行
+
+`~/bin/migrate-opencode.sh` を実行:
+
+1. opencode 全プロセス停止を確認（OpenCode.app 終了後に再実行）
+2. 外付け DB の `PRAGMA quick_check` = ok を確認
+3. DB 以外のファイル（log / repos / storage / tool-output）を外付けへ rsync
+4. 内蔵側 `~/.local/share/opencode` を `.bak-20260826` にリネーム
+5. 外付けパス `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/07_アプリデータ/opencode` への symlink を作成
+6. バックアップから旧 DB（14GB）を削除
+7. 削除後に空きが増えない問題 → TM スナップショット `2026-08-28-091651` を削除して解決（8/24 と同じ原因）
+
+### 移行後の状態
+
+| 項目 | 移行前 | 移行後 |
+|---|---|---|
+| 内蔵 SSD 空き | 18.8GB（7.7%） | **37.7GB（15.4%）** |
+| opencode.db の場所 | 内蔵（14GB） | 外付け SSD（6.8GB、symlink 経由） |
+| opencode セッション数 | 1,075 | 911（重複ログ削除分を反映） |
+
+### 注意事項
+
+- 外付け SSD を繋がないで Mac を使うと opencode が起動しない（繋げば復帰）
+- バックアップ `~/.local/share/opencode.bak-20260826` に DB 以外のファイルが残存（不要になったら削除可）
+- 今後のチャット履歴は外付け SSD 側に溜まる（324GB 空き）
+
 ## 変遷
 
 - 2026-08-24: 初版。調査〜解放完了までを記録。
+- 2026-08-28: opencode.db 14GB 肥大の経緯と外付け SSD 移行を追記。空き 18.8GB → 37.7GB。
