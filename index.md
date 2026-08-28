@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4877 ファイル_
+_合計 4879 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 4877 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-28T11:47:16Z
-- [log.md](root/log.md) | 2026-08-28T12:49:11Z
+- [index.md](root/index.md) | 2026-08-28T13:56:52Z
+- [log.md](root/log.md) | 2026-08-28T13:57:12Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -177,13 +177,13 @@ _合計 4877 ファイル_
 - [ff1f7d2ce8c8.png](wiki/_attachments/gf2-skin-genre-map/img/ff1f7d2ce8c8.png) | 2026-08-24T07:20:08Z
 - [ff3ebc7f241b.png](wiki/_attachments/gf2-skin-genre-map/img/ff3ebc7f241b.png) | 2026-08-24T07:20:07Z
 
-## wiki/analyses/ (62)
+## wiki/analyses/ (63)
 
 - [art-canvas-asuna-reference-axis-map.md](wiki/analyses/art-canvas-asuna-reference-axis-map.md) | 2026-06-14T16:03:54Z
 - [asuna-maid-costume-structure.md](wiki/analyses/asuna-maid-costume-structure.md) | 2026-06-24T01:38:06Z
 - [blender-bust-shape-reading-prompt-guardrails-2026-07-27.md](wiki/analyses/blender-bust-shape-reading-prompt-guardrails-2026-07-27.md) | 2026-07-27T11:57:19Z
 - [brainstorm-brainstorm-skill-design.md](wiki/analyses/brainstorm-brainstorm-skill-design.md) | 2026-08-28T11:45:55Z
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-28T12:53:12Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-28T13:54:58Z
 - [breast-force-field-composition-canvas-20260601.md](wiki/analyses/breast-force-field-composition-canvas-20260601.md) | 2026-06-01T06:43:42Z
 - [canvas-eagle-connection-strength.md](wiki/analyses/canvas-eagle-connection-strength.md) | 2026-06-07T09:30:11Z
 - [ch12-pilot-session-recovery-collision-verification.md](wiki/analyses/ch12-pilot-session-recovery-collision-verification.md) | 2026-08-22T23:34:20Z
@@ -215,6 +215,7 @@ _合計 4877 ファイル_
 - [ipad-blackout-prospi-input-2026-08-22.md](wiki/analyses/ipad-blackout-prospi-input-2026-08-22.md) | 2026-08-22T09:31:49Z
 - [issue-framework-review-for-x-eagle-project-2026-06-23.md](wiki/analyses/issue-framework-review-for-x-eagle-project-2026-06-23.md) | 2026-06-23T14:24:00Z
 - [lint-report-2026-08-23.md](wiki/analyses/lint-report-2026-08-23.md) | 2026-08-23T14:33:19Z
+- [llm-review-bottleneck-applied-2026-08-28.md](wiki/analyses/llm-review-bottleneck-applied-2026-08-28.md) | 2026-08-28T13:56:27Z
 - [llm-wiki-ai-precision-schema.md](wiki/analyses/llm-wiki-ai-precision-schema.md) | 2026-06-01T03:46:37Z
 - [long-breast-structure-drawing-guide.md](wiki/analyses/long-breast-structure-drawing-guide.md) | 2026-06-01T06:28:32Z
 - [mac-m1-16gb-ai-image-lora-environment.md](wiki/analyses/mac-m1-16gb-ai-image-lora-environment.md) | 2026-06-02T12:13:10Z
@@ -3269,7 +3270,7 @@ _合計 4877 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (78)
+## wiki/builds/ (79)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
@@ -3302,7 +3303,7 @@ _合計 4877 ファイル_
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
 - [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-27T09:39:14Z
 - [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T03:22:36Z
-- [gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md](wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md) | 2026-08-28T12:48:51Z
+- [gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md](wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md) | 2026-08-28T13:57:22Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-26T13:33:06Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
 - [gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md](wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md) | 2026-08-27T13:38:57Z
@@ -3329,6 +3330,7 @@ _合計 4877 ファイル_
 - [llm-maintainer-handoff-plan.md](wiki/builds/llm-maintainer-handoff-plan.md) | 2026-06-15T14:09:42Z
 - [llm-project-quality-gate.md](wiki/builds/llm-project-quality-gate.md) | 2026-08-06T01:49:49Z
 - [llm-state-transition-gate.md](wiki/builds/llm-state-transition-gate.md) | 2026-08-13T13:25:40Z
+- [llm-vision-review-suspension-policy.md](wiki/builds/llm-vision-review-suspension-policy.md) | 2026-08-28T13:55:26Z
 - [mmd-library-blender-import.md](wiki/builds/mmd-library-blender-import.md) | 2026-08-02T22:52:11Z
 - [mmd-library-fidelity-version.md](wiki/builds/mmd-library-fidelity-version.md) | 2026-08-01T11:32:03Z
 - [mmd-library-full-fidelity-rebuild-plan.md](wiki/builds/mmd-library-full-fidelity-rebuild-plan.md) | 2026-08-03T08:33:41Z

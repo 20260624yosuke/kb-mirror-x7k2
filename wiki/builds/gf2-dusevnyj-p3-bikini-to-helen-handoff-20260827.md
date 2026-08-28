@@ -629,6 +629,15 @@ revision 2でも、このページは会話再開用のWiki記録だけであり
 
 ## 関連リンク
 
+> [!note] 2026-08-28 追記（承認状態は変えていない）
+> 再開後の会話記録・目的の訂正・下半身の実測は [[brainstorm-gf2-dusevnyj-bikini-to-helen]] にある。
+> LLM の画像認識は封印した（[[llm-vision-review-suspension-policy]]）ため、section 0.5 の
+> 「孤立表示して目で確定する」手順は実行しない。レビュー負荷の観点からの計画再点検は
+> [[llm-review-bottleneck-applied-2026-08-28]]。**実装計画は依然として未承認。**
+
+- [[brainstorm-gf2-dusevnyj-bikini-to-helen]]
+- [[llm-vision-review-suspension-policy]]
+- [[llm-review-bottleneck-applied-2026-08-28]]
 - [[gf2-char-extract-handoff]]
 - [[gf2-repro-and-swimsuit-conversation-handoff-20260827]]
 - [[gf2-helen-repro-plan-repair-model-routing-handoff-20260827]]
