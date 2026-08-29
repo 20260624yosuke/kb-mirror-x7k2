@@ -3296,7 +3296,7 @@ _合計 4888 ファイル_
 - [betterdisplay-m27f-pseudo-resolution.md](wiki/builds/betterdisplay-m27f-pseudo-resolution.md) | 2026-08-17T06:10:45Z
 - [brainstorm-guard-fix-handoff-20260829.md](wiki/builds/brainstorm-guard-fix-handoff-20260829.md) | 2026-08-29T15:58:18Z
 - [brainstorm-port-request-20260829.md](wiki/builds/brainstorm-port-request-20260829.md) | 2026-08-29T06:44:43Z
-- [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-08-29T08:12:22Z
+- [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-08-29T16:02:26Z
 - [canvas-idea-cultivation-workflow.md](wiki/builds/canvas-idea-cultivation-workflow.md) | 2026-07-01T18:48:47Z
 - [canvas-ingest-eagle-feedback-guide.md](wiki/builds/canvas-ingest-eagle-feedback-guide.md) | 2026-07-07T06:22:27Z
 - [canvas-ingest-model-runbook.md](wiki/builds/canvas-ingest-model-runbook.md) | 2026-08-22T12:20:27Z

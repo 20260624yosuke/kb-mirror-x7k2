@@ -62,6 +62,18 @@ scope:
 `brainstorm_status` が状態、`scope` が適用範囲。**`scope` を書き忘れると無関係な作業まで止まる。**
 `done` に下げ忘れると、そのフォルダでの実装が拒否され続ける（`bypass` で逃がせる）。
 
+### 承認の粒度（2026-08-29 追加・SKILL.md 5節と同じ内容）
+
+見出しに「承認」と書くときは、**方針の承認**（どのやり方を採るか）と **実行の承認**（実際に作ってよい）
+のどちらかを見出し自体に書く。本文の最後だけに但し書きを置かない。
+`## 実装への申し送り` には `### 終わったら次に取る承認` を必ず置く。完成条件は達成したら止まる決まりなので、
+次に何を聞くかを書かないと、承認済みの続きの工程が「完成条件に無い」として実行されない
+（2026-08-29 に実際に発生。経緯は `wiki/builds/approval-granularity-fix-handoff-20260829.md`）。
+
+見本: `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md` の section 3.1 と、
+`wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`
+の `### 終わったら次に取る承認`。
+
 ### 編集の境界（1問テスト）
 
 > この編集で、武田さんが後で見る成果物の中身・見え方・使い勝手が変わるか？
