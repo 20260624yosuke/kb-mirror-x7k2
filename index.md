@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4886 ファイル_
+_合計 4887 ファイル_
 
 ## root/ (11)
 
@@ -254,7 +254,11 @@ _合計 4886 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-29T12:42:52Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-29T13:25:58Z
+
+## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (1)
+
+- [20260829-p-implementation-and-decision-point.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md) | 2026-08-29T13:25:34Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 

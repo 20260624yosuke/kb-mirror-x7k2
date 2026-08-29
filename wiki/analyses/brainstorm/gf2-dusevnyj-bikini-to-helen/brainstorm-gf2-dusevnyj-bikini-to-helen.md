@@ -85,6 +85,15 @@ background_paths:
 添付 `/Users/takedayousuke/llm-uploads/20260828-223742--AI開発における-レビュー-検証ボトルネック-を現在のプロジェクト計画へ適用す.md`
 を、この案件の計画へ当てはめる。分析の正本は [[llm-review-bottleneck-applied-2026-08-28]]。
 
+### 2026-08-29 実装後の指摘（本人の言葉）
+
+> 判断できないと感じた。言語化して欲しい。
+> あと、現状の説明を/htmlで説明して
+
+→ 原因は私の出し方。性質の違う3件（分かれ道 / 報告 / 先の宿題）を「今すぐやること」に並べ、
+本命の①に **「選ぶと何を失うか」を書いていなかった**。さらに数値を判断できる形に翻訳していなかった
+（11.7〜18.9mm ＝ 胸と水着のあいだの指1〜2本ぶんの隙間、同時に帯は食い込んでいる）。
+
 ## 決まったこと
 
 - 承認済み（revision 3 0.0）: 専用監査ハーネスを候補制作より先に作る方針／独立監査役を付ける／
@@ -2064,7 +2073,25 @@ A1・A2・A5・A6・A7・A8 が PASS。残る FAIL は2件で、どちらも本�
 
 なお案N の現在の判定は「中央 8.330 ✕（範囲 1.20〜5.41）」で、**上限側で落ちている**（浮きすぎ）。
 
+### 2026-08-29 案P を実装した結果（別会話・実装済み）
+
+- 採用手順（案P）と未実装だった判定7項目（G2 / G4c / G5 / G6 / G9a / G10 / G11）を実装。
+  `tools/plan_audit.py` は **8 / 8 PASS**（旧 6/8）。変異試験 8種すべて検出。
+  正本は `tools/helen_swimsuit_fit_p.py`、実行記録は `output/gf2-helen-swimsuit/run-20260829.txt`。
+- **成果は不合格。** General は G4a 7.545 / G4b 16.111 / G9a、Flat はさらに G3b 57.379。
+  縫い目 0.0000mm・裏返り0・穴0・来歴 created 0 は合格。
+- **押し付ける強さに合格域は無い**（Flat・実測）: 弱い→ G3b 57.4 / 中央 9.22 / カップの厚み 98% /
+  裏返り 0面。強い→ G3b 100 / 中央 4.37 / **カップの厚み 59%** / 裏返り 198面。
+- → **カップは形を保ったままヘレンの胸に沿えない**という計画書 3.1 の前提が、実測で裏づけられた。
+
 ## まだ決まってないこと
+
+- **（2026-08-29・最重要）カップをどうするか。** 4つの道があり、どれも失うものがある。
+  A: カップを作り直す（ドナー固有の彫り方を失う・近似版として別承認）/
+  B: いったん全身を組んで武田さんが実物を見る（時間・遠回りの可能性）/
+  C: ドナー移植をやめヘレンの体表から作る（意匠がまるごと消える）/
+  D: 合格線を見直す（原作から取った基準という担保を失う。**推奨しない**）。
+  **私の推奨は B → A。** 詳細は子メモ `sessions/20260829-p-implementation-and-decision-point.md`。
 
 - ~~どの submesh が視覚的に「パンツ」か「スカート」か~~ → 2026-08-29 に解決。角度被覆率で
   「残すべきは #1 と #3」と数値だけで確定した。視覚的な名前は不要になった。
@@ -2171,6 +2198,11 @@ A1・A2・A5・A6・A7・A8 が PASS。残る FAIL は2件で、どちらも本�
 - Bend がどの場面で使われるか。
 - 上衣の下端と腰の布の関係（**Y1.120 は誤り。実際は上端1.190・上衣下端1.132 で重なっている**）。
 
+## 説明ページ（人が読む用）
+
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260829-helen-swimsuit-decision-point.html`
+  — いまどこにいて、何を選ぶのか（2026-08-29）
+
 ## 関連リンク
 
 - [[gf2-helen-swimsuit-fit-plan-20260829]]
@@ -2186,4 +2218,6 @@ A1・A2・A5・A6・A7・A8 が PASS。残る FAIL は2件で、どちらも本�
 
 - 親: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`
 - 子の置き場: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions`
-- 現在の子: まだ未作成
+- 現在の子:
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md`
+    — 案P の実装結果と、そこで生まれた4つの道（それぞれ失うもの）
