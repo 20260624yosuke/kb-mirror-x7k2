@@ -8,6 +8,14 @@ brainstorm_status: active
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料
+entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md
+background_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/llm-vision-review-suspension-policy.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/llm-review-bottleneck-applied-2026-08-28.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-char-extract-handoff.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/intermediate
 ---
 
 # Dusevnyj P3ビキニ上衣 → Helen 適合ハーネス（brainstorm）
@@ -1196,6 +1204,6 @@ ARAP は距離の4項目も初めて同時に通した（バネ0.3 以下）。
 
 - [[gf2-helen-swimsuit-fit-plan-20260829]]
 - [[gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827]]
-- [[llm-review-bottleneck-applied-2026-08-28]]
-- [[llm-vision-review-suspension-policy]]
-- [[gf2-char-extract-handoff]]
+- [[llm-review-bottleneck-applied-2026-08-28]] — wiki/analyses/llm-review-bottleneck-applied-2026-08-28.md
+- [[llm-vision-review-suspension-policy]] — wiki/builds/llm-vision-review-suspension-policy.md
+- [[gf2-char-extract-handoff]] — wiki/builds/gf2-char-extract-handoff.md

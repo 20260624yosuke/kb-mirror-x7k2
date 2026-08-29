@@ -6,7 +6,7 @@ confidence: medium
 evidence_level: source-backed+inferred
 created: 2026-08-29
 last_reviewed: 2026-08-29
-revision: 3
+revision: 4
 approval: 設計2点のみ承認済み（発火点=渡す瞬間 / 方式=宣言＋走査）。実装は未承認。
 review: 2026-08-29 独立レビュー（別エージェント・opus）を2回実施。1回目 重大3/中6/小5、2回目 実装前必須7件。全件反映して revision 3。
 tags: [brainstorm, harness, audit, handoff]
@@ -14,8 +14,9 @@ tags: [brainstorm, harness, audit, handoff]
 
 # brainstorm 引き継ぎ到達性の機械監査（実装計画）
 
-> [!warning] 未承認
-> 本書は実装前の計画である。コードは1行も書いていない。
+> [!note] 実装済み（2026-08-29）
+> revision 3 の内容で武田さんの承認を得て実装した。実装中に判明した仕様の変更1件と、
+> 自己試験の実測結果は section 11 を参照。
 
 ## 0. 作業ディレクトリと関連ファイルの実パス
 
@@ -372,3 +373,51 @@ SKILL.md のひな型に `entry_paths` の**実在しない例を書かない**�
 - 事故の現場: `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`（[[gf2-helen-swimsuit-fit-plan-20260829]]）
 - 対象メモ: `wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md`（[[brainstorm-gf2-dusevnyj-bikini-to-helen]]）
 - 考え方の適用: `wiki/analyses/llm-review-bottleneck-applied-2026-08-28.md`（[[llm-review-bottleneck-applied-2026-08-28]]）
+
+## 11. 実装の記録（2026-08-29）
+
+### 11.1 計画から変えた点（実データに当てて分かった）
+
+**`entry_paths` を「必読」と「背景資料」に分けた。** 計画では entry_paths に挙げた全ファイルへ
+H1〜H5 を当てる仕様だったが、実 KB に当てると **背景資料（画像認識の封印方針など一般方針のページ）まで
+「このブレストメモへ戻るリンクを書け」と要求**した。一般方針のページが特定案件のメモへ逆リンクするのは
+筋が違う。`background_paths` を新設し、そちらは実在だけ確かめることにした。
+
+- ①落としたもの: 背景資料の中身に対する到達性検査（H1〜H5）。
+- ②手元でどう変わるか: 背景資料に挙げたページを、実パス併記のために書き換える必要がなくなる。
+  必読（`entry_paths`）に挙げたファイルは従来どおり中身まで検査されるので、引き継ぎ事故の
+  防止力は変わらない。
+- ③戻せるか: 戻せる。`audit_memo` で `background_paths` も `entry_paths` と同じ扱いにするだけ。
+
+### 11.2 自己試験の実測結果
+
+```
+第1層 監査の検出力
+  正常ケース OK（FAIL 0件）
+  H1 OK / H2 OK / H3 OK / H4 OK / H5 OK / H6 OK / H7 OK（すべて検出した）
+第2層 配線
+  発火点① OK（ready 昇格を拒否した）
+  発火点①（正常時）OK（素通り）
+  発火点② OK（引き継ぎ発話を止めた）
+  発火点②（無関係時）OK（無音）
+  ログ差し替え OK（本番 guard.log を汚さない）
+  フック登録 OK（settings.json の Stop に登録済み）
+自己試験: PASS
+```
+
+**この自己試験は実際に私の実装バグを5件検出した**（glob 表記の誤爆、H2・H4・H5 の壊し方が甘く
+検出できていなかった問題、macOS の一時フォルダが監査の対象接頭辞の外にあり H3 が空振りしていた問題）。
+検出力ゼロの試験ではない。
+
+### 11.3 実 KB への適用結果
+
+`audit-handoff` を実 KB に当てたところ、`brainstorm-gf2-dusevnyj-bikini-to-helen.md` で
+**H2 が3件・H6 が1件 FAIL**。いずれも実際の欠陥（`[[slug]]` に実パスの併記が無い、`entry_paths` が無い）。
+実パスを併記し `entry_paths` / `background_paths` を追記して PASS にした。**偽陽性は0件。**
+
+### 11.4 未確認のまま残ること
+
+**第3層（実機）は未確認。** 次に `/brainstorm` を使ったあと、`guard.log` に本番の
+`guard-stop-handoff` 行が出るかを確認するまで、「本番で発火する」とは書かない。
+合成ペイロードでの発火と `settings.json` への登録までは実測で確認済み。
+

@@ -1320,7 +1320,7 @@
 - [[coloso-visual-ingest-resume-inventory]] — サーバーエラーで停止した coloso 映像ingest バッチの棚卸し。完全健康9章・壊れた状態6章(hide ch04 PNG全滅・marse ch05〜07/sasa ch02 幽霊flag 等)・未着手約118章・動画無しblocked約45章を実測。会話上の完了主張とディスク実態の食い違いが最大の教訓 (new 2026-08-23)
 - [[coloso-batch-resume-handoff]] — 8/23並列バッチ死亡セッション(hide/sasa/marse/ye_jji 4講座同時走行)の再開点を temp 実測で固定した引き継ぎ資料。反映待ち3章(hide ch05 manifest draft完成/marse ch05・06 盲検読了)→読取途中3章(sasa ch02 11m20s以降/ye_jji ch05 p4-Iのみ/marse ch07 未読取)→hide ch04 PNG復元の順序・共通手順・新セッション用コピペ指示文付き。temp成果物は揮発性のため退避必須 (new 2026-08-24)
 - [[coloso-visual-ingest-batch2-handoff]] — 残り全講座118章(hide 23/hizurume 24/marse 18/sasa 34/ye_jji 19)の映像ingest承認済み計画。監査構造(機械品質ゲート quality-gate.json plan PASS・群パイロット制・ひづるめ ch12 レビューから開始)・バイアス排除設計の独立レビュー指示文(コピペ用)・batch1 の追加落とし穴5条・新セッション用コピペ指示文を収録 (new 2026-08-24)
-- [[brainstorm-skill]] — `/brainstorm`。会話を切らずに考えを詰め、話した内容を `wiki/analyses/brainstorm-<テーマ>.md` へ毎ターン書き足して圧縮で消えないようにする計画作成スキル。監査スクリプトが圧縮後の再注入・申し送り未読での実装拒否・成果物封鎖・カード無し終了の停止を担保。hold を一本化して置換 (updated 2026-08-28)
+- [[brainstorm-skill]] — `/brainstorm`。会話を切らずに考えを詰め、話した内容を `wiki/analyses/brainstorm-<テーマ>.md` へ毎ターン書き足して圧縮で消えないようにする計画作成スキル。監査スクリプトが圧縮後の再注入・申し送り未読での実装拒否・成果物封鎖・カード無し終了の停止・引き継ぎ到達性(H1〜H7)を担保。hold を一本化して置換 (updated 2026-08-29)
 - [[plan-gate-skill]] — 明示起動だけで使う計画承認専用ゲート。Codexは `request_user_input`、Claude Codeは `AskUserQuestion` で `card_id`/`plan_sha256` 付き承認カードを保存し、無回答・空回答・タイムアウト相当・古いカードを承認や中断にしない。高リスク計画は `gpt-5.6-terra` medium 事前監査後にだけ提示。承認後は実装せず停止 (updated 2026-08-13)
 - [[canvas-reference-tools]] — Obsidian Canvas を PureRef 代替の参照画像ボードとして使うための自作プラグイン。v0.5.6で `__light.canvas` を作業正本にし、v0.5.7で選択画像をテキストへ線(edge)でつなぐ機能を追加、v0.5.8〜0.5.25で MY-ART Canvas ギャラリー([[myart-canvas-gallery]])を拡張。v0.5.20〜0.5.21で整頓間隔設定化・Cmd+クリック複数選択・createdAt記録・右クリックジャンル別サブメニューを実装、2026-07-14時点でギャラリーの並び替え(更新順/名前順/追加日順)も実機確認済み。2026-07-12 の Obsidian 終了停止は本プラグイン単体主因ではないと切り分け、この vault の運用対策として終了ガードを実装 (updated 2026-07-14)
 - [[canvas-idea-cultivation-workflow]] — なぜ Obsidian の窓を大量に常時開くか(=各Canvasが「育て中のアイデア」で、閉じると忘れる/着想のシームレスさ優先)の正本。Canvas=PureRef代替の画像資料ビュー、Eagle(画像管理)との役割差、平岡雄太のNotionアイデア術との関係、重さ問題への含意(一次レバーは__light軽量化)を記録 (new 2026-07-01)
@@ -1383,6 +1383,7 @@
 複数ソース横断の比較・統合・回答の堆積物。
 
 - [[motion-browser-v21-launch-failure-2026-07-22]] — Motion Browser v2.1 が無反応で終了する原因を macOS 起動ログと現物から特定し、同日修正。アプリ外 `.command`、外部ログ、外部ブラウザー資産への起動時アクセスをやめ、`.app/Contents/Resources/` 同梱へ変更。LaunchServices 経由で API / トップページ / 動画 Range / Action 起動 API テストを確認 (source-backed, 2026-07-22)
+- [[handoff-audit-plan-20260829]] — brainstorm の引き継ぎ到達性監査の実装計画。事故の原因3点、H1〜H7、発火点2箇所、独立レビュー2回分33件の指摘と処置 (inferred, 2026-08-29)
 - [[brainstorm-brainstorm-skill-design]] — brainstorm スキル設計時の議論メモ。武田さん本人の言葉（プランモードの限界・認知負荷・実装エージェントへの不信）と、決まったこと・捨てた案・実装への申し送り (user-stated, 2026-08-28)
 - [[projects-dashboard]] — 進行中プロジェクトの1枚ダッシュボード(ツール系+wiki知識統合)。`llm-uploads/` を正の情報源にしつつ、2026-07-09 の Google Tasks `進行中プロジェクト` dry-run(43件)のクラスタ要約も根拠メモとして保持。X→Eagle は「完了」から外し、実機失敗を反映した進行中扱いへ更新 (inferred, 2026-07-09)
 - [[eagle-clip-maid-category-evaluation-2026-07-05]] — Eagle CLIP のメイド服カテゴリ試行を評価。結果は完全失敗ではなくメイド風周辺衣装の広め集合としては有望だが、`メイド服` 名義の厳密カテゴリとしては周辺衣装混入があり、とくに03は弱い。書き戻し前に棚の意味を決めるべきと整理 (source-backed, 2026-07-05)

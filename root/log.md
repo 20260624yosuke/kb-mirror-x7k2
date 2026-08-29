@@ -10209,3 +10209,27 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   作業ディレクトリの絶対パス、関連7ファイルの実パス、元データの絶対パス、途中経過スクリプトの注意、
   再開時の最初の手順を明記。全パスの実在を機械照合済み（欠落0）。メモ側にも逆向きの入口を追加。
 - 未承認・未作成: 実装計画（要修正6件）、ハーネス本体、候補Blend、納品物。
+
+## [2026-08-29] ingest | brainstorm 引き継ぎ到達性の機械監査を実装
+
+2026-08-29 の引き継ぎ事故（計画書に関連ファイルの実パスが無く、新セッションが辿れなかった）に対し、
+文言ルールではなく機械の関所を追加した。武田さんの承認は AskUserQuestion カードで取得
+（設計2点 → 実装 revision 3）。独立レビュー（別エージェント・opus）を2回実施し、
+1回目 重大3/中6/小5、2回目 実装前必須7件を全件処置。
+
+触ったファイル:
+- `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py` — `audit-handoff` /
+  `guard-stop-handoff` 新設、発火点2箇所、`LOG_PATH` の env 対応、自己試験2層（約300行追加）
+- `/Users/takedayousuke/.claude/settings.json` — `Stop` に `guard-stop-handoff` を登録
+- `/Users/takedayousuke/.claude/skills/brainstorm/SKILL.md` — ひな型に `entry_paths` /
+  `background_paths` / `## 再開の入口（実パス）`、5.5 節を追加
+- `wiki/builds/brainstorm-skill.md` — 仕様を追記（正本）
+- `wiki/analyses/handoff-audit-plan-20260829.md` — 実装計画 revision 3（新規）
+- `wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md` — `entry_paths` /
+  `background_paths` を追記、H2 の FAIL 3件を実パス併記で解消
+- `index.md` / `log.md`
+
+実測: 自己試験 第1層（H1〜H7 の検出力＋偽陽性なし）・第2層（発火点①②の deny/block、
+フック登録の有無、ログ差し替え）とも PASS。実 KB への監査も PASS。
+**第3層（実機で本番の `guard-stop-handoff` 行が出るか）は未確認。**
+
