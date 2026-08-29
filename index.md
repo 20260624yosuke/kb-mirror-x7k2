@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4884 ファイル_
+_合計 4885 ファイル_
 
 ## root/ (11)
 
@@ -177,7 +177,7 @@ _合計 4884 ファイル_
 - [ff1f7d2ce8c8.png](wiki/_attachments/gf2-skin-genre-map/img/ff1f7d2ce8c8.png) | 2026-08-24T07:20:08Z
 - [ff3ebc7f241b.png](wiki/_attachments/gf2-skin-genre-map/img/ff3ebc7f241b.png) | 2026-08-24T07:20:07Z
 
-## wiki/analyses/ (62)
+## wiki/analyses/ (63)
 
 - [art-canvas-asuna-reference-axis-map.md](wiki/analyses/art-canvas-asuna-reference-axis-map.md) | 2026-06-14T16:03:54Z
 - [asuna-maid-costume-structure.md](wiki/analyses/asuna-maid-costume-structure.md) | 2026-06-24T01:38:06Z
@@ -207,6 +207,7 @@ _合計 4884 ファイル_
 - [gf2-helen-cloth2-variant-breakage-2026-08-10.md](wiki/analyses/gf2-helen-cloth2-variant-breakage-2026-08-10.md) | 2026-08-10T14:48:27Z
 - [gf2-helen-light-extract-execution-20260824.md](wiki/analyses/gf2-helen-light-extract-execution-20260824.md) | 2026-08-24T01:03:29Z
 - [gf2-helen-lighting-diagnosis-summary-20260823.md](wiki/analyses/gf2-helen-lighting-diagnosis-summary-20260823.md) | 2026-08-23T11:30:45Z
+- [gf2-helen-plan-audit-design-20260829.md](wiki/analyses/gf2-helen-plan-audit-design-20260829.md) | 2026-08-29T09:52:19Z
 - [gf2-helen-ssr0101-obs-ledger-v51.md](wiki/analyses/gf2-helen-ssr0101-obs-ledger-v51.md) | 2026-08-10T13:15:57Z
 - [gfl2-helen-starlit-waltz-reference-route.md](wiki/analyses/gfl2-helen-starlit-waltz-reference-route.md) | 2026-07-25T00:32:08Z
 - [h0157-chest-mechanism-audit-history.md](wiki/analyses/h0157-chest-mechanism-audit-history.md) | 2026-07-23T10:24:40Z
