@@ -10253,3 +10253,37 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   引き継ぎページsection 9.9へ収録し、全パスの実在を確認した。
 - 変更なし: 成果物Blend、`run-state.json`、品質ゲート、`f166`スクリプト・結果、その他のプロジェクト成果物。
 - 現在状態: 縮小計画のレビュー待ち。無回答・利用上限・会話終了を承認または中断として扱わない。
+
+## [2026-08-29] lint | brainstorm_guard.py 課題1・課題2 修正（封鎖のパス抽出／メモの階層化）
+
+- 依頼: `wiki/builds/brainstorm-guard-fix-handoff-20260829.md` の課題1・課題2 の実装。
+- 課題1（封鎖側のパス抽出）: `~/.claude/skills/brainstorm/brainstorm_guard.py` の
+  `_candidate_paths()` の Bash 分岐を、空白ごとの分割から「引用符を意識した分割＋長い候補から順に
+  実在を試す」方式（新設 `_shell_tokens()` / `_pick_write_target()`）へ置き換え。実在しない断片は
+  拒否の根拠にしない（素通りへ倒す既存の原則どおり）。`cd` / `pushd` の移動先は書き込み先として
+  数えない。ヒアドキュメントの本文は走査対象から外した（本文は書き込む中身であって書き込み先ではない。
+  書き込み先 `cat > ここ <<EOF` は本文の外にあるため封鎖の強さは不変）。
+- 課題2（メモの階層化）: メモ探索を階層対応にし（`memo_paths()` / `is_memo_path()`）、親1枚だけを
+  読む（子は親から実パスで辿る）。既存3枚を `wiki/analyses/brainstorm/<プロジェクト>/` へ移動。
+  **親のファイル名は `_index.md` にせず元の名前のままにした**（`[[brainstorm-…]]` リンクが KB 内
+  12箇所以上あり、`_index` に揃えると全部切れて同名ページが3つできるため）。新規は `_index.md` でよく、
+  スクリプトは両方を親として読む。
+- 移動: `wiki/analyses/brainstorm-brainstorm-skill-design.md` →
+  `wiki/analyses/brainstorm/brainstorm-skill-design/`、
+  `wiki/analyses/brainstorm-brainstorm-skill-portability.md` →
+  `wiki/analyses/brainstorm/brainstorm-skill-portability/`、
+  `wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md` →
+  `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/`（いずれも本文は無改変。節を1つ追加しただけ）。
+- 触ったページ: `index.md`、`CLAUDE.md`、`AGENTS.md`、[[brainstorm-skill]]、
+  [[brainstorm-guard-fix-handoff-20260829]]、[[brainstorm-port-request-20260829]]、
+  [[gf2-helen-swimsuit-fit-plan-20260829]]、[[handoff-audit-plan-20260829]]、
+  [[brainstorm-brainstorm-skill-design]]、[[brainstorm-brainstorm-skill-portability]]、
+  [[brainstorm-gf2-dusevnyj-bikini-to-helen]]、`tools/inbox.jsonl`（移動したメモのパス）、
+  `~/.claude/skills/brainstorm/SKILL.md`。
+- `log.md` の過去エントリの旧パスは、履歴なので書き換えていない。
+- 実測: `audit-handoff --selftest` が第1層〜第3層すべて PASS（第3層は今回追加した再現試験。
+  半角スペース入りの擬似 KB で Bash 10通り＋Write 2件＋階層探索1件）。実 KB への `audit-handoff` も PASS。
+  本番 `guard.log` に移動後の `guard-write unread pass memos=1` と、手で流した
+  `lockdown pass tool=Bash targets=1` / `lockdown DENY tool=Bash path=/Users/takedayousuke/dev/out.txt` を確認。
+- 未確認: フック経由の本番 `lockdown` 行（`--lockdown` は `/brainstorm` 実行中だけ登録されるため、
+  次に `/brainstorm` を使ったときに `guard.log` で確認する）。
