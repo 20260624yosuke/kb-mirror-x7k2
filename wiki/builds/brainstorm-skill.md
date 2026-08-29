@@ -107,9 +107,11 @@ scope:
 
 武田さんが各 LLM に個別で組ませるための説明。**実現方法はその環境の担当 LLM に考えさせる。**
 
-> [!warning] 下の引用ブロックは 2026-08-28 版で、単独では渡さないこと。
-> 8-29 に足した条件が入っていない。**渡すときは、この節と下の
-> 「### 2026-08-29 追記（渡す前に必ず足す条件）」を必ずセットにする。**
+> [!important] 実際に渡すのは、この節ではなく
+> `wiki/builds/brainstorm-port-request-20260829.md` の1枚。
+> **そのファイルの「## ここから下をそのままコピーして貼る」以降を丸ごと貼れば伝わる**ように
+> 統合済み（2026-08-29）。この節と下の追記は、その依頼書の元になった素材として残してある。
+> 下の引用ブロックは 2026-08-28 版で、**単独では渡さないこと**（8-29 の条件が入っていない）。
 
 > ### 依頼: `/brainstorm` 相当のスキルを、この環境で実現してください
 >
@@ -299,6 +301,7 @@ Claude / Codex / Kimi / opencode が互いのフォルダを参照する必要�
 ## 関連リンク
 
 - [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm-brainstorm-skill-portability.md`（他 LLM への移植の検討・2026-08-29）
+- [[brainstorm-port-request-20260829]] — `wiki/builds/brainstorm-port-request-20260829.md`（**他 LLM へ実際に渡すコピペ用の依頼書1枚**）
 - [[brainstorm-guard-fix-handoff-20260829]] — `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`（封鎖側のパス抽出の修正とメモ階層化の依頼書）
 - hold スキル（休止・wiki ページは無い。実体は `/Users/takedayousuke/.claude/skills/hold/`）
 - [[plan-gate-skill]]（休止）— `wiki/builds/plan-gate-skill.md`

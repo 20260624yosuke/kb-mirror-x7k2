@@ -1383,6 +1383,7 @@
 複数ソース横断の比較・統合・回答の堆積物。
 
 - [[motion-browser-v21-launch-failure-2026-07-22]] — Motion Browser v2.1 が無反応で終了する原因を macOS 起動ログと現物から特定し、同日修正。アプリ外 `.command`、外部ログ、外部ブラウザー資産への起動時アクセスをやめ、`.app/Contents/Resources/` 同梱へ変更。LaunchServices 経由で API / トップページ / 動画 Range / Action 起動 API テストを確認 (source-backed, 2026-07-22)
+- [[brainstorm-port-request-20260829]] — `wiki/builds/brainstorm-port-request-20260829.md`。Codex / Kimi / opencode へ brainstorm スキルを組ませるためのコピペ用依頼書。条件12項目・メモの書式・環境ごとの土台・報告に含めることを1枚に統合し、節を組み合わせずそのまま貼れる形にしてある (source-backed, 2026-08-29)
 - [[brainstorm-guard-fix-handoff-20260829]] — `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`。brainstorm_guard.py の修正依頼書。課題1=封鎖側のパス抽出が半角スペースで壊れる(実発生・原因コード特定済み)、課題2=メモの階層化(非再帰 glob のため移動と修正はセット必須)。文脈のないエージェント単独で作業できるよう関連ファイルを全部実パスで束ねてある (source-backed, 2026-08-29)
 - [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm-brainstorm-skill-portability.md`。brainstorm スキルを Codex / Kimi / opencode でも同じ使用感にするための検討メモ。スキル本体は LLM ごとに独立・共有するのはメモの書式だけ、という結論と、3環境のフックの土台の実測 (user-stated, 2026-08-29)
 - [[handoff-audit-plan-20260829]] — brainstorm の引き継ぎ到達性監査の実装計画。事故の原因3点、H1〜H7、発火点2箇所、独立レビュー2回分33件の指摘と処置 (inferred, 2026-08-29)

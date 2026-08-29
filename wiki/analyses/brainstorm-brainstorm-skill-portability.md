@@ -4,7 +4,7 @@ status: active
 confidence: medium
 evidence_level: user-stated
 last_reviewed: 2026-08-29
-brainstorm_status: active
+brainstorm_status: ready
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Users/takedayousuke/.claude
@@ -142,6 +142,27 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 今日誤発火した封鎖側 `_candidate_paths`（364行）は **`re.split(r"[\s;|&()]+", cmd)` のまま**で、
 半角スペースを含むパスを途中で切る。同じ症状の別個所が残っている。
 
+### 10. 再開時の状態確認（2026-08-29 15:10 実測・すべてファイルを直接読んだ）
+
+- `brainstorm_guard.py` の最終更新は **09:16 のまま**。364行の
+  `re.split(r"[\s;|&()]+", cmd)` も、40〜41行・183行の非再帰 glob も**そのまま**。
+  → **課題1・課題2ともに未着手。**
+- メモ3枚は `wiki/analyses/` に平置きのまま。階層フォルダは存在しない。→ **移行も未着手。**
+- 引き継ぎ資料 `wiki/builds/brainstorm-guard-fix-handoff-20260829.md` は完成しており、
+  課題1・課題2の原因・満たすこと・禁止事項・検証手順が揃っている。**このまま実装へ渡せる。**
+
+### 11. 他環境に残っている休止済みフック（2026-08-29 実測）
+
+- **Kimi**: `/Users/takedayousuke/.kimi-code/config.toml` の末尾に
+  `[[hooks]] event = "Stop"` → `$HOME/.agents/skills/hold/hold_guard_kimi.py` が**現存し稼働状態**。
+  スクリプト実体 `/Users/takedayousuke/.agents/skills/hold/hold_guard_kimi.py` も存在する。
+  hold は 2026-08-28 に休止したので、これは**取り残し**。
+- **Codex**: `/Users/takedayousuke/.codex/config.toml` に `plan-gate` のフックが
+  pre_tool_use / stop など7イベントぶん登録済み。plan-gate も休止扱いのため、これも取り残し。
+- **opencode**: `/Users/takedayousuke/.config/opencode/opencode.jsonc` は
+  `{"permission": "allow"}` の3行のみ。**フックの登録が一切無い**。
+  現時点で「書き込みを機械で止める」土台があるかは**未確認**（設定ファイルからは判断できない）。
+
 ## まだ決まってないこと
 
 - Kimi の `config.toml` に残っている休止済み hold の Stop フックの撤去を、誰にいつやらせるか
@@ -164,6 +185,7 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 - 2026-08-29 `entry_paths` から `SKILL.md` を `background_paths` へ移動。必読ではなく背景資料で、
   中身の監査対象にすると相対パス表記で毎回 FAIL になるため。
 - 上記の後、`audit-handoff` は PASS。
+- 2026-08-29 再開時に上記 10・11 を追記（実測の記録のみ。判断は足していない）。
 
 ## 再開の入口（実パス）
 
@@ -178,8 +200,11 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 
 ### 系統A: 他 LLM（Codex / Kimi / opencode）へスキルを組ませる
 
-- 渡すもの: `wiki/builds/brainstorm-skill.md` の
-  「## Codex / Kimi へ渡す指示書」節 **と** 「### 2026-08-29 追記（渡す前に必ず足す条件）」節。
+- 渡すもの: **`wiki/builds/brainstorm-port-request-20260829.md` の1枚だけ**。
+  「## ここから下をそのままコピーして貼る」以降を丸ごと貼れば伝わる形に統合してある
+  （2026-08-29、武田さんの指摘「わからないので、エージェントにコピペ指示を送るだけで意図が
+  伝わるような構成にしてください」を受けて作成）。
+  `wiki/builds/brainstorm-skill.md` の8-28 版の節と 8-29 追記は、その素材として残してある。
   **8-28 版だけを単独で渡さないこと**（追記の条件が抜ける）。
 - 完成条件: その環境で `/brainstorm` 相当が動き、①会話を勝手に閉じない ②メモを毎ターン書き足す
   ③実装しない（成果物への書き込みが機械で止まる）④矛盾は1問テストで自律修正 ⑤圧縮対策の再注入
@@ -207,5 +232,6 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 ## 関連リンク
 
 - [[brainstorm-skill]] — `wiki/builds/brainstorm-skill.md`
+- [[brainstorm-port-request-20260829]] — `wiki/builds/brainstorm-port-request-20260829.md`
 - [[brainstorm-guard-fix-handoff-20260829]] — `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`
 - [[brainstorm-brainstorm-skill-design]] — `wiki/analyses/brainstorm-brainstorm-skill-design.md`
