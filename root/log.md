@@ -10346,3 +10346,23 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `wiki/builds/gf2-dusevnyj-p3-bikini-rejected-approaches.json`。
 - 出力: `output/gf2-helen-swimsuit/`（座標 npz 2件・判定 json 2件・実行記録 1件）。
 - 未確認: 見た目（画像封印中）。Blend は未作成（承認待ち）。
+
+## [2026-08-30] query | 承認の粒度を機械で扱えるようにする（引き継ぎ資料の実装）
+
+依頼: `wiki/builds/approval-granularity-fix-handoff-20260829.md` の課題1・課題2。
+
+- 課題1（記述の規則）: `~/.claude/skills/brainstorm/SKILL.md` の `## 5. 承認が出たら` と
+  `wiki/builds/brainstorm-skill.md` に「承認の粒度は見出しに書く」「`### 終わったら次に取る承認`
+  を必ず置く」を追記。既存の規則は消していない。
+- 課題2（機械）: `output/gf2-helen-swimsuit/quality-gate.json` を新規作成（対象群3件。
+  カップの作り直し=承認済み / 上衣の下端と腰の布の接続=未承認 / Phase 2 の適合）。
+  `tools/plan_audit.py` に **A9**（承認されていない approximation を止める）を追加。
+- 検出力の確認: 壊した版3通り（承認を false / created と申告値を食い違わせる /
+  created があるのに承認が無い）すべてで A9 が FAIL することを実行して確認、その後復元。
+- 結果: `plan_audit.py` **9 / 9 PASS**、品質ゲート `PASS (plan)`。
+- 触ったページ: `wiki/builds/brainstorm-skill.md` /
+  `wiki/analyses/gf2-helen-plan-audit-design-20260829.md` /
+  `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`（8/8→9/9 の現状表記のみ）/
+  `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`
+  （申し送りに 2026-08-30 の追記を1ブロック。本文の要約・分割はしていない）。
+- 残: 承認そのものの妥当性は機械では見られない。A9 が見るのは「承認が記録されているか」だけ。

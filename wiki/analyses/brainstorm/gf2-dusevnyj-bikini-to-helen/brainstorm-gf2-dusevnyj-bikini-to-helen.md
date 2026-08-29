@@ -2223,6 +2223,14 @@ A1・A2・A5・A6・A7・A8 が PASS。残る FAIL は2件で、どちらも本�
    承認の対象は **カップだけ**。上衣の下端と腰の布の接続は**この承認に含まれない**ので実装しない。
 8. General と Flat の両方で全項目を測り直す。`tools/plan_audit.py` は 8/8 を維持する。
 
+> [!note] 2026-08-30 追記（別セッションの実装）
+> `tools/plan_audit.py` に **A9（承認されていない approximation を止める）** を追加したので、
+> 上の 3 と 8 の「8/8」は **9/9** に読み替える。A9 は成果物の来歴（G6 の created）と
+> `output/gf2-helen-swimsuit/quality-gate.json` の承認記録を突き合わせる。
+> カップの作り直しは同ファイルに承認済み（`phase3-cup-rebuild`）、上衣の下端と腰の布の接続は
+> 未承認（`phase3-hem-waist-join`）として記録済み。経緯は
+> `wiki/builds/approval-granularity-fix-handoff-20260829.md`。
+
 ### 終わったら次に取る承認（2026-08-29 新設）
 
 **完成条件を満たしたら、次はこれを聞いてから止まる。**

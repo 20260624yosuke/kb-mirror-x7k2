@@ -26,7 +26,7 @@ revision: 3.5
 > - 採用手順の正本は `tools/helen_swimsuit_fit_p.py`。溶接して1枚にし、役割を頂点ラベルとして
 >   持ち、1枚のまま領域ごとの目標で解く。**Phase 2（新しい面を作らない範囲）まで。**
 > - 未実装だった判定（G2 / G4c / G5 / G6 / G9a / G10 / G11）をすべて実装した。
-> - `tools/plan_audit.py` は **8 / 8 PASS**（対象を採用手順へ差し替えたうえで）。
+> - `tools/plan_audit.py` は **9 / 9 PASS**（対象を採用手順へ差し替えたうえで。2026-08-30 に A9 を追加）。
 > - **Phase 2 の成果は合格していない。** General は G4a・G4b・G9a が、Flat はそれに G3b を
 >   加えた4項目が範囲外。実測値は section 8.3。カップを作り直す Phase 3 が要る、という
 >   計画どおりの結論になった。
@@ -93,7 +93,8 @@ revision: 3.5
 ### 0.5 再開したらまずやること
 
 1. 上の 0.1 の2ファイルを読む。
-2. `python3 tools/plan_audit.py`（8 / 8 PASS が現状）と
+2. `python3 tools/plan_audit.py`（**9 / 9 PASS が現状**。2026-08-30 に A9〈承認されていない
+   approximation を止める〉を追加）と
    `python3 tools/helen_swimsuit_fit_p.py --body both` を通し、section 8.3 の表と同じ数字が
    出ることを確かめる。
 3. 次にやるのは **Phase 3（カップの作り直し）**。新しい面を作るので approximation として
