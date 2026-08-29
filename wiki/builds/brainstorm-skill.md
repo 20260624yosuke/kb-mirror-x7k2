@@ -212,13 +212,36 @@ Claude / Codex / Kimi / opencode が互いのフォルダを参照する必要�
 
 | 環境 | 設定 | 分かっていること | 未確認 |
 |---|---|---|---|
-| Codex | `/Users/takedayousuke/.codex/hooks.json` | Claude と同じイベント名スキーマ。SessionStart / UserPromptSubmit / Stop / PreCompact / PostCompact が登録済み | **PreToolUse の実例が無い**（＝成果物封鎖ができるか未確認） |
+| Codex | `/Users/takedayousuke/.codex/hooks.json` | 2026-08-29 に Codex 専用スキルと PreToolUse / SessionStart / UserPromptSubmit / Stop / SessionEnd を実装。成果物封鎖・未読拒否・再注入・終了拒否を合成入力で確認 | 新しいフック定義の永続 trust（信頼済み登録）と、デスクトップ上の `request_user_input` カードは未確認 |
 | Kimi Code | `/Users/takedayousuke/.kimi-code/config.toml` | `[[hooks]] event = "Stop"` の実績あり。ただし**休止した hold の登録が残ったまま**（要撤去） | PreToolUse / UserPromptSubmit 相当の有無 |
 | opencode | `/Users/takedayousuke/.config/opencode/opencode.jsonc` | フックではなく**プラグイン方式**（`@opencode-ai/plugin` 導入済み）。中身は `permission: "allow"` のみ | プラグインで書き込み拒否・毎ターン注入ができるか |
 
 **揃うか揃わないかの分かれ目は「成果物封鎖（書き込み拒否）」がその環境にあるかどうか。**
 「会話を閉じない」は3環境とも見込みがある。封鎖ができない環境では、代わりに何で担保するかを
 その LLM に考えさせること（文言ルールだけに逃げないこと）。
+
+### Codex への移植結果（2026-08-29）
+
+- スキル: `/Users/takedayousuke/.codex/skills/brainstorm/SKILL.md`
+- Codex 変換層: `/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py`
+- 判定本体: `/Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py`
+- フック配線: `/Users/takedayousuke/.codex/hooks.json`
+- 動作ログ: `/Users/takedayousuke/.codex/skills/brainstorm/scripts/guard.log`
+
+実測済み: 階層メモ3件の親だけを再帰探索、毎ターン再注入、`SessionStart(source=compact)` の厚い再注入、
+`ready` メモ未読時の書き込み拒否、brainstorm 中の `apply_patch` / Bash 書き込み拒否、wiki 内書き込みの
+許可、半角スペース2個を含む未引用パスの完全な対象名での拒否、承認印無しの Stop 拒否、H1〜H7 の
+到達性監査、ユーザー発話前後で親メモが不変だった場合の Stop 拒否（毎ターン追記の機械確認）。
+`audit-handoff --selftest` は第1〜第3層すべて PASS。読み取り専用・ephemeral の Codex CLI
+実行でも `UserPromptSubmit` の追加文脈がモデルへ届き、承認待ち応答になった。
+
+未確認: 自動圧縮を実際に発生させた直後の実機挙動、デスクトップの通常会話で `request_user_input` が
+カードとして出ること、新しいフック定義を Codex の `/hooks` で永続的に trust した後の通常起動。
+公式仕様上、変更された非 managed フックは exact hash（定義のハッシュ）ごとに再レビューが必要。
+
+休止済み `plan-gate@personal` は `/Users/takedayousuke/.codex/config.toml` で plugin と skill の両方を
+`enabled = false` に変更し、`codex plugin list` で `installed, disabled` を確認した。ファイル本体と過去の
+trust hash は削除していないため、戻す場合は2か所を `true` に戻してフックを再レビューできる。
 
 ## 変遷
 
