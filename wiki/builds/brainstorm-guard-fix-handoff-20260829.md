@@ -51,19 +51,12 @@ KB ルートの絶対パスは
 
 ### 症状（2026-08-29 09:30 に実際に発生）
 
-KB 内にメモを作ろうとして次のような Bash を実行したところ、封鎖フックが拒否した。
+KB 内にメモを作ろうとして、KB ルートへ `cd` してから `cat` のヒアドキュメントで
+`wiki/analyses/` の中へ書き込む Bash を実行したところ、封鎖フックが拒否した。
+`guard.log` に残った行は、`guard-write` `lockdown DENY` `tool=Bash` に続けて
+`path=` にパスの先頭断片（KB ルートの1つ目の半角スペースまで）だけが記録されている。
 
-```
-cd "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/..." && cat > wiki/analyses/xxx.md <<'EOF'
-```
-
-`guard.log` に残った行:
-
-```
-2026-08-29 09:30:17	guard-write	lockdown DENY tool=Bash path=/Volumes/SSD_M.2_Realtek
-```
-
-**`/Volumes/SSD_M.2_Realtek` はパスの断片であって、実在しない。**
+**この断片はパスとして存在しないもので、実在しない。**
 書こうとしていたのは `wiki/analyses/` の中（本来は許可される場所）だった。
 同じ内容を Write ツールで書いたら通った（`lockdown pass tool=Write targets=1`）。
 
@@ -76,7 +69,8 @@ for tok in re.split(r"[\s;|&()]+", cmd):
 ```
 
 と、**コマンド文字列を空白で切っている**。KB のパスには半角スペースがあるため、
-`/Volumes/SSD_M.2_Realtek` で切れた断片がパスとして扱われ、許可判定に失敗して拒否側へ倒れる。
+1つ目のスペースで切れた断片（存在しない文字列）がパスとして扱われ、許可判定に失敗して
+拒否側へ倒れる。
 
 ### 既に正しく直っている手本が、同じファイルの中にある
 

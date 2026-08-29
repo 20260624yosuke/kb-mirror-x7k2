@@ -1383,6 +1383,8 @@
 複数ソース横断の比較・統合・回答の堆積物。
 
 - [[motion-browser-v21-launch-failure-2026-07-22]] — Motion Browser v2.1 が無反応で終了する原因を macOS 起動ログと現物から特定し、同日修正。アプリ外 `.command`、外部ログ、外部ブラウザー資産への起動時アクセスをやめ、`.app/Contents/Resources/` 同梱へ変更。LaunchServices 経由で API / トップページ / 動画 Range / Action 起動 API テストを確認 (source-backed, 2026-07-22)
+- [[brainstorm-guard-fix-handoff-20260829]] — `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`。brainstorm_guard.py の修正依頼書。課題1=封鎖側のパス抽出が半角スペースで壊れる(実発生・原因コード特定済み)、課題2=メモの階層化(非再帰 glob のため移動と修正はセット必須)。文脈のないエージェント単独で作業できるよう関連ファイルを全部実パスで束ねてある (source-backed, 2026-08-29)
+- [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm-brainstorm-skill-portability.md`。brainstorm スキルを Codex / Kimi / opencode でも同じ使用感にするための検討メモ。スキル本体は LLM ごとに独立・共有するのはメモの書式だけ、という結論と、3環境のフックの土台の実測 (user-stated, 2026-08-29)
 - [[handoff-audit-plan-20260829]] — brainstorm の引き継ぎ到達性監査の実装計画。事故の原因3点、H1〜H7、発火点2箇所、独立レビュー2回分33件の指摘と処置 (inferred, 2026-08-29)
 - [[brainstorm-brainstorm-skill-design]] — brainstorm スキル設計時の議論メモ。武田さん本人の言葉（プランモードの限界・認知負荷・実装エージェントへの不信）と、決まったこと・捨てた案・実装への申し送り (user-stated, 2026-08-28)
 - [[projects-dashboard]] — 進行中プロジェクトの1枚ダッシュボード(ツール系+wiki知識統合)。`llm-uploads/` を正の情報源にしつつ、2026-07-09 の Google Tasks `進行中プロジェクト` dry-run(43件)のクラスタ要約も根拠メモとして保持。X→Eagle は「完了」から外し、実機失敗を反映した進行中扱いへ更新 (inferred, 2026-07-09)
@@ -1427,7 +1429,7 @@
 - [[gf2-helen-repro-v51-handoff]] — HELEN-REPRO v5.1 のセッション引き継ぎ資料（HANDOFF）。2026-08-26夜のf166棚卸しを追記。初回結果は実行済みだが、`f166_code_inventory.py` の22:49頃の最終正規化修正後に全量再実行されておらず、最終完了・監査合格とは扱わない。強制DLは未承認 (source-backed+user-stated, 2026-08-27)
 - [[gf2-char-extract-handoff]] — **他キャラ原作抽出プロジェクト（gf2-char-extract）の引き継ぎ正本**。2026-08-26夜にA案「セレクト画面実値 port」を承認し、ポスト処理コードと較準値(k=1.1/contrast=0.1/saturation=23.4/grade=true)を保存。2026-08-26 22:35以降のblend更新は0件で、3体再構築・diff・self-test・再レンダ・目視比較は未実施、503で技術的停止 (source-backed+user-stated, 2026-08-27)
 - [[gf2-repro-and-swimsuit-conversation-handoff-20260827]] — 新セッション再開用の横断引き継ぎ。キャラ抽出→ヘレン原作再現→水着資料の優先順位、原作再現の残り6作業群、水着資料と原作再現の完成条件差、旧サブリナ型案件の状態、LLMの形状判断リスク、禁止する取り違えを正本参照つきで整理 (source-backed+user-stated, 2026-08-27)
-- [[gf2-helen-repro-plan-repair-model-routing-handoff-20260827]] — ヘレン完全原作再現を別セッションで再開する正規入口。現行SHAと`f128`/`f152`、`f166`初回走査後の未確定点、古い状態表示の修復順、未回収コード解析をLuna→Sol→Luna→Solで分担する証拠受け渡し仕様を固定。状態修復・再走査・モデル実行は未承認 (source-backed+user-stated, 2026-08-27)
+- [[gf2-helen-repro-plan-repair-model-routing-handoff-20260827]] — ヘレン完全原作再現を別セッションで再開する正規入口。2026-08-29に、計画省略へのユーザー指摘、旧過大計画の不承認、誘導を避けた独立レビューの`全面差し戻し`、利用上限中断、再開後の実ファイル再照合、S6/S8/G10へ限定した縮小計画を追記。旧Luna→Sol全面棚卸し案と旧hold再開プロンプトはsuperseded。縮小計画も未承認で、Blend・f166・run-stateは未変更 (source-backed+user-stated, updated 2026-08-29)
 - [[gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827]] — Dusevnyj P3上衣を体型の異なるHelen Flat胸へ適合する作画資料案件の正規入口。2026-08-28の実データ調査、骨名未解決、独立監査major findings、専用監査ハーネス先行の承認済み方針を追記。現在は方針承認済み・実装計画未承認・実装未開始で、Claude用最新再開指示を収録 (source-backed+user-stated+inferred, updated 2026-08-28)
 - [[gf2-helen-swimsuit-fit-plan-20260829]] — 上記案件の実装計画。目的・非対象、実測で確定した事実（Helen の腰 Y0.957〜1.167 には肌が無い／腰を閉じる最小構成は P3_cloth #1+#3）、合否の物差し10項目と各項目の測り方、原作10組から取った合格線、採用した適合手順（ARAP系・場所ごとに変わるバネ）、落とした9方式とその理由、禁止事項7件、段取り。**独立レビューで要修正6件**（G10 の自己試験が構造上必ず0mmを返し検出力ゼロ、合格線を産んだコードが不在、G5/G6 の測定手段が無い 等）。未承認・成果物未作成 (source-backed+inferred, new 2026-08-29)
 - `wiki/_attachments/helen-swimsuit-status/20260829-helen-swimsuit-fit-review.html` — 上記計画とレビュー結果の状況HTML（mathbullet `html` スキル準拠）。肌の分布図、物差しと手順、現在の結果、効かない自己試験の仕組み図、要修正6件 (new 2026-08-29)

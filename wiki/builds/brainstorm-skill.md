@@ -9,7 +9,7 @@ sources: []
 
 # brainstorm スキル（会話を切らずに考えを詰める・計画作成まで）
 
-`/brainstorm` の正本。2026-08-28 に [[hold]] スキルを一本化して置き換えた。
+`/brainstorm` の正本。2026-08-28 に hold スキルを一本化して置き換えた。
 
 ## 現在の統合見解
 
@@ -90,7 +90,7 @@ scope:
   （`once: true` を付けた場合のみ初回で外れる）。よって封鎖はブレストした会話の最後まで残る。
   実装は別の会話で行う設計にしてこれを利用している。
 - `Stop` の時点で transcript に最終発話が入っている保証はなく、入力の `last_assistant_message`
-  を使うべき。**旧 [[hold]] の `hold_guard.py` は transcript を読んでいた**（移植時に修正済み）。
+  を使うべき。**旧 hold の `hold_guard.py` は transcript を読んでいた**（移植時に修正済み）。
 - Stop フックの連続ブロックは8回で強制的に打ち切られる。
 
 ## 矛盾・未確定
@@ -101,7 +101,7 @@ scope:
   読み込みは主の会話ログにツール呼び出しが残らない。倒れる方向は安全側（読んだのに止まる）で、
   `bypass` で逃がせる。
 - **Bash コマンドの解析は完全ではない。** 書き込み記号の近似判定なので、すり抜けも誤検知も残る。
-- 旧 [[hold]] の `misses.md` が空のままだった理由は未確定。上記の transcript 依存が原因の可能性がある。
+- 旧 hold の `misses.md` が空のままだった理由は未確定。上記の transcript 依存が原因の可能性がある。
 
 ## Codex / Kimi へ渡す指示書
 
@@ -150,9 +150,75 @@ scope:
 > `~/.kimi-code/config.toml` の `[[hooks]] event = "Stop"` に登録していました。同じ場所を使えます。
 > ただし旧版は会話ログを読んで最終発話を判定しており、その方式は取りこぼす可能性があります。
 
+### 2026-08-29 追記（渡す前に必ず足す条件）
+
+前提として、**スキル本体は LLM ごとに独立**でよい（武田さん承認・2026-08-29）。
+Claude / Codex / Kimi / opencode が互いのフォルダを参照する必要はない。
+共有するのは **KB の中のメモ1枚だけ**であり、揃えるべきものもそこに限られる。
+
+以下も引用ブロックとしてそのまま渡す。
+
+> ### 追記: この5点も満たしてください（2026-08-29）
+>
+> 7. **メモの書式（機械が読む部分）だけは、勝手に変えないでください。** 判定の仕組み・フックの
+>    組み方は自由ですが、次はそのまま使ってください。別の LLM が書いたメモを読めなくなるからです。
+>
+>    frontmatter（ファイル冒頭）:
+>
+>    ```yaml
+>    brainstorm_status: active   # active（議論中）→ ready（実装してよい）→ done（消化済み）
+>    scope:
+>      - /絶対パス/このメモが縛るフォルダ
+>    entry_paths:
+>      - /絶対パス/再開時に必ず読むファイル
+>    background_paths:
+>      - /絶対パス/背景資料
+>    ```
+>
+>    節の見出し: `## 武田さんの考え` `## 決まったこと` `## まだ決まってないこと`
+>    `## 捨てた案と理由` `## 直した記録` `## 再開の入口（実パス）` `## 実装への申し送り`
+>
+>    `scope` / `entry_paths` / `background_paths` は **インデント付きの `  - /絶対パス`** で書き、
+>    `*` などの穴埋め記号は使わないこと（実在を確かめられないため）。
+>
+> 8. **メモは階層フォルダに置きます。探索は再帰で実装してください。**
+>    `wiki/analyses/brainstorm/<プロジェクト>/_index.md` が親（計画と引き継ぎの正本。子と関連
+>    ファイルを実パスで束ねる）、その下にセッションごとの子を置きます。
+>    **機械が読むのは親1枚**で、子は親から辿ります。親と子を二重に数えないでください。
+>    （2026-08-29 時点では移行前で、`wiki/analyses/brainstorm-<テーマ>.md` に平置きされています。
+>    どちらも見つかるように書いてください。）
+>
+> 9. **渡した先から辿れる形にしてください。** `[[slug]]` は Obsidian の記法で、新しいセッションの
+>    LLM は解決できません。`[[slug]]` を書いたら、同じファイルに `wiki/analyses/<slug>.md` のように
+>    **フォルダを含む実パス**を必ず併記してください（裸のファイル名は不可）。
+>    `## 再開の入口（実パス）` には、渡された人が最初に読むものを実パスで書いてください。
+>    これも機械で検査してください（`ready` へ上げるとき／引き継ぎのまま会話を閉じるとき）。
+>
+> 10. **パスに半角スペースが入っていることを前提にしてください。** KB のルートは
+>     `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01`
+>     で、半角スペースが2つあります。**コマンド文字列を空白で切ってパスを取り出す実装は必ず壊れます。**
+>     Claude 側で実際にこの誤検知が出ました（1つ目のスペースで切れた、存在しない断片で拒否された）。
+>     長い候補から順に実在を試す方式にしてください。
+>
+> 11. **同時起動での上書きに注意してください。** メモは KB の中に1枚しかなく、複数の LLM が同じ
+>     ファイルを読み書きします。書く直前に読み直し、小さな追記で書いてください。
+>     全文の書き直しは避けてください。
+
+### 各環境の土台（2026-08-29 に実ファイルで確認）
+
+| 環境 | 設定 | 分かっていること | 未確認 |
+|---|---|---|---|
+| Codex | `/Users/takedayousuke/.codex/hooks.json` | Claude と同じイベント名スキーマ。SessionStart / UserPromptSubmit / Stop / PreCompact / PostCompact が登録済み | **PreToolUse の実例が無い**（＝成果物封鎖ができるか未確認） |
+| Kimi Code | `/Users/takedayousuke/.kimi-code/config.toml` | `[[hooks]] event = "Stop"` の実績あり。ただし**休止した hold の登録が残ったまま**（要撤去） | PreToolUse / UserPromptSubmit 相当の有無 |
+| opencode | `/Users/takedayousuke/.config/opencode/opencode.jsonc` | フックではなく**プラグイン方式**（`@opencode-ai/plugin` 導入済み）。中身は `permission: "allow"` のみ | プラグインで書き込み拒否・毎ターン注入ができるか |
+
+**揃うか揃わないかの分かれ目は「成果物封鎖（書き込み拒否）」がその環境にあるかどうか。**
+「会話を閉じない」は3環境とも見込みがある。封鎖ができない環境では、代わりに何で担保するかを
+その LLM に考えさせること（文言ルールだけに逃げないこと）。
+
 ## 変遷
 
-- **2026-08-17**: [[hold]] を新設（Stop フック1本・状態ファイルなし）。
+- **2026-08-17**: hold を新設（Stop フック1本・状態ファイルなし）。
 - **2026-08-28**: 挙動がおかしいという申し出を受け、`/brainstorm` へ一本化。hold は休止（削除せず、
   Stop フックを外し description に `【休止】` を付与）。plan-gate は引き続き休止。
 
@@ -233,7 +299,8 @@ scope:
 ## 関連リンク
 
 - [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm-brainstorm-skill-portability.md`（他 LLM への移植の検討・2026-08-29）
-- [[hold]]（休止）
-- [[plan-gate-skill]]（休止）
-- [[llm-state-transition-gate]]
-- [[llm-project-quality-gate]]
+- [[brainstorm-guard-fix-handoff-20260829]] — `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`（封鎖側のパス抽出の修正とメモ階層化の依頼書）
+- hold スキル（休止・wiki ページは無い。実体は `/Users/takedayousuke/.claude/skills/hold/`）
+- [[plan-gate-skill]]（休止）— `wiki/builds/plan-gate-skill.md`
+- [[llm-state-transition-gate]] — `wiki/builds/llm-state-transition-gate.md`
+- [[llm-project-quality-gate]] — `wiki/builds/llm-project-quality-gate.md`
