@@ -2108,8 +2108,11 @@ A1・A2・A5・A6・A7・A8 が PASS。残る FAIL は2件で、どちらも本�
 
 ## まだ決まってないこと
 
-- **（2026-08-29・新規）承認の粒度をどう記録するか。** 「方針の承認」と「実行の承認」を
-  文書と機械の両方で区別する。案①記述だけ / 案②機械の関所（quality-gate.json ＋ plan_audit A9）/ 案③両方。
+- ~~（2026-08-29・新規）承認の粒度をどう記録するか。~~ → **2026-08-29 決着。**
+  「この会話ではやらない。別セッションで解決させる」で武田さん指示。文脈を持たない LLM 向けの
+  依頼書を作成:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/approval-granularity-fix-handoff-20260829.md`
+  （課題1＝記述の規則、課題2＝quality-gate.json と plan_audit A9。**2つはセット**）。
 - **（2026-08-29・最重要）カップをどうするか。** 4つの道があり、どれも失うものがある。
   A: カップを作り直す（ドナー固有の彫り方を失う・近似版として別承認）/
   B: いったん全身を組んで武田さんが実物を見る（時間・遠回りの可能性）/
@@ -2252,6 +2255,9 @@ A1・A2・A5・A6・A7・A8 が PASS。残る FAIL は2件で、どちらも本�
 - 上衣の下端と腰の布の関係（**Y1.120 は誤り。実際は上端1.190・上衣下端1.132 で重なっている**）。
 
 ## 説明ページ（人が読む用）
+
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-cup-rebuild-approved.html`
+  — カップの作り直しを承認。何が決まり、次に何が起きるか（2026-08-30）
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260829-helen-swimsuit-decision-point.html`
   — いまどこにいて、何を選ぶのか（2026-08-29）
