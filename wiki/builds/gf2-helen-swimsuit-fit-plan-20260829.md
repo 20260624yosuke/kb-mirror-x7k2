@@ -41,10 +41,10 @@ revision: 3
 
 ### 0.1 必ず読むもの
 
-| 順 | パス | 何が書いてあるか |
-|---|---|---|
-| 1 | 本ファイル `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md` | 計画本体 |
-| 2 | `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md` | 経緯と武田さん本人の言葉。**失敗した測り方・撤回した合格・却下した案が全部数値で残っている** |
+| 順   | パス                                                                                                 | 何が書いてあるか                                         |
+| --- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| 1   | 本ファイル `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`                                        | 計画本体                                             |
+| 2   | `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md` | 経緯と武田さん本人の言葉。**失敗した測り方・撤回した合格・却下した案が全部数値で残っている** |
 
 ### 0.2 背景として読むもの
 
