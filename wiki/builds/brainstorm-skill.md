@@ -228,6 +228,7 @@ scope:
 
 ## 関連リンク
 
+- [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm-brainstorm-skill-portability.md`（他 LLM への移植の検討・2026-08-29）
 - [[hold]]（休止）
 - [[plan-gate-skill]]（休止）
 - [[llm-state-transition-gate]]
