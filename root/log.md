@@ -10323,3 +10323,26 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   既存 wiki [[gf2-helen-motion-library-retarget-v21-pilot]] に「H0157: 休憩室、座り・下半身」とある。
 - 触ったページ: [[gf2-helen-body-shape-variants-20260829]]、`index.md`、`log.md`。
 - 未確認: ゲーム内 Idle/Lobby クリップの型、Bend の用途（`GFL2Data` 区画が未マウント）。
+
+## [2026-08-29] ingest | Helen 水着化 — 採用手順（案P）と判定の実装
+
+- 計画書 revision 3.4 の「実装への申し送り」に従って実装。**ブレストではなく実装。**
+- 新規: `tools/helen_swimsuit_fit_p.py`（採用手順=案P の正本。溶接して1枚にし、役割を頂点ラベルと
+  して持ち、1枚のまま領域ごとの目標で解く。全項目の判定を同梱）。
+  `wiki/builds/gf2-helen-source-lock.json`（G5）、`wiki/builds/gf2-helen-opening-allowlist.json`（G2）。
+- 未実装だった判定を実装: G2 / G4c / G5 / G6 / G9a（厚みの絶対値mm・役割単位）/ G10（既知の剛体変形
+  3種＋壊した版）/ G11（縫い目のずれ・実測 0.0000mm）。
+- `tools/plan_audit.py` を採用手順へ差し替え、**8 / 8 PASS**（旧 6/8）。変異試験は 8種すべて検出。
+- `rejected-approaches.json` に R10（案N・案N2）・R11（役割ごとに別オブジェクト）を追加し、
+  負の試験で検出を確認。計画書自身は PASS。
+- **結果は不合格。** General: G4a 7.545 / G4b 16.111 / G9a（肩ひも ×2.654）。
+  Flat: それに G3b 57.379 を加えた4項目。カップが 12〜19mm 浮く。求解の重みを強めると距離は
+  良くなるがカップの厚みが ×0.59 まで潰れ裏返りが 198面出る。**合格域は無い。**
+- 計画書の伸びの表（Flat 1.30/1.21・General 1.13/1.08）は測り方が記録されておらず再現できなかった
+  ため、測り方をコードに固定して測り直し（Flat 1.193/1.196・General 1.076/1.074）差し替えた。
+  縦の合わせも「胸の頂点」から「胴体の下の切り口」へ変更（理由は計画書 3.0）。
+- 触ったページ: [[gf2-helen-swimsuit-fit-plan-20260829]]、`index.md`、`log.md`、
+  `tools/helen_swimsuit_fit_p.py`、`tools/plan_audit.py`、
+  `wiki/builds/gf2-dusevnyj-p3-bikini-rejected-approaches.json`。
+- 出力: `output/gf2-helen-swimsuit/`（座標 npz 2件・判定 json 2件・実行記録 1件）。
+- 未確認: 見た目（画像封印中）。Blend は未作成（承認待ち）。
