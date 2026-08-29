@@ -10287,3 +10287,16 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `lockdown pass tool=Bash targets=1` / `lockdown DENY tool=Bash path=/Users/takedayousuke/dev/out.txt` を確認。
 - 未確認: フック経由の本番 `lockdown` 行（`--lockdown` は `/brainstorm` 実行中だけ登録されるため、
   次に `/brainstorm` を使ったときに `guard.log` で確認する）。
+
+## [2026-08-29] query | ヘレンの体メッシュ Flat / Bend / General の実測
+
+- 発端: ヘレン水着化のブレスト中に、体メッシュに3変種があることを発見。**Wiki に説明が無かった**ため
+  武田さんから「放置を禁止する。事実確認して wiki に記録せよ」と指示。
+- 実測（画像不使用・`intermediate/Helen.HelenSSR01/meshes/*.npz` を読み取りのみ）:
+  変種はヘレンの `cloth2` にしか無い（Helen 9件 / Dusevnyj 0 / Sabrina 0）。
+  違いは胸帯（Y1.23〜1.38）だけで、下端・肩・首は 0.0mm 一致。前面 11〜15mm に対し背面 0.1〜1.4mm。
+  前方張り出しは Flat 107.4 / General 122.4 / Bend 143.4mm。Flat が最も平たく横に広い。
+  無印 `cloth2_lod0` には上半身の肌の面が無く、体は3変種にしか存在しない。
+- 触ったページ: [[gf2-helen-body-shape-variants-20260829]]（新規）、`index.md`、`log.md`、
+  [[brainstorm-gf2-dusevnyj-bikini-to-helen]]、[[gf2-helen-swimsuit-fit-plan-20260829]]。
+- 未確認: ゲーム側の切り替え条件、名前の意味、lod1/lodm0 の変種、骨・ウェイト・UV。
