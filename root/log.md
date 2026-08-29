@@ -10300,3 +10300,15 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 触ったページ: [[gf2-helen-body-shape-variants-20260829]]（新規）、`index.md`、`log.md`、
   [[brainstorm-gf2-dusevnyj-bikini-to-helen]]、[[gf2-helen-swimsuit-fit-plan-20260829]]。
 - 未確認: ゲーム側の切り替え条件、名前の意味、lod1/lodm0 の変種、骨・ウェイト・UV。
+
+## [2026-08-29] query | ヘレンの胸の型の切り替え条件を特定
+
+- 追加調査（同日・上のエントリの続き）。切り替えは**アニメーションごとに「使わない胸の骨を 0.01 に畳む」**
+  方式。表示・非表示のカーブ（m_IsActive）は0本で、アニメ側に直接の指示は無い。
+  出どころは別プロジェクトの台帳 `06_repro-v51/ledger/visibility-decision.json`（2026-08-11 実測）。
+- 判定に使われていた H0157 は `c_HelenSSR0101_Bedroom_0101`＝**寝室のクリップ**だった
+  （`05_helen-motion-library/helen-motion-catalog.csv`）。そこで有効なのは Flat のみ
+  （Bend 21本83.94% / General 19本85.41% が畳まれている）。
+- **本ページ初版の「立ち姿の再現で Flat が表示されている」という記述を訂正した。**
+- 触ったページ: [[gf2-helen-body-shape-variants-20260829]]、`index.md`、`log.md`。
+- 未確認: 立ち姿クリップでどの変種が有効か（対象 bundle が外付けドライブ上に無く所在不明）。
