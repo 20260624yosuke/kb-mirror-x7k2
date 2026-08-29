@@ -93,3 +93,12 @@ sources: []
 
 - [[brainstorm-skill]]（仕様の正本）
 - [[hold]]（休止）
+
+## セッションメモ（子）
+
+このメモが**親**（計画と引き継ぎの正本）。機械（`brainstorm_guard.py`）が読むのはこの1枚だけなので、
+セッションごとの記録は同じフォルダの `sessions/` に置き、ここに実パスで並べて親から辿れるようにする。
+
+- 親: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-design/brainstorm-brainstorm-skill-design.md`
+- 子の置き場: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-design/sessions`
+- 現在の子: まだ未作成

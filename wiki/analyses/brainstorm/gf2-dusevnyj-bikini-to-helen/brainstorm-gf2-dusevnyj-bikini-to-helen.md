@@ -1238,3 +1238,12 @@ G10 を検出力のある試験に作り直すまで、この説明を使わな�
 - [[llm-review-bottleneck-applied-2026-08-28]] — wiki/analyses/llm-review-bottleneck-applied-2026-08-28.md
 - [[llm-vision-review-suspension-policy]] — wiki/builds/llm-vision-review-suspension-policy.md
 - [[gf2-char-extract-handoff]] — wiki/builds/gf2-char-extract-handoff.md
+
+## セッションメモ（子）
+
+このメモが**親**（計画と引き継ぎの正本）。機械（`brainstorm_guard.py`）が読むのはこの1枚だけなので、
+セッションごとの記録は同じフォルダの `sessions/` に置き、ここに実パスで並べて親から辿れるようにする。
+
+- 親: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`
+- 子の置き場: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions`
+- 現在の子: まだ未作成

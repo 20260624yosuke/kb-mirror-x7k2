@@ -21,8 +21,8 @@ sources: []
 | 動作記録（発火の実績が残る） | `/Users/takedayousuke/.claude/skills/brainstorm/guard.log` |
 | フック登録 | `/Users/takedayousuke/.claude/settings.json` |
 | 仕様の正本 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md` |
-| この修正が出た議論 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm-brainstorm-skill-portability.md` |
-| 実際に動いているメモ（壊すと実害が出る） | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md` |
+| この修正が出た議論 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md` |
+| 実際に動いているメモ（壊すと実害が出る） | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md` |
 
 KB ルートの絶対パスは
 `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01`。
@@ -151,9 +151,9 @@ for p in sorted(MEMO_DIR.glob(MEMO_GLOB)):
    context が二重になる。機械が読むのは親1枚と決めること（子は親から辿る）。
 3. 既存の平置き3枚が、移行前も移行後も壊れないこと。
 4. 移行作業（既存メモの移動とリンク張り直し）まで含めて完了させること。移動対象は次の3枚。
-   - `wiki/analyses/brainstorm-brainstorm-skill-design.md`（`done`）
-   - `wiki/analyses/brainstorm-brainstorm-skill-portability.md`（`active`）
-   - `wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md`（`active`・**進行中の案件。最優先で壊さない**）
+   - `wiki/analyses/brainstorm/brainstorm-skill-design/brainstorm-brainstorm-skill-design.md`（`done`）
+   - `wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`（`active`）
+   - `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`（`active`・**進行中の案件。最優先で壊さない**）
 5. `SKILL.md` と `wiki/builds/brainstorm-skill.md` の記述を、実際の構造に合わせて更新すること。
 
 ### やってはいけないこと
@@ -184,4 +184,21 @@ for p in sorted(MEMO_DIR.glob(MEMO_GLOB)):
 ## 関連リンク
 
 - [[brainstorm-skill]] — `wiki/builds/brainstorm-skill.md`
-- [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm-brainstorm-skill-portability.md`
+- [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
+
+## 実施結果（2026-08-29）
+
+課題1・課題2とも実装済み。自己試験は第1層〜第3層すべて合格。
+
+- 課題1: 封鎖側 `_candidate_paths()` の Bash 分岐を、引用符を意識した分割＋
+  「長い候補から順に実在を試す」方式（`_pick_write_target()`）へ置き換えた。
+  ヒアドキュメントの**本文**は走査対象から外した（本文は書き込む中身であって書き込み先ではなく、
+  本文に引用した他所のパスで拒否されるとメモを書く操作そのものが止まるため）。
+  書き込み先（`cat > ここ <<EOF`）は本文の外にあるので、封鎖の強さは変えていない。
+- 課題2: メモの探索を階層対応にし、既存3枚を `wiki/analyses/brainstorm/<プロジェクト>/` へ移した。
+  **親メモのファイル名は `_index.md` にせず、元の `brainstorm-<テーマ>.md` のままフォルダへ移した。**
+  `_index.md` にすると Obsidian の `[[brainstorm-gf2-dusevnyj-bikini-to-helen]]` などのリンク
+  （KB 内 12 箇所以上）が全部切れ、`_index` という同じ名前のページが3つできてしまうため。
+  新規プロジェクトは `_index.md` でよく、スクリプトは両方を親として読む。
+- 再現試験は `audit-handoff --selftest` の第3層として本体に組み込んだ（10通りの Bash と
+  Write 2件、階層探索1件）。

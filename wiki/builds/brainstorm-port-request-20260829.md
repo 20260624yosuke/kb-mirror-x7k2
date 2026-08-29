@@ -14,7 +14,7 @@ Codex / Kimi Code / opencode のチャットへ貼る。**それだけで伝わ�
 他の節と組み合わせる必要はない。
 
 背景と経緯は `wiki/builds/brainstorm-skill.md` と
-`wiki/analyses/brainstorm-brainstorm-skill-portability.md` にあるが、渡す相手には不要。
+`wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md` にあるが、渡す相手には不要。
 
 ---
 
@@ -155,5 +155,5 @@ Claude Code では既に動いており、同じ使用感をこの環境でも�
 ## 関連リンク
 
 - [[brainstorm-skill]] — `wiki/builds/brainstorm-skill.md`（設計の正本）
-- [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm-brainstorm-skill-portability.md`（この依頼書が出た議論）
+- [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`（この依頼書が出た議論）
 - [[brainstorm-guard-fix-handoff-20260829]] — `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`（Claude 側の修正依頼・別件）

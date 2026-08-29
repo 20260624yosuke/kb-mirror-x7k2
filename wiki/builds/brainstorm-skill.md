@@ -33,7 +33,8 @@ brainstorm は普通のモードで動き、**話しながら KB のメモへ書
 | `~/.claude/skills/brainstorm/SKILL.md` | 規則本体。frontmatter で PreToolUse（封鎖）と Stop（閉じない）を登録 |
 | `~/.claude/skills/brainstorm/brainstorm_guard.py` | 監査スクリプト。6サブコマンド |
 | `~/.claude/settings.json` | 常駐分（再注入2本 + 未読ブロック1本）を登録 |
-| `wiki/analyses/brainstorm-<テーマ>.md` | メモ本体。1テーマ1枚、日付なし |
+| `wiki/analyses/brainstorm/<プロジェクト>/_index.md` | メモ本体（親）。1プロジェクト1枚、日付なし。既存3件は `brainstorm-<テーマ>.md` の名前のままフォルダへ移してある（Obsidian の `[[slug]]` を壊さないため） |
+| `wiki/analyses/brainstorm/<プロジェクト>/sessions/` | セッションごとの子メモ。**機械は読まない**（親から実パスで辿る） |
 | `~/.claude/skills/brainstorm/guard.log` | 監査の動作記録（効いているかを後から数えるため） |
 
 ### 監査スクリプトの4つの働き
@@ -125,7 +126,8 @@ scope:
 >    「わからない」・沈黙は承認ではない。答えたうえで同じ応答の中で選択肢を出し直すこと。
 >    選択肢には毎回「それを選ぶと失うもの」を書くこと。
 > 2. **話した内容を毎ターン、KB のメモへ書き足す。** 場所は
->    `wiki/analyses/brainstorm-<テーマ>.md`（1テーマ1枚・日付なし）。節は
+>    `wiki/analyses/brainstorm/<プロジェクト>/_index.md`（1プロジェクト1枚・日付なし。セッションごとの
+>    記録は同じフォルダの `sessions/` へ）。節は
 >    `## 武田さんの考え` `## 決まったこと` `## まだ決まってないこと` `## 捨てた案と理由`
 >    `## 直した記録` `## 実装への申し送り`。私の言葉を要約して薄めないこと。
 >    frontmatter に `brainstorm_status`（active / ready / done）と `scope`（縛るフォルダの絶対パス）
@@ -187,8 +189,8 @@ Claude / Codex / Kimi / opencode が互いのフォルダを参照する必要�
 >    `wiki/analyses/brainstorm/<プロジェクト>/_index.md` が親（計画と引き継ぎの正本。子と関連
 >    ファイルを実パスで束ねる）、その下にセッションごとの子を置きます。
 >    **機械が読むのは親1枚**で、子は親から辿ります。親と子を二重に数えないでください。
->    （2026-08-29 時点では移行前で、`wiki/analyses/brainstorm-<テーマ>.md` に平置きされています。
->    どちらも見つかるように書いてください。）
+>    （2026-08-29 に Claude 側は移行済みです。旧形式の平置き `wiki/analyses/brainstorm-<テーマ>.md` も
+>    残っていれば読めるように、どちらも見つかるように書いてください。）
 >
 > 9. **渡した先から辿れる形にしてください。** `[[slug]]` は Obsidian の記法で、新しいセッションの
 >    LLM は解決できません。`[[slug]]` を書いたら、同じファイルに `wiki/analyses/<slug>.md` のように
@@ -300,7 +302,7 @@ Claude / Codex / Kimi / opencode が互いのフォルダを参照する必要�
 
 ## 関連リンク
 
-- [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm-brainstorm-skill-portability.md`（他 LLM への移植の検討・2026-08-29）
+- [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`（他 LLM への移植の検討・2026-08-29）
 - [[brainstorm-port-request-20260829]] — `wiki/builds/brainstorm-port-request-20260829.md`（**他 LLM へ実際に渡すコピペ用の依頼書1枚**）
 - [[brainstorm-guard-fix-handoff-20260829]] — `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`（封鎖側のパス抽出の修正とメモ階層化の依頼書）
 - hold スキル（休止・wiki ページは無い。実体は `/Users/takedayousuke/.claude/skills/hold/`）

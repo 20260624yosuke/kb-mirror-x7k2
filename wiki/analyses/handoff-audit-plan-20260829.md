@@ -37,8 +37,8 @@ tags: [brainstorm, harness, audit, handoff]
 | スキルの正本 wiki ページ | `wiki/builds/brainstorm-skill.md` |
 | 事故が起きた実ログ | `/Users/takedayousuke/llm-uploads/20260829-082928-セッションを新しくするので-エージェントがタスクを再開するのに必要なファイルパス.md` |
 | 適用する考え方（GPT との検討） | `/Users/takedayousuke/llm-uploads/20260828-223742--AI開発における-レビュー-検証ボトルネック-を現在のプロジェクト計画へ適用す.md` |
-| 監査対象になる既存メモ（active） | `wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md` |
-| 監査対象**外**の既存メモ（done。参考） | `wiki/analyses/brainstorm-brainstorm-skill-design.md` |
+| 監査対象になる既存メモ（active） | `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md` |
+| 監査対象**外**の既存メモ（done。参考） | `wiki/analyses/brainstorm/brainstorm-skill-design/brainstorm-brainstorm-skill-design.md` |
 | 事故の現場になった計画書 | `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md` |
 
 ## 1. 直す不備（実測で特定した事実）
@@ -285,7 +285,7 @@ python3 "$HOME/.claude/skills/brainstorm/brainstorm_guard.py" guard-stop-handoff
 | 2 | `/Users/takedayousuke/.claude/settings.json` | `Stop` に `guard-stop-handoff` を追加 | 1ブロック追加 |
 | 3 | `/Users/takedayousuke/.claude/skills/brainstorm/SKILL.md` | ひな型に `entry_paths:`（インデント付き `- ` 形式・glob 不可）と `## 再開の入口（実パス）` を追加、監査の説明を追記 | 追記のみ |
 | 4 | `wiki/builds/brainstorm-skill.md` | 正本へ仕様追記 | 追記のみ |
-| 5 | `wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md` | `entry_paths:` を追記し、**現時点で H2 が5件 FAIL する箇所に実パスを併記して直す** | frontmatter＋本文 |
+| 5 | `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md` | `entry_paths:` を追記し、**現時点で H2 が5件 FAIL する箇所に実パスを併記して直す** | frontmatter＋本文 |
 | 6 | `index.md` / `log.md` | 台帳更新 | 追記のみ |
 
 `entry_paths` の書式は**インデント付きの `- ` 形式に固定**する。既存 `_parse_frontmatter` は
@@ -371,7 +371,7 @@ SKILL.md のひな型に `entry_paths` の**実在しない例を書かない**�
 
 - スキルの正本: `wiki/builds/brainstorm-skill.md`（[[brainstorm-skill]]）
 - 事故の現場: `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`（[[gf2-helen-swimsuit-fit-plan-20260829]]）
-- 対象メモ: `wiki/analyses/brainstorm-gf2-dusevnyj-bikini-to-helen.md`（[[brainstorm-gf2-dusevnyj-bikini-to-helen]]）
+- 対象メモ: `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`（[[brainstorm-gf2-dusevnyj-bikini-to-helen]]）
 - 考え方の適用: `wiki/analyses/llm-review-bottleneck-applied-2026-08-28.md`（[[llm-review-bottleneck-applied-2026-08-28]]）
 
 ## 11. 実装の記録（2026-08-29）

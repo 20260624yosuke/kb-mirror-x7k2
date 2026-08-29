@@ -14,7 +14,7 @@ entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-guard-fix-handoff-20260829.md
 background_paths:
   - /Users/takedayousuke/.claude/skills/brainstorm/SKILL.md
-  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm-brainstorm-skill-design.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-design/brainstorm-brainstorm-skill-design.md
   - /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py
 sources: []
 ---
@@ -22,7 +22,7 @@ sources: []
 # brainstorm スキルを他 LLM へ移植する指示書（2026-08-29）
 
 設計の正本は `wiki/builds/brainstorm-skill.md`（[[brainstorm-skill]]）。
-Claude 側の設計経緯は `wiki/analyses/brainstorm-brainstorm-skill-design.md`
+Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/brainstorm-brainstorm-skill-design.md`
 （[[brainstorm-brainstorm-skill-design]]、状態 done）。このメモは **移植（他 LLM で同じ使用感を出す）**
 だけを扱う。
 
@@ -207,7 +207,7 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 
 ## 再開の入口（実パス）
 
-- このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm-brainstorm-skill-portability.md`
+- このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
 - 仕様の正本: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md`
 - 規則本体: `/Users/takedayousuke/.claude/skills/brainstorm/SKILL.md`
 - 監査スクリプト: `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py`
@@ -253,4 +253,13 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 - [[brainstorm-skill]] — `wiki/builds/brainstorm-skill.md`
 - [[brainstorm-port-request-20260829]] — `wiki/builds/brainstorm-port-request-20260829.md`
 - [[brainstorm-guard-fix-handoff-20260829]] — `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`
-- [[brainstorm-brainstorm-skill-design]] — `wiki/analyses/brainstorm-brainstorm-skill-design.md`
+- [[brainstorm-brainstorm-skill-design]] — `wiki/analyses/brainstorm/brainstorm-skill-design/brainstorm-brainstorm-skill-design.md`
+
+## セッションメモ（子）
+
+このメモが**親**（計画と引き継ぎの正本）。機械（`brainstorm_guard.py`）が読むのはこの1枚だけなので、
+セッションごとの記録は同じフォルダの `sessions/` に置き、ここに実パスで並べて親から辿れるようにする。
+
+- 親: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
+- 子の置き場: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions`
+- 現在の子: まだ未作成
