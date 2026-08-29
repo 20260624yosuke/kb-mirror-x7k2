@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4882 ファイル_
+_合計 4883 ファイル_
 
 ## root/ (11)
 
@@ -3272,13 +3272,14 @@ _合計 4882 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (80)
+## wiki/builds/ (81)
 
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
 - [azookey-symbol-input-customization.md](wiki/builds/azookey-symbol-input-customization.md) | 2026-07-10T07:47:44Z
 - [betterdisplay-m27f-pseudo-resolution.md](wiki/builds/betterdisplay-m27f-pseudo-resolution.md) | 2026-08-17T06:10:45Z
-- [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-08-29T00:31:00Z
+- [brainstorm-guard-fix-handoff-20260829.md](wiki/builds/brainstorm-guard-fix-handoff-20260829.md) | 2026-08-29T05:54:38Z
+- [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-08-29T05:54:56Z
 - [canvas-idea-cultivation-workflow.md](wiki/builds/canvas-idea-cultivation-workflow.md) | 2026-07-01T18:48:47Z
 - [canvas-ingest-eagle-feedback-guide.md](wiki/builds/canvas-ingest-eagle-feedback-guide.md) | 2026-07-07T06:22:27Z
 - [canvas-ingest-model-runbook.md](wiki/builds/canvas-ingest-model-runbook.md) | 2026-08-22T12:20:27Z
