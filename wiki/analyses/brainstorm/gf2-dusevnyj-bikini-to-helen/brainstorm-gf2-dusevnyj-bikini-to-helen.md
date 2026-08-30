@@ -435,6 +435,18 @@ background_paths:
 - すべての作業開始と状態報告は、この機械状態が示す現在工程と目的を冒頭に生成できなければFAILにする。
   「次は実装」という会話上の要約だけでは状態を変えない。
 
+### 2026-08-31 一本化方針を計画化する（カード回答）
+
+- 主回答: 「一本化を計画化」
+- 確認: 「はい、この選択でよい」
+- 既存の監査計画と成果物計画を、小さい単一状態で接続する方針は承認済み。
+- 実装可能なrevision 1を新規作成:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md`
+- 方針承認と計画の実行承認は分ける。revision 1は`draft-unapproved`で、まだ実装しない。
+- 既存の第2状態を増やさず、監査計画で予定済みの`06_repro-v51/audit/state.json`を成果物ルートまで
+  拡張する。U0現在地訂正→U1監査→U2 f166→U3 KB探索契約→U4機械抽出→U5因果審査→
+  U6効果試験・候補Blend→U7原作比較を1つの承認ルートにする。
+
 ### 2026-08-30 説明ページへの回答（本人の言葉・承認しない／指摘4件＋要件）
 
 > 承認しない。/htmlで回答を生成してください。 -html確認できました。
@@ -3649,6 +3661,9 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-context-safe-route-to-helen-deliverable.html`
   — **KBを使い、コード探索からHelen成果物までを一本化する案**。モデル分担、機械状態、現在地点、監査実装だけでは完成しない理由を図示（2026-08-31・未承認）
+
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-helen-deliverable-unified-plan.html`
+  — **一本化計画revision 1の説明**。U0〜U7、単一state、モデル分担、承認後に会話へ戻す条件を図示（2026-08-31・計画本文は未承認）
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-mechanization-implemented.html`
   — 「全表示」を機械が見つけるようになった。実装の結果と根拠（2026-08-30・**実装済み**）
