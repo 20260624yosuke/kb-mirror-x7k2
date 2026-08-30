@@ -44,6 +44,58 @@ parent: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/L
 - 決定: 既存 `run-state.json` は互換用に残し、3契約の段階・停止理由・根拠参照を持つ小さい監査状態を別に置く。
 - 2つの状態が食い違えば、新しい方を黙って優先せず矛盾として停止する。
 
+### 2026-08-30 保存場所のカード回答
+
+> 新設した場合に、プロジェクトの実行に紐づけられておらず、監査が仕組みとして機能しないは禁止します。選択肢1で進めてください
+
+- 確認: 「はい、この選択でよい」
+- 保存先案: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/audit/`
+- 条件: 候補Blend書出し前と、既存品質ゲートの完了判定へ必ず機械接続する。置くだけは禁止。
+
+## 実行へ紐づける二重接続案
+
+現物を確認すると、品質ゲートはプロジェクト直下 `quality-gate.json`、構造検査は `scripts/e01_gates.py`、
+成果物品質は `scripts/f128_quality_audit_v2.py`、原作差は `scripts/f152_visual_compare_gates.py`、
+共通パスは `scripts/common.py` に分かれている。各スクリプトは独立実行できるため、次の2か所を同時に塞ぐ。
+
+### 接続1: 候補Blendを書き出す前
+
+- `scripts/audit_guard.py` を実行器にする。
+- S6・S8・G10の今後の候補書出しスクリプトは、書出し直前に
+  `audit_guard.require_candidate_write(defect_id, input_sha, writer_sha)` を通す。
+- 対象契約が `causal_tested` まで進み、反証試験・開いた指摘・入力SHAが揃わない限り、書出しを拒否する。
+- 契約は許可したwriterの絶対パスとSHAを持つ。別スクリプトへコピーしただけでは許可しない。
+- 静的監査は、許可writerにguard呼出しが無い版を失敗させる。呼出しを消した変異版で検出力を実証する。
+
+### 接続2: 既存品質ゲートの完了判定
+
+- `scripts/a10_quality_gate.py` が生成するプロジェクト直下 `quality-gate.json` に、任意欄
+  `execution_audit` を追加する。
+- KB側 `tools/project_quality_gate.py` は `execution_audit` がある案件だけ
+  `scripts/audit_guard.py check --phase plan|batch|complete` を呼ぶ。
+- `complete` では、共通スキーマ適合、3契約の状態、open指摘0、証拠ファイル実在、実行器・入力・出力SHA、
+  `f128`・`f152`・`gate-results.json` の対象Blend SHA一致を検査する。1件でも欠ければ既存品質ゲート自体をFAILにする。
+- 監査を呼ばない `quality-gate.json`、古い監査結果、別Blendの結果を使った変異版をすべてFAILさせる。
+
+### 直接実行への限界と止め方
+
+- OS上で任意スクリプトやBlenderを直接起動し、ファイルを作る行為そのものを完全には禁止できない。
+- ただし未許可の変更では、実物Blend SHAと監査状態の出力SHAが一致しないため、`complete` は必ずFAILする。
+- したがって保証するのは「勝手なファイル生成を物理的に不可能にする」ではなく、
+  **監査を通っていない成果物を進捗・完成として採用できないこと**。
+
+### 最小ファイル構成
+
+- `audit/contract.schema.json`
+- `audit/S6.json`
+- `audit/S8.json`
+- `audit/G10.json`
+- `audit/state.json`
+- `audit/review-findings.json`
+- `scripts/audit_guard.py`
+
+実行ログと測定結果は既存 `logs/` を使い、監査JSONには実パスとSHAだけを持たせる。`audit/` 内へログを複製しない。
+
 ## 入力資料
 
 - `/Users/takedayousuke/llm-uploads/20260828-223742--AI開発における-レビュー-検証ボトルネック-を現在のプロジェクト計画へ適用す.md`
@@ -329,7 +381,7 @@ S6が1%以下になるだけでは足りない。全身輝度を大きく損な�
 - 3契約が揃った後、最初の通し試験をS6・S8・G10のどれにするか。
 - ~~現行状態の正本を既存 `run-state.json` の修理にするか、新しい小さな状態ファイルに分離するか。~~
   → **小さい監査状態ファイルへ分離**で決着。
-- 共通スキーマ、欠陥別3 JSON、監査状態ファイルをプロジェクト内のどこへ置くか。
+- `audit/` を候補書出し前＋既存品質ゲート完了時の二重接続にするか。
 - 既存ゲートのうち、完了根拠から外すものがあるか。これはH1の変異試験後でないと決めない。
 - 原作再現専用に留めるか、将来ほかの高リスク案件へ一般化するか。今回は原作再現専用として設計する。
 
