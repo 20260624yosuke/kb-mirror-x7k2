@@ -17,6 +17,8 @@ background_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/llm-review-bottleneck-applied-2026-08-28.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-char-extract-handoff.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/intermediate
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/ledger/visibility-decision.json
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/gate-results.json
   - /Users/takedayousuke/llm-uploads/20260828-223742--AI開発における-レビュー-検証ボトルネック-を現在のプロジェクト計画へ適用す.md
   - /Users/takedayousuke/.claude/plans/mellow-questing-elephant-v5.1.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-handoff.md
@@ -2315,6 +2317,52 @@ submesh を合算すると全 33メッシュ・表示 19メッシュ。
 **ただし G13 は礼服（ドレス）H0157 の再現用**であり、この案件は水着。スカート `P1_cloth`・
 手袋 `P1_hand`・装飾 `cloth2` をそのまま出すかは**この案件の判断**として残る。
 
+### 2026-08-30 武田さんの承認（方針）と、「なぜ wiki と整合が取れていないのか」の調査
+
+武田さんの選択:
+- **水着版の表示セット: ドレス部品（スカート `P1_cloth`・手袋 `P1_hand`・装飾 `cloth2_lod0`）は外す。**
+  （承認済み。失うもの: 腰まわりに肌が無いため穴が開く可能性。手の見え方も変わる。穴は後工程の課題）
+- D1 の規則の作り直しは **承認しない**（保留）。先に次の問いへの回答を求められた。
+
+武田さんの言葉:
+> なぜ wiki と整合性が取れてないのかが気になる。説明して。憶測での回答は今後の運用に関わるので禁止します。
+> これは運用環境上の抜け穴ですか？　それとも仕様 llm の問題？（モデルとエフォートレベルがあってない）
+
+#### 調査結果（すべて実ファイルで確認・2026-08-30）
+
+**1. 記録は KB にあり、整合も取れていた。** 派生（Flat）の答えは3か所に書かれている。
+
+| 場所 | 行 | 記述 |
+|---|---|---|
+| この親メモ | 1852 | 「根拠となった対応づけ（既存台帳 `06_repro-v51/ledger/visibility-decision.json`）: H0157（休憩室・座り）= Flat / 配布MMD = General」 |
+| 計画正本 `gf2-helen-swimsuit-fit-plan-20260829.md` | 229〜235 | 「既存の再現 Blend で表示されているのは Flat」「本計画の実測はすべて Flat で取っている」 |
+| 引き継ぎ `gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md` | 249 | 「`visibility-decision.json` では Flat が現行表示、General/Bend は非表示」 |
+
+版（`SSR01`=顔 / `SSR0101`=本体）の答えも、この親メモ 1765〜1800 行にある。
+→ **wiki 側の不整合ではない。**
+
+**2. KB に無かったのは1つだけ。** G13 の「表示メッシュ10件」の具体リスト。KB 内の
+`wiki/builds/gf2-helen-repro-v51-run.md` / `-handoff.md` は G13 の**合否**しか書いておらず、
+中身は実ファイル `06_repro-v51/logs/gate-results.json` にしかない。
+
+**3. 一次原因は私の読む範囲（LLM 側）。** 前ターンで私が読んだのは親メモ 2605行のうち約400行で、
+**版と派生の決着が書かれた 1722〜1866 行を読んでいない。** 計画正本 689行も開かず、
+`plan_audit.py` の文字列照合で通しただけ。`/html` の指示に「プロジェクトの全容を把握せずに推論を
+始めることを禁止」とあったのに、範囲を自分で狭めた。
+**モデル・エフォートで説明できる根拠は持っていない**（私が観測できるのはモデル名だけで、
+エフォート設定は観測できない）。失敗の形は「深く考えられなかった」ではなく「読まずに書いた」。
+
+**4. ただし仕組み側の穴も3つ実在する（機械なら止められた）。**
+
+| 穴 | 実測 |
+|---|---|
+| 親メモの `background_paths` に兄弟プロジェクトが入っていない | entry 2件・background 6件はすべて `gf2-char-extract` 側。`starlit-waltz` は0件だった（この回に追加） |
+| 圧縮対策の再注入が親メモの一部で切れる | 今回のセッションで注入されたのは**別案件**（`askuserquestion-misclick-guard`）のメモ。この案件のメモは注入されていない |
+| 新しい検査が既存台帳と矛盾しても止まらない | `plan_audit.py` の A7 は却下案の言い回し照合のみ。A1〜A6 は水着の適合計算だけを見る |
+
+→ **結論: 両方。ただし比重は私（読む範囲）が大きい。** 記録は KB にあり、指示にも書かれていた。
+仕組みの3つが埋まっていれば、私が読み落としても機械が止められた。
+
 ## まだ決まってないこと
 
 ### 2026-08-30 追加
@@ -2405,6 +2453,8 @@ submesh を合算すると全 33メッシュ・表示 19メッシュ。
   武田さんが明確に否定。目的は水着を作ること。ハーネスはその手段。
 
 ## 直した記録
+
+- 2026-08-30 `background_paths` に兄弟プロジェクトの正本2件（`visibility-decision.json` / `gate-results.json`）を追加。0件だったため機械が辿れなかった。
 
 - 2026-08-30: Helen 原作再現に、既存計画とは別の実行保証計画を足す brainstorm を開始。
   親を `active` に戻し、子メモと説明HTMLを追加した。Blend、抽出コード、実行状態は変更していない。
@@ -2692,6 +2742,7 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 | 2026-08-30 | 「クリスタでいうレイヤーが全表示の状態の印象」 | **する**（成果物を作るたび） | **できる**（build-log の records だけで判定） | 検査 **D1**（仕組みB）**※2026-08-30 実装済み** |
 | 2026-08-30 | 「機械的な仕組み化をしないと今後も再発する」 | する | できる | **A10**（open の指摘があれば完了と言えない・仕組みA）**※2026-08-30 実装済み** |
 | 2026-08-30 | 「成果物は合格ではないが、code 的には helen を特定できている」 | — | — | **人間判断として残す**（どこまでを合格とするかは武田さんの判断） |
+| 2026-08-30 | 「なぜ wiki と整合性が取れてないのか」「憶測での回答は禁止」 | **する** | **一部できる**（正本の実在と参照は機械で照合できる。読んだかどうかは照合できない） | **未定**（候補: 表示セットの正本1本との一致判定＝D1 の作り直し ／ `background_paths` に関連プロジェクトの正本を必ず載せる検査）**※2026-08-30 承認待ち** |
 | 2026-08-29 | 「別セッションで承認した作業が、なぜ実行されないのか」 | する | できる | **A9 ＋ quality-gate.json**（実装済み） |
 
 ## 関連リンク
