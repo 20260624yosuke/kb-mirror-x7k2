@@ -383,6 +383,29 @@ background_paths:
   分類に依存しない一時領域の作業と、停止理由の説明は続けられた。これは計画の技術的失敗ではなく、
   私の停止範囲の判断と報告の失敗。
 
+### 2026-08-31 現在地が不明なため運用方針を承認しない（本人の言葉）
+
+> 承認しない。
+> 選択肢は1でいいですが、プロジェクトの現在地がわかりません。
+> 私の意図としては、codeの機械的な照合の監視自体は、gpt5.6lunaやsonnet5程度のモデルでもできるのではないかと思ってたので、
+> 現在、プロジェクトがどういう状況かの説明をして欲しいです。
+
+- 「独立確認の関所だけ止め、安全な作業は継続」という方向には同意があるが、現在地の説明前なので
+  **運用方針の承認は成立していない**。
+- 2026-08-31に正本と実ファイルを再照合。既存のHelen原作再現にはBlendが存在するが、G10はFAILのまま。
+  旧 `gate-results.json` はBlend SHAを持たずunbound、旧f166結果は現行scriptに対してstaleなので、
+  原作再現はcompleteではない。
+- 実行保証・機械監査計画revision 4は実行承認済み。実装側はP0だけ完了し、Blend SHA不変、証拠48件、
+  open finding 5件、writer候補54本を一時領域へ記録した。
+- 一時領域の現物はP0用の凍結器・writer走査器・証拠索引・指摘・writer台帳・状態報告などだけ。
+  P0B step 1で作る契約schema、S6/S8/G10契約、監査state、`audit_guard.py`、fixture、共有ゲート変更案、
+  外部登録簿は存在しない。正規の `06_repro-v51/audit/` も存在しない。
+- よって、計画本文の実装記録にある「P0B step 2で停止」は現物と一致しない。正確な現在地は
+  **P0完了／P0B本体実装前**。この記録差を直す前に「step 2まで進んだ」と扱わない。
+- writer54本の出力先・採用経路の機械的照合は、規則と証拠が固定されていればGPT-5.6 Lunaや
+  Sonnet 5程度のモデルでも担当できるという武田さんの意図を記録。上位モデルを54本すべてへ固定する
+  必要はなく、機械走査を主、別モデルの直接照合を独立確認とする構成が候補。
+
 ### 2026-08-30 説明ページへの回答（本人の言葉・承認しない／指摘4件＋要件）
 
 > 承認しない。/htmlで回答を生成してください。 -html確認できました。
@@ -3591,6 +3614,9 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-why-p0b-returned-to-user.html`
   — **P0Bでなぜ回答が武田さんへ戻ったか**。技術的な停止点、別エージェント制約、私の報告ミスを分離した説明（2026-08-30）
+
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-helen-repro-project-current-state.html`
+  — **Helen原作再現と実行監査の現在地**。既存成果物、承認済み計画、実際のP0/P0B実装を3層に分け、記録と現物の差を示す（2026-08-31）
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-mechanization-implemented.html`
   — 「全表示」を機械が見つけるようになった。実装の結果と根拠（2026-08-30・**実装済み**）
