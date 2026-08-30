@@ -335,6 +335,24 @@ background_paths:
 - 計画、コード、JSON、ログは変更していない。計画は `draft-unapproved` を維持する。
 <!-- bs:v1 session=c94ff3b7edec35dd86918d6b5353432dbf32ec08c51c47f0b2b3ab135fc585d3 counter=8 input=f8bb9bf61c322fdc173650554378d882078caf0f3dab2c4f3fb2c962122594bc turn=unavailable -->
 
+### 2026-08-30 独立レビュー指摘を計画へ反映する（カード回答）
+
+- 主回答: 「計画を修正する」
+- 確認: 「はい、この選択でよい」
+- revision 2では、任意監査の迂回、a10の破壊的上書き、既存writerの未接続、G10既存FAILの自己証明化、
+  状態・鮮度・finding不足、既存section 9.6との衝突、共有ゲートの回帰試験不足を修正した。
+- 元草案の単純さを失う代わりに、実装前に確認された迂回経路とデータ消失経路を完成条件から排除する。
+<!-- bs:v1 session=c94ff3b7edec35dd86918d6b5353432dbf32ec08c51c47f0b2b3ab135fc585d3 counter=9 input=7f04e45d85f60a71227225bd60071df99edc3c5732bb6bba3b8881e1a0d71568 turn=unavailable -->
+
+### 2026-08-30 現状の説明を HTML で求められた（本人の言葉）
+
+> 上記内容を見て現状を教えてください。/htmlを使用して説明してください。
+
+- 実測メモ（`sessions/20260830-deliverable-reject-mechanize-visible-checks.md`）の報告を受けての説明要求。
+  判断の依頼ではなく説明の依頼として扱い、説明ページを新規に1枚作った（既存ページの上書きはしない規則）:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-status-after-deliverable-reject.html`
+- 承認待ちの論点は変わらず「胴体をどうするか」の1件。説明のあと、同じ内容のカードを出し直す。
+
 ## 決まったこと
 
 - 承認済み（revision 3 0.0）: 専用監査ハーネスを候補制作より先に作る方針／独立監査役を付ける／
@@ -357,6 +375,10 @@ background_paths:
   完了報告を拒否できることを、最初の成功条件にする。
 - 2026-08-30: 実行保証計画は承認されなかった。独立レビューは「現状のまま実装不可、修正後なら開始可能」。
   計画を直す前に、Critical 2件とMajor 5件を仕様へ反映する必要がある。
+- 2026-08-30: 独立レビューの全指摘を実行保証計画revision 2へ反映した。まだ未承認・未実装。
+- 2026-08-30: revision 2の再レビューは5件解消・3件部分解消・未解消0件。ただし実装結果を変える詳細5点が
+  残ったため、対象照合、guardの外部SHA、phase別条件、writer再走査、state単一正本をrevision 3へ追記した。
+  まだ未承認・未実装。
 
 ### 2026-08-28 に実測で確定した下半身の構造（画像を使わず数値のみ）
 
@@ -3330,6 +3352,10 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 - 上衣の下端と腰の布の関係（**Y1.120 は誤り。実際は上端1.190・上衣下端1.132 で重なっている**）。
 
 ## 説明ページ（人が読む用）
+
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-status-after-deliverable-reject.html`
+  — **現状の整理: 不合格の中身と、次に決める1件**（2026-08-30・最新）。指摘3件の実測、監査の抜けの正体、
+  検査 V1〜V6 と工程規則 R1〜R3、決めることは胴体の方針1件
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-swimsuit-deliverable-built.html`
   — **水着版の Blend ができた**（2026-08-30・最新）。残っていた3件の結果、工程O1 の仕組み、

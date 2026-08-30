@@ -25,6 +25,10 @@ parent: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/L
 - 2026-08-30、武田さんは計画を承認せず、GPT-5.6・推論強度mediumの独立レビューを指定。
   判定は「現状のまま実装開始不可、計画修正後なら開始可能」。レビュー全文は
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-helen-repro-execution-audit-plan-independent-review.md`。
+- 同日、カードで「計画を修正する」を確認。revision 2へCritical 2件・Major 5件・Minor 1件を反映した。
+  状態は草案・未承認・未実装を維持する。
+- revision 2再レビューは5件解消・3件部分解消。追加で一意化が必要な5点をrevision 3へ反映した。
+  外部登録簿の対象照合とguard SHA、phase別条件、writer毎回再走査、state単一正本、a10バックアップ名を固定した。
 
 ## 武田さんの言葉
 
