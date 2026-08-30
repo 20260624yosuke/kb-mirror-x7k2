@@ -315,6 +315,26 @@ background_paths:
 - 空結果は承認・中断の証拠にしない。計画は `draft-unapproved`、この回は承認待ちを維持する。
 - 再開点: 同じ最終承認カードへ回答してもらい、明示回答が得られた場合だけ状態を変える。
 
+### 2026-08-30 計画を承認せず、独立レビューを実施（本人の言葉と結果）
+
+> 承認しない。
+>
+> サブエージェントに、計画をレビューさせますので指示を送ってください。
+> レビュー結果にバイアスがかかる指示を送ることを禁止します。
+> この仕様と実装の不一致などを重点的にレビューさせてください。
+
+- `gpt-5.6-sol`、推論強度 `medium` の独立サブエージェントへ、結論を誘導せず読み取り専用レビューを依頼した。
+- 判定: **現状のまま実装開始不可。計画修正後なら開始可能。**
+- Critical: 任意の `execution_audit` を削除するとcomplete監査を迂回できる。
+- Critical: 現行 `a10_quality_gate.py` は `quality-gate.json` を全面上書きし、後から加えた監査履歴・ゲートを失う。
+- Major: 既存writerがguardを通らない、G10の既存FAILでは監査の検出力を証明できない、状態・鮮度・finding契約が未定義、
+  証拠のSHA拘束が弱い、既存section 9.6と方針が衝突する。
+- Minor: 共有品質ゲートの回帰試験追加が計画にない。
+- レビュー全文:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-helen-repro-execution-audit-plan-independent-review.md`
+- 計画、コード、JSON、ログは変更していない。計画は `draft-unapproved` を維持する。
+<!-- bs:v1 session=c94ff3b7edec35dd86918d6b5353432dbf32ec08c51c47f0b2b3ab135fc585d3 counter=8 input=f8bb9bf61c322fdc173650554378d882078caf0f3dab2c4f3fb2c962122594bc turn=unavailable -->
+
 ## 決まったこと
 
 - 承認済み（revision 3 0.0）: 専用監査ハーネスを候補制作より先に作る方針／独立監査役を付ける／
@@ -335,6 +355,8 @@ background_paths:
   専用ランナー一本化は採用しない。
 - 2026-08-30: 最初の通し試験はG10。現在の入力不足を正しく `blocked` にし、未証明候補の書出しと
   完了報告を拒否できることを、最初の成功条件にする。
+- 2026-08-30: 実行保証計画は承認されなかった。独立レビューは「現状のまま実装不可、修正後なら開始可能」。
+  計画を直す前に、Critical 2件とMajor 5件を仕様へ反映する必要がある。
 
 ### 2026-08-28 に実測で確定した下半身の構造（画像を使わず数値のみ）
 
