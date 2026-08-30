@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4902 ファイル_
+_合計 4903 ファイル_
 
 ## root/ (11)
 
@@ -256,6 +256,10 @@ _合計 4902 ファイル_
 ## wiki/analyses/brainstorm/brainstorm-skill-portability/ (1)
 
 - [brainstorm-brainstorm-skill-portability.md](wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md) | 2026-08-30T06:09:50Z
+
+## wiki/analyses/brainstorm/codex-default-mode-card-parallel-test/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/codex-default-mode-card-parallel-test/_index.md) | 2026-08-30T07:55:21Z
 
 ## wiki/analyses/brainstorm/codex-default-mode-card-production-test/ (1)
 
