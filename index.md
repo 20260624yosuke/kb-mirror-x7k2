@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4894 ファイル_
+_合計 4893 ファイル_
 
 ## root/ (11)
 
@@ -243,10 +243,6 @@ _合計 4894 ファイル_
 - [x-eagle-observation-2026-06-23.md](wiki/analyses/x-eagle-observation-2026-06-23.md) | 2026-06-23T05:28:45Z
 - [x-eagle-project-current-state-interference-audit-2026-06-24.md](wiki/analyses/x-eagle-project-current-state-interference-audit-2026-06-24.md) | 2026-06-24T15:01:17Z
 - [ye-jji-course-roi-for-growing-character-artist.md](wiki/analyses/ye-jji-course-roi-for-growing-character-artist.md) | 2026-07-07T00:55:52Z
-
-## wiki/analyses/brainstorm/_selftest-card-guard/ (1)
-
-- [_index.md](wiki/analyses/brainstorm/_selftest-card-guard/_index.md) | 2026-08-30T03:08:37Z
 
 ## wiki/analyses/brainstorm/askuserquestion-misclick-guard/ (1)
 
@@ -3308,7 +3304,7 @@ _合計 4894 ファイル_
 - [azookey-mode-reconversion.md](wiki/builds/azookey-mode-reconversion.md) | 2026-07-10T13:47:55Z
 - [azookey-symbol-input-customization.md](wiki/builds/azookey-symbol-input-customization.md) | 2026-07-10T07:47:44Z
 - [betterdisplay-m27f-pseudo-resolution.md](wiki/builds/betterdisplay-m27f-pseudo-resolution.md) | 2026-08-17T06:10:45Z
-- [brainstorm-card-guard-plan-20260830.md](wiki/builds/brainstorm-card-guard-plan-20260830.md) | 2026-08-30T02:08:27Z
+- [brainstorm-card-guard-plan-20260830.md](wiki/builds/brainstorm-card-guard-plan-20260830.md) | 2026-08-30T03:12:08Z
 - [brainstorm-guard-fix-handoff-20260829.md](wiki/builds/brainstorm-guard-fix-handoff-20260829.md) | 2026-08-29T15:58:18Z
 - [brainstorm-port-request-20260829.md](wiki/builds/brainstorm-port-request-20260829.md) | 2026-08-29T06:44:43Z
 - [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-08-29T16:02:26Z

@@ -175,3 +175,68 @@ last_reviewed: 2026-08-30
   差し戻らなければ G1 は成立しない。1歩目の確認に含める。
 - **手数が増える**。X はやり取りを増やさないが、選択肢を読む量は増える。
   使用感が悪ければ Y（次の応答で確認カードを別途1枚）へ切り替える。判断は運用後。
+
+---
+
+## 8. 実装記録（2026-08-30・実装セッション）
+
+### 入れたもの
+
+- `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py`
+  - `guard-card` サブコマンドを追加（`cmd_guard_card`）。作動条件は
+    `live_memos(cwd, ("active",))` が空でないこと。空なら**素通り理由つきで guard.log に1行残して**
+    素通りする（走ったのか走らなかったのかを後から切り分けられるようにするため）。
+  - 判定は固定文字列のみ。`CONFIRM_MARKS = ("（確認）", "(確認)")` の2つだけを見る
+    （全角括弧・半角括弧の2表記。語彙判定・意味判断はしない）。
+  - `questions` が読めない・payload が壊れている場合は素通り。
+  - `_missing_mechanized_section()` を追加し、**`_guard_ready_promotion()` からのみ**呼ぶ。
+    `audit_memo()` には足していないので、既存の `ready` メモ・`guard-stop-handoff` は影響を受けない。
+- `/Users/takedayousuke/.claude/skills/brainstorm/SKILL.md`
+  - frontmatter の `PreToolUse` に `matcher: 'AskUserQuestion'` → `guard-card` を追加。
+    `~/.claude/settings.json` には**追加していない**。
+  - `## 3` に `### カードの書式（機械が確認する）` を追加。
+  - `## 1` のひな型と `## 5` に `## 機械化した指摘` を追加。
+- 自己試験（第2層）に追加した項目
+  - `## 機械化した指摘` の無い `ready` 昇格が拒否されるか（G4）
+  - 確認質問の無いカードが拒否されるか／あるカードは素通りするか／brainstorm 作動外は素通りするか
+  - SKILL.md に `guard-card` が登録されているか（登録漏れで永久に発火しない事故の検出）
+  - `~/.claude/settings.json` に `AskUserQuestion` のフックが**無い**こと（常駐禁止の機械確認）
+
+`python3 "$HOME/.claude/skills/brainstorm/brainstorm_guard.py" audit-handoff --selftest` は
+第1層〜第3層すべて PASS。
+
+### 計画から外れた点（1件・報告済み）
+
+計画 4.2 は「実装先を `_guard_ready_promotion()` だけにすれば自己試験のフィクスチャは変更不要」と
+書いていたが、**誤り**。第2層の「正常なメモの ready 昇格は素通りする」ケースが
+`_guard_ready_promotion()` を通るため、フィクスチャ `_st_build()` が
+`## 機械化した指摘` を持たないと**正常系が偽陽性で落ちる**。
+そこでフィクスチャ側に `## 機械化した指摘 / なし` を追加した。
+これは「検査を弱めて通す書き換え」ではなく、**正しいメモの見本を新しい仕様に合わせたもの**。
+検査そのものは弱めておらず、節を消す負のケースを第2層に別途足してある。
+
+### 実機確認（**未実施**。この会話では原理的にできなかった）
+
+- スキル frontmatter のフックは**スキルを起動した時に登録される**が、この会話は
+  SKILL.md を編集する**前に**開始しており、起動しても**編集前の SKILL.md が読み込まれた**
+  （本文が旧版のまま返り、guard.log にも `guard-card` の行が出なかった）。
+  そのため確認質問なしのカードは止まらず**素通りした**。
+  これは「フックが効かない」証拠ではなく、**この会話ではまだ登録されていない**という意味。
+- `claude -p` による別セッションでの試験も試みたが、`OAuth session expired` で実行できなかった。
+- **したがって「AskUserQuestion に PreToolUse が発火するか」「deny が実際に差し戻すか」は未確認のまま。**
+  公式ドキュメント上は `EndConversation` 以外のすべてのツールが `PreToolUse` の対象。
+
+**新しい会話で行う確認（3件）**
+
+1. `/brainstorm <テーマ>` を起動し、確認質問（`（確認）`）を入れずにカードを出す → **拒否される**。
+2. `（確認）` を入れたカードを出す → **通る**。
+3. brainstorm を使っていない会話でカードを出す → 素通りし、
+   `guard.log` に `guard-card	pass 作動条件なし…` の行が出る（＝走ったが通した、と切り分けられる）。
+
+### ついでに見つかった既存の誤検知（今回は直していない）
+
+`cd <KBルート> && python3 brainstorm_guard.py …` のように**相対パスでスクリプトを実行するだけ**の
+コマンドが、封鎖（`guard-write --lockdown`）に成果物への書き込みと誤判定されて拒否された
+（2026-08-30 実測）。絶対パスで実行すれば通る。
+既知の「封鎖側のパス抽出」課題と同種で、正本は
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-guard-fix-handoff-20260829.md`。
