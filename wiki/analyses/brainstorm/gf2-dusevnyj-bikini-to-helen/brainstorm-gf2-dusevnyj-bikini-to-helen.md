@@ -11,6 +11,7 @@ scope:
 entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md
 background_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/llm-vision-review-suspension-policy.md
@@ -282,6 +283,16 @@ background_paths:
 - 専用ランナー一本化は採用しない。既存スクリプトの独立性を残す代わりに、共有品質ゲートと今後のwriterへ接続を追加する。
 <!-- bs:v1 session=c94ff3b7edec35dd86918d6b5353432dbf32ec08c51c47f0b2b3ab135fc585d3 counter=6 input=fb907af716cf545f19d7fb18f5ffd5e48c7e3b9cbda1be94ff6aa8a75eeab7b2 turn=unavailable -->
 
+### 2026-08-30 最初の通し試験はG10（カード回答）
+
+- 主回答: 「G10 Ramp対応」
+- 確認: 「はい、この選択でよい」
+- G10の見た目を直す試験ではなく、権威ある `renderer → submesh → material → RampSetting` の
+  参照鎖が欠ける現状を、監査が正しく `blocked` に止める執行力の試験とする。
+- S6から早く見た目を改善する速さを失う。代わりに、入力不足でも作業と完了宣言が進む現在の問題を
+  最初の代表例で直接検証できる。
+<!-- bs:v1 session=c94ff3b7edec35dd86918d6b5353432dbf32ec08c51c47f0b2b3ab135fc585d3 counter=7 input=459bc9fe9b41682226dd2961e00dc71269e1b9cf746650940b352299845180b6 turn=unavailable -->
+
 ## 決まったこと
 
 - 承認済み（revision 3 0.0）: 専用監査ハーネスを候補制作より先に作る方針／独立監査役を付ける／
@@ -300,6 +311,8 @@ background_paths:
   既存品質ゲートの完了判定へ機械接続されることが条件。置くだけの監査は禁止。
 - 2026-08-30: `audit` の接続は、候補Blend書出し前の許可検査と、既存品質ゲートの完了阻止を二重にする。
   専用ランナー一本化は採用しない。
+- 2026-08-30: 最初の通し試験はG10。現在の入力不足を正しく `blocked` にし、未証明候補の書出しと
+  完了報告を拒否できることを、最初の成功条件にする。
 
 ### 2026-08-28 に実測で確定した下半身の構造（画像を使わず数値のみ）
 
@@ -2621,6 +2634,33 @@ submesh を合算すると全 33メッシュ・表示 19メッシュ。
   確認は実装側の第1歩とする。
 - 仕組み3 の語を、いつ・誰が増やすか。
 
+### 2026-08-30 残っていた3件を通した — **水着版の Blend ができた**（実行済み・実測）
+
+武田さんの指示「残っているタスクを進めてください」を受けて、①台帳の該当行の更新 ②腰の布を実際に
+残す実装 ③工程O1 を通した。**3件とも通り、Blender で開ける全身の成果物が初めてできた。**
+
+- 成果物: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/blends/swimsuit/Helen-swimsuit-flat.blend`（39,039,883 バイト）
+- 材料フォルダ: `.../gf2-char-extract/intermediate-swimsuit/Helen.HelenSSR01-swimsuit/`（原本は読むだけ）
+- 新規の道具: `tools/swimsuit_restore_original_form.py`（O1）／`tools/swimsuit_material_folder.py`（O2）
+- 実行記録: `output/gf2-helen-swimsuit/run-20260830-o1-o3-deliverable.txt`
+- 経緯: `sessions/20260830-o1-o3-swimsuit-blend-built.md`
+
+実測（保存後に開き直して測ったもの）:
+
+- 表示メッシュは**台帳の8件ぴったり**（D1 PASS・不足0・過剰0）。`plan_audit.py` は **14 / 14 PASS**
+- 高さ **0.013〜1.704 m**＝足先から髪の先まで。上半身だけの状態ではない
+- 水着は 2,562頂点 / 4,006面（原本と同数）、UV1枚、頂点グループ15、アーマチュア接続あり、
+  材質に画像2枚（色・凹凸）が入っている
+- 腰の閉じ具合は**成果物そのもので測り直して 最小 0.78 / 平均 0.98**（0.78 は最下段 Y0.95 の1枚だけ）
+- 工程O1 では、保存されていなかった対応表を原本から同じ手順で作り直し、**面の並びが適合の出力と
+  完全一致**することを照合した。UV・骨・頂点色は SHA-256 で原本と同一を確認、法線と接線だけ作り直した
+
+D1 に「部品の内訳（面数）」の検査を足した。名前の一覧だけでは、外したはずの裾が戻っても気づけないため。
+変異試験は 4/4 検出。
+
+**できていないこと**: 見た目は未確認（数と寸法だけ）／上衣の下端と腰の布の**縫い合わせは未実装**
+（2026-08-29 の承認範囲外）／物差しは未達のまま提出／骨の重みは移植したままで妥当性は未検証。
+
 ## まだ決まってないこと
 
 ### 2026-08-30 追加
@@ -2634,8 +2674,11 @@ submesh を合算すると全 33メッシュ・表示 19メッシュ。
   **B3** 別衣装 P2 / P3 の腰だけ → 0.78（丸ごとなら 1.00）。意匠が混ざる。
   → **1.00 を満たしつつ「腰だけ」にする組合せは、現存のメッシュの中には無い**（裾が被覆を担っているため）。
   0.78 を許すか、隙間を塞ぐ追加作業を入れるかの判断が要る。
+  → **2026-08-30 実装済み。** B1（P1 の #1+#2+#3）を材料フォルダで実現し、成果物そのもので
+  測り直して 最小 0.78 / 平均 0.98 を確認した。0.78 を許すかは Blend を見てからの判断。
 - ~~（2026-08-30）透過布を出すか。~~ → **2026-08-30 決着。非表示**（武田さん「多分ジャケットだと思うから
-  非表示でいい」）。台帳 `visible-set-swimsuit.json` の該当行を `show: false` へ変える作業が未実施。
+  非表示でいい」）。~~台帳 `visible-set-swimsuit.json` の該当行を `show: false` へ変える作業が未実施。~~
+  → **2026-08-30 更新済み**（退避 `visible-set-swimsuit.json.bak-20260830`）。成果物でも非表示を確認。
 - **水着版の表示セット**: G13 の10件を土台にしたとき、ドレスの部品（スカート `P1_cloth`・
   手袋 `P1_hand`・装飾 `cloth2_lod0`）を出すか外すか。**水着の見え方が直接変わる。**
 - **D1 の判定規則を台帳に合わせて作り直すか**（作り直すと、いまの D1a/D1b/D1c は差し替えになる）。
@@ -2817,6 +2860,7 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-visible-set-d1-a11-implemented.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-three-approvals-explained.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-prose-mechanization-a12-a14.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o1-o3-swimsuit-blend-built.md
 
 ## 実装への申し送り
 ### 【最優先・2026-08-30 実行の承認】表現の機械化3本（用語 / ページの版 / 比較の基準が無い述語）
@@ -2935,7 +2979,8 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 ### 終わったら次に取る承認
 
 Helen 原作再現の別計画はまだ議論中。`06_repro-v51` 直下へ新設する `audit` は、候補書出し前と
-既存品質ゲート完了時へ二重接続することで決着した。次は、最初の通し試験をS6・S8・G10のどれにするか決める。実行承認ではない。
+既存品質ゲート完了時へ二重接続し、最初の通し試験をG10にすることで決着した。次は、別計画の草案全体を
+レビューし、実装してよい計画として確定するか決める。まだ実行承認ではない。
 
 ### 【最優先・2026-08-30 実行の承認】水着版の表示セット確定 ＋ D1 の作り直し ＋ 参照の関所 A11
 
@@ -3228,6 +3273,10 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 ## 説明ページ（人が読む用）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-swimsuit-deliverable-built.html`
+  — **水着版の Blend ができた**（2026-08-30・最新）。残っていた3件の結果、工程O1 の仕組み、
+  開き直して測った数値、できていないこと
+
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-three-approvals-decided.html`
   — **承認3件の現在地（現行版）**（2026-08-30）。腰・透過の布・足先について、いま有効な結論だけを書いた1枚。
   版の印 `doc-status: current`
@@ -3261,7 +3310,8 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 | 日付 | 指摘（武田さんの言葉） | 再発しうるか | 機械判定できるか | 変換先 |
 |---|---|---|---|---|
-| 2026-08-30 | 「クリスタでいうレイヤーが全表示の状態の印象」 | **する**（成果物を作るたび） | **できる**（build-log の records だけで判定） | 検査 **D1**（仕組みB）**※2026-08-30 実装済み。同日、規則を「台帳との一致」へ差し替え（旧 D1a/b/c は削除）** |
+| 2026-08-30 | 「クリスタでいうレイヤーが全表示の状態の印象」 | **する**（成果物を作るたび） | **できる**（build-log の records だけで判定） | 検査 **D1**（仕組みB）**※2026-08-30 実装済み。同日、規則を「台帳との一致」へ差し替え（旧 D1a/b/c は削除）。
+さらに同日、「部品の内訳（面数）」を追加＝名前が同じでも外した部品が戻れば落ちる（変異試験 4/4）** |
 | 2026-08-30 | 「機械的な仕組み化をしないと今後も再発する」 | する | できる | **A10**（open の指摘があれば完了と言えない・仕組みA）**※2026-08-30 実装済み** |
 | 2026-08-30 | 「成果物は合格ではないが、code 的には helen を特定できている」 | — | — | **人間判断として残す**（どこまでを合格とするかは武田さんの判断） |
 | 2026-08-30 | 「なぜ wiki と整合性が取れてないのか」「憶測での回答は禁止」 | **する** | **一部できる**（正本の実在と参照は機械で照合できる。読んだかどうかは照合できない） | **A11**（根拠にした台帳の実パスを持ち実在するか）＋ **D1 表示セット一致** **※2026-08-30 実装済み（F005）** |
@@ -3305,3 +3355,5 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
     — 承認3件の説明と、腰まわりの実測（前回の説明の誤り2件を訂正）
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-prose-mechanization-a12-a14.md`
     — 表現の機械化3本（用語・ページの版・比較の基準が無い述語）の実装記録。実機で止まった記録と変異試験
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o1-o3-swimsuit-blend-built.md`
+    — 残っていた3件（台帳・腰の布・工程O1）を通し、水着版の Blend ができた記録。実測値と未達項目

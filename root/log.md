@@ -10462,3 +10462,20 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   親メモ、`sessions/20260830-prose-mechanization-a12-a14.md`（新規）、`index.md`、`log.md`。
 - 残: チャット本文は止められない（Stop フックの挙動は未確認・調べる前に承認が要る）。既存の説明ページ13枚は
   印なしのまま。対象語は3語のまま。
+
+## [2026-08-30] query | 残っていた3件を通し、水着版の Blend ができた（工程O1〜O3）
+- 武田さん指示「残っているタスクを進めてください」。①台帳の該当行 ②腰の布 ③工程O1 の3件。
+- 台帳 `output/gf2-helen-swimsuit/visible-set-swimsuit.json` を更新（退避 `.bak-20260830`）。
+  透過の布を `show: false` へ／スカートを「腰の3枚だけ出す」へ（`expected_face_counts` 付き）／水着の行を新設。出す8・外す3。
+- 新規の道具: `tools/swimsuit_restore_original_form.py`（O1 原本の形へ戻す）、
+  `tools/swimsuit_material_folder.py`（O2 材料フォルダ）。原本 `intermediate/` は読むだけ。
+- 成果物: `gf2-char-extract/blends/swimsuit/Helen-swimsuit-flat.blend`（39.0MB）。
+  開き直して実測: 高さ 0.013〜1.704m（全身）／水着 2,562頂点・4,006面・UV1枚・頂点グループ15・
+  アーマチュア接続あり・材質に画像2枚／腰の閉じ具合 最小 0.78・平均 0.98。
+- 検査: D1 **PASS**（表示8＝台帳8）。D1 に「部品の内訳（面数）」を追加し変異試験 **4/4 検出**。
+  `plan_audit.py` は **14 / 14 PASS**。
+- 触ったページ: 上記の新規2ツール＋説明HTML1枚（新規）、`tools/deliverable_checks.py`、
+  `output/gf2-helen-swimsuit/`（台帳・O1報告・材料計画・実行記録）、親メモ、
+  `sessions/20260830-o1-o3-swimsuit-blend-built.md`（新規）、`index.md`、`log.md`。
+- 残: 見た目は未確認（武田さんの判断）。上衣の下端と腰の布の縫い合わせは未実装（承認範囲外）。
+  物差しは未達のまま提出。骨の重みの妥当性は未検証。
