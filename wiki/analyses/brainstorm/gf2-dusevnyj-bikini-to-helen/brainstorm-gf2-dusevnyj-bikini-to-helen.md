@@ -4,18 +4,23 @@ status: active
 confidence: medium
 evidence_level: user-stated+source-backed
 last_reviewed: 2026-08-30
-brainstorm_status: ready
+brainstorm_status: active
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料
 entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md
 background_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/llm-vision-review-suspension-policy.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/llm-review-bottleneck-applied-2026-08-28.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-char-extract-handoff.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/intermediate
+  - /Users/takedayousuke/llm-uploads/20260828-223742--AI開発における-レビュー-検証ボトルネック-を現在のプロジェクト計画へ適用す.md
+  - /Users/takedayousuke/.claude/plans/mellow-questing-elephant-v5.1.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-handoff.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-run.md
 ---
 
 # Dusevnyj P3ビキニ上衣 → Helen 適合ハーネス（brainstorm）
@@ -109,12 +114,28 @@ background_paths:
 本命の①に **「選ぶと何を失うか」を書いていなかった**。さらに数値を判断できる形に翻訳していなかった
 （11.7〜18.9mm ＝ 胸と水着のあいだの指1〜2本ぶんの隙間、同時に帯は食い込んでいる）。
 
+### 2026-08-30 Helen 原作再現へ別の実行保証計画を足す（本人の言葉）
+
+> すでに計画はあるけど、それとは別の計画が必要になったと思う。
+> 計画を一新するではなくて、プロジェクトの目標「コードからhelenの原作再現」を成果物として成立させるには、
+> 現状のまま進めても発展しないと感じた。
+
+> このプロジェクトを進めて感じたことは、機械的な監査の効果。
+> 私に返ってくる回答の品質に直結してたのでこの部分の詳細を詰めることから始める。
+
+- 既存の原作再現計画は一新しない。
+- 別計画は、何を実装するかではなく「どんな証拠が揃えば LLM が次へ進み、完了と言ってよいか」を定める。
+- 未回収コードの存在で結論が覆った件を、探索終了・否定主張・状態報告を止める機械規則へ変える。
+- 詳細は子メモ `sessions/20260830-helen-repro-review-harness-plan.md`。
+
 ## 決まったこと
 
 - 承認済み（revision 3 0.0）: 専用監査ハーネスを候補制作より先に作る方針／独立監査役を付ける／
   表面在庫の読み取り調査。
 - 未承認: 実装計画（保存先・ファイル構成・診断fixture・実装順）。計画は計4回提示され4回とも不承認。
 - 未作成: ハーネス、fixture、候補Blend、納品物。
+- 2026-08-30: Helen 原作再現の既存計画を置き換えず、別の「実行保証計画」を作る方針。
+  既存計画は何を作るか、新計画は進捗・完了を主張できる証拠を担当する。今回の段階は議論であり、未実装。
 
 ### 2026-08-28 に実測で確定した下半身の構造（画像を使わず数値のみ）
 
@@ -2238,6 +2259,14 @@ Helen の中間データを一切改変せずに `ce_build_blend.py` へ通し�
 
 ## まだ決まってないこと
 
+- **（2026-08-30・Helen 原作再現）別計画の最初の通し試験を S6 顔の白飛びにするか。**
+  私の推奨は S6。現在値39.334%、合格線1%以下、陽性対照と候補コードがあり、ハーネスの検出力を
+  数値で確かめやすい。3欠陥を先に同じ深さまで設計すると統一性は上がるが、効果確認が遅れる。
+- **（2026-08-30・Helen 原作再現）現行状態の正本をどこに置くか。** 既存 `run-state.json` を直すか、
+  小さい状態ファイルへ分離するかは未決定。実装前に現物と既存参照元を調べて決める。
+- **（2026-08-30・Helen 原作再現）既存ゲートのどれを完了根拠として残すか。**
+  変異試験で検出力を確認するまで決めない。ゲート数を増やすこと自体は目的にしない。
+
 - ~~（2026-08-29・新規）承認の粒度をどう記録するか。~~ → **2026-08-29 決着。**
   「この会話ではやらない。別セッションで解決させる」で武田さん指示。文脈を持たない LLM 向けの
   依頼書を作成:
@@ -2310,6 +2339,9 @@ Helen の中間データを一切改変せずに `ce_build_blend.py` へ通し�
   武田さんが明確に否定。目的は水着を作ること。ハーネスはその手段。
 
 ## 直した記録
+
+- 2026-08-30: Helen 原作再現に、既存計画とは別の実行保証計画を足す brainstorm を開始。
+  親を `active` に戻し、子メモと説明HTMLを追加した。Blend、抽出コード、実行状態は変更していない。
 
 - 2026-08-30: まだ作成されていない検査スクリプトの相対パス表記を、作成先の説明へ言い換えた。
   引き継ぎ監査が未作成パスを切れたリンクとして扱っていたため。計画内容は変えていない。
@@ -2569,6 +2601,9 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 ## 説明ページ（人が読む用）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-helen-repro-review-harness-plan.html`
+  — 既存の原作再現計画を置き換えず、機械監査を別計画として被せる案（2026-08-30・**議論中／未承認**）
+
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-mechanization-implemented.html`
   — 「全表示」を機械が見つけるようになった。実装の結果と根拠（2026-08-30・**実装済み**）
 
@@ -2614,3 +2649,5 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
     — 「全表示」の実測と、レビュー・ボトルネック論の機械化（案1を承認。案2の中身も記録）
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-mechanization-a10-d1.md`
     — 仕組みA（台帳＋A10）と検査D1 の実装記録（コマンド・結果・変異試験）
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-helen-repro-review-harness-plan.md`
+    — Helen 原作再現へ、既存計画とは別の実行保証計画を被せる議論（未回収コードで結論が覆った件を機械規則へ変換）
