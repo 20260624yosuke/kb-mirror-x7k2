@@ -2454,6 +2454,12 @@ submesh を合算すると全 33メッシュ・表示 19メッシュ。
 
 ## 直した記録
 
+- 2026-08-30 `tools/deliverable_checks.py` の旧 D1a/D1b/D1c を削除し、「台帳との一致」1本へ差し替えた。
+  旧規則は既存台帳（G13）と食い違っており、そのままでは正しく絞った版まで落とす検査だったため。
+  **手元の成果物の見え方は変わらない**（検査を通す条件が変わるだけで、Blend は作り直していない）。戻すには git 無しのため
+  この節と `sessions/20260830-visible-set-d1-a11-implemented.md` の記述が唯一の記録になる。
+- 2026-08-30 `review-findings.json` の F001 の evidence を、D1 差し替え後の実態へ書き換えた（旧記述は D1a/b/c を指していた）。
+
 - 2026-08-30 `wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md`（このメモの `entry_paths`）へ「関連ファイルの実パス」節を追記。`[[slug]]` だけで実パスが無く、渡された先から関連ファイルとこのメモへ戻れなかった。
 - 2026-08-30 `background_paths` に兄弟プロジェクトの正本2件（`visibility-decision.json` / `gate-results.json`）を追加。0件だったため機械が辿れなかった。
 
@@ -2526,9 +2532,18 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-mechanization-a10-d1.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-which-to-keep-and-wiki-gap.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-visible-set-d1-a11-implemented.md
 
 ## 実装への申し送り
 ### 【最優先・2026-08-30 実行の承認】水着版の表示セット確定 ＋ D1 の作り直し ＋ 参照の関所 A11
+
+> [!done] 2026-08-30 実装済み。完成条件6つをすべて満たした。実行記録は
+> `output/gf2-helen-swimsuit/run-20260830-d1-a11.txt`、経緯は
+> `sessions/20260830-visible-set-d1-a11-implemented.md`。
+> 台帳10行（出す7／外す3・全行に根拠）／D1 を「台帳との一致」1本へ差し替え（O0 に対し **FAIL**、
+> 不足2・過剰14を名前で列挙／変異試験 **3/3 検出**）／A11 追加（根拠パスを消した実ファイルで
+> **FAIL** することを実演・復元済み）／F005 追加。監査は **11 / 11 PASS**。
+> 次は下の「終わったら次に取る承認（この工程）」。
 
 **この3本だけ。** 承認の種類は**実行の承認**（実際に作ってよい）。実装は**新しい会話**で行う。
 背景と根拠は上の「2026-08-30 『どれを残すか』は既に決まっていた」「同 武田さんの承認（方針）と、
@@ -2836,10 +2851,10 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 | 日付 | 指摘（武田さんの言葉） | 再発しうるか | 機械判定できるか | 変換先 |
 |---|---|---|---|---|
-| 2026-08-30 | 「クリスタでいうレイヤーが全表示の状態の印象」 | **する**（成果物を作るたび） | **できる**（build-log の records だけで判定） | 検査 **D1**（仕組みB）**※2026-08-30 実装済み** |
+| 2026-08-30 | 「クリスタでいうレイヤーが全表示の状態の印象」 | **する**（成果物を作るたび） | **できる**（build-log の records だけで判定） | 検査 **D1**（仕組みB）**※2026-08-30 実装済み。同日、規則を「台帳との一致」へ差し替え（旧 D1a/b/c は削除）** |
 | 2026-08-30 | 「機械的な仕組み化をしないと今後も再発する」 | する | できる | **A10**（open の指摘があれば完了と言えない・仕組みA）**※2026-08-30 実装済み** |
 | 2026-08-30 | 「成果物は合格ではないが、code 的には helen を特定できている」 | — | — | **人間判断として残す**（どこまでを合格とするかは武田さんの判断） |
-| 2026-08-30 | 「なぜ wiki と整合性が取れてないのか」「憶測での回答は禁止」 | **する** | **一部できる**（正本の実在と参照は機械で照合できる。読んだかどうかは照合できない） | **A11**（根拠にした台帳の実パスを持ち実在するか）＋ **D1' 表示セット一致** **※2026-08-30 実行の承認・実装は次の会話** |
+| 2026-08-30 | 「なぜ wiki と整合性が取れてないのか」「憶測での回答は禁止」 | **する** | **一部できる**（正本の実在と参照は機械で照合できる。読んだかどうかは照合できない） | **A11**（根拠にした台帳の実パスを持ち実在するか）＋ **D1 表示セット一致** **※2026-08-30 実装済み（F005）** |
 | 2026-08-29 | 「別セッションで承認した作業が、なぜ実行されないのか」 | する | できる | **A9 ＋ quality-gate.json**（実装済み） |
 
 ## 関連リンク
@@ -2870,3 +2885,5 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
     — 「どれを残すか」の既存記録の発見と、wiki 整合の調査（D1 の規則が誤りと判明）
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-helen-repro-review-harness-plan.md`
     — Helen 原作再現へ、既存計画とは別の実行保証計画を被せる議論（未回収コードで結論が覆った件を機械規則へ変換）
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-visible-set-d1-a11-implemented.md`
+    — 水着版の表示セット台帳・D1 の差し替え・関所 A11・F005 の実装記録（完成条件6つを充足）
