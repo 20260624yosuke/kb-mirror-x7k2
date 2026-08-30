@@ -6,7 +6,9 @@ confidence: medium
 evidence_level: user-stated+source-backed
 created: 2026-08-30
 last_reviewed: 2026-08-30
-plan_status: draft-revision-4-unapproved
+plan_status: approved-for-implementation
+approved_at: 2026-08-30
+approval_scope: execution-audit-plan-revision-4
 related:
   - "[[gf2-helen-repro-plan-repair-model-routing-handoff-20260827]]"
   - "[[brainstorm-gf2-dusevnyj-bikini-to-helen]]"
@@ -16,10 +18,18 @@ revision: 4
 
 # Helen 原作再現 実行保証・機械監査計画 — 2026-08-30
 
-> [!warning] 承認状態
-> **草案・未承認・未実装。** これは既存の技術計画を置き換えない。既存計画が「何を調べ、何を
+## 再開の入口（実パス）
+
+- brainstorm親メモ `[[brainstorm-gf2-dusevnyj-bikini-to-helen]]`:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`
+- 作業ディレクトリ:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01`
+
+> [!important] 承認状態
+> **revision 4 実行承認済み・未実装。** これは既存の技術計画を置き換えない。既存計画が「何を調べ、何を
 > Blenderへ実装するか」を担当し、本計画は「どの証拠が揃えばLLMが次へ進み、完了と言ってよいか」
-> を担当する。承認されても、このbrainstorm中には実装しない。
+> を担当する。2026-08-30のカードで「revision 4を実行承認」＋確認「はい」を取得した。
+> このbrainstorm中には実装せず、新しい通常作業へ渡す。
 
 > [!important] 独立レビュー反映
 > 2026-08-30のGPT-5.6・推論強度mediumによる読み取り専用レビューで、Critical 2件、Major 5件、
@@ -84,7 +94,9 @@ revision: 4
     └── audit_guard.py
 ```
 
-- Wiki側へ `tools/project_quality_gate_required_audits.json` を作り、監査必須のmanifest実パス、project ID、
+- Wiki側へ監査必須登録簿を新規作成する。ファイル名は `project_quality_gate_required_audits.json`、
+  配置先はWikiの `tools` ディレクトリとする（**実装時に作成する予定物で、現時点では未作成**）。
+  登録簿にはmanifest実パス、project ID、
   audit root、schema versionを登録する。`project_quality_gate.py` はこの外部登録簿を先に読み、対象manifestで
   `execution_audit` が欠ければ `EA_REQUIRED_MISSING` としてFAILにする。任意欄を削除しても必須判定は消えない。
 - 必須対象の照合は次で固定する。
@@ -294,7 +306,8 @@ S6・S8も同じ深さの契約として初期状態を記録する。この工�
 - 新規: `06_repro-v51/audit/` の契約3件、schema、state、findings、writers、evidence index、fixture、
   `06_repro-v51/scripts/audit_guard.py`
 - 変更: `06_repro-v51/scripts/a10_quality_gate.py`
-- 新規: Wikiの `tools/project_quality_gate_required_audits.json`
+- 新規予定: Wikiの `tools` ディレクトリに `project_quality_gate_required_audits.json`
+  （実装時に作成。現時点では未作成）
 - 変更: Wikiの `tools/project_quality_gate.py` と `tools/tests/test_project_quality_gate.py`
 - 新規: writer保存API走査器（SHAを外部登録簿で固定）
 - 変更: P0で列挙したS6・S8・G10の既存writerすべて。対象外判定には根拠を必須にする

@@ -4,7 +4,7 @@ status: active
 confidence: medium
 evidence_level: user-stated+source-backed
 last_reviewed: 2026-08-30
-brainstorm_status: active
+brainstorm_status: ready
 parent: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md
 ---
 
@@ -13,7 +13,7 @@ parent: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/L
 ## この回の位置づけ
 
 - 段階: brainstorm（計画作成まで。実装はしない）
-- 状態: 議論中・未承認
+- 状態: revision 4 実行承認済み・未実装
 - 既存の Helen 原作再現計画は一新しない。
 - 既存計画とは別に、LLM が進捗・完了を主張してよい条件を定める「実行保証計画」を被せる。
 - 成果物の目標は変えない。**コードから Helen の原作再現を Blender 成果物として成立させること**。
@@ -33,6 +33,7 @@ parent: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/L
   JSONキーも固定した。状態は草案・未承認・未実装。
 - revision 4の独立最終確認では、残る4点が全てResolved、新しいCritical・Majorなし。
   技術的に実装開始可能。ただしユーザーの実行承認は未取得。
+- 同日、カードで「revision 4を実行承認」＋確認「はい」を取得。新しい通常作業へ引き渡せる。
 
 ## 武田さんの言葉
 

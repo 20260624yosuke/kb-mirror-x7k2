@@ -344,6 +344,16 @@ background_paths:
 - 元草案の単純さを失う代わりに、実装前に確認された迂回経路とデータ消失経路を完成条件から排除する。
 <!-- bs:v1 session=c94ff3b7edec35dd86918d6b5353432dbf32ec08c51c47f0b2b3ab135fc585d3 counter=9 input=7f04e45d85f60a71227225bd60071df99edc3c5732bb6bba3b8881e1a0d71568 turn=unavailable -->
 
+### 2026-08-30 実行承認 — Helen原作再現 実行保証計画 revision 4（カード回答）
+
+- 主回答: 「revision 4を実行承認」
+- 確認: 「はい、この選択でよい」
+- 承認対象:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md`
+- 独立レビューは残る4点すべてResolved、新しいCritical・Majorなし、技術的に実装開始可能と判定。
+- このbrainstorm中には実装しない。新しい通常作業でrevision 4のbootstrapから開始する。
+<!-- bs:v1 session=c94ff3b7edec35dd86918d6b5353432dbf32ec08c51c47f0b2b3ab135fc585d3 counter=10 input=6e5b560539055b8fa9796922196e3f0ab79793a56e1bcf52d684a9d9aa81c0bc turn=unavailable -->
+
 ### 2026-08-30 現状の説明を HTML で求められた（本人の言葉）
 
 > 上記内容を見て現状を教えてください。/htmlを使用して説明してください。
@@ -385,6 +395,27 @@ background_paths:
   今回のセッションでも、説明ページを渡す前に胴体のカードを出し、開けない状態で承認を求める形になった。
   解決は**機械監査の仕組み化以外を禁止**との指示。
 
+### 2026-08-30 胸の変種の決着（明言）と、明言台帳の案への回答（本人の言葉）
+
+> 承認しない -私の文脈が消失してるんですね。 明言します。 **最終的に欲しいのはflatの状態にレンダリングされた水着、しかし、Generalという基本的な形にレンダリングできないなら、 flatにレンダリングできるはずないから、現段階では検証としてGeneralを進める。**
+
+> （明言台帳の案について）これは案であって、具体的にどういうのになって、それが本当に意図通りに機械的監査として機能するかの根拠が足りない
+
+> （明言台帳を計画として詰めてよいかの問いに）前のカードで指示しました
+
+#### 決着と、私の誤りの訂正
+
+- **胸の変種は食い違いではなかった。私が「記録と明言が矛盾する」と提示したのは誤り。**
+  正しい構造: **最終成果物は Flat。しかし General（基本的な形）へレンダリングできないなら Flat へも
+  できないので、現段階の検証は General で進める。** 2026-08-29 の記録「検証は General、成果物は Flat」
+  と整合する。私の読みに欠けていたのは「現段階か最終か」という時間軸。
+- したがって **いまの成果物（Flat の胸を表示）は現段階の指定にも反する**。General を表示すべき段階で
+  Flat が出ていた。検査 V7（変種と用途の一致）の合格線は「現段階 = General」で確定できる。
+- **胴体の新規作成は却下**（「変にレンダリングしないでいい」の明言。前節の読みを武田さんの回答で確認済み）。
+- **明言台帳の案はこの形では不承認。** 理由（本人の言葉）: 「具体的にどういうのになって、それが本当に
+  意図通りに機械的監査として機能するかの根拠が足りない」。→ 具体設計と機能の根拠をそろえて出し直す。
+- 「前のカードで指示しました」= 2件目の問いへの回答は1件目の本文に書いた、という運用メモ。
+
 ## 決まったこと
 
 - 承認済み（revision 3 0.0）: 専用監査ハーネスを候補制作より先に作る方針／独立監査役を付ける／
@@ -416,6 +447,7 @@ background_paths:
   `project_id`、`execution_audit.requested_defects` を追記した。まだ未承認・未実装。
 - 2026-08-30: revision 4の独立最終確認は、残る4点すべてResolved、新しいCritical・Majorなし。
   技術的に実装開始可能な仕様と判定された。ただし `draft-revision-4-unapproved` で、実装承認はまだ無い。
+- 2026-08-30: カードでrevision 4の実行承認を取得。実装は新しい通常作業へ渡す。
 
 ### 2026-08-28 に実測で確定した下半身の構造（画像を使わず数値のみ）
 
@@ -2978,8 +3010,52 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-prose-mechanization-a12-a14.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o1-o3-swimsuit-blend-built.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-deliverable-reject-mechanize-visible-checks.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-helen-repro-review-harness-plan.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-helen-repro-execution-audit-plan-independent-review.md
 
 ## 実装への申し送り
+### 【最優先・2026-08-30 実行承認】Helen原作再現 実行保証計画 revision 4
+
+**承認の種類は実行承認。実装は新しい通常作業で行う。** 最初に読む正本:
+
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md`
+
+独立レビュー:
+
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-helen-repro-execution-audit-plan-independent-review.md`
+
+#### 完成条件
+
+1. revision 4のP0・P0Bに従い、既存状態をSHAで凍結し、一時パス上でaudit一式を構築・試験する。
+2. 外部登録簿が監査必須性、guard・schema・writer走査器・`writers.json` の承認SHAを独立検査する。
+3. `a10_quality_gate.py` は `project_id` と `execution_audit` 以外を深い比較で変えず、失敗時に全面復元する。
+4. writer全走査、begin/finish、正式登録時の再検査を接続し、未分類・新規・改変writerを固有IDで止める。
+5. 監査専用fixtureで正常対照PASSと各変異の監査固有FAILを実演する。G10既存FAILを検出力に数えない。
+6. G10実環境を正しく `blocked` にし、根拠のない正式登録とcompleteを拒否する。
+7. 新plan PASS前は候補writer・Blend変更・正式登録をせず、失敗時は新規ファイルを含め導入前へ全面復元する。
+
+#### 絶対にしてはいけないこと
+
+- Blend、f166結果、原作入力を監査bootstrap中に変更する。
+- 任意の `execution_audit` 削除で監査を無効化できる作りにする。
+- 現行quality-gateの監査履歴・既存ゲート・未知キーをa10で消す。
+- project側guardの成功報告を、guard自身の正当性の根拠にする。
+- 既存G10 FAILまたは共有complete FAILを、監査fixture合格に言い換える。
+- 既存section 9.6のf166修理・候補絞込みを消化済みにする。
+
+#### 捨てた案と理由
+
+- 任意manifest欄だけで監査必須性を表す案: 欄削除で迂回できるため。
+- a10固定辞書による全面再生成: 現行品質台帳を消すため。
+- 将来G10 writerだけへの接続: 既存S6/S8 writerと新規writerを迂回できるため。
+- G10 blockedだけを通し試験成功にする案: guard未実行でも同じFAILになるため。
+- stateを契約3件とstate.jsonへ重複保存する案: 更新途中の正本分裂を再発させるため。
+
+### 終わったら次に取る承認
+
+監査fixtureとG10停止確認まで完了したら、既存section 9.6に残るf166最小修理・1回の全量再走査・
+G10参照鎖回収を実行してよいかを承認してもらう。監査実装完了を原作再現完了とは扱わない。
+
 ### 【最優先・2026-08-30 実行の承認】表現の機械化3本（用語 / ページの版 / 比較の基準が無い述語）
 
 > [!done] 2026-08-30 実装済み。完成条件6つをすべて満たした。
@@ -3432,6 +3508,19 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
   — いまどこにいて、何を選ぶのか（2026-08-29）
 
 ## 機械化した指摘
+
+### 2026-08-30 Helen原作再現 実行保証計画 revision 4
+
+| 指摘 | 再発しうるか | 機械判定できるか | 変換先 |
+|---|---|---|---|
+| 任意欄削除で監査を迂回 | する | できる | 外部必須登録簿＋`EA_REQUIRED_MISSING` |
+| a10が既存品質台帳を全面上書き | する | できる | 許可2欄以外の深い比較＋SHAバックアップ＋全面復元 |
+| 未登録・改変writerが直接保存 | する | できる | 全phase再走査＋writers承認SHA＋begin/finish＋正式登録拒否 |
+| 既存G10 FAILを監査成功と誤認 | する | できる | 他ゲートPASS固定fixture＋監査固有エラーID |
+| guardが自分をPASSと自己申告 | する | できる | 共有ゲートによる実行前SHA照合 |
+| stateが契約3件とstate.jsonへ分裂 | する | できる | state.json単一正本＋guard限定atomic更新 |
+| 初回導入に必要な新planが導入前に存在しない | 初回に起きる | できる | P0B一時試験・単一導入・失敗時全面復元 |
+
 
 | 日付 | 指摘（武田さんの言葉） | 再発しうるか | 機械判定できるか | 変換先 |
 |---|---|---|---|---|
