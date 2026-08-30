@@ -10514,3 +10514,21 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 触ったページ: `wiki/builds/project-current-state-page-plan-20260830.md`（rev.4）、
   `wiki/analyses/brainstorm/project-hub-index/_index.md`。
 - 残: rev.4 の独立レビュー未実施。実装承認は取っていない。
+
+## [2026-08-31] query | 実装計画 rev.4 の独立レビュー（4回目）
+- 作成: [[project-current-state-page-plan-review4-20260831]]。critical 4 / major 9 / minor 6。
+- 事実関係は**誤り1件のみ**（水着化の更新時刻を2回目レビューから引き写し。実測は 21:41）。
+  数値の誤りは rev.3 までで解消していた。
+- **相手の承認済み計画との整合が不成立**: ①節8の入力（closed finding）は `review-findings.json` で
+  `state.json` に無い ②拡張要求2（`related`）は相手の設計上 `state.json` に置けない種類のデータで、
+  対応する器は unified-route の `knowledge-snapshot.json`。しかも拡張の根拠にした記述は
+  **未承認計画にしかなかった** ③判定④⑤の除外に `audit/` `scripts/` が無く**相手の実装作業を全部拒否**
+  ④完成条件5 の残存ゼロ判定が**自分の挿入文を検出して常に FAIL**。
+- **武田さんの裁定が要る点（C-7）**: 私の汎用機構が、相手の禁止事項「原作再現以外へ一般化するための
+  汎用CI・専用ランナーを先に作る」に触れうる。武田さんの軸②とは合致するため、優先順位の決定が要る。
+- **承認範囲の逸脱（D-3）**: 1.3 の対象拡大はメモの決定「4〜6行のみ」を超えていた。実測103行。
+- 相手の承認済み計画に既に「正本から『現在段階、通った関所、停止理由、次の1件』だけを生成する」
+  とあり、**同じ目的の仕組みを相手が設計に持っている**ことが判明。
+- 触ったページ: 上記レビュー結果（新規）、`wiki/analyses/brainstorm/project-hub-index/_index.md`、
+  `index.md`。
+- 残: rev.5 未着手。C-7 の裁定待ち。

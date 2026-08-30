@@ -1466,3 +1466,4 @@
 - [[project-current-state-page-plan-review-20260830]] — 上記計画の独立レビュー結果。実測値は1件を除き全一致だが、承認済み要件の欠落・判定⑤の自己ロック・自動生成の入力未定義など critical 5件 (source-backed, 2026-08-30)
 - [[project-current-state-page-plan-review2-20260830]] — 上記計画 rev.2 の2回目の独立レビュー。1回目 critical 5件のうち完全解消は2件。改訂が新たに critical 2件（判定⑤の無力化・verify 未定義）を生み、1.2表に事実誤り。壊れ#4 の実態は「印が無い」でなく「4枚が互いに正本を主張」 (source-backed, 2026-08-30)
 - `wiki/_attachments/project-hub-index/20260830-four-files-claim-master.html` — 引き継ぎ資料4枚が本文で互いに「自分が正本」と宣言している問題の説明と、直し方3案（該当行だけ書き換え／冒頭に1行だけ／別フォルダへ退避） (source-backed, 2026-08-30)
+- [[project-current-state-page-plan-review4-20260831]] — 計画 rev.4 の4回目の独立レビュー。事実関係はほぼ正確だが相手の承認済み計画との整合が不成立。critical 4件（節8の入力欠落／拡張要求が相手の設計と非整合／判定が相手の実装を拒否／残存ゼロ判定が自己検出でFAIL） (source-backed, 2026-08-31)
