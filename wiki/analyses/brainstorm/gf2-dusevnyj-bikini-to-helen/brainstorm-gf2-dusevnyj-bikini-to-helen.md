@@ -2375,9 +2375,15 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-mechanization-a10-d1.md
 
 ## 実装への申し送り
 ### 【最優先・2026-08-30 承認】仕組みA（指摘の台帳＋A10）と 検査D1 を作る
+
+> [!done] 2026-08-30 実装済み。完成条件5つをすべて満たした。実行記録は
+> `sessions/20260830-mechanization-a10-d1.md`。
+> D1 は O0 の本物のログに対して **3項目とも FAIL**（43/75・版2つ・派生4重・体3個・髪2個）。
+> 監査は **10 / 10 PASS**。次は下の「終わったら次に取る承認（この工程）」。
 
 **この2本だけ。D2〜D5・工程O1以降は今回の対象外。**
 承認の種類は**実行の承認**（実際に作ってよい）。実装は**新しい会話**で行う。
@@ -2576,8 +2582,8 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 | 日付 | 指摘（武田さんの言葉） | 再発しうるか | 機械判定できるか | 変換先 |
 |---|---|---|---|---|
-| 2026-08-30 | 「クリスタでいうレイヤーが全表示の状態の印象」 | **する**（成果物を作るたび） | **できる**（build-log の records だけで判定） | 検査 **D1**（仕組みB）**※2026-08-30 実行の承認・実装は次の会話** |
-| 2026-08-30 | 「機械的な仕組み化をしないと今後も再発する」 | する | できる | **A10**（open の指摘があれば完了と言えない・仕組みA）**※2026-08-30 実行の承認・実装は次の会話** |
+| 2026-08-30 | 「クリスタでいうレイヤーが全表示の状態の印象」 | **する**（成果物を作るたび） | **できる**（build-log の records だけで判定） | 検査 **D1**（仕組みB）**※2026-08-30 実装済み** |
+| 2026-08-30 | 「機械的な仕組み化をしないと今後も再発する」 | する | できる | **A10**（open の指摘があれば完了と言えない・仕組みA）**※2026-08-30 実装済み** |
 | 2026-08-30 | 「成果物は合格ではないが、code 的には helen を特定できている」 | — | — | **人間判断として残す**（どこまでを合格とするかは武田さんの判断） |
 | 2026-08-29 | 「別セッションで承認した作業が、なぜ実行されないのか」 | する | できる | **A9 ＋ quality-gate.json**（実装済み） |
 
@@ -2603,3 +2609,5 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
     — 工程O0 の実行記録（通った。コマンド・ログ・開き直しての実測）
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-review-bottleneck-mechanization.md`
     — 「全表示」の実測と、レビュー・ボトルネック論の機械化（案1を承認。案2の中身も記録）
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-mechanization-a10-d1.md`
+    — 仕組みA（台帳＋A10）と検査D1 の実装記録（コマンド・結果・変異試験）

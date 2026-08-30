@@ -10416,3 +10416,17 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `wiki/_attachments/project-hub-index/20260830-handoff-mechanism-design.html`（新規）/
   `20260830-project-hub-problem.html`（対象取り違えの訂正）/ `index.md`。
 - 残: `brainstorm_status` は `active`。実行の承認待ち。成果物 Inbox への申告は封鎖の誤検知で未了。
+
+## [2026-08-30] query | プロジェクト現在位置ページ 実装計画の作成と独立レビュー
+- 作成: [[project-current-state-page-plan-20260830]]（実装計画）、
+  [[project-current-state-page-plan-review-20260830]]（独立レビュー結果）。
+- レビューは独立サブエージェント（Opus 5・読み取りのみ）。**reasoning effort を指定する手段が
+  メインエージェント側に無く、武田さんの「medium 以外禁止」を満たせている保証は作れていない。**
+  指示に評価の誘導は入れていない。
+- 事実照合: 計画の実測値は**1件を除き全一致**。不一致は「引き継ぎ資料7枚・4,124行」で、
+  7枚を名指ししていないため再現不能（該当しうる組み合わせが9通り以上）。
+- critical 5件: ①承認済みの案2（既存ページ側へのポインタ）が計画から欠落 ②壊れ#2 の修正手段が
+  禁止事項と両立しない ③判定②の入力が未定義で却下した案へ実質的に戻る ④判定⑤が自己ロックし
+  脱出口が無い ⑤本番の合格判定が主観で通る（正解表なし・閉じた試験でない・承認Cの順序が逆）。
+- 触ったページ: 上記2ページ（新規）、`wiki/analyses/brainstorm/project-hub-index/_index.md`、`index.md`。
+- 残: 計画は未改訂。実装承認は取っていない。`brainstorm_status` は `active` のまま。

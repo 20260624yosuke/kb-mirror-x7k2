@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4896 ファイル_
+_合計 4898 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 4896 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-30T05:52:05Z
-- [log.md](root/log.md) | 2026-08-30T06:05:29Z
+- [index.md](root/index.md) | 2026-08-30T06:17:35Z
+- [log.md](root/log.md) | 2026-08-30T06:17:35Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -177,7 +177,7 @@ _合計 4896 ファイル_
 - [ff1f7d2ce8c8.png](wiki/_attachments/gf2-skin-genre-map/img/ff1f7d2ce8c8.png) | 2026-08-24T07:20:08Z
 - [ff3ebc7f241b.png](wiki/_attachments/gf2-skin-genre-map/img/ff3ebc7f241b.png) | 2026-08-24T07:20:07Z
 
-## wiki/analyses/ (64)
+## wiki/analyses/ (65)
 
 - [art-canvas-asuna-reference-axis-map.md](wiki/analyses/art-canvas-asuna-reference-axis-map.md) | 2026-06-14T16:03:54Z
 - [asuna-maid-costume-structure.md](wiki/analyses/asuna-maid-costume-structure.md) | 2026-06-24T01:38:06Z
@@ -230,6 +230,7 @@ _合計 4896 ファイル_
 - [obsidian-canvas-ui-lightweight-plan-2026-06-26.md](wiki/analyses/obsidian-canvas-ui-lightweight-plan-2026-06-26.md) | 2026-07-01T08:10:28Z
 - [opencode-interrupted-tasks-20260826.md](wiki/analyses/opencode-interrupted-tasks-20260826.md) | 2026-08-26T06:18:39Z
 - [ox-video-read-comparison-hizurume-ch11.md](wiki/analyses/ox-video-read-comparison-hizurume-ch11.md) | 2026-08-22T12:56:47Z
+- [project-current-state-page-plan-review-20260830.md](wiki/analyses/project-current-state-page-plan-review-20260830.md) | 2026-08-30T06:17:14Z
 - [projects-dashboard.md](wiki/analyses/projects-dashboard.md) | 2026-07-09T11:29:46Z
 - [raycast-v2-migration-2026-08-22.md](wiki/analyses/raycast-v2-migration-2026-08-22.md) | 2026-08-22T12:57:19Z
 - [synthesis-backlog-2026-06.md](wiki/analyses/synthesis-backlog-2026-06.md) | 2026-06-12T00:16:27Z
@@ -258,18 +259,19 @@ _合計 4896 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-30T06:07:01Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-30T06:18:57Z
 
-## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (4)
+## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (5)
 
 - [20260829-p-implementation-and-decision-point.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md) | 2026-08-29T15:58:18Z
+- [20260830-mechanization-a10-d1.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-mechanization-a10-d1.md) | 2026-08-30T06:18:57Z
 - [20260830-o0-build-blend-passthrough.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o0-build-blend-passthrough.md) | 2026-08-30T03:05:33Z
 - [20260830-plan-holes-why-no-deliverable.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md) | 2026-08-30T01:53:01Z
 - [20260830-review-bottleneck-mechanization.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-review-bottleneck-mechanization.md) | 2026-08-30T06:06:41Z
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-30T06:05:29Z
+- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-30T06:17:35Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 

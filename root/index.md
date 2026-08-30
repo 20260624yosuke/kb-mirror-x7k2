@@ -1452,3 +1452,5 @@
 - `wiki/_attachments/project-hub-index/20260830-project-hub-problem.html` — 上記の説明用HTML。問題5点とハブの条件5つ (source-backed, 2026-08-30)
 - `wiki/_attachments/project-hub-index/20260830-helen-repro-v51-overview.html` — HELEN-REPRO v5.1 の全容実測。6,193ファイル/6.2GB、工程E 40回目、GATE 14 PASS/1 FAIL(G10)、実データ最終更新 2026-08-26 22:49 に対し run-state.json は同日 20:55 で停止、wiki 側は 08-29 まで＝現在位置が2系統に分裂 (source-backed, 2026-08-30)
 - `wiki/_attachments/project-hub-index/20260830-handoff-mechanism-design.html` — セッションをまたぐと話が消える問題の直し方の設計。1案件1枚の現在位置ページ、機械が書く区画と人が書く区画の分離、機械化する5条件、run-state.json の欄名不一致への3案 (user-stated, 2026-08-30)
+- `wiki/builds/project-current-state-page-plan-20260830.md` — プロジェクト現在位置ページの導入計画。1案件1枚・機械区画/LLM区画の分離・run-state.json へ共通最小欄・5つの機械判定。**レビューで critical 5件が出ており未改訂** (user-stated, 2026-08-30)
+- [[project-current-state-page-plan-review-20260830]] — 上記計画の独立レビュー結果。実測値は1件を除き全一致だが、承認済み要件の欠落・判定⑤の自己ロック・自動生成の入力未定義など critical 5件 (source-backed, 2026-08-30)
