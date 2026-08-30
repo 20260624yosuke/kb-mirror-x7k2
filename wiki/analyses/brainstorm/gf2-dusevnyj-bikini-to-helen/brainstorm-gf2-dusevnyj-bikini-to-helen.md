@@ -4,7 +4,7 @@ status: active
 confidence: medium
 evidence_level: user-stated+source-backed
 last_reviewed: 2026-08-30
-brainstorm_status: ready
+brainstorm_status: active
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料
@@ -59,6 +59,21 @@ background_paths:
   このプロジェクトを方針だけ固めた計画を実装エージェントに丸投げでは成立しない。だから、方針を
   固めるだけにならないように、自律的にLLMが作業できるような仕組みを考えますよ？という意味」。
   → ハーネスは**目的ではなく、水着という成果物に到達するための手段**。
+
+### 2026-08-30 成果物を見ての不合格（本人の言葉）
+
+> まずオブジェクトが肌が、肌色ではありませんでした。胸の形も、段取りと違う種類が表示されてます。
+> 移植した水着が、レンダリングされた痕跡がなく、ただコピペしただけのように、浮いてます（腫れ物/異物というニュアンス）。
+> 法則が数字化できてないです。どこがどうなって、水着というオブジェクトになっているか。
+> このプロジェクトはヘレンの水着化なので、コピペして終わりではありません。
+> これはルールが甘いという指摘ではありません。この状態の成果物は論外な品質。
+> これが監査を通るということは抜けが存在するということ。私の意図が全く反映されてない。
+> 画像認識が使えてないから肌が肌色じゃないという言い訳は通じない。機械監査に抜けがある。
+> Codeからの再現の導線はできているので、段取りの詳細が甘い。
+
+- **レビューの繰り返しにならないように、機械的な監査で仕組み化する。**
+- 「ルールが甘い」ではなく **「監査に抜けがある」** という指摘。文言ではなく検査を足す。
+- 画像認識の封印は言い訳にしない。**色は画素値で測れる**（実際に測れた。下を参照）。
 
 ### 制約（2026-08-28 再開時の指示）
 
@@ -2759,6 +2774,17 @@ D1 に「部品の内訳（面数）」の検査を足した。名前の一覧�
   section 3 の距離の記述修正）と、Phase 1（既存 submesh の選択のみで全身を組む。新しい面を作らない）
   のどちらを先にするか。**武田さんの承認待ち。**
 
+### 2026-08-30 追加（成果物の不合格を受けて）
+
+実測は
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-deliverable-reject-mechanize-visible-checks.md`。
+
+- **ヘレンには素肌の胴体メッシュが存在しない**（体メッシュは全部 Y0.957 で終わる。胴体帯は
+  ドレス `cloth2_lod0_*` だけで、その4枚とも濃紺の布・肌の面は0枚）。**胴体をどうするかが未決定。**
+  これが決まらないと V3（素肌の在庫）と V4（着衣関係）の合格線を数値で置けない。
+- 検査 V1〜V6 を今回どこまで実装対象にするか（V1・V2・V5・V6 は胴体の決定と無関係に作れる）。
+- 脚の灰色を直す方法（産出側の規則を広げるか、共有肌アトラスの適用条件そのものを見直すか）。
+
 ## 捨てた案と理由
 
 （revision 3 0.2 の却下済み一覧を正本とする。同じものを再提出しない）
@@ -2808,6 +2834,8 @@ D1 に「部品の内訳（面数）」の検査を足した。名前の一覧�
 - 2026-08-28: このメモの「武田さんの考え」にあった中核命題の誤り（仮説実証が目的／水着は題材）を、
   本人の訂正どおり「目的は水着を作る／ハーネスは手段」へ差し替えた。圧縮対策で機械が再掲する文面
   なので、誤りを残すと次セッションへ伝染するため。
+
+- 2026-08-30: `brainstorm_status` を `ready` → `active` へ戻した（成果物が不合格で議論が再開したため）。成果物の見え方は変わらない。
 
 ## 計画の穴の点検（2026-08-30・議論中）
 
@@ -2868,6 +2896,7 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-three-approvals-explained.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-prose-mechanization-a12-a14.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o1-o3-swimsuit-blend-built.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-deliverable-reject-mechanize-visible-checks.md
 
 ## 実装への申し送り
 ### 【最優先・2026-08-30 実行の承認】表現の機械化3本（用語 / ページの版 / 比較の基準が無い述語）
@@ -3328,6 +3357,20 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 | 2026-08-30 | 「二度と名称を省略しないでください。正式名称/私が言い回す名称以外の固有名詞の使用は禁止」 | **する** | **できる**（辞書との照合） | **A12**（用語の監査・禁止語で書き込みを止める）**※2026-08-30 実装済み（F006）** |
 | 2026-08-30 | 「カップだけは足りません。この言い回し、よくわからないので、原因を言語化してください」 | する | 一部できる | **A14**（同上）＋ 原因の言語化は上の「2026-08-30 2回目のカードへの回答」節に記載 |
 
+### 2026-08-30 成果物の不合格から変換した分（実測つき）
+
+| 指摘 | 再発しうるか | 機械判定できるか | 変換先 |
+|---|---|---|---|
+| 肌が肌色ではない | **既に再発（2026-08-25 に同じ指摘）** | できる（実UVでテクスチャの中央値RGB。R−B が指標） | 検査 **V1 肌の色** |
+| 胸の形が段取りと違う種類 | する | できる（変種語の一致＋胸の張り出し mm。Flat 148.7 / General 197.1 / Bend 237.2） | 検査 **V5 変種の一致** |
+| 台帳が「胸」と書いた面が実際は布 | する | できる（色・高さ帯・面積から役割を実地判定して台帳と突合） | 検査 **V2 役割の実地判定** |
+| 水着が浮いている／異物に見える | する | できる（水着頂点から可視面までの符号付き距離の分布） | 検査 **V4 着衣関係** |
+| 水着姿になっていない（胴体が布100%） | する | できる（高さ帯ごとの役割別の可視面積比） | 検査 **V3 素肌の在庫** |
+| どこがどうなって水着になっているか数値が無い | する | できる（可視 submesh 1行の解決台帳） | 検査 **V6 解決の台帳** |
+| 指摘を産出側の規則修正だけで閉じた | **した（それが今回の再発の原因）** | できる（指摘1件につき出力を測る検査が1本あるか） | 工程規則 **R1** |
+| 検査が台帳との一致しか見ていない | する | できる（台帳を根拠にしない検査であることを条件にする） | 工程規則 **R2** |
+| 今回から見えるようになった部位が関所の外 | する | できる（前回の可視集合との差分を列挙して関所の適用範囲と突合） | 工程規則 **R3** |
+
 ## 関連リンク
 
 - [[gf2-helen-swimsuit-fit-plan-20260829]]
@@ -3362,5 +3405,6 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
     — 承認3件の説明と、腰まわりの実測（前回の説明の誤り2件を訂正）
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-prose-mechanization-a12-a14.md`
     — 表現の機械化3本（用語・ページの版・比較の基準が無い述語）の実装記録。実機で止まった記録と変異試験
-  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o1-o3-swimsuit-blend-built.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o1-o3-swimsuit-blend-built.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-deliverable-reject-mechanize-visible-checks.md`
     — 残っていた3件（台帳・腰の布・工程O1）を通し、水着版の Blend ができた記録。実測値と未達項目
