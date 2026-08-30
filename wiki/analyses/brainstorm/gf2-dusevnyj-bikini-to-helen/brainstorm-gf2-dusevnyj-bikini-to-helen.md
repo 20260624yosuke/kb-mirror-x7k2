@@ -2257,7 +2257,73 @@ Helen の中間データを一切改変せずに `ce_build_blend.py` へ通し�
 - 既存 `blends/*.blend` は上書きしていない。原本 `intermediate/` は読んだだけ。
 - 詳細: `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o0-build-blend-passthrough.md`
 
+### 2026-08-30 「どれを残すか」は既に決まっていた（武田さんの指摘で既存記録を探した）
+
+武田さんの言葉:
+> この部分は事前に詳細を話して kb フォルダに記録があるはず。
+
+**そのとおりだった。** 私が「新しい設計判断なので実装側で決めない」と書いた (1) は、
+**大半が既に決着済み**で、根拠つきの台帳まである。推測で二択を作ったのは私の誤り。
+
+#### 見つかった正本（兄弟プロジェクト gf2-helen-starlit-waltz）
+
+- 根拠の一覧: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/ledger/visibility-decision.json`
+- **最終的な表示状態の正**: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/gate-results.json` の **G13**
+  （台帳自身が「最終的な表示状態は G13 が正」と書いている）
+
+G13 の合格時の表示メッシュ（10件＋アーマチュア）:
+
+```
+c_HelenSSR0101_slg_P1_body_lod0        c_HelenSSR0101_slg_cloth2_lod0（装飾）
+c_HelenSSR0101_slg_P1_body_lod0_Dorm   c_HelenSSR0101_slg_cloth2_lod0_Flat（胸）
+c_HelenSSR0101_slg_P1_cloth_lod0       c_HelenSSR0101_slg_cloth3_trans_lod0
+c_HelenSSR0101_slg_P1_hand_lod0        c_HelenSSR0101_slg_hair_lod0
+c_HelenSSR0101_slg_body_lod0           c_HelenSSR01_slg_face_lod0
+```
+
+#### 決着していたこと（つまり私が聞き直す必要のなかったこと）
+
+1. **版は二者択一ではない。** `SSR0101` が体・衣装・髪、`SSR01` は**顔だけ**を出す。
+   両方が同時に表示されているのが**正しい状態**（親メモ 2026-08-29「前提の整理」と同じ内容）。
+2. **胸の3変種は1つだけ。** 成果物は **Flat**（2026-08-29 に武田さん承認済み。検証は General）。
+   G13 も `chest_variants_visible: 1` を条件にして Flat 1つで合格している。
+3. **無印 `cloth2_lod0` は胸の派生ではない。** collection 名は `cloth2_装飾_金具宝石眼鏡フレーム`＝
+   **装飾（金具・宝石・眼鏡フレーム）**。胸の Flat と**同時に出るのが正しい**。
+
+#### いまの O0 成果物と、その正解セットの差（実測・2026-08-30）
+
+submesh を合算すると全 33メッシュ・表示 19メッシュ。
+
+- G13 の10件のうち **8件が表示**、2件が非表示（`P1_body_lod0_Dorm` / `cloth3_trans_lod0`）
+- **余分に表示されている 11件**:
+  胸の `Bend` `General`（重複）／`SSR01` 系の `body` `cloth1` `cloth2` `cloth3` `cloth4` `hair`
+  （＝「もう1体ぶん」の正体）／`MP443`（拳銃）2挺／`flag_lod0_Effect`
+
+→ **「1体に絞る」は新しい設計判断ではなく、既存決定の移植**が大半。
+
+#### この発見で判明した、私の作った D1 の誤り（重要）
+
+| 判定 | いまの規則 | 台帳から見た正しさ |
+|---|---|---|
+| D1a | 表示される版は1つだけ | **誤り。** 顔は `SSR01`、体系は `SSR0101` で、2つ出るのが正しい |
+| D1b | 無印/Bend/Flat/General は同時に出てはいけない | **半分誤り。** 無印は装飾で同時が正しい。正しくは「胸3変種のうち1つだけ」 |
+| D1c | 体・顔・髪が1つずつ | **誤り。** 体は `P1_body`＋共通 `body`＋胸 `cloth2_Flat` が同時に立つ構造 |
+
+いまの D1 が O0 を落としたこと自体は正しい（実際に余分が11件ある）が、**理由が違う**。
+規則を直さないと、正しく絞った版まで落とす（＝合格できない検査になる）。
+
+**ただし G13 は礼服（ドレス）H0157 の再現用**であり、この案件は水着。スカート `P1_cloth`・
+手袋 `P1_hand`・装飾 `cloth2` をそのまま出すかは**この案件の判断**として残る。
+
 ## まだ決まってないこと
+
+### 2026-08-30 追加
+
+- **水着版の表示セット**: G13 の10件を土台にしたとき、ドレスの部品（スカート `P1_cloth`・
+  手袋 `P1_hand`・装飾 `cloth2_lod0`）を出すか外すか。**水着の見え方が直接変わる。**
+- **D1 の判定規則を台帳に合わせて作り直すか**（作り直すと、いまの D1a/D1b/D1c は差し替えになる）。
+- 台帳内の食い違い: `visibility-decision.json` の最上位 `shown_current` は `P1_body_lod0: false`、
+  メッシュ行側は f137 を根拠に `true`。**G13（`P1_body_lod0` 表示）を正として扱うが、未解消**。
 
 - **（2026-08-30・Helen 原作再現）別計画の最初の通し試験を S6 顔の白飛びにするか。**
   私の推奨は S6。現在値39.334%、合格線1%以下、陽性対照と候補コードがあり、ハーネスの検出力を
@@ -2600,6 +2666,9 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 - 上衣の下端と腰の布の関係（**Y1.120 は誤り。実際は上端1.190・上衣下端1.132 で重なっている**）。
 
 ## 説明ページ（人が読む用）
+
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-which-to-keep-already-decided.html`
+  — 「どれを残すか」は既に決まっていた。記録の在り処と、D1 の判定規則の誤り（2026-08-30）
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-helen-repro-review-harness-plan.html`
   — 既存の原作再現計画を置き換えず、機械監査を別計画として被せる案（2026-08-30・**議論中／未承認**）
