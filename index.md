@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4899 ファイル_
+_合計 4900 ファイル_
 
 ## root/ (11)
 
@@ -259,9 +259,9 @@ _合計 4899 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-30T06:51:21Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-30T06:56:27Z
 
-## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (6)
+## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (7)
 
 - [20260829-p-implementation-and-decision-point.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md) | 2026-08-29T15:58:18Z
 - [20260830-helen-repro-review-harness-plan.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-helen-repro-review-harness-plan.md) | 2026-08-30T06:30:42Z
@@ -269,6 +269,7 @@ _合計 4899 ファイル_
 - [20260830-o0-build-blend-passthrough.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o0-build-blend-passthrough.md) | 2026-08-30T03:05:33Z
 - [20260830-plan-holes-why-no-deliverable.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md) | 2026-08-30T01:53:01Z
 - [20260830-review-bottleneck-mechanization.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-review-bottleneck-mechanization.md) | 2026-08-30T06:06:41Z
+- [20260830-which-to-keep-and-wiki-gap.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-which-to-keep-and-wiki-gap.md) | 2026-08-30T06:55:42Z
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
@@ -3342,7 +3343,7 @@ _合計 4899 ファイル_
 - [gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md](wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md) | 2026-08-28T23:21:51Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-26T13:33:06Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
-- [gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md](wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md) | 2026-08-29T06:00:27Z
+- [gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md](wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md) | 2026-08-30T06:56:27Z
 - [gf2-helen-repro-v51-handoff.md](wiki/builds/gf2-helen-repro-v51-handoff.md) | 2026-08-27T09:41:00Z
 - [gf2-helen-repro-v51-run.md](wiki/builds/gf2-helen-repro-v51-run.md) | 2026-08-27T09:41:08Z
 - [gf2-helen-rest-room-motion-v22.md](wiki/builds/gf2-helen-rest-room-motion-v22.md) | 2026-07-27T00:02:48Z

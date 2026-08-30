@@ -4,7 +4,7 @@ status: active
 confidence: medium
 evidence_level: user-stated+source-backed
 last_reviewed: 2026-08-30
-brainstorm_status: active
+brainstorm_status: ready
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料
@@ -2454,6 +2454,7 @@ submesh を合算すると全 33メッシュ・表示 19メッシュ。
 
 ## 直した記録
 
+- 2026-08-30 `wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md`（このメモの `entry_paths`）へ「関連ファイルの実パス」節を追記。`[[slug]]` だけで実パスが無く、渡された先から関連ファイルとこのメモへ戻れなかった。
 - 2026-08-30 `background_paths` に兄弟プロジェクトの正本2件（`visibility-decision.json` / `gate-results.json`）を追加。0件だったため機械が辿れなかった。
 
 - 2026-08-30: Helen 原作再現に、既存計画とは別の実行保証計画を足す brainstorm を開始。
@@ -2524,8 +2525,101 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-mechanization-a10-d1.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-which-to-keep-and-wiki-gap.md
 
 ## 実装への申し送り
+### 【最優先・2026-08-30 実行の承認】水着版の表示セット確定 ＋ D1 の作り直し ＋ 参照の関所 A11
+
+**この3本だけ。** 承認の種類は**実行の承認**（実際に作ってよい）。実装は**新しい会話**で行う。
+背景と根拠は上の「2026-08-30 『どれを残すか』は既に決まっていた」「同 武田さんの承認（方針）と、
+『なぜ wiki と整合が取れていないのか』の調査」の2節。**実装前に必ずその2節を読むこと。**
+
+#### 作るもの1: 水着版の表示セット台帳 `output/gf2-helen-swimsuit/visible-set-swimsuit.json`
+
+土台は G13 の10件（`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/gate-results.json` の `gates.G13.measured.visible_meshes`）。
+そこから **ドレス部品3件を外す**（2026-08-30 武田さん承認）。
+
+| メッシュ | 水着版 | 根拠 |
+|---|---|---|
+| `c_HelenSSR0101_slg_P1_body_lod0` | 出す | G13 |
+| `c_HelenSSR0101_slg_P1_body_lod0_Dorm` | 出す（**既定。次の承認で確認**） | G13 |
+| `c_HelenSSR0101_slg_body_lod0` | 出す | G13 |
+| `c_HelenSSR0101_slg_cloth2_lod0_Flat` | 出す | G13 ＋ 2026-08-29 承認（成果物は Flat） |
+| `c_HelenSSR0101_slg_cloth3_trans_lod0` | 出す（**既定。次の承認で確認**） | G13 |
+| `c_HelenSSR0101_slg_hair_lod0` | 出す | G13 |
+| `c_HelenSSR01_slg_face_lod0` | 出す | G13（顔だけ SSR01） |
+| `c_HelenSSR0101_slg_P1_cloth_lod0`（スカート） | **外す** | 2026-08-30 武田さん承認 |
+| `c_HelenSSR0101_slg_P1_hand_lod0`（手袋） | **外す** | 同上 |
+| `c_HelenSSR0101_slg_cloth2_lod0`（装飾） | **外す** | 同上 |
+
+- 1行に「出す/出さない」と**根拠**（G13 / 承認日）を必ず書く。根拠の無い行を作らない。
+- **兄弟プロジェクトのファイルは読むだけ。書き換えない。**
+
+#### 作るもの2: D1 の差し替え（`tools/deliverable_checks.py`）
+
+いまの D1a（版1つ）・D1b（派生1つ）・D1c（体顔髪1つずつ）は**規則が誤りなので置き換える**
+（理由は上の調査節の表）。新しい判定は **台帳との一致**1本にする。
+
+- **D1' 表示セットの一致**: 表示メッシュ（`.subN` は合算）が台帳の「出す」と一致するか。
+  **過剰と不足の両方を名前で列挙する。**
+- 変異試験を必ず付ける（**3種**: (1)台帳の1件を落とした版 (2)余分を1件足した版
+  (3)胸の変種を2つ同時にした版）。落とせない項目は「検出力なし」と明記し合格に数えない。
+- **O0 の `build-log-o0.json` に対して FAIL を返すこと**を実測で示す（過剰・不足の実数を出力に含める）。
+- `## 測っていないもの` は引き続き書く: 見た目の正しさ・模様の貼り間違い・姿勢・材質。
+  **加えて「台帳の一覧そのものが正しいかは測れない」**を明記する。
+
+#### 作るもの3: 参照の関所 A11（`tools/plan_audit.py` へ追加）
+
+- `deliverable_checks.py` の各検査が、**根拠にした台帳の実パスを持ち、そのファイルが実在すること**。
+  無ければ FAIL。合格数の表記は 10/10 → 11/11 に変わる。
+- 変異試験: パスを消した版・存在しないパスにした版で **FAIL すること**を実際に見せる。
+- **「読んだか」は測れない。** A11 が言えるのは「根拠のパスが書かれ、実在すること」まで。
+  この限界を検査の説明に1行書く。
+
+#### 作るもの4: 台帳 `review-findings.json` へ F005 を追加
+
+- `quote`: 「なぜ wiki と整合性が取れてないのかが気になる。説明して。憶測での回答は今後の運用に
+  関わるので禁止します。これは運用環境上の抜け穴ですか？　それとも仕様 llm の問題？」
+- `recurring`: true / `machine_checkable`: **partial** / `target`: `A11` / `status`: `converted`
+- `note` に「一次原因は読む範囲（機械では測れない）。機械化できるのは参照の実在まで」と書く。
+
+### 完成条件（この工程）
+
+1. `visible-set-swimsuit.json` が存在し、10行すべてに根拠がある。
+2. `deliverable_checks.py` の D1' が **O0 のログに対して FAIL** を返し、過剰・不足を名前で列挙する。
+3. D1' の変異試験3種すべてで**壊した版を落とせる**ことを示す（落とせない項目は合格に数えない）。
+4. `plan_audit.py` に A11 があり、**根拠パスを消した版で FAIL する**ことを実際に見せる。
+5. `review-findings.json` に F005 があり、監査が **11/11 PASS** になる。
+6. 実行したコマンドと結果が記録として残っている（`output/gf2-helen-swimsuit/run-*.txt`）。
+
+### 絶対にやってはいけないこと
+
+- **兄弟プロジェクト（`gf2-helen-starlit-waltz`）のファイルを書き換えないこと。** 読むだけ。
+- **旧 D1a/D1b/D1c の規則を残さないこと。** 版1つ・派生1つは**誤り**（顔は `SSR01`、体系は
+  `SSR0101` で2つ出るのが正しい。無印 `cloth2_lod0` は装飾で胸の派生ではない）。
+- **「1体に絞る」実作業をここでやらないこと。** ここで作るのは台帳と検査まで。
+- **穴埋め（スカートを外した腰の穴）を一緒にやらないこと。** 別工程。
+- **「読んだか」を測る検査を作らないこと。** 測れない。
+- D2〜D5（高さ範囲・穴・SHA台帳・来歴規約）を一緒に作らないこと。
+- D1' を Blender 起動で実装しないこと。入力は build-log だけ。
+
+### 捨てた案と理由（蒸し返さないこと）
+
+- **「版は SSR01 か SSR0101 のどちらかを選ぶ」** → **そもそも二択ではない。** 顔は `SSR01`、
+  体・衣装・髪は `SSR0101` で、両方出るのが正しい（G13・親メモ 1765〜1800）。
+- **「どの派生を残すか武田さんに聞く」** → 2026-08-29 に承認済み（成果物 Flat / 検証 General）。
+  KB の3か所に記録がある。聞き直さない。
+- **いまの D1 のまま使う** → 正しく絞った版まで落とすため、永久に合格しない検査になる。
+
+### 終わったら次に取る承認（この工程）
+
+1. **`P1_body_lod0_Dorm`（裸足）と `cloth3_trans_lod0` を水着版で出すか。** 既定は G13 どおり表示。
+   O0 では両方とも非表示なので、出すと足元と透過布の見え方が変わる。
+2. **スカートを外した腰の穴をどう埋めるか**（外す判断は済んでいる。穴は未着手）。
+3. **工程O1（溶接した座標を原本の形へ戻す）へ進んでよいか**（O0 が通ったので保留のまま）。
+
+---
+
 ### 【最優先・2026-08-30 承認】仕組みA（指摘の台帳＋A10）と 検査D1 を作る
 
 > [!done] 2026-08-30 実装済み。完成条件5つをすべて満たした。実行記録は
@@ -2742,7 +2836,7 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 | 2026-08-30 | 「クリスタでいうレイヤーが全表示の状態の印象」 | **する**（成果物を作るたび） | **できる**（build-log の records だけで判定） | 検査 **D1**（仕組みB）**※2026-08-30 実装済み** |
 | 2026-08-30 | 「機械的な仕組み化をしないと今後も再発する」 | する | できる | **A10**（open の指摘があれば完了と言えない・仕組みA）**※2026-08-30 実装済み** |
 | 2026-08-30 | 「成果物は合格ではないが、code 的には helen を特定できている」 | — | — | **人間判断として残す**（どこまでを合格とするかは武田さんの判断） |
-| 2026-08-30 | 「なぜ wiki と整合性が取れてないのか」「憶測での回答は禁止」 | **する** | **一部できる**（正本の実在と参照は機械で照合できる。読んだかどうかは照合できない） | **未定**（候補: 表示セットの正本1本との一致判定＝D1 の作り直し ／ `background_paths` に関連プロジェクトの正本を必ず載せる検査）**※2026-08-30 承認待ち** |
+| 2026-08-30 | 「なぜ wiki と整合性が取れてないのか」「憶測での回答は禁止」 | **する** | **一部できる**（正本の実在と参照は機械で照合できる。読んだかどうかは照合できない） | **A11**（根拠にした台帳の実パスを持ち実在するか）＋ **D1' 表示セット一致** **※2026-08-30 実行の承認・実装は次の会話** |
 | 2026-08-29 | 「別セッションで承認した作業が、なぜ実行されないのか」 | する | できる | **A9 ＋ quality-gate.json**（実装済み） |
 
 ## 関連リンク
@@ -2769,5 +2863,7 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
     — 「全表示」の実測と、レビュー・ボトルネック論の機械化（案1を承認。案2の中身も記録）
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-mechanization-a10-d1.md`
     — 仕組みA（台帳＋A10）と検査D1 の実装記録（コマンド・結果・変異試験）
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-which-to-keep-and-wiki-gap.md`
+    — 「どれを残すか」の既存記録の発見と、wiki 整合の調査（D1 の規則が誤りと判明）
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-helen-repro-review-harness-plan.md`
     — Helen 原作再現へ、既存計画とは別の実行保証計画を被せる議論（未回収コードで結論が覆った件を機械規則へ変換）

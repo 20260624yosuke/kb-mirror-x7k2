@@ -28,6 +28,21 @@ revision: 2
 3. `f166`コード資産棚卸しの未完了点を確定する。
 4. 未回収コードをS6・S8・G10へ接続する作業を、Claude主解析と独立検証へ限定する。
 
+## 関連ファイルの実パス（2026-08-30 追記）
+
+本文の `[[slug]]` は Obsidian の記法で、新しいセッションの LLM は解決できない。実体は次のとおり。
+作業ディレクトリは
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01`。
+
+- `[[gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827]]` → `wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md`
+- `[[gf2-char-extract-handoff]]` → `wiki/builds/gf2-char-extract-handoff.md`
+- `[[gf2-repro-and-swimsuit-conversation-handoff-20260827]]` → `wiki/builds/gf2-repro-and-swimsuit-conversation-handoff-20260827.md`
+- `[[gf2-helen-repro-v51-handoff]]` → `wiki/builds/gf2-helen-repro-v51-handoff.md`
+- `[[gf2-helen-repro-v51-run]]` → `wiki/builds/gf2-helen-repro-v51-run.md`
+
+このページを入口として渡された場合の戻り先（水着案件の brainstorm メモ・正本）:
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`
+
 承認済み計画を全面的に作り直すページではない。「計画が崩れている」という曖昧な説明で済ませず、
 どの記録が何と食い違い、何を修復してから解析へ進むかを固定する。
 
