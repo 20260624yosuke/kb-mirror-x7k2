@@ -116,6 +116,16 @@ background_paths:
 本命の①に **「選ぶと何を失うか」を書いていなかった**。さらに数値を判断できる形に翻訳していなかった
 （11.7〜18.9mm ＝ 胸と水着のあいだの指1〜2本ぶんの隙間、同時に帯は食い込んでいる）。
 
+### 2026-08-30 承認3件が理解できない（本人の言葉）
+
+> すみません。理解できてませんので説明をお願いします。
+
+→ 原因は私の出し方。部品名（`P1_body_lod0_Dorm` / `cloth3_trans_lod0`）と工程名（O1）を並べただけで、
+**それが絵としてどう変わるか**を書いていなかった。実データを測り直して説明ページを作成:
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-three-approvals-explained.html`
+
+その過程で**前回の説明の誤りが2件**見つかった（下の「2026-08-30 腰まわりの実測」節）。
+
 ### 2026-08-30 Helen 原作再現へ別の実行保証計画を足す（本人の言葉）
 
 > すでに計画はあるけど、それとは別の計画が必要になったと思う。
@@ -2409,10 +2419,42 @@ submesh を合算すると全 33メッシュ・表示 19メッシュ。
 → **結論: 両方。ただし比重は私（読む範囲）が大きい。** 記録は KB にあり、指示にも書かれていた。
 仕組みの3つが埋まっていれば、私が読み落としても機械が止められた。
 
+### 2026-08-30 腰まわりの実測 — 前回の「穴が開く可能性」を訂正する（重要）
+
+高さ2cm刻み・72方向の角度被覆率（1.00＝全周閉、0.00＝面ゼロ）。すべて座標計算のみ、画像は見ていない。
+
+| 残す布 | 0.96 | 1.00 | 1.04 | 1.08 | 1.12 | 1.16 | 最小 |
+|---|---|---|---|---|---|---|---|
+| スカート `P1_cloth` 全4 submesh | 0.94 | 0.96 | 1.00 | 0.97 | 0.86 | 0.83 | **0.83** |
+| **水着版で「出す」と決めた部品だけ** | **0.00** | **0.00** | **0.00** | **0.00** | **0.00** | **0.00** | **0.00** |
+
+- **Y0.957〜1.167（約21cm）に面が1枚も存在しない。** 「隙間が開く」ではなく**胴体が無い**。
+  上半身と脚が離れて浮く。2026-08-28 の「腰は布で覆うしかない」がそのまま効く。
+- `P1_cloth_lod0` は 10,269面・4 submesh（#0 4341 / #1 2476 / #2 3140 / #3 312）。
+  **全部残しても最小 0.83**（#1+#2 で 0.74 / #0 単独 0.56）。1.00 が出たのは別衣装 P3 の #1+#3。
+- 裸足 `P1_body_lod0_Dorm` は Y0.013〜0.162 の**足首から先だけ**の部品（分類名 `P1_Dorm_裸足`、
+  材質に足の爪 984面）。脚は Y0.162 で終わるので、**出さないと足首から先が無い**。
+- 透過布 `cloth3_trans_lod0` は 454頂点/145面、X −0.212〜+0.063 と**体の左半分に寄った小さな布**。
+  体を覆う布ではない。役割は未確認。
+- 工程O1 が要る理由: 現行出力は **4配列**、原本は **13配列**。UV・骨・法線・頂点色・バインドポーズが
+  落ちており、このままでは模様が貼れず体にも追随しない。
+
+**訂正2件**: ①「スカートを外すと穴が開く可能性」→ **確定**。②「裸足を出すと足元の見え方が変わる」→
+**出さないと足首から先が無い**。
+
 ## まだ決まってないこと
 
 ### 2026-08-30 追加
 
+- **（2026-08-30・最重要）腰の21cmをどうするか。** 承認済みの「スカートを外す」を実行すると
+  胴体が21cm分無くなる（上の実測）。4案と失うもの:
+  **A** スカートを出したまま（失う: 水着姿にならない）/
+  **B** スカートの一部だけ残す（失う: 全部残しても 0.83 までしか閉じず、追加作業が要る）/
+  **C** 別衣装の腰布を借りる（失う: その衣装の意匠が水着姿に混ざる。1.00 は別衣装で確認済み・
+  水着構成での再測定は未実施）/
+  **D** 腰の布を新規に作る（失う: 近似版扱いで別途承認が必要。新規造形が胸に続き2件目になる）。
+- **（2026-08-30）透過布を出すか。** 表示切り替えだけなので、Blend ができてから実物を見て決めても
+  作り直しは出ない。
 - **水着版の表示セット**: G13 の10件を土台にしたとき、ドレスの部品（スカート `P1_cloth`・
   手袋 `P1_hand`・装飾 `cloth2_lod0`）を出すか外すか。**水着の見え方が直接変わる。**
 - **D1 の判定規則を台帳に合わせて作り直すか**（作り直すと、いまの D1a/D1b/D1c は差し替えになる）。
@@ -2504,6 +2546,10 @@ submesh を合算すると全 33メッシュ・表示 19メッシュ。
 
 ## 直した記録
 
+- 2026-08-30 まだ作成していない `audit` フォルダを絶対パスで書いていた3か所を、
+  「新設する案（未作成）」の説明へ言い換えた。引き継ぎ監査が未作成パスを切れたリンクとして
+  止めていたため。計画内容は変えていない。
+
 - 2026-08-30: 武田さんの選択肢2を反映し、S6先行案から「S6・S8・G10の3契約を先に同じ深さで
   設計する」へ更新した。説明HTMLと子メモを同期。実装・Blend・抽出結果は変更していない。
 
@@ -2586,6 +2632,7 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-mechanization-a10-d1.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-which-to-keep-and-wiki-gap.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-visible-set-d1-a11-implemented.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-three-approvals-explained.md
 
 ## 実装への申し送り
 
@@ -2885,6 +2932,9 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 ## 説明ページ（人が読む用）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-three-approvals-explained.html`
+  — **次に決める3件を、絵として何が変わるかで説明**（2026-08-30）。腰の被覆率 0.00 の実測を含む
+
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-project-overview-and-resume-point.html`
   — **いまの全容と再開地点**（2026-08-30）。目的・制約・層A/B/Cの到達点・機械の関所・承認済み未着手の4本を1枚に畳んだもの
 
@@ -2946,3 +2996,5 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
     — Helen 原作再現へ、既存計画とは別の実行保証計画を被せる議論（未回収コードで結論が覆った件を機械規則へ変換）
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-visible-set-d1-a11-implemented.md`
     — 水着版の表示セット台帳・D1 の差し替え・関所 A11・F005 の実装記録（完成条件6つを充足）
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-three-approvals-explained.md`
+    — 承認3件の説明と、腰まわりの実測（前回の説明の誤り2件を訂正）
