@@ -29,6 +29,10 @@ parent: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/L
   状態は草案・未承認・未実装を維持する。
 - revision 2再レビューは5件解消・3件部分解消。追加で一意化が必要な5点をrevision 3へ反映した。
   外部登録簿の対象照合とguard SHA、phase別条件、writer毎回再走査、state単一正本、a10バックアップ名を固定した。
+- revision 3確認で残った初回導入の循環とwriter分類改変をrevision 4で修正。project IDと対象defectの
+  JSONキーも固定した。状態は草案・未承認・未実装。
+- revision 4の独立最終確認では、残る4点が全てResolved、新しいCritical・Majorなし。
+  技術的に実装開始可能。ただしユーザーの実行承認は未取得。
 
 ## 武田さんの言葉
 

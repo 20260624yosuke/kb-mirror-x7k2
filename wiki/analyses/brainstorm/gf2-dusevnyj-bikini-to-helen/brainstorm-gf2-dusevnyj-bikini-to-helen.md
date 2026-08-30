@@ -352,6 +352,9 @@ background_paths:
   判断の依頼ではなく説明の依頼として扱い、説明ページを新規に1枚作った（既存ページの上書きはしない規則）:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-status-after-deliverable-reject.html`
 - 承認待ちの論点は変わらず「胴体をどうするか」の1件。説明のあと、同じ内容のカードを出し直す。
+- カードへの回答: 「ページが見つからないので確認できません。承認しません」（確認: はい）。
+  → 胴体の方針は**未決定のまま**。ファイル自体は実在を確認済み（18,237 バイト）。
+  説明ページへたどり着けない状態なので、開き方を解決してから聞き直す。
 
 ## 決まったこと
 
@@ -379,6 +382,11 @@ background_paths:
 - 2026-08-30: revision 2の再レビューは5件解消・3件部分解消・未解消0件。ただし実装結果を変える詳細5点が
   残ったため、対象照合、guardの外部SHA、phase別条件、writer再走査、state単一正本をrevision 3へ追記した。
   まだ未承認・未実装。
+- 2026-08-30: revision 3の最終確認で、初回導入の循環、writer分類結果の未固定、project IDキー、
+  requested defectsの正本が残った。revision 4へbootstrap一括導入・全復元、writers.json承認SHA、
+  `project_id`、`execution_audit.requested_defects` を追記した。まだ未承認・未実装。
+- 2026-08-30: revision 4の独立最終確認は、残る4点すべてResolved、新しいCritical・Majorなし。
+  技術的に実装開始可能な仕様と判定された。ただし `draft-revision-4-unapproved` で、実装承認はまだ無い。
 
 ### 2026-08-28 に実測で確定した下半身の構造（画像を使わず数値のみ）
 

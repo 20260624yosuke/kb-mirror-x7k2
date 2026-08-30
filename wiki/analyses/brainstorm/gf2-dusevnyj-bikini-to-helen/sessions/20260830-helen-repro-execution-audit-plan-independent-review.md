@@ -118,6 +118,18 @@ S6・S8・G10の対象選定、G10を推定で埋めず `blocked` にする判�
 6. 既存section 9.6との優先関係を決める。
 7. 共有品質ゲートの回帰試験を追加する。
 
+## revision 2〜4の再レビュー結果
+
+- revision 2: 旧8件のうち5件解消、3件部分解消。対象照合、guard信頼起点、phase、writer再走査、
+  state更新の一意化が不足。
+- revision 3: 上記を反映。最終確認で、初回bootstrap循環、`writers.json`分類結果の未固定、
+  project IDキー、`requested_defects`正本が残った。
+- revision 4: 残る4点をすべて解消。独立レビューで **Resolved 4 / Partially resolved 0 / Unresolved 0**。
+  新しいCritical・Majorなし。**技術的に実装開始可能な仕様**と判定。
+- 非阻害の注意: bootstrap失敗時の全面復元試験では、新設auditディレクトリとwriter走査器も導入前の
+  不在状態へ戻ったことを明示確認する。
+- 文書状態は引き続き `draft-revision-4-unapproved`。技術判定はユーザーの実行承認を代替しない。
+
 ## 使わなかったもの・落とした情報
 
 なし。レビューは読み取り専用で、計画・コード・JSON・ログを変更していない。
