@@ -10430,3 +10430,18 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   脱出口が無い ⑤本番の合格判定が主観で通る（正解表なし・閉じた試験でない・承認Cの順序が逆）。
 - 触ったページ: 上記2ページ（新規）、`wiki/analyses/brainstorm/project-hub-index/_index.md`、`index.md`。
 - 残: 計画は未改訂。実装承認は取っていない。`brainstorm_status` は `active` のまま。
+
+## [2026-08-30] query | 実装計画 rev.2 の再レビュー（2回目）
+- 作成: [[project-current-state-page-plan-review2-20260830]]。更新: `wiki/builds/project-current-state-page-plan-20260830.md` を rev.2 へ改訂済み。
+- 1回目 critical 5件のうち**完全解消は2件**（案2の復活・判定⑤の自己ロック解消）。3件は部分解消。
+- **改訂が新たに critical 2件を生んだ**: ①判定⑤が共通欄ファイルの mtime しか見ず、承認済み完成条件
+  「`run-state.json` とのずれで止める」が不成立 ②`verify` の仕様が存在せず本番試験を開始できない。
+- **事実誤りを実測で確認**: 1.2表の #3 は 585行（計画は570）、合計 4,593行（計画は4,578）。
+  さらに壊れ#4 の実態は「印が無い」ではなく **4枚が互いに「自分が正本」と主張**していること
+  （run 14行目 / handoff 30-31行目 / plan-repair 54行目 / conversation 26行目を実読）。
+  → 完成条件5 と禁止事項9-6（本文を書き換えない）が両立しない。**武田さんの判断事項。**
+- 実測: `~/.claude/settings.json` の PreToolUse は matcher `Write|Edit|NotebookEdit|Bash` の1本のみ。
+  水着化の作業ルート `output/gf2-helen-swimsuit/` は 2026-08-30 16:30/16:31 更新＝稼働中。
+- 触ったページ: 上記レビュー結果（新規）、`wiki/analyses/brainstorm/project-hub-index/_index.md`
+  （再レビュー結果と `## 機械化した指摘` 節を追加）、`index.md`。
+- 残: rev.3 未着手。実装承認は取っていない。`brainstorm_status` は `active`。

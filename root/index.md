@@ -1454,3 +1454,5 @@
 - `wiki/_attachments/project-hub-index/20260830-handoff-mechanism-design.html` — セッションをまたぐと話が消える問題の直し方の設計。1案件1枚の現在位置ページ、機械が書く区画と人が書く区画の分離、機械化する5条件、run-state.json の欄名不一致への3案 (user-stated, 2026-08-30)
 - `wiki/builds/project-current-state-page-plan-20260830.md` — プロジェクト現在位置ページの導入計画。1案件1枚・機械区画/LLM区画の分離・run-state.json へ共通最小欄・5つの機械判定。**レビューで critical 5件が出ており未改訂** (user-stated, 2026-08-30)
 - [[project-current-state-page-plan-review-20260830]] — 上記計画の独立レビュー結果。実測値は1件を除き全一致だが、承認済み要件の欠落・判定⑤の自己ロック・自動生成の入力未定義など critical 5件 (source-backed, 2026-08-30)
+- [[project-current-state-page-plan-review2-20260830]] — 上記計画 rev.2 の2回目の独立レビュー。1回目 critical 5件のうち完全解消は2件。改訂が新たに critical 2件（判定⑤の無力化・verify 未定義）を生み、1.2表に事実誤り。壊れ#4 の実態は「印が無い」でなく「4枚が互いに正本を主張」 (source-backed, 2026-08-30)
+- `wiki/_attachments/project-hub-index/20260830-four-files-claim-master.html` — 引き継ぎ資料4枚が本文で互いに「自分が正本」と宣言している問題の説明と、直し方3案（該当行だけ書き換え／冒頭に1行だけ／別フォルダへ退避） (source-backed, 2026-08-30)
