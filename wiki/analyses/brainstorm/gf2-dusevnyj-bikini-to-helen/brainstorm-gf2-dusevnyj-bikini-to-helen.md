@@ -442,6 +442,13 @@ background_paths:
 - 2026-08-30: revision 2の再レビューは5件解消・3件部分解消・未解消0件。ただし実装結果を変える詳細5点が
   残ったため、対象照合、guardの外部SHA、phase別条件、writer再走査、state単一正本をrevision 3へ追記した。
   まだ未承認・未実装。
+- 2026-08-30: **胸の変種 — 最終成果物は Flat、現段階の検証と表示は General**（武田さん明言。
+  「General にレンダリングできないなら Flat にもできない」が理由。2026-08-29 の記録と整合し、
+  私が提示した「食い違い」は誤読として訂正済み）。いまの成果物が Flat を表示しているのは
+  現段階の指定に反する。検査 V7 の合格線は「現段階 = General」。
+- 2026-08-30: **胴体に新しく面を作る案は却下**（「変にレンダリングしないでいい」の明言）。
+  残る手段は既存メッシュの使い方のみ。
+- 2026-08-30: 明言台帳の案はこの形では不承認。具体設計と「機械監査として機能する根拠」をそろえて出し直す。
 - 2026-08-30: revision 3の最終確認で、初回導入の循環、writer分類結果の未固定、project IDキー、
   requested defectsの正本が残った。revision 4へbootstrap一括導入・全復元、writers.json承認SHA、
   `project_id`、`execution_audit.requested_defects` を追記した。まだ未承認・未実装。
@@ -2893,8 +2900,10 @@ D1 に「部品の内訳（面数）」の検査を足した。名前の一覧�
 `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-deliverable-reject-mechanize-visible-checks.md`。
 
 - **ヘレンには素肌の胴体メッシュが存在しない**（体メッシュは全部 Y0.957 で終わる。胴体帯は
-  ドレス `cloth2_lod0_*` だけで、その4枚とも濃紺の布・肌の面は0枚）。**胴体をどうするかが未決定。**
-  これが決まらないと V3（素肌の在庫）と V4（着衣関係）の合格線を数値で置けない。
+  ドレス `cloth2_lod0_*` だけで、その4枚とも濃紺の布・肌の面は0枚）。**胴体をどうするかは一部決着:**
+  新しく面を作る案は 2026-08-30 の明言で却下。残る選択は既存メッシュの使い方
+  （dorm 素体からの移植／既存の胴体メッシュをどう扱うか）。V3（素肌の在庫）と V4（着衣関係）の
+  合格線はその決定待ち。
 - 検査 V1〜V6 を今回どこまで実装対象にするか（V1・V2・V5・V6 は胴体の決定と無関係に作れる）。
 - 脚の灰色を直す方法（産出側の規則を広げるか、共有肌アトラスの適用条件そのものを見直すか）。
 
@@ -3466,9 +3475,13 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 ## 説明ページ（人が読む用）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-chest-variant-settled-and-statement-ledger.html`
+  — **胸の変種の決着と、明言台帳の具体設計**（2026-08-30・最新）。明言「現段階は General・最終は Flat」の
+  構造、いまの成果物への影響、明言台帳の台帳形式・機械照合3か所・変異試験3種・機能の根拠と限界
+
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-answer-chest-variant-and-statements.html`
-  — **回答: 胸の変種の食い違いと、明言が失われる問題**（2026-08-30・最新）。Flat=寝室 / General=立ち姿の
-  台帳記録、新たな監査の抜け3件（V7〜V9）、「変にレンダリングしない」の明言の扱い、明言台帳の案
+  — 回答: 胸の変種の食い違いと明言の問題（2026-08-30）。**差し替え済み**（`doc-status: superseded`、
+  後継は上の1枚）。「食い違い」という枠組み自体が私の誤読だったため、当時の記録として残すだけ
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-status-after-deliverable-reject.html`
   — **現状の整理: 不合格の中身と、次に決める1件**（2026-08-30・最新）。指摘3件の実測、監査の抜けの正体、
