@@ -3390,6 +3390,10 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 ## 説明ページ（人が読む用）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-answer-chest-variant-and-statements.html`
+  — **回答: 胸の変種の食い違いと、明言が失われる問題**（2026-08-30・最新）。Flat=寝室 / General=立ち姿の
+  台帳記録、新たな監査の抜け3件（V7〜V9）、「変にレンダリングしない」の明言の扱い、明言台帳の案
+
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-status-after-deliverable-reject.html`
   — **現状の整理: 不合格の中身と、次に決める1件**（2026-08-30・最新）。指摘3件の実測、監査の抜けの正体、
   検査 V1〜V6 と工程規則 R1〜R3、決めることは胴体の方針1件
