@@ -2106,6 +2106,23 @@ A1・A2・A5・A6・A7・A8 が PASS。残る FAIL は2件で、どちらも本�
 
 詳細と直し方の案は子メモ `sessions/20260829-p-implementation-and-decision-point.md`。
 
+### 2026-08-30 工程O0 の結果 — **通った**（実行済み・実測）
+
+Helen の中間データを一切改変せずに `ce_build_blend.py` へ通し、**Blend が1つできた**。
+「Blend を作る道具が流用できる」は推測だったが、これで事実になった。
+
+- 出力: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/blends/o0-verify/Helen-HelenSSR01-o0.blend`（66.4MB）
+- Blender は **4.5.11 LTS**、起動は `Blender -b --python <script> -- --intermediate ... --out ... --build-log ...`。
+  **スクリプト冒頭の docstring の引数（`--char/--variant`）は古い。** 実際の argparse が正しい。
+- ログにエラー無し（`matrix_set_errors` 0 / `bones_missing_rest` 0 / `gaps` 0 /
+  面数が元データと一致 / post_chain ok）。ボーン 375、メッシュ 75。
+- 保存後に開き直して実測: オブジェクト80・頂点421,408・面224,300・ボーン375・既定表示58。
+- 事実として残す2点: `unresolved_parent_count: 160`（推定で親を埋めない規約どおり）、
+  材質が付かない 4 件（MP443×2・flag Effect・非表示の trans 布。**水着の対象部位ではない**）。
+- **見た目は未確認。** 数が揃っていることだけを確認した。この Blend に水着は入っていない。
+- 既存 `blends/*.blend` は上書きしていない。原本 `intermediate/` は読んだだけ。
+- 詳細: `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o0-build-blend-passthrough.md`
+
 ## まだ決まってないこと
 
 - ~~（2026-08-29・新規）承認の粒度をどう記録するか。~~ → **2026-08-29 決着。**
@@ -2246,6 +2263,9 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 ## 実装への申し送り
 
 ### 【最優先・2026-08-29 → 2026-08-30 に順序変更】工程O0: 既存の道具を1回そのまま通す
+
+> [!done] 2026-08-30 実行済み・**通った**。結果は上の「2026-08-30 工程O0 の結果」節と
+> `sessions/20260830-o0-build-blend-passthrough.md`。次は下の「終わったら次に取る承認（O0 用）」。
 
 **2026-08-30 のカードで武田さんが承認した「次の一手」。カップの作り直し（承認済み）より先にこれをやる。**
 
@@ -2392,3 +2412,5 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 - 現在の子:
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md`
     — 案P の実装結果と、そこで生まれた4つの道（それぞれ失うもの）
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o0-build-blend-passthrough.md`
+    — 工程O0 の実行記録（通った。コマンド・ログ・開き直しての実測）
