@@ -2811,6 +2811,9 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 ## 説明ページ（人が読む用）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-project-overview-and-resume-point.html`
+  — **いまの全容と再開地点**（2026-08-30）。目的・制約・層A/B/Cの到達点・機械の関所・承認済み未着手の4本を1枚に畳んだもの
+
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-which-to-keep-already-decided.html`
   — 「どれを残すか」は既に決まっていた。記録の在り処と、D1 の判定規則の誤り（2026-08-30）
 
