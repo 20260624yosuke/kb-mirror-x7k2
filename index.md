@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4905 ファイル_
+_合計 4906 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 4905 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-30T11:31:48Z
-- [log.md](root/log.md) | 2026-08-30T11:27:13Z
+- [index.md](root/index.md) | 2026-08-30T12:19:11Z
+- [log.md](root/log.md) | 2026-08-30T12:19:11Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -268,15 +268,16 @@ _合計 4905 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-30T11:55:51Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-30T12:18:41Z
 
-## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (9)
+## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (10)
 
 - [20260829-p-implementation-and-decision-point.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md) | 2026-08-29T15:58:18Z
 - [20260830-helen-repro-review-harness-plan.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-helen-repro-review-harness-plan.md) | 2026-08-30T09:09:59Z
 - [20260830-mechanization-a10-d1.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-mechanization-a10-d1.md) | 2026-08-30T06:18:57Z
 - [20260830-o0-build-blend-passthrough.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o0-build-blend-passthrough.md) | 2026-08-30T03:05:33Z
 - [20260830-plan-holes-why-no-deliverable.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md) | 2026-08-30T01:53:01Z
+- [20260830-prose-mechanization-a12-a14.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-prose-mechanization-a12-a14.md) | 2026-08-30T12:17:23Z
 - [20260830-review-bottleneck-mechanization.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-review-bottleneck-mechanization.md) | 2026-08-30T06:06:41Z
 - [20260830-three-approvals-explained.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-three-approvals-explained.md) | 2026-08-30T10:55:41Z
 - [20260830-visible-set-d1-a11-implemented.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-visible-set-d1-a11-implemented.md) | 2026-08-30T07:32:19Z

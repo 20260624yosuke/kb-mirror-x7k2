@@ -2797,9 +2797,21 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-which-to-keep-and-wiki-gap.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-visible-set-d1-a11-implemented.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-three-approvals-explained.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-prose-mechanization-a12-a14.md
 
 ## 実装への申し送り
 ### 【最優先・2026-08-30 実行の承認】表現の機械化3本（用語 / ページの版 / 比較の基準が無い述語）
+
+> [!done] 2026-08-30 実装済み。完成条件6つをすべて満たした。
+> 作ったもの: `wiki/builds/terminology.json` / `tools/terminology_check.py` /
+> `tools/doc_version_check.py` / `tools/vague_predicate_check.py` / `tools/prose_guard.py`。
+> `~/.claude/settings.json` の `PreToolUse` へ1行追加（既存の `guard-write --unread` は据え置き。
+> 退避 `settings.json.bak-20260830-prose-guard`）。`plan_audit.py` は **14 / 14 PASS**。
+> 実機で2件の書き込みが実際に止まり、正しい3件は通った（`tools/logs/prose-guard.log`）。
+> 説明ページの是正まで完了（旧 `20260830-three-approvals-explained.html` を差し替え済みにし、
+> 後継 `20260830-three-approvals-decided.html` を新設）。
+> 実行記録: `output/gf2-helen-swimsuit/run-20260830-prose-guard.txt`、
+> 経緯: `sessions/20260830-prose-mechanization-a12-a14.md`。
 
 **承認の種類は実行の承認**（実際に作ってよい）。カードで「3本すべて」を選択、確認質問も「はい」。
 **実装は新しい通常モードの会話で行う。**
@@ -3197,8 +3209,13 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 ## 説明ページ（人が読む用）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-three-approvals-decided.html`
+  — **承認3件の現在地（現行版）**（2026-08-30）。腰・透過の布・足先について、いま有効な結論だけを書いた1枚。
+  版の印 `doc-status: current`
+
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-three-approvals-explained.html`
-  — **次に決める3件を、絵として何が変わるかで説明**（2026-08-30）。腰の被覆率 0.00 の実測を含む
+  — 次に決める3件を、絵として何が変わるかで説明（2026-08-30）。**差し替え済み**（`doc-status: superseded`、
+  後継は上の decided 版）。当時の記録として残しているだけで、開く必要はない
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-project-overview-and-resume-point.html`
   — **いまの全容と再開地点**（2026-08-30）。目的・制約・層A/B/Cの到達点・機械の関所・承認済み未着手の4本を1枚に畳んだもの
@@ -3230,9 +3247,9 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 | 2026-08-30 | 「成果物は合格ではないが、code 的には helen を特定できている」 | — | — | **人間判断として残す**（どこまでを合格とするかは武田さんの判断） |
 | 2026-08-30 | 「なぜ wiki と整合性が取れてないのか」「憶測での回答は禁止」 | **する** | **一部できる**（正本の実在と参照は機械で照合できる。読んだかどうかは照合できない） | **A11**（根拠にした台帳の実パスを持ち実在するか）＋ **D1 表示セット一致** **※2026-08-30 実装済み（F005）** |
 | 2026-08-29 | 「別セッションで承認した作業が、なぜ実行されないのか」 | する | できる | **A9 ＋ quality-gate.json**（実装済み） |
-| 2026-08-30 | 「llmの回答内容の言い回しの表現が低品質で、私が誤解をしてます」「機械的に表現を禁止できる仕組み」 | **する** | **一部できる**（語の型は照合できる。意味の分かりやすさは照合できない） | **A14**（比較の基準が無い述語を弾く・初期3語）**※承認済み・実装は次の会話** |
-| 2026-08-30 | 「提出するhtmlの品質が最低です。以前のものが混じってて、認知負荷が高いです」 | **する**（訂正のたび） | **できる**（同じ主題で current が2枚あるかは機械で数えられる） | **A13**（ページの版・1ページ＝1結論）**※承認済み・実装は次の会話** |
-| 2026-08-30 | 「二度と名称を省略しないでください。正式名称/私が言い回す名称以外の固有名詞の使用は禁止」 | **する** | **できる**（辞書との照合） | **A12**（用語の監査・禁止語で書き込みを止める）**※承認済み・実装は次の会話** |
+| 2026-08-30 | 「llmの回答内容の言い回しの表現が低品質で、私が誤解をしてます」「機械的に表現を禁止できる仕組み」 | **する** | **一部できる**（語の型は照合できる。意味の分かりやすさは照合できない） | **A14**（比較の基準が無い述語を弾く・初期3語）**※2026-08-30 実装済み（F008）** |
+| 2026-08-30 | 「提出するhtmlの品質が最低です。以前のものが混じってて、認知負荷が高いです」 | **する**（訂正のたび） | **できる**（同じ主題で current が2枚あるかは機械で数えられる） | **A13**（ページの版・1ページ＝1結論）**※2026-08-30 実装済み（F007）** |
+| 2026-08-30 | 「二度と名称を省略しないでください。正式名称/私が言い回す名称以外の固有名詞の使用は禁止」 | **する** | **できる**（辞書との照合） | **A12**（用語の監査・禁止語で書き込みを止める）**※2026-08-30 実装済み（F006）** |
 | 2026-08-30 | 「カップだけは足りません。この言い回し、よくわからないので、原因を言語化してください」 | する | 一部できる | **A14**（同上）＋ 原因の言語化は上の「2026-08-30 2回目のカードへの回答」節に記載 |
 
 ## 関連リンク
@@ -3267,3 +3284,5 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
     — 水着版の表示セット台帳・D1 の差し替え・関所 A11・F005 の実装記録（完成条件6つを充足）
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-three-approvals-explained.md`
     — 承認3件の説明と、腰まわりの実測（前回の説明の誤り2件を訂正）
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-prose-mechanization-a12-a14.md`
+    — 表現の機械化3本（用語・ページの版・比較の基準が無い述語）の実装記録。実機で止まった記録と変異試験

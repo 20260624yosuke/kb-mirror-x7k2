@@ -10445,3 +10445,20 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 触ったページ: 上記レビュー結果（新規）、`wiki/analyses/brainstorm/project-hub-index/_index.md`
   （再レビュー結果と `## 機械化した指摘` 節を追加）、`index.md`。
 - 残: rev.3 未着手。実装承認は取っていない。`brainstorm_status` は `active`。
+
+## [2026-08-30] query | 表現の機械化3本（用語 / ページの版 / 比較の基準が無い述語）を実装
+- 親メモ `brainstorm-gf2-dusevnyj-bikini-to-helen.md` の「実装への申し送り」先頭節（実行の承認済み）を実装。
+- 新規: `wiki/builds/terminology.json`、`tools/terminology_check.py`、`tools/doc_version_check.py`、
+  `tools/vague_predicate_check.py`、`tools/prose_guard.py`。`tools/plan_audit.py` へ A12/A13/A14 を追加。
+- 接続: `~/.claude/settings.json` の `PreToolUse` へ1行追加（matcher `Write|Edit`）。既存の
+  `guard-write --unread` は据え置き（`brainstorm_guard.py audit-handoff --selftest` が第1〜3層 PASS）。
+- 実機: 禁止語・基準の無い述語・版の印なしの書き込みを実際に拒否（4件指摘）。同じ話題で現行版を2枚目に
+  しようとした書き込みも拒否。正しい3件は通過。記録は `tools/logs/prose-guard.log` と
+  `output/gf2-helen-swimsuit/run-20260830-prose-guard.txt`。
+- `plan_audit.py` は **14 / 14 PASS**（A12 5例・A13 7例・A14 7例の変異試験つき）。
+- 説明ページの是正: `20260830-three-approvals-explained.html` を `doc-status: superseded` にし、
+  現行の結論だけを書いた `20260830-three-approvals-decided.html` を新設（本文の上書きはしていない）。
+- 触ったページ: 上記の新規5件と HTML 2枚、`output/gf2-helen-swimsuit/review-findings.json`（F006〜F008 追加）、
+  親メモ、`sessions/20260830-prose-mechanization-a12-a14.md`（新規）、`index.md`、`log.md`。
+- 残: チャット本文は止められない（Stop フックの挙動は未確認・調べる前に承認が要る）。既存の説明ページ13枚は
+  印なしのまま。対象語は3語のまま。
