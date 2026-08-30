@@ -10479,3 +10479,22 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `sessions/20260830-o1-o3-swimsuit-blend-built.md`（新規）、`index.md`、`log.md`。
 - 残: 見た目は未確認（武田さんの判断）。上衣の下端と腰の布の縫い合わせは未実装（承認範囲外）。
   物差しは未達のまま提出。骨の重みの妥当性は未検証。
+
+## [2026-08-31] query | 【重大】helen 案件で別セッションと正本が衝突していることを発見
+- 3回目の独立レビューの指摘（`_attachments/project-hub-index/` に未知の HTML がある）から追跡。
+- **別セッションが同じ helen 案件で並行して計画・実装を進めていた。**
+  - `wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md` — revision 4・
+    `plan_status: approved-for-implementation`（2026-08-30 実行承認済み）。
+    194行目「**状態値の唯一の正本は `state.json`**」。
+  - `wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md` — revision 1・未承認。
+    `06_repro-v51/audit/state.json` を「監査状態と成果物ルートの**唯一の機械状態**」とする。
+  - `tools/` に7本のスクリプト（`prose_guard.py` 等・2026-08-30 21:08〜）。
+    `~/.claude/settings.json` の PreToolUse へ登録済み（**現在2本**）。
+  - `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/` にセッションメモ7枚。
+- **衝突**: 相手は「唯一の正本は state.json」、私の計画は「正本は wiki の現在位置ページ1枚」。
+  両計画とも相手を1度も参照していない（grep で相互言及ゼロ）。
+  **「正本が2つある」という、この案件で解こうとしていた問題そのものを再生産した。**
+- 私の計画 rev.3 の記述誤りを1件確認: 11節-4「PreToolUse は1本のみ」→ **実際は2本**。
+- `06_repro-v51/audit/` は未作成（相手側も P0B 未実装）。
+- 触ったページ: `wiki/analyses/brainstorm/project-hub-index/_index.md`。
+- 残: 衝突の解消方針が未決。3回目レビューの指摘（critical 1件・major 7件）も未反映。
