@@ -4,12 +4,13 @@ status: active
 confidence: medium
 evidence_level: user-stated
 last_reviewed: 2026-08-30
-brainstorm_status: active
+brainstorm_status: ready
 scope:
   - /Users/takedayousuke/.claude
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
 entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/askuserquestion-misclick-guard/_index.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-card-guard-plan-20260830.md
   - /Users/takedayousuke/.claude/settings.json
 background_paths:
   - /Users/takedayousuke/.claude/skills/brainstorm/SKILL.md
@@ -118,11 +119,18 @@ background_paths:
 
 ## 再開の入口（実パス）
 
+- 実装の詳細計画: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-card-guard-plan-20260830.md
+
 - このメモ: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/askuserquestion-misclick-guard/_index.md
 - フック登録先: /Users/takedayousuke/.claude/settings.json
 - brainstorm 規則本体: /Users/takedayousuke/.claude/skills/brainstorm/SKILL.md
 
 ## 実装への申し送り
+
+**実装の詳細計画（正本）**:
+/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-card-guard-plan-20260830.md
+（2026-08-30 にサブエージェント（Opus 5）のレビューを通し、重大3件・中2件・小2件の不一致を反映済み。
+**実装エージェントはこの計画書を読むこと。**）
 
 **2026-08-30 承認: 実装対象は G1 + G4 の2本。対象は Claude 側の brainstorm のみ。**
 （G2・G3 は今回入れない。テーマの範囲も広げない＝このフォルダのまま。）
@@ -177,7 +185,8 @@ background_paths:
 |---|---|---|---|
 | 承認カードに確認をもう1枚必ず付けてほしい | する（私が忘れる） | できる | **G1**（確認質問の無いカードを拒否） |
 | 推論ではなく機械的な仕組みにしてほしい | する | 個別には不可 | **G4**（指摘を毎回この表へ落とす工程） |
-| brainstorm 以外では動作させるな | する | できる | G1 の作動条件（brainstorm 中のみ） |
+| brainstorm 以外では動作させるな | する | できる | G1 の作動条件（進行中のブレストがある時のみ） |
+| 計画は実装前にサブエージェントでレビューさせる（バイアスのかかる指示は禁止） | する | 部分的 | 人間判断として残す（指示文の中立性は機械で判定できない）。エフォート指定は呼び出し側に項目が無く**未強制** |
 
 ## セッションメモ（子）
 
