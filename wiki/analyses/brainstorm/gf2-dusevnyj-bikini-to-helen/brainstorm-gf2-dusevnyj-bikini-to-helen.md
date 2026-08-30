@@ -2214,6 +2214,30 @@ Blender のファイルを書くコードは1行も無い。コード行数は�
 **塞ぎ方は未決定（承認待ち）。** この点検は計画の見直しであって、カップ作り直しの承認
 （`phase3-cup-rebuild`）を取り消すものではない。
 
+### 欠けていたものと段取り（2026-08-30・武田さん指示「問題の放置を禁止。段取りを組め」）
+
+**欠けていたのは判断材料ではなく、成果物へ渡す工程そのもの。** 判定用の形（溶接した座標だけ）で
+止まっていて、成果物用の形（原本位相＋UV＋骨＋法線）へ戻す工程・材料を組む工程・Blend にする工程が
+段取り 8.1〜8.4 に1つも無い。
+
+実測で分かった決定的なこと:
+
+- **Blend を作る道具はすでにあり動いている。**
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/scripts/ce_build_blend.py`。
+  実績 `blends/Helen-HelenSSR01-repro.blend` 65.9MB（2026-08-26）。**計画書はこの道具を知らない。**
+- 原本 npz は13配列、いまの出力は4配列。**UV・骨・法線・頂点色・バインドポーズが落ちている。**
+  溶接 2562→2129 の差 433 は UV・法線の切れ目。**戻すための対応表 `inv` も保存されていない。**
+- **骨は 15/15 がヘレンの骨格に存在する**（良い知らせ）。着せる下地はある。
+
+段取りは工程O1〜O5（O1 原本の形へ戻す／O2 材料フォルダを組む／O3 Blend を作る／O4 全身で測る／
+O5 合格していなくても提出）。新規に書くのは O1・O2 の2つだけ。
+計画書への直しは3つ（完成条件を提出型へ／監査に A10／8.1 の「成果物を作らない」を撤回）。
+
+詳細:
+`wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md`
+説明ドキュメント:
+`wiki/_attachments/helen-swimsuit-status/20260830-route-to-deliverable-plan.html`
+
 ## セッションメモ（子）
 
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md
