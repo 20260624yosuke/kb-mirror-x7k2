@@ -3,16 +3,23 @@ type: analysis
 status: active
 confidence: medium
 evidence_level: user-stated
-last_reviewed: 2026-08-29
+last_reviewed: 2026-08-30
 brainstorm_status: ready
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Users/takedayousuke/.claude
   - /Users/takedayousuke/.agents
+  - /Users/takedayousuke/.codex
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-guard-fix-handoff-20260829.md
 background_paths:
+  - /Users/takedayousuke/.codex/skills/brainstorm/SKILL.md
+  - /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py
+  - /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py
+  - /Users/takedayousuke/.codex/hooks.json
+  - /Users/takedayousuke/.codex/config.toml
   - /Users/takedayousuke/.claude/skills/brainstorm/SKILL.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-design/brainstorm-brainstorm-skill-design.md
   - /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py
@@ -33,6 +40,15 @@ Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/b
 - スキルの実装作業は実際のその LLM にさせるので、**どういう指示を送ればいいかを考えてほしい**。
 - （2026-08-28 の既存方針）指示書だけ提出し、その環境でどう実現するかはその LLM に考えさせる方が
   解像度が高い。
+- 2026-08-30、Codex で実際に使うと通常モードでは本物の承認カードが出ず、本文代替になっていた。
+  コンセプトは通常モードで Claude の `AskUserQuestion` 相当を出すことなので、本文代替は認めない。
+- Plan mode を避けたい理由は、編集できず毎ターンの wiki 記録を残せない認識だから。ボトルネックが
+  Plan mode でない可能性も含めて、実環境と wiki を調査してほしい。
+- 修正計画をそのまま承認せず、実装前に `gpt-5.6`・reasoning effort `medium` の独立サブエージェントへ
+  レビューさせるよう指示した。計画作成者が結論へ誘導するレビュー指示を送ることは禁止し、仕様と
+  実装の不一致を重点的に見せることを求めた。
+- 独立レビュー反映後の段階式計画を承認し、実装を依頼した。ただし `$brainstorm` の規則により、
+  この会話では計画を正本へ固定し、実装は新しい通常モード会話へ渡す。
 
 ## 実測で分かったこと（2026-08-29・すべてファイルを読んで確認）
 
@@ -107,6 +123,14 @@ Write ツールでは通った。
 - **封鎖側のパス抽出の誤検知は放置しない**（同日・武田さん指示）。他 LLM 向けには注意として
   指示書に明記し、Claude 側の修正は**別エージェントへ引き継ぐ**。
   引き継ぎ資料: `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`。
+- **Codex 通常モードの本物の承認カードを、後続改修より先に実機確認する**（2026-08-30 承認）。
+  失敗した場合は本文代替へ戻さず、設定を復元して `technical_stopped` とする。
+- **実イベント採取前にカード監査の入出力や ID を決めない**。カードの識別子を取得できなければ、
+  疑似 ID で補わず停止する。
+- **承認状態を現在のカードと対象親メモへ束縛する**。古いカード・別質問・別メモ更新は承認の証拠に
+  しない。
+- Codex 側の実装正本は `wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md`。
+  この brainstorm 会話では実装せず、新しい通常モード会話へ渡す。
 
 ### 中断とその後（2026-08-29）
 
@@ -182,13 +206,20 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 - 封鎖ができない環境（opencode）で、代わりに何で担保するか。
   実測では opencode の設定にフック登録が一切無く、止める土台があるか自体が**未確認**。
   系統Aの opencode 着手時に、まず土台の有無を調べてから決める。
+- Codex Desktop の新規通常モード会話で `default_mode_request_user_input` が実際にカードを表示し、
+  選択・自由記述・閉鎖・回答後の継続まで成立するか。実現性ゲートで直接確認する。
+- `request_user_input` がフックへ届く場合のイベント名、入力、結果、識別子、Stop との順序。
+  実ログを採取するまで未確定とする。
 
 （決着済み）Kimi の取り残しフック撤去の担当・時期 → 上の「進め方の決定」。
 （決着済み）3環境のうちどれから着手するか → 系統Bを先に片付けてから系統A。
 
 ## 捨てた案と理由
 
-（まだ無し）
+- **本文の `【承認待ち】` と番号付き選択肢を、本物のカードが出ない場合の代替にする案** → 却下。
+  武田さんが求める使用感と逆で、動いていない状態を隠すため。
+- **実イベントを確認する前に `request_user_input` 用 PreToolUse / PostToolUse の詳細を決める案** → 却下。
+  フックが発火しない、または識別子を取得できない可能性を独立レビューが指摘したため。
 
 ## 直した記録
 
@@ -204,11 +235,16 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 - 2026-08-29 再開時に上記 10・11 を追記（実測の記録のみ。判断は足していない）。
 - 2026-08-29 引き継ぎ資料に、再開中に実際に起きた課題1の再現例を追記。**ヒアドキュメントの中身まで走査対象になる**という新事実も含む（実装側の再現試験に使える）。
 - 2026-08-29 その追記で壊れたパス断片を literal で書いてしまい `audit-handoff` が FAIL。断片を書き写さない言い換えに直して PASS。
+- 2026-08-30 Codex の通常モード承認カード修正について、承認済み計画と独立レビューの必須修正を
+  新しい実装計画へ固定し、この親メモの scope・入口・背景資料を Codex 側へ拡張。
 
 ## 再開の入口（実パス）
 
 - このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
+- Codex の承認済み実装計画: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md`
 - 仕様の正本: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md`
+- Codex 規則本体: `/Users/takedayousuke/.codex/skills/brainstorm/SKILL.md`
+- Codex アダプタ: `/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py`
 - 規則本体: `/Users/takedayousuke/.claude/skills/brainstorm/SKILL.md`
 - 監査スクリプト: `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py`
 
@@ -216,6 +252,17 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 
 作業は2系統に分かれる。**2026-08-29 の承認により、系統B → 系統A の順で行う。**
 系統Bは「新しい会話の Claude」が担当し、渡すのは引き継ぎ資料1枚だけでよい。
+
+### Codex 通常モード承認カード修正（2026-08-30 承認済み）
+
+- 新しい通常モード会話へ
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md`
+  を渡す。
+- 最初は機能フラグ有効化と実機確認だけを行い、本物のカードとイベント識別子を確認できた場合だけ
+  SKILL・adapter・hooks・状態管理を改修する。
+- 失敗時は設定を戻して `technical_stopped`。本文代替、疑似 ID、未信頼フックで完成扱いは禁止。
+- 完成条件、テスト、正本更新、HTML 説明資料は上記計画に全て記載済み。
+- **この親メモを更新した brainstorm 会話では実装しない。**
 
 ### 系統A: 他 LLM（Codex / Kimi / opencode）へスキルを組ませる
 
@@ -250,6 +297,7 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 
 ## 関連リンク
 
+- [[brainstorm-codex-default-mode-card-plan-20260830]] — `wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md`
 - [[brainstorm-skill]] — `wiki/builds/brainstorm-skill.md`
 - [[brainstorm-port-request-20260829]] — `wiki/builds/brainstorm-port-request-20260829.md`
 - [[brainstorm-guard-fix-handoff-20260829]] — `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`
