@@ -3174,6 +3174,34 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 
 ### 【最優先・2026-08-31 実行の承認】胴体を素肌の上半身に確定 ＋ 検査 V1〜V6 ＋ 作り直して提出
 
+> [!done] 2026-08-31 実装済み。完成条件6つをすべて満たした。ただし**成果物は合格していない**。
+> 実行記録は `output/gf2-helen-swimsuit/run-20260831-torso-skin-v1-v6.txt`、
+> 説明ページは `wiki/_attachments/helen-swimsuit-status/20260831-torso-skin-rebuilt.html`。
+>
+> - 検査6本 `tools/swimsuit_visible_checks.py`（V1〜V6）を新設。入力は build-log ではなく
+>   **成果物の Blend から取り出した実データ**（`tools/blend_probe.py`）。**5 / 6 PASS**、
+>   落ちているのは **V4（着衣関係）**＝接触 0.069（下限 0.313）。
+>   変異試験6種すべて検出。V4 の検出力は、合格しているドゥルシーヌヴイ原着装を壊して確認した。
+> - 脚の灰色は直り、**V1 が実測で PASS**（脚 235,182,163 / R−B +72）。
+> - 水着を素肌の上半身へ合わせ直した（体からの距離の中央値 9.2mm → 7.4mm）。
+>   `plan_audit.py` は **14 / 14 PASS**（A11 を V1〜V6 まで広げたうえで）。
+>
+> **申し送りの前提と違っていた点（要判断・3件）**
+> 1. **素肌の上半身は1枚の胴体ではなく、離れた13個のかたまり**だった。ドレスが覆っていた面は
+>    原作に存在しないので、ドレスを外すと**正面から見て 274.4cm² が穴**になる（肩でも 18.4cm²）。
+>    水着が覆えるのは 22.3cm² だけ。新規に面を作るのは却下済みなので、穴のまま提出した。
+>    実測は `tools/swimsuit_front_coverage.py`、地図は `output/gf2-helen-swimsuit/front-coverage-map.txt`。
+> 2. **「脚の灰色」は産出側の不具合ではなかった。** 原作の `c_HelenSSR0101_slg_P1_body_d` は
+>    全面 197,197,197 の無彩色＝礼服の白い脚衣で、ヘレンには素肌の脚メッシュが1本も無い。
+>    共有肌アトラスへ差し替えて肌色にしたが**近似**。台帳 F010 に human-kept で記録。
+> 3. **肩ひもが肩を越えて首の高さまで伸びる**（147頂点が胴体上端 Y1.538 より上）。
+>    適合の未解決課題として V4 が数値で拾っている。
+>
+> 触ったもの: `tools/swimsuit_visible_checks.py`（新規）/ `tools/blend_probe.py`（新規）/
+> `tools/swimsuit_front_coverage.py`（新規）/ `tools/helen_swimsuit_fit_p.py`（`skin` を追加）/
+> `tools/swimsuit_restore_original_form.py` / `tools/swimsuit_material_folder.py` /
+> `tools/plan_audit.py`（A11 の対象を2本立てへ）/ `output/gf2-helen-swimsuit/` の各台帳。
+
 **承認の種類は実行の承認**（実際に作ってよい）。カードの回答は、胴体「SSR01 の素肌の上半身に確定」、
 作業「案1」、確認「はい、この選択でよい」。**実装は新しい通常モードの会話で行う。**
 

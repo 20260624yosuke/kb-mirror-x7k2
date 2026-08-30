@@ -10532,3 +10532,33 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 触ったページ: 上記レビュー結果（新規）、`wiki/analyses/brainstorm/project-hub-index/_index.md`、
   `index.md`。
 - 残: rev.5 未着手。C-7 の裁定待ち。
+
+## [2026-08-31] query | 胴体を素肌の上半身に確定し、検査 V1〜V6 を作って Blend を作り直した
+- 承認: 親メモ「実装への申し送り」の【最優先・2026-08-31 実行の承認】（胴体の確定＋V1〜V6＋作り直して提出）。
+- 台帳 `output/gf2-helen-swimsuit/visible-set-swimsuit.json` を更新（退避 `.bak-20260831`）。
+  ドレスの胴体 `cloth2_lod0_Flat` を「外す」へ／素肌の上半身 `c_HelenSSR01_slg_body_lod0` を「出す」へ。
+  機械可読の `role_class` / `declared_variants` / `chest_protrusion_mm` を全行へ追加。
+- 新規の道具: `tools/blend_probe.py`（**成果物の Blend から実データを取り出す**）、
+  `tools/swimsuit_visible_checks.py`（検査 V1〜V6・変異試験・較正）、
+  `tools/swimsuit_front_coverage.py`（正面から見た穴の実測・対照つき）。
+- 検査結果 **5 / 6 PASS**。落ちたのは **V4（着衣関係）**＝接触 0.069（下限 0.313）・最深 −99.4mm。
+  変異試験6種すべて検出。V4 の検出力は合格しているドゥルシーヌヴイ原着装を壊して確認（3/3）。
+  D1 **PASS**、`plan_audit.py` **14 / 14 PASS**（A11 を成果物検査2本立てへ拡張）。
+- **申し送りの前提と違っていた点3件**（実測）:
+  ①素肌の上半身は1枚の胴体でなく**離れた13個のかたまり**。ドレスを外すと正面から
+  **274.4cm²（胸）＋18.4cm²（肩）が向こう側の見える穴**になる（水着が覆えるのは 22.3cm²）。
+  対照の腰は 0.0cm² なので物差しは妥当。新規に面を作るのは却下済みなので穴のまま提出。
+  ②「脚の灰色」は不具合ではなく**礼服の白い脚衣**。ヘレンに素肌の脚メッシュは無い。
+  共有肌アトラスへ差し替えて肌色にしたが**近似**（F010 に human-kept で記録）。
+  ③素肌の上半身は既定では**顔アトラスへ落ちて中央値 20,13,11 のほぼ真っ黒**になる。
+  材料フォルダ側に共有肌アトラスを exact 名で置いて解決（産出側の正規表現は触っていない）。
+- 適合は `--body skin` を新設。縦の合わせ方だけ胸の頂点の高さで合わせる（切り口合わせでは 232mm 下へずれる）。
+  G4a 中央値は ドレス相手 9.22mm → 素体相手 7.44mm。合格していない状態のまま提出（O5）。
+- 触ったページ: 上記の新規3ツール、`tools/helen_swimsuit_fit_p.py`、
+  `tools/swimsuit_restore_original_form.py`、`tools/swimsuit_material_folder.py`、`tools/plan_audit.py`、
+  `output/gf2-helen-swimsuit/`（台帳・合格線・解決台帳・穴の実測・実行記録）、
+  `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`（revision 3.6）、
+  `wiki/_attachments/helen-swimsuit-status/20260831-torso-skin-rebuilt.html`（新規・旧 deliverable-build を superseded へ）、
+  親メモ、`sessions/20260831-torso-skin-v1-v6-implemented.md`（新規）、`index.md`、`log.md`。
+- 残: **見た目は未確認（武田さんの判断）**。胸の穴の扱い・脚を近似のまま進めるか・
+  肩ひもが肩を越える件（147頂点）の3件は判断待ち。V4 は未達のまま。

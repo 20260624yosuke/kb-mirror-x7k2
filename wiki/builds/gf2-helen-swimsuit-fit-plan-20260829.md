@@ -5,7 +5,7 @@ status: active
 confidence: medium
 evidence_level: source-backed+inferred
 created: 2026-08-29
-last_reviewed: 2026-08-29
+last_reviewed: 2026-08-31
 sources:
   - gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827
 related:
@@ -13,13 +13,29 @@ related:
   - "[[llm-vision-review-suspension-policy]]"
   - "[[llm-review-bottleneck-applied-2026-08-28]]"
 tags: [gf2, helen, dusevnyj, swimsuit, harness, plan]
-revision: 3.5
+revision: 3.6
 ---
 
 # Helen 水着化 — 部品の役割ごとに作り替える実装計画
 
-> [!warning] Blend は未作成（承認待ち）
-> 成果物（Blend）は作っていない。武田さんの承認なしに作らない。
+> [!important] revision 3.6（2026-08-31）: 適合の相手を**素肌の上半身**へ差し替えた
+> - 2026-08-31 の武田さんの承認により、水着を載せる相手は `c_HelenSSR01_slg_body_lod0`
+>   （素肌の上半身）に確定した。`general` / `flat` は「胸の派生」ではなく**ドレスの胴体**
+>   だったため、成果物の適合先としては使わない（実測は [[brainstorm-gf2-dusevnyj-bikini-to-helen]]
+>   の「2026-08-30 成果物の不合格」節）。
+> - `tools/helen_swimsuit_fit_p.py` に `--body skin` を追加した。**縦の合わせ方だけ別扱い**で、
+>   ドレスは腰の切り口どうしを合わせるが、素肌の上半身は腰から肩まで通しの1枚で切り口が
+>   対応しないため、**胸の頂点の高さで合わせる**（切り口合わせでは 232mm 下へずれる実測）。
+> - 結果（rounds 200）: G3b 55.6 / G4a 7.44mm / G4b 12.3% / G4c −14.94mm。
+>   ドレス相手（G4a 9.22mm）より体に近づいたが、**5項目が範囲外のまま**。
+>   合格していないことを承知のうえで提出する運用（2026-08-30 の O5）に従った。
+> - 成果物そのものを見る検査は `tools/swimsuit_visible_checks.py`（V1〜V6）。
+>   結果と限界は `wiki/_attachments/helen-swimsuit-status/20260831-torso-skin-rebuilt.html`。
+
+> [!warning] ~~Blend は未作成（承認待ち）~~ → 2026-08-30 に作成、2026-08-31 に作り直した
+> 2026-08-29 時点の記述は「成果物（Blend）は作っていない」だった。**2026-08-30 の武田さんの
+> 承認で作成し、2026-08-31 の承認で胴体を素肌へ替えて作り直した。**
+> 現物は `gf2-char-extract/blends/swimsuit/Helen-swimsuit-flat.blend`。
 > 方針の各論（役割判定・カップの作り方・名前を付けない方針）は 2026-08-29 のカードで承認済み。
 
 > [!important] revision 3.5（2026-08-29）: 採用手順（案P）と判定を実装した
@@ -93,13 +109,16 @@ revision: 3.5
 ### 0.5 再開したらまずやること
 
 1. 上の 0.1 の2ファイルを読む。
-2. `python3 tools/plan_audit.py`（**9 / 9 PASS が現状**。2026-08-30 に A9〈承認されていない
-   approximation を止める〉を追加）と
+2. `python3 tools/plan_audit.py`（**2026-08-31 時点で 14 / 14 PASS**。A9〜A11 を 2026-08-30、
+   A12〜A14 を同日に追加した）と
    `python3 tools/helen_swimsuit_fit_p.py --body both` を通し、section 8.3 の表と同じ数字が
-   出ることを確かめる。
+   出ることを確かめる。成果物そのものを見る検査は
+   `python3 tools/swimsuit_visible_checks.py`（V1〜V6。2026-08-31 時点で 5 / 6 PASS）。
 3. 次にやるのは **Phase 3（カップの作り直し）**。新しい面を作るので approximation として
-   別途承認が要る（section 3.1）。
-4. 武田さんの承認なしに Blend を作らない。
+   別途承認が要る（section 3.1）。あわせて、2026-08-31 に出た
+   **胸の穴 274.4cm²・脚の色の近似・肩ひもの伸び**の3件について武田さんの判断が要る
+   （`wiki/_attachments/helen-swimsuit-status/20260831-torso-skin-rebuilt.html`）。
+4. Blend は 2026-08-30 と 2026-08-31 の承認で作成済み。**次に作り直すときも承認を取る。**
 
 ## 1. 目的と非対象
 
