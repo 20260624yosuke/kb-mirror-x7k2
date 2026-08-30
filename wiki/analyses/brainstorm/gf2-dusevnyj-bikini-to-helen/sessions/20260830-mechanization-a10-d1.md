@@ -94,6 +94,10 @@ A3 の変異試験8種はすべて「検出」のまま。
 - 「1体に絞る」作業はしていない。D1 は「絞れていない」と言う検査で、絞るのは成果物を作る工程の側。
 - 既存の A1〜A9・封鎖・却下案照合には触っていない。
 
+## 説明ページ（人が読む用）
+
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-mechanization-implemented.html`
+
 ## 次に取る承認（申し送りのとおり）
 
 1. **「1体に絞る」工程をどう入れるか**（どの版・どの派生を残すか。新しい設計判断なので実装側で決めない）。

@@ -2569,6 +2569,9 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 ## 説明ページ（人が読む用）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-mechanization-implemented.html`
+  — 「全表示」を機械が見つけるようになった。実装の結果と根拠（2026-08-30・**実装済み**）
+
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260830-review-bottleneck-mechanization.html`
   — 「全表示」を機械に見つけさせる。指摘を検査へ変える仕組みの案（2026-08-30・**未承認**）
 
