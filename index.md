@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4894 ファイル_
+_合計 4896 ファイル_
 
 ## root/ (11)
 
@@ -14,7 +14,7 @@ _合計 4894 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-30T05:52:05Z
-- [log.md](root/log.md) | 2026-08-30T01:44:22Z
+- [log.md](root/log.md) | 2026-08-30T06:05:29Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -254,21 +254,22 @@ _合計 4894 ファイル_
 
 ## wiki/analyses/brainstorm/brainstorm-skill-portability/ (1)
 
-- [brainstorm-brainstorm-skill-portability.md](wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md) | 2026-08-30T05:04:48Z
+- [brainstorm-brainstorm-skill-portability.md](wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md) | 2026-08-30T06:09:50Z
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-30T05:05:49Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-30T06:07:01Z
 
-## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (3)
+## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (4)
 
 - [20260829-p-implementation-and-decision-point.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md) | 2026-08-29T15:58:18Z
 - [20260830-o0-build-blend-passthrough.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o0-build-blend-passthrough.md) | 2026-08-30T03:05:33Z
 - [20260830-plan-holes-why-no-deliverable.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md) | 2026-08-30T01:53:01Z
+- [20260830-review-bottleneck-mechanization.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-review-bottleneck-mechanization.md) | 2026-08-30T06:06:41Z
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-30T05:52:05Z
+- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-30T06:05:29Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 
@@ -3297,7 +3298,7 @@ _合計 4894 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (85)
+## wiki/builds/ (86)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -3305,7 +3306,7 @@ _合計 4894 ファイル_
 - [azookey-symbol-input-customization.md](wiki/builds/azookey-symbol-input-customization.md) | 2026-07-10T07:47:44Z
 - [betterdisplay-m27f-pseudo-resolution.md](wiki/builds/betterdisplay-m27f-pseudo-resolution.md) | 2026-08-17T06:10:45Z
 - [brainstorm-card-guard-plan-20260830.md](wiki/builds/brainstorm-card-guard-plan-20260830.md) | 2026-08-30T03:12:08Z
-- [brainstorm-codex-default-mode-card-plan-20260830.md](wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md) | 2026-08-30T05:04:48Z
+- [brainstorm-codex-default-mode-card-plan-20260830.md](wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md) | 2026-08-30T06:08:56Z
 - [brainstorm-guard-fix-handoff-20260829.md](wiki/builds/brainstorm-guard-fix-handoff-20260829.md) | 2026-08-29T15:58:18Z
 - [brainstorm-port-request-20260829.md](wiki/builds/brainstorm-port-request-20260829.md) | 2026-08-29T06:44:43Z
 - [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-08-29T16:02:26Z
@@ -3375,6 +3376,7 @@ _合計 4894 ファイル_
 - [obsidian-ui-improvement-roadmap.md](wiki/builds/obsidian-ui-improvement-roadmap.md) | 2026-08-22T14:54:16Z
 - [oxloop-parallel-agent-loop.md](wiki/builds/oxloop-parallel-agent-loop.md) | 2026-08-23T01:54:55Z
 - [plan-gate-skill.md](wiki/builds/plan-gate-skill.md) | 2026-08-13T13:28:21Z
+- [project-current-state-page-plan-20260830.md](wiki/builds/project-current-state-page-plan-20260830.md) | 2026-08-30T06:10:13Z
 - [pureref-notion-link-workflow.md](wiki/builds/pureref-notion-link-workflow.md) | 2026-05-30T07:51:11Z
 - [pureref-personal-fork.md](wiki/builds/pureref-personal-fork.md) | 2026-06-22T12:49:33Z
 - [pureref-session-restore.md](wiki/builds/pureref-session-restore.md) | 2026-06-15T14:10:13Z

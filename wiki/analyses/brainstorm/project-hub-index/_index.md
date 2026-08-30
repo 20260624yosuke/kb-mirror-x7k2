@@ -10,6 +10,9 @@ scope:
 entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/_index.md
 background_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-handoff-mechanism-design.html
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-helen-repro-v51-overview.html
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/run-state.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/index.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-handoff.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/projects-dashboard.md
@@ -205,6 +208,13 @@ LLM 側の記録ミス」と**正しく書かれている**。にもかかわら
 
 ## 決まったこと
 
+- **正本は wiki 側の1枚**（2026-08-30 カード承認）。作業フォルダの `run-state.json` は生データとして残す。
+- **仕組みを先に決めてから helen を直す**（同日カード承認）。helen は仕組みの最初の適用例にする。
+- **案1を採る＝全案件の `run-state.json` に共通の最小欄を足す**（2026-08-30 カード承認＋確認カード「これでよい」）。
+  既存の欄は1つも消さない。水着化には新規作成する。
+- **武田さんは md ファイルへ直接テキスト入力しない**（同日・武田さん明示）。
+  したがって「人が書く区画」という表記は誤り。正しくは **「LLM が会話から書き起こす区画」**。
+  設計HTMLの表記も訂正済み。**この前提を破る設計（武田さんの手入力を要求する形）は禁止。**
 - **軸は2つに確定**（2026-08-30）。①Helen 原作再現の整合性回復（放置禁止）②KB 全体への機械的な仕組み化。
 - **客観的な豆知識の entity 化（案a）は採らない**（同日・「効果ないならいらない」）。
 - **武田さんの判断基準の散逸は、ボトルネックの原因の一部として扱う**（同日）。軸②に含める。
@@ -271,12 +281,65 @@ LLM 側の記録ミス」と**正しく書かれている**。にもかかわら
 
 ## 再開の入口（実パス）
 
-- このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/_index.md`
-- 説明用HTML: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-project-hub-problem.html`
+1. このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/_index.md`
+2. 設計（作るものの形）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-handoff-mechanism-design.html`
+3. helen の全容: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-helen-repro-v51-overview.html`
+4. 問題の言語化: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-project-hub-problem.html`
+5. helen の生データ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/run-state.json`
 
 ## 実装への申し送り
 
-（承認前。未記入）
+### 完成条件
+
+1. **1案件1枚の「現在位置ページ」**が wiki に存在し、新しいセッションはそれだけを読めば再開できる。
+   置き場は `wiki/builds/`。**新ディレクトリ・新 `type` は作らない**（frontmatter に欄を足す）。
+2. ページは7節構成で、**機械が書く区画（節2/6/7）と LLM が書く区画（節1/4/5）が分かれている**。
+   節3は両方。機械は LLM 区画を上書きせず、LLM は機械区画を手書きしない。
+3. **全案件の `run-state.json` に共通の最小欄がある**（案1）。既存の欄は消さない。
+   最低限そろえるのは「いつ更新したか」「いまどの工程か」「次にやること」「止まっているもの」。
+   水着化（`LLM Knowledge Base _01/output/gf2-helen-swimsuit/`）には `run-state.json` を新規作成。
+4. 機械が担保するのは次の5つ。①正本は1案件1枚だけ（2枚目を止める）②節2/6/7 を `run-state.json` から
+   自動生成（**「引き継ぎ資料を作って」という指示が不要になること**が合格の基準）③片付いた行は表から
+   消えて別節へ移る（追記のみの構造を変える）④武田さんの判断は専用節に集め、古いものに失効の印
+   ⑤`run-state.json` と現在位置ページの時刻がずれていたら書き込みを止める。
+5. **helen 原作再現を最初の適用例として、実際に整合性が回復している**こと。
+   最低限、下の「helen で直すもの4件」が解消されていること。
+
+### helen で直すもの4件（2026-08-30 実測）
+
+| # | 壊れ | 実態 |
+| --- | --- | --- |
+| 1 | 現在位置が2系統 | `run-state.json`（2026-08-26 20:55）と wiki 4枚（08-27〜29）が別々に「今どこ」を主張 |
+| 2 | 閉じた項目が「残り」に残る | `agent_executable_remaining` の3件は、実態が「完了1・対応済み1・実装不能1」＝実行可能な残りは0件 |
+| 3 | 派生3案件の所在がバラバラ | 水着化だけ 3D資料フォルダの外（KB の中） |
+| 4 | 引き継ぎ資料7枚 | どれが現行かの判断が読む側に委ねられている |
+
+### 絶対にやってはいけないこと
+
+- **武田さんが md を直接書く前提の設計にしない。** 手入力を要求する形は不可。
+- **`run-state.json` の既存の欄を消さない・書き換えない。** 足すだけ。とくに helen の226KB。
+- **成果物（blend）に触らない。** この案件は記録と仕組みの話で、成果物の変更は別計画。
+- **文言ルール（LLM の心がけ）で担保して「できた」と報告しない。** 機械が判定すること。
+- **新ディレクトリ・新 `type` を勝手に作らない**（構造の決定は承認が要る）。
+- helen の引き継ぎ資料7枚の本文を要約・分割しない（武田さん本人の言葉と実測値が入っている）。
+
+### 捨てた案と理由（蒸し返さないため）
+
+- **客観的な豆知識の entity 化**（Helen とは何者か等）→ 却下。「効果ないならいらない」（武田さん・2026-08-30）。
+  再現精度に効かないため。
+- **`run-state.json` を正本にする案** → 却下。武田さんの判断を JSON に書くことになり、人が読めなくなる。
+- **新しく小さい正本ファイルを作る案** → 却下。正本を名乗るものが一時的に3つになる。
+- **生成側に案件ごとの読み取り対応表を持たせる案（案2）** → 却下。案件が増えるたび追記が要り、
+  忘れるとその案件だけ黙って反映されない＝今回と同じ失敗の形を再生産する。
+- **自動生成を削り、中身を読まずに取れるものだけにする案（案3）** → 却下。
+  「引き継ぎ資料を作って」が不要になるという最大の効果が半分になる。
+
+### 終わったら次に取る承認
+
+1. 現在位置ページの**雛形1枚を helen で作った時点**で、武田さんに見せて形の承認を取る（実装続行の可否）。
+2. 共通の最小欄を**4案件へ足す直前**に、足す欄名の一覧を見せて承認を取る（既存ファイルを触るため）。
+3. 5つの機械判定のうち**②自動生成が動いた時点**で、「引き継ぎ資料を作って」を言わずに再開できるかを
+   実際に試し、その結果を見せて承認を取る。
 
 ## 関連リンク
 

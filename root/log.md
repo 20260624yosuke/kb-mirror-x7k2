@@ -10400,3 +10400,19 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `wiki/analyses/brainstorm/project-hub-index/_index.md` / `index.md`。
 - 未了: 成果物 Inbox への申告が brainstorm 封鎖の誤検知（`tools/inbox.py` を成果物と判定）で通らなかった。
   overview.html は未申告。仕組みの直し方も未承認。
+
+## [2026-08-30] query | プロジェクト引き継ぎの仕組み化 — 設計の確定（brainstorm）
+- 軸の確定（武田さん指示）: ①Helen 原作再現がバラバラのまま放置するのを禁止 ②KB 内で機械的な仕組み化。
+- 承認（カード）: **正本は wiki 側の1枚** / **仕組みを先に決めてから helen を直す** /
+  **案1＝全案件の `run-state.json` に共通の最小欄を足す**（既存欄は消さない・水着化には新規作成）。
+- 却下: 客観的な豆知識の entity 化（「効果ないならいらない」）／`run-state.json` を正本にする案／
+  新しい小さい正本を作る案／読み取り対応表を持たせる案2／自動生成を削る案3。
+- 重要な制約（武田さん明示）: **武田さんは md へ直接テキスト入力しない。** 設計の「人が書く区画」は誤りで、
+  正しくは「LLM が会話から書き起こす区画」。設計HTMLの表記も訂正済み。
+- 訂正: 同日の前エントリで「LLM が手を動かせる残り3件」と報告したのは誤り。実態は
+  完了1（イボイボ・2026-08-18 武田さん明示）／対応済み1（鎖・f34）／実装不能1（きらきら・材質バンドル待ち）
+  ＝**実行可能な残りは0件**。`run-state.json` が追記のみで古い `state` を残す構造のため誤読した。
+- 触ったページ: `wiki/analyses/brainstorm/project-hub-index/_index.md`（設計・決定・申し送りを追記）/
+  `wiki/_attachments/project-hub-index/20260830-handoff-mechanism-design.html`（新規）/
+  `20260830-project-hub-problem.html`（対象取り違えの訂正）/ `index.md`。
+- 残: `brainstorm_status` は `active`。実行の承認待ち。成果物 Inbox への申告は封鎖の誤検知で未了。

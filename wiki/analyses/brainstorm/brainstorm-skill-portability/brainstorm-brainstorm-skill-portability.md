@@ -47,8 +47,15 @@ Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/b
 - 修正計画をそのまま承認せず、実装前に `gpt-5.6`・reasoning effort `medium` の独立サブエージェントへ
   レビューさせるよう指示した。計画作成者が結論へ誘導するレビュー指示を送ることは禁止し、仕様と
   実装の不一致を重点的に見せることを求めた。
-- 独立レビュー反映後の段階式計画を承認し、実装を依頼した。ただし `$brainstorm` の規則により、
-  この会話では計画を正本へ固定し、実装は新しい通常モード会話へ渡す。
+- 最初の独立レビュー反映後の段階式計画は一度承認したが、その後Codexの使用感がClaude版と違うことを
+  指摘し、**Claude版の現在の使用感を正本にする**よう求めた。この指摘により最初の承認は撤回された。
+- Claude版を正本とした計画も、そのまま承認せず、`gpt-5.6-sol`・reasoning effort `medium` の
+  独立レビューを2回要求した。レビュー結果へバイアスがかかる指示は禁止し、仕様と実装の不一致を
+  重点的に確認させた。
+- 2回のレビューの必須修正をすべて反映した再改訂計画について、承認カードで
+  `再改訂計画を承認`、確認質問で `はい、この選択でよい` を選び、実装を依頼した。
+- `$brainstorm` の規則により、この会話では承認済み計画を正本へ固定する。コード・設定・フックの
+  実装は `$brainstorm` を付けない新しい通常モード会話へ渡す。
 
 ## 実測で分かったこと（2026-08-29・すべてファイルを読んで確認）
 
@@ -123,14 +130,26 @@ Write ツールでは通った。
 - **封鎖側のパス抽出の誤検知は放置しない**（同日・武田さん指示）。他 LLM 向けには注意として
   指示書に明記し、Claude 側の修正は**別エージェントへ引き継ぐ**。
   引き継ぎ資料: `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`。
-- **Codex 通常モードの本物の承認カードを、後続改修より先に実機確認する**（2026-08-30 承認）。
+- **Codex 通常モードの本物の承認カードを、後続改修より先に実機確認する**（2026-08-30 最終計画で承認）。
   失敗した場合は本文代替へ戻さず、設定を復元して `technical_stopped` とする。
 - **実イベント採取前にカード監査の入出力や ID を決めない**。カードの識別子を取得できなければ、
   疑似 ID で補わず停止する。
 - **承認状態を現在のカードと対象親メモへ束縛する**。古いカード・別質問・別メモ更新は承認の証拠に
   しない。
+- **使用感の正本は現在のClaude版brainstorm**。Codexは通常モード、毎ターン保存、本物の二問カード、
+  確認拒否、カード監査、機械化した指摘、承認粒度、次に取る承認を外部仕様として揃える。
 - Codex 側の実装正本は `wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md`。
   この brainstorm 会話では実装せず、新しい通常モード会話へ渡す。
+
+### Codex承認カード計画の状態履歴（2026-08-30）
+
+- 旧計画の「承認済み」は、その後の武田さんの `承認しない` で撤回。現行判断へ使用しない。
+- `gpt-5.6-terra`・medium の旧レビュー: 判定 No。実機成立、本文代替、フック、状態、trustを指摘。
+- `gpt-5.6-sol`・medium の1回目レビュー: 判定 No。未承認状態、フック不発、並行メモ、状態遷移、
+  probe、Claude差分を指摘。
+- `gpt-5.6-sol`・medium の2回目レビュー: 判定 No。親メモの旧ready、過剰な4 ID必須、任意選択肢、
+  カード固定文、ターン証拠、fail-open、本番発火を指摘。
+- 上記必須修正を反映した現行計画は、武田さんが実行承認済み。実装は別の通常モード会話で行う。
 
 ### 中断とその後（2026-08-29）
 
@@ -237,11 +256,13 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 - 2026-08-29 その追記で壊れたパス断片を literal で書いてしまい `audit-handoff` が FAIL。断片を書き写さない言い換えに直して PASS。
 - 2026-08-30 Codex の通常モード承認カード修正について、承認済み計画と独立レビューの必須修正を
   新しい実装計画へ固定し、この親メモの scope・入口・背景資料を Codex 側へ拡張。
+- 2026-08-30 旧承認を撤回済みとして失効させ、Claude版を使用感の正本にした現行計画、2回の
+  `gpt-5.6-sol / medium` 独立レビュー、最終実行承認へ更新。一時的に `active` へ戻して再監査した。
 
 ## 再開の入口（実パス）
 
 - このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
-- Codex の承認済み実装計画: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md`
+- Codex の現行承認済み実装計画: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md`
 - 仕様の正本: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md`
 - Codex 規則本体: `/Users/takedayousuke/.codex/skills/brainstorm/SKILL.md`
 - Codex アダプタ: `/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py`
@@ -253,16 +274,25 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 作業は2系統に分かれる。**2026-08-29 の承認により、系統B → 系統A の順で行う。**
 系統Bは「新しい会話の Claude」が担当し、渡すのは引き継ぎ資料1枚だけでよい。
 
-### Codex 通常モード承認カード修正（2026-08-30 承認済み）
+### Codex 通常モード承認カード再実装（2026-08-30 実行承認済み）
 
 - 新しい通常モード会話へ
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md`
   を渡す。
-- 最初は機能フラグ有効化と実機確認だけを行い、本物のカードとイベント識別子を確認できた場合だけ
-  SKILL・adapter・hooks・状態管理を改修する。
-- 失敗時は設定を戻して `technical_stopped`。本文代替、疑似 ID、未信頼フックで完成扱いは禁止。
-- 完成条件、テスト、正本更新、HTML 説明資料は上記計画に全て記載済み。
+- 最初に専用probeで通常モードの本物の二問カード、回答観測、継続、安定した最小カード呼出しID、
+  ライフサイクル順序を確認する。成功時だけSKILL・adapter・hooks・状態管理を改修する。
+- 使用感の正本は現在のClaude版。Codex内部は独立実装とし、4種類すべてのIDを過剰要求しない。
+- 失敗時は差分を戻して `technical_stopped`。本文代替、Plan mode代替、疑似カードID、未信頼フック、
+  合成試験だけで完成扱いは禁止。
+- 状態遷移、ターンマーカー、並行セッション、fail-open、本番発火、正本更新、HTMLは上記計画に記載済み。
 - **この親メモを更新した brainstorm 会話では実装しない。**
+
+### 終わったら次に取る承認
+
+#### 再実装結果の実機受入承認
+
+新しい通常モード会話で実現性ゲートと実装を終えた後、二問カード、毎ターン保存、確認拒否、閉鎖、
+並行セッション、圧縮後再注入の実機結果を提示し、運用開始の承認を取る。
 
 ### 系統A: 他 LLM（Codex / Kimi / opencode）へスキルを組ませる
 
@@ -294,6 +324,13 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 - 共通本体を `~/.agents/skills/brainstorm/` に一元化する案 → 却下。フックの入出力が環境ごとに
   違うため、共有しても変換層が要るだけで、独立させたほうが素直（武田さん判断）。
 - アダプタの入出力仕様までこちらで決めて渡す案 → 却下。その環境の作法はその LLM のほうが詳しい。
+
+## 機械化した指摘
+
+| 指摘 | 再発しうるか | 機械判定できるか | 変換先 |
+|---|---|---|---|
+| 未承認計画を実装へ渡さない | する | できる | `brainstorm_status` と現行承認状態の検査 |
+| 実装前レビューは指定された `gpt-5.6-sol / medium` で中立に行う | する | 一部できる | レビュー履歴・モデル・effort・判定の申し送り検査 |
 
 ## 関連リンク
 
