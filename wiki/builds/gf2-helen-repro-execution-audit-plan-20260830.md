@@ -320,6 +320,23 @@ S6・S8も同じ深さの契約として初期状態を記録する。この工�
 進まない。次は、既存section 9.6に残るf166最小修理・再走査とG10参照鎖回収を実行してよいかを別に承認し、
 その後S6・S8の展開順を決める。
 
+## 実装記録 2026-08-30
+
+- 状態: `in-progress`。P0実測済み、P0B step 2のwriter分類独立確認前で停止。
+- 開始証拠: 現行旧版 `tools/project_quality_gate.py check <manifest> --phase plan` はPASS。
+- P0結果: 現行ファイルと原作比較入力のSHA、初期指摘5件、writer候補54本を一時領域
+  `gf2-helen-starlit-waltz/.audit-bootstrap-20260830/` に凍結。
+- 現行Blend SHA-256: `04ef8b79b3fa5b64b9d7e3496a9adc184f10c07d9ee9758caebd289ddbb6d7f5`。
+  P0作業前後で一致し、Blend本体は変更していない。
+- writer走査は2回とも同一で、`writers.json` SHA-256は
+  `e09ca43104e6d163bf6b4b825d1e13be3e50084b7aaa7b3e4c826f6642302aee`。
+- 自動分類案は S6=9、S8=3、G10=36、対象外=6。独立確認の肯定証拠がないため、
+  承認済み分類へ格上げせず、正規パスへのbootstrap導入も実行していない。
+- 視覚報告: `wiki/_attachments/project-hub-index/20260830-helen-repro-p0-freeze.html`。
+- 正規の `06_repro-v51/audit/`、共有ゲート、`quality-gate.json`、`a10_quality_gate.py`、
+  既存writerは未変更。
+
 ## 使わなかったもの・落とした情報
 
-なし。この文書は計画草案であり、Blend、コード、入力、検査結果を変更していない。
+なし。P0ではBlend、原作入力、既存検査結果を捨てず、現物SHAを一時台帳へ追加した。
+正規パスのwriterや品質ゲートは、独立確認なしに一部だけ導入しないため未変更。
