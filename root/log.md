@@ -10379,3 +10379,24 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `wiki/_attachments/project-hub-index/20260830-project-hub-problem.html`（説明用HTML）。
 - 触ったページ: 上記2つ + `index.md`（2行追記）+ この `log.md`。
 - 残: 直し方は未決（新ページ種別 / 既存build に節追加 / 自動生成 の三択で承認待ち）。既存54枚の遡り紐づけも未決。
+
+## [2026-08-30] query | HELEN-REPRO v5.1 の全容実測（対象取り違えの訂正つき）
+- 訂正: 同日の前エントリで、対象を MMD の作画資料化案件と取り違えて論じた。武田さんの指摘で撤回。
+  正しい対象は **ドルフロ2のゲームコードから Helen を原作のまま再現できるか検証する案件**
+  （`06_repro-v51` ＝ HELEN-REPRO v5.1）。
+- 規模: 6,193ファイル / 6.2GB（scripts 258 / logs 241 / ledger 113）。親フォルダ 13,602ファイルの半分弱。
+- 現在位置（run-state.json）: `current_step: E` / 40回目 / completed A〜E / **GATE 13 PASS + 1 FAIL(G10)**
+  / history 113件 / 129,913文字。
+- 止まっている理由は4種類: ①原作入力の回収不能（CDN 403・backup volume 未確認）②原因未特定の欠陥
+  （胸46本・スカート156本の伸びた辺）③武田さんの選択待ち（A〜D の4択）④LLM 実行可能な残り3件
+  （鎖のジャギー / きらきら層 / 胸下のイボイボ、いずれも原因特定済み・未着手）。
+  さらに手前に 2026-08-29 の「縮小計画のレビュー待ち」がある。
+- **記録の分裂を実測**: 実データ最終更新 2026-08-26 22:49（f166）に対し `run-state.json` は同日 20:55 で停止。
+  8-27〜8-30 の4日間は wiki 側の記録・計画・レビューのみで、成果物 blend は SHA `04ef8b79…` のまま不変
+  （2026-08-25 17:29 / 19.3MB）。現在位置を主張するものが run-state.json と wiki 4枚の2系統に割れている。
+- 引き継ぎ資料は案件系統で7枚・合計4,124行（うち2枚は冒頭に「古い」と自己申告）。
+- 触ったページ: `wiki/_attachments/project-hub-index/20260830-helen-repro-v51-overview.html`（新規）/
+  `wiki/_attachments/project-hub-index/20260830-project-hub-problem.html`（対象取り違えの訂正と問題4の差し替え）/
+  `wiki/analyses/brainstorm/project-hub-index/_index.md` / `index.md`。
+- 未了: 成果物 Inbox への申告が brainstorm 封鎖の誤検知（`tools/inbox.py` を成果物と判定）で通らなかった。
+  overview.html は未申告。仕組みの直し方も未承認。

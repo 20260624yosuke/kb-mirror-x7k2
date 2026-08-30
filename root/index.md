@@ -1449,3 +1449,4 @@
 - [[lint-report-2026-08-23]] — Wiki全体lint(棚出しのみ・修正未実施)。1,062ページ機械走査: legacy(frontmatter不足)370件(35%)・鮮度切れ0・リンク切れ実害1(clipstudio-backup-external-symlink 未作成)・埋め込み切れ7枚(hide ch04 既知)・index 重複0/幽霊0/未収載1・完全孤立2・矛盾マーク3ページ。修正案A〜Cは次の承認待ち (source-backed, 2026-08-23)
 - `wiki/analyses/brainstorm/project-hub-index/_index.md` — プロジェクト・ハブ（brainstorm メモ）。大きな案件の関連ファイルを1枚に束ねる仕組みの検討。helen 関連54枚中16枚が孤立・entityページ無し・projects-dashboard が 2026-07-09 で停止、を実測 (user-stated, 2026-08-30)
 - `wiki/_attachments/project-hub-index/20260830-project-hub-problem.html` — 上記の説明用HTML。問題5点とハブの条件5つ (source-backed, 2026-08-30)
+- `wiki/_attachments/project-hub-index/20260830-helen-repro-v51-overview.html` — HELEN-REPRO v5.1 の全容実測。6,193ファイル/6.2GB、工程E 40回目、GATE 14 PASS/1 FAIL(G10)、実データ最終更新 2026-08-26 22:49 に対し run-state.json は同日 20:55 で停止、wiki 側は 08-29 まで＝現在位置が2系統に分裂 (source-backed, 2026-08-30)

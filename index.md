@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4890 ファイル_
+_合計 4891 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 4890 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-30T01:06:31Z
-- [log.md](root/log.md) | 2026-08-30T01:06:27Z
+- [index.md](root/index.md) | 2026-08-30T01:43:50Z
+- [log.md](root/log.md) | 2026-08-30T01:44:22Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -244,6 +244,10 @@ _合計 4890 ファイル_
 - [x-eagle-project-current-state-interference-audit-2026-06-24.md](wiki/analyses/x-eagle-project-current-state-interference-audit-2026-06-24.md) | 2026-06-24T15:01:17Z
 - [ye-jji-course-roi-for-growing-character-artist.md](wiki/analyses/ye-jji-course-roi-for-growing-character-artist.md) | 2026-07-07T00:55:52Z
 
+## wiki/analyses/brainstorm/askuserquestion-misclick-guard/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/askuserquestion-misclick-guard/_index.md) | 2026-08-30T01:43:01Z
+
 ## wiki/analyses/brainstorm/brainstorm-skill-design/ (1)
 
 - [brainstorm-brainstorm-skill-design.md](wiki/analyses/brainstorm/brainstorm-skill-design/brainstorm-brainstorm-skill-design.md) | 2026-08-29T06:46:07Z
@@ -263,7 +267,7 @@ _合計 4890 ファイル_
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-30T01:21:36Z
+- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-30T01:44:38Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 
