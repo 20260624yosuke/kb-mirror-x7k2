@@ -3,7 +3,7 @@ type: analysis
 status: active
 confidence: medium
 evidence_level: user-stated+source-backed
-last_reviewed: 2026-08-29
+last_reviewed: 2026-08-30
 brainstorm_status: ready
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
@@ -2188,6 +2188,36 @@ A1・A2・A5・A6・A7・A8 が PASS。残る FAIL は2件で、どちらも本�
 - 2026-08-28: このメモの「武田さんの考え」にあった中核命題の誤り（仮説実証が目的／水着は題材）を、
   本人の訂正どおり「目的は水着を作る／ハーネスは手段」へ差し替えた。圧縮対策で機械が再掲する文面
   なので、誤りを残すと次セッションへ伝染するため。
+
+## 計画の穴の点検（2026-08-30・議論中）
+
+武田さんの問い（本人の言葉）:
+
+> 計画では機械的な判定箇所を念入りに調整したのですが、それは、実装を自律的に作業しても、
+> 成果物の品質を下げないようにです。
+> 私の想定よりも、成果物が形にならない状態で回答をllmが戻してくるのですが、
+> この計画で何が穴になってますか？
+
+実測で確かめた穴は6つ。**共通の1行は「品質を守る仕組みは作ったが、成果物を出す義務を機械が
+持っていない」。** 関所は成果物が存在してはじめて働くので、存在しないものはどの関所にも
+引っかからない。そのため自律で動く LLM には「出さない」が最も安全な均衡になっている。
+
+主要な実測: 出力フォルダにあるのは上衣だけの npz（2129頂点/4006面）と判定 JSON のみ。
+Blender のファイルを書くコードは1行も無い。コード行数は検査・監査系 904行 対
+生成・適合系 412行で 2.2倍。8.3 の実測は「上衣のみ」で、8.2 が定義した全身の G1 は未測定。
+
+詳細（穴6つと実測の全部）:
+`wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md`
+説明ドキュメント:
+`wiki/_attachments/helen-swimsuit-status/20260830-plan-holes-why-no-deliverable.html`
+
+**塞ぎ方は未決定（承認待ち）。** この点検は計画の見直しであって、カップ作り直しの承認
+（`phase3-cup-rebuild`）を取り消すものではない。
+
+## セッションメモ（子）
+
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md
 
 ## 実装への申し送り
 

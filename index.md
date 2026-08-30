@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4888 ファイル_
+_合計 4890 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 4888 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-08-29T13:17:32Z
-- [log.md](root/log.md) | 2026-08-29T16:06:53Z
+- [index.md](root/index.md) | 2026-08-30T01:06:31Z
+- [log.md](root/log.md) | 2026-08-30T01:06:27Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -254,11 +254,16 @@ _合計 4888 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-29T16:06:32Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-30T01:02:28Z
 
-## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (1)
+## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (2)
 
 - [20260829-p-implementation-and-decision-point.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md) | 2026-08-29T15:58:18Z
+- [20260830-plan-holes-why-no-deliverable.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md) | 2026-08-30T01:01:51Z
+
+## wiki/analyses/brainstorm/project-hub-index/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-30T01:03:42Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 

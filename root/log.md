@@ -10366,3 +10366,16 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`
   （申し送りに 2026-08-30 の追記を1ブロック。本文の要約・分割はしていない）。
 - 残: 承認そのものの妥当性は機械では見られない。A9 が見るのは「承認が記録されているか」だけ。
+
+## [2026-08-30] query | プロジェクト・ハブが無い問題の言語化（HELEN-REPRO v5.1 の実測）
+- 依頼: 「helen原作再現（v51helen）の関連ファイルがどれだけ紐づいているか把握できていない。
+  大きな案件ではセッションが切り替わるので、関連ファイルを束ねるハブが無いと wiki を使う意味がない。言語化して」。
+- 実測（全件ファイルを直接読んだ）: helen 言及ページ **54枚**（builds 23 / analyses 23 / sources 4 / その他 4）。
+  **被リンク0が16枚**（`gf2-character-repro-pipeline` を含む）。**helen / gf2 の entity ページは存在しない**。
+  `index.md`（1449行）では 4セクションに追記順で分散。`wiki/analyses/projects-dashboard.md` は
+  **2026-07-09 最終更新・helen の記述ゼロ**。実作業フォルダ `07_3D資料/gf2-helen-starlit-waltz` は
+  **13,602ファイル**で、事実上のハブ `README-ja.md` は **2026-07-24 で停止**（`06_repro-v51` / `07_futa-helen` 未記載）。
+- 成果物: `wiki/analyses/brainstorm/project-hub-index/_index.md`（brainstorm メモ・状態 active）と
+  `wiki/_attachments/project-hub-index/20260830-project-hub-problem.html`（説明用HTML）。
+- 触ったページ: 上記2つ + `index.md`（2行追記）+ この `log.md`。
+- 残: 直し方は未決（新ページ種別 / 既存build に節追加 / 自動生成 の三択で承認待ち）。既存54枚の遡り紐づけも未決。
