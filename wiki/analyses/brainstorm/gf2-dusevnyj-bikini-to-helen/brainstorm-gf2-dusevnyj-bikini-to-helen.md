@@ -2245,6 +2245,52 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 
 ## 実装への申し送り
 
+### 【最優先・2026-08-29 → 2026-08-30 に順序変更】工程O0: 既存の道具を1回そのまま通す
+
+**2026-08-30 のカードで武田さんが承認した「次の一手」。カップの作り直し（承認済み）より先にこれをやる。**
+
+理由: 「Blend を作る道具が流用できる」は**未検証の推測**だった（私が「実証済み」と書いたのは誤りで
+同日訂正済み）。水着のデータを入れる前に、道具が動くかを事実にする。失敗しても失うのは1回の実行時間だけ。
+
+**やること**: Helen の中間データを**そのまま**（一切改変せず）`ce_build_blend.py` へ通し、Blend が1つ
+できるかを確かめる。
+
+- 道具: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/scripts/ce_build_blend.py`
+- 入力: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/intermediate/Helen.HelenSSR01`
+- 引数: `--intermediate <上記> --out <新しい出力先> --build-log <ログ>`
+- **`bpy` は pip に無いので Blender 内蔵 Python で動かす**（スクリプト冒頭に明記）。
+  Blender の実体は `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/02_ソフトウェア/Blender.app`
+  （`mdfind` で確認。`/Applications` には無く、PATH にも通っていない）。
+  **正確な起動の書き方は未検証。** スクリプト冒頭の指示と `--help` を読んでから決めること。
+
+**完成条件**
+
+1. Blend が1つ新しく保存され、ビルドのログにエラーが無いこと。
+2. 実行したコマンドと結果（成功・失敗、失敗なら原因）が記録として残っていること。
+3. **通らなかった場合も完成条件を満たす。** O0 は可否を知るための工程なので、
+   原因を記録して止まってよい。無理に直さない。
+
+**絶対にやってはいけないこと**
+
+- 原本を書き換えない。`gf2-char-extract/intermediate/` は読み取り専用。
+- **既存の `gf2-char-extract/blends/*.blend` を上書きしない。** 出力は新しいパスへ。
+- 起動方法を推測で決めて「動かなかった」と結論しない。冒頭の指示と `--help` を先に読む。
+- この工程で水着のデータを混ぜない。**通るかどうかだけを見る。**
+
+### 終わったら次に取る承認（O0 用）
+
+- **通った場合**: 工程O1（溶接した座標を原本の形へ戻す。UV・骨・法線を復元）へ進んでよいか。
+- **通らなかった場合**: 原因を添えて、Blender へ持っていく別の経路を検討するかどうか。
+
+### O1 以降の段取り（未承認・O0 の結果を見てから確定する）
+
+O1 原本の形へ戻す／O2 水着用の材料フォルダを組む／O3 Blend を作る／O4 全身で測る／
+O5 合格していなくても提出する。詳細と、そこで未確認として残っている3点（上衣のテクスチャの
+持ってき方・バインドポーズ・外す服の選定）は
+`wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-plan-holes-why-no-deliverable.md`。
+
+---
+
 **正本は `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`（revision 3.4）。**
 
 ### 2026-08-29 の承認（カード2問・本人の言葉）
