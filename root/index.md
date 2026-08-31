@@ -1474,3 +1474,4 @@
 - `wiki/_attachments/project-hub-index/20260831-why-plan-not-converging.html` — 計画を5版書いても重い指摘が減らない理由の可視化。5版16件の内訳、別セッションの変更と私の版が交互に起きた時系列、進め方の4択 (source-backed, 2026-08-31)
 - `wiki/_attachments/project-hub-index/20260831-where-i-drifted.html` — 私が対象（KB運用の穴）と事例（helenプロジェクト）を取り違えていた件の言語化。逸れた地点の特定と、KBが散らかる5つの性質の整理 (source-backed, 2026-08-31)
 - `wiki/_attachments/project-hub-index/20260831-what-is-the-8000-limit.html` — 再注入の上限8,000字とは何かの説明（brainstorm_guard.py 405行が出どころ）と、この案件の時系列。逸れた地点は 2026-08-30 の実装計画 rev.1 (source-backed, 2026-08-31)
+- `wiki/_attachments/project-hub-index/20260831-brainstorm-three-holes-fixed.html` — brainstorm の穴3つ（メモが渡らない／発言が残らない／スキルが起動しない）の調査と実装の報告。共通する形は「規則にはあるが機械が確かめていない」。試験15件すべて合格 (source-backed, 2026-08-31)
