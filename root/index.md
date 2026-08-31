@@ -1470,3 +1470,5 @@
 - `wiki/_attachments/project-hub-index/20260830-four-files-claim-master.html` — 引き継ぎ資料4枚が本文で互いに「自分が正本」と宣言している問題の説明と、直し方3案（該当行だけ書き換え／冒頭に1行だけ／別フォルダへ退避） (source-backed, 2026-08-30)
 - [[project-current-state-page-plan-review4-20260831]] — 計画 rev.4 の4回目の独立レビュー。事実関係はほぼ正確だが相手の承認済み計画との整合が不成立。critical 4件（節8の入力欠落／拡張要求が相手の設計と非整合／判定が相手の実装を拒否／残存ゼロ判定が自己検出でFAIL） (source-backed, 2026-08-31)
 - `wiki/_attachments/project-hub-index/20260831-two-plans-conflict.html` — 私の計画と別セッションの承認済み計画がぶつかっている件の説明。①相手の禁止事項「汎用CIを先に作るな」と軸②の衝突 ②中心部分の重複と、私にしかない4項目。裁定の4択つき (source-backed, 2026-08-31)
+- [[project-current-state-page-plan-review5-20260831]] — 計画 rev.5 の5回目の独立レビュー。critical 4件（承認済み判定の未実装／helen分離で完成条件4・5が判定不能／承認済み決定の撤回が関所を通っていない）。除外リストが実在しない作業場を守っている点、Bash判定が原理的に近似である点も指摘 (source-backed, 2026-08-31)
+- `wiki/_attachments/project-hub-index/20260831-why-plan-not-converging.html` — 計画を5版書いても重い指摘が減らない理由の可視化。5版16件の内訳、別セッションの変更と私の版が交互に起きた時系列、進め方の4択 (source-backed, 2026-08-31)

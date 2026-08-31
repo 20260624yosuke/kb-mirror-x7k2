@@ -10580,3 +10580,21 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `wiki/analyses/brainstorm/project-hub-index/_index.md`、
   `wiki/_attachments/project-hub-index/20260831-two-plans-conflict.html`（新規）、`index.md`。
 - 残: rev.5 の独立レビュー未実施。実装承認は取っていない。
+
+## [2026-08-31] query | 実装計画 rev.5 の独立レビュー（5回目）
+- 作成: [[project-current-state-page-plan-review5-20260831]]。critical 4 / major 9 / minor 8。
+- 実測値は1件を除き全一致（行数・バイト数・フックのmatcher・103行・4,593行）。
+- critical: ①**判定⑤が `run-state.json` のずれを見ず、カード承認済みの完成条件を実装していない**
+  （2回目レビューからの持ち越し・未解消）②helen 分離により**判定④の対象がゼロになり完成条件4・5が
+  判定不能** ③網羅性の判定が循環定義で恒真 ④**別ファイル方式は承認済み決定「案1」の撤回にあたるのに、
+  rev.5 で承認関所から外していた**（rev.4 では承認A-0 の対象と明示していた）。
+- major: 除外リストが**実在しない `06_repro-v51/audit/` を守り、相手の実作業場
+  `.audit-bootstrap-20260830/` と `logs/`(243件) を守っていない**／`work_roots` の具体値が未定義／
+  **Bash の書き込み先推定は原理的に近似**（`brainstorm_guard.py` 79行に明記）で helen の主経路を捕捉できない／
+  グローバルフック登録に承認関所が無い／KB CLAUDE.md 1A への該当判定が無い。
+- **E-1**: 水着化は 2026-08-31 に66ファイル更新・最新 10:00。`tools/` の swimsuit 関連も同日更新。
+  **別セッションが KB 内を現在進行形で書いている。**
+- 所見: 改訂のたびに新しい critical が出続けている（5版で計16件）。原因は計画の書き方ではなく
+  **前提が1日単位で動いていること**。紙の上で完璧にしてから実装する進め方が収束していない。
+- 触ったページ: 上記レビュー結果（新規）、`wiki/analyses/brainstorm/project-hub-index/_index.md`、`index.md`。
+- 残: rev.6 未着手。実装承認は取っていない。
