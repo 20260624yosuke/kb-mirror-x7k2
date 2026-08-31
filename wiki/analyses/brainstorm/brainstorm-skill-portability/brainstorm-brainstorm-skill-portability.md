@@ -11,6 +11,7 @@ scope:
   - /Users/takedayousuke/.agents
   - /Users/takedayousuke/.codex
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-guard-fix-handoff-20260829.md
@@ -248,7 +249,7 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 既存11試験と読取中心の追加23ケースはPASS。実PostToolUseで起動復旧、親への同一ターン追記、実カード呼出しID・空回答の状態不変を観測。
 解除カードは空回答であり、承認・中断ではない。2026-08-31の再開時に前回の実Stop正常通過を追認。残りは新試験の恒久保存、SKILLとの同期、実Stopの拒否・再入の終端試験。
 今回のコード変更先はCodex版のcodex_adapter.pyと新しいresume_contract.pyのみ。Claude版・Helen成果物・hooks.json・config.tomlは変更なし。
-前回は新監査CLIを含むコマンドが旧guard-writeで拒否された。CLI単体の拒否と複合コマンドの誤認を分けて確認する。今回、引用内の比較記号を含む読取専用jqも拒否された。bypassは行わず、修理記録へ回帰条件を固定する。
+前回は新監査CLIを含むコマンドが旧guard-writeで拒否された。今回CLI単独は正常実行し、更新後checkpointの構造・根拠検査はPASS。引用内の比較記号を含む読取専用jqは拒否された。bypassは行わず、修理記録へ回帰条件を固定した。既存11試験も今回再実行して全件PASS。
 結果・残作業の記録: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md
 
 ```brainstorm-checkpoint

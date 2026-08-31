@@ -33,7 +33,7 @@ codex_adapter.pyのStopに組込み、再入時の無条件通過を削除。UI�
 
 ## 検査結果
 
-- 既存test_codex_adapter.py: unittest discoverで11/11 PASS。
+- 既存test_codex_adapter.py: unittest discoverで11/11 PASS。今回の続行ターンでも再実行して11/11 PASS（0.014秒）。
 - 追加の読取中心インライン試験: 23/23 PASS。
   正常契約、owner/action/target/done_when欠落、曖昧なaction、現在と停止の混同、復帰辺欠落、
   停止点無断削除、根拠SHA古さ、停止根拠欠落、実行可能作業の放置、表示欠落、HTMLコメントだけの表示、
@@ -43,6 +43,7 @@ codex_adapter.pyのStopに組込み、再入時の無条件通過を削除。UI�
 - 追加23ケースの恒久テストファイルへの保存は未実施。実Stopの拒否・再入試験も未実施。
 - 2026-08-31の再開時、実ログに前回counter=1のcheckpoint_verified、続くstop_pass（empty_result / awaiting_card）を確認。checkpoint hashは44b5b5171d463f1f122e90a00feb85d307e8bb692792dd876ab7b4f84a0b5318。これは実Stop正常通過の証拠であって、不備の拒否を実証するものではない。
 - 今回counter=2のUserPromptSubmitではterminal=none、awaiting_cardを維持。コード2本のSHAも上記と一致し、この再開ターンではコードを変更していない。
+- 今回、resume_contract.pyを単独実行し、更新した親checkpointを検査。exit_code=0、pass=true、errors=[]。CLI自体の包括的な許可追加は不要。この検査は構造・根拠の確認であり、今回の回答本文や実Stopの拒否試験ではない。
 
 実イベントの直接出典: /Users/takedayousuke/.codex/skills/brainstorm/scripts/card-events.jsonl
 
@@ -61,6 +62,7 @@ Wikiルートへの説明HTML保存も書込境界で拒否。規則上文書保
 ## 通常タスクで再開する担当と終了条件
 
 担当は私。対象はCodex版brainstormのみ。
+
 1. 親メモと本記録を読み、既存変更のSHA・差分を確認する。既存のtests/test_codex_adapter.pyへ、下表の誤拒否と実書込の対照試験を先に追加する。修正前に誤拒否が再現し、書込拒否が保たれることを記録する。
 2. scripts/brainstorm_guard.pyのWRITE_HINTから_candidate_pathsへ渡す判定を、引用内データとシェル演算子を区別するよう修正する。任意Python、jq、スキルフォルダ全体の一括許可を追加しない。実行されるコマンド置換やリダイレクトを引用データ扱いして素通ししない。
 3. scripts/resume_contract.pyの追加23ケースをtests内の恒久テストへ保存する（新ファイルは実装時に作成・現在未作成）。空欄・型不正・根拠SHA不一致・先の停止点削除・復帰先欠落・実行可能作業の放置・本文省略・状態不一致・Stop再入を含める。SKILL.mdに現在のcheckpoint、読取CLI、保証範囲と限界を同期する。
@@ -81,6 +83,7 @@ Wikiルートへの説明HTML保存も書込境界で拒否。規則上文書保
 | resume_contractの単独読取と、同じ呼出しに実書込を連結 | 前者を入力として扱い、後者の保護先書込を拒否 |
 
 対象実ファイル:
+
 - /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py
 - /Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py
 - /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py
