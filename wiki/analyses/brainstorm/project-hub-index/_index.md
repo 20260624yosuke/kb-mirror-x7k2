@@ -8,6 +8,9 @@ brainstorm_status: active
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-five-guards-plan-20260831.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-remaining-four-tasks.html
+  - /Users/takedayousuke/llm-uploads/20260831-125115-実機での発火は未確認です-自己試験は-配線が正しいか-までで-実際に止まるかは次.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/_index.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/project-current-state-page-plan-20260830.md
@@ -810,7 +813,7 @@ LLM 側の記録ミス」と**正しく書かれている**。にもかかわら
 
 > `/html`
 > `wiki/analyses/brainstorm/project-hub-index/_index.md` を見てください。タスクを再開します。
-> `/Users/takedayousuke/llm-uploads/20260831-125115-…実機での発火は未確認です…` の中身が、残っているタスクです。
+> `/Users/takedayousuke/llm-uploads/20260831-125115-実機での発火は未確認です-自己試験は-配線が正しいか-までで-実際に止まるかは次.md`。
 > （武田さん・2026-08-31 12:51）
 
 引き継がれた残タスクは4件。前セッションの最終報告「まだ終わってないこと」がそのまま渡された。
