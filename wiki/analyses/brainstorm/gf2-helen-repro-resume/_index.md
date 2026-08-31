@@ -60,6 +60,12 @@ background_paths:
 
 ## 直した記録
 
+- 2026-09-01 Stop再入: `BS_INTERNAL:KeyError` を受け、実状態を使った読取再現で `parent_selection` キー欠落を確定。コード・設定は未変更。故障限定の実装修理の許可を尋ねた。原因と未実装の修理範囲: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md
+
+- 2026-09-01 検証済み: 新親への逆リンク5経路、HTML参照31件、親のリンク実体、マーカー1個・checkpoint1個を確認。本文と再開summaryの整合検査は技術的停止状態としてPASS。カード連携正常の証明ではない。
+- 2026-09-01 表示確認: 前面を占有しないChromeで幅1280px・390pxを描画し、文書全体の横はみ出しなし・JavaScript例外なし・再開全文19行の非表示なしを確認。初回に見つけた狭幅のはみ出しを修正。HTML画像だけを確認し、3D成果物の目視判定はしていない。
+- 2026-09-01 保護確認: 実測対象のプロジェクトファイル11件は保存前後のSHA一致。Blend・f166・品質台帳・既存実装は無変更。
+
 - 2026-09-01: 実カード回答とセッション保存状態の不一致を記録した。故障の証拠: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-card-observation-gap.json。フック状態の手書き変更・実イベントの偽装再投入・機構の修理はしない。カードの機械管理だけを技術的停止とし、ユーザーの中断や未回答とは扱わない。
 
 - 2026-09-01: 指定の古い添付を現行状態とせず、後続の監査rev4・一本化rev3・実ファイルまで追跡した。
@@ -216,25 +222,29 @@ background_paths:
   "released": [],
   "next": {
     "owner": "user",
-    "action": "この親メモを指定し、カード機構の観測不一致を確認したうえでbrainstormを再開する意思を明示する。",
-    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md",
-    "done_when": "明示的な再開要求を受け取る。機構の再開可否は、その後に私が実イベントの事前検査で確かめる。",
+    "action": "この会話でbrainstormのカード記録・終了検査の故障に限って実装修理を許可するか明示する。",
+    "target": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py",
+    "done_when": "ユーザーの明示判断を受け取る。無回答は許可にも中断にも数えない。",
     "availability": "needs_user"
   },
   "exit": {
     "kind": "technical_stop",
-    "reason": "実カードの回答を受領したが、セッション保存状態は親未選択・カード拘束情報なしのままで、機械観測の成立を確認できない。説明資料は保存済み。",
-    "unblock_when": "明示的な再開要求後、実カード呼出し・回答・対象親・現在ターンの対応を機械側でも確認できる。",
+    "reason": "終了検査が欠落したparent_selectionを読み、KeyErrorで停止することを実保存状態から再現した。実装修理はこのbrainstormの禁止範囲に当たるため、例外の許可待ち。原作再現の説明資料は保存済み。",
+    "unblock_when": "この故障に限った実装修理と再開が明示的に許可され、修理後の実カードと終了検査が再検証できる。",
     "evidence": [
       {
         "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-card-observation-gap.json",
         "sha256": "620c90ae1a8c4665f498dd694fb49da1de65f5da0e5b8bccee70f80218a783c1"
+      },
+      {
+        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md",
+        "sha256": "1526c2101d5cb65ecca528a57484b512fe3585aca6ddff9dd654be89a3c2556b"
       }
     ]
   },
   "decision": {
     "card_kind": "question",
-    "scope": "原作再現の現状整理後にどの問題を詰めるかは未選択。記録先のユーザー選択は受領済みだが、新計画・実装の承認には変換しない。"
+    "scope": "この会話で、brainstormのこの故障に限って実装修理を許可しますか？"
   }
 }
 ```

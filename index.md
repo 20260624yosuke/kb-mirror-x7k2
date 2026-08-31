@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4948 ファイル_
+_合計 4949 ファイル_
 
 ## root/ (11)
 
@@ -14,7 +14,7 @@ _合計 4948 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-31T15:13:16Z
-- [log.md](root/log.md) | 2026-08-31T03:49:29Z
+- [log.md](root/log.md) | 2026-08-31T15:18:39Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -327,7 +327,11 @@ _合計 4948 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-helen-repro-resume/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-08-31T15:13:16Z
+- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-08-31T15:18:07Z
+
+## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (1)
+
+- [20260901-stop-keyerror-diagnosis.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md) | 2026-08-31T15:18:06Z
 
 ## wiki/analyses/brainstorm/html-skill-discovery/ (1)
 

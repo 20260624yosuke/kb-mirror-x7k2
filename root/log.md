@@ -10749,3 +10749,17 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   バックアップ: `/tmp/unified-route-backup-*.md`。
 - 変更前: コード配置案は既存audit_guardとWiki側 `tools/helen_route_hook.py`。
 - 変更後: コード配置案は既存audit_guardとWiki側 `tools/helen_route_hook.py`（**未作成**）。
+
+## [2026-09-01] query | Helen原作再現の現状整理と専用親の相互接続
+
+- 依頼: 指定の20260830添付から本題の原作再現へ戻り、現状と成果物までの問題点を説明。実装は行わない。
+- 武田さんの実カード回答: 「1の選択肢でいいです。しかし、メモは関連ファイルと紐づいてないと、ただ孤立して、別のエージェントが参照できないのは禁止です。」＋確認「はい、この選択でよい」。
+- 新規親を作成し、技術入口・監査rev4・一本化rev3・旧共通親・indexからの逆リンク5経路を確認。既存計画の仕様・承認範囲・水着化の進捗は変更していない。
+- 現物: Blend SHA 04ef8b79…d7f5、f128構造限定PASS、f152 FAIL（S6/S8）、G10参照鎖不足。品質ゲートを再実行しplan PASS・batch/complete FAIL。登録原作bundle2本は現在のパスで読めない（消失の断定はしない）。
+- P0記録は存在するが、正規監査・guard・外部登録簿は未作成。一時領域もP0用ファイルのみで、P0B本体構築前。一本化rev3のレビュー保存版SHA一致を確認したが、実行は未承認。
+- HTML表示は1280px/390pxで検査し横はみ出しを修正。参照31件の欠落なし、再開summary19行の表示とresume_contract整合を確認。原作実機・3D再描画は未実施。
+- brainstormのみ技術的停止: 実回答を受領したのに、当該セッション機械状態は親未選択・カード拘束情報なし・追記未検証のまま。原因未確定。状態の手書きや実イベントの偽装再投入は行わず、説明資料と故障観測を保存。ユーザー中断・未回答・実行承認に変換していない。
+- 新規: `wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md`、同`sessions/20260901-current-state-evidence.json`、同`sessions/20260901-card-observation-gap.json`。
+- 更新: `wiki/_attachments/project-hub-index/20260831-helen-repro-project-current-state.html`、`wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md`、`wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md`、`wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md`、`wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`、`index.md`、`log.md`。
+- 保護: 実測したプロジェクトファイル11件は前後SHA一致。原作入力・Blend・f166・品質台帳・設定・実装コードは変更していない。
+- 同じ終了処理の再入で `BS_INTERNAL:KeyError`。`codex_adapter.py:643` が欠落キー `parent_selection` を無条件に読むことを実保存状態で読取再現。実装修理は未実施・故障限定の許可待ち。`wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md` を追加し、親checkpointと説明HTMLの再開全文を同期、technical_stoppedの整合検査PASS。実Stop自体の回復とは扱わない。
