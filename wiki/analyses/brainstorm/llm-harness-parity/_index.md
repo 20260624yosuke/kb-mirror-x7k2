@@ -154,7 +154,19 @@ KB フォルダ直下は `CLAUDE.md` と `AGENTS.md` が両方あり中身も揃
 実際、現存10枚のメモは active 6・ready 3・done 1 で、**渡したまま閉じていないものが3枚**ある。
 
 **穴2：完成条件が散文で、機械は「節が空でないか」しか見ていない。**
-`## 実装への申し送り` の検査は H7 の1本だけで、内容は「節が存在するか」。
+`## 実装への申し送り
+
+```done-when
+path: /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py
+path: /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py
+run: python3 "/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py" audit-handoff --selftest ==> 自己試験: PASS
+run: python3 "/Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py" audit-handoff --selftest ==> 自己試験: PASS
+run: grep -c "BLOCK card-without-prose" "/Users/takedayousuke/.claude/skills/brainstorm/guard.log" ==> 1
+run: grep -c "BLOCK no-implementation" "/Users/takedayousuke/.claude/skills/brainstorm/guard.log" ==> 1
+```
+
+この案件を `done` にできるのは、上の6条件が実際に通ったとき。下2つは**実機で1度踏まないと
+通らない**ようにしてある（自動試験だけでは `done` にできない）。` の検査は H7 の1本だけで、内容は「節が存在するか」。
 `受入` は両環境 0件、`完成条件` は Claude 側3件（すべて説明文の中の語）。
 何が出来ていれば完了かがファイルパス・コマンド・期待結果の形になっていないので、
 **「計画を書いた」を「進めた」と報告しても検査に通る。**
@@ -325,8 +337,68 @@ PreToolUse の制限時間を 180 秒へ上げた。試験も追加（予算3秒
 （`~/.claude/settings.json` の Stop）へ登録した。判定の中身は `_content_block_reason` に
 1本化してあるので、どちらの入口から呼ばれても同じ。
 
-**まだ確認できていないこと**: 封鎖の条件化（`lockdown off`）は、上の理由でこの会話では
-フックが動いておらず観測できなかった。検査5・検査2の実機発火も、常駐へ移した直後なので未観測。
+**実機確認の続き（2026-08-31 23:50 前後）**
+
+| 確かめたこと | 結果 |
+|---|---|
+| 封鎖の条件化（記録なし） | 実メモ7枚に対して `lockdown off (no separate-session memo)` |
+| 封鎖の条件化（記録あり） | 一時メモに `implementation_agent: separate-session` を書くと `lockdown DENY`。確認後に削除済み |
+| 検査5・検査2 の入口 | この会話の**実際の会話記録**を入力にして `guard-stop-content` を動かし、`content pass` を記録 |
+| 設定ファイルの妥当性 | Claude の Stop フック3件、Codex の PreToolUse 2件、Codex adapter の読み込みとも異常なし |
+
+**もう1つ分かった運用上の事実**: `settings.json` に足したフックは、**すでに動いている会話には
+効かない**。登録した直後の Stop では `guard-stop-content` が呼ばれなかった。次に開く会話から効く。
+
+**まだ実機で踏めていないもの**
+
+- 検査5 の否定側（本文が短いときに実際に止まること）。この会話では本文を書いているため踏めない。
+- 検査2 の否定側（実装ゼロで閉じること）。この会話は成果物を書いているため踏めない。
+- 検査3 が実際に 200 件で止まるところ（現在の回数は 1 桁）。
+- Codex 側は、実機の会話をまだ通していない。
+
+### 残り4件の踏み方（次の会話でそのまま実行できる手順）
+
+`settings.json` に足したフックは**新しい会話から効く**ので、下の1と2は必ず新しい会話で行う。
+
+**1. 検査5（カードの外の本文が短いと止まる）**
+新しい会話で `/brainstorm 検査5の実機確認` と入力し、応答の本文を1行だけにして承認カードを出す。
+止まれば成功。確認する行:
+
+```bash
+grep "BLOCK card-without-prose" "/Users/takedayousuke/.claude/skills/brainstorm/guard.log"
+```
+
+**2. 検査2（ready のメモを読んで実装ゼロで閉じる）**
+新しい会話で、`ready` のメモを1枚だけ読み、成果物へ何も書かずに閉じようとする。読むメモの例:
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/askuserquestion-misclick-guard/_index.md`
+
+```bash
+grep "BLOCK no-implementation" "/Users/takedayousuke/.claude/skills/brainstorm/guard.log"
+```
+
+**3. 検査3（200件で1度止まる）**
+段を一時的に下げて踏む。試験用の環境変数と使い捨てのカウンタ置き場を使えば、本番のカウンタを
+汚さずに確かめられる。
+
+```bash
+export BRAINSTORM_WORKLIMIT_DIR="$HOME/.cache/wl-check"   # 使い捨てのカウンタ置き場
+```
+
+続けて、いつもの自己試験を走らせる（第4層に「201 件目で1度止まる」の試験が入っている）。
+
+```bash
+python3 "/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py" audit-handoff --selftest
+```
+
+実会話で踏みたい場合は、書き込み操作が 200 件を超えるまで作業を続ける。現在の回数は
+`/Users/takedayousuke/.claude/skills/brainstorm/worklimit/<セッションID>.json` で見られる。
+
+**4. Codex 側の実機**
+Codex で `$brainstorm` を使い、次の行が出るかを見る。
+
+```bash
+grep -E "content pass|BLOCK card-without-prose|lockdown off" "/Users/takedayousuke/.codex/skills/brainstorm/scripts/guard.log"
+```
 
 ### 終わったら次に取る承認
 
