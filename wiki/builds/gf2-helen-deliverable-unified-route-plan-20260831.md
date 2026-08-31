@@ -161,7 +161,7 @@ lock下でread-set・対象状態・入力不変・役割・権限・出力を�
 
 ### 実行入口・出力への接続
 
-コード配置案は既存audit_guardとWiki側 `tools/helen_route_hook.py`。
+コード配置案は既存audit_guardとWiki側 `tools/helen_route_hook.py`（**未作成**）。
 実際に実行する環境のPreToolUse／PostToolUse／Stopへ、プロジェクトパス限定adapterを接続する。
 最初からCodexとClaude両方の導入完了を要求しない。未接続環境はその環境の操作を拒否し、
 利用する時だけ設定差分承認と同じ実イベント試験を通す。レビュー役の読取は正式成果物操作と区別する。

@@ -10737,3 +10737,15 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - **試験（全合格）**: 未起動→止める／起動済→通す／`/tmp`→通す／`/brainstorm`→通す／
   `/llm-wiki`（ホーム側）→止める／既存の自己試験は第1層〜第3層すべて PASS。
 - 触ったファイル: `brainstorm_guard.py`、`wiki/analyses/brainstorm/project-hub-index/_index.md`。
+
+## [2026-08-31] lint | 別セッションの計画1行を修正（武田さんの承認あり）
+- 引き継ぎの機械監査が会話の終了を止めた。原因は**別セッションのファイル**
+  `wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md`（2026-08-31 10:52 更新・
+  `brainstorm-gf2-dusevnyj-bikini-to-helen` メモに紐づく）の164行目で、未作成の
+  `tools/helen_route_hook.py` を実在パスとして参照していたため。
+- 私の担当分（`project-hub-index` / `project-current-state-page-plan-20260830`）への指摘は **0件**。
+- 監査の指示は「自分の担当でなければ勝手に直さず武田さんへ報告」。報告し、**武田さんの承認を得てから**
+  164行目に「（**未作成**）」の1語のみを追記。他の行は触っていない。
+  バックアップ: `/tmp/unified-route-backup-*.md`。
+- 変更前: コード配置案は既存audit_guardとWiki側 `tools/helen_route_hook.py`。
+- 変更後: コード配置案は既存audit_guardとWiki側 `tools/helen_route_hook.py`（**未作成**）。
