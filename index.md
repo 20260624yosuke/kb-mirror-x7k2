@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4943 ファイル_
+_合計 4945 ファイル_
 
 ## root/ (11)
 
@@ -191,12 +191,14 @@ _合計 4943 ファイル_
 - [10-three-skin-atlases.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/10-three-skin-atlases.png) | 2026-08-31T01:03:43Z
 - [11-bone-fit-3view.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/11-bone-fit-3view.png) | 2026-08-31T01:03:43Z
 
-## wiki/_attachments/helen-swimsuit-status/img-20260831-status/ (4)
+## wiki/_attachments/helen-swimsuit-status/img-20260831-status/ (6)
 
 - [01-swimsuit-alpha-cutout.png](wiki/_attachments/helen-swimsuit-status/img-20260831-status/01-swimsuit-alpha-cutout.png) | 2026-08-31T07:41:59Z
 - [02-skin-atlas-candidates.png](wiki/_attachments/helen-swimsuit-status/img-20260831-status/02-skin-atlas-candidates.png) | 2026-08-31T07:41:59Z
 - [03-current-deliverable.png](wiki/_attachments/helen-swimsuit-status/img-20260831-status/03-current-deliverable.png) | 2026-08-31T07:41:59Z
 - [04-current-torso.png](wiki/_attachments/helen-swimsuit-status/img-20260831-status/04-current-torso.png) | 2026-08-31T07:41:59Z
+- [05-general-rebuild-front.png](wiki/_attachments/helen-swimsuit-status/img-20260831-status/05-general-rebuild-front.png) | 2026-08-31T08:06:12Z
+- [06-general-rebuild-torso.png](wiki/_attachments/helen-swimsuit-status/img-20260831-status/06-general-rebuild-torso.png) | 2026-08-31T08:06:12Z
 
 ## wiki/analyses/ (68)
 
@@ -315,7 +317,7 @@ _合計 4943 ファイル_
 - [20260830-visible-set-d1-a11-implemented.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-visible-set-d1-a11-implemented.md) | 2026-08-30T07:32:19Z
 - [20260830-which-to-keep-and-wiki-gap.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-which-to-keep-and-wiki-gap.md) | 2026-08-30T06:55:42Z
 - [20260831-chest-hole-cause-audit-gap.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-chest-hole-cause-audit-gap.md) | 2026-08-31T07:11:32Z
-- [20260831-four-defects-root-cause.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-four-defects-root-cause.md) | 2026-08-31T07:41:32Z
+- [20260831-four-defects-root-cause.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-four-defects-root-cause.md) | 2026-08-31T08:08:09Z
 - [20260831-torso-skin-v1-v6-implemented.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-torso-skin-v1-v6-implemented.md) | 2026-08-30T21:13:08Z
 - [20260831-unified-route-plan-independent-review.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-independent-review.md) | 2026-08-31T01:52:26Z
 - [20260831-unified-route-plan-revision-1.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-1.md) | 2026-08-31T01:48:24Z
