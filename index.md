@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4949 ファイル_
+_合計 4950 ファイル_
 
 ## root/ (11)
 
@@ -327,10 +327,11 @@ _合計 4949 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-helen-repro-resume/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-08-31T15:24:37Z
+- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-08-31T15:35:15Z
 
-## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (1)
+## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (2)
 
+- [20260901-brainstorm-fault-repair.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair.md) | 2026-08-31T15:34:01Z
 - [20260901-stop-keyerror-diagnosis.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md) | 2026-08-31T15:18:06Z
 
 ## wiki/analyses/brainstorm/html-skill-discovery/ (1)
@@ -351,7 +352,7 @@ _合計 4949 ファイル_
 
 ## wiki/analyses/brainstorm/project-hub-index/sessions/ (1)
 
-- [20260831-hole3-threshold-measurement.md](wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md) | 2026-08-31T15:27:34Z
+- [20260831-hole3-threshold-measurement.md](wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md) | 2026-08-31T15:36:30Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 
@@ -3390,7 +3391,7 @@ _合計 4949 ファイル_
 - [brainstorm-card-guard-plan-20260830.md](wiki/builds/brainstorm-card-guard-plan-20260830.md) | 2026-08-30T03:12:08Z
 - [brainstorm-codex-default-mode-card-plan-20260830.md](wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md) | 2026-08-30T06:08:56Z
 - [brainstorm-concrete-resume-audit-plan-20260831.md](wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md) | 2026-08-31T07:04:26Z
-- [brainstorm-five-guards-plan-20260831.md](wiki/builds/brainstorm-five-guards-plan-20260831.md) | 2026-08-31T10:36:49Z
+- [brainstorm-five-guards-plan-20260831.md](wiki/builds/brainstorm-five-guards-plan-20260831.md) | 2026-08-31T15:36:10Z
 - [brainstorm-guard-fix-handoff-20260829.md](wiki/builds/brainstorm-guard-fix-handoff-20260829.md) | 2026-08-29T15:58:18Z
 - [brainstorm-port-request-20260829.md](wiki/builds/brainstorm-port-request-20260829.md) | 2026-08-29T06:44:43Z
 - [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-08-31T03:40:07Z

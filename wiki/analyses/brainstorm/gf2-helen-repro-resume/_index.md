@@ -71,6 +71,8 @@ background_paths:
 
 ## 直した記録
 
+- 2026-09-01 故障限定の修理: 親選択欠落の明示拒否・事前イベント欠落の技術停止・親未確定での診断報告検査を実装。追加12試験合格、全体71件中68件合格。残る3失敗は変更前59件でも同一で、今回の範囲外。Codex hooks/listは事前フックmodified、事後とStopはtrusted。信頼・状態・基準を手書きせず、通常カード未再開を保持。修理記録: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair.md
+
 - 2026-09-01 Stop再入: `BS_INTERNAL:KeyError` を受け、実状態を使った読取再現で `parent_selection` キー欠落を確定。コード・設定は未変更。故障限定の実装修理の許可を尋ねた。原因と未実装の修理範囲: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md
 
 - 2026-09-01 検証済み: 新親への逆リンク5経路、HTML参照31件、親のリンク実体、マーカー1個・checkpoint1個を確認。本文と再開summaryの整合検査は技術的停止状態としてPASS。カード連携正常の証明ではない。
@@ -95,7 +97,7 @@ background_paths:
 
 ## 実装への申し送り
 
-今回新たな実行承認はない。過去の監査rev4承認の範囲は元文書と旧親の実行承認記録を読む。一本化rev3の未承認差分を適用しない。
+Helenについて今回新たな実行承認はない。今回の例外はbrainstormの当該故障修理だけ。過去の監査rev4承認の範囲は元文書と旧親の実行承認記録を読む。一本化rev3の未承認差分を適用しない。
 
 最終成果物は現行Blendの単なる存在ではなく、原要件に対応するH0157全身・動き・色や陰影の検証と許容判断が揃うこと。S6/S8/G10は直近の修復対象であって全要件ではない。
 
@@ -105,7 +107,7 @@ background_paths:
 
 ## 機械化した指摘
 
-今回の機構実装はなし。孤立メモは逆リンク・絶対パスの存在検査で点検する。原作再現の監査機構は未導入であり、説明用の検査を運用開始の証拠にしない。
+親未選択のKeyError、事前カード記録欠落、技術停止報告の再入を12件の隔離試験にした。親確定・承認・基準保存を捏造せず、発見済み診断資料の現在マーカー・証拠・再開全文・残作業・既存保留を検査する。実フックの信頼状態はCodex自身へ読取照会した。原作再現の監査機構は未導入であり、この修理をHelenの完成や運用開始の証拠にしない。
 
 ## 関連リンク
 
@@ -159,15 +161,11 @@ background_paths:
   ],
   "current": {
     "node": "brainstorm_fault",
-    "work": "この会話で故障限定の実装修理を許可するとの明示回答を受領。欠落した親選択の例外と事前フック記録の不成立を修理し隔離試験する。Helen実装の承認には広げない。",
+    "work": "brainstormの親選択欠落と技術停止の報告処理を修理し、追加12試験は合格。事前フックは変更後の未再信頼と実照会で確認した。実カードによる復旧検証はまだ行っていない。",
     "evidence": [
       {
-        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-card-observation-gap.json",
-        "sha256": "620c90ae1a8c4665f498dd694fb49da1de65f5da0e5b8bccee70f80218a783c1"
-      },
-      {
-        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md",
-        "sha256": "1526c2101d5cb65ecca528a57484b512fe3585aca6ddff9dd654be89a3c2556b"
+        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair-evidence.json",
+        "sha256": "f4ed75bf0b26d39503b20a98aeea4644374a623768b8ebbbc5f37bbd9ca95314"
       }
     ]
   },
@@ -236,24 +234,34 @@ background_paths:
     {
       "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-card-observation-gap.json",
       "sha256": "620c90ae1a8c4665f498dd694fb49da1de65f5da0e5b8bccee70f80218a783c1"
+    },
+    {
+      "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair-evidence.json",
+      "sha256": "f4ed75bf0b26d39503b20a98aeea4644374a623768b8ebbbc5f37bbd9ca95314"
     }
   ],
   "released": [],
   "next": {
-    "owner": "assistant",
-    "action": "codex_adapter.pyの親未選択時の例外と事前フック登録を調査・修理し、隔離回帰試験と可能な実フック検証を行う。",
-    "target": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py",
-    "done_when": "欠落状態を承認へ変えず機械判定でき、回帰試験結果と実機未検証点を記録する。",
-    "availability": "runnable"
+    "owner": "user",
+    "action": "Codexの標準フック確認画面（CLIでは /hooks）で、hooks.jsonのpre_tool_use:0:0にあるbrainstorm事前フックの現在定義を確認して再信頼し、この会話で「再開」と伝える。",
+    "target": "/Users/takedayousuke/.codex/hooks.json",
+    "done_when": "標準手続きによる現在定義の信頼と、明示的な再開要求が揃う。その後の実カード・親記録・終了検査は私が検証する。",
+    "availability": "needs_user"
   },
   "exit": {
-    "kind": "continue_work",
-    "reason": "故障限定の修理許可を受領し、実装と検証を継続する。",
-    "unblock_when": "今回の故障修理の試験結果を保存する。"
+    "kind": "technical_stop",
+    "reason": "コード修理は実施したが、Codexの事前フックは未再信頼で実発火できない。信頼設定を手書きで迂回しないため、BS_INTERNAL:KeyErrorの技術停止と親未確定を維持する。",
+    "unblock_when": "事前フックの現在定義が再信頼され、明示的な再開後に実二問カードの事前検査を通す。機械基準の来歴が不足する場合はその検査も維持する。",
+    "evidence": [
+      {
+        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair-evidence.json",
+        "sha256": "f4ed75bf0b26d39503b20a98aeea4644374a623768b8ebbbc5f37bbd9ca95314"
+      }
+    ]
   },
   "decision": {
     "card_kind": "question",
-    "scope": "明示的な再開要求後に事前検査を通し、原作再現の親メモ選択へ戻る。"
+    "scope": "標準フック確認画面で現在定義を再信頼し、この会話で再開を明示する。修理許可やHelen実行承認の取り直しではない。"
   }
 }
 ```
