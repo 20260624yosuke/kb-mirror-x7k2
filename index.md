@@ -288,7 +288,7 @@ _合計 4951 ファイル_
 - [20260831-concrete-resume-audit-repair.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md) | 2026-08-31T08:00:15Z
 - [20260831-resume-audit-independent-review.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-independent-review.md) | 2026-08-31T07:04:26Z
 - [20260831-resume-audit-plan-r3-reviewed.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-plan-r3-reviewed.md) | 2026-08-31T07:00:49Z
-- [20260901-explicit-permission-design.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md) | 2026-08-31T16:41:44Z
+- [20260901-explicit-permission-design.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md) | 2026-08-31T23:50:09Z
 
 ## wiki/analyses/brainstorm/codex-default-mode-card-parallel-test/ (1)
 
