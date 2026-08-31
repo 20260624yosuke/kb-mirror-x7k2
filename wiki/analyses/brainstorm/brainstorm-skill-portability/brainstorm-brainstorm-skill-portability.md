@@ -4,7 +4,7 @@ status: active
 confidence: medium
 evidence_level: user-stated
 last_reviewed: 2026-08-31
-brainstorm_status: ready
+brainstorm_status: active
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Users/takedayousuke/.claude
@@ -232,6 +232,51 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
   - **それまでは残る。** Kimi / Codex で作業すると休止済みの規則が発火しうる（承知のうえの保留）。
 
 ## まだ決まってないこと
+
+### 2026-08-31 共通終了監査の現在地点
+
+今回の修理を追加したためactiveへ戻す。旧2026-08-30計画の承認履歴は維持し、今回の解除・修理受入とは区別する。
+既存11試験と読取中心の追加23ケースはPASS。実PostToolUseで起動復旧、親への同一ターン追記、実カード呼出しID・空回答の状態不変を観測。
+解除カードは空回答であり、承認・中断ではない。残りは新試験の恒久保存、SKILLとの同期、実Stopの拒否・再入・正常通過の終端試験。
+今回のコード変更先はCodex版のcodex_adapter.pyと新しいresume_contract.pyのみ。Claude版・Helen成果物・hooks.json・config.tomlは変更なし。
+
+```brainstorm-checkpoint
+{
+  "version": 1,
+  "objective": "brainstormで次の一手が曖昧なまま応答を終了する経路を機械的に拒否する",
+  "timeline": [
+    {"id": "repair_permission", "label": "修理の前提確認"},
+    {"id": "guard_repair", "label": "共通監査の修正と終端試験"},
+    {"id": "operation", "label": "検証済みの運用"}
+  ],
+  "current": {
+    "node": "repair_permission",
+    "work": "brainstorm修理の限定解除待ち。図と検査結果を整理している。",
+    "evidence": [{"path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py", "sha256": "385bfbab3c70e134f9aa40130d74fbed0ea0c70af7a445d50cc4c20ed75a7f75"}]
+  },
+  "mode": "detour",
+  "parked": [{
+    "node": "guard_repair",
+    "work": "共通監査の残りの修正と実際の終了イベントの試験。",
+    "reason": "修理中にbrainstormの実装禁止が作動し、限定解除の回答はまだない。",
+    "resume_when": "brainstorm修理だけの解除が明示されること。Helenの実装は含めない。",
+    "evidence": [{"path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py", "sha256": "ba4aeaed7b4318d97c61980ff7a1cf91ee1aea8fced254fb2809d8621465d74d"}]
+  }],
+  "return_to": ["guard_repair"],
+  "next": {
+    "owner": "user",
+    "action": "確認カードで「修理限定で解除」と「はい、この選択でよい」を選ぶか、解除しない選択をする。",
+    "target": "/Users/takedayousuke/.codex/skills/brainstorm/SKILL.md",
+    "done_when": "同じ確認カードの主回答と確認回答が記録され、空回答ではないこと。",
+    "availability": "needs_user"
+  },
+  "exit": {
+    "kind": "awaiting_user",
+    "reason": "修理限定の解除が未回答。検査済みの部分と未完の修理を分けて残すため。",
+    "unblock_when": "限定解除の明示回答後、私が試験の恒久保存・規則同期・実終了イベント試験を続ける。"
+  }
+}
+```
 
 - 封鎖ができない環境（opencode）で、代わりに何で担保するか。
   実測では opencode の設定にフック登録が一切無く、止める土台があるか自体が**未確認**。

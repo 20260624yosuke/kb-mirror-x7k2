@@ -1472,3 +1472,4 @@
 - `wiki/_attachments/project-hub-index/20260831-two-plans-conflict.html` — 私の計画と別セッションの承認済み計画がぶつかっている件の説明。①相手の禁止事項「汎用CIを先に作るな」と軸②の衝突 ②中心部分の重複と、私にしかない4項目。裁定の4択つき (source-backed, 2026-08-31)
 - [[project-current-state-page-plan-review5-20260831]] — 計画 rev.5 の5回目の独立レビュー。critical 4件（承認済み判定の未実装／helen分離で完成条件4・5が判定不能／承認済み決定の撤回が関所を通っていない）。除外リストが実在しない作業場を守っている点、Bash判定が原理的に近似である点も指摘 (source-backed, 2026-08-31)
 - `wiki/_attachments/project-hub-index/20260831-why-plan-not-converging.html` — 計画を5版書いても重い指摘が減らない理由の可視化。5版16件の内訳、別セッションの変更と私の版が交互に起きた時系列、進め方の4択 (source-backed, 2026-08-31)
+- `wiki/_attachments/project-hub-index/20260831-where-i-drifted.html` — 私が対象（KB運用の穴）と事例（helenプロジェクト）を取り違えていた件の言語化。逸れた地点の特定と、KBが散らかる5つの性質の整理 (source-backed, 2026-08-31)
