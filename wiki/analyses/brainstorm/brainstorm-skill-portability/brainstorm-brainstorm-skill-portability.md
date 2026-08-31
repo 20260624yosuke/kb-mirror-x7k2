@@ -44,6 +44,7 @@ Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/b
 <!-- bs:v1 session=0d29db47c868b64206a2efc5769ba3b59f6e8b255ea289e0f8a37a68a52bc62d counter=2 input=5339cf8331b19d893f3aeab762afcab8f9dd29dc0a797a813fc57a7f8be94fa5 turn=81be028472cc5e4c130e333997dce11102460519996e384a441757d6163d566d -->
 - 前回の「限定解除後、この会話で残実装を続ける」という案内は撤回。書込封鎖の例外と、この会話の計画限定は別。計画を固定し、brainstormを起動しない通常タスクへ実装を渡す。ユーザーに原因調査や54本の判定を委ねない。
 - 引継ぎは既存の修理記録に集約。読取専用jqの引用内比較記号でも書込拒否を観測し、任意Pythonの許可追加ではなく、コマンドと引用データの誤認を回帰試験で扱う計画へ修正した。
+- 同ターンの実カード回答: 「/Htmlを使用してください」「説明が曖昧で理解できません。説明してください。」。確認欄は「はい、この選択でよい」だったが、主回答は説明依頼であり計画承認ではない。実ログもnext_card_required / awaiting_card。HTMLを、停止理由・確認済みと未完・具体例・現在地と先の停止地点に分けて更新する。
 
 ### 2026-08-31 曖昧な停止をbrainstorm本体で機械的に修理する依頼
 
@@ -263,7 +264,7 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
   ],
   "current": {
     "node": "repair_permission",
-    "work": "共通監査の残修理計画を固定し、実装への引継ぎを待っている。",
+    "work": "残修理と停止理由をHTMLに整理し、計画の判断を待っている。",
     "evidence": [{"path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py", "sha256": "385bfbab3c70e134f9aa40130d74fbed0ea0c70af7a445d50cc4c20ed75a7f75"}]
   },
   "mode": "detour",
