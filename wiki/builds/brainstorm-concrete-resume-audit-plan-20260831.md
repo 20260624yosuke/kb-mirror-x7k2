@@ -6,18 +6,28 @@ confidence: medium
 evidence_level: source-backed+user-stated+inferred
 created: 2026-08-31
 last_reviewed: 2026-08-31
-revision: 1
+revision: 2
 plan_status: draft-unapproved
 review_status: pending-independent-review
 ---
 
-# Codex brainstorm 終了・再開点監査の修理計画 — revision 1
+# Codex brainstorm 終了・再開点監査の修理計画 — revision 2
 
 ## 0. この計画の状態
 
 計画案・未承認。今回の会話ではコード・設定を変更しない。初期コードが既に存在することと、この計画の承認・修理完了は別。
 ユーザーの最新依頼は「ここまでの経緯を踏まえた詳細計画」「実装前のサブエージェントレビュー」「GPT-5.6・medium限定」「結論を誘導しない」「仕様と実装の不一致を重点確認」。
 利用可能なGPT-5.6系の実IDとしてgpt-5.6-sol、reasoning effort=mediumを指定する。レビュー結果を受ける前に承認カードへ進まない。
+
+revision 1の独立判定はCritical 0 / Major 5 / Minor 1。本revision 2はそれへの修正案であり、再照合前の合格を主張しない。
+レビュー記録:
+/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-independent-review.md
+
+### 実機品質の6点
+
+正解はユーザー要件・承認済み本計画・実フックイベント。欠けうる入力は実カードID、原ユーザー入力、親の検査済み基準、実Stopの再入記録。
+性質の異なる対象群は終了契約・書込分類・起動とカード遷移。代表例は通常終了、旧計画への回答、親未選択、別セッション再開、引用内比較記号。
+比較は同じ入力と対象SHAを固定した修正前／修正後の応答・状態・実ログの直接照合。停止条件は根拠欠損、ゲート不合格、実イベント未観測、対象外変更の必要性。
 
 親メモ（本人の言葉・状態・承認履歴）:
 /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md
@@ -70,10 +80,12 @@ review_status: pending-independent-review
 |---|---|---|
 | /Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py | checkpointの型・必須値・根拠・復帰辺・終了状態・表示契約 | 読取専用CLI。nextの操作は実行しない |
 | /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py | 実カード・実状態とcheckpointの接続、全Stopの検査 | 同ターン記録、二問カード、実ID束縛、brainstorm外での非介入 |
-| /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py | 引用データをシェル書込演算子と誤認する判定 | 保護対象への実書込拒否、未読readyメモの検査 |
+| /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py | 引用データの書込誤認、Codex引継ぎ監査の再入無条件通過 | 保護対象への実書込拒否、未読readyメモ、全Stopの到達性検査 |
 | /Users/takedayousuke/.codex/skills/brainstorm/tests/test_codex_adapter.py | 実状態・Stop・引用誤認の回帰試験 | 既存11ケース |
 | /Users/takedayousuke/.codex/skills/brainstorm/tests/ | 追加23ケース等を恒久保存する新テストを実装時に追加 | 現時点で新テストファイルは未作成 |
 | /Users/takedayousuke/.codex/skills/brainstorm/SKILL.md | 実コードと一致するcheckpoint手順・保証範囲 | 明示起動、計画限定、承認と中断の区別 |
+| /Users/takedayousuke/.codex/skills/brainstorm/quality-gate.json | 今回の根拠・対象群・証拠を非破壊で追記 | 旧対象群・旧batch・旧承認を保持。旧未受入を合格にしない |
+| /Users/takedayousuke/.codex/skills/brainstorm/scripts/state/ | 親別の検査済み基準、ロック、今回範囲の品質ゲート検査用写し | 既存セッション状態を一括書換えしない。新ディレクトリは作らない |
 
 hooks.jsonとconfig.tomlは今回変更しない。登録・信頼の不足で実イベントが取れない場合は検証未完として報告し、未依頼の再設定へ進まない。
 
@@ -88,6 +100,17 @@ timeline内の実在ノードをcurrent.nodeとparked[].nodeから参照する�
 同じファイルが存在するだけでは根拠にせず、参照ファイル内容のSHA-256一致を検査する。
 SHA一致は内容の同一性の証明であり、内容の正しさの証明ではない。
 
+親別の比較基準は既存scripts/state内にparent-<親のresolve済み絶対パスSHA>.jsonとして保存する（実装時に作成）。
+中身はschema_version、parent_path、generation、検査済みcheckpoint全文、checkpoint_sha、検査元session/turnのハッシュ。
+フックだけが更新する。対象親のパス一致を必須にし、他親から復元しない。別セッションのSessionStart/親選択確定後にも同じ基準を読む。
+同名.lockで排他し、読込時generationとの一致を確認して一時ファイル・atomic replaceで更新する。
+競合なら自動マージせず再読込を要求し、古いセッションが保留を消して保存することを拒否する。
+checkpoint・カード・メモ記録・引継ぎ到達性の全検査が通った場合だけ基準を進める。途中検査だけの成功で上書きしない。
+基準欠損を空の保留一覧とは扱わない。新規親は実Addイベントで新規作成を確認できた場合だけ初期基準を作る。
+旧親の移行は、同じ親のセッションlast_checkpointと対応する実checkpoint_verifiedログのハッシュが一致する基準から復元し、
+現在メモへの無根拠削除がないことを検査して初期化する。一致資料が無い／複数候補で一意に決まらない場合は移行停止とする。
+親の移動・改名も自動で「新規」にせず、旧基準と対応する移行の証拠が必要。
+
 ### 4.2 次の操作と終端
 
 nextにowner、action、実在する絶対target、done_when、availabilityを必須化する。
@@ -95,17 +118,39 @@ nextにowner、action、実在する絶対target、done_when、availabilityを�
 assistantかつrunnableで終了しようとしたら拒否。exit.kindと実カード状態が矛盾しても拒否する。
 単に自由記述のownerをuserへ変えるだけで監査を通せないよう、needs_userは現在の実カードへの束縛を必須化する。
 
-実装時はカード発行前に構造監査を行い、実PreToolUseが得た呼出しIDのハッシュ、対象親メモ、
-判断対象文書のSHA、checkpoint内の判断対象・次操作のハッシュをセッション側へ保存する。
-Stopではセッションの保存値と現在の文書・checkpointを照合。古いカード、別の計画、
-計画変更後の旧回答、実カード無しのneeds_userを拒否する。pendingのカードを作るだけで
-作業をユーザーへ委ねる必要性が真実だと証明できるわけではなく、この限界は明記する。
-マーカー追記だけでは計画SHAを失効させないため、束縛対象は親メモ全文でなく独立した判断対象文書とする。
+回答前に固定するdecision_bindingと、回答後に変わるnextを分離する。decision_bindingはcard_kind、
+実callハッシュ、セッション/turn、対象親、question/optionハッシュ、対象文書または質問のSHA、判断範囲を持つ。
+next全体を回答対象の固定ハッシュに含めない。正当な回答後の引継ぎ操作への更新を失効理由にしない。
+計画承認カードは独立した計画文書のSHAへ束縛する。通常質問はカードの質問・選択肢と対象親のIDへ束縛し、毎回独立文書を増やさない。
+実PreToolUseで保存し、PostToolUseは回答の反映前に同じ束縛を再検査する。不一致ならapproved/stoppedへ入らず、
+stale_decisionとして回答を不採用にし、現在の対象でカードを再発行する。Stopでも既に受理したbindingの整合を確認する。
+計画SHAが承認後に変わった場合も承認を流用しない。計画とは別の親メモのマーカー追記は計画のSHAを変えない。
+pendingカードが存在するだけで、人間判断が本当に必要だという意味の真実性までは証明できない。この限界を表示する。
+
+| 入力 | 反映前の必要条件 | 状態・次操作 |
+|---|---|---|
+| 計画承認＋確認はい | 現在の実call/親/計画SHA/選択肢の一致 | approvedと受理bindingを保存。nextは引継ぎへ変更可 |
+| 中断＋確認はい | 現在の実call/親/判断範囲の一致 | stopped。保留ノードは削除しない |
+| 通常回答・自由記述 | 実call/親/質問の一致 | awaiting_card。新依頼は内容を記録して作業へ。計画承認にしない |
+| 空・部分・確認拒否 | 現在callとの対応のみ確認 | 承認・中断しない。同じ判断対象の待機を維持 |
+| 独立した承認・中断発話 | 既存の許可語のみの最新原ユーザー入力、同一セッションに一意な有効pending binding、対象SHA一致 | そのpending判断だけ受理。対象不明・失効なら状態を上げない |
+
+### 4.2A 起動段階の限定契約
+
+dialog_stageをtheme_wait / parent_select / discussion / plan_decisionに分け、実起動・候補探索・実回答の証拠からだけ遷移する。
+theme_waitはテーマが無い明示起動だけ。固定案内を返せるが、一般作業の欠落をこの段階に逃がさない。
+parent_selectではcheckpoint未作成を許す代わり、候補のresolve済みパスとSHA、質問/選択肢、実call、session/turnをセッションに固定する。
+PreToolUseで候補が実在すること、PostToolUseで選択候補が候補一覧にあり版が一致することを検査して親を確定する。
+新規候補は親作成前であることを明示した選択肢に束縛し、承認後のAddイベントと対応させる。空回答は親未確定のまま。
+Stopはこの限定契約と現在の実カードを検査し、通常checkpointを要求しない。discussion以後に戻して流用しない。
+親確定後は当該親の記録・基準を読み、discussionに移る。この段階の通常質問には独立した計画文書を要求しない。
 
 ### 4.3 全ての終了経路
 
 実Stopの初回・再入、無回答、approved、stopped、technical_stoppedの各経路で同じ検査を通す。
 stop_hook_activeだけで無条件通過しない。未回答・部分回答・確認拒否を承認扱いしない。
+Codex版guard-stop-handoffにも残る再入無条件returnを対象に含め、checkpoint正常でも到達性不正なら初回・再入ともblockする。
+到達性検査の対象の選び方は維持するが、再入フラグを検査省略の条件にしない。Claude版は変更しない。
 親メモがまだ無い起動直後・テーマ待ちの場合は、実状態から識別した起動段階専用の待機案内に限定する。
 親メモを必要としない本物の起動待機を、通常作業のcheckpoint欠落と混同しない。
 
@@ -139,6 +184,7 @@ summaryは現在作業、先の保留、理由、復帰条件、次の担当・�
 ### R0 — 現状を固定（通常タスクの最初の操作）
 
 親メモ・本計画・修理記録を読む。対象ファイルのSHAと差分を採取し、ユーザーの既存変更を区別する。
+既存quality-gate.jsonの内容とSHAを保存し、8章の今回対象を非破壊で記録する。今回範囲の--phase planを通すまで実装へ進まない。
 既存11テストを再実行。新しいテスト用ディレクトリはmktempで作り、liveの承認・セッション状態を書き換えない。
 合格: 対象と基線が一致、または差分を説明できる。説明不能な変更があればその箇所の修正を止める。
 
@@ -146,6 +192,7 @@ summaryは現在作業、先の保留、理由、復帰条件、次の担当・�
 
 下記T01〜T12を保存し、現コードで期待通り拒否／通過しない部分を実測する。
 前回23ケースは結果だけを転載せず、恒久テストとして再実行できる形にする。
+既存のカード無し拒否試験にも正常checkpointと他の前提を用意し、単なるblockの有無でなく期待した拒否コード・到達した検査を確認する。
 テスト追加は通常タスクで実施。この計画会話でコードとして保存しない。
 
 ### R2 — 契約と書込誤認を修正
@@ -181,16 +228,16 @@ CLI単独とHTML本文を渡す検査の両方が正常に動くことを確認�
 |---|---|---|
 | T01 | 必須項目欠落・型不正・空白・曖昧語のみ | CLI不合格、実Stopはblock。例外で素通りしない |
 | T02 | 正しいcheckpointと実在する根拠 | CLI合格。前後で入力ファイルSHA不変 |
-| T03 | currentとparkedの混同・復帰辺欠落・停止点削除 | 明確なエラー。解除根拠があれば正しい遷移だけ通す |
+| T03 | currentとparkedの混同・復帰辺欠落・停止点削除、別セッション再開後の削除 | 親別基準から削除拒否。欠損を空一覧にしない。根拠付き遷移だけ通す |
 | T04 | 根拠SHA不一致・対象不在 | 拒否。古い証拠で新しい成果を許可しない |
-| T05 | assistant/runnable、実カード無しneeds_user、旧planへの回答 | 終了拒否。現在の実カード・現planに一致すれば状態に従う |
+| T05 | assistant/runnable、実カード無しneeds_user、カード後の計画改変、正当な承認後next更新 | 旧版への回答はapprovedへ入る前に拒否。正当なnext更新は通す |
 | T06 | 空回答・部分回答・確認いいえ・自由記述の新依頼 | 承認しない。新依頼の内容は保存し、説明要求を承認に変えない |
 | T07 | 本文の必要行欠落・HTMLコメントだけ | 拒否。本文に行があれば通す。描画保証とは区別 |
-| T08 | Stop初回・stop_hook_active=true・正常復元 | 初回も再入も拒否、修正後だけ通過 |
-| T09 | 検査読込例外・状態保存失敗・テーマ待ち・未紐付け親 | 通常欠落／故障と本物の初期待機を区別。通常Stopは素通りしない |
+| T08 | checkpoint不正、またはcheckpoint正常・引継ぎ不正のそれぞれで初回／再入／復元 | 両検査とも初回・再入で拒否、原因を修正後だけ通過。拒否理由も一致 |
+| T09 | 検査例外・状態保存失敗・テーマ待ち・親候補選択・候補変化・空回答・正常確定 | 親選択カードが循環せず、実回答でのみ親確定。通常Stop欠落は素通りしない |
 | T10 | 引用内比較記号のjq、単独resume CLI | 読取として通過。入力ファイルSHA不変 |
 | T11 | T10に保護先への実書込を連結、コマンド置換、空白入りパス | 書込を拒否。引用除外による新しい素通りがない |
-| T12 | 非brainstorm、別セッション、古いカード、圧縮後再注入 | 他場面へカード強制しない。セッション間混入なし。現在契約を保持 |
+| T12 | 非brainstorm、別親、同親の新セッション、同親の並行更新、旧基準移行、圧縮後再注入 | 別親混入なし。同親基準を復元。競合を拒否。新規・基準欠損を区別 |
 
 既存試験入口:
 `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s /Users/takedayousuke/.codex/skills/brainstorm/tests -v`
@@ -202,7 +249,25 @@ CLI単独とHTML本文を渡す検査の両方が正常に動くことを確認�
 
 ## 8. 完成条件・停止条件・復旧
 
+### 既存品質ゲートの非破壊運用
+
+実装時に既存quality-gate.jsonへground_truthの今回計画を追加し、familiesへresume-contract-repair / write-classifier-repairを追加する。
+旧default-mode-probe / production-brainstormと旧batch/承認/証拠は保持し、今回の合格へ上書きしない。
+終了契約群はT01〜T09/T12、書込分類群はT10/T11を対象にする。代表入力・出力・比較証拠を実際の保存ファイルへ結ぶ。
+今回の検査用写しを既存scripts/state/quality-resume-repair-view.jsonに生成する（実装時に作成）。
+全familyを保持したままrequested_familiesを上記2群だけに限定し、今回のbatch・verifierだけを今回の証拠から設定する。
+source_manifest_path / source_manifest_sha256 / scope_idsを添え、元の全family定義と今回2群が機械一致することを検査する。
+元ゲートを限定版へ置換しない。限定版生成でuser_accepted等を自動でtrueにしない。実ユーザー受入の証拠がない限りcompleteは不合格のまま。
+限定版にproject_quality_gate.py checkを--phase plan（R0）と--phase complete（R5）で実行する。
+元ゲートも同じ2フェーズで検査し、旧未受入のためcompleteが不合格ならその事実を併記する。
+今回の修理範囲の合格と、旧機能を含むスキル全体の運用開始は別。合成試験だけなら「修理実装・自動試験済み」に留める。
+品質ゲート自体の判定器は変更しない。量産・一括配布を追加する場合は別範囲としてbatch検査と承認が必要。
+
+検査器の実パス:
+/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/project_quality_gate.py
+
 完成条件はR0〜R5の証拠が揃い、必須試験に未解消の失敗がなく、実Stop拒否／再入／復元後通過が揃うこと。
+加えて今回範囲の品質ゲートcompleteを満たすこと。旧機能の未受入を残す場合はスキル全体の運用可能とは報告しない。
 「コードを書いた」「一時的な試験が通った」「カードが見えた」だけで修理完了・運用開始とはしない。
 実イベント未確認は実装済み・自動試験済みと分けて残す。
 

@@ -48,6 +48,7 @@ Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/b
 - 同ターンの実カード回答: 「/Htmlを使用してください」「説明が曖昧で理解できません。説明してください。」。確認欄は「はい、この選択でよい」だったが、主回答は説明依頼であり計画承認ではない。実ログもnext_card_required / awaiting_card。HTMLを、停止理由・確認済みと未完・具体例・現在地と先の停止地点に分けて更新する。
 - 続く主回答（確認欄なし）: 「ここまでの経緯を踏まえた計画の詳細を作成してください。」「実装に入る前に、サブエージェントを起動してください。」「モデルはgpt5.6のエフォートはmedium以外を禁止します。」「サブエージェントにレビュー指示を送るのは計画を作成したメインエージェントですが、レビュー結果にバイアスがかかる指示を送ることを禁止いします。」「この仕様と実装の不一致などを重点的にレビューさせてください。」。新たな計画・レビュー依頼として実施し、旧カードの承認にはしない。
 - 詳細計画revision 1を上記entry_pathsのbrainstorm-concrete-resume-audit-plan-20260831.mdへ保存。初版SHA: fbfe70bee9fa5331878d4fcf69bf56c329cccc3e69be95df70e556e0be49748a。レビュアーにはgpt-5.6-sol / mediumを明示し、読取専用の独立照合を依頼する。実装はしない。
+- 独立レビューr1はCritical 0 / Major 5 / Minor 1。カード反映前の版照合、親未選択の起動契約、親単位の基準保存、引継ぎ監査の再入検査、既存品質ゲート、試験の拒否理由をr2へ反映し、再照合を依頼した。指摘記録: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-independent-review.md
 
 ### 2026-08-31 曖昧な停止をbrainstorm本体で機械的に修理する依頼
 
