@@ -11,6 +11,7 @@ scope:
   - /Users/takedayousuke/.agents
   - /Users/takedayousuke/.codex
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md
@@ -45,6 +46,8 @@ Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/b
 - 前回の「限定解除後、この会話で残実装を続ける」という案内は撤回。書込封鎖の例外と、この会話の計画限定は別。計画を固定し、brainstormを起動しない通常タスクへ実装を渡す。ユーザーに原因調査や54本の判定を委ねない。
 - 引継ぎは既存の修理記録に集約。読取専用jqの引用内比較記号でも書込拒否を観測し、任意Pythonの許可追加ではなく、コマンドと引用データの誤認を回帰試験で扱う計画へ修正した。
 - 同ターンの実カード回答: 「/Htmlを使用してください」「説明が曖昧で理解できません。説明してください。」。確認欄は「はい、この選択でよい」だったが、主回答は説明依頼であり計画承認ではない。実ログもnext_card_required / awaiting_card。HTMLを、停止理由・確認済みと未完・具体例・現在地と先の停止地点に分けて更新する。
+- 続く主回答（確認欄なし）: 「ここまでの経緯を踏まえた計画の詳細を作成してください。」「実装に入る前に、サブエージェントを起動してください。」「モデルはgpt5.6のエフォートはmedium以外を禁止します。」「サブエージェントにレビュー指示を送るのは計画を作成したメインエージェントですが、レビュー結果にバイアスがかかる指示を送ることを禁止いします。」「この仕様と実装の不一致などを重点的にレビューさせてください。」。新たな計画・レビュー依頼として実施し、旧カードの承認にはしない。
+- 詳細計画revision 1を上記entry_pathsのbrainstorm-concrete-resume-audit-plan-20260831.mdへ保存。初版SHA: fbfe70bee9fa5331878d4fcf69bf56c329cccc3e69be95df70e556e0be49748a。レビュアーにはgpt-5.6-sol / mediumを明示し、読取専用の独立照合を依頼する。実装はしない。
 
 ### 2026-08-31 曖昧な停止をbrainstorm本体で機械的に修理する依頼
 
@@ -264,7 +267,7 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
   ],
   "current": {
     "node": "repair_permission",
-    "work": "残修理と停止理由をHTMLに整理し、計画の判断を待っている。",
+    "work": "詳細計画を作成し、指定モデルの独立レビューを受けている。",
     "evidence": [{"path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py", "sha256": "385bfbab3c70e134f9aa40130d74fbed0ea0c70af7a445d50cc4c20ed75a7f75"}]
   },
   "mode": "detour",
@@ -277,16 +280,16 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
   }],
   "return_to": ["guard_repair"],
   "next": {
-    "owner": "user",
-    "action": "カードで修理計画を承認するか、修正点を回答する。",
-    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md",
-    "done_when": "計画への回答が記録されること。修理完了を意味しない。",
-    "availability": "needs_user"
+    "owner": "assistant",
+    "action": "独立レビューの結果を正本と照合し、必要な修正を計画へ反映する。",
+    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
+    "done_when": "レビュー結果と対応が記録され、未解消の重大指摘があれば明示されること。",
+    "availability": "runnable"
   },
   "exit": {
-    "kind": "awaiting_user",
-    "reason": "この会話はbrainstormの計画限定で、コード修正へ進めないため。",
-    "unblock_when": "計画確定後、通常タスクで修理記録の手順1から再開する。"
+    "kind": "continue_work",
+    "reason": "レビュー受領・指摘反映が未完であり、まだ終了しない。",
+    "unblock_when": "レビューを受領し、必要な改訂と再照合を続ける。"
   }
 }
 ```
