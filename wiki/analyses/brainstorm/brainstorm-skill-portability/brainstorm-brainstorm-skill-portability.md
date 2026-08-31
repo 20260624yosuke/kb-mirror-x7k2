@@ -35,6 +35,15 @@ Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/b
 
 ## 武田さんの考え
 
+### 2026-08-31 続行依頼と終了イベントの追認
+
+> タスクの続きをお願いします
+
+- 前回の実Stopにcheckpoint_verifiedとstop_passが記録されたことを確認。正常通過の実証が1件増えたが、拒否・再入の実試験は未完。今回の続行依頼を「解除」や運用受入の回答には置き換えない。
+<!-- bs:v1 session=0d29db47c868b64206a2efc5769ba3b59f6e8b255ea289e0f8a37a68a52bc62d counter=2 input=5339cf8331b19d893f3aeab762afcab8f9dd29dc0a797a813fc57a7f8be94fa5 turn=81be028472cc5e4c130e333997dce11102460519996e384a441757d6163d566d -->
+- 前回の「限定解除後、この会話で残実装を続ける」という案内は撤回。書込封鎖の例外と、この会話の計画限定は別。計画を固定し、brainstormを起動しない通常タスクへ実装を渡す。ユーザーに原因調査や54本の判定を委ねない。
+- 引継ぎは既存の修理記録に集約。読取専用jqの引用内比較記号でも書込拒否を観測し、任意Pythonの許可追加ではなく、コマンドと引用データの誤認を回帰試験で扱う計画へ修正した。
+
 ### 2026-08-31 曖昧な停止をbrainstorm本体で機械的に修理する依頼
 
 > 次やることが曖昧なまま回答が戻ってきました。何度も感じている不快感なので、問題です。問題を放置することを禁止します。解決してください。解決方法は機械的な監査以外の方法を禁止します。このプロジェクトではなく、brainstormの問題としてこの問題は修正してください。
@@ -237,9 +246,9 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 
 今回の修理を追加したためactiveへ戻す。旧2026-08-30計画の承認履歴は維持し、今回の解除・修理受入とは区別する。
 既存11試験と読取中心の追加23ケースはPASS。実PostToolUseで起動復旧、親への同一ターン追記、実カード呼出しID・空回答の状態不変を観測。
-解除カードは空回答であり、承認・中断ではない。残りは新試験の恒久保存、SKILLとの同期、実Stopの拒否・再入・正常通過の終端試験。
+解除カードは空回答であり、承認・中断ではない。2026-08-31の再開時に前回の実Stop正常通過を追認。残りは新試験の恒久保存、SKILLとの同期、実Stopの拒否・再入の終端試験。
 今回のコード変更先はCodex版のcodex_adapter.pyと新しいresume_contract.pyのみ。Claude版・Helen成果物・hooks.json・config.tomlは変更なし。
-新監査の読取専用CLIも旧guard-writeが書込と誤判定して拒否した。迂回せず、限定解除後の修理対象に追加。
+前回は新監査CLIを含むコマンドが旧guard-writeで拒否された。CLI単体の拒否と複合コマンドの誤認を分けて確認する。今回、引用内の比較記号を含む読取専用jqも拒否された。bypassは行わず、修理記録へ回帰条件を固定する。
 結果・残作業の記録: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md
 
 ```brainstorm-checkpoint
@@ -253,29 +262,29 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
   ],
   "current": {
     "node": "repair_permission",
-    "work": "brainstorm修理の限定解除待ち。図と検査結果を整理している。",
+    "work": "共通監査の残修理計画を固定し、実装への引継ぎを待っている。",
     "evidence": [{"path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py", "sha256": "385bfbab3c70e134f9aa40130d74fbed0ea0c70af7a445d50cc4c20ed75a7f75"}]
   },
   "mode": "detour",
   "parked": [{
     "node": "guard_repair",
-    "work": "共通監査の残りの修正と実際の終了イベントの試験。",
-    "reason": "修理中にbrainstormの実装禁止が作動し、限定解除の回答はまだない。",
-    "resume_when": "brainstorm修理だけの解除が明示されること。Helenの実装は含めない。",
+    "work": "共通監査の誤拒否修正、恒久テスト、実Stopの拒否・再入試験。",
+    "reason": "この会話には計画限定の制約があり、解除カードへの回答だけでは実装へ移れない。",
+    "resume_when": "修理計画を確定し、brainstormを起動しない通常タスクへ渡す。",
     "evidence": [{"path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py", "sha256": "ba4aeaed7b4318d97c61980ff7a1cf91ee1aea8fced254fb2809d8621465d74d"}]
   }],
   "return_to": ["guard_repair"],
   "next": {
     "owner": "user",
-    "action": "確認カードで「修理限定で解除」と「はい、この選択でよい」を選ぶか、解除しない選択をする。",
-    "target": "/Users/takedayousuke/.codex/skills/brainstorm/SKILL.md",
-    "done_when": "同じ確認カードの主回答と確認回答が記録され、空回答ではないこと。",
+    "action": "カードで修理計画を承認するか、修正点を回答する。",
+    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md",
+    "done_when": "計画への回答が記録されること。修理完了を意味しない。",
     "availability": "needs_user"
   },
   "exit": {
     "kind": "awaiting_user",
-    "reason": "修理限定の解除が未回答。検査済みの部分と未完の修理を分けて残すため。",
-    "unblock_when": "限定解除の明示回答後、私が試験の恒久保存・規則同期・実終了イベント試験を続ける。"
+    "reason": "この会話はbrainstormの計画限定で、コード修正へ進めないため。",
+    "unblock_when": "計画確定後、通常タスクで修理記録の手順1から再開する。"
   }
 }
 ```
