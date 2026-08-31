@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4921 ファイル_
+_合計 4925 ファイル_
 
 ## root/ (11)
 
@@ -177,7 +177,7 @@ _合計 4921 ファイル_
 - [ff1f7d2ce8c8.png](wiki/_attachments/gf2-skin-genre-map/img/ff1f7d2ce8c8.png) | 2026-08-24T07:20:08Z
 - [ff3ebc7f241b.png](wiki/_attachments/gf2-skin-genre-map/img/ff3ebc7f241b.png) | 2026-08-24T07:20:07Z
 
-## wiki/_attachments/helen-swimsuit-status/img-20260831-cause/ (7)
+## wiki/_attachments/helen-swimsuit-status/img-20260831-cause/ (11)
 
 - [01-deliverable-front.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/01-deliverable-front.png) | 2026-08-31T00:14:38Z
 - [02-original-bare-torso.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/02-original-bare-torso.png) | 2026-08-31T00:14:39Z
@@ -186,6 +186,10 @@ _合計 4921 ファイル_
 - [05-used-torso-75deg-normals.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/05-used-torso-75deg-normals.png) | 2026-08-31T00:14:39Z
 - [06-swimsuit-only.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/06-swimsuit-only.png) | 2026-08-31T00:14:39Z
 - [07-swimsuit-on-used-torso.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/07-swimsuit-on-used-torso.png) | 2026-08-31T00:14:39Z
+- [08-rebuilt-front.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/08-rebuilt-front.png) | 2026-08-31T01:03:42Z
+- [09-rebuilt-torso-2view.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/09-rebuilt-torso-2view.png) | 2026-08-31T01:03:43Z
+- [10-three-skin-atlases.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/10-three-skin-atlases.png) | 2026-08-31T01:03:43Z
+- [11-bone-fit-3view.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/11-bone-fit-3view.png) | 2026-08-31T01:03:43Z
 
 ## wiki/analyses/ (67)
 
