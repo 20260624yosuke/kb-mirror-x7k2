@@ -1,0 +1,53 @@
+---
+type: analysis
+status: active
+confidence: medium
+evidence_level: source-backed
+last_reviewed: 2026-08-31
+---
+
+# 2026-08-31 穴3の閾値の根拠を数えた（セッション3）
+
+親メモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/_index.md`
+
+## 依頼（武田さん・このセッション冒頭）
+
+> `/brainstorm` `/html`、親メモと前回の引き継ぎ（`20260831-144000--今すぐやること.md`）を見て、タスクを進めてください。
+
+## やったこと
+
+前回の残作業「穴3の閾値が未定。過去の成果物で『落ちるはずの回数』を数える工程が先」を実行した。
+5検査計画（`wiki/builds/brainstorm-five-guards-plan-20260831.md`）の完成条件3に相当する計測。
+
+- 対象: `~/.claude/projects/` の3プロジェクトフォルダの全会話記録（jsonl・計108本超）。
+- 数えたもの: HTML ファイルへの `Write` / `Edit` 操作の全履歴。`Edit` は
+  `old_string` が `new_string` に丸ごと含まれるか（＝純粋な追記）で仕分け、
+  ファイルごとに「純粋追記の最大連続回数」を出した。
+- 計測スクリプトは `/tmp` に置いて実行（KB・スキル本体は一切触っていない）。
+
+## 結果（すべて実測）
+
+- 母集団: HTML **30ファイル**、操作 **48回**（Write 33 / Edit 15、うち純粋追記 **6**）。
+- 純粋追記の最大連続回数: 全履歴で **2** が最大。出たのは `20260831-remaining-four-tasks.html`
+  **だけ**（系列 `WWAAEEAAW`、2連続が2回）。他の29ファイルは最大1以下。
+- 良い版3枚（`20260831-brainstorm-three-holes-fixed` / `20260830-handoff-mechanism-design` /
+  `20260831-where-i-drifted`）は純粋追記 **0回**。
+
+| 閾値 | 過去48操作で止まった回数 | うち実際の失敗ファイル | うち誤検知 |
+| --- | --- | --- | --- |
+| T=1（追記1回で止める） | 6回（3ファイル） | 4回 | 2回（`20260830-three-approvals-explained` ×1、`tools/` の `popup.html` ×1） |
+| **T=2（2連続で止める）** | **2回（1ファイル）** | **2回** | **0** |
+| T=3（3連続で止める） | 0回 | 0回 | —（実際の失敗すら捕捉できない） |
+
+## 限界（正直に）
+
+- 母集団は **Claude Code の記録のみ**。Kimi Code（この会話）や Codex のセッションは含まない。
+- 30ファイル・48操作は**少ない**。T=2 の誤検知ゼロは「この範囲では」の話。
+- `Write` の全面書き換えは検査の設計上そもそも対象外。
+- `popup.html` は `tools/` のブラウザ拡張のファイルで説明 HTML ではない。
+  「成果物の置き場をどのフォルダにするか」は計画でも未確定のまま。
+
+## 次の判断（武田さんに聞く）
+
+1. 5検査の**実行の承認**（計画の「終わったら次に取る承認」1番）。
+2. 穴3の閾値: この数字を踏まえ **T=2 を推奨**として承認を取る（同2番）。

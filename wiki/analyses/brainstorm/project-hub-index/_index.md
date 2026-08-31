@@ -16,6 +16,7 @@ entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/project-current-state-page-plan-20260830.md
 background_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-handoff-mechanism-design.html
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-hole3-threshold-measurement.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-helen-repro-v51-overview.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/run-state.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/index.md
@@ -37,6 +38,10 @@ background_paths:
 （2026-08-29 の brainstorm メモにも同趣旨の発言あり）
 > 大元は計画や引き継ぎの資料であって、関連ファイルが全部紐づいてる状態。
 > だから、コンテキストの粒度に制限されずに、プロジェクトを進められる環境を作りたい。
+
+（2026-08-31 セッション3・冒頭の指示）
+> `/brainstorm` `/html` このメモと前回の引き継ぎ（`20260831-144000--今すぐやること.md`）を見てください。
+> タスクを進めてください。
 
 ## 私の誤り（2026-08-30・武田さんの指摘で撤回）
 
@@ -865,9 +870,25 @@ guard-write	lockdown DENY tool=Bash path=/Users/takedayousuke/.claude/skills/bra
   `20260830-helen-repro-v51-overview.html` の申告は**まだ未実施**（今回申告したのは本日の1枚のみ）。
 - **封鎖が読むだけのコマンドを止める。** 原因は `2>&1` の `>` を書き込みの目印と読むこと（実測）。未修正。
 
+## 【実測】穴3の閾値の根拠 — 過去48操作を数えた（2026-08-31・セッション3）
+
+前回の残作業「穴3の閾値が未定。過去の成果物で『落ちるはずの回数』を数える工程が先」を実行した。
+5検査計画の完成条件3に相当。子メモ:
+`sessions/20260831-hole3-threshold-measurement.md`、説明HTML:
+`wiki/_attachments/project-hub-index/20260831-hole3-threshold-measurement.html`。
+
+- 母集団: `~/.claude/projects/` 3フォルダの全会話記録。HTML **30ファイル / 48操作**
+  （Write 33・Edit 15・うち純粋追記 6）。
+- 純粋追記の最大連続は **2**。出たのは実際に失敗した `20260831-remaining-four-tasks.html` だけ。
+  良い版3枚は純粋追記ゼロ。
+- **閾値T=2 なら、過去の実績では失敗ファイルにだけ発火し誤検知ゼロ。T=3 だと失敗自体を捕捉できない。**
+- 限界: Claude Code の記録のみ（Kimi/Codex を含まない）・母数が少ない・Write 全面書き換えは対象外。
+
+→ **閾値はまだ決まっていない。** T=2 を推奨として、実行の承認とあわせてカードで聞く。
+
 ## セッションメモ（子）
 
-（まだ無し）
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md` — 穴3の閾値の根拠の計測（2026-08-31）
 
 ## 再開の入口（実パス）
 

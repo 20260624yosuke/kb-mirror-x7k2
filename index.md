@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4932 ファイル_
+_合計 4933 ファイル_
 
 ## root/ (11)
 
@@ -314,7 +314,11 @@ _合計 4932 ファイル_
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-31T05:28:51Z
+- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-31T05:51:42Z
+
+## wiki/analyses/brainstorm/project-hub-index/sessions/ (1)
+
+- [20260831-hole3-threshold-measurement.md](wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md) | 2026-08-31T05:50:59Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 
