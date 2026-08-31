@@ -41,6 +41,8 @@ last_reviewed: 2026-09-01
 - 品質ゲートはplan=PASS、complete=FAIL。実カードと実Stopを通した復旧の実証・運用受入は未完。
 - Helenの保護対象11ファイルは、現状整理時のSHAと全件一致。Blend・f166・品質台帳・既存承認は変更していない。
 - 信頼状態の照会は実環境の読取結果。カード試験は隔離環境の合成入力であり、実イベントの代わりには数えない。
+- 出力直前の実保存状態と親メモを、修理後の診断検査関数へ読取だけで渡しPASS。実行時状態のバイト列は不変、引継ぎ到達性の問題は0件。これは実Stopイベントの観測ではない。
+- HTMLを前面占有なしで幅1280px・390pxで描画。文書全体の横はみ出し・JavaScript例外なし、再開summary19段落すべて表示状態。親の検査出力全文との一致も確認した。
 
 完全な試験結果・コードhash・信頼状態・保護対象: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair-evidence.json
 
