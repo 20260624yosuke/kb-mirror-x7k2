@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4938 ファイル_
+_合計 4943 ファイル_
 
 ## root/ (11)
 
@@ -191,6 +191,13 @@ _合計 4938 ファイル_
 - [10-three-skin-atlases.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/10-three-skin-atlases.png) | 2026-08-31T01:03:43Z
 - [11-bone-fit-3view.png](wiki/_attachments/helen-swimsuit-status/img-20260831-cause/11-bone-fit-3view.png) | 2026-08-31T01:03:43Z
 
+## wiki/_attachments/helen-swimsuit-status/img-20260831-status/ (4)
+
+- [01-swimsuit-alpha-cutout.png](wiki/_attachments/helen-swimsuit-status/img-20260831-status/01-swimsuit-alpha-cutout.png) | 2026-08-31T07:41:59Z
+- [02-skin-atlas-candidates.png](wiki/_attachments/helen-swimsuit-status/img-20260831-status/02-skin-atlas-candidates.png) | 2026-08-31T07:41:59Z
+- [03-current-deliverable.png](wiki/_attachments/helen-swimsuit-status/img-20260831-status/03-current-deliverable.png) | 2026-08-31T07:41:59Z
+- [04-current-torso.png](wiki/_attachments/helen-swimsuit-status/img-20260831-status/04-current-torso.png) | 2026-08-31T07:41:59Z
+
 ## wiki/analyses/ (68)
 
 - [art-canvas-asuna-reference-axis-map.md](wiki/analyses/art-canvas-asuna-reference-axis-map.md) | 2026-06-14T16:03:54Z
@@ -292,7 +299,7 @@ _合計 4938 ファイル_
 
 - [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-31T07:11:32Z
 
-## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (19)
+## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (20)
 
 - [20260829-p-implementation-and-decision-point.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md) | 2026-08-29T15:58:18Z
 - [20260830-deliverable-reject-mechanize-visible-checks.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-deliverable-reject-mechanize-visible-checks.md) | 2026-08-30T13:10:53Z
@@ -308,6 +315,7 @@ _合計 4938 ファイル_
 - [20260830-visible-set-d1-a11-implemented.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-visible-set-d1-a11-implemented.md) | 2026-08-30T07:32:19Z
 - [20260830-which-to-keep-and-wiki-gap.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-which-to-keep-and-wiki-gap.md) | 2026-08-30T06:55:42Z
 - [20260831-chest-hole-cause-audit-gap.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-chest-hole-cause-audit-gap.md) | 2026-08-31T07:11:32Z
+- [20260831-four-defects-root-cause.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-four-defects-root-cause.md) | 2026-08-31T07:41:32Z
 - [20260831-torso-skin-v1-v6-implemented.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-torso-skin-v1-v6-implemented.md) | 2026-08-30T21:13:08Z
 - [20260831-unified-route-plan-independent-review.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-independent-review.md) | 2026-08-31T01:52:26Z
 - [20260831-unified-route-plan-revision-1.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-1.md) | 2026-08-31T01:48:24Z
