@@ -886,6 +886,12 @@ guard-write	lockdown DENY tool=Bash path=/Users/takedayousuke/.claude/skills/bra
 
 → **閾値はまだ決まっていない。** T=2 を推奨として、実行の承認とあわせてカードで聞く。
 
+→ **2026-08-31 追記: サブエージェントの独立レビューで critical 2件が出て「現状のまま実装に渡せない」。**
+穴3は「対象を説明 HTML に限る」ことを計画に明記しないと、毎ターンのメモ追記まで止めて
+スキル自身を壊すことが判明（閾値の根拠は HTML 限定の計測だった）。詳細は子メモ
+`sessions/20260831-hole3-threshold-measurement.md` の「独立レビュー結果」。
+次の工程は **計画の改訂 → 再レビュー → 実行の承認の取り直し**。
+
 ## セッションメモ（子）
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md` — 穴3の閾値の根拠の計測（2026-08-31）
