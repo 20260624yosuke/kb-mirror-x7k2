@@ -21,6 +21,10 @@ revision: 2
 
 ## このページの役割
 
+> 2026-09-01 原作再現の再開記録: [Helen H0157専用の親メモ](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md>)。
+> [現状と成果物までの問題点](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-helen-repro-project-current-state.html>)。武田さんの「新規親・孤立禁止」の選択により相互リンクを追加。
+> 本追記は入口の追加のみで、既存計画の仕様・承認範囲・水着化の進捗を変更しない。
+
 このページは、別セッションが会話履歴なしで次の順序を守って再開するための入口である。
 
 1. 承認済みの目的・完成条件を保護する。

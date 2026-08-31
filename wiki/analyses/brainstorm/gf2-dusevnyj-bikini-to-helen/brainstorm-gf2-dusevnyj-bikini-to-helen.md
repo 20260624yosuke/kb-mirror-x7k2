@@ -4287,6 +4287,10 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 ## 関連リンク
 
+> 2026-09-01 原作再現の再開記録: [Helen H0157専用の親メモ](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md>)。
+> [現状と成果物までの問題点](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-helen-repro-project-current-state.html>)。武田さんの「新規親・孤立禁止」の選択により相互リンクを追加。
+> 本追記は入口の追加のみで、既存計画の仕様・承認範囲・水着化の進捗を変更しない。
+
 - [[gf2-helen-swimsuit-fit-plan-20260829]]
 - [[gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827]]
 - [[llm-review-bottleneck-applied-2026-08-28]] — wiki/analyses/llm-review-bottleneck-applied-2026-08-28.md

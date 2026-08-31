@@ -1363,6 +1363,8 @@
 
 ## Analyses
 
+- [Helen H0157原作再現 再開用親メモ](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md>) — 原作再現を水着化から分けた入口。関連正本・旧親・現状HTMLと相互接続。Blend未完成、監査P0まで、一本化rev3実行未承認を実ファイルで再照合（2026-09-01）。
+
 - [[opencode-interrupted-tasks-20260826]] — opencode 中断タスクの全容把握。履歴DB925セッションを実測し Coloso7講座の映像ingest進捗(28/190章)・intake文字起こし134/285本・GF2系の待ち構造を確定、A-2文字起こし151本をリソース優先で保留に決定(1本中央5〜6分×151本=13〜15時間・GPU6GBの実測付き)、CPU負荷原因はvideo_frames.pyの1枚1ffmpeg起動と特定、二重死亡したマーセch12を読取7割済みまで救出(rescue-summary.md)。別セッション4本(ye_jji/hide/マーセ/ひづるめ修正)進行中 (source-backed, 2026-08-26)
 - [[finder-column-mechanism-analysis]] — Miller Columns 完全化の事前解析。真のスワップは不可能・NSBrowser 埋め込みは「可能だが脆い」で非推奨→JS移植が正攻法(Path Finder等も同路線)、Finder挙動仕様草案(現プラグインはシングルクリックで開く点がFinderと逆)、psdサムネ実測成功/clip はQuickLookプロバイダ不在で失敗、を実測込みで確定 (source-backed, 2026-08-26)
 - [[macbook-internal-ssd-storage-investigation-2026-08-24]] — 内蔵SSD空き容量の調査と解放。8/24初回: Claude VMバンドル10GB+TMスナップショット削除で空き25.1GB。8/28追記: opencode.db 14GB肥大(4日間の集中利用で3.5G→14G)を外付けSSDへsymlink移行、TMスナップショット削除で空き37.7GB(15.4%)へ回復。以後の履歴は外付け側に蓄積 (source-backed, updated 2026-08-28)

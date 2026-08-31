@@ -21,6 +21,10 @@ revision: 3
 
 ## 承認状態と現在地点
 
+> 2026-09-01 原作再現の再開記録: [Helen H0157専用の親メモ](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md>)。
+> [現状と成果物までの問題点](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-helen-repro-project-current-state.html>)。武田さんの「新規親・孤立禁止」の選択により相互リンクを追加。
+> 本追記は入口の追加のみで、既存計画の仕様・承認範囲・水着化の進捗を変更しない。
+
 **計画案・未承認。実装していない。** 承認済みなのは一本化を計画化する方針だけ。
 revision 1は独立レビューでCritical 2・Major 5・Minor 1の差し戻し。revision 2ではCritical解消、
 完成台帳の更新と並行処理の2点がMajorとして残った。本revision 3はその修正案であり、
