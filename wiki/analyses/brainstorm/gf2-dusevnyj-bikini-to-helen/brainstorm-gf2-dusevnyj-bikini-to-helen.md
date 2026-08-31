@@ -3,12 +3,13 @@ type: analysis
 status: active
 confidence: medium
 evidence_level: user-stated+source-backed
-last_reviewed: 2026-08-30
+last_reviewed: 2026-08-31
 brainstorm_status: active
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md
@@ -446,6 +447,18 @@ background_paths:
 - 既存の第2状態を増やさず、監査計画で予定済みの`06_repro-v51/audit/state.json`を成果物ルートまで
   拡張する。U0現在地訂正→U1監査→U2 f166→U3 KB探索契約→U4機械抽出→U5因果審査→
   U6効果試験・候補Blend→U7原作比較を1つの承認ルートにする。
+
+### 2026-08-31 利用上限後の再開要求
+
+> 利用上限が来て途中で止まりました。
+> 中断地点を理解してから再開地点からのタスクの続きをお願いします。
+
+- 中断地点は一本化計画revision 1の読み取り専用独立レビュー。担当 `/root/unified_plan_review` は
+  利用上限エラーで終了し、レビュー結果は未取得。合格・計画実行承認とは扱わない。
+- 今回の再開要求を根拠に同じ検証役の未完レビューを再開した。実装ではなく計画レビューの継続。
+- `brainstorm` と `html` を読み直した。planは`draft-unapproved`、親メモは`active`を維持する。
+- 現在ターンの `bs:v1` 注入は観測できないため、マーカーを捏造しない。可視記録は保存するが、
+  毎ターン記録・カードのhook保証が作動したとは報告しない。計画・実行系のコードは変更しない。
 
 ### 2026-08-30 説明ページへの回答（本人の言葉・承認しない／指摘4件＋要件）
 
