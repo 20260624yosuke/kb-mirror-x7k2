@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4945 ファイル_
+_合計 4946 ファイル_
 
 ## root/ (11)
 
@@ -331,6 +331,10 @@ _合計 4945 ファイル_
 ## wiki/analyses/brainstorm/html-skill-discovery/sessions/ (1)
 
 - [20260831-discovery-evidence.md](wiki/analyses/brainstorm/html-skill-discovery/sessions/20260831-discovery-evidence.md) | 2026-08-31T07:23:53Z
+
+## wiki/analyses/brainstorm/llm-harness-parity/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/llm-harness-parity/_index.md) | 2026-08-31T08:35:57Z
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
