@@ -4142,6 +4142,11 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
 
 ## 説明ページ（人が読む用）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260831-four-checks-implemented.html`
+  — **部品が黙って消えるのを止める4本を実装した**（2026-08-31 夜・最新）。在庫照合・分解の強制・
+  開口の差分・滑り試験の実装結果、変異試験 8/8、**首の輪を戻せば隙間が塞がる実測**、
+  滑り試験の結論（位置の物差しの新設は不要）、首以外の開口4か所
+
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260831-next-implementable-steps.html`
   — **次に実装できること**（2026-08-31・最新）。持ち越し4件の現在地、素肌の上半身メッシュの実測、
   いまの水着がドレスに合わせて作られていること、次に実行できる4案とそれぞれ失うもの
