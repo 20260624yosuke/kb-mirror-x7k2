@@ -9,6 +9,8 @@ last_reviewed: 2026-09-01
 
 # brainstorm限定修理の記録
 
+> 2026-09-01後続更新: 下記の「ユーザーが再信頼する」操作は、ユーザーの明示委任によりエージェントが標準Codex画面で完了した。現在の再開先は親メモを参照。証拠: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-hook-trust-completed.json
+
 ユーザーは「この会話で、brainstormのこの故障に限って実装修理を許可しますか？」「許可します。」と回答した。今回の修理に適用し、Helen実装・通常カード運用再開・運用受入には拡張していない。
 
 ## 直接確認した原因
