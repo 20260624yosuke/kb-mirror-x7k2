@@ -11,6 +11,8 @@ scope:
   - /Users/takedayousuke/.agents
   - /Users/takedayousuke/.codex
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/20260901-explicit-permission-repair-plan.html
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-brainstorm-checkpoint-and-helen-timeline.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md
@@ -50,6 +52,15 @@ Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/b
 - 直接確認した差: Codexのterminal_promptは「この会話での実装を許可します。」をNoneと判定する。CodexのSKILLとoperational_contextには計画限定が残る。一方Claudeの現行SKILLには2026-08-31に旧禁止を撤回し、ユーザー指示があれば同じ会話で実装すると明記されている。製品の不可避な制約とは未確定。Claude実イベントとの比較は未実施。
 - この議論中はコードを変えず、許可の対象・版・同一会話への適用を機械的に結び付ける修理案を作る。既存の停止試験とHelen監査への戻り先を消さない。
 <!-- bs:v1 session=1fc20b11fc1edd727946027828bef3d2505527fd36c28fe72c3e13df2ded4bf3 counter=3 input=dcf30f029cd6a8c3819522a68c27a20f077dbe235e468cef0008ecfa94de0c0d turn=95691e6e7e37a09279ae3fd0d69de0102f5112bebd6d782030a564e1a5f7615a -->
+
+### 2026-09-01 利用上限後の再開
+
+> 利用上限が来て途中で止まりました。
+> 中断地点を理解してから再開地点からのタスクの続きをお願いします。
+
+- 中断時点では、修理方針第1版の保存とLunaによる読取専用の文例・既存試験棚卸しまで完了。親checkpoint、説明HTML、resume_contract検査、実承認カードが未完だった。
+- 再開は未完だった親checkpointとHTMLの更新から行い、同じ第1版を判断対象として実カードへ進む。利用上限による停止を、承認・中断・方針選択の証拠へ変換しない。
+<!-- bs:v1 session=1fc20b11fc1edd727946027828bef3d2505527fd36c28fe72c3e13df2ded4bf3 counter=4 input=004db4582661d458f98d3d6daebc44fcd00c278c680cda2911c51f98806e6061 turn=003db6faab6c3d14bd473311394e415de837aabd08f1677a34e6107252b6b118 -->
 
 ### 2026-08-31 続行依頼と終了イベントの追認
 
@@ -264,6 +275,13 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 
 ## まだ決まってないこと
 
+### 2026-09-01 明示許可修理方針の判断待ち
+
+- 第1版は、許可文認識・対象付き保存・同じ記録による実装段階切替を一組にした。実カードで方針承認、修正継続、中断のいずれかを待つ。コードの実行承認ではない。
+- 許可記録の具体項目、旧Helen許可の移行、現在会話へ規則変更を反映する方法は、方針承認後の詳細計画で固定する。
+- 方針正本: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md
+- 説明HTML: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/20260901-explicit-permission-repair-plan.html
+
 ### 2026-08-31 通常タスクでの修理実装
 
 ユーザーの「上記ファイルパスの内容を見て実装をしてください」により第3版R0から着手。
@@ -283,79 +301,117 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
 ```brainstorm-checkpoint
 {
   "version": 2,
-  "objective": "brainstormで曖昧な終了と保留消失を機械的に拒否する",
+  "objective": "Codex版brainstormで明示許可を対象・版・会話に結び付いた承認イベントへ変換し、同じ記録から実装段階を決められる修理方針を確定する",
   "timeline": [
     {
-      "id": "repair_permission",
-      "label": "計画の実行承認"
+      "id": "permission_design",
+      "label": "明示許可の認識と実装移行の修理方針"
+    },
+    {
+      "id": "permission_implementation",
+      "label": "許可イベント修理の実装・検証"
     },
     {
       "id": "guard_repair",
-      "label": "修理実装・検証"
+      "label": "共通終了監査第3版の残実機試験"
     },
     {
       "id": "operation",
-      "label": "実機検証と運用受入"
+      "label": "共通終了監査の運用受入"
+    },
+    {
+      "id": "helen_audit",
+      "label": "Helen監査第4版のP0B実装"
     }
   ],
   "current": {
-    "node": "guard_repair",
-    "work": "案内の再発原因を修正し、通常タスクの実Stopを既存の専用タスクで試験中。",
+    "node": "permission_design",
+    "work": "明示許可を短い固定語の判定だけで終わらせず、許可対象・計画版・会話指定を保存して実装段階の案内と書込み検査へ接続する修理方針第1版を提示し、実カードで判断を待つ。",
     "evidence": [
       {
-        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
-        "sha256": "2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f"
-      },
-      {
-        "path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-test-results-20260831.json",
-        "sha256": "bd85bc82d2b28f6d3419980bb159a9668e74f2e12b3af279633672e893382179"
+        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md",
+        "sha256": "c301a4186e6e2e9f0e8eaff4ac1099abf677934b134bdcfe78bd52b3d67024a4"
       }
     ]
   },
   "mode": "detour",
   "parked": [
     {
-      "node": "operation",
-      "work": "実Stopの初回拒否・再入拒否・復元後通過と、その結果の運用受入。",
-      "reason": "brainstorm作動中の実Stop試験と運用受入が残る。通常タスクの公開時監査とは別に記録する。",
-      "resume_when": "私が既存の専用試験環境で残る試験条件を確認し、根拠のある結果を報告する。",
+      "node": "permission_implementation",
+      "work": "承認された修理方針を詳細計画・独立レビュー・コード修正・隔離試験・実フック試験へ進める。",
+      "reason": "現在は方針第1版の判断待ちで、修理コードの実行承認と実装はまだ行っていない。",
+      "resume_when": "方針が実カードで承認された後、許可記録の具体項目と旧許可の移行手順を固定し、指定された独立レビューを通す。",
+      "evidence": [
+        {
+          "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md",
+          "sha256": "c301a4186e6e2e9f0e8eaff4ac1099abf677934b134bdcfe78bd52b3d67024a4"
+        }
+      ]
+    },
+    {
+      "node": "guard_repair",
+      "work": "既存の共通終了監査第3版について実Stopの拒否・再拒否・訂正後通過を直接照合する。",
+      "reason": "明示許可が承認イベントにならず同じ会話の作業段階が食い違う問題を先に解決するため一時保留した。第3版の実行承認は保持している。",
+      "resume_when": "許可イベント修理の範囲と現在会話への適用方法が確定し、既存承認を失わずに残試験へ戻れる。",
       "evidence": [
         {
           "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
           "sha256": "2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f"
+        },
+        {
+          "path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-test-results-20260831.json",
+          "sha256": "bd85bc82d2b28f6d3419980bb159a9668e74f2e12b3af279633672e893382179"
+        }
+      ]
+    },
+    {
+      "node": "operation",
+      "work": "共通終了監査の実Stop試験結果に基づき運用受入を判断する。",
+      "reason": "拒否・再入・復元後通過の実試験が未完で、単体試験合格を運用受入へ変換できない。",
+      "resume_when": "既存の専用試験環境で実会話と監査ログの両方から拒否2回と訂正後通過を確認する。",
+      "evidence": [
+        {
+          "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
+          "sha256": "2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f"
+        }
+      ]
+    },
+    {
+      "node": "helen_audit",
+      "work": "実行許可済みのHelen監査第4版をP0Bの一時構築・停止試験・正式導入から再開する。",
+      "reason": "明示された実装許可をCodexの機械状態へ変換できない問題の修理方針へ戻っている。Helenの許可は撤回されていないが、この方針承認をHelen完成へ流用しない。",
+      "resume_when": "許可イベント修理後に既存の発言・対象版・会話指定を一意に照合し、監査第4版のP0B実装へ戻る。",
+      "evidence": [
+        {
+          "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md",
+          "sha256": "c690d7be9986eca7f24930ffdeb45255a0f7e3b596fb0264879a2bab9b9fa7d5"
         }
       ]
     }
   ],
   "return_to": [
-    "operation"
+    "permission_implementation",
+    "guard_repair",
+    "operation",
+    "helen_audit"
   ],
-  "released": [
-    {
-      "node": "guard_repair",
-      "evidence": [
-        {
-          "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
-          "sha256": "2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f"
-        }
-      ]
-    }
-  ],
+  "released": [],
   "next": {
-    "owner": "assistant",
-    "action": "既存の専用試験タスクで、実際の拒否・再拒否・訂正後通過を直接照合する。",
-    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/codex-default-mode-card-production-test/_index.md",
-    "done_when": "実会話と監査ログの両方で、同じ試験の拒否2回と訂正後の通過を確認する。",
-    "availability": "runnable"
+    "owner": "user",
+    "action": "修理方針第1版を承認するか、方針を修正するか、中断するかを二問の実カードで明示する。",
+    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md",
+    "done_when": "主質問と確認質問の両方が有効に回答され、方針承認・修正継続・中断のいずれかが現在の判断対象へ結び付く。",
+    "availability": "needs_user"
   },
   "exit": {
-    "kind": "continue_work",
-    "reason": "試験を実行中。ユーザーへ追加操作を求めず、私が結果を照合する。",
-    "unblock_when": "実会話と監査ログを照合し、残る未検証と本題の再開点を報告する。"
+    "kind": "awaiting_user",
+    "reason": "利用上限で未提示だった修理方針第1版と根拠整理を完了し、方針の採否だけを実カードで待つ。利用上限による停止や空回答を承認・中断へ変換しない。",
+    "unblock_when": "この実カードの主回答と確認回答が揃い、現在の方針第1版に対する判断として機械記録される。"
   },
   "decision": {
-    "card_kind": "question",
-    "scope": "試験の担当は私。ユーザーへの新しいタスク作成依頼は不要。"
+    "card_kind": "plan",
+    "scope": "明示許可を対象・版・会話に結び付けて保存し、その同じ許可記録から実装段階の案内と書込み検査を決める修理方針第1版の採否。修理コードの実行承認、Helen完成、一本化第3版、Blend変更には拡張しない。",
+    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md"
   }
 }
 ```
@@ -501,6 +557,7 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
 - 親: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
 - 子の置き場: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions`
 - 2026-08-31の修理記録: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md`
+- 2026-09-01の明示許可修理方針: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md`
 
 ## 使わなかったもの・落とした情報
 
