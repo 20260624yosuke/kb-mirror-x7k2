@@ -41,8 +41,8 @@ brainstorm は普通のモードで動き、**話しながら KB のメモへ書
 
 | サブコマンド | 起動点 | 働き |
 |---|---|---|
-| `inject-light` | UserPromptSubmit（毎ターン） | メモの要点を context へ戻す（60行/2000字上限） |
-| `inject-full` | SessionStart（`compact` 含む） | メモを厚く戻す（240行/8000字上限） |
+| `inject-light` | UserPromptSubmit（毎ターン） | **生きているメモの入口一覧**を context へ戻す（60行/2000字上限） |
+| `inject-full` | SessionStart（`compact` 含む） | **同じ入口一覧**を戻す（240行/8000字上限） |
 | `guard-write --lockdown` | PreToolUse（スキル起動中） | 成果物フォルダへの書き込みを拒否 |
 | `guard-write --unread` | PreToolUse（常駐） | `ready` のメモを読まずに実装しようとしたら拒否 |
 | `guard-stop` | Stop（スキル起動中） | 承認カード無しで会話を閉じようとしたら止める |
@@ -344,3 +344,46 @@ trust hash は削除していないため、戻す場合は2か所を `true` に
 - [[plan-gate-skill]]（休止）— `wiki/builds/plan-gate-skill.md`
 - [[llm-state-transition-gate]] — `wiki/builds/llm-state-transition-gate.md`
 - [[llm-project-quality-gate]] — `wiki/builds/llm-project-quality-gate.md`
+
+
+## 2026-08-31 の変更（再注入と未読ブロック）
+
+**きっかけ**: `project-hub-index` の brainstorm で、武田さんが明言した「軸は2つ」という切り分けが
+LLM 側から失われ、対象の取り違えが起きた。原因を実測したところ、**メモが再注入で1文字も渡って
+いなかった**。
+
+### 実測した原因
+
+| 事実 | 実測値 |
+| --- | --- |
+| 生きているメモ（active + ready） | 6枚 |
+| 5節の中身の合計 | **153,193字** |
+| 再注入の上限 | 8,000字（`inject-full`）／2,000字（`inject-light`） |
+| 並び順 | パス順。後ろのメモほど渡らない |
+| `project-hub-index` が渡ったか | **0字**（切り捨ての印すら本人には見えない） |
+
+### 変えた3点
+
+1. **`build_injection` を「入口だけ」にした。** 5節の中身を連結するのをやめ、
+   **メモの名前・状態・正本の実パス・`entry_paths`** だけを渡す。
+   実測で **2,773字**となり、6枚すべてが上限内に収まる（切り捨てなし）。
+   中身は必要になったときに正本を読む。
+2. **`guard-write --unread` の対象に `active` を足した。**
+   以前は `ready` のみで、**いま作業中のメモを読まずに書ける**状態だった（実測で素通りを確認）。
+3. **読了判定を「記録の全文」から「最後の圧縮以降」に変えた**
+   （`transcript_text_since_compact()`）。圧縮の境界は
+   `{"type":"system","subtype":"compact_boundary"}` として記録に残る（実データで確認）。
+   以前は**圧縮前に一度読めば、忘れた後もずっと読了扱い**だった。
+
+### 副作用を1件出して直した
+
+2 を入れた直後、**メモを書く操作（`ready` への昇格を含む）まで拒否**され、自己試験の発火点①が
+偽陽性で落ちた。書き込み先が `wiki/analyses/` 配下のときは未読検査を掛けない形にして解消。
+
+### 試験結果
+
+注入は 2,773字で6枚全部・切り捨てなし／未読で deny／既読で通る／**圧縮の前でだけ読んだ場合は deny**／
+圧縮の後で読んだら通る／メモ自体へは未読でも書ける。
+`audit-handoff --selftest` は **第1層〜第3層すべて PASS**。
+
+**未確認**: 実機での発火。次に `/brainstorm` を使ったあと `guard.log` に行が出るかで確認する。

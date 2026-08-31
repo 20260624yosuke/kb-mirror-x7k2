@@ -9,6 +9,8 @@ scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
 entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/_index.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/project-current-state-page-plan-20260830.md
 background_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-handoff-mechanism-design.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-helen-repro-v51-overview.html
@@ -340,6 +342,8 @@ LLM 側の記録ミス」と**正しく書かれている**。にもかかわら
 | 参照先の節が存在しない（A-6 の「7.2」） | する | できる | 計画内の節参照が実在するかの検査 |
 | 誤検知の試験が漏れる（A-8） | する | できる | 「通るべきものが通る」試験を検証表に必須項目として持つ |
 | 判定が承認済み完成条件を満たすか（A-1） | する | **できない**（意味の照合） | 人間判断として残す。改訂時に完成条件との対応表を作って目視 |
+| **メモが再注入で渡らない**（今回の根本原因） | した | **できる** | **2026-08-31 実装済み。** 注入を入口だけにし（2,773字で6枚全部）、未読ブロックに `active` を追加、読了判定を最後の圧縮以降へ。試験7件すべて合格 |
+| **対象そのものの取り違え**（KB 運用 → 案件の中身） | する | **見つかっていない** | 3案（未読ブロック／パスの比率／決定事項のカバレッジ）を実測し**すべて検出できず**。人間（武田さん）が発見。独立レビュー5回も検出していない。**未解決** |
 
 ## 【重大】別セッションと正本が衝突している（2026-08-31 発見）
 
@@ -657,6 +661,45 @@ LLM 側の記録ミス」と**正しく書かれている**。にもかかわら
 - **A は解決策の根拠が揃っている**（実装3点・証拠7点）。
 - **B は現時点で機械的に検出する方法が見つかっていない。** 3案を実測して全部落ちた。
   **B が残る限り「解決した」とは言えない。**
+
+## 【実装完了】A を実装した（2026-08-31・武田さん指示）
+
+> a は解決してから俺に回答を戻して。ここまでの経緯を踏まえて、a を実装してください。
+
+対象ファイル: `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py`
+バックアップ: `/tmp/bg_backup_<時刻>.py`
+
+### 変えた3点
+
+| # | 変更 | 変更前 → 変更後 |
+| --- | --- | --- |
+| 1 | **注入を「入口だけ」にした**（`build_injection`） | 5節の中身を連結して上限で切る → **名前・状態・正本パス・入口パスだけ** |
+| 2 | **未読ブロックの対象に active を足した** | `live_memos(cwd, ("ready",))` → `("ready", "active")` |
+| 3 | **読了判定を最後の圧縮以降にした** | `transcript_text()`（全文） → `transcript_text_since_compact()` |
+
+### 副作用を1件出して直した
+
+2 を入れた直後、**メモを書く操作（`ready` への昇格を含む）まで「メモを読んでいない」として
+拒否**するようになり、既存の自己試験の発火点①が**偽陽性で落ちた**。
+書き込み先がメモ置き場（`wiki/analyses/`）配下のときは、この検査を掛けないようにして解消。
+
+### 試験結果（すべて実行）
+
+| 試験 | 期待 | 結果 |
+| --- | --- | --- |
+| 注入が入口だけになり全メモが入るか | 6枚全部・上限内 | **2,773字で6枚全部。切り捨てなし。`project-hub-index` も入る** |
+| 全メモ未読で成果物へ書く | deny | **合格**（止めた根拠に6枚すべてを列挙） |
+| 全部読んで成果物へ書く | 通る | **合格**（誤検知なし） |
+| 圧縮の前でだけ読んだ | deny | **合格**（圧縮で忘れた状態を検出） |
+| 圧縮の後で読んだ | 通る | **合格** |
+| 未読でもメモ自体へは書ける | 通る | **合格**（副作用の修正が効いている） |
+| 既存の自己試験 `audit-handoff --selftest` | PASS | **第1層〜第3層すべて合格** |
+
+### 未確認
+
+- **実機での発火は未確認。** 自己試験は「発火点が正しく組まれているか」までで、
+  次に `/brainstorm` を使ったあとに `guard.log` へ行が出るかを見る必要がある
+  （自己試験の出力自身がそう述べている）。
 
 ## まだ決まってないこと
 

@@ -262,7 +262,7 @@ last_synced: "YYYY-MM-DDTHH:MM:SS+09:00"
 
 ## 5. 6つの機械判定
 
-実装先: `<KBルート>/tools/project_state_sync.py`（新規）。
+実装先: `<KBルート>/tools/project_state_sync.py`（**この計画で作る予定物。現時点では未作成**）。
 
 | # | 判定 | 発火点 | 落ちたときの動作 |
 | --- | --- | --- | --- |
@@ -297,13 +297,15 @@ last_synced: "YYYY-MM-DDTHH:MM:SS+09:00"
 
 ### 5.2 コマンド
 
+下の `<script>` は 5節冒頭のスクリプト（**未作成**）を指す。
+
 ```
-python3 tools/project_state_sync.py sync       <slug>   # 機械区画を生成
-python3 tools/project_state_sync.py check      <slug>   # 判定①③④
-python3 tools/project_state_sync.py verify     <slug>   # 8節の照合
-python3 tools/project_state_sync.py answer-key <slug>   # 9.2 の正解表を出力
-python3 tools/project_state_sync.py resync --force <slug>
-python3 tools/project_state_sync.py list                # 案件一覧・鮮度・最終同期時刻
+python3 <script> sync       <slug>   # 機械区画を生成
+python3 <script> check      <slug>   # 判定①③④
+python3 <script> verify     <slug>   # 8節の照合
+python3 <script> answer-key <slug>   # 9.2 の正解表を出力
+python3 <script> resync --force <slug>
+python3 <script> list                # 案件一覧・鮮度・最終同期時刻
 ```
 
 ---
@@ -340,7 +342,7 @@ python3 tools/project_state_sync.py list                # 案件一覧・鮮度�
 | 2 | 共通欄ファイルのスキーマを確定し提示 | **承認A-2** |
 | 3 | 対象4案件に `run-state.common.json` を作成（既存の記録ファイルは読むだけ） | — |
 | 4 | 節1・節5 の中身を、既存資料から**収集して書き起こす** | — |
-| 5 | `tools/project_state_sync.py` を実装 | — |
+| 5 | 5節冒頭のスクリプト（**未作成**）を実装 | — |
 | 6 | 1案件で `sync` → `verify` → `check` | — |
 | 7 | 判定①⑤⑥のフックを登録し、9.1 の試験を全部通す | — |
 | 8 | **本番の閉じた試験**（9.2） | **承認B** |

@@ -10687,3 +10687,22 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   見せており、「そもそも何の計画であるべきか」を問うていない。
 - 触ったページ: `wiki/analyses/brainstorm/project-hub-index/_index.md`。
 - 残: B は未解決。A の実装も未承認。
+
+## [2026-08-31] ingest | brainstorm の再注入と未読ブロックを修正（A の実装）
+- 武田さん指示「a は解決してから俺に回答を戻して。a を実装してください」を受けて実装。
+- 対象: `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py`（バックアップ `/tmp/bg_backup_*.py`）。
+- 変更3点: ①`build_injection` を「5節の中身の連結」から**入口だけ**（名前・状態・正本パス・入口パス）へ
+  ②`guard-write --unread` の対象を `("ready",)` → **`("ready","active")`**
+  ③読了判定を全文から **`transcript_text_since_compact()`（最後の `compact_boundary` 以降）** へ。
+- 副作用1件を検出して修正: ②により**メモを書く操作（`ready` 昇格を含む）まで拒否**され、
+  既存の自己試験の発火点①が偽陽性で落ちた。書き込み先が `wiki/analyses/` 配下なら検査を掛けない形に。
+- 試験（すべて実行）: 注入は **2,773字で6枚全部・切り捨てなし**／未読で deny／既読で通る／
+  **圧縮の前でだけ読んだ場合は deny**／圧縮の後で読んだら通る／メモ自体へは未読でも書ける。
+  既存の `audit-handoff --selftest` は **第1層〜第3層すべて PASS**。
+- **未確認**: 実機での発火。次に `/brainstorm` を使ったあと `guard.log` に行が出るかで確認する。
+- 触ったファイル: `brainstorm_guard.py`、`wiki/analyses/brainstorm/project-hub-index/_index.md`。
+- 追記: 正本 `wiki/builds/brainstorm-skill.md` に「2026-08-31 の変更（再注入と未読ブロック）」節を追加。
+  引き継ぎの機械監査 `audit-handoff` を実行し、**本計画への指摘は 0 件**（残る2件は別セッションの
+  `gf2-helen-deliverable-unified-route-plan-20260831.md` のもので、相手の成果物のため触らない）。
+  監査が指摘した「未作成のスクリプトへの参照」は、KB 規約どおり「未作成」と明記して解消した。
+  メモの `entry_paths` を1件から3件へ増やした（正本の仕様書と実装計画を入口に追加）。
