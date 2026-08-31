@@ -196,8 +196,8 @@ Codex 側が膨らんだのも同じ形で、「合わせろ」に対する作�
 
 ## まだ決まってないこと
 
-- 検査3（作業量の関所）と検査4（監査の同期＝Codex 側への展開）は**未着手**。
-  検査1・2・5 と誤検知修理・封鎖の条件化は実装済み（自動試験のみ合格、実機未確認）。
+- 検査3（作業量の関所）だけが**未着手**。ほかの5件と検査4（監査の同期）は
+  Claude・Codex の両方に実装済み（自動試験のみ合格、実機未確認）。
 - 検査3 の閾値。既存ログの実測分布を見るまで数字を置かない。
 - 検査1 の `run:` を実行することによる時間と費用。今は1件120秒・最大10件で頭打ちにしただけ。
 - 週の25%を消費した件の実消費量。まだ確認していない（Codex の記録から取れるかも未確認）。
@@ -260,6 +260,26 @@ Codex 側が膨らんだのも同じ形で、「合わせろ」に対する作�
 
 **根拠の状態**: 第4層に否定試験と肯定試験を28件追加し、`audit-handoff --selftest` は
 第1層〜第4層すべて PASS。**実機での発火はまだ観測していない。**
+
+### 2026-08-31 Codex 側への移植（承認済み）
+
+Claude 側の5件と、KB 監査の同期（検査4）を Codex へ入れた。
+
+- `/Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py` に、Claude 版と同じ
+  定数と関数を移植（`_looks_write_command` / `_prose_of` / `_card_turn_prose` /
+  `_deliverable_writes` / `_parse_done_when` / `_run_done_conditions` / `_guard_done_promotion`）。
+  Codex 版の Stop は adapter が独自に持つため、検査5と検査2は新しい入口
+  `guard-stop-content` に分け、adapter の `stop()` の冒頭から呼ぶ配線にした。
+- 第4層の自己試験23件を Codex 側にも追加。第1層〜第4層すべて PASS。
+- **検査4（監査の同期）**: KB の `tools/prose_guard.py` は Claude の Write/Edit しか見ておらず、
+  Codex の `apply_patch` は素通りしていた。`apply_patch` を読めるようにし
+  （`_apply_patch_targets` / `inspect_patch`）、`~/.codex/hooks.json` の PreToolUse へ登録した。
+  実際に3件の入力で確かめた（版の印なし=拒否 / 版の印あり=通過 / コードは対象外=通過）。
+- 変更前のファイルは `.bak-20260831` として同じ場所に残してある
+  （`brainstorm_guard.py` / `codex_adapter.py` / `hooks.json` / Codex 版 `SKILL.md`）。
+
+**未確認**: Codex 側も実機での発火は観測していない。`guard-stop-content` が adapter 経由で
+実際に呼ばれるかは、次に Codex で brainstorm を使ったときに `guard.log` で確かめる。
 
 ### 終わったら次に取る承認
 
