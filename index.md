@@ -3382,7 +3382,7 @@ _合計 4947 ファイル_
 - [brainstorm-card-guard-plan-20260830.md](wiki/builds/brainstorm-card-guard-plan-20260830.md) | 2026-08-30T03:12:08Z
 - [brainstorm-codex-default-mode-card-plan-20260830.md](wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md) | 2026-08-30T06:08:56Z
 - [brainstorm-concrete-resume-audit-plan-20260831.md](wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md) | 2026-08-31T07:04:26Z
-- [brainstorm-five-guards-plan-20260831.md](wiki/builds/brainstorm-five-guards-plan-20260831.md) | 2026-08-31T05:24:41Z
+- [brainstorm-five-guards-plan-20260831.md](wiki/builds/brainstorm-five-guards-plan-20260831.md) | 2026-08-31T10:36:49Z
 - [brainstorm-guard-fix-handoff-20260829.md](wiki/builds/brainstorm-guard-fix-handoff-20260829.md) | 2026-08-29T15:58:18Z
 - [brainstorm-port-request-20260829.md](wiki/builds/brainstorm-port-request-20260829.md) | 2026-08-29T06:44:43Z
 - [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-08-31T03:40:07Z
