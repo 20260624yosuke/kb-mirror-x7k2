@@ -3,7 +3,7 @@ type: analysis
 status: active
 confidence: medium
 evidence_level: user-stated
-last_reviewed: 2026-08-30
+last_reviewed: 2026-08-31
 brainstorm_status: ready
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
@@ -34,6 +34,17 @@ Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/b
 だけを扱う。
 
 ## 武田さんの考え
+
+### 2026-08-31 曖昧な停止をbrainstorm本体で機械的に修理する依頼
+
+> 次やることが曖昧なまま回答が戻ってきました。何度も感じている不快感なので、問題です。問題を放置することを禁止します。解決してください。解決方法は機械的な監査以外の方法を禁止します。このプロジェクトではなく、brainstormの問題としてこの問題は修正してください。
+> またこのプロジェクトは、アイデア立案からllmとの計画立案から実装エージェントまでのタイムラインを何度も往復していて現在のタスクの地点とタイムライン上の停止地点が全く把握出ません。可視化したいので、グラフ化してください。今やっているタスクは明らかに戻ってますよね？じゃあ止まってるとこは先の方にあるでしょ？それが可視化できてないグラフを禁止します。
+
+- 修正対象はCodex版brainstorm共通監査。Helen成果物は変更せず、現在の戻り作業と保留された先行工程を分離して表示する。既存実行承認は旧案件の範囲で保持し、今回の修理の受入完了には流用しない。
+<!-- bs:v1 session=0d29db47c868b64206a2efc5769ba3b59f6e8b255ea289e0f8a37a68a52bc62d counter=1 input=024a2e9024e5217dc52a6e4651b46f9835074c0e7371875fd4a20f3d2a289f3b turn=1d6065f6c4ac84b9eb027164a4d4a522eb06e2ab1b550621f37dd65606c746c6 -->
+- 直接確認した不足: Stopで次の担当・具体操作・終了条件を検査していない／Stop再入時に無条件通過／UIのスキルリンクが起動正規表現と不一致。
+- 起動検出とcheckpoint検査コードの初期変更後、実PostToolUse経由で現在入力からの復旧とマーカー注入を観測した。これは実UserPromptSubmit発火を遡って証明するものではない。
+- 本体修理中に実装禁止の文脈も作動したため、残りの修正・否定試験を続ける前に、brainstorm修理だけに限った解除をカードで求める。Helen実装へは拡張しない。未検証なので修理完了とは扱わない。
 
 - `/brainstorm` を作った。**この KB フォルダを開いた LLM 共通で使用感を同じにしたい**という意図
   だったが、まだ Claude 以外で使えるか確認できていない。
