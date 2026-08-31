@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4936 ファイル_
+_合計 4938 ファイル_
 
 ## root/ (11)
 
@@ -313,6 +313,14 @@ _合計 4936 ファイル_
 - [20260831-unified-route-plan-revision-1.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-1.md) | 2026-08-31T01:48:24Z
 - [20260831-unified-route-plan-revision-2.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-2.md) | 2026-08-31T01:49:36Z
 - [20260831-unified-route-plan-revision-3-reviewed.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-3-reviewed.md) | 2026-08-31T01:52:26Z
+
+## wiki/analyses/brainstorm/html-skill-discovery/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/html-skill-discovery/_index.md) | 2026-08-31T07:25:05Z
+
+## wiki/analyses/brainstorm/html-skill-discovery/sessions/ (1)
+
+- [20260831-discovery-evidence.md](wiki/analyses/brainstorm/html-skill-discovery/sessions/20260831-discovery-evidence.md) | 2026-08-31T07:23:53Z
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
