@@ -11,6 +11,7 @@ scope:
   - /Users/takedayousuke/.agents
   - /Users/takedayousuke/.codex
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-brainstorm-checkpoint-and-helen-timeline.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md
@@ -286,7 +287,7 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
   ],
   "current": {
     "node": "guard_repair",
-    "work": "Codex版の修理を実装し、恒久試験45件を通過。実会話の終端試験は未実施。",
+    "work": "案内の再発原因を修正し、通常タスクの実Stopを既存の専用タスクで試験中。",
     "evidence": [
       {
         "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
@@ -303,8 +304,8 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
     {
       "node": "operation",
       "work": "実Stopの初回拒否・再入拒否・復元後通過と、その結果の運用受入。",
-      "reason": "隔離した試験用の新しいタスクは未作成で、実イベントを採取していない。",
-      "resume_when": "ユーザーが専用試験タスクの作成を明示的に依頼し、そのタスクで終端試験を行う。",
+      "reason": "brainstorm作動中の実Stop試験と運用受入が残る。通常タスクの公開時監査とは別に記録する。",
+      "resume_when": "私が既存の専用試験環境で残る試験条件を確認し、根拠のある結果を報告する。",
       "evidence": [
         {
           "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
@@ -328,26 +329,20 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
     }
   ],
   "next": {
-    "owner": "user",
-    "action": "専用の実機試験タスクの作成を依頼する。",
-    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
-    "done_when": "試験タスク作成の明示依頼を受領すること。",
-    "availability": "external_block"
+    "owner": "assistant",
+    "action": "既存の専用試験タスクで、実際の拒否・再拒否・訂正後通過を直接照合する。",
+    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/codex-default-mode-card-production-test/_index.md",
+    "done_when": "実会話と監査ログの両方で、同じ試験の拒否2回と訂正後の通過を確認する。",
+    "availability": "runnable"
   },
   "exit": {
-    "kind": "technical_stop",
-    "reason": "実イベント未採取のため、計画R4と完成判定を通せない。",
-    "unblock_when": "専用試験タスクを作成し、実Stopの拒否・再入・復元の証拠を採取する。",
-    "evidence": [
-      {
-        "path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-test-results-20260831.json",
-        "sha256": "bd85bc82d2b28f6d3419980bb159a9668e74f2e12b3af279633672e893382179"
-      }
-    ]
+    "kind": "continue_work",
+    "reason": "試験を実行中。ユーザーへ追加操作を求めず、私が結果を照合する。",
+    "unblock_when": "実会話と監査ログを照合し、残る未検証と本題の再開点を報告する。"
   },
   "decision": {
     "card_kind": "question",
-    "scope": "実機試験タスク作成の可否。実行承認の取り直しや運用受入とは別。"
+    "scope": "試験の担当は私。ユーザーへの新しいタスク作成依頼は不要。"
   }
 }
 ```
@@ -497,5 +492,5 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
 ## 使わなかったもの・落とした情報
 
 旧checkpointの「計画承認済み・通常タスクへ引継ぎ待ち」という現在地を、version 2の「修理実装済み・実機試験前」へ置き換えた。
-そのため次の案内は同じ実装依頼の貼り直しではなく、専用実機試験タスクの作成判断になる。本人の発言・旧承認履歴・Helen成果物は削除していない。
+この時点では専用実機試験タスクの作成判断と案内したが、2026-08-31の再調査で撤回。既存の専用試験タスクがあり、ユーザーへ作成依頼を求める根拠がなかった。本人の発言・旧承認履歴・Helen成果物は削除していない。
 旧checkpointを含む変更前全文は `/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-doc-baseline-20260831.json` のparentキーから差分単位で復元できる。
