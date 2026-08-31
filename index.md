@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4920 ファイル_
+_合計 4921 ファイル_
 
 ## root/ (11)
 
@@ -279,9 +279,9 @@ _合計 4920 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-30T21:09:53Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-31T00:19:32Z
 
-## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (14)
+## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (15)
 
 - [20260829-p-implementation-and-decision-point.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md) | 2026-08-29T15:58:18Z
 - [20260830-deliverable-reject-mechanize-visible-checks.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-deliverable-reject-mechanize-visible-checks.md) | 2026-08-30T13:10:53Z
@@ -296,6 +296,7 @@ _合計 4920 ファイル_
 - [20260830-three-approvals-explained.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-three-approvals-explained.md) | 2026-08-30T10:55:41Z
 - [20260830-visible-set-d1-a11-implemented.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-visible-set-d1-a11-implemented.md) | 2026-08-30T07:32:19Z
 - [20260830-which-to-keep-and-wiki-gap.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-which-to-keep-and-wiki-gap.md) | 2026-08-30T06:55:42Z
+- [20260831-chest-hole-cause-audit-gap.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-chest-hole-cause-audit-gap.md) | 2026-08-31T00:16:27Z
 - [20260831-torso-skin-v1-v6-implemented.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-torso-skin-v1-v6-implemented.md) | 2026-08-30T21:13:08Z
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
