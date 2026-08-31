@@ -343,7 +343,7 @@ _合計 4947 ファイル_
 
 ## wiki/analyses/brainstorm/project-hub-index/sessions/ (1)
 
-- [20260831-hole3-threshold-measurement.md](wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md) | 2026-08-31T06:15:55Z
+- [20260831-hole3-threshold-measurement.md](wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md) | 2026-08-31T10:13:27Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 
