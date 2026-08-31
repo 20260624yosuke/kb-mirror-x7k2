@@ -2,7 +2,7 @@
 type: analysis
 status: active
 confidence: medium
-evidence_level: user-stated
+evidence_level: source-backed+user-stated+inferred
 last_reviewed: 2026-08-31
 brainstorm_status: ready
 scope:
@@ -294,7 +294,7 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
       },
       {
         "path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-test-results-20260831.json",
-        "sha256": "6e0afc2dbcb714331293293f5f1a9e286ce1fe0fb8e016ab823b19479e026e3a"
+        "sha256": "bd85bc82d2b28f6d3419980bb159a9668e74f2e12b3af279633672e893382179"
       }
     ]
   },
@@ -341,7 +341,7 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
     "evidence": [
       {
         "path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-test-results-20260831.json",
-        "sha256": "6e0afc2dbcb714331293293f5f1a9e286ce1fe0fb8e016ab823b19479e026e3a"
+        "sha256": "bd85bc82d2b28f6d3419980bb159a9668e74f2e12b3af279633672e893382179"
       }
     ]
   },
@@ -493,3 +493,9 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
 - 親: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
 - 子の置き場: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions`
 - 2026-08-31の修理記録: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md`
+
+## 使わなかったもの・落とした情報
+
+旧checkpointの「計画承認済み・通常タスクへ引継ぎ待ち」という現在地を、version 2の「修理実装済み・実機試験前」へ置き換えた。
+そのため次の案内は同じ実装依頼の貼り直しではなく、専用実機試験タスクの作成判断になる。本人の発言・旧承認履歴・Helen成果物は削除していない。
+旧checkpointを含む変更前全文は `/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-doc-baseline-20260831.json` のparentキーから差分単位で復元できる。
