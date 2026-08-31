@@ -250,6 +250,13 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 
 ## まだ決まってないこと
 
+### 2026-08-31 通常タスクでの修理実装
+
+ユーザーの「上記ファイルパスの内容を見て実装をしてください」により第3版R0から着手。
+Codex版監査と恒久試験を実装。45試験と既存自己試験は合格。実Stop終端試験・運用受入は未完。
+現在地は修理実装・検証であり、以下の旧引継ぎ待ちは履歴。コード・資料のバックアップと結果は修理記録に記載。
+Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前）、C（原作比較）は保持し、今回の合格を流用しない。
+
 ### 2026-08-31 共通終了監査の現在地点
 
 今回の修理開始時はactiveへ戻した。その後、第3版の明示実行承認を得たため現在はready。旧2026-08-30計画の承認履歴、今回の実行承認、実装後の修理受入を区別する。
@@ -261,41 +268,86 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 
 ```brainstorm-checkpoint
 {
-  "version": 1,
-  "objective": "brainstormで次の一手が曖昧なまま応答を終了する経路を機械的に拒否する",
+  "version": 2,
+  "objective": "brainstormで曖昧な終了と保留消失を機械的に拒否する",
   "timeline": [
-    {"id": "repair_permission", "label": "修理の前提確認"},
-    {"id": "guard_repair", "label": "共通監査の修正と終端試験"},
-    {"id": "operation", "label": "検証済みの運用"}
+    {
+      "id": "repair_permission",
+      "label": "計画の実行承認"
+    },
+    {
+      "id": "guard_repair",
+      "label": "修理実装・検証"
+    },
+    {
+      "id": "operation",
+      "label": "実機検証と運用受入"
+    }
   ],
   "current": {
-    "node": "repair_permission",
-    "work": "詳細計画第3版は独立レビュー・実行承認済み。通常タスクへの引継ぎを残している。",
+    "node": "guard_repair",
+    "work": "Codex版の修理を実装し、恒久試験45件を通過。実会話の終端試験は未実施。",
     "evidence": [
-      {"path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md", "sha256": "2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f"},
-      {"path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-independent-review.md", "sha256": "e7b3f5e07c8ee483b9d163016bf2ee346d0f09c4e687414955a2185224817712"}
+      {
+        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
+        "sha256": "2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f"
+      },
+      {
+        "path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-test-results-20260831.json",
+        "sha256": "6e0afc2dbcb714331293293f5f1a9e286ce1fe0fb8e016ab823b19479e026e3a"
+      }
     ]
   },
   "mode": "detour",
-  "parked": [{
-    "node": "guard_repair",
-    "work": "共通監査の誤拒否修正、恒久テスト、実Stopの拒否・再入試験。",
-    "reason": "この会話には計画限定の制約があり、解除カードへの回答だけでは実装へ移れない。",
-    "resume_when": "承認済み計画を、brainstormを起動しない通常タスクへ渡す。",
-    "evidence": [{"path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py", "sha256": "ba4aeaed7b4318d97c61980ff7a1cf91ee1aea8fced254fb2809d8621465d74d"}]
-  }],
-  "return_to": ["guard_repair"],
+  "parked": [
+    {
+      "node": "operation",
+      "work": "実Stopの初回拒否・再入拒否・復元後通過と、その結果の運用受入。",
+      "reason": "隔離した試験用の新しいタスクは未作成で、実イベントを採取していない。",
+      "resume_when": "ユーザーが専用試験タスクの作成を明示的に依頼し、そのタスクで終端試験を行う。",
+      "evidence": [
+        {
+          "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
+          "sha256": "2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f"
+        }
+      ]
+    }
+  ],
+  "return_to": [
+    "operation"
+  ],
+  "released": [
+    {
+      "node": "guard_repair",
+      "evidence": [
+        {
+          "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
+          "sha256": "2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f"
+        }
+      ]
+    }
+  ],
   "next": {
     "owner": "user",
-    "action": "新しい通常タスクに掲載した引継ぎ文を貼り、R0から実装を依頼する。",
+    "action": "専用の実機試験タスクの作成を依頼する。",
     "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
-    "done_when": "通常タスクで計画と親メモを読み、R0へ着手したことが確認できること。",
-    "availability": "needs_user"
+    "done_when": "試験タスク作成の明示依頼を受領すること。",
+    "availability": "external_block"
   },
   "exit": {
-    "kind": "approved_handoff",
-    "reason": "計画・独立レビュー・実行承認までを終え、この会話では実装しないため。",
-    "unblock_when": "通常タスクでR0（現状固定）から開始する。追加の計画承認を取り直さない。"
+    "kind": "technical_stop",
+    "reason": "実イベント未採取のため、計画R4と完成判定を通せない。",
+    "unblock_when": "専用試験タスクを作成し、実Stopの拒否・再入・復元の証拠を採取する。",
+    "evidence": [
+      {
+        "path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-test-results-20260831.json",
+        "sha256": "6e0afc2dbcb714331293293f5f1a9e286ce1fe0fb8e016ab823b19479e026e3a"
+      }
+    ]
+  },
+  "decision": {
+    "card_kind": "question",
+    "scope": "実機試験タスク作成の可否。実行承認の取り直しや運用受入とは別。"
   }
 }
 ```
