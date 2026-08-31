@@ -60,6 +60,8 @@ background_paths:
 
 ## 直した記録
 
+- 2026-09-01: 実カード回答とセッション保存状態の不一致を記録した。故障の証拠: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-card-observation-gap.json。フック状態の手書き変更・実イベントの偽装再投入・機構の修理はしない。カードの機械管理だけを技術的停止とし、ユーザーの中断や未回答とは扱わない。
+
 - 2026-09-01: 指定の古い添付を現行状態とせず、後続の監査rev4・一本化rev3・実ファイルまで追跡した。
 - 2026-09-01: P0B step 2という古い表示と、監査本体が無い現物との差を説明へ残す。正式の実装状態は勝手に書き換えない。
 
@@ -136,7 +138,7 @@ background_paths:
   ],
   "current": {
     "node": "state_explanation",
-    "work": "実ファイルと正本の現状整理を終え、成果物までの問題点をHTMLと相互リンク付き親メモへ保存した。",
+    "work": "実ファイルと正本の現状整理、HTML説明、専用親メモと関連正本の相互リンクを作成した。原作再現の実装はしていない。",
     "evidence": [
       {
         "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-current-state-evidence.json",
@@ -205,24 +207,34 @@ background_paths:
     {
       "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-current-state-evidence.json",
       "sha256": "46eabe49ed63c413b2cee1e13bb3fed098dad5eaf7bdbd9f48f77f8a884c55d8"
+    },
+    {
+      "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-card-observation-gap.json",
+      "sha256": "620c90ae1a8c4665f498dd694fb49da1de65f5da0e5b8bccee70f80218a783c1"
     }
   ],
   "released": [],
   "next": {
     "owner": "user",
-    "action": "次の議論で、完成までの工程のつながりと原作入力・3欠陥のどちらを先に詳しく詰めるか選ぶ。",
-    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-helen-repro-project-current-state.html",
-    "done_when": "主質問への選択と確認「はい」が揃うか、明示的な中断がある。無回答は判断に数えない。",
+    "action": "この親メモを指定し、カード機構の観測不一致を確認したうえでbrainstormを再開する意思を明示する。",
+    "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md",
+    "done_when": "明示的な再開要求を受け取る。機構の再開可否は、その後に私が実イベントの事前検査で確かめる。",
     "availability": "needs_user"
   },
   "exit": {
-    "kind": "awaiting_user",
-    "reason": "依頼された説明・保存・相互参照の作業は終えた。次の議論の焦点だけを尋ね、実装には移らない。",
-    "unblock_when": "次に詰めたい点への回答、または具体的な追加質問を受け取る。"
+    "kind": "technical_stop",
+    "reason": "実カードの回答を受領したが、セッション保存状態は親未選択・カード拘束情報なしのままで、機械観測の成立を確認できない。説明資料は保存済み。",
+    "unblock_when": "明示的な再開要求後、実カード呼出し・回答・対象親・現在ターンの対応を機械側でも確認できる。",
+    "evidence": [
+      {
+        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-card-observation-gap.json",
+        "sha256": "620c90ae1a8c4665f498dd694fb49da1de65f5da0e5b8bccee70f80218a783c1"
+      }
+    ]
   },
   "decision": {
     "card_kind": "question",
-    "scope": "【承認待ち】現状整理の次は、どの問題から詳しく詰めますか？"
+    "scope": "原作再現の現状整理後にどの問題を詰めるかは未選択。記録先のユーザー選択は受領済みだが、新計画・実装の承認には変換しない。"
   }
 }
 ```
