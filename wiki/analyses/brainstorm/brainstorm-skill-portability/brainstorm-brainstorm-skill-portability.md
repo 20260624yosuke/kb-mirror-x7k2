@@ -239,6 +239,8 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 既存11試験と読取中心の追加23ケースはPASS。実PostToolUseで起動復旧、親への同一ターン追記、実カード呼出しID・空回答の状態不変を観測。
 解除カードは空回答であり、承認・中断ではない。残りは新試験の恒久保存、SKILLとの同期、実Stopの拒否・再入・正常通過の終端試験。
 今回のコード変更先はCodex版のcodex_adapter.pyと新しいresume_contract.pyのみ。Claude版・Helen成果物・hooks.json・config.tomlは変更なし。
+新監査の読取専用CLIも旧guard-writeが書込と誤判定して拒否した。迂回せず、限定解除後の修理対象に追加。
+結果・残作業の記録: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md
 
 ```brainstorm-checkpoint
 {
@@ -386,6 +388,7 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 | 指摘 | 再発しうるか | 機械判定できるか | 変換先 |
 |---|---|---|---|
 | 未承認計画を実装へ渡さない | する | できる | `brainstorm_status` と現行承認状態の検査 |
+| 次の担当・操作・対象・終了条件を省いた返答、先の停止地点消失、Stop再入素通し | する | 構造・SHA・本文掲載を検査可能。意味の真偽は別 | Codex resume_contract.pyとStop接続。初期実装・合成試験済み、実Stop終端確認は未完 |
 | 実装前レビューは指定された `gpt-5.6-sol / medium` で中立に行う | する | 一部できる | レビュー履歴・モデル・effort・判定の申し送り検査 |
 
 ## 関連リンク
@@ -403,4 +406,4 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 
 - 親: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
 - 子の置き場: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions`
-- 現在の子: まだ未作成
+- 2026-08-31の修理記録: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md`

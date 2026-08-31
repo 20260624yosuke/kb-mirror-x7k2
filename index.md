@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4930 ファイル_
+_合計 4931 ファイル_
 
 ## root/ (11)
 
@@ -14,7 +14,7 @@ _合計 4930 ファイル_
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
 - [index.md](root/index.md) | 2026-08-31T02:24:04Z
-- [log.md](root/log.md) | 2026-08-31T02:24:04Z
+- [log.md](root/log.md) | 2026-08-31T02:32:21Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -272,7 +272,11 @@ _合計 4930 ファイル_
 
 ## wiki/analyses/brainstorm/brainstorm-skill-portability/ (1)
 
-- [brainstorm-brainstorm-skill-portability.md](wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md) | 2026-08-31T02:25:27Z
+- [brainstorm-brainstorm-skill-portability.md](wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md) | 2026-08-31T02:32:50Z
+
+## wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/ (1)
+
+- [20260831-concrete-resume-audit-repair.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md) | 2026-08-31T02:32:09Z
 
 ## wiki/analyses/brainstorm/codex-default-mode-card-parallel-test/ (1)
 
@@ -310,7 +314,7 @@ _合計 4930 ファイル_
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-31T02:24:04Z
+- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-08-31T02:32:21Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 
