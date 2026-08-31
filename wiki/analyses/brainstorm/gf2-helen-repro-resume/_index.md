@@ -41,6 +41,17 @@ background_paths:
 
 ## 決まったこと
 
+### 2026-09-01 故障限定の実装修理を許可
+
+> この会話で、brainstormのこの故障に限って実装修理を許可しますか？
+> 許可します。
+
+今回に限りCodex版brainstormのカード記録・終了検査の故障を実装修理する。Helenの成果物・実装コード・既存承認範囲は変えない。修理の許可であり、通常カード運用の再開・計画承認・運用受入には読み替えない。
+<!-- bs:v1 session=d9e9f2b6fbe52b8a1aba297d9ed3b7635b77292f556c53104947a1852cb905c7 counter=2 input=9acc884298f5bf6352bb60935d553f1898d320ae6cf32b124c8afcca5366f343 turn=e6eb846b3226e34e7356e6de21fcee8842c50d2f3b47592696c83c0cddd8d6f9 -->
+
+修理の正解は実フックの呼出し・回答・保存状態の対応。欠けている入力はカード事前記録と親選択の機械証拠。親未選択・選択済み・技術的停止・通常会話を分け、親未選択かつ選択記録なしを代表例にする。隔離試験で旧障害と修理後を直接比較し、実発火とは区別する。信頼設定の変更・状態や承認の手書き・検査回避が必要なら停止する。既存quality-gate.jsonのplan検査はPASS（2026-09-01実行）；運用合格には使用しない。
+
+
 - 本題はHelen H0157の胸を含む全身・動き・色や陰影のBlender原作再現。水着化、他キャラ抽出、brainstorm機構の修理とは分離する。
 - 今回は現状説明と再開の整理。brainstorm内で成果物コード・Blend・品質台帳・f166へ変更しない。
 - 監査計画revision 4の過去の実行承認とP0実施は維持する。一本化計画revision 3は独立レビュー記録が存在するが実行未承認。
@@ -126,6 +137,10 @@ background_paths:
       "label": "現状整理と再開位置の説明"
     },
     {
+      "id": "brainstorm_fault",
+      "label": "brainstormのカード記録・終了検査の限定修理"
+    },
+    {
       "id": "audit",
       "label": "承認済み監査rev4の実装"
     },
@@ -143,12 +158,16 @@ background_paths:
     }
   ],
   "current": {
-    "node": "state_explanation",
-    "work": "実ファイルと正本の現状整理、HTML説明、専用親メモと関連正本の相互リンクを作成した。原作再現の実装はしていない。",
+    "node": "brainstorm_fault",
+    "work": "この会話で故障限定の実装修理を許可するとの明示回答を受領。欠落した親選択の例外と事前フック記録の不成立を修理し隔離試験する。Helen実装の承認には広げない。",
     "evidence": [
       {
-        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-current-state-evidence.json",
-        "sha256": "46eabe49ed63c413b2cee1e13bb3fed098dad5eaf7bdbd9f48f77f8a884c55d8"
+        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-card-observation-gap.json",
+        "sha256": "620c90ae1a8c4665f498dd694fb49da1de65f5da0e5b8bccee70f80218a783c1"
+      },
+      {
+        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md",
+        "sha256": "1526c2101d5cb65ecca528a57484b512fe3585aca6ddff9dd654be89a3c2556b"
       }
     ]
   },
@@ -221,30 +240,20 @@ background_paths:
   ],
   "released": [],
   "next": {
-    "owner": "user",
-    "action": "この会話でbrainstormのカード記録・終了検査の故障に限って実装修理を許可するか明示する。",
+    "owner": "assistant",
+    "action": "codex_adapter.pyの親未選択時の例外と事前フック登録を調査・修理し、隔離回帰試験と可能な実フック検証を行う。",
     "target": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py",
-    "done_when": "ユーザーの明示判断を受け取る。無回答は許可にも中断にも数えない。",
-    "availability": "needs_user"
+    "done_when": "欠落状態を承認へ変えず機械判定でき、回帰試験結果と実機未検証点を記録する。",
+    "availability": "runnable"
   },
   "exit": {
-    "kind": "technical_stop",
-    "reason": "終了検査が欠落したparent_selectionを読み、KeyErrorで停止することを実保存状態から再現した。実装修理はこのbrainstormの禁止範囲に当たるため、例外の許可待ち。原作再現の説明資料は保存済み。",
-    "unblock_when": "この故障に限った実装修理と再開が明示的に許可され、修理後の実カードと終了検査が再検証できる。",
-    "evidence": [
-      {
-        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-card-observation-gap.json",
-        "sha256": "620c90ae1a8c4665f498dd694fb49da1de65f5da0e5b8bccee70f80218a783c1"
-      },
-      {
-        "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md",
-        "sha256": "1526c2101d5cb65ecca528a57484b512fe3585aca6ddff9dd654be89a3c2556b"
-      }
-    ]
+    "kind": "continue_work",
+    "reason": "故障限定の修理許可を受領し、実装と検証を継続する。",
+    "unblock_when": "今回の故障修理の試験結果を保存する。"
   },
   "decision": {
     "card_kind": "question",
-    "scope": "この会話で、brainstormのこの故障に限って実装修理を許可しますか？"
+    "scope": "明示的な再開要求後に事前検査を通し、原作再現の親メモ選択へ戻る。"
   }
 }
 ```
