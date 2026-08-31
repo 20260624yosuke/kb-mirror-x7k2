@@ -51,6 +51,7 @@ M3はpreviousありで削除拒否、previousなしで同じ削除が合格す�
 厳密なレビュー対象の保存写し:
 /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-plan-r3-reviewed.md
 レビュー後に現行正本へ追加したのはreview_statusとreviewed_revision_sha256のメタ情報だけ。計画本文はレビュー対象から変更しない。
+その後、ユーザーが第3版の実行を二問カードで承認。正本のplan_status・承認日・カードハッシュと冒頭の承認状態だけを更新した。実装仕様本文は変更しない。
 
 ### revision 2の再照合
 

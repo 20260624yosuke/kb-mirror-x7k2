@@ -4,7 +4,7 @@ status: active
 confidence: medium
 evidence_level: user-stated
 last_reviewed: 2026-08-31
-brainstorm_status: active
+brainstorm_status: ready
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Users/takedayousuke/.claude
@@ -50,6 +50,7 @@ Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/b
 - 詳細計画revision 1を上記entry_pathsのbrainstorm-concrete-resume-audit-plan-20260831.mdへ保存。初版SHA: fbfe70bee9fa5331878d4fcf69bf56c329cccc3e69be95df70e556e0be49748a。レビュアーにはgpt-5.6-sol / mediumを明示し、読取専用の独立照合を依頼する。実装はしない。
 - 独立レビューr1はCritical 0 / Major 5 / Minor 1。カード反映前の版照合、親未選択の起動契約、親単位の基準保存、引継ぎ監査の再入検査、既存品質ゲート、試験の拒否理由をr2へ反映し、再照合を依頼した。指摘記録: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-independent-review.md
 - r2はMajor 1 / Minor 1が残り、旧基準の最終stop_pass対応と限定品質ゲートの検査実体をr3へ反映。gpt-5.6-sol / mediumのr3再照合はCritical 0 / Major 0 / Minor 0、計画として実装担当へ渡せるとの独立判断。レビューSHA: a3f3c0c51d5faea840e432793a6584384a8874ee7e9652e26c7de6a5c2902227。実行承認・修理完了ではない。
+- その後の実カードで「第3版の実行を承認 (Recommended)」と「はい、この選択でよい」を受領。card_call_id_hash=2513f5e5f7e58153f50f6cc7ea2086f5703bbff99fc70d963b400257e8b4090c、実answer_transitionはapproved / confirmed_approval。第3版だけの実行承認としてreadyへ上げ、通常タスクのR0へ渡す。新タスク作成・Helen実装・運用受入の承認には拡張しない。
 
 ### 2026-08-31 曖昧な停止をbrainstorm本体で機械的に修理する依頼
 
@@ -251,7 +252,7 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 
 ### 2026-08-31 共通終了監査の現在地点
 
-今回の修理を追加したためactiveへ戻す。旧2026-08-30計画の承認履歴は維持し、今回の解除・修理受入とは区別する。
+今回の修理開始時はactiveへ戻した。その後、第3版の明示実行承認を得たため現在はready。旧2026-08-30計画の承認履歴、今回の実行承認、実装後の修理受入を区別する。
 既存11試験と読取中心の追加23ケースはPASS。実PostToolUseで起動復旧、親への同一ターン追記、実カード呼出しID・空回答の状態不変を観測。
 解除カードは空回答であり、承認・中断ではない。2026-08-31の再開時に前回の実Stop正常通過を追認。残りは新試験の恒久保存、SKILLとの同期、実Stopの拒否・再入の終端試験。
 今回のコード変更先はCodex版のcodex_adapter.pyと新しいresume_contract.pyのみ。Claude版・Helen成果物・hooks.json・config.tomlは変更なし。
@@ -269,29 +270,32 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
   ],
   "current": {
     "node": "repair_permission",
-    "work": "詳細計画第3版の独立レビューを終え、実行承認を待っている。",
-    "evidence": [{"path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py", "sha256": "385bfbab3c70e134f9aa40130d74fbed0ea0c70af7a445d50cc4c20ed75a7f75"}]
+    "work": "詳細計画第3版は独立レビュー・実行承認済み。通常タスクへの引継ぎを残している。",
+    "evidence": [
+      {"path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md", "sha256": "2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f"},
+      {"path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-independent-review.md", "sha256": "e7b3f5e07c8ee483b9d163016bf2ee346d0f09c4e687414955a2185224817712"}
+    ]
   },
   "mode": "detour",
   "parked": [{
     "node": "guard_repair",
     "work": "共通監査の誤拒否修正、恒久テスト、実Stopの拒否・再入試験。",
     "reason": "この会話には計画限定の制約があり、解除カードへの回答だけでは実装へ移れない。",
-    "resume_when": "修理計画を確定し、brainstormを起動しない通常タスクへ渡す。",
+    "resume_when": "承認済み計画を、brainstormを起動しない通常タスクへ渡す。",
     "evidence": [{"path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py", "sha256": "ba4aeaed7b4318d97c61980ff7a1cf91ee1aea8fced254fb2809d8621465d74d"}]
   }],
   "return_to": ["guard_repair"],
   "next": {
     "owner": "user",
-    "action": "カードで詳細計画第3版の実行を承認するか、修正点を回答する。",
+    "action": "新しい通常タスクに掲載した引継ぎ文を貼り、R0から実装を依頼する。",
     "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
-    "done_when": "対象版への回答と確認が記録されること。実装完了とは別。",
+    "done_when": "通常タスクで計画と親メモを読み、R0へ着手したことが確認できること。",
     "availability": "needs_user"
   },
   "exit": {
-    "kind": "awaiting_user",
-    "reason": "実行承認は未取得で、この会話はbrainstormの計画限定のため。",
-    "unblock_when": "実行承認後、brainstormを起動しない通常タスクでR0（現状固定）から着手する。"
+    "kind": "approved_handoff",
+    "reason": "計画・独立レビュー・実行承認までを終え、この会話では実装しないため。",
+    "unblock_when": "通常タスクでR0（現状固定）から開始する。追加の計画承認を取り直さない。"
   }
 }
 ```
@@ -344,6 +348,20 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
 - 監査スクリプト: `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py`
 
 ## 実装への申し送り
+
+### Codex共通終了監査の修理（2026-08-31 実行承認）
+
+- 今回の実装正本は /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md の第3版。旧カード移植計画は背景資料として保持する。
+- 新しい通常タスクでこの親メモと計画を読み、R0（現状固定・既存品質ゲートplan）から開始する。実行承認を取り直さない。コードや判断対象版が食い違えばその具体箇所を調べる。
+- 完成条件は同計画のR0〜R5、T01〜T13、実Stop拒否/再入/復元、今回範囲の品質ゲート。計画合格を実装完了へ言い換えない。
+- 禁止は、このbrainstorm会話での実装、bypass、任意Python等の一括許可、他LLM版・Helenの変更、合成イベントを実ログと呼ぶこと。
+- 捨てた案は「限定解除でこの会話の実装へ戻る」。この会話は計画・承認までとし、通常タスクへ移す。
+
+### 終わったら次に取る承認
+
+今回修理の実機検証結果への受入。旧スキル全体の未受入やHelenの実装承認へ拡張しない。
+
+以下は旧案件の申し送り履歴。
 
 作業は2系統に分かれる。**2026-08-29 の承認により、系統B → 系統A の順で行う。**
 系統Bは「新しい会話の Claude」が担当し、渡すのは引き継ぎ資料1枚だけでよい。

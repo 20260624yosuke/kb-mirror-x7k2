@@ -7,7 +7,9 @@ evidence_level: source-backed+user-stated+inferred
 created: 2026-08-31
 last_reviewed: 2026-08-31
 revision: 3
-plan_status: draft-unapproved
+plan_status: execution-approved
+approved_on: 2026-08-31
+approval_card_call_id_hash: 2513f5e5f7e58153f50f6cc7ea2086f5703bbff99fc70d963b400257e8b4090c
 review_status: passed-plan-only
 reviewed_revision_sha256: a3f3c0c51d5faea840e432793a6584384a8874ee7e9652e26c7de6a5c2902227
 ---
@@ -16,7 +18,7 @@ reviewed_revision_sha256: a3f3c0c51d5faea840e432793a6584384a8874ee7e9652e26c7de6
 
 ## 0. この計画の状態
 
-計画案・未承認。今回の会話ではコード・設定を変更しない。初期コードが既に存在することと、この計画の承認・修理完了は別。
+第3版は2026-08-31に実行承認済み。「第3版の実行を承認 (Recommended)」と「はい、この選択でよい」を実カードで受領し、実ログでもconfirmed_approvalを確認。今回の会話では実装せず、通常タスクへ渡す。修理完了・運用受入とは別。
 ユーザーの最新依頼は「ここまでの経緯を踏まえた詳細計画」「実装前のサブエージェントレビュー」「GPT-5.6・medium限定」「結論を誘導しない」「仕様と実装の不一致を重点確認」。
 利用可能なGPT-5.6系の実IDとしてgpt-5.6-sol、reasoning effort=mediumを指定する。レビュー結果を受ける前に承認カードへ進まない。
 
