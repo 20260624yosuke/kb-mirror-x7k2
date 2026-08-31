@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4946 ファイル_
+_合計 4947 ファイル_
 
 ## root/ (11)
 
@@ -299,9 +299,9 @@ _合計 4946 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-31T07:52:05Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-08-31T08:40:14Z
 
-## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (20)
+## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (21)
 
 - [20260829-p-implementation-and-decision-point.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md) | 2026-08-29T15:58:18Z
 - [20260830-deliverable-reject-mechanize-visible-checks.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-deliverable-reject-mechanize-visible-checks.md) | 2026-08-30T13:10:53Z
@@ -323,6 +323,7 @@ _合計 4946 ファイル_
 - [20260831-unified-route-plan-revision-1.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-1.md) | 2026-08-31T01:48:24Z
 - [20260831-unified-route-plan-revision-2.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-2.md) | 2026-08-31T01:49:36Z
 - [20260831-unified-route-plan-revision-3-reviewed.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-3-reviewed.md) | 2026-08-31T01:52:26Z
+- [20260831-why-audits-missed-structural.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-why-audits-missed-structural.md) | 2026-08-31T08:37:45Z
 
 ## wiki/analyses/brainstorm/html-skill-discovery/ (1)
 

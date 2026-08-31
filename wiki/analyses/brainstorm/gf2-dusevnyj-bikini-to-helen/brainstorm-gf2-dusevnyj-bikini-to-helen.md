@@ -4143,3 +4143,7 @@ O5 合格していなくても提出する。詳細と、そこで未確認と�
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o1-o3-swimsuit-blend-built.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-deliverable-reject-mechanize-visible-checks.md`
     — 残っていた3件（台帳・腰の布・工程O1）を通し、水着版の Blend ができた記録。実測値と未達項目
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-four-defects-root-cause.md`
+    — 4つの欠陥（胸の変種・骨の向き・水着の透明・肌の色）の原因調査と、V7/W8/W9/W10/W11 の実装記録
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-why-audits-missed-structural.md`
+    — **機械監査が効かなかった構造的原因の調査**。監査は Blend の中しか見ていない／不合格を自分で例外にできる／検査が事故の後追い、を実測とコード行で確定。チョーカーは「消した」ではなく「Blend に入っていない」。提案する7つの機械監査と根拠
