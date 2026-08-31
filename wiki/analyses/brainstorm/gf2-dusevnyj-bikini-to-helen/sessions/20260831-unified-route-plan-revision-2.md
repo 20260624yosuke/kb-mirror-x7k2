@@ -7,29 +7,28 @@ evidence_level: user-stated+source-backed+inferred
 created: 2026-08-31
 last_reviewed: 2026-08-31
 plan_status: draft-unapproved
-approval_scope: unified-route-plan-revision-3
+approval_scope: unified-route-plan-revision-2
 related:
   - "[[gf2-helen-repro-execution-audit-plan-20260830]]"
   - "[[gf2-helen-repro-plan-repair-model-routing-handoff-20260827]]"
   - "[[gf2-helen-repro-v51-run]]"
   - "[[brainstorm-gf2-dusevnyj-bikini-to-helen]]"
 tags: [gf2, helen, deliverable, state-machine, knowledge-base, model-routing]
-revision: 3
+revision: 2
 ---
 
-# Helen原作再現 成果物までの単一状態・KB活用計画 — revision 3
+# Helen原作再現 成果物までの単一状態・KB活用計画 — revision 2
 
 ## 承認状態と現在地点
 
 **計画案・未承認。実装していない。** 承認済みなのは一本化を計画化する方針だけ。
-revision 1は独立レビューでCritical 2・Major 5・Minor 1の差し戻し。revision 2ではCritical解消、
-完成台帳の更新と並行処理の2点がMajorとして残った。本revision 3はその修正案であり、
+revision 1は独立レビューでCritical 2・Major 5・Minor 1の差し戻し。本revision 2は修正案であり、
 旧計画の承認・対象範囲をまだ変更しない。レビュー記録と旧版は末尾の実パスから辿れる。
 
 - 最終目的: HelenのH0157原作再現をBlender成果物として成立させる。
 - 現在工程: 一本化計画のレビュー。成果物側はP0の棚卸し済み・P0B監査本体実装前。
 - 今回の意味: KB、原作コード回収、効果試験、成果物比較を同じ証拠経路でつなぐ。
-- 次の作業: モデル実ID配分・実行環境の設定差分を確定し、実行承認を得る。実装は未開始。
+- 次の作業: revision 2の独立再レビュー。合格しても実行承認前には実装しない。
 - 完成まで: 監査接続、入力再棚卸し、探索契約、抽出、因果審査、変更範囲承認、
   隔離実験、候補Blend、既存全要件の比較、ユーザー受入が残る。
 
@@ -150,21 +149,16 @@ stateとlegacy現在欄を別々に手書きする操作は禁止する。
 | U6.candidate | causal_tested＋同じ変更契約 | begin/finish writer記録、採用候補SHA |
 | U7.compare / accept | artifact_candidate以降 | 全要件・4 family比較、受入、限定登録結果 |
 
-許可証はoperation ID、actor ID、plan SHA、branch、defect集合、発行時のstate generation、
-依存read-set（共有準備、対象欠陥と依存欠陥、枝、承認、各入力の版とSHA）、script／入力SHA、
-許可出力先、変更契約SHA、有効期間、単回使用nonceを拘束する。
-finishとstate書込はlockで直列化する。別の独立操作が終わり全体generationだけ変わった場合は、
-lock下でread-set・対象状態・入力不変・役割・権限・出力を再検査して採用できる。
-依存read-setが変わった場合、同じ欠陥を別操作が進めた場合、期限切れ・nonce再使用は拒否する。
-古いgenerationのまま書き戻さず、再検査結果と最新generationに基づいて新しい一件をappendする。
-独立2件の両finish成功と、共有入力／依存欠陥変更時の拒否を別々に試験する。
+許可証はoperation ID、actor ID、plan SHA、branch、defect集合、state generation、
+script／入力SHA、許可出力先、変更契約SHA、有効期間、単回使用nonceを拘束する。
+終了時に入力不変、出力実在、範囲、役割、state generationを再検査する。
+無許可出力・許可後に書き換わった入力・古い許可証を結果台帳へ登録しない。
 
 ### 実行入口・出力への接続
 
 コード配置案は既存audit_guardとWiki側 `tools/helen_route_hook.py`。
-実際に実行する環境のPreToolUse／PostToolUse／Stopへ、プロジェクトパス限定adapterを接続する。
-最初からCodexとClaude両方の導入完了を要求しない。未接続環境はその環境の操作を拒否し、
-利用する時だけ設定差分承認と同じ実イベント試験を通す。レビュー役の読取は正式成果物操作と区別する。
+CodexのPreToolUse／PostToolUse／Stopおよび対応するClaudeイベントへ、
+プロジェクトパスで限定したadapterを接続する案とする。
 設定変更の実パス・既存設定との差分・復元方法は、U1実行前の承認資料へ列挙する。
 他プロジェクトの動作は変更しない。設定変更が承認されていない環境では未接続として停止する。
 
@@ -277,36 +271,6 @@ user_accepted、batch_safe、approved_by、approved_at、approval_evidence、acc
 known_gaps、原作資料、歴史、他family、未知キーは保持する。
 mode変更や必須試験削除は受入操作の対象外。approximation_approvedは近似枝別承認がある場合だけ別登録する。
 
-### 証拠に基づく完成台帳更新（受入とは別の限定操作）
-
-受入操作の後に `U7.reconcile_completion` を実行する。a10の許可範囲を拡大するのではなく、
-以下のキーだけを、同一候補SHAの直接証拠から更新する。証拠を生成せず既存欄をtrueにする操作は禁止。
-
-- `families[*].missing_inputs`: 元のrequired input IDと結合できる回収物、実SHA、参照鎖と独立確認が
-  揃った入力だけを現行欠損集合から除く。旧欠損と回収根拠はgap履歴へ保持する。
-- `families[*].known_gaps`: 現行の未解消gap集合を投影する。解消済みgapは直接比較・試験・独立reviewを
-  根拠に除外し、元の文言と解消記録は追記専用履歴へ残す。上記「保持」は歴史保持を意味し、
-  解消済みを永遠に現行欠陥として残す意味ではない。
-- `families[*].accepted_gaps`: **残っているが許容された**gapだけに限定する。
-  解消済みと許容済みを混ぜず、忠実版の必須入力不足・推定を許容だけで消さない。
-- `families[*].mode`: branch/modeに対応して更新。faithfulへの変更は全継承近似・推定の解消または
-  不適用の直接証明、必要入力回収、当該候補の独立比較が揃う場合だけ。gapを消すためのmode変更は禁止。
-- `verifier.method / source_read_directly / output_read_directly / report_path / evidence / findings_addressed`:
-  今回の候補を直接比較した独立actor receiptと報告から更新する。旧監査記録は保存し、旧reportを使い回さない。
-- `batch.completed / result_count / audit_report / final_audit_passed`: 承認済みrequested_countとrequested_familiesを
-  変えず、来歴・全GATE・要件・4familyを満たす成果物台帳から集計する。現在requested_count=1であり、
-  H0157候補1件を数え、4familyや試験画像を4件以上の成果物と誤算入しない。
-
-解消・mode移行・集計に必要な証拠が無ければ該当欄を変更せずcompleteを停止する。
-原作入力の所在、旧履歴、他family、未知キー、absence_claimsの要求、必須検査定義は変えない。
-absence_claimsで指摘が残る場合は、その不在主張台帳の根拠訂正を別の登録操作で行い、検査自体を外さない。
-元JSONの回復用コピーとキー別差分を保存し、許可キー以外のdeep comparison一致を必須にする。
-下記journal方式を受入／完成台帳更新の両方へ適用する。
-
-正常fixtureでは、未完了・欠損・未承認近似の初期台帳から、回収・gap解消・受入・集計を順に適用し、
-**既存共有gateのcompleteまでPASSする肯定経路**を試験する。固定辞書でPASS台帳を直接作って代用しない。
-欠損1件、未承認gap、近似modeのまま忠実完了、旧verifier、誤ったresult_count、途中更新をそれぞれ拒否する。
-
 state、manifest、証拠索引の複数ファイルを「単純なrename一つでatomic」と主張しない。
 更新前SHA・回復用コピー・書込予定差分をjournalへ保存し、lock下で更新する。
 pending journalがある間は全採用／completeを拒否する。途中失敗は全旧SHAへ復元し、
@@ -319,7 +283,7 @@ completeは全ての導出条件と共有品質ゲートが同じ世代・同じ
 
 | ID | 必ず検出する欠陥 |
 |---|---|
-| EA_OPERATION_UNAUTHORIZED | begin無し結果、別action、期限切れ・再使用・依存read-set変更の許可証 |
+| EA_OPERATION_UNAUTHORIZED | begin無し結果、別action、期限切れ・再使用・世代違いの許可証 |
 | EA_HOOK_UNOBSERVED | 実ツール／Stop接続未観測、包まれた呼出しの未捕捉、hook異常 |
 | EA_PHASE_DERIVATION_MISMATCH | 全体phase手書き、G10 blockedを別欠陥の進捗で隠す、legacy履歴と現行の混同 |
 | EA_REQUIREMENT_COVERAGE_MISSING | 3欠陥acceptedだけで4 family・全要件未完を素通し |
@@ -382,9 +346,6 @@ KB-root:
 
 ## 矛盾・未確定
 
-- revision 3の独立再レビューは完了し、未解消Critical/Majorなし（計画上のみ）。
-  検証対象SHAは `3860e540e929c340e773106acc2f3b2e6b899f6a606013b88c9a35f7a0bb83c4`。
-  検証後の変更はこのレビュー状態と「次の作業」の記録更新だけで、仕様の変更ではない。
-  モデル実ID配分表、hook設定差分、U5以後の具体変更契約は未承認。
+- revision 2の独立再レビューは未完。モデル実ID配分表、hook設定差分、U5以後の具体変更契約は未承認。
 - 実機のhook到達性、作業遮断、Blender見た目は未試験。
 - 現行旧計画の承認境界は、本計画が実行承認されるまで維持する。

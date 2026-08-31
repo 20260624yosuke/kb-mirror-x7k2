@@ -460,6 +460,26 @@ background_paths:
 - 現在ターンの `bs:v1` 注入は観測できないため、マーカーを捏造しない。可視記録は保存するが、
   毎ターン記録・カードのhook保証が作動したとは報告しない。計画・実行系のコードは変更しない。
 
+#### 再開したレビューの結果
+
+- revision 1はCritical 2・Major 5・Minor 1で差し戻し。欠陥は、実行遮断接続なし、全身・動きの完成条件
+  未接続、二重state、試験用出力の循環、承認範囲、役割ID、既存近似、U0循環。
+- revision 2でCritical解消。完成台帳の限定更新と並行処理の失効というMajor 2件をrevision 3で修正。
+- 同じ独立検証役がrevision 3を再確認し、未解消Critical/Majorなし。**計画上の解消であり実装未検証**。
+- 検証対象SHA: `3860e540e929c340e773106acc2f3b2e6b899f6a606013b88c9a35f7a0bb83c4`。
+  検証後の変更は次の作業とレビュー完了の記録更新のみ。旧版と検証時原文は同一SHAで保存。
+- 現行計画・HTMLはrevision 3へ同期。Blend、f166、既存品質台帳、監査コード、hook設定は変更なし。
+- 運用案の変更: U0〜U5は同じ承認範囲で進めるが、具体的なBlend変更契約の承認はU6前に残す。
+  これは未承認の案であり、ユーザーが許可したとは記録しない。
+- 次の未完了点: model実ID配分表・実行環境のhook設定差分の確定と実行承認。
+- 承認処理の状態: `technical_stopped`。現在セッションのカード呼出しID追跡と同ターンマーカーが
+  機械観測できないため、技能規則に従い通常カード運用を再開せず、本文で疑似承認を求めない。
+  本文書のbrainstorm_statusはactiveのまま。実行承認・readyへ変更しない。
+- 独立レビュー正本:
+  /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-independent-review.md
+- 検証時revision 3原文:
+  /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-3-reviewed.md
+
 ### 2026-08-30 説明ページへの回答（本人の言葉・承認しない／指摘4件＋要件）
 
 > 承認しない。/htmlで回答を生成してください。 -html確認できました。
@@ -2986,6 +3006,10 @@ V4（着衣関係）の合格線は、素体を相手に確定すれば数値で
 
 ## まだ決まってないこと
 
+- （2026-08-31・一本化計画）revision 3は重大指摘の独立レビュー解消済みだが実行未承認。
+  具体モデル配分とhook設定差分、U6前の変更契約承認を残す運用案が未確定。
+  承認追跡の機械観測が回復しpreflightを通るまで、カード回答や沈黙を実行承認へ変換しない。
+
 ### 2026-08-30 追加
 
 - ~~（2026-08-30）腰に残す布をどれにするか。~~ → **2026-08-30 決着。いまの衣装（P1）の腰の部分だけ残す**
@@ -3110,6 +3134,9 @@ V4（着衣関係）の合格線は、素体を相手に確定すれば数値で
   武田さんが明確に否定。目的は水着を作ること。ハーネスはその手段。
 
 ## 直した記録
+
+- 2026-08-31: 利用上限で止まった独立レビューを再開。rev1/2を保存し、計画をrev3へ改稿、
+  レビュー記録・HTML・indexを同期。モデル／設定／Blendの実装変更は無し。
 
 - 2026-08-31 「ヘレンには素肌の胴体メッシュが存在しない」を訂正した。実測の範囲が `HelenSSR0101` の
   体メッシュだけに限られていたのが原因。**手元の成果物はまだ変わらない**（Blend は作り直していない）。

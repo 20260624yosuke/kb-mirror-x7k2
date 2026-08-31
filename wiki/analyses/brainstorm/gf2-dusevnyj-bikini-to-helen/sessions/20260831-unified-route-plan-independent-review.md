@@ -96,8 +96,28 @@ rev1 80、187–191、307–314。U0実施後を実装開始前の条件にし�
 
 ## revision 2の再レビュー
 
-8件を反映した未承認の改稿案を同じ担当へ送付済み。**結果待ち。**
-制作側が修正済みと書いたことをResolvedの根拠にしない。
+対象SHA: `cdc5cad4447e031c1fe0583de0504d0e5fafe09e33086da497fe4c7886ed255c`。
+別検証役の判定はC1/M1/M2/M3/M4/N1がResolved、C2/M5はPartial。
+Criticalは解消、次のMajor 2件が残った。
+
+- R1: U7の許可キーにbatch完成欄、missing_inputs解消、mode移行、今回のverifier更新が不足し、
+  証拠が揃っても旧台帳のFAILが残る。解消と許容を分離した限定更新と、共有completeまで通る正常試験が必要。
+- R2: 全体generationへの固定で、独立した並行処理も他のfinishにより失効する。
+  finishを直列化し依存read-set不変を再検査する方式へ縮小する。
+- 最小化案: 全モデル環境へ一度に導入せず、実行環境だけ接続。未接続環境の運用は拒否。
+
+## revision 3の独立再レビュー（完了）
+
+- 対象SHA: `3860e540e929c340e773106acc2f3b2e6b899f6a606013b88c9a35f7a0bb83c4`。
+- 担当は同じ独立検証役。R1/R2を含め、**未解消Critical/Majorなし**。
+- R1 Resolved: 280–314行。完成台帳の証拠付き限定更新、旧履歴保持、正常系の共有complete到達を定義。
+- R2 Resolved: 153–160行。finish直列化と依存read-set再照合により、独立2件を相互失効させない。
+- 164–169行: 実行環境だけ先に接続する縮小を反映。
+- rev1/rev2保存版のSHA一致と、本レビュー記録の実在も別検証役が確認した。
+- これは**計画上解消・実装未検証**。計画の実行承認、モデル配分・設定差分承認、実イベント遮断試験、
+  Blender成果物の比較は未実施。完成・運用可能とは扱わない。
+- 検証後の計画本文は「次の作業」「レビュー完了」の記録のみ更新。検証時の原文は次に保存:
+  /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-3-reviewed.md
 
 ## 使わなかったもの・落とした情報
 
