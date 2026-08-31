@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4933 ファイル_
+_合計 4934 ファイル_
 
 ## root/ (11)
 
@@ -272,7 +272,7 @@ _合計 4933 ファイル_
 
 ## wiki/analyses/brainstorm/brainstorm-skill-portability/ (1)
 
-- [brainstorm-brainstorm-skill-portability.md](wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md) | 2026-08-31T06:36:21Z
+- [brainstorm-brainstorm-skill-portability.md](wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md) | 2026-08-31T06:45:08Z
 
 ## wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/ (1)
 
@@ -3347,7 +3347,7 @@ _合計 4933 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (89)
+## wiki/builds/ (90)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -3356,6 +3356,7 @@ _合計 4933 ファイル_
 - [betterdisplay-m27f-pseudo-resolution.md](wiki/builds/betterdisplay-m27f-pseudo-resolution.md) | 2026-08-17T06:10:45Z
 - [brainstorm-card-guard-plan-20260830.md](wiki/builds/brainstorm-card-guard-plan-20260830.md) | 2026-08-30T03:12:08Z
 - [brainstorm-codex-default-mode-card-plan-20260830.md](wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md) | 2026-08-30T06:08:56Z
+- [brainstorm-concrete-resume-audit-plan-20260831.md](wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md) | 2026-08-31T06:44:30Z
 - [brainstorm-five-guards-plan-20260831.md](wiki/builds/brainstorm-five-guards-plan-20260831.md) | 2026-08-31T05:24:41Z
 - [brainstorm-guard-fix-handoff-20260829.md](wiki/builds/brainstorm-guard-fix-handoff-20260829.md) | 2026-08-29T15:58:18Z
 - [brainstorm-port-request-20260829.md](wiki/builds/brainstorm-port-request-20260829.md) | 2026-08-29T06:44:43Z
