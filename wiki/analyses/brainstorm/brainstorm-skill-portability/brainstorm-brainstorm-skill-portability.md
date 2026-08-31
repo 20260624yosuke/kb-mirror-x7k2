@@ -49,6 +49,7 @@ Claude 側の設計経緯は `wiki/analyses/brainstorm/brainstorm-skill-design/b
 - 続く主回答（確認欄なし）: 「ここまでの経緯を踏まえた計画の詳細を作成してください。」「実装に入る前に、サブエージェントを起動してください。」「モデルはgpt5.6のエフォートはmedium以外を禁止します。」「サブエージェントにレビュー指示を送るのは計画を作成したメインエージェントですが、レビュー結果にバイアスがかかる指示を送ることを禁止いします。」「この仕様と実装の不一致などを重点的にレビューさせてください。」。新たな計画・レビュー依頼として実施し、旧カードの承認にはしない。
 - 詳細計画revision 1を上記entry_pathsのbrainstorm-concrete-resume-audit-plan-20260831.mdへ保存。初版SHA: fbfe70bee9fa5331878d4fcf69bf56c329cccc3e69be95df70e556e0be49748a。レビュアーにはgpt-5.6-sol / mediumを明示し、読取専用の独立照合を依頼する。実装はしない。
 - 独立レビューr1はCritical 0 / Major 5 / Minor 1。カード反映前の版照合、親未選択の起動契約、親単位の基準保存、引継ぎ監査の再入検査、既存品質ゲート、試験の拒否理由をr2へ反映し、再照合を依頼した。指摘記録: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-independent-review.md
+- r2はMajor 1 / Minor 1が残り、旧基準の最終stop_pass対応と限定品質ゲートの検査実体をr3へ反映。gpt-5.6-sol / mediumのr3再照合はCritical 0 / Major 0 / Minor 0、計画として実装担当へ渡せるとの独立判断。レビューSHA: a3f3c0c51d5faea840e432793a6584384a8874ee7e9652e26c7de6a5c2902227。実行承認・修理完了ではない。
 
 ### 2026-08-31 曖昧な停止をbrainstorm本体で機械的に修理する依頼
 
@@ -268,7 +269,7 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
   ],
   "current": {
     "node": "repair_permission",
-    "work": "詳細計画を作成し、指定モデルの独立レビューを受けている。",
+    "work": "詳細計画第3版の独立レビューを終え、実行承認を待っている。",
     "evidence": [{"path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py", "sha256": "385bfbab3c70e134f9aa40130d74fbed0ea0c70af7a445d50cc4c20ed75a7f75"}]
   },
   "mode": "detour",
@@ -281,16 +282,16 @@ PC 再起動で推論が止まった。中断地点は「メモを階層フォ�
   }],
   "return_to": ["guard_repair"],
   "next": {
-    "owner": "assistant",
-    "action": "独立レビューの結果を正本と照合し、必要な修正を計画へ反映する。",
+    "owner": "user",
+    "action": "カードで詳細計画第3版の実行を承認するか、修正点を回答する。",
     "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md",
-    "done_when": "レビュー結果と対応が記録され、未解消の重大指摘があれば明示されること。",
-    "availability": "runnable"
+    "done_when": "対象版への回答と確認が記録されること。実装完了とは別。",
+    "availability": "needs_user"
   },
   "exit": {
-    "kind": "continue_work",
-    "reason": "レビュー受領・指摘反映が未完であり、まだ終了しない。",
-    "unblock_when": "レビューを受領し、必要な改訂と再照合を続ける。"
+    "kind": "awaiting_user",
+    "reason": "実行承認は未取得で、この会話はbrainstormの計画限定のため。",
+    "unblock_when": "実行承認後、brainstormを起動しない通常タスクでR0（現状固定）から着手する。"
   }
 }
 ```

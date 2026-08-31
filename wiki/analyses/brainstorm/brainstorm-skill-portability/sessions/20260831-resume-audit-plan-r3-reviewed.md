@@ -8,8 +8,7 @@ created: 2026-08-31
 last_reviewed: 2026-08-31
 revision: 3
 plan_status: draft-unapproved
-review_status: passed-plan-only
-reviewed_revision_sha256: a3f3c0c51d5faea840e432793a6584384a8874ee7e9652e26c7de6a5c2902227
+review_status: pending-independent-review
 ---
 
 # Codex brainstorm 終了・再開点監査の修理計画 — revision 3
