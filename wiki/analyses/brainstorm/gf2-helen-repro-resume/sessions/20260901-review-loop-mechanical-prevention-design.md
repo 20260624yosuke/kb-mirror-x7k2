@@ -33,6 +33,18 @@ parent: ../_index.md
 - 入力変更が必要なら自動再レビューしない。`amendment-required`で停止し、変更理由・変更対象・失うものを提示してユーザーの別承認を要求する。
 - 承認後だけ新manifest IDを発行する。旧reviewは履歴として閉じ、新reviewを同一ループの続きではなく別revisionとして扱う。
 
+## このCodex環境での最小実装先
+
+- 実装先: `/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py` の `pre_tool`。これは `/Users/takedayousuke/.codex/hooks.json` のPreToolUseへ既に接続済みで、brainstorm中の `apply_patch` と `exec_command` を実際に拒否できる。
+- 試験先: `/Users/takedayousuke/.codex/skills/brainstorm/tests/test_adapter.py`。既存の親メモ境界・カード・読取専用command試験へ追加する。
+- 永続記録: 選択済み親の `sessions/` に `<review-id>.review-lock.json` を1件置く。中央の第二正本は作らず、対象計画と同じ親から到達可能にする。
+- lockの必須欄: `schema_version`、`review_id`、`status=passed`、`receipt_path`、`receipt_sha256`、`locked_inputs[]` の絶対path・role・sha256。
+- `apply_patch`: 既存lockの対象pathをAdd / Update / Delete / Moveしようとした時点で拒否する。receipt、親メモ、HTMLなどlock外は変更可能。
+- `exec_command`: 読取専用commandは許可する。非読取commandがlock対象の絶対pathを引数に含む場合は拒否する。曖昧な変数・glob・親ディレクトリ指定で対象判定できない書込みは許可せず技術的停止にする。
+- lock解除: ファイル削除や手書きstatus変更では解除しない。確認済み承認カードの `review_id` と、新revisionを必要とする理由をadapter stateへ結合した専用 `amend-review` 操作だけを許す。
+
+今回の最小lock対象は、一本化revision 4、current、具体計画の3件。review receiptはlock入力ではなく終端証拠としてSHA拘束し、receipt自身の更新もpassed後は拒否する。親メモと説明HTMLはlock外なので、本題の説明完成に影響しない。
+
 ## 最小状態
 
 `draft → frozen → reviewing → passed | findings | technical-stop`
@@ -59,6 +71,9 @@ parent: ../_index.md
 4. 単一変異: passed済みmanifestをもう一度reviewしようとすると拒否する。
 5. 単一変異: 入力を1バイト変えた後に自動再reviewしようとすると承認待ちで停止する。
 6. 復元: 入力を元SHAへ戻すと旧receiptの有効性は維持されるが、新reviewは発生しない。
+7. lock外: 親メモと説明HTMLは同じturnで更新できる。
+8. shell迂回: `sed -i`、Python書込み、`mv`、`cp`、変数・globでlock対象を指すcommandを拒否する。
+9. 解除: 自由文、古いカード、確認なし、別review IDでは `amend-review` を拒否する。
 
 ## 今回への適用範囲
 
@@ -72,6 +87,5 @@ parent: ../_index.md
 
 ## 未決定
 
-- どの既存guardへこの状態と拒否IDを統合するか。
-- freeze対象をreview manifestだけで持つか、既存外部登録簿へ統合するか。
+- Codex側の最小実装と試験を先に受け入れた後、Claude Code側の `brainstorm_guard.py` へ同じ契約を展開するか。今回同時実装はしない。
 - 環境共通化の実装承認。
