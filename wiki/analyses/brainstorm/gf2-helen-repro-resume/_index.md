@@ -101,6 +101,12 @@ HTML revision 4の後半更新を停止し、先にレビュー反復の終端�
 
 ## 決まったこと
 
+### 2026-09-01 H0157と環境整備を別エージェントへ分離
+
+U0〜U3承認カードに対し、ユーザーは実装可否を選ばず、コンテキスト肥大を理由にこの先を新規エージェントへ渡す判断をした。H0157原作再現とreview-loop環境整備の2軸を、担当者の注意ではなく、相互の書込み禁止領域、共有hooksの直接変更禁止、開始前後SHA不一致時の技術的停止で分離する。Helen用入口は `wiki/builds/gf2-helen-h0157-u0-u3-next-agent-task-entry.md`（SHA `7a2eba7eb378acc146244c223b77eb2c46437bb7d53b7ee2e9393b1270844c52`）、環境用入口は `wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md`（SHA `08843974704c2d1d82182156cf7f3de4e044731f40abed82973ff9c5a7ab6293`）。この判断はU0〜U3実装承認でも中断でもない。
+
+確定カードの選択は「2入口を確定 (Recommended)」、確認は「はい、この選択でよい」。受領書は `sessions/20260901-two-agent-entry-approval-receipt.md`。各新規エージェントへ対応する1入口だけを渡す。実装権限は各入口で別途取得する。
+
 ### 2026-09-01 一本化計画revision 4を計画として承認
 
 承認カードの選択は「一本化計画を承認 (Recommended)」、確認は「はい、この選択でよい」。対象はSHA `04521a242adfb896980e0a0bd7fab2c61960bff4a528c1ce07b1b4bd3447333a` の一本化revision 4。許された次状態はmodel実ID・hook設定差分・U0〜U3実装範囲を示す実装承認資料の作成まで。schema、guard、hook、quality-gate、f154、G10/S6/S8探索、Helen、f166、Blend、U0〜U3実行は未承認。承認結果をreview入力へ書き戻さず、別受領書で固定する。
@@ -165,7 +171,7 @@ HTML revision 4の後半更新を停止し、先にレビュー反復の終端�
 ## 直した記録
 
 - 2026-09-01 一本化revision 4の計画承認に基づき、U0〜U3の実装承認資料 `sessions/20260901-unified-rev4-u0-u3-implementation-approval-material.md` を作成。固定12入力、model実IDと役割、Claude不在時の無断GPT代替禁止、Codex hook 3枝の設定差分、approved capabilities、書込み境界、必須試験、rollback、U3での停止を列挙した。資料SHAは `f99dc8de1fea587b8b637e2ed9c4c754cb80e5ddaa6961e5db31a3ebca0e02ea`。Lunaの読み取り棚卸しで固定SHAと実パスを照合したが、原因・優先順位・承認判断には使っていない。schema、guard、hook、Helen、f154、f166、Blend、U0〜U3実行はまだ未承認・未実装。
-- 2026-09-01 環境修理を別エージェントへ渡すWiki正本 `wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md` を新規作成し、index・log・本親からリンク。直接原因、実接続3ファイルのSHA、固定Helen4ファイルのSHA、未承認の最小案、RL1〜RL7、停止条件、非対象、完了証拠を1枚に固定。ページSHA `d3c611bcfab551e85a75ebc3dd5f63220915d928924cfe2299f48683bc798fbd`。Codex環境コードとHelen固定4ファイルは前後SHA不変。
+- 2026-09-01 環境修理を別エージェントへ渡すWiki正本 `wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md` を新規作成し、index・log・本親からリンク。直接原因、実接続3ファイルのSHA、固定Helen4ファイルのSHA、未承認の最小案、RL1〜RL7、停止条件、非対象、完了証拠を1枚に固定。その後、Helen軸への書込み禁止・共有hooks読取り専用・Helen SHA drift拒否を追記し、現行ページSHAは `08843974704c2d1d82182156cf7f3de4e044731f40abed82973ff9c5a7ab6293`。Codex環境コードとHelen固定4ファイルは前後SHA不変。
 - 2026-09-01 HTML revision 4を完成し、1280px/390pxで表示検証。本文7,911文字、h2 14個、目次13件、切れた目次0件、重複ID 0件、文書全体の横はみ出し0px、ブラウザーerror/warning 0件。390pxでは幅広表3件だけを表内横スクロールとし、上部・P3A合成fixture節・末尾を通常画面単位で目視確認。方針・具体計画承認済み、独立review 0/0/0、実装未承認、12入力、quality-gate固定projection、approved_capabilities、rejected/blocked/技術停止、P3A合成fixtureと実G10 P3B blockedの分離を表示した。HTML SHA `a4f5f868314e7b7c256a6acfe771d0dbdc045481ada5fe90edbccee7ac4a57b9`。3D成果物の見た目は未検証。
 - 2026-09-01 レビューループ懸念を受け、環境共通の再発防止は未実装と明記。レビュー出力をreview入力へ書き戻した循環を直接原因とし、入力freeze、外部receipt、凍結後write拒否、passed済みmanifestの再review拒否、入力変更時の自動再review禁止を持つ機械設計をsessionsへ保存。具体化後の設計SHA `60a50e2a6416ca125b911e4f5019a8e6589cd7c007ab8b0960fa739255ba869f`。本題HTMLの続行承認と、環境guardの実装承認は分離している。
 - 2026-09-01 レビューループ防止の実装先を実ファイルから特定。Codexの実接続先は `.codex/skills/brainstorm/scripts/codex_adapter.py` のPreToolUse、既存試験は `tests/test_adapter.py`。親のsessionsに永続review-lockを置き、lock対象だけのapply_patch・shell迂回・合格後再reviewを拒否し、lock外の親メモ・HTMLは許可する最小差分へ具体化。Claude側への展開は今回含めない。まだ未承認・未実装。

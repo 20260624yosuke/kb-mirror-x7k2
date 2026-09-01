@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4967 ファイル_
+_合計 4969 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 4967 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-09-01T12:57:01Z
-- [log.md](root/log.md) | 2026-09-01T12:57:01Z
+- [index.md](root/index.md) | 2026-09-01T13:15:44Z
+- [log.md](root/log.md) | 2026-09-01T13:15:44Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -329,15 +329,16 @@ _合計 4967 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-helen-repro-resume/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-01T13:06:59Z
+- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-01T13:17:57Z
 
-## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (9)
+## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (10)
 
 - [20260901-brainstorm-fault-repair.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair.md) | 2026-08-31T15:51:17Z
 - [20260901-h0157-mechanical-audit-concrete-integration-plan.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md) | 2026-09-01T06:57:52Z
 - [20260901-h0157-mechanical-search-utility-gate-design.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-search-utility-gate-design.md) | 2026-09-01T06:26:06Z
 - [20260901-review-loop-mechanical-prevention-design.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-review-loop-mechanical-prevention-design.md) | 2026-09-01T12:46:16Z
 - [20260901-stop-keyerror-diagnosis.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md) | 2026-08-31T15:18:06Z
+- [20260901-two-agent-entry-approval-receipt.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-two-agent-entry-approval-receipt.md) | 2026-09-01T13:17:57Z
 - [20260901-unified-rev4-current-drift-reconcile.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-rev4-current-drift-reconcile.md) | 2026-09-01T07:01:25Z
 - [20260901-unified-rev4-u0-u3-implementation-approval-material.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-rev4-u0-u3-implementation-approval-material.md) | 2026-09-01T13:06:18Z
 - [20260901-unified-route-revision4-independent-review.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-route-revision4-independent-review.md) | 2026-09-01T07:04:38Z
@@ -3392,7 +3393,7 @@ _合計 4967 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (96)
+## wiki/builds/ (97)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -3412,7 +3413,7 @@ _合計 4967 ファイル_
 - [canvas-reference-tools.md](wiki/builds/canvas-reference-tools.md) | 2026-07-14T11:33:52Z
 - [claude-handoff-eagle-maid-category-2026-07-05.md](wiki/builds/claude-handoff-eagle-maid-category-2026-07-05.md) | 2026-07-04T21:57:38Z
 - [clip2md.md](wiki/builds/clip2md.md) | 2026-06-07T02:39:25Z
-- [codex-brainstorm-review-loop-prevention-task-entry.md](wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md) | 2026-09-01T12:57:01Z
+- [codex-brainstorm-review-loop-prevention-task-entry.md](wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md) | 2026-09-01T13:15:44Z
 - [codex-claude-code-official-import-plan.md](wiki/builds/codex-claude-code-official-import-plan.md) | 2026-08-13T13:32:13Z
 - [codex-handoff-eagle-clip-operations.md](wiki/builds/codex-handoff-eagle-clip-operations.md) | 2026-07-06T13:02:41Z
 - [codex-handoff-raw-ingest-batch.md](wiki/builds/codex-handoff-raw-ingest-batch.md) | 2026-07-07T00:55:14Z
@@ -3439,6 +3440,7 @@ _合計 4967 ファイル_
 - [gf2-helen-deliverable-unified-route-plan-20260831.md](wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md) | 2026-09-01T07:01:25Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-26T13:33:06Z
 - [gf2-helen-futa-current.md](wiki/builds/gf2-helen-futa-current.md) | 2026-09-01T03:15:31Z
+- [gf2-helen-h0157-u0-u3-next-agent-task-entry.md](wiki/builds/gf2-helen-h0157-u0-u3-next-agent-task-entry.md) | 2026-09-01T13:15:15Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
 - [gf2-helen-repro-execution-audit-plan-20260830.md](wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md) | 2026-08-31T15:06:03Z
 - [gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md](wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md) | 2026-09-01T04:01:13Z

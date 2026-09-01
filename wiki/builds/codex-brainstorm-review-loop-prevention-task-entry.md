@@ -94,6 +94,14 @@ sources:
 
 ここでユーザーの実装承認を取る。未承認のまま `codex_adapter.py`、`test_adapter.py`、`hooks.json` を変更しない。
 
+## Helen軸との機械的分離
+
+この環境整備エージェントが書いてよい候補は、`/Users/takedayousuke/.codex/skills/brainstorm/` 配下のreview-lock実装・試験と、本ページ・review-loop設計の記録だけ。Helen project root、Helen Wiki計画・current・承認資料、`tools/helen_route_hook.py` は書込み禁止。
+
+共有 `/Users/takedayousuke/.codex/hooks.json` は本タスクでは読取り専用とする。既存PreToolUse接続を利用し、設定変更が本当に必要と判明したら、直接変更せず候補差分を本タスクの隔離試験出力へ保存して停止する。
+
+開始前と終了時にHelen固定4ファイルのSHAを再測定し、上表から1件でも変われば `technical-stop-helen-axis-drift`。環境修理の成功として受領しない。これは「Helenを触らないよう注意する」という運用ではなく、固定SHA不一致を受入れ失敗にする境界である。
+
 ## 最低限の受入れ試験
 
 | ID | 正常 | 1項目だけ壊す | 必須結果 |

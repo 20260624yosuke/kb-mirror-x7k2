@@ -10865,3 +10865,9 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: `index.md` と `wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md` から到達可能にした。
 - 未実施: `codex_adapter.py`、`test_adapter.py`、`hooks.json`、Claude側、Helenのplan/current/Blend/f166/quality-gateは変更していない。環境実装方式と変更範囲は別承認。
 
+## [2026-09-01] build | H0157とreview-loop環境整備の別エージェント入口を機械分離
+
+- 新規: `wiki/builds/gf2-helen-h0157-u0-u3-next-agent-task-entry.md`。U0〜U3は未承認のまま、固定版、最初に読む正本、Helen側の候補書込み領域、環境側の禁止領域、共有hooksの候補差分止まり、環境SHA drift時の技術的停止を一枚に固定。
+- 更新: `wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md` に、Helen project・Helen Wiki・Helen hookへの書込み禁止、共有hooksの読取り専用、Helen固定4 SHA drift時の受入れ拒否を追加。
+- 更新: `index.md` とH0157親メモから両入口へ到達可能にした。
+- 未実施: 両タスクの実装、U0〜U3、review-lock、hook変更、Helen/f154/f166/Blend変更。今回のカード回答は実装承認でも中断でもない。
