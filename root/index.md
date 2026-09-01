@@ -687,7 +687,7 @@
 - [[nekojira]] — Coloso キャラクターデザイン講座(章 03 から取り込み開始)の講師。公式商品ページで Krenz 美術アカデミー助教(2019-2022)経歴と X 本人確認が追加された (2026-08-22 更新)
 - [[chan]] — Coloso「色とカラリング」シリーズ 第 3 作(chan 02)の講師 (2026-05-18 追加、誤帰属修正)
 - [[coloso]] — オンライン講座プラットフォーム(韓国発、グローバル展開)
-- [[takeda-yohsuke]] — 本ナレッジベースのオーナー。X 主戦場のキャラ絵イラストレーター(講師ではない)
+- [[takeda-yohsuke]] — 本ナレッジベースのオーナー。X 主戦場のキャラ絵イラストレーター(講師ではない)。raw クリップの `author: [[たけだようすけ]]` を解決する日本語名リダイレクトページあり
 - [[pureref]] — 参照画像管理ツール(武田さんの資料管理のメイン基盤)
 - [[wonbin-lee]] — X のイラストレーター。マルチビューのキャラデザシート作例(たけだウォッチ対象) (2026-05-20 追加)
 - [[kenogino]] — 漫画家 荻野ケン。週刊少年ジャンプ『レディ・ジャスティス』連載経歴 (2026-05-20 追加)
@@ -1362,8 +1362,16 @@
 - [[eagle-meta-tags-design]] — Eagle次段階の確定設計(2026-07-06 武田さん承認)。A出自軸規則エンジン(手作業フォルダのauthor_id分布から辞書を自動学習、`tools/eagle_meta_tags.py`、タグ=`候補_作品/キャラ/絵柄_◯◯_01`形式)/B弱カテゴリ補強(300枚プール+1枚ずつyes/no判定、ローアングル判定基準書、`eagle_pool_judge.py`)/C Canvas還元のsidecar抽出付録/D索引差分更新。ゲート(辞書的中率・同名誤爆率・収量50枚/精度9割)を設計から分離。**2026-07-06 武田さん判定によりプロジェクト断念** (created 2026-07-06)
 - [[claude-handoff-eagle-maid-category-2026-07-05]] — Claude向け自己完結 handoff。2026-07-05 のメイド服カテゴリ試行について、dry-run生成済み・Eagle未書き込み・ユーザー所感(周辺衣装混入、とくに03強い)・Codex推奨(03見送り、メイド服名義の即書き戻し保留、棚の意味を先に決める)を整理 (created 2026-07-05)
 - [[eagle-folder-sort]] — Eグル画像を武田さんの保存意図に沿ってフォルダ分けするワークフローの計算エンジン(`tools/eagle_folder_sort.py`、読み取り専用)。sync/calibrate/trends-lite(Codex実装・裏方の測定)+ propose(Fable実装・**画像付きdry-run確認HTML**が武田さん向け成果物)。既存フォルダはノイズ混じりの行動ログとして扱い、判定は「似ている20枚中の同フォルダ枚数」主軸。20枚サンプル生成済み・武田さん確認待ち。Eグルへの実書き込みは未実施 (created 2026-07-03)
+- [[coloso-parallel-ingest-project]] — coloso 並列映像ingest プロジェクトの正本。複数講座の映像 ingest を並列セッションで進める運用の設計・進捗管理 (created 2026-08-23)
+- [[approval-granularity-fix-handoff-20260829]] — 承認の粒度を機械で扱えるようにする引き継ぎ資料。harness/approval/quality-gate/plan-audit 関係の修正を文脈のないエージェントへ渡すための自己完結 handoff (created 2026-08-29)
+- [[brainstorm-card-guard-plan-20260830]] — brainstorm の承認カード検査(G1)と指摘の棚卸し工程(G4)の実装計画 (created 2026-08-30)
+- [[project-current-state-page-plan-20260830]] — プロジェクト現在位置ページの計画 rev.5 (draft-unapproved)。案件ごとの「最初に読む1枚」を機械生成する仕組みの設計 (created 2026-08-30 / updated 2026-08-31)
+- [[brainstorm-concrete-resume-audit-plan-20260831]] — Codex brainstorm の曖昧な終了・再開点を機械監査で修理する計画 rev.3。実行承認済み (created 2026-08-31)
+- [[brainstorm-five-guards-plan-20260831]] — brainstorm ガード5検査の実装計画。方針の承認済み、実行の承認は未取得 (created 2026-08-31 / reviewed 2026-09-01)
 
 ## Analyses
+
+- [[gf2-helen-plan-audit-design-20260829]] — 「なぜ結論が何度も変わるのか」の原因分析と機械的な監査の設計。レビュー・検証ボトルネックの考察を現在のプロジェクト計画へ適用 (source-backed+inferred, 2026-08-29)
 
 - [Helen H0157原作再現 再開用親メモ](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md>) — 原作再現を水着化から分けた入口。関連正本・旧親・現状HTMLと相互接続。Blend未完成、監査P0まで、一本化rev3実行未承認を実ファイルで再照合（2026-09-01）。
 

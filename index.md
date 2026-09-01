@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4969 ファイル_
+_合計 4970 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 4969 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-09-01T13:15:44Z
-- [log.md](root/log.md) | 2026-09-01T13:31:19Z
+- [index.md](root/index.md) | 2026-09-01T13:41:29Z
+- [log.md](root/log.md) | 2026-09-01T13:42:26Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -4694,7 +4694,7 @@ _合計 4969 ファイル_
 - [wrapping-line.md](wiki/concepts/wrapping-line.md) | 2026-05-31T17:54:34Z
 - [zero-to-2man-followers.md](wiki/concepts/zero-to-2man-followers.md) | 2026-05-31T15:35:55Z
 
-## wiki/entities/ (36)
+## wiki/entities/ (37)
 
 - [anyak.md](wiki/entities/anyak.md) | 2026-06-07T08:48:32Z
 - [archinoer.md](wiki/entities/archinoer.md) | 2026-06-22T07:00:59Z
@@ -4725,13 +4725,14 @@ _合計 4969 ファイル_
 - [pureref.md](wiki/entities/pureref.md) | 2026-05-30T07:51:13Z
 - [sasa.md](wiki/entities/sasa.md) | 2026-06-10T13:29:43Z
 - [serika-bluearchive.md](wiki/entities/serika-bluearchive.md) | 2026-06-14T16:40:46Z
-- [takeda-yohsuke.md](wiki/entities/takeda-yohsuke.md) | 2026-06-22T12:48:42Z
+- [takeda-yohsuke.md](wiki/entities/takeda-yohsuke.md) | 2026-09-01T13:39:51Z
 - [wonbin-lee.md](wiki/entities/wonbin-lee.md) | 2026-05-20T03:13:09Z
 - [ydh2101.md](wiki/entities/ydh2101.md) | 2026-06-22T07:00:59Z
 - [ye-jji.md](wiki/entities/ye-jji.md) | 2026-07-07T00:52:09Z
 - [yuta-hiraoka.md](wiki/entities/yuta-hiraoka.md) | 2026-06-22T07:00:59Z
 - [yutokamizu.md](wiki/entities/yutokamizu.md) | 2026-06-14T15:44:51Z
 - [yuuka-bluearchive.md](wiki/entities/yuuka-bluearchive.md) | 2026-06-14T16:40:56Z
+- [たけだようすけ.md](wiki/entities/%E3%81%9F%E3%81%91%E3%81%A0%E3%82%88%E3%81%86%E3%81%99%E3%81%91.md) | 2026-09-01T13:39:51Z
 
 ## wiki/memes/ (28)
 

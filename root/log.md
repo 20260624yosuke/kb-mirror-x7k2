@@ -10886,3 +10886,22 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   - 最古 last_reviewed は 2026-05-26 ([[llm-wiki-ai-precision-schema]])。
 - 未カバー: セマンティックな数値・結論の矛盾 (A-1) は機械走査対象外。別途サンプリング監査が必要。
 - 触ったファイル: `tools/wiki_lint.py` (新規) / `log.md`。
+
+## [2026-09-01] lint-fix | たけだようすけ切れリンク解消 + index 未登録7件の登録
+
+- 承認済み lint 対応 1・2 を実行 (3 の warning 棚卸しは別エージェントで計画)。
+- **たけだようすけ問題の実態**: 581 参照のうち raw/ frontmatter `author: [[たけだようすけ]]` が 572、
+  残り 11 は log.md/index.md のインラインコード内 (Obsidian でリンク化されず非切れ)。本文中の実切れリンクは 0 件。
+- 対応: `wiki/entities/たけだようすけ.md` (日本語名リダイレクト → [[takeda-yohsuke]]) を新規作成。
+  **命名規則 (kebab-case+ASCII) の意図的な例外**。raw/ は read-only 規則により未変更。
+  `wiki/entities/takeda-yohsuke.md` の aliases に `たけだようすけ` を追加。
+- `tools/wiki_lint.py` を修正: インラインコード・コードフェンス内の `[[...]]` をリンク走査から除外
+  (2026-08-23 lint で既知だった精度問題の再発を解消)。
+- index.md 未登録 7 件を登録: Builds に [[coloso-parallel-ingest-project]], [[approval-granularity-fix-handoff-20260829]],
+  [[brainstorm-card-guard-plan-20260830]], [[project-current-state-page-plan-20260830]],
+  [[brainstorm-concrete-resume-audit-plan-20260831]], [[brainstorm-five-guards-plan-20260831]]、
+  Analyses に [[gf2-helen-plan-audit-design-20260829]]。Entities の [[takeda-yohsuke]] 行にリダイレクト言及を追加。
+- 再 lint で検証: 切れリンク 916→255 参照 (残は raw X クリップの @handle ノイズと削除済み oxloop REPORT 参照)、
+  index 未登録 7→0、孤立 5→0、幽霊登録 2→1 (`[[page-slug]]` は index.md 内の記述例)。
+- 触ったファイル: `wiki/entities/たけだようすけ.md` (新規) / `wiki/entities/takeda-yohsuke.md` /
+  `tools/wiki_lint.py` / `index.md` / `log.md`。

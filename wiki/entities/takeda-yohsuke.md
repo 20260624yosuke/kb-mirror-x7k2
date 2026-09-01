@@ -1,7 +1,7 @@
 ---
 type: entity
 name: takeda_yohsuke
-aliases: [takeda_yohsuke, タケダ, ようすけ, 本ナレッジベースのオーナー]
+aliases: [takeda_yohsuke, たけだようすけ, タケダ, ようすけ, 本ナレッジベースのオーナー]
 category: person
 tags: [illustrator, x-twitter, character-art, kb-owner]
 sources: []
