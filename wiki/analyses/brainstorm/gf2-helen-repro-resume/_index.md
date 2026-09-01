@@ -136,6 +136,7 @@ HTML revision 4の後半更新を停止し、先にレビュー反復の終端�
 ## まだ決まってないこと
 
 - 一本化計画revision 4を計画として受け入れるか。受入れ後も、実装開始は別承認。
+- レビューループ機械防止をどの既存guardへ統合し、環境共通のwrite拒否・循環検出・自動再review禁止として実装するか。設計案は作成済みだが未承認・未実装。
 - 実装に使う具体model ID、フック設定差分、U0〜U3の実装範囲と停止条件。
 - 最初の正式search-contractをどのH0157 gapへ結び、family・検索鍵・反証条件をどう固定するか。G10形状の合成fixtureは正常系検査専用で、実在G10は入力回収までblockedのまま。
 - 一本化計画revision 4の実行承認。
@@ -151,6 +152,8 @@ HTML revision 4の後半更新を停止し、先にレビュー反復の終端�
 
 ## 直した記録
 
+- 2026-09-01 HTML revision 4を完成し、1280px/390pxで表示検証。本文7,911文字、h2 14個、目次13件、切れた目次0件、重複ID 0件、文書全体の横はみ出し0px、ブラウザーerror/warning 0件。390pxでは幅広表3件だけを表内横スクロールとし、上部・P3A合成fixture節・末尾を通常画面単位で目視確認。方針・具体計画承認済み、独立review 0/0/0、実装未承認、12入力、quality-gate固定projection、approved_capabilities、rejected/blocked/技術停止、P3A合成fixtureと実G10 P3B blockedの分離を表示した。HTML SHA `a4f5f868314e7b7c256a6acfe771d0dbdc045481ada5fe90edbccee7ac4a57b9`。3D成果物の見た目は未検証。
+- 2026-09-01 レビューループ懸念を受け、環境共通の再発防止は未実装と明記。レビュー出力をreview入力へ書き戻した循環を直接原因とし、入力freeze、外部receipt、凍結後write拒否、passed済みmanifestの再review拒否、入力変更時の自動再review禁止を持つ機械設計をsessionsへ保存。設計SHA `778e332f7f6d81fedc72eb0fa6b97b82b69487660d11b236f428194cf0e43b33`。本題HTMLの続行承認と、環境guardの実装承認は分離している。
 - 2026-09-01 一本化計画revision 4の最終独立レビューを固定。対象SHAは一本化計画 `04521a24...`、現行状態 `5bb60fb5...`、具体計画 `cee7c93b...`、結果はCritical 0 / Major 0 / Minor 0。レビュー受領書SHAは `83ecf286...`。計画本文・現行状態・具体計画はレビュー後に編集していない。これは実装承認や原作一致の証拠ではない。
 
 - 2026-09-01 HTML revision 3を1280px/390pxで表示検証。本文6,677文字、h2 13個、重複ID 0件、文書全体の横はみ出し0px、狭幅の表は表内横スクロール、ブラウザーerror/warning 0件。整理後current、旧版拒否、f154対G10/S6/S8の第1契約停止点を表示し、方針承認と具体計画未承認を区別。3D成果物の見た目は未検証。
