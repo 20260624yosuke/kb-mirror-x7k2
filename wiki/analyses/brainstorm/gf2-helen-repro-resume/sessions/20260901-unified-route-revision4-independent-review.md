@@ -35,3 +35,17 @@ review_actor_id: /root/unified_rev4_independent_review
 ## 再レビュー状態
 
 上記修正を一本化revision 4と承認済み具体計画へ反映後、新SHAを同じ独立review actorへ渡して再レビューする。major finding 0件になるまで合格へ変えない。
+
+### 2回目の中間結果
+
+- 対象SHA: `31749d38faff573b86ed4ff5b30324701c9119af2034834a97386d5b66acaabc`
+- 1回目のMajor 5 / Minor 1は解消確認。
+- 新規Major 1: `current_state_inputs` を保存するquality-gate自身をfull SHA memberにすると自己参照で安定値を作れない。
+- 修正: quality-gate memberは `/execution_audit/current_state_inputs` を除外した固定canonical projection SHA。set SHAは自分自身を除くinput_id順membersだけをhash。2回生成同値・自己欄改変・非自己欄改変・除外pointer変更の試験を追加。
+
+### 3回目の結果
+
+- 対象一本化revision 4 SHA: `0254be0ce640e12fc419231720060cdb30dd42af2f1114cfcb81702e738aa7eb`
+- 対象具体計画 SHA: `cee7c93ba0233d9cb6bdf035b1abfe9f1687f5d2184ec43ac3d5d4993fd3ab3f`
+- 結果: Critical 0 / Major 0 / Minor 0。自己参照Majorを解消し、既存監査rev4との衝突なし。
+- ただし結果をcurrentへ反映するとcurrent SHAが変わるため、変更後current `5bb60f…` を読む最終再reviewを別に行い、その結果を最終receiptとする。

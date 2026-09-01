@@ -84,7 +84,7 @@ H0167は変種切替の検査入力に限る。他14アクション・他衣装�
 
 | 入力 | 現行SHA-256 |
 |---|---|
-| `gf2-helen-repro-v51-current.md` | `fd4cf11b97baaea3f955fe1ad778f508979ba8defc02fc67f89933a0f32532e1` |
+| `gf2-helen-repro-v51-current.md` | `5bb60fb5fab92d7fa8c8d310b4318f6121ef67df8aadca9b932d7b61f56ad87e` |
 | `gf2-helen-cleanup-task-entry.md` | `6a390e6d1ddf87f702550a4e4dbaa236813f714336ea45dd6765c1e1acec6d3a` |
 | 本計画revision 3（改訂前） | `e1af011174cc63f37c1a85ed9db179414f6f761bfdfe8f6968f13a0dc36543c8` |
 | 監査計画revision 4 | `c690d7be9986eca7f24930ffdeb45255a0f7e3b596fb0264879a2bab9b9fa7d5` |
@@ -100,6 +100,7 @@ H0167は変種切替の検査入力に限る。他14アクション・他衣装�
 開始直前に再測定し、差があれば自動追従せずdrift reportを作り、計画再照合と明示promoteまで停止する。
 以前の `20260901-current-state-evidence.json` は現行run-state・rev4・rev3 SHAと不一致のため、過去スナップショットとしてだけ使う。
 本revision 4のreview中にcurrentのLLM区画を実際の計画段階へ更新し、SHAが `919843…` から `fd4cf1…` へ変化した。自動追従せず、`20260901-unified-rev4-current-drift-reconcile.md` に差分・権限・非変更対象を記録して明示再基準化した。
+3回目reviewの0/0/0結果をcurrentへ反映した際も `fd4cf1…` から `5bb60f…` へ変化したため、同じdrift記録へ追記し、変更後currentを対象に最終再reviewする。
 
 現物の意味:
 - 現行Blend SHA:
@@ -185,6 +186,10 @@ stateとlegacy現在欄を別々に手書きする操作は禁止する。
 current、cleanup、run-state、監査計画、本計画、quality-gate、Blend、P0の `writers.json` / `evidence-index.json` /
 `review-findings.json` / `bootstrap-status.json` を**別々のmember**として列挙する。独立review完了後はreview receiptもmemberへ追加し、
 実行入力は合計12memberとする。`P0 bootstrap`のような一語への圧縮、member欠落、余分なmember、重複IDを拒否する。
+quality-gate memberだけは配列自身との自己参照を避けるため、full file SHAではなく
+`hash_mode=json-canonical-projection`、`excluded_json_pointers=["/execution_audit/current_state_inputs"]` を固定し、
+そのpointerを除いたJSONをUTF-8・キー辞書順・余分な空白なし・数値/文字列を原値維持で正規化したbytesのSHA-256を使う。
+除外pointerの追加・変更は禁止する。`set_sha256` は `set_sha256` 自身を除き、membersをinput_id順に並べたcanonical bytesだけをhashする。
 `audit/evidence-index.json` に取得時刻、取得コマンド、size、mtime、SHA、読んだJSON pointer／行位置を持たせる。
 `begin_operation`、`finish_operation`、正式登録、plan/batch/completeのたびに実ファイルを再SHA化する。
 不一致・欠損・別パス・読取不能なら許可証またはwriter tokenを出さず `EA_KB_SNAPSHOT_STALE`。
@@ -420,6 +425,8 @@ IDを返すだけでは合格ではない。正常対照PASS、単一変異の�
 current_state_inputsは12memberの正常集合に対し、各memberのSHA変更、1件欠落、1件余分、ID重複、P0の4件を1件へ圧縮、
 review receipt欠落を個別に拒否する。approved_capabilitiesは正常な最小guard機能がPASSし、未登録のダミーCLI・schema項目・
 hook分岐・actionを1件ずつ追加すると `EA_OPERATION_UNAUTHORIZED`、復元後PASSを要求する。
+quality-gate projectionは同じ入力から2回生成して同値、`current_state_inputs` 自己欄だけの改変は集合/schema検査で拒否、
+除外外のmanifest欄改変はprojection SHA不一致、除外pointer追加はschema拒否になることを単一変異で確かめる。
 
 stateの肯定経路を別々に試験する: (a) search全範囲no-hit→`rejected(entered_from=search_scoped)`→新契約・新keyで再開、
 (b) 原作入力欠損→`blocked`→回収SHAでentered_fromへ復帰、(c) registry/hook障害→state不変の技術的停止→機構復旧後再試行、

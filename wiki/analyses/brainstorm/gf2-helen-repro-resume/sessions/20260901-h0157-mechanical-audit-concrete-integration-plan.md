@@ -75,7 +75,7 @@ P0 bootstrapの現物は `gf2-helen-starlit-waltz/.audit-bootstrap-20260830/`。
 
 追加ファイルは作らない。既存予定の次だけを使う。
 
-- `quality-gate.json.execution_audit`: `current_state_inputs` を `member_count / members[] / set_sha256` とし、current、cleanup、run-state、監査計画、一本化計画、quality-gate、Blend、P0の4ファイル、独立review receiptの合計12memberを絶対パス・役割・SHAつきで個別列挙する。group名への圧縮、欠落、余分、重複を拒否する。
+- `quality-gate.json.execution_audit`: `current_state_inputs` を `member_count / members[] / set_sha256` とし、current、cleanup、run-state、監査計画、一本化計画、quality-gate、Blend、P0の4ファイル、独立review receiptの合計12memberを絶対パス・役割・SHAつきで個別列挙する。group名への圧縮、欠落、余分、重複を拒否する。quality-gate自身は自己参照を避けるため `/execution_audit/current_state_inputs` を除外した固定canonical JSONのprojection SHAを使い、除外pointer変更を禁止する。set SHAは自分自身を除くinput_id順membersだけをhashする。
 - `audit/evidence-index.json`: 同じ入力の取得時刻、取得コマンド、size、mtime、SHA、読み取ったJSON pointer/行位置を持つ。
 - `audit_guard.py`: `begin_operation`、`finish_operation`、正式登録、`plan|batch|complete` の各入口で実ファイルを再SHA化する。
 - `audit/state.json`: 承認・gap・branchの状態だけを持ち、現在位置ページやlegacy run-stateを複製しない。
@@ -129,6 +129,7 @@ Lunaへ渡せるのは、固定されたroot/format/ruleについての列挙、
 | C04 | 明示promoteに独立reviewと承認あり | 自動で新SHAへ追従 | `EA_KB_SNAPSHOT_STALE` |
 | C04b | current_state_inputsが12member完全一致 | P0 4件をgroup 1件へ圧縮 | `EA_KB_SNAPSHOT_STALE` |
 | C04c | 登録済み最小capability | 未登録CLI/schema/hook/actionを追加 | `EA_OPERATION_UNAUTHORIZED` |
+| C04d | quality-gate projectionを2回生成して同値 | 除外外のmanifest欄を変更 | `EA_KB_SNAPSHOT_STALE` |
 | C05 | 実在REQ/family/gapへ接続 | gap参照を削除 | `EA_SEARCH_SCOPE_INVALID` |
 | C06 | 分母・未読数・両対照あり | 陰性対照を削除 | `EA_SEARCH_SCOPE_INVALID` |
 | C07 | unreadableはblocked | unreadableをno-hit/rejected化 | 状態遷移拒否 |

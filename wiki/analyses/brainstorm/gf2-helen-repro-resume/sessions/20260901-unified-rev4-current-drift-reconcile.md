@@ -29,3 +29,9 @@ LLM区画の節1へ「revision 4独立review中、実装未承認、節4の実�
 
 変更は計画段階の表示だけで、H0157入力・成果物・監査bootstrapの意味は変えない。ただし拘束SHAは変わるため自動追従せず、この記録を作成した。一本化revision 4の基準SHAを変更後値へ明示更新し、更新後の計画SHAを独立reviewへ渡し直す。旧SHAのreview結果は流用しない。
 
+## 2回目のdrift: review結果の反映
+
+- 変更前current SHA: `fd4cf11b97baaea3f955fe1ad778f508979ba8defc02fc67f89933a0f32532e1`
+- 変更後current SHA: `5bb60fb5fab92d7fa8c8d310b4318f6121ef67df8aadca9b932d7b61f56ad87e`
+- 変更内容: LLM区画の「独立review中」を、実際に得た `Critical 0 / Major 0 / Minor 0` と `draft-unapproved・実装未承認` へ更新。機械区画、run-state、quality-gate、Blend、P0 bootstrapは不変。
+- 扱い: 一本化revision 4のcurrent基準SHAを明示更新し、変更後currentを直接読む最終再reviewを通す。更新前currentを読んだreviewを最終receiptへ流用しない。
