@@ -8,6 +8,8 @@ created: 2026-09-01
 last_reviewed: 2026-09-01
 related:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-current.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-cleanup-task-entry.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md
 ---
@@ -30,8 +32,15 @@ related:
 - `EA_EFFECT_NOT_DEMONSTRATED`: 対象gapの解消または対象指標の期待方向の改善を実測できない変更、逆効果、非対象回帰、対照不一致を候補昇格から拒否。
 - `EA_REQUIREMENT_COVERAGE_MISSING`: S6/S8/G10だけを直して全身・300フレーム・色陰影・衣装・同一候補SHAの全要件を満たした扱いにすることを拒否。
 - `EA_OPERATION_UNAUTHORIZED` / `EA_EXPERIMENT_PROMOTION_DENIED`: 契約前の実装、隔離実験の正式成果物化、許可外writerを拒否。
+- `EA_KB_SNAPSHOT_STALE`: 整理後の現在位置、run-state、計画、quality-gate、Blend、P0 bootstrapの現行SHAと不一致の旧環境を拒否。基準SHAへ自動追従しない。
 
 監査は自由文の意味を正しいと推測しない。実在ID、JSON pointer、path+SHA、状態遷移、独立review receipt、対照付き効果試験だけを機械判定する。
+
+## 0. 整理後の現在位置を毎回再取得するゲート
+
+2026-09-01の別エージェント整理により、現在位置の正本は `gf2-helen-repro-v51-current.md` になり、旧run/handoff/plan-repair/conversationは履歴へ降格した。`run-state.json` には `status_corrections_2026_09_01` が追加され、古い残作業欄より優先される。以前の `20260901-current-state-evidence.json` は現行run-state/rev4/rev3 SHAと不一致なので、現在状態として再利用しない。
+
+`audit_guard.py` は、既存予定の `quality-gate.json.execution_audit` と `audit/evidence-index.json` に固定したcurrent、cleanup、run-state、rev4、rev3、quality-gate、Blend、P0 bootstrapのpath+SHAを、begin/finish/正式登録のたびに実測する。差があれば `EA_KB_SNAPSHOT_STALE` で停止し、基準を自動更新しない。別エージェントの変更は差分記録を作り、再読・独立review・明示promoteを経て初めて新基準にできる。
 
 ## 1. 探索開始ゲート
 
@@ -70,9 +79,9 @@ IDの実在、SHA、状態、重複、対照、分母はguardが検査する。�
 
 「Helenに有効」と機械が意味理解で採点するのではない。現行の未解決gapを直接閉じるか、H0157の対象指標を事前に決めた方向へ実測で動かした場合だけ、正式成果物への昇格を許す。
 
-## 4. G10の正常経路
+## 4. G10の正常fixture（第1実探索の自動指定ではない）
 
-最初の探索契約は新機能追加ではなく、既存missing inputの回収可否を調べる。
+G10は監査がH0157へ正しく拘束できることを確かめる正常fixtureにする。整理後の現在位置は、LLM単独で実行可能な残りとして未解析コンテナの展開（f154候補）を1件記録し、G10はrenderer→material対応不足でblockedとしている。したがって、第1実探索は旧順序から自動継承せず、f154とG10/S6/S8 gapの因果接続を比較した別契約・別承認で決める。
 
 - requirement: REQ2、REQ5、REQ10。
 - family: `shading`。
@@ -118,6 +127,7 @@ IDの実在、SHA、状態、重複、対照、分母はguardが検査する。�
 - /Users/takedayousuke/.claude/plans/mellow-questing-elephant-v5.1.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md
-- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-current-state-evidence.json
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-current.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-cleanup-task-entry.md
+- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-current-state-evidence.json（過去スナップショット。現行状態には使わない）
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json
-
