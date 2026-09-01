@@ -10792,3 +10792,22 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   同フォルダへ `design-system/` を複製 / `wiki/analyses/brainstorm/project-hub-index/_index.md` /
   `index.md` / `log.md`
 
+## [2026-09-01] build | 共通の最小欄（common）を4案件の記録ファイルへ追加（案A・カード承認済み）
+
+本題ハブの2番目の関所。武田さんのカード承認「案A：common に『どの欄を見るか』を書く」に基づく実施。
+
+- 承認用の説明: `wiki/_attachments/project-hub-index/20260901-common-fields-proposal.html`（新規・`/html`）。
+  4案件の記録ファイルを実測（欄数 68 / 15 / 22 / ファイル無し）し、16マス中7マスが欠けていることを図示。
+- 実施: 3案件へ `common` を追加、水着化へ `run-state.json` を新規作成（受け皿のみ）。
+  `common` は値のコピーではなく **`ref`（どの既存キーを読むか）** を持つ形。既存の欄は1つも変更していない。
+- 安全策: 4件とも本日は書き込みが無いことを実測してから着手。複製を scratchpad へ保存。
+  書き込み後に読み直し、**common を除いた本文が JSON として元と完全一致**することを3件とも確認。
+- 実演: 共通の欄だけで4案件が同じ書き方で読めることを確認した（完成条件②の最小の形）。
+- **正直な限界**: `blocked` は helen 以外の3件が未設定（推測で埋めていない）。水着化は中身が無い。
+  `current_step` の値の粒度は案件ごとにばらばらのまま。
+- 触ったファイル: `06_repro-v51/run-state.json` / `07_futa-helen/run-state.json` /
+  `gf2-char-extract/run-state.json`（3件とも common 追加のみ）/
+  `output/gf2-helen-swimsuit/run-state.json`(新規) /
+  `wiki/_attachments/project-hub-index/20260901-common-fields-proposal.html`(新規) /
+  `wiki/analyses/brainstorm/project-hub-index/_index.md` / `log.md`
+
