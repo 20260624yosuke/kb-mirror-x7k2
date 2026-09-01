@@ -319,10 +319,12 @@ experiment ID、親Blend SHA、入力・変更SHA、枝、専用出力先を固�
   `EA_KB_SNAPSHOT_STALE` で停止し、drift reportを作る。旧4枚を現在正本へ戻さない。新stateやguardの存在をU0開始条件にしない。
 - **U1 監査接続**: U0後の同一性を開始条件にrev4 bootstrapを実行。
   単一state、登録操作、役割台帳、実イベント接続、非破壊マージ、復元、writer54本の独立分類を試す。
+  approved_capabilitiesに登録された最小機能だけを作り、未登録CLI・schema項目・hook分岐を拒否する。
   設定実パス・model ID配分表の承認が不足なら、その導入の前で停止する。
 - **U2 第1探索候補の比較**: 最新currentが示す未解析コンテナ展開（f154候補）とG10/S6/S8 gapについて、
-  入力実在、解禁する判断、既存重複、H0157への因果候補を読み取りだけで比較する。G10は正常fixtureであり、
-  旧順序から第1実探索へ自動昇格させない。f166の修理・全量走査も、選ばれた契約が必要とする場合だけ対象にする。
+  入力実在、解禁する判断、既存重複、H0157への因果候補を読み取りだけで比較する。正常対照にはrev4 P3Aの
+  G10型・隔離合成fixtureを使い、実G10 P3Bは参照鎖回収までblockedのまま肯定経路へ数えない。
+  旧順序から実G10を第1探索へ自動昇格させない。f166の修理・全量走査も、選ばれた契約が必要とする場合だけ対象にする。
 - **U3 探索設計**: ハイエンドがKBと原典から第1 `search-contract` 1件を作り、別役割が直接照合。
   requirement/family/gap拘束、分母、両対照、duplicate key、rejected/blocked閉鎖を固定し、ユーザーの別承認を待つ。
 - **U4 抽出整理**: 承認された1契約の登録形式だけを機械抽出しLuna/Sonnet級が候補整理。
@@ -338,6 +340,8 @@ experiment ID、親Blend SHA、入力・変更SHA、枝、専用出力先を固�
 
 監査から抽出へ戻るためだけの確認は繰り返さない。一方、候補の変更内容が未確定な時点で
 Blend変更・見た目の許容まで一括承認したとは記録しない。
+本計画の実行承認はU0・U1・U2とU3の契約設計／独立reviewまで。第1search-contractの明示承認後にU4・U5、
+change-contractの明示承認後にU6へ進む。U7の人間受入は候補・対象群・入力条件・比較項目に限定した別判断である。
 上記以外でも新しい構造、対象変更、GUI、外部連携、強制DL、attach、不可逆操作は承認を求める。
 
 ## U7の正式受入登録
@@ -394,7 +398,7 @@ completeは全ての導出条件と共有品質ゲートが同じ世代・同じ
 
 | ID | 必ず検出する欠陥 |
 |---|---|
-| EA_OPERATION_UNAUTHORIZED | begin無し結果、別action、期限切れ・再使用・依存read-set変更の許可証 |
+| EA_OPERATION_UNAUTHORIZED | begin無し結果、別action、期限切れ・再使用・依存read-set変更、approved_capabilitiesに無いCLI・schema項目・hook分岐・action |
 | EA_HOOK_UNOBSERVED | 実ツール／Stop接続未観測、包まれた呼出しの未捕捉、hook異常 |
 | EA_PHASE_DERIVATION_MISMATCH | 全体phase手書き、G10 blockedを別欠陥の進捗で隠す、legacy履歴と現行の混同 |
 | EA_REQUIREMENT_COVERAGE_MISSING | 3欠陥acceptedだけで4 family・全要件未完を素通し |
@@ -413,6 +417,13 @@ IDを返すだけでは合格ではない。正常対照PASS、単一変異の�
 旧版拒否は少なくとも、(1) currentを1バイト変更、(2) 旧handoffを正本指定、(3) begin後にrun-state変更、
 (4) review無しで基準SHAを自動更新、を1件ずつ変異させる。探索閉鎖は、unreadableをno-hit/rejectedへ誤分類する変異を
 `blocked`維持で拒否する。効果試験は変更を無効化して差0にする変異を `EA_EFFECT_NOT_DEMONSTRATED` で拒否する。
+current_state_inputsは12memberの正常集合に対し、各memberのSHA変更、1件欠落、1件余分、ID重複、P0の4件を1件へ圧縮、
+review receipt欠落を個別に拒否する。approved_capabilitiesは正常な最小guard機能がPASSし、未登録のダミーCLI・schema項目・
+hook分岐・actionを1件ずつ追加すると `EA_OPERATION_UNAUTHORIZED`、復元後PASSを要求する。
+
+stateの肯定経路を別々に試験する: (a) search全範囲no-hit→`rejected(entered_from=search_scoped)`→新契約・新keyで再開、
+(b) 原作入力欠損→`blocked`→回収SHAでentered_fromへ復帰、(c) registry/hook障害→state不変の技術的停止→機構復旧後再試行、
+(d) P3A合成fixtureはPASSするが実G10 P3Bのblockedを肯定経路・completeへ数えない。
 
 ## 完成・未完成と保証の限界
 
@@ -438,7 +449,8 @@ IDを返すだけでは合格ではない。正常対照PASS、単一変異の�
    欠陥別状態と共有準備から現在地を導出するため、一覧の見え方は複数状態併記になる。
    自由な一語への集約は戻さない。
 5. **G10を第1実探索として自動開始する順序**と、**f166全量修理を無条件に先行する順序**は採用しない。
-   手元ではG10が正常fixtureとして残り、最初の実探索はf154とG10/S6/S8の比較後に別承認となる。
+   手元ではrev4 P3AのG10型・隔離合成fixtureを正常対照に使い、実G10 P3Bはblockedのまま分離する。
+   最初の実探索はf154とG10/S6/S8の比較後に別承認となる。
    すぐ探索を始める速さを失うが、整理後currentが示す候補を無視した旧順序と、H0157に効かない全量作業を防ぐ。
 成果物の部品や原作入力自体は今回削除していない。Blendの見た目は変更なし。
 
@@ -454,6 +466,7 @@ KB-root:
 - 整理後current: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-current.md
 - 整理タスク結果: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-cleanup-task-entry.md
 - 承認済み具体計画: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md
+- revision 4独立レビュー: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-route-revision4-independent-review.md
 - 監査rev4: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md
 - 技術9.6: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md
 - 実行記録: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-run.md
@@ -469,6 +482,7 @@ KB-root:
 
 - revision 3の独立再レビューは未解消Critical/Majorなしだったが、対象SHAと仕様が本revision 4で変わったため流用しない。
   revision 4の新SHAを固定し、整理後current・実ファイルを直接読む独立reviewを新規実施する。
+- 1回目reviewはSHA `62c309…` にCritical 0 / Major 5 / Minor 1。approved_capabilities、P3A/P3B分離、承認境界、state復帰、12member拘束、S8 familyを修正し、再review中。
 - モデル実ID配分表、hook設定差分、第1search-contract、U5以後の具体変更契約は未承認。
 - 実機のhook到達性、作業遮断、Blender見た目は未試験。
 - 現行旧計画の承認境界は、本計画が実行承認されるまで維持する。

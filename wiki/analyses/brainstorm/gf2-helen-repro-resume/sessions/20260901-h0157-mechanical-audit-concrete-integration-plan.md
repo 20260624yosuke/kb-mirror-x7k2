@@ -21,8 +21,8 @@ parent: ../_index.md
 
 1. **正解の所在**: 原作bundle・原作動画/2Dアート・H0157実データ。承認と優先順位は武田さんの明示発言。現在位置の入口は `gf2-helen-repro-v51-current.md`、実測状態は実ファイルと `run-state.json`。
 2. **欠けうる入力**: 原作照明、階調表、衣装材質、renderer→material対応、D2アルファ髪、post grade。欠損時は忠実再現を `blocked` とし、推定で埋めない。
-3. **性質の違う対象群**: shading（G10/S6）、geometry/completeness（S8を含む）、motion、variant/dress。H0157の受入れを他14アクションへ流用しない。
-4. **代表例**: 実装を始める場合もH0157一件だけ。G10は監査の正常経路fixture（試験用の正常例）であり、最初の実探索を自動決定しない。
+3. **性質の違う対象群**: shading（G10/S6）、mesh-static、motion、variant/dress。S8はD2アルファ髪の欠けがメッシュ構成と材質/透明処理の両方に関わり得るため、契約時の直接証拠で単数または複数familyを決める。H0157の受入れを他14アクションへ流用しない。
+4. **代表例**: 実装を始める場合もH0157一件だけ。正常対照は実G10ではなく監査rev4 P3AのG10型・隔離合成fixture。実G10 P3Bは参照鎖回収までblockedであり、最初の実探索や肯定経路を自動決定しない。
 5. **原作比較方法**: 入力・候補Blend・比較画像のSHAを固定し、原作資料と直接比較する。内部数値PASSを原作一致へ言い換えない。
 6. **停止条件**: 現行正本のSHA変化、入力欠損、未承認の範囲拡張、H0157 gapへの拘束欠落、効果未実証、回帰、別branch、独立review欠落のいずれかで停止。
 
@@ -75,10 +75,11 @@ P0 bootstrapの現物は `gf2-helen-starlit-waltz/.audit-bootstrap-20260830/`。
 
 追加ファイルは作らない。既存予定の次だけを使う。
 
-- `quality-gate.json.execution_audit`: `current_state_inputs` として上記7入力の絶対パス・SHA・役割を持つ。
+- `quality-gate.json.execution_audit`: `current_state_inputs` を `member_count / members[] / set_sha256` とし、current、cleanup、run-state、監査計画、一本化計画、quality-gate、Blend、P0の4ファイル、独立review receiptの合計12memberを絶対パス・役割・SHAつきで個別列挙する。group名への圧縮、欠落、余分、重複を拒否する。
 - `audit/evidence-index.json`: 同じ入力の取得時刻、取得コマンド、size、mtime、SHA、読み取ったJSON pointer/行位置を持つ。
 - `audit_guard.py`: `begin_operation`、`finish_operation`、正式登録、`plan|batch|complete` の各入口で実ファイルを再SHA化する。
 - `audit/state.json`: 承認・gap・branchの状態だけを持ち、現在位置ページやlegacy run-stateを複製しない。
+- rev4予定の外部登録簿: `approved_capabilities[]` に各action・CLI・schema項目・hook分岐をH0157要件または監査rev4節と正常/変異試験へ拘束する。未登録機能は既存 `EA_OPERATION_UNAUTHORIZED`。
 
 ### B. 旧版環境を使わせない機械関所
 
@@ -99,7 +100,7 @@ P0 bootstrapの現物は `gf2-helen-starlit-waltz/.audit-bootstrap-20260830/`。
 - `duplicate_key = defect/gap + claim + input SHA + search-rule SHA`
 - 独立review receipt
 
-不足・閉鎖済み重複・無断範囲拡張は既存 `EA_SEARCH_SCOPE_INVALID`。範囲内全件no-hitは `rejected`、入力欠損・展開失敗は `blocked` とし、新しいstate語を作らない。
+不足・閉鎖済み重複・無断範囲拡張は既存 `EA_SEARCH_SCOPE_INVALID`。範囲内全件no-hitは `rejected(entered_from=search_scoped)` とし、新契約・新duplicate key・独立reviewでだけ再開する。原作入力欠損・対象コンテナ展開不能は `blocked` とし、回収SHAでentered_fromへ戻す。registry/hook/schema/証拠登録器の障害はstateを動かさず技術的停止にする。
 
 ### D. 効果のない機能を候補へ上げない
 
@@ -107,7 +108,7 @@ P0 bootstrapの現物は `gf2-helen-starlit-waltz/.audit-bootstrap-20260830/`。
 
 ### E. 最初の実探索を旧案から自動継承しない
 
-- G10は監査fixtureとして残す。
+- rev4 P3AのG10型・隔離合成fixtureを正常対照として残す。実G10 P3Bはblockedのまま分離する。
 - 実際の第1 `search-contract` は、最新currentが示すf154未解析コンテナとG10/S6/S8 gapの因果接続を、入力実在・解禁判断・重複状態で比較してから1件に決める。
 - この比較は計画作成であり、コンテナ展開・コード探索・Blend変更を実行しない。
 - 選択した第1契約は別の承認対象にする。
@@ -126,6 +127,8 @@ Lunaへ渡せるのは、固定されたroot/format/ruleについての列挙、
 | C02 | 整理後の降格バナーとstatus correctionを読む | 旧handoffを正本指定 | `EA_KB_SNAPSHOT_STALE` |
 | C03 | begin時とfinish時のread-set一致 | begin後にrun-state変更 | 採用拒否、drift記録 |
 | C04 | 明示promoteに独立reviewと承認あり | 自動で新SHAへ追従 | `EA_KB_SNAPSHOT_STALE` |
+| C04b | current_state_inputsが12member完全一致 | P0 4件をgroup 1件へ圧縮 | `EA_KB_SNAPSHOT_STALE` |
+| C04c | 登録済み最小capability | 未登録CLI/schema/hook/actionを追加 | `EA_OPERATION_UNAUTHORIZED` |
 | C05 | 実在REQ/family/gapへ接続 | gap参照を削除 | `EA_SEARCH_SCOPE_INVALID` |
 | C06 | 分母・未読数・両対照あり | 陰性対照を削除 | `EA_SEARCH_SCOPE_INVALID` |
 | C07 | unreadableはblocked | unreadableをno-hit/rejected化 | 状態遷移拒否 |
@@ -133,6 +136,7 @@ Lunaへ渡せるのは、固定されたroot/format/ruleについての列挙、
 | C09 | 同一branch・入出力SHA | finish後に候補SHA変更 | `EA_ARTIFACT_LINEAGE_BROKEN` |
 
 各試験は正常PASS→単一変異の所期FAIL→復元後PASSを同じfixtureで記録する。unit testの成功を実hook接続・Blender実機・原作一致へ読み替えない。
+別の肯定経路として、no-hit rejectedから新契約で再開、blockedから回収SHAで復帰、技術的停止からstate不変で機構復旧、P3A合成fixture PASSと実G10 P3B blocked分離を試験する。
 
 ## 計画改訂の順序（実装ではない）
 
@@ -141,7 +145,7 @@ Lunaへ渡せるのは、固定されたroot/format/ruleについての列挙、
 3. U0/U1へ `current_state_inputs` と二重SHA照合（begin/finish）を追記。
 4. U3のsearch契約へH0157拘束・重複拒否・rejected/blocked正規化を追記。
 5. U4/U5のchange/effect契約へ候補昇格拒否を追記。
-6. G10を「最初の実探索」から「正常fixture」へ修正し、f154対G10/S6/S8の第1契約比較を計画上の停止点へ置く。
+6. 実G10を「最初の実探索」から外し、P3AのG10型・隔離合成fixtureだけを正常対照とする。f154対G10/S6/S8の第1契約比較を計画上の停止点へ置く。
 7. 上記C01〜C09の否定試験と、Lunaの許可/禁止範囲を追記。
 8. 改訂後の計画を、正本・実ファイルを直接読む別actorが監査する。major finding 0件になるまで実行承認へ出さない。
 
