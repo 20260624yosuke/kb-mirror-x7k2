@@ -101,6 +101,18 @@ HTML revision 4の後半更新を停止し、先にレビュー反復の終端�
 
 ## 決まったこと
 
+### 2026-09-01 一本化計画revision 4を計画として承認
+
+承認カードの選択は「一本化計画を承認 (Recommended)」、確認は「はい、この選択でよい」。対象はSHA `04521a242adfb896980e0a0bd7fab2c61960bff4a528c1ce07b1b4bd3447333a` の一本化revision 4。許された次状態はmodel実ID・hook設定差分・U0〜U3実装範囲を示す実装承認資料の作成まで。schema、guard、hook、quality-gate、f154、G10/S6/S8探索、Helen、f166、Blend、U0〜U3実行は未承認。承認結果をreview入力へ書き戻さず、別受領書で固定する。
+
+### 2026-09-01 環境整備を別エージェントへ分離しH0157を優先
+
+> 環境整備は、別のエージェントにさせます。コンテキストが汚れるので。
+> 本題のこのプロジェクトがプライオリティ高い。
+> 別エージェントが今回の環境不備に関してコンテキストが伝わるように、wikiを整備して
+
+確認回答は「はい、この選択でよい」。このH0157会話ではreview-loop guardを実装せず、別エージェント用の正本入口 `wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md` を作る。H0157のplan/current/具体計画/receiptを固定し、環境修理の調査・実装ログを本題へ持ち込まない。環境修理の実装方式と変更範囲は未承認で、入口作成だけを完了状態とする。
+
 ### 2026-09-01 一本化計画revision 4の本文改訂と独立レビューを完了
 
 承認済みの具体計画の範囲で、一本化計画をrevision 4へ改訂した。独立レビューは最終対象でCritical 0 / Major 0 / Minor 0。レビュー対象は一本化revision 4 SHA `04521a242adfb896980e0a0bd7fab2c61960bff4a528c1ce07b1b4bd3447333a`、現行状態 SHA `5bb60fb5fab92d7fa8c8d310b4318f6121ef67df8aadca9b932d7b61f56ad87e`、具体計画 SHA `cee7c93ba0233d9cb6bdf035b1abfe9f1687f5d2184ec43ac3d5d4993fd3ab3f`。レビュー受領書 SHA は `83ecf2868e835bd3cd6466d19c42be58a3ad85533a0f4a4bff4d58f03a41b7ea`。これは計画上の重大指摘が残っていない証拠であり、一本化計画の実装承認、監査導入、H0157原作一致、Blend完成の証拠ではない。
@@ -136,7 +148,7 @@ HTML revision 4の後半更新を停止し、先にレビュー反復の終端�
 ## まだ決まってないこと
 
 - 一本化計画revision 4を計画として受け入れるか。受入れ後も、実装開始は別承認。
-- レビューループ機械防止をどの既存guardへ統合し、環境共通のwrite拒否・循環検出・自動再review禁止として実装するか。設計案は作成済みだが未承認・未実装。
+- 別タスク [[codex-brainstorm-review-loop-prevention-task-entry]] で、review-loop guardの実装方式と変更範囲を承認するか。本H0157会話の未決事項には混ぜない。
 - 実装に使う具体model ID、フック設定差分、U0〜U3の実装範囲と停止条件。
 - 最初の正式search-contractをどのH0157 gapへ結び、family・検索鍵・反証条件をどう固定するか。G10形状の合成fixtureは正常系検査専用で、実在G10は入力回収までblockedのまま。
 - 一本化計画revision 4の実行承認。
@@ -152,6 +164,7 @@ HTML revision 4の後半更新を停止し、先にレビュー反復の終端�
 
 ## 直した記録
 
+- 2026-09-01 環境修理を別エージェントへ渡すWiki正本 `wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md` を新規作成し、index・log・本親からリンク。直接原因、実接続3ファイルのSHA、固定Helen4ファイルのSHA、未承認の最小案、RL1〜RL7、停止条件、非対象、完了証拠を1枚に固定。ページSHA `d3c611bcfab551e85a75ebc3dd5f63220915d928924cfe2299f48683bc798fbd`。Codex環境コードとHelen固定4ファイルは前後SHA不変。
 - 2026-09-01 HTML revision 4を完成し、1280px/390pxで表示検証。本文7,911文字、h2 14個、目次13件、切れた目次0件、重複ID 0件、文書全体の横はみ出し0px、ブラウザーerror/warning 0件。390pxでは幅広表3件だけを表内横スクロールとし、上部・P3A合成fixture節・末尾を通常画面単位で目視確認。方針・具体計画承認済み、独立review 0/0/0、実装未承認、12入力、quality-gate固定projection、approved_capabilities、rejected/blocked/技術停止、P3A合成fixtureと実G10 P3B blockedの分離を表示した。HTML SHA `a4f5f868314e7b7c256a6acfe771d0dbdc045481ada5fe90edbccee7ac4a57b9`。3D成果物の見た目は未検証。
 - 2026-09-01 レビューループ懸念を受け、環境共通の再発防止は未実装と明記。レビュー出力をreview入力へ書き戻した循環を直接原因とし、入力freeze、外部receipt、凍結後write拒否、passed済みmanifestの再review拒否、入力変更時の自動再review禁止を持つ機械設計をsessionsへ保存。具体化後の設計SHA `60a50e2a6416ca125b911e4f5019a8e6589cd7c007ab8b0960fa739255ba869f`。本題HTMLの続行承認と、環境guardの実装承認は分離している。
 - 2026-09-01 レビューループ防止の実装先を実ファイルから特定。Codexの実接続先は `.codex/skills/brainstorm/scripts/codex_adapter.py` のPreToolUse、既存試験は `tests/test_adapter.py`。親のsessionsに永続review-lockを置き、lock対象だけのapply_patch・shell迂回・合格後再reviewを拒否し、lock外の親メモ・HTMLは許可する最小差分へ具体化。Claude側への展開は今回含めない。まだ未承認・未実装。
@@ -196,10 +209,14 @@ HTML revision 4の後半更新を停止し、先にレビュー反復の終端�
 12. 一本化revision 4 review前のcurrent drift再照合: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-rev4-current-drift-reconcile.md
 13. 一本化計画revision 4独立レビュー: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-route-revision4-independent-review.md
 14. レビューループ機械防止設計: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-review-loop-mechanical-prevention-design.md
+15. 別エージェント用の環境修理タスク入口: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md
+16. 一本化revision 4計画承認受領書: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-route-revision4-plan-approval-receipt.md
 
 ## 実装への申し送り
 
 Helenについて今回新たな実行承認はない。今回の例外はbrainstormの当該故障修理だけ。過去の監査rev4承認の範囲は元文書と旧親の実行承認記録を読む。一本化rev3の未承認差分を適用しない。
+
+レビューループ防止の環境整備は別エージェントへ分離する。入口は `wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md`。このH0157会話では環境コードを変更せず、環境修理の結果をHelen完成の証拠にしない。
 
 最終成果物は現行Blendの単なる存在ではなく、原要件に対応するH0157全身・動き・色や陰影の検証と許容判断が揃うこと。S6/S8/G10は直近の修復対象であって全要件ではない。
 

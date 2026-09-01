@@ -10858,4 +10858,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   **既存の欄はいずれも不変を毎回確認**。
 - 触ったファイル: 上記3枚 + 入口1枚（新規）/ `tools/current_state.py` /
   4案件の `run-state.json`（`common` のみ）/ `index.md` / `wiki/analyses/brainstorm/project-hub-index/_index.md` / `log.md`
+## [2026-09-01] build | Codex brainstormレビューループ防止を別エージェントへ渡す入口を作成
+
+- ユーザー判断: 環境整備はH0157本題の会話で実装せず別エージェントへ分離し、H0157を優先する。注意だけの再発防止は不承認。
+- 新規: `wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md`。レビュー出力をreview入力へ書き戻した循環を直接原因として記録し、Codex実接続adapter・hook・既存試験・固定Helen SHA・未承認の最小review-lock案・RL1〜RL7・停止条件・完了報告を実パスでまとめた。
+- 更新: `index.md` と `wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md` から到達可能にした。
+- 未実施: `codex_adapter.py`、`test_adapter.py`、`hooks.json`、Claude側、Helenのplan/current/Blend/f166/quality-gateは変更していない。環境実装方式と変更範囲は別承認。
 
