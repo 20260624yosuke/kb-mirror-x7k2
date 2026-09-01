@@ -10828,3 +10828,19 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   4案件の `run-state.json`（`common` のみ・既存欄は不変）/
   `wiki/analyses/brainstorm/project-hub-index/_index.md` / `log.md`
 
+## [2026-09-01] build | helen 現在位置ページの不足6件を補い、1枚だけ渡す試験を再実施（関所3・2回目）
+
+- 補ったもの: 完成条件（GATE を全部通しても完了ではない・最終合否は工程F の目視）／工程A〜Gの意味／
+  関所13種14判定の一覧と G10 の中身／専門用語9語／08-20 の判断の中身（f72 の実装指示・寝室の照明最優先）。
+- **派生3案件の状態は機械化した**: `tools/current_state.py` が各派生の `run-state.json` の `common` を
+  読み、工程と記録時刻を節6 に自動で出す。
+- 再試験の結果: **「この1枚だけで、武田さんへ選択肢を提示できる状態になった」**。
+  候補文言・関所の合否・成果物の指紋を正本と突き合わせて全一致も確認された。
+- 再試験で見つかった抜け3件を対応: ①**GATE の外の見た目比較門 S6・S8 が不合格**である事実がページに
+  無かった（実測で確認し追記）②節1 と節5 が字面上矛盾に見えた（書き分けを明記）③派生の工程名の
+  表示が途中で切れていた（幅を拡張）。
+- 未達: 推奨まで言える状態ではない（各候補の所要時間・成功見込みが無い）。f154 と候補A〜D の関係が未記載。
+- 触ったファイル: `wiki/builds/gf2-helen-repro-v51-current.md` /
+  `wiki/_attachments/gf2-helen-repro-v51/20260901-helen-current-state.html` / `tools/current_state.py` /
+  `wiki/analyses/brainstorm/project-hub-index/_index.md` / `log.md`
+
