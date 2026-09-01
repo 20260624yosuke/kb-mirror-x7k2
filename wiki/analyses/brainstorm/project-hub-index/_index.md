@@ -963,8 +963,35 @@ minor: 逃げ道の記載漏れ3件（`bypass` 24時間・`stop_hook_active`・�
 **rev.4 で新しく書いた限界**: 逃げ道3件（`bypass` 24時間・`stop_hook_active`・環境変数）は
 計画に書かれていなかった。追記した。穴1の新定義での誤発火回数は**まだ数えていない**（実装前に数える）。
 
+## 【結果】rev.4 の独立レビュー（2026-09-01・4回目）— critical 2件、うち1件は私の計測ミス
+
+武田さんの指示で実施。子メモ: `sessions/20260901-five-guards-rev4-review.md`。
+**所見: rev.4 のまま実行の承認に進むべきではない。critical 2 / major 5 / minor 5。**
+
+**守れなかった条件を先に書く**: reasoning effort を medium に指定する手段が、
+メインエージェント側の道具に**無い**。指示文に書いたが保証は作れない。モデル（Opus 5）は指定できた。
+
+| # | 指摘 | 中身 |
+| --- | --- | --- |
+| C-1 | **私の計測ミス** | rev.4 に書いた「要素との一致は51枚中48枚が落ちる」は誤り。単語境界の部分一致で、正しいクラス `mb-figure-frame` `mb-quote-ja` を不一致として数えていた。**厳密に測り直すと11枚**（`div.mb-quote` 7 ＋ `dl.mb-glossary` 4）。しかもその11枚は穴4が本来捕まえたい欠陥そのもの。**「48枚落ちるから報告のみ」という決定は根拠を失った** |
+| C-2 | PostToolUse が存在しない | rev.4 R-7 の「カウンタ増加を PostToolUse へ移す」は、`settings.json` に PostToolUse の登録が**1つも無い**ため、必ず新規フック登録を伴う。方針「新規のフック登録は行わない」と正面から衝突。条件付きでなく確定している |
+
+major: `mb-font-mono`/`mb-accent` も CSS 変数のみでクラス定義は0件＝`mb-lead` と同種の欠陥／
+骨格検査は除外規則適用後に**恒偽**（発火する検体が現存しない）／「そのターン」の定義では
+実運用で最大185イベントに広がり恒常ブロックが残る／新ゲートは照合文字列の書き方しだいで**恒偽**
+（既存は `json.dumps` 後の文字列にしか一致しない）／穴1の `## 未確定の順序` 節は
+**LLM が書かなければ永久に発火しない**（恒真を恒偽に置き換えただけになりうる）。
+
+**問題なしと確認された点**: rev.3 N-1 の内蔵先の訂正・R-4 の前提・R-5 の dismiss・
+逃げ道3件の記述はすべて正しい。既存の自己試験は第1層〜第4層 PASS。
+
+**私の反省**: C-1 は私が rev.4 を書くために自分で走らせた計測の誤りで、
+**その誤った数字がそのまま「止める／報告のみ」の決定を左右していた**。
+数え方（部分一致か厳密一致か）を検証していなかった。
+
 ## セッションメモ（子）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/sessions/20260901-five-guards-rev4-review.md` — 5検査 計画 rev.4 の独立レビュー結果（2026-09-01・4回目）
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/sessions/20260901-five-guards-rev3-review.md` — 5検査 計画 rev.3 の再々レビュー結果（2026-09-01）
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md` — 穴3の閾値の根拠の計測（2026-08-31）
 
