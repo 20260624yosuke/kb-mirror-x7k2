@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4951 ファイル_
+_合計 4952 ファイル_
 
 ## root/ (11)
 
@@ -281,14 +281,15 @@ _合計 4951 ファイル_
 
 ## wiki/analyses/brainstorm/brainstorm-skill-portability/ (1)
 
-- [brainstorm-brainstorm-skill-portability.md](wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md) | 2026-08-31T23:59:08Z
+- [brainstorm-brainstorm-skill-portability.md](wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md) | 2026-09-01T00:06:16Z
 
-## wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/ (4)
+## wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/ (5)
 
 - [20260831-concrete-resume-audit-repair.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md) | 2026-08-31T08:00:15Z
 - [20260831-resume-audit-independent-review.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-independent-review.md) | 2026-08-31T07:04:26Z
 - [20260831-resume-audit-plan-r3-reviewed.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-resume-audit-plan-r3-reviewed.md) | 2026-08-31T07:00:49Z
-- [20260901-explicit-permission-design.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md) | 2026-08-31T23:59:32Z
+- [20260901-explicit-permission-design.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md) | 2026-09-01T00:05:39Z
+- [20260901-explicit-permission-independent-review.md](wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-independent-review.md) | 2026-09-01T00:05:39Z
 
 ## wiki/analyses/brainstorm/codex-default-mode-card-parallel-test/ (1)
 

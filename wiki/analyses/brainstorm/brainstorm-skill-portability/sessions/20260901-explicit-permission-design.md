@@ -6,9 +6,9 @@ evidence_level: source-backed+user-stated+inferred
 last_reviewed: 2026-09-01
 ---
 
-# 明示許可を承認イベントへ接続する修理方針 第1版
+# 明示許可を承認イベントへ接続する修理計画 第2版
 
-状態: 方針承認済み、詳細計画作成中。実装・実機検証は未実施。以下は修理案であり、現行機能の説明ではない。
+状態: 方針承認済み、詳細計画第2版の独立レビューPASS、実行承認待ち。実装・実機検証は未実施。以下は修理計画であり、現行機能の説明ではない。
 
 ## 2026-09-01 方針承認
 
@@ -84,21 +84,28 @@ SKILLの冒頭・承認後説明・注入文・書込み検査の条件を揃え
 
 ## 実装前に詰めること
 
-### 許可記録
+### 実行判断と許可記録
 
-新しい状態形式を別ファイルへ増やさず、既存セッション状態の `authorization` に次を保存する。
+`pending_execution` は、親・対象計画SHA・書込み契約・会話指定を実カード発行前に固定したときだけ生成する。ゼロまたは複数ならterminal文も自由記述も承認にしない。カード承認肢、カード自由記述の明示許可文、独立した明示許可文は同じpending IDへ収束し、確認「いいえ」・空・部分回答は破棄する。
+
+許可は単数のセッション値ではなく、親別の来歴付きレジストリに対象・版ごとの配列として保存する。新規許可の追加・失効で他対象を消さない。各要素は次を持つ。
 
 - `schema_version`: 1
 - `status`: `active` / `invalidated`
 - `permission_kind`: `execution`（方針承認はここへ入れない）
 - `source_kind`: `card` / `terminal_text` / `legacy_event_import`
-- `parent_path` と親パスSHA
+- `parent_path` と、`Path.resolve(strict=True)` 後にUnicode NFCへ正規化した絶対パス文字列のSHA（親内容SHAではない）。macOSの実ボリュームがcase-insensitiveなら大文字小文字を同一視し、存在する実体のinode/devも記録する
 - `decision_target_path` と内容SHA
+- `write_contract`: canonicalな許可root、既存ファイルallowlist、新規作成を許す親directory、許可操作（create/update/rename/delete）の集合
 - `implementation_agent`: `current-session` / `separate-session`
 - `session_hash`、`turn_hash`、`input_sha`、カードなら呼出しIDハッシュ
 - `accepted_at_ns`、失効時は `invalidated_reason`
 
-生のユーザー文は状態へ複製せず、既存イベントログの入力SHAと対応させる。秘密や関係ない会話を増幅しない。
+symlinkを経由する対象、root外へ解決される相対パス、未許可のrename/delete、新規親directory、書込み候補を抽出できないshellは拒否する。`decision_target_path` は判断した計画であり、`write_contract` は書いてよい正解集合として別に固定する。
+
+レジストリは親パスSHA単位のlockとgenerationを持つ。検証→一時ファイルへのfsync保存→原子的置換→再読込一致の後だけactiveにする。競合・部分保存・再読込不一致では旧配列を保持し、新許可だけ不成立にする。
+
+生のユーザー文の正本は既存の実会話ログ。状態と許可イベントには入力SHA・対象SHA・pending ID・card call ID hashだけを保存する。曖昧発話を再表示するときだけ実会話ログの当該turnから読み、親メモへ全文複製しない。
 
 ### 変更箇所
 
@@ -107,13 +114,19 @@ SKILLの冒頭・承認後説明・注入文・書込み検査の条件を揃え
 3. Codex版 `SKILL.md`: Claude版と同じ「実装先はユーザーが決める」外部仕様に揃え、方針承認と実行承認、同一会話と別会話を区別する。
 4. tests: 純粋関数、状態遷移、旧状態互換、保存失敗、再注入、書込み前照合、実イベントの代表試験を追加する。`hooks.json` とClaude側は変更しない。
 
+許可検査は `brainstorm active`、`phase=implementation`、同じsessionまたは明示handoff、同じ親まで一致した時点で必ず発火する。その内部で対象計画SHAを照合し、不一致なら当該許可だけ失効させて書込みを拒否する。未導入の別ready親や無関係な通常作業をこの新検査で止めない。
+
+別会話handoffはsource authorization ID、source session、destination session、handoff ID、親、対象SHAを原子的に記録する。destinationだけが一回限りのacceptで取得でき、accept後は使用済みにする。別sessionによる再利用、destination不一致、対象・版変更、期限前のsource失効は拒否し、元の許可配列を壊さない。
+
+許可後もbrainstormはactiveのまま `phase=implementation` へ移る。毎ターンの親追記・マーカー・checkpoint・Stop検査は維持する。カードは新しい判断、200書込み関所、完了受入、中断だけに出す。次入力・圧縮・SessionStartはレジストリを再読込して同じ対象・版・会話を再照合する。完了・明示中断・対象SHA変更・親実パス変更・handoff失敗で当該許可だけ失効し、別許可は残す。
+
 ### 旧許可の移行
 
-状態ファイルやカードイベントに有効な結び付きがあればそこから復元する。無ければ実会話ログの本人入力、対象計画SHA、同一ターンを一意に照合し、来歴付き `legacy_event_import` として一度だけ保存する。親メモの要約だけ、LLMの記憶だけ、現在の私の判断だけでは移行しない。一意に復元できない場合は許可が撤回されたとは書かず、機械移行未成立として保持する。
+状態ファイルやカードイベントに有効な結び付きがあればそこから復元する。無ければCodexが保持する実会話ログのuser入力、対象計画SHA、session/turnを候補源にし、1発話・1対象・1版が一意な場合だけ来歴付き `legacy_event_import` として保存する。import keyは入力SHA＋対象SHA＋session/turnで、再実行時に重複を拒否する。親メモの要約だけ、LLMの記憶だけ、現在の私の判断だけでは移行しない。一意に復元できない場合は `user_permission_preserved_machine_unmigrated` とし、未承認・撤回にはしない。
 
 ### 実装順と停止条件
 
-R0 現行コード・状態・イベントログ・既存試験を内容SHAで固定。R1 許可分類と否定試験。R2 authorizationの保存・失効・再読込。R3 案内と書込み検査を同じ記録へ接続。R4 旧Helen許可を読取専用で一意性監査。R5 隔離対象で許可なし拒否・許可後対象内通過・対象外拒否。R6 実フックで入力・保存・注入・試験書込みの対応を直接照合する。
+R0 現行コード・状態・イベントログ・既存試験を内容SHAで固定。R1 pending生成とterminal／カード選択／自由記述の遷移表、否定・引用・ゼロ・複数試験。R2 複数許可レジストリの原子的保存・失効・再読込・競合試験。R3 phase、案内、書込み検査を同じ記録へ接続。R4 旧Helen許可を読取専用で一意性監査。R5 canonicalな固定root・allowlistを正解集合にして、許可なし拒否・許可後対象内create/update通過・対象外・symlink・rename/delete・抽出不能shell拒否。R6 実フックで入力・保存・次入力・圧縮・SessionStart・Stop再入・試験書込み、対象SHA変更時の失効拒否、handoffの一回受領・destination不一致・再利用拒否を直接照合する。
 
 保存故障、対象SHA不一致、判断対象複数、旧許可の一意性不足、実フックと合成試験の不一致、既存未読検査の弱体化が一つでもあれば実装段階へ移さず停止する。既存Helen成果物、Claude版、hooks.json、config.tomlは変更しない。
 
@@ -147,3 +160,7 @@ Lunaへ渡した読取専用タスクは完了。コード変更・状態更新�
 ## 矛盾・未確定
 
 仕様差は実ファイルで確認した。修理案の同一会話動作、旧許可の移行、異常系はまだ未実装・未検証。現在の実装禁止という上位指示を、本書の提案で無効化したとは扱わない。
+
+## 独立レビュー
+
+gpt-5.6-sol / medium、読取専用。第1版はCritical 1 / Major 6 / Minor 2で差戻し。第2版1回目はCritical 1 / Major 1 / Minor 1。全必須修正後の再レビューはCritical 0 / Major 0で「実装前の計画として渡せる」。詳細記録: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-independent-review.md
