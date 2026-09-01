@@ -1,5 +1,7 @@
 # 明示許可修理計画 第1版 独立レビュー
 
+親メモ: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md
+
 日時: 2026-09-01
 モデル: gpt-5.6-sol
 reasoning effort: medium

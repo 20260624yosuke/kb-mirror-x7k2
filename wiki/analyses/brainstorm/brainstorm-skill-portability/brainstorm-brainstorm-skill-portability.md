@@ -4,7 +4,7 @@ status: active
 confidence: medium
 evidence_level: source-backed+user-stated+inferred
 last_reviewed: 2026-09-01
-brainstorm_status: active
+brainstorm_status: ready
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Users/takedayousuke/.claude
@@ -179,6 +179,11 @@ Write ツールでは通った。
 - 実カードで「第1版方針を承認 (Recommended)」と「はい、この選択でよい」を受領。明示許可の認識、対象・版・会話に結び付けた保存、その同じ記録による実装段階の切替を一組で直す方針を承認。
 - これは詳細計画作成へ進む方針承認。修理コードの実行承認、Helen完成、一本化第3版、Blend変更、既存監査の運用受入には拡張しない。
 
+### 2026-09-01 明示許可修理計画第2版の実行承認
+
+- gpt-5.6-sol / mediumの再レビューCritical 0 / Major 0後、実カードで「第2版を実行承認 (Recommended)」と「はい、この選択でよい」を受領。現在の計画第2版のSHAに限定した実行承認としてreadyへ上げる。
+- 実装対象はCodex版SKILL・adapter・guard・tests。Helen成果物、一本化第3版、Blend、Claude版、hooks.json、config.tomlへ拡張しない。このターンはbrainstormの計画限定が注入済みなのでコード実装は行わず、第2版R0を再開点にする。
+
 - **スキル本体は LLM ごとに独立**（2026-08-29 武田さん承認）。Claude / Codex / Kimi / opencode が
   互いのフォルダを参照しない。共通本体の一元化は行わない。
 - **指示書は条件だけを渡し、実現方法はその環境の LLM に考えさせる**（8-28 方針の踏襲・同日承認）。
@@ -331,7 +336,7 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
   ],
   "current": {
     "node": "permission_design",
-    "work": "明示許可修理計画第2版に書込み契約・複数許可・実装phase・原子的保存・handoffを固定し、独立レビューCritical 0 / Major 0を確認して、修理コードの実行承認を待つ。",
+    "work": "明示許可修理計画第2版の独立レビューCritical 0 / Major 0と実カードでの実行承認を記録し、実装開始点R0へ引き渡す。",
     "evidence": [
       {
         "path": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md",
@@ -402,16 +407,16 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
   ],
   "released": [],
   "next": {
-    "owner": "user",
-    "action": "独立レビューPASS済みの修理計画第2版を実行承認するか、修正するか、中断するかを二問の実カードで明示する。",
+    "owner": "assistant",
+    "action": "次の実装可能なターンで第2版R0を実行し、Codex版SKILL・adapter・guard・testsの現行SHA、状態、イベントログ、既存試験を固定する。",
     "target": "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md",
-    "done_when": "主質問と確認質問の両方が有効に回答され、第2版の実行承認・修正継続・中断のいずれかが現在の計画SHAへ結び付く。",
-    "availability": "needs_user"
+    "done_when": "R0証拠へ現行コード・状態・イベントログ・既存試験の内容SHAと結果が保存され、承認後に対象版が変わっていないと照合できる。",
+    "availability": "external_block"
   },
   "exit": {
-    "kind": "awaiting_user",
-    "reason": "方針承認後に詳細計画第2版と3段階の独立レビューを完了し、修理コードの実行可否だけを実カードで待つ。空回答を承認・中断へ変換しない。",
-    "unblock_when": "この実カードの主回答と確認回答が揃い、現在の計画第2版に対する判断として機械記録される。"
+    "kind": "approved_handoff",
+    "reason": "第2版は実行承認済みだが、このターンにはbrainstormの計画限定が注入されておりコード実装は許されないため、未実装のままR0へ引き渡す。",
+    "unblock_when": "同じタスクの次の実装可能なターンで、承認済み第2版と現在SHAを読み直してR0から開始する。"
   },
   "decision": {
     "card_kind": "plan",
