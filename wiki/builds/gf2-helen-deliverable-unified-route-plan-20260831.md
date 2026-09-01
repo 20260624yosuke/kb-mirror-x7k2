@@ -48,8 +48,8 @@ revision 1は独立レビューでCritical 2・Major 5・Minor 1の差し戻し�
 |---|---|
 | 正解の所在 | 原作H0157動画・フレーム、原作コード、Unity prefab / renderer / material / RampSettingと実行条件 |
 | 欠けうる入力 | H0157 scene join、Helen本人prefab、InternalLut、有効Volume、実行時髪処理、骨親情報、最終版f166 |
-| 対象群 | 修復対象S6（顔の白飛び）・S8（髪の被覆）・G10（材質対応）と、既存品質台帳の4 family（対象群）を別軸で保持 |
-| 代表例 | G10の参照鎖は監査の正常fixture。第1実探索は、現行currentが示すf154候補とG10/S6/S8 gapの因果接続を比較して別承認で決める。G10の成功を他対象へ流用しない |
+| 対象群 | 修復対象S6（顔の白飛び）・S8（髪の被覆）・G10（材質対応）と、既存品質台帳の4 family（対象群）を別軸で保持。S8のfamilyは契約時の直接証拠から単数または複数を決め、事前固定しない |
+| 代表例 | 実G10ではなく、監査rev4 P3Aの**G10型・隔離合成fixture**。実G10 P3Bは参照鎖回収までblockedで、肯定経路PASSへ数えない。第1実探索はf154候補とG10/S6/S8 gapを比較して別承認で決める |
 | 比較方法 | 場面・衣装・時刻・ポーズ・カメラ・ROI・画像処理条件を拘束し、原作／変更前／変更後を直接比較 |
 | 停止条件 | 整理後currentまたは実ファイルのSHA変化、分母不明、参照辺不足、効果未確認、衣装・比較条件不一致、既存推定の未解消、未登録操作 |
 
@@ -67,7 +67,8 @@ H0167は変種切替の検査入力に限る。他14アクション・他衣装�
 |---|---|---|
 | REQ2・REQ4、全身の形と構成 | mesh-static | 現行候補SHAで全構成・座標・ウェイト・表情を再検査し、欠けた部品・推定骨を一覧化して原作へ照合 |
 | REQ1・REQ3・REQ7・REQ8、H0157の胸を含む動き | motion-h0157 | 300フレームの入力／出力対応、全身・胸の比較、原作動画との同期、対象限定の人間判断 |
-| REQ2・REQ5・REQ10、衣装・色・陰影 | shading | G10参照鎖、S6/S8を含む比較、既存f128等の残余欠陥、未承認近似の解消または別枝承認 |
+| REQ2・REQ5・REQ10、衣装・色・陰影 | shading | G10参照鎖、S6を含む比較、既存f128等の残余欠陥、未承認近似の解消または別枝承認 |
+| S8、D2アルファ髪の被覆 | 契約時にmesh-static / shadingの一方または両方 | メッシュ欠落・材質/透明処理の直接証拠を分け、根拠なしにshading単独へ固定しない |
 | 切替規則の検査 | variant-switch-test | H0167の既知切替点による機械試験。完成アクション再現の承認ではないことを明示 |
 | REQ9と承認済み成果物指定 | 上記全family | 同一の採用候補Blend SHAと来歴。別の旧Blendへの承認を流用しない |
 
@@ -83,7 +84,7 @@ H0167は変種切替の検査入力に限る。他14アクション・他衣装�
 
 | 入力 | 現行SHA-256 |
 |---|---|
-| `gf2-helen-repro-v51-current.md` | `919843e207d8d4043ecc1f73585bb6cdc7745dc3c35b4e768500dc26fde547df` |
+| `gf2-helen-repro-v51-current.md` | `fd4cf11b97baaea3f955fe1ad778f508979ba8defc02fc67f89933a0f32532e1` |
 | `gf2-helen-cleanup-task-entry.md` | `6a390e6d1ddf87f702550a4e4dbaa236813f714336ea45dd6765c1e1acec6d3a` |
 | 本計画revision 3（改訂前） | `e1af011174cc63f37c1a85ed9db179414f6f761bfdfe8f6968f13a0dc36543c8` |
 | 監査計画revision 4 | `c690d7be9986eca7f24930ffdeb45255a0f7e3b596fb0264879a2bab9b9fa7d5` |
@@ -98,6 +99,7 @@ H0167は変種切替の検査入力に限る。他14アクション・他衣装�
 本計画自身のSHAを本文内へ埋めると自己参照で値が変わるため、revision 4の対象SHAは本文ではなく独立review receiptと外部登録簿へ固定する。上表は実行時の恒久値ではない。
 開始直前に再測定し、差があれば自動追従せずdrift reportを作り、計画再照合と明示promoteまで停止する。
 以前の `20260901-current-state-evidence.json` は現行run-state・rev4・rev3 SHAと不一致のため、過去スナップショットとしてだけ使う。
+本revision 4のreview中にcurrentのLLM区画を実際の計画段階へ更新し、SHAが `919843…` から `fd4cf1…` へ変化した。自動追従せず、`20260901-unified-rev4-current-drift-reconcile.md` に差分・権限・非変更対象を記録して明示再基準化した。
 
 現物の意味:
 - 現行Blend SHA:
@@ -120,7 +122,7 @@ H0167は変種切替の検査入力に限る。他14アクション・他衣装�
 
 | 旧規則 | 本計画で提案する扱い | 承認の境界 |
 |---|---|---|
-| rev4終了後にf166を別承認 | U1監査とU2〜U5のローカル読取・抽出・解析を同じ承認範囲で継続 | 本計画の実行承認で置換。外部取得・GUI・attachは含まない |
+| rev4終了後にf166を別承認 | 本計画の実行承認はU0・U1・U2とU3の契約設計／独立reviewまで。第1search-contractの別承認後だけU4・U5へ進む。f166はその契約に必要性・範囲・SHAが明記された場合だけ実行 | 外部取得・GUI・attachは含まない。変更契約承認後だけU6 |
 | 9.6のClaude必須・無断GPT代替禁止 | 探索設計／因果審査は登録済みハイエンド、抽出整理は登録済みLuna/Sonnet級 | 実行前にモデルID入り配分表を提示・承認。未登録モデルへ無断代替しない |
 | rev4のG10後にS6/S8順を決定 | 読取解析は独立範囲で並行可能。出力変更順はG10の参照を確認後、依存グラフ順 | 実験・出力へ反映する順と対象群は変更契約承認時に固定 |
 | 9.6のBlend変更別計画 | **因果審査後の変更範囲承認を残す**。同一ルート内の `change-contract.json` を提示 | U0〜U5承認はU6の実験／候補Blend書出し許可ではない |
@@ -147,6 +149,14 @@ artifact_candidate → artifact_measured → human_review → accepted`。
 共有inventory_verifiedに加え、各search契約の分母・未回収数が一致して初めてsearch_scopedへ進む。
 rev4のcoverage_verifiedの要件を弱めず、共有在庫＋欠陥探索範囲へ分解する。
 
+終了・復帰は `entered_from` とreasonを区別する。
+- 全範囲処理・陽性対照PASS・候補なしは `rejected`、`entered_from=search_scoped`。再開には、旧duplicate keyと異なる
+  新 `search-contract`、追加または修正规則の直接根拠、独立reviewが必要で、`search_scoped` へだけ戻れる。
+- 候補の反証による既存rev4の `rejected` は `entered_from=candidate_traced|causal_reviewed` とし、新candidate IDでだけ戻す。
+- 原作入力欠損・対象コンテナ自体の展開不能は `blocked`。回収物のpath+SHAまたは展開可能化の肯定証拠で `entered_from` へ戻す。
+- registry、hook、schema、証拠登録器の障害は欠陥stateを動かさない。`EA_REGISTRY_UNAVAILABLE`、
+  `EA_HOOK_UNOBSERVED` 等で**技術的停止**し、同じ入力で機構の正常化を確認してから再試行する。
+
 導出規則:
 1. 正本・SHA・schema衝突は全体停止。
 2. 共有準備が未完なら、その準備操作だけ許可する。
@@ -170,13 +180,24 @@ stateとlegacy現在欄を別々に手書きする操作は禁止する。
 `audit_guard.py` に `begin_operation / finish_operation / status / transition` を用意する。
 各U工程は必ず登録済みaction_idでbeginを呼び、finish前の結果は工程完了証拠として採用できない。
 
-新しいlockファイルや第二の正本は作らない。既存 `quality-gate.json.execution_audit.current_state_inputs` に
-現行current、cleanup、run-state、監査計画、本計画、quality-gate、Blend、P0 bootstrapの絶対パス・SHA・役割を持たせ、
+新しいlockファイルや第二の正本は作らない。既存 `quality-gate.json.execution_audit.current_state_inputs` は
+`schema_version / member_count / members[] / set_sha256` を持つ。各memberは `input_id / absolute_path / role / sha256` を必須とし、
+current、cleanup、run-state、監査計画、本計画、quality-gate、Blend、P0の `writers.json` / `evidence-index.json` /
+`review-findings.json` / `bootstrap-status.json` を**別々のmember**として列挙する。独立review完了後はreview receiptもmemberへ追加し、
+実行入力は合計12memberとする。`P0 bootstrap`のような一語への圧縮、member欠落、余分なmember、重複IDを拒否する。
 `audit/evidence-index.json` に取得時刻、取得コマンド、size、mtime、SHA、読んだJSON pointer／行位置を持たせる。
 `begin_operation`、`finish_operation`、正式登録、plan/batch/completeのたびに実ファイルを再SHA化する。
 不一致・欠損・別パス・読取不能なら許可証またはwriter tokenを出さず `EA_KB_SNAPSHOT_STALE`。
 作業中に別エージェントが変更した場合も採用せず、変更前後SHAと差分を隔離記録する。
 基準SHAの自動更新は禁止し、差分再読・独立review・明示promoteでだけ更新する。
+
+監査機能自身の無効機能追加も止める。rev4で予定済みの外部登録簿
+`tools/project_quality_gate_required_audits.json` に `approved_capabilities[]` を持たせ、各要素を
+`capability_id / action_ids / cli_entrypoints / schema_fields / hook_branches / requirement_or_audit_refs /
+positive_test_ids / mutation_test_ids` へ拘束する。schema項目、guard分岐、hook分岐、CLI、actionの全てが、
+H0157要件または承認済み監査rev4の節と所期変異試験へ結び付かない場合は登録できない。
+未登録capabilityのbegin、CLI、schema受入、hook分岐は既存 `EA_OPERATION_UNAUTHORIZED` で拒否する。
+新しいcapabilityを足すには、計画差分・H0157への必要性・正常/単一変異試験・外部登録簿promoteの別承認を要求する。
 
 | 登録操作 | 必要状態 | 必須出力 |
 |---|---|---|
@@ -236,7 +257,8 @@ lock下でread-set・対象状態・入力不変・役割・権限・出力を�
      否定可能範囲、追加形式へ広げる条件を固定する。
    - `duplicate_key = defect/gap + claim + input SHA集合 + search-rule SHA`。閉鎖済み同一keyは新規開始を拒否し既存記録を返す。
    - 独立review receiptが無い、実在IDへ拘束できない、無断拡張、分母・対照欠落は `EA_SEARCH_SCOPE_INVALID`。
-     全範囲処理で候補なしは `rejected`、入力欠損・展開失敗・登録不能は `blocked`。別state語を作らない。
+     全範囲処理で候補なしは上記search由来 `rejected`、原作入力欠損・対象コンテナ展開不能は `blocked`。
+     registry/hook/schema/証拠登録器の障害はstateを動かさず技術的停止。別state語を作らない。
 3. `code-corpus.json / code-candidates.json`
    - 前者は抽出結果索引。入力集合の全件に成功／失敗／対象外と理由を付け、無記録を許さない。
    - 後者は候補の原文パス・位置・SHA、入力出力、依存辺、欠損辺、defect、review参照。

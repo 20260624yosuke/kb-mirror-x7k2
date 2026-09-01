@@ -55,6 +55,10 @@ P0 bootstrapの現物は `gf2-helen-starlit-waltz/.audit-bootstrap-20260830/`。
 
 これは実行時の恒久値ではない。次の計画改訂や実装を始める直前に再取得し、差があれば本表を無言で上書きせず、drift report（何が変わったかの差分記録）を作って計画を再照合する。`20260901-current-state-evidence.json` はこの表のcurrent/run-state/rev4/rev3 SHAと一致しないため、現在状態ではなく過去スナップショットとしてだけ使う。
 
+### 承認後に実際に検出したdrift
+
+一本化revision 4のreview中、currentのLLM区画を「revision 4独立review中・実装未承認」へ合わせたため、current SHAが本表の `919843…` から `fd4cf1…` へ変化した。本表は承認時点の証拠として残し、自動上書きしない。差分・変更権限・非変更対象は `20260901-unified-rev4-current-drift-reconcile.md` へ記録し、一本化revision 4側の基準を明示更新した。これは旧版拒否が計画作成中にも作動すべき実例である。
+
 ## 正本の優先順位と衝突時の扱い
 
 1. **スコープ・承認・優先順位**: 武田さんの最新の明示発言。

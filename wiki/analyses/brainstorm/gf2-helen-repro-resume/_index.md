@@ -166,6 +166,7 @@ background_paths:
 9. コード探索形式案HTML: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260901-h0157-code-investigation-workflow.html
 10. H0157探索・変更の有効性を強制する最小機械監査案: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-search-utility-gate-design.md
 11. 整理後の現行状態を拘束する一本化rev3具体計画案: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md
+12. 一本化revision 4 review前のcurrent drift再照合: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-rev4-current-drift-reconcile.md
 
 ## 実装への申し送り
 
