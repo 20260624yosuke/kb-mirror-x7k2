@@ -919,8 +919,33 @@ guard-write	lockdown DENY tool=Bash path=/Users/takedayousuke/.claude/skills/bra
 
 → **この会話で進めるのは、計画 rev.3 の再々レビュー（正本が定めた次の工程）。**
 
+## 【結果】5検査 計画 rev.3 の再々レビュー（2026-09-01・独立レビュー3回目）
+
+計画 rev.3 が定めた工程1を実施した。子メモ:
+`sessions/20260901-five-guards-rev3-review.md`。
+
+**所見: rev.3 のまま実行の承認に進むべきではない。critical 3 / major 5 / minor 5。**
+
+| # | 指摘 | 中身 |
+| --- | --- | --- |
+| C-1 | 穴4が既存の良い版を落とす | 計画は「良い版3枚が通る」と書いたが**3枚とも落ちる**。原因は計画自身が誤りの例に挙げた `mb-lead`。私が独立に数え直し同じ数字を得た: 対象54枚中、実在しないクラス**17枚**・要素不一致11枚・骨格不足**8枚** |
+| C-2 | 穴1が毎ターン発火する | brainstorm は毎ターン引用を書き足すので、「新しい引用があれば止める」は恒常ブロックか、印を毎回付けて**恒真**（文言ルールに逆戻り）のどちらかになる。さらに scope 判定の都合で**KB 内の全並行セッションを相互ブロック**する |
+| C-3 | rev.3 の事実誤認 | `_guard_done_promotion` は**未配線ではなく配線済み**（`brainstorm_guard.py:756`）。「対象外」と書いたまま実装に渡すと生きた検査が消える |
+
+major: dismiss（カードを閉じただけ）が回答として数えられる／「成果物」の定義が既存コードと二重化／
+「brainstorm 以外に発火しない」が成立しない／「そのターン」の定義が無い／
+穴3のカウンタを PreToolUse で増やすと拒否・再試行まで数える（T=2 の母集団と違う）。
+
+minor: 逃げ道の記載漏れ3件（`bypass` 24時間・`stop_hook_active`・環境変数）ほか。
+
+**確認して問題なしとされた点**: N-1 の内蔵先の訂正は正確。CSS の正本パスと骨格の記述も正しい。
+既存の自己試験は第1層〜第4層すべて PASS（完成条件4のベースライン）。
+
+→ **次にやるべきは rev.4 の改訂（文言の追加と数え直しのみ・実装なし）。** レビュー役の最小条件5点。
+
 ## セッションメモ（子）
 
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/sessions/20260901-five-guards-rev3-review.md` — 5検査 計画 rev.3 の再々レビュー結果（2026-09-01）
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md` — 穴3の閾値の根拠の計測（2026-08-31）
 
 ## 再開の入口（実パス）

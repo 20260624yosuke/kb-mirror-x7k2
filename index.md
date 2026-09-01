@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4952 ファイル_
+_合計 4954 ファイル_
 
 ## root/ (11)
 
@@ -329,11 +329,12 @@ _合計 4952 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-helen-repro-resume/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-01T00:29:34Z
+- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-01T00:40:10Z
 
-## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (2)
+## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (3)
 
 - [20260901-brainstorm-fault-repair.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair.md) | 2026-08-31T15:51:17Z
+- [20260901-h0157-mechanical-search-utility-gate-design.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-search-utility-gate-design.md) | 2026-09-01T00:40:10Z
 - [20260901-stop-keyerror-diagnosis.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-stop-keyerror-diagnosis.md) | 2026-08-31T15:18:06Z
 
 ## wiki/analyses/brainstorm/html-skill-discovery/ (1)
@@ -350,11 +351,12 @@ _合計 4952 ファイル_
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-09-01T00:30:24Z
+- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-09-01T00:39:08Z
 
-## wiki/analyses/brainstorm/project-hub-index/sessions/ (1)
+## wiki/analyses/brainstorm/project-hub-index/sessions/ (2)
 
 - [20260831-hole3-threshold-measurement.md](wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md) | 2026-08-31T15:36:30Z
+- [20260901-five-guards-rev3-review.md](wiki/analyses/brainstorm/project-hub-index/sessions/20260901-five-guards-rev3-review.md) | 2026-09-01T00:38:48Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 
