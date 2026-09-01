@@ -943,6 +943,26 @@ minor: 逃げ道の記載漏れ3件（`bypass` 24時間・`stop_hook_active`・�
 
 → **次にやるべきは rev.4 の改訂（文言の追加と数え直しのみ・実装なし）。** レビュー役の最小条件5点。
 
+## 【実施】計画を rev.4 へ改訂した（2026-09-01・武田さんのカード承認「rev.4 に改訂する」）
+
+正本: `wiki/builds/brainstorm-five-guards-plan-20260831.md` の末尾「改訂 rev.4」。
+**文言の追加と計測のみ。コードは1行も触っていない。**
+
+| 記号 | 対応した指摘 | 決めたこと |
+| --- | --- | --- |
+| R-1 | C-3 | `_guard_done_promotion` は**配線済み**。rev.3 の「未配線・対象外」を撤回し、完成条件5の対象に含める |
+| R-2 | C-1 | 穴4を51枚（`design-system/` 3枚を除外）で数え直した。**骨格 `mb-page`/`mb-wrap`/`mb-main` だけ止める**（誤検知1枚・それも説明文書でない単体HTML）。`mb-glossary`（8枚欠け）・実在しないクラス（17枚）・要素との一致（**48枚**）は**報告のみ**。ただし綴り誤りの閉じた一覧（`mb-lead`→`mb-lede`）だけは止める |
+| R-3 | C-2 | 穴1の対象を **`## 未確定の順序` 専用節の引用ブロックだけ**に限定。メモ全体の差分を見る定義は撤回。対象メモもそのセッションが触った1枚に限る（全 live メモだと並行セッションを相互ブロックする） |
+| R-4 | M-2 | 成果物定義の二重化は、`ALLOWED_WRITE_ROOTS` を触らず**既存の「実装ゼロ」検査に例外を1行足す**形で解く |
+| R-5 | M-1 | **閉じられたカード（dismiss）を回答として数えない。** `tool_use_id` 対応で `[User dismissed` を除外。`【優先順位】` の全文検索は恒真になるので禁止 |
+| R-6 | M-4 | 「そのターン」＝**最後の user 発話（tool_result 除く）より後の assistant イベント群**と定義 |
+| R-7 | M-5 | 穴3の**カウンタ増加を PostToolUse へ移す**（判定は PreToolUse のまま）。24時間の有効期限。実効母集団は48操作でなく **Edit 15操作**と訂正 |
+| R-8 | M-3 | ゲートを「メモが active/ready」から **「そのセッションで brainstorm スキルを起動したか」** へ変更。`/llm-wiki` や `/transcript` を巻き込まない |
+| R-9 | minor | 内蔵先を `_content_block_reason` に確定／穴5が受理する記録を列挙（スクリーンショット単独は不可）／穴2の照合は絶対パスと KB 相対パスの両方／実機発火の手順を実装項目に追加／`design-system` 一致検査が現時点で恒偽であることを明記 |
+
+**rev.4 で新しく書いた限界**: 逃げ道3件（`bypass` 24時間・`stop_hook_active`・環境変数）は
+計画に書かれていなかった。追記した。穴1の新定義での誤発火回数は**まだ数えていない**（実装前に数える）。
+
 ## セッションメモ（子）
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/sessions/20260901-five-guards-rev3-review.md` — 5検査 計画 rev.3 の再々レビュー結果（2026-09-01）
