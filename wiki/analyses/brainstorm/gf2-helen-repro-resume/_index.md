@@ -28,6 +28,16 @@ background_paths:
 
 ## 武田さんの考え
 
+### 2026-09-01 レビューループ懸念を確認
+
+> 待ってその前に質問します。
+> 会話を閉じてほしくないので、承認カード（askuserquestion相当の機能）で回答して。
+> レビューループになってませんか？
+
+HTML revision 4の後半更新を停止し、先にレビュー反復の終端を説明する。独立レビューは指摘修正とcurrent反映によるSHA変化のため複数回行ったが、最終receiptで計画・current・具体計画の対象SHAを固定し、以後この3ファイルを編集しないことで終端させている。親メモと説明HTMLはレビュー対象12memberではなく、更新しても再レビューを開始しない。追加レビューは、計画またはcurrentの意味内容を今後変更すると明示判断した場合だけ別件として扱う。
+
+確認カードへの回答は、本題HTMLについて「選択肢1で進めていい」と明示。一方、環境全体の再発防止が担当者の心がけに留まる説明は不承認。現状のままでは別計画でも再発し得るため、環境上の未解決問題として残す。直接原因はレビュー結果をレビュー入力のcurrentへ書き戻したことで、レビュー出力が入力SHAを変える循環を作ったこと。利用上限やレビュー品質そのものではない。再発防止はレビュー入力集合の機械凍結、receiptの入力外保存、凍結後書込み拒否、自動再レビュー禁止を持つ独立設計として扱い、本題HTMLの続行承認やHelen実装承認へ混ぜない。
+
 ### 2026-09-01 旧探索票案を不承認・Helenへの有効性を機械強制
 
 > 承認しない。選択肢1の案を、心がけではなく、機械的監査で動作する仕組みにしてください。
@@ -181,6 +191,7 @@ background_paths:
 11. 整理後の現行状態を拘束する一本化rev3具体計画案: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md
 12. 一本化revision 4 review前のcurrent drift再照合: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-rev4-current-drift-reconcile.md
 13. 一本化計画revision 4独立レビュー: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-route-revision4-independent-review.md
+14. レビューループ機械防止設計: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-review-loop-mechanical-prevention-design.md
 
 ## 実装への申し送り
 
