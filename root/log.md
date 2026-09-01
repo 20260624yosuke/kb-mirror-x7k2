@@ -10871,3 +10871,18 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 更新: `wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md` に、Helen project・Helen Wiki・Helen hookへの書込み禁止、共有hooksの読取り専用、Helen固定4 SHA drift時の受入れ拒否を追加。
 - 更新: `index.md` とH0157親メモから両入口へ到達可能にした。
 - 未実施: 両タスクの実装、U0〜U3、review-lock、hook変更、Helen/f154/f166/Blend変更。今回のカード回答は実装承認でも中断でもない。
+
+## [2026-09-01] lint | 全KB機械 lint (tools/wiki_lint.py 新規)
+
+- 新規ツール: `tools/wiki_lint.py`。切れリンク・孤立・index 整合・画像欠損・未解決 warning・frontmatter 不足を機械走査する lint スクリプト (Obsidian の大小文字非区別・basename 解決に対応)。
+- 対象: vault 1903 md / wiki フラットページ 1105 / ネスト作業ファイル 84。
+- 主な issue (修正は未実施・ユーザー判断):
+  - 切れリンク 239 種 / 916 参照。最大は `[[たけだようすけ]]` 581 参照 (実体は [[takeda-yohsuke]] に存在、表記不一致)。`[[slug]]` `[[page-slug]]` 等は AGENTS.md/CLAUDE.md の記述例で擬陽性。`@handle` 系は raw X クリップ由来のノイズ。
+  - index.md 未登録 7 件 (うち孤立 5 件、いずれも 2026-08-29〜31 の brainstorm/plan 系 build・analysis ページ)。
+  - index.md 幽霊登録 2 件 (`[[page-slug]]` `[[たけだようすけ]]`)。
+  - 画像リンク欠損 12 件 (inbox-dashboard の旧タスク参照、log.md のファイル名参照など)。
+  - 未解決 `> [!warning]` 含有ページ 38 件。
+  - legacy ページ (status/confidence/evidence_level 全欠損) 216 件。frontmatter 不足: status 359 / confidence 370 / evidence_level 227 / last_reviewed 227。
+  - 最古 last_reviewed は 2026-05-26 ([[llm-wiki-ai-precision-schema]])。
+- 未カバー: セマンティックな数値・結論の矛盾 (A-1) は機械走査対象外。別途サンプリング監査が必要。
+- 触ったファイル: `tools/wiki_lint.py` (新規) / `log.md`。
