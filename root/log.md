@@ -10811,3 +10811,20 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `wiki/_attachments/project-hub-index/20260901-common-fields-proposal.html`(新規) /
   `wiki/analyses/brainstorm/project-hub-index/_index.md` / `log.md`
 
+## [2026-09-01] build | 現在位置ページの自動生成を実装し、helen 1枚で検証（関所3）
+
+- `common` を v2 へ拡張（`file`+`ref` で別ファイルを指せる／`probe` で機械がその場で測る）。
+  記録を1本に持たない水着化でも機能するようにした（武田さんの指示）。4案件とも既存の欄は不変を確認。
+- `tools/current_state.py`（新規）: 印で囲まれた機械区画（節2・6・7）だけを md と HTML の両方で書き直す。
+  記録ファイルは読むだけ。**LLM 区画（節1・3・4・5）が無傷であることを機械で確認済み。**
+- 自動生成へ切り替えたとき、**手で書いた数字の誤りを3つ検出**（スクリプト 258→323本、台帳 113→621本ほか）。
+- **関所3の試験**: 何も知らない別エージェントに現在位置ページ1枚のパスだけを渡した。
+  結果「再開はできるが判断はできない」。**私の重大な誤りが2件見つかり、正本と突き合わせて訂正した**。
+  ①節4 の候補が正本と食い違い（正本のC を落とし、正本に無い D を追加していた）
+  ②節1「LLM の残り実質0件」が過小（GFF コンテナ展開＝f154候補が残っている）。
+- 未対応: 工程A〜Gの意味／関所の合格条件／完成条件／専門用語／派生3案件の状態が1枚に無い。
+- 触ったファイル: `tools/current_state.py`(新規) / `wiki/builds/gf2-helen-repro-v51-current.md` /
+  `wiki/_attachments/gf2-helen-repro-v51/20260901-helen-current-state.html` /
+  4案件の `run-state.json`（`common` のみ・既存欄は不変）/
+  `wiki/analyses/brainstorm/project-hub-index/_index.md` / `log.md`
+
