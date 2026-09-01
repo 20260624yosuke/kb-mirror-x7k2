@@ -40,6 +40,13 @@ background_paths:
 
 再起動後に親メモ、旧HTML、監査rev4、一本化rev3の実ファイルとSHAを照合。中断地点は旧案不承認の直後で、修正版の設計・HTML更新・再提示が未実施だった。無回答・再起動を承認や中断へ変換せず、修正版設計から再開する。
 
+### 2026-09-01 利用上限到達後の続行
+
+> 利用上限が来て途中で止まりました。
+> 中断地点を理解してから再開地点からのタスクの続きをお願いします。
+
+修正版の最小機械監査設計とHTML revision 2は保存済みで、未了は表示検証・正本照合・同じ方針承認待ちへの再提示だった。利用上限到達は承認・中断の証拠にせず、Helen・f166・Blend・一本化rev3の実装へ進まないまま検証から再開する。
+
 ### 2026-09-01 H0157先行・外れたコード調査も事実として残す
 
 > 最初にH0157を成立させます。他14アクションへの展開は、その受入れ後です。水着化の「静止した創作資料」という条件を、この原作再現へ持ち込みません。
@@ -109,7 +116,7 @@ background_paths:
 ## 直した記録
 
 - 2026-09-01 PC再起動後、旧探索票案の不承認と「Helenに有効でない機能を禁止」の修正要求から再開。既存一本化rev3の機構だけを再利用する最小機械監査案をsessionsへ保存。Helen・f166・Blend・quality-gate・一本化計画本文は未変更。設計: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-search-utility-gate-design.md
-- 2026-09-01 コード探索形式案HTMLを1280pxと390pxで表示確認。両幅で文書全体の横はみ出しなし、本文3820文字・見出し・表・末尾を確認し、JavaScriptのerror/warningは0件。ローカルfaviconの404だけで本文資産の欠落はない。3D成果物の見た目は検証していない。
+- 2026-09-01 利用上限到達後、コード探索形式案HTML revision 2を1280pxと390pxで再検証。本文5,801文字、h2見出し12個、重複ID 0件、文書全体の横はみ出し0px、表は390px幅で表内横スクロール、ブラウザーerror/warning 0件。ローカルサーバーはfavicon 1件だけ404で本文資産は200/304。全ページ画像の継ぎ合わせ表示に見えた重複はDOM照合で撮影側の表示と判定し、上・中・下を通常画面単位で再確認した。3D成果物の見た目は検証していない。
 - 2026-09-01 コード探索の形式案をHTML化。H0157先行、14件・7,424件を分母にしない、外れた枝の閉鎖記録、Lunaと主担当の責任境界を1枚に整理した。実装・Blend・f166・品質台帳は変更していない。資料: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260901-h0157-code-investigation-workflow.html
 - 2026-09-01 再信頼を代行完了: 標準Codex画面のPreToolUseから対象1件だけを確認し信頼。再照会でtrusted。他フック・hooks.jsonは不変、config.tomlは対象の信頼hash1箇所だけの変更と照合できた。ユーザーの手動操作待ちは解消。前回の実Stopにはunbound_technical_report_verifiedが存在し、診断報告の経路は実発火を確認。正常カード結合や親基準の確定とは区別する。証拠: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-hook-trust-completed.json
 - 2026-09-01 本題へ戻る: 監査rev4は実行承認済み、一本化rev3は未承認を再読。保護11ファイルは現状整理時のSHAと一致。次の実装はP0Bの一時構築・停止試験・導入であり、まだ顔や髪を改善する工程ではない。この会話の実装例外はbrainstorm故障だけのため、Helenへの切替は別判断として示す。
