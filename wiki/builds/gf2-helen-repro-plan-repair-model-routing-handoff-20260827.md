@@ -19,6 +19,14 @@ revision: 2
 
 # ヘレン完全原作再現 状態修復・未回収コード解析・モデル配分 引き継ぎ — 2026-08-27
 
+> [!warning] 2026-09-01 追記 — 「現在位置」の正本は別ページです
+> 本ページは **状態修復・未回収コード解析・モデル配分の計画・提案の記録** として有効ですが、
+> 「いまどこにいるか（現在位置・再開入口）」の正本は `wiki/builds/gf2-helen-repro-v51-current.md` です。
+> 本文中の「再開するための入口」「正本」の表現は、計画・提案についてのものと読んでください。
+> 本追記は冒頭へのバナー追加のみで、計画の仕様・承認範囲・本文は変更していません
+> （別セッション承認済み計画の「既存の Helen 原作再現計画を書き換えるな」に触れない範囲）。
+> 経緯: 2026-08-31 の武田さんの裁定に基づく整理タスク（`wiki/builds/gf2-helen-cleanup-task-entry.md`）。
+
 ## このページの役割
 
 > 2026-09-01 原作再現の再開記録: [Helen H0157専用の親メモ](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md>)。

@@ -25,9 +25,12 @@ sources: []
 > 武田さんが見る面は `human_view` の HTML です。この md は機械と LLM が読む正本です。
 
 > [!warning] 雛形であることの明示
-> **これは1枚目の試作で、2026-09-01 に「型の見本」として形の承認を得ました。** 既存の引き継ぎ4枚が「自分が正本」と主張している状態は、
-> **まだ直していません**（別タスクとして分離済み）。この計画の範囲では、
-> 既存4枚を旧扱いにする書き換えは行いません。
+> **これは1枚目の試作で、2026-09-01 に「型の見本」として形の承認を得ました。**
+> ~~既存の引き継ぎ4枚が「自分が正本」と主張している状態は、まだ直していません~~ →
+> **2026-09-01 の整理タスクで解消**（`gf2-helen-cleanup-task-entry.md`）。旧4枚
+> （run / handoff / plan-repair / conversation）の冒頭に「現在位置の正本はこのページ」と
+> 示すバナーを追記した。本文と作成当時の主張行は履歴として残し、plan-repair の計画・提案の
+> 記録としての有効性は変えていない。
 
 ## この案件の読み方（LLM が書く・節番号の外）
 
@@ -120,9 +123,9 @@ sources: []
 | 次にやること | 6項目: 1_原作入力の回収 / 2_回収後の機械処理 / 3_見た目の報告 / 4_工程の停止点 / 5_次の候補(武田さんの選択待ち) / 参照 | この記録の next_action |
 | 止まっているもの | 4件: マント cloth1_lod0_Fight の再現 / 胸・スカートの伸びた辺（胸46本・スカート156本） / 顔の伸びた辺（122本） / 胸・背中の火傷状の筋 | この記録の blocked |
 | 成果物 | 2026-08-25 17:29 / 19,295,445 バイト / `04ef8b79b3fa5b64…` | `helen-h0157-repro.blend` |
-| 記録ファイル | 2026-09-01 11:49 / 228,544 バイト | `run-state.json` |
+| 記録ファイル | 2026-09-01 13:02 / 231,163 バイト | `run-state.json` |
 
-**この節は機械が書いています**（生成 2026-09-01 12:03）。手で書き換えないでください。
+**この節は機械が書いています**（生成 2026-09-01 13:02）。手で書き換えないでください。
 <!-- MACHINE:section2:end -->
 
 ## 節3 止まっている理由（機械と LLM・1行1件。片付いた行は消える）
@@ -187,17 +190,17 @@ sources: []
 <!-- MACHINE:section6:start -->
 | 何 | 規模・最終更新 | その案件の現在位置 |
 | --- | --- | --- |
-| 作業フォルダ | 6,193 ファイル / 2026-09-01 11:49 | 工程 E ／ 記録 2026-08-26T20:55:15+09:0… |
+| 作業フォルダ | 6,193 ファイル / 2026-09-01 13:02 | 工程 E ／ 記録 2026-08-26T20:55:15+09:0… |
 | 成果物フォルダ | 148 ファイル / 2026-08-26 15:45 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/blends` |
-| ふたなり化（派生） | 298 ファイル / 2026-09-01 11:48 | 工程 **r5不合格(枠2/3)=『金玉がマンコ側を向いている』→原因を数値確定(toward_vulva=45.0°: 前傾軸への鉛直射影が前方成分を生む)→後方傾き{25,45,65}°の比較シート提示・選択待ち**。GC0門にtoward_vulva≤10°制約を追加済み(HANG_BACK_TAN環境変数対応)。 ／ 記録 2026-08-27T03:10:00 |
-| キャラ抽出の安定化（派生） | 10,153 ファイル / 2026-09-01 11:48 | 工程 step2-pilot-dusevnyj-intrinsic-color-investigation-complete-post-port-proposal-awaiting-approval ／ 記録 2026-08-26T22:45:00+09:0… |
-| 水着化（派生） | 86 ファイル / 2026-09-01 11:48 | 工程 2026-08-31 夕（胸を General へ・腕を表示へ。明言 S001 / S003） ／ 記録 2026-09-01 11:48 |
-| 実行記録（wiki） | 156,467 バイト / 2026-08-27 18:41 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-run.md` |
-| 引き継ぎ（wiki） | 152,873 バイト / 2026-08-27 18:41 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-handoff.md` |
+| ふたなり化（派生） | 298 ファイル / 2026-09-01 12:15 | 工程 **r5不合格(枠2/3)=『金玉がマンコ側を向いている』→原因を数値確定(toward_vulva=45.0°: 前傾軸への鉛直射影が前方成分を生む)→後方傾き{25,45,65}°の比較シート提示・選択待ち**。GC0門にtoward_vulva≤10°制約を追加済み(HANG_BACK_TAN環境変数対応)。 ／ 記録 2026-08-27T03:10:00 |
+| キャラ抽出の安定化（派生） | 10,153 ファイル / 2026-09-01 12:10 | 工程 step2-pilot-dusevnyj-intrinsic-color-investigation-complete-post-port-proposal-awaiting-approval ／ 記録 2026-08-26T22:45:00+09:0… |
+| 水着化（派生） | 86 ファイル / 2026-09-01 12:10 | 工程 2026-08-31 夕（胸を General へ・腕を表示へ。明言 S001 / S003） ／ 記録 2026-09-01 12:10 |
+| 実行記録（wiki） | 157,109 バイト / 2026-09-01 13:01 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-run.md` |
+| 引き継ぎ（wiki） | 153,491 バイト / 2026-09-01 13:01 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-handoff.md` |
 
 **網羅である根拠はありません。** ここに出るのは `common.related` に書かれたものだけで、機械が自分で探した結果ではありません（2026-09-01 武田さんの指摘）。
 
-**この節は機械が書いています**（生成 2026-09-01 12:03）。
+**この節は機械が書いています**（生成 2026-09-01 13:02）。
 <!-- MACHINE:section6:end -->
 
 ## 節7 履歴の所在（機械が書く・全文は読ませない）
@@ -208,12 +211,12 @@ sources: []
 | スクリプト | 323 本 | `scripts` |
 | 実行ログ | 243 本 | `logs` |
 | 台帳 | 621 本 | `ledger` |
-| 実行の全文（wiki） | 156,467 バイト | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-run.md` |
-| 引き継ぎの全文（wiki） | 152,873 バイト | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-handoff.md` |
+| 実行の全文（wiki） | 157,109 バイト | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-run.md` |
+| 引き継ぎの全文（wiki） | 153,491 バイト | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-handoff.md` |
 
 **全文は読ませません。** どこを見ればよいかだけを示します。
 
-**この節は機械が書いています**（生成 2026-09-01 12:03）。
+**この節は機械が書いています**（生成 2026-09-01 13:02）。
 <!-- MACHINE:section7:end -->
 
 ## 未確認・限界

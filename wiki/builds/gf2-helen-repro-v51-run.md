@@ -9,6 +9,13 @@ sources: []
 
 # HELEN-REPRO v5.1 — H0157 の胸をBlenderで再現する実行記録
 
+> [!warning] 2026-09-01 追記 — 現在位置の正本は移りました
+> HELEN-REPRO v5.1 の **現在位置・再開入口の正本** は
+> `wiki/builds/gf2-helen-repro-v51-current.md` です。このページは **実行記録の全文（履歴）** として残しています。
+> 直後の「このページと下記ファイル群が現在位置を持つ」は作成当時（2026-08-27 以前）の主張です。
+> 本追記は冒頭へのバナー追加のみで、本文は変更していません。
+> 経緯: 2026-08-31 の武田さんの裁定に基づく整理タスク（`wiki/builds/gf2-helen-cleanup-task-entry.md`）。
+
 承認済み計画 `/Users/takedayousuke/.claude/plans/mellow-questing-elephant-v5.1.md` と
 実装ルール `/Users/takedayousuke/.claude/plans/mellow-questing-elephant-implementation-instructions-v2.md`
 に従う実行の正本。**この会話の記憶ではなく、このページと下記ファイル群が現在位置を持つ。**
