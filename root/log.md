@@ -10766,3 +10766,29 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 続く明示回答「許可します。」で、この会話の当該brainstorm故障のみ実装修理。`codex_adapter.py`と追加12試験を実装し合格。変更前59件中56件、変更後71件中68件が合格し、同一の既存3失敗は範囲外として残した。実Codexのhooks/listで事前フックmodified・事後/Stop trustedを確認。matcherは変更不要、hooks.json/config.toml/実状態/親基準は手書きしていない。標準フック信頼確認と明示再開後の実カード検証が残り、復旧完了ではない。
 - 修理詳細・試験・実照会を `wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair.md` と同 `20260901-brainstorm-fault-repair-evidence.json` に保存し、親とHTMLの再開全文を同期。実保存状態の読取監査PASS・状態不変・到達性問題なし。HTML1280/390px表示検査PASS。Helen保護11ファイルのSHA一致を再確認。実Stopイベントは出力前時点で未検証。
 - 非エンジニアであるユーザーから当該再信頼操作の代行と続行を明示依頼。標準Codex画面でPreToolUseの対象1件だけを信頼し、hooks/listでtrustedを確認。config.tomlは信頼hash1箇所だけの差、hooks.jsonと他フックは不変。前回実Stopのunbound_technical_report_verifiedを確認したが、正常カード結合とは区別する。証拠を同sessions/20260901-brainstorm-hook-trust-completed.jsonへ保存。親・HTMLのユーザー手動操作待ちを解消し、本題の監査rev4承認済み/P0B前・一本化rev3未承認を再説明。Helen11ファイルはSHA不変。この会話の実装例外はbrainstorm故障だけであり、Helen実装への切替は別判断として保持。
+
+## [2026-09-01] build | 現在位置ページの雛形1枚目を helen で作成（形の承認待ち）
+
+武田さんの指示「実装可能段階に入っているという認識でいいね？ 合っていたら、helen のひな型を作ってみて。
+俺の見る情報は `/html` でまとめて。あと、プロジェクトのタイムラインもグラフとして入れて」に基づく実施。
+
+- 正本（機械と LLM が読む）: `wiki/builds/gf2-helen-repro-v51-current.md`（新規）。
+  設計どおり7節構成。節2/6/7＝機械が測った値、節1/4/5＝LLM が会話から書き起こす区画、節3＝両方。
+  frontmatter に `page_kind` / `project_id` / `machine_sections` / `state_source` / `human_view` 等を追加
+  （**新ディレクトリ・新 type は作っていない**）。
+- 武田さんが見る面: `wiki/_attachments/gf2-helen-repro-v51/20260901-helen-current-state.html`（新規）。
+  `/html` を Skill として起動して作成。**プロジェクトの時間軸グラフ**（記録113件を日付で集計した日別の
+  作業件数・工程A〜Eの帯・停止6日間）と**関所14個の合否図**を入れた。
+- 機械区画の実測値: 工程E / 関所13 PASS・1 FAIL(G10) / 記録の最終更新 2026-08-26 20:55 /
+  成果物 `helen-h0157-repro.blend` 19,295,445バイト・2026-08-25 17:29・SHA `04ef8b79b3fa5b64…` /
+  履歴113件（工程Eが103件）/ 派生3件のファイル数と最終更新（**水着化とキャラ抽出は 08-31 に稼働中**）。
+- **触っていないもの**: `run-state.json`（読むだけ）、成果物 blend、既存の引き継ぎ4枚の「正本」主張
+  （別タスクとして分離済み）。
+- 表示の確認: `http://` 経由で配って描画を確認。CSS 読み込み済み・横のはみ出し0・2つの図とも枠内に収まる
+  （666/672 と 665/672）。**図の下半分の画面写真は未取得**（ブラウザ枠が非表示で時間切れ）。
+- 未確認: **形の承認（1番目の関所）は未取得。** 機械区画は今回手で測って書いており、自動生成は未実装。
+- 触ったファイル: `wiki/builds/gf2-helen-repro-v51-current.md`(新規) /
+  `wiki/_attachments/gf2-helen-repro-v51/20260901-helen-current-state.html`(新規) /
+  同フォルダへ `design-system/` を複製 / `wiki/analyses/brainstorm/project-hub-index/_index.md` /
+  `index.md` / `log.md`
+
