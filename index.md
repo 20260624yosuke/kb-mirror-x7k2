@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4956 ファイル_
+_合計 4959 ファイル_
 
 ## root/ (11)
 
@@ -3386,7 +3386,7 @@ _合計 4956 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (91)
+## wiki/builds/ (94)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -3424,11 +3424,13 @@ _合計 4956 ファイル_
 - [eagle-dedup-merge-2026-07-07.md](wiki/builds/eagle-dedup-merge-2026-07-07.md) | 2026-07-09T11:29:46Z
 - [eagle-folder-sort.md](wiki/builds/eagle-folder-sort.md) | 2026-07-04T14:37:29Z
 - [eagle-meta-tags-design.md](wiki/builds/eagle-meta-tags-design.md) | 2026-07-06T13:02:34Z
+- [gf2-char-extract-current.md](wiki/builds/gf2-char-extract-current.md) | 2026-09-01T03:08:55Z
 - [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-27T09:39:14Z
 - [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T03:22:36Z
 - [gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md](wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md) | 2026-08-28T23:21:51Z
 - [gf2-helen-deliverable-unified-route-plan-20260831.md](wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md) | 2026-08-31T15:06:03Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-26T13:33:06Z
+- [gf2-helen-futa-current.md](wiki/builds/gf2-helen-futa-current.md) | 2026-09-01T03:08:55Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
 - [gf2-helen-repro-execution-audit-plan-20260830.md](wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md) | 2026-08-31T15:06:03Z
 - [gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md](wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md) | 2026-08-31T15:06:03Z
@@ -3439,6 +3441,7 @@ _合計 4956 ファイル_
 - [gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md](wiki/builds/gf2-helen-rest-room-v22-claude-handoff-2026-07-25.md) | 2026-07-25T00:38:26Z
 - [gf2-helen-ssr0101-short-outfit-reference-build.md](wiki/builds/gf2-helen-ssr0101-short-outfit-reference-build.md) | 2026-07-27T00:17:22Z
 - [gf2-helen-starlit-waltz-3d-reference-build.md](wiki/builds/gf2-helen-starlit-waltz-3d-reference-build.md) | 2026-07-26T07:14:52Z
+- [gf2-helen-swimsuit-current.md](wiki/builds/gf2-helen-swimsuit-current.md) | 2026-09-01T03:08:56Z
 - [gf2-helen-swimsuit-fit-plan-20260829.md](wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md) | 2026-08-30T21:11:35Z
 - [gf2-mityl-game-motion-transfer.md](wiki/builds/gf2-mityl-game-motion-transfer.md) | 2026-08-05T07:25:03Z
 - [gf2-mityl-mirror-salute.md](wiki/builds/gf2-mityl-mirror-salute.md) | 2026-08-07T14:43:37Z
