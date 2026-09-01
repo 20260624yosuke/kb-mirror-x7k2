@@ -26,6 +26,18 @@ background_paths:
 
 ## 武田さんの考え
 
+### 2026-09-01 H0157先行・外れたコード調査も事実として残す
+
+> 最初にH0157を成立させます。他14アクションへの展開は、その受入れ後です。水着化の「静止した創作資料」という条件を、この原作再現へ持ち込みません。
+>
+> 14アクションは、以前取り出したのが14個ってだけで、未回収が96％ある現状なら、根拠のないあてにならない数字という前提です。
+>
+> 何かに絞ってコードを探す必要はあると思う。闇雲にやっても上手くはいかない。絞って探したがあてがはずれたとする。そうした場合、調査したコードが何だったのか事実と根拠で判明させずに記録せずに、別のコード調査に移るのはもったいないよね？
+>
+> あとは、gpt5.6lunaに投げて問題ないタスクは積極的に使いたい。
+
+今回の相談は、コード探索を「欠陥1件・因果経路1本・反証方法1つ」の探索票に分け、当たりだけでなく外れ・入力不足・決めた範囲での未発見も証拠つきで閉じる形式を検討する。14件と旧f166の7,424件はH0157の必要数・全体数・進捗率へ使わない。Lunaは固定規則の抽出・件数・SHA・再実行へ使い、原因の採否・欠損入力の扱い・原作一致は主担当が保持する。
+
 ### 2026-09-01 信頼確認操作をエージェントへ委任し続行
 
 > 私は非エンジニアですので、
@@ -67,6 +79,8 @@ background_paths:
 
 ## まだ決まってないこと
 
+- コード探索票の形式を正式採用するか。最初の票をG10のH0157本人参照鎖とし、その前段を登録済み原作bundle 2本の実体確認にするか。
+- 探索票・軽量索引・候補証拠の保存先、正式ファイル名、具体的なmodel IDと独立review役。形式案への同意をHelenコード・Blend変更の承認へ読み替えない。
 - 一本化計画revision 3の実行、具体モデル配分、実行環境の設定差分。
 - 因果審査後の具体的なBlend変更と、人間による原作差の許容判断。
 - 登録原作bundle 2本が現在のパスでは読めない。消失・移動・未接続のどれかは未確定。
@@ -79,6 +93,8 @@ background_paths:
 
 ## 直した記録
 
+- 2026-09-01 コード探索形式案HTMLを1280pxと390pxで表示確認。両幅で文書全体の横はみ出しなし、本文3820文字・見出し・表・末尾を確認し、JavaScriptのerror/warningは0件。ローカルfaviconの404だけで本文資産の欠落はない。3D成果物の見た目は検証していない。
+- 2026-09-01 コード探索の形式案をHTML化。H0157先行、14件・7,424件を分母にしない、外れた枝の閉鎖記録、Lunaと主担当の責任境界を1枚に整理した。実装・Blend・f166・品質台帳は変更していない。資料: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260901-h0157-code-investigation-workflow.html
 - 2026-09-01 再信頼を代行完了: 標準Codex画面のPreToolUseから対象1件だけを確認し信頼。再照会でtrusted。他フック・hooks.jsonは不変、config.tomlは対象の信頼hash1箇所だけの変更と照合できた。ユーザーの手動操作待ちは解消。前回の実Stopにはunbound_technical_report_verifiedが存在し、診断報告の経路は実発火を確認。正常カード結合や親基準の確定とは区別する。証拠: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-hook-trust-completed.json
 - 2026-09-01 本題へ戻る: 監査rev4は実行承認済み、一本化rev3は未承認を再読。保護11ファイルは現状整理時のSHAと一致。次の実装はP0Bの一時構築・停止試験・導入であり、まだ顔や髪を改善する工程ではない。この会話の実装例外はbrainstorm故障だけのため、Helenへの切替は別判断として示す。
 
@@ -107,6 +123,7 @@ background_paths:
 6. 技術上の縮小案9.6: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md
 7. 読取実測結果: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-current-state-evidence.json
 8. 独立レビュー: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-independent-review.md
+9. コード探索形式案HTML: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260901-h0157-code-investigation-workflow.html
 
 ## 実装への申し送り
 

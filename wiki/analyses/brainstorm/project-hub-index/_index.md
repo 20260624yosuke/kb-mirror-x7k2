@@ -892,6 +892,33 @@ guard-write	lockdown DENY tool=Bash path=/Users/takedayousuke/.claude/skills/bra
 `sessions/20260831-hole3-threshold-measurement.md` の「独立レビュー結果」。
 次の工程は **計画の改訂 → 再レビュー → 実行の承認の取り直し**。
 
+## 【セッション4】再開の指示（2026-09-01）
+
+> `wiki/analyses/brainstorm/project-hub-index/_index.md` 上記ファイルパスを見てください。
+> `wiki/builds/brainstorm-five-guards-plan-20260831.md` 前のエージェントの回答です。
+> **③ まだ終わっていないこと（私の残作業）**
+> **5検査の実装は未着手。実行の承認は取っていません（計画側に「着手前に承認を取る」と明記済み）。**
+> **穴3の閾値が未定。過去の成果物で「落ちるはずの回数」を数える工程が先です。**
+> **本題のハブ（現在位置ページの雛形1枚）は未着手。次の会話の出発点です。**
+> タスクを続けてください。
+
+### 引き継ぎ文の訂正（正本と照合した結果・2026-09-01）
+
+前のエージェントの ③ は**正本より古い**。正本（`brainstorm-five-guards-plan-20260831.md`）と
+このメモを読み直して照合した。
+
+| ③ の記述 | 正本での実態 |
+| --- | --- |
+| 「穴3の閾値が未定。数える工程が先」 | **完了済み。** 過去48操作を実測（このメモの「【実測】穴3の閾値の根拠」節）、
+**T=2 は 2026-08-31 に武田さんのカード承認済み**（計画 rev.2 の C-1 対応に明記） |
+| 「5検査の実装は未着手・実行の承認は未取得」 | **一致。** ただし計画は rev.3 まで改訂済みで、
+次の工程は「rev.3 への再々レビュー → critical が無ければ実行の承認」 |
+| 「本題のハブ（現在位置ページの雛形1枚）が次の出発点」 | **そのまま採らない。** 現在位置ページの計画
+（`project-current-state-page-plan-20260830.md` rev.5）は、このメモの
+「【重要】私が対象を取り違えていた」で**逸れた成果物と判定済み**。雛形を先に作ると逸れた対象に戻る |
+
+→ **この会話で進めるのは、計画 rev.3 の再々レビュー（正本が定めた次の工程）。**
+
 ## セッションメモ（子）
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md` — 穴3の閾値の根拠の計測（2026-08-31）
