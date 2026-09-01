@@ -8,12 +8,17 @@ brainstorm_status: active
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
 entry_paths:
-  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-five-guards-plan-20260831.md
-  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-remaining-four-tasks.html
-  - /Users/takedayousuke/llm-uploads/20260831-125115-実機での発火は未確認です-自己試験は-配線が正しいか-までで-実際に止まるかは次.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260901-projects-current-state.html
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-cleanup-task-entry.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-current.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-futa-current.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-char-extract-current.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-current.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/current_state.py
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/gf2-helen-repro-v51/20260901-helen-current-state.html
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260901-where-the-work-went.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/_index.md
-  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md
-  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/project-current-state-page-plan-20260830.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-five-guards-plan-20260831.md
 background_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260830-handoff-mechanism-design.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-hole3-threshold-measurement.html
@@ -1253,7 +1258,7 @@ helen 1枚は作れる**。1番目の関所（雛形の形の承認）が先で�
 
 4件とも**本日は書き込みが無い**ことを実測（記録3本は 08-26、水着化フォルダの最新は 08-31 23:06）。
 別会話との衝突は起きない状態で作業した。**複製**は
-`/private/tmp/claude-501/.../scratchpad/backup_114245/` に保存。
+`/private/tmp/claude-501/-Volumes-SSD-M-2-Realtek-RTL9210-NVME-Media--05-claude-claude-llm-wiki-LLM-Knowledge-Base--01/3cf1d707-5969-4a57-8ff4-3df707afa36f/scratchpad/backup_114245/` に保存。
 
 ### 実施結果
 
@@ -1393,6 +1398,138 @@ md と HTML の両方を同時に書き直す。記録ファイルは読むだ�
   自然に見えるが、ページはそう書いていない。**武田さんに確認が要る点。**
 - **節5 の優先順位と衝突して見える。** 「KB 全体の仕組み化を先に」が有効なら、
   いま helen の次の一手を迫ること自体が優先順位に反する可能性がある。
+
+## 【展開・完了】4案件すべてを同じ形に乗せた（2026-09-01・選択肢1で承認）
+
+武田さんのカード回答: **「helen 原作再現の整理は別のエージェントにさせるから、別エージェントが
+タスクを理解できるパスを添付して。他は選択肢1で進めて」**
+
+### 1. 別エージェントへの入口を1枚作った
+
+`wiki/builds/gf2-helen-cleanup-task-entry.md`
+
+**最初に読む1枚は現在位置ページ**（`gf2-helen-repro-v51-current.md`）で、**引き継ぎ資料は別に作らない**。
+併せて渡すパス4本（4案件の盤面・記録の正本・書き直しの道具・仕組みのメモ）、
+守ること5件（整合性を崩さない／既存の欄を消さない／blend に触らない／機械区画を手で書かない／
+**節4の候補を増減も言い換えもしない**）、整理対象4件（正本主張4枚・追記のみ構造・孤立16枚・派生の所在）を
+実パスで並べた。別セッションの承認済み計画の禁止事項へも注意を促している。
+
+### 2. 残り3案件へ現在位置ページを作った
+
+| 案件 | 正本 | 記録から読み取った現在位置 |
+| --- | --- | --- |
+| Helen ふたなり化 | `wiki/builds/gf2-helen-futa-current.md` | r5不合格（枠2/3）。原因は数値確定済み。**後方傾き角の選択待ち**。門は11中9 PASS・C1/C3 が FAIL |
+| ドルフロキャラ抽出の安定化 | `wiki/builds/gf2-char-extract-current.md` | Dusevnyj 固有色の調査完了。**対処案 A/B/C の承認カードを出して停止** |
+| Helen 水着化 | `wiki/builds/gf2-helen-swimsuit-current.md` | General で4件・Flat で6件の判定が不合格。V3/V4/W7 が次の承認事項 |
+
+**水着化の節4 は空欄のままにした。** 機械が読める「次にやること」の欄が無く、
+推測で候補を作ると helen で起こした事故を繰り返すため。正本メモを読んだうえで書き起こす必要がある、
+と明記した。
+
+### 3. 4案件を一望する盤面を「機械が生成する」形にした
+
+`wiki/_attachments/project-hub-index/20260901-projects-current-state.html`
+（生成: `python3 tools/current_state.py dashboard`）
+
+**このページは全体が機械の出力で、文章をどこにも書き起こしていない。**
+4案件の工程・止まっている日数（棒グラフ）・次にやること・止まっているもの・現在位置ページの実パスを、
+各案件の `common` から取って並べる。
+
+### いまの4案件（生成時点）
+
+| 案件 | いまの工程 | 記録が止まっている日数 |
+| --- | --- | --- |
+| helen 原作再現 | 工程 E | 5日 |
+| Helen ふたなり化 | r5不合格・選択待ち | 5日 |
+| ドルフロキャラ抽出 | step2 の承認待ち | 5日 |
+| Helen 水着化 | 2026-08-31 夕の状態 | 0日（※記録は本日作成したもの） |
+
+### 正直な限界
+
+- **網羅である根拠は無い。** 盤面に出るのは `common` を入れた4案件だけ。
+- **「止まっている日数」は記録の更新時刻から数えたもの**で、作業が止まっている日数とは限らない。
+- 3案件の節1・4・5 は**記録から読み取って書いた**もので、会話で決まった内容が抜けている可能性がある。
+
+## 【区切り】2026-09-01 の会話の締め（武田さんのカード回答「ここで区切る」）
+
+**状態は `active` のまま。** 本題のハブ化は一通り動く形になったが、完了宣言はしていない
+（自動更新の担い手が未決のため）。次の会話はこのメモと下の「残っていること」から再開する。
+
+### この会話でやったこと（時系列）
+
+1. 5検査の計画を rev.4 へ改訂し、独立レビューを2回（3回目・4回目）実施。critical 5件を処置。
+2. **武田さんの指摘で、5検査が本題ではないと判明**（2回目の逸れ）。本題＝紐づけの導線へ復帰。
+3. 現在位置ページの雛形を helen で作成 → **型の見本として形の承認**（関所1）。
+4. 4案件の記録へ**共通の最小欄 `common` を追加**（案Aで承認・関所2）。既存の欄は毎回不変を確認。
+5. `common` を v2 へ拡張（別ファイル参照・その場で測る）。**記録を1本に持たない水着化でも機能する形**に。
+6. **`tools/current_state.py` を実装**。印で囲まれた機械区画（節2/6/7）だけを md と HTML の両方で書き直す。
+7. **何も知らないエージェントに1枚だけ渡す試験を2回実施**（関所3）。
+   1回目で**私の重大な誤り2件**（節4の候補の落とし・作り出し／残作業の過小）を検出し訂正。
+   足りない6つを補い、2回目で**「この1枚だけで武田さんへ選択肢を提示できる」**に到達。
+8. 残り3案件へ現在位置ページを展開し、**4案件の盤面を全体機械生成**する `dashboard` を実装。
+9. helen の整理を別エージェントへ渡す入口 `wiki/builds/gf2-helen-cleanup-task-entry.md` を作成。
+
+### この会話で確定した運用
+
+- **正本は md（機械と LLM が読む）／武田さんが見る面は HTML。** frontmatter の `human_view` で結ぶ。
+- **引き継ぎ資料は別に作らない。** 現在位置ページが引き継ぎそのもの。
+- **機械区画を手で書かない。** 書き直しは `tools/current_state.py write`。
+- **節4 は正本の候補を増減も言い換えもしない**（2026-09-01 の事故を受けた禁止）。
+- **「何も知らない相手に1枚だけ渡す」試験は、独立レビュー9回が見つけられなかった型の誤り
+  （中身の取り違え）を捕まえた。** 今後の検証手段として有効。
+
+### 残っていること
+
+| # | 残 | 状態 |
+| --- | --- | --- |
+| 1 | **盤面を誰がいつ回すか**が未決 | いまは私が手で `dashboard` を走らせている。自動化はフックの新規登録を伴うため未着手 |
+| 2 | 3案件の節1・4・5 は**記録から読み取って書いたもの** | 会話で決まった内容が抜けている可能性。各案件の brainstorm メモを読んで埋め直す作業が残る |
+| 3 | **水着化の節4 は空欄** | 機械が読める「次にやること」の欄が無い。正本メモから書き起こす必要がある |
+| 4 | helen で**推奨まで言える状態ではない** | 4候補の所要時間・成功見込みが無い。f154 と候補A〜Dの関係も未記載 |
+| 5 | **節6 の網羅性に根拠が無い** | `common.related` に書いたものだけが出る。機械が探しているわけではない |
+| 6 | **5検査（枝2）は rev.4 で停止** | 本題ではないため手を止めた。再開するなら critical 2件（私の計測ミスの影響・PostToolUse 未登録）から |
+| 7 | helen の整理 | **別エージェントへ**。入口は `wiki/builds/gf2-helen-cleanup-task-entry.md` |
+
+## 【報告】到達性検査が止めた。私の分は直したが、**Codex 側 57件は私の担当外**（2026-09-01）
+
+会話を閉じるときの引き継ぎ到達性検査が止めた。指摘は2種類に分かれる。
+
+### 私の担当分（3件・すべて修正済み）
+
+| 何 | 直し方 |
+| --- | --- |
+| `_index.md` に `/private/tmp/claude-501/.../scratchpad/backup_114245/` と**省略形で書いていた** | 実パス全体へ置換 |
+| 別エージェントへの入口 `gf2-helen-cleanup-task-entry.md` の関連リンクが `[[slug]]` だけだった | **実パスを併記**する表に変え、作業ディレクトリの絶対パスも本文に明記 |
+| ふたなり化の `common.related` に**実在しない `previews`** を書いていた | 実在する `blends` / `quality-gate.json` へ差し替え |
+
+あわせて `entry_paths` を、この会話の成果物11本（実在を1本ずつ確認済み）へ更新した。
+**→ 私の担当分の指摘はゼロになった。**
+
+### 私の担当外（57件）— 武田さんへの報告
+
+**Codex 側の brainstorm スキルが、本日 2026-09-01 の 09:22〜09:33 に別の会話で入れ替えられている。**
+その結果、複数のメモが指しているファイルが**すべて消えている**。
+
+実測（`ls`）:
+
+| いま在るもの | メモが指しているのに無いもの |
+| --- | --- |
+| `~/.codex/skills/brainstorm/SKILL.md` | `scripts/brainstorm_guard.py` |
+| `scripts/codex_adapter.py`（09-01 09:31） | `scripts/resume_contract.py` |
+| `tests/test_adapter.py`（09-01 09:31） | `scripts/guard.log` |
+| `agents/openai.yaml`（09-01 09:22） | `scripts/state/` 配下9本 |
+| | `tests/test_codex_adapter.py` |
+| | `quality-gate.json` |
+
+影響を受けているメモ（**どれも私の担当ではない**）:
+`brainstorm-brainstorm-skill-portability.md` ／ `brainstorm-concrete-resume-audit-plan-20260831.md` ／
+`20260831-concrete-resume-audit-repair.md` ／ `20260901-explicit-permission-design.md` ／
+`brainstorm-codex-default-mode-card-plan-20260830.md` ／ `brainstorm-skill.md` ／
+`llm-harness-parity` の `_index.md`。
+
+**私は書き換えない**（検査自身が「担当でないメモを勝手に直すな」と定めている）。
+入れ替えを行った会話で直すか、武田さんの判断が要る。**この57件が残る限り、
+brainstorm の Stop 検査はこの保管庫のどの会話でも止まり続ける。**
 
 ## セッションメモ（子）
 

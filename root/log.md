@@ -10844,3 +10844,18 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `wiki/_attachments/gf2-helen-repro-v51/20260901-helen-current-state.html` / `tools/current_state.py` /
   `wiki/analyses/brainstorm/project-hub-index/_index.md` / `log.md`
 
+## [2026-09-01] build | 現在位置ページを4案件へ展開し、盤面の自動生成を実装
+
+- 別エージェントへの入口 `wiki/builds/gf2-helen-cleanup-task-entry.md`（新規）。
+  **最初に読む1枚を現在位置ページとし、引き継ぎ資料を別に作らない**運用。守ること5件・整理対象4件を実パスで明示。
+- 現在位置ページを3枚新規作成: `gf2-helen-futa-current.md` / `gf2-char-extract-current.md` /
+  `gf2-helen-swimsuit-current.md`。いずれも7節構成・機械区画は印つきで自動生成。
+  **水着化の節4 は空欄のまま**にした（機械が読める欄が無く、推測で候補を作らないため）。
+- `tools/current_state.py` に `dashboard` を追加。4案件の `common` を読み、
+  `wiki/_attachments/project-hub-index/20260901-projects-current-state.html` を**全体機械生成**する
+  （工程・止まっている日数の棒グラフ・次の一手・現在位置ページの実パス）。
+- 4案件の `run-state.json` に `project_name` / `current_state_page` / `human_view` / `related` / `history` を追加。
+  **既存の欄はいずれも不変を毎回確認**。
+- 触ったファイル: 上記3枚 + 入口1枚（新規）/ `tools/current_state.py` /
+  4案件の `run-state.json`（`common` のみ）/ `index.md` / `wiki/analyses/brainstorm/project-hub-index/_index.md` / `log.md`
+

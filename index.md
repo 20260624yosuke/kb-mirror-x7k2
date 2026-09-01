@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4959 ファイル_
+_合計 4960 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 4959 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-09-01T02:25:18Z
-- [log.md](root/log.md) | 2026-09-01T03:04:11Z
+- [index.md](root/index.md) | 2026-09-01T03:11:36Z
+- [log.md](root/log.md) | 2026-09-01T03:11:36Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -351,7 +351,7 @@ _合計 4959 ファイル_
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-09-01T03:04:11Z
+- [_index.md](wiki/analyses/brainstorm/project-hub-index/_index.md) | 2026-09-01T03:15:55Z
 
 ## wiki/analyses/brainstorm/project-hub-index/sessions/ (3)
 
@@ -3386,7 +3386,7 @@ _合計 4959 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (94)
+## wiki/builds/ (95)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -3428,9 +3428,10 @@ _合計 4959 ファイル_
 - [gf2-char-extract-handoff.md](wiki/builds/gf2-char-extract-handoff.md) | 2026-08-27T09:39:14Z
 - [gf2-character-repro-pipeline.md](wiki/builds/gf2-character-repro-pipeline.md) | 2026-08-25T03:22:36Z
 - [gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md](wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md) | 2026-08-28T23:21:51Z
+- [gf2-helen-cleanup-task-entry.md](wiki/builds/gf2-helen-cleanup-task-entry.md) | 2026-09-01T03:15:07Z
 - [gf2-helen-deliverable-unified-route-plan-20260831.md](wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md) | 2026-08-31T15:06:03Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-26T13:33:06Z
-- [gf2-helen-futa-current.md](wiki/builds/gf2-helen-futa-current.md) | 2026-09-01T03:08:55Z
+- [gf2-helen-futa-current.md](wiki/builds/gf2-helen-futa-current.md) | 2026-09-01T03:15:31Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z
 - [gf2-helen-repro-execution-audit-plan-20260830.md](wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md) | 2026-08-31T15:06:03Z
 - [gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md](wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md) | 2026-08-31T15:06:03Z
