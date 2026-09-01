@@ -5,35 +5,40 @@ status: active
 confidence: medium
 evidence_level: user-stated+source-backed+inferred
 created: 2026-08-31
-last_reviewed: 2026-08-31
+last_reviewed: 2026-09-01
 plan_status: draft-unapproved
-approval_scope: unified-route-plan-revision-3
+approval_scope: unified-route-plan-revision-4
 related:
   - "[[gf2-helen-repro-execution-audit-plan-20260830]]"
   - "[[gf2-helen-repro-plan-repair-model-routing-handoff-20260827]]"
+  - "[[gf2-helen-repro-v51-current]]"
+  - "[[gf2-helen-cleanup-task-entry]]"
   - "[[gf2-helen-repro-v51-run]]"
   - "[[brainstorm-gf2-dusevnyj-bikini-to-helen]]"
 tags: [gf2, helen, deliverable, state-machine, knowledge-base, model-routing]
-revision: 3
+revision: 4
 ---
 
-# Helen原作再現 成果物までの単一状態・KB活用計画 — revision 3
+# Helen原作再現 成果物までの単一状態・KB活用計画 — revision 4
 
 ## 承認状態と現在地点
 
-> 2026-09-01 原作再現の再開記録: [Helen H0157専用の親メモ](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md>)。
-> [現状と成果物までの問題点](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260831-helen-repro-project-current-state.html>)。武田さんの「新規親・孤立禁止」の選択により相互リンクを追加。
-> 本追記は入口の追加のみで、既存計画の仕様・承認範囲・水着化の進捗を変更しない。
+> 2026-09-01 整理後の現在位置正本: [gf2-helen-repro-v51-current](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-current.md>)。
+> 整理結果: [gf2-helen-cleanup-task-entry](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-cleanup-task-entry.md>)。旧run / handoff / plan-repair / conversationは履歴へ降格し、`run-state.json` の `status_corrections_2026_09_01` を古い残作業欄より優先する。
+> 原作再現の再開・承認記録: [Helen H0157専用の親メモ](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md>)。
 
-**計画案・未承認。実装していない。** 承認済みなのは一本化を計画化する方針だけ。
+**revision 4計画案・実装未承認。実装していない。** 最小機械監査の方針と、revision 3本文へ反映する
+具体計画は2026-09-01に明示承認済み。本revision 4はその反映結果であり、schema、guard、hook、f154、
+G10/S6/S8探索、Helen、f166、Blendの実装承認ではない。
 revision 1は独立レビューでCritical 2・Major 5・Minor 1の差し戻し。revision 2ではCritical解消、
-完成台帳の更新と並行処理の2点がMajorとして残った。本revision 3はその修正案であり、
-旧計画の承認・対象範囲をまだ変更しない。レビュー記録と旧版は末尾の実パスから辿れる。
+完成台帳の更新と並行処理の2点がMajorとして残った。revision 3はその修正を完了したが、
+整理後currentへの拘束、旧版拒否、探索のH0157拘束、効果のない機能の候補昇格拒否が不足していた。
+本revision 4で補う。旧計画の実行承認・対象範囲はまだ変更しない。
 
 - 最終目的: HelenのH0157原作再現をBlender成果物として成立させる。
 - 現在工程: 一本化計画のレビュー。成果物側はP0の棚卸し済み・P0B監査本体実装前。
 - 今回の意味: KB、原作コード回収、効果試験、成果物比較を同じ証拠経路でつなぐ。
-- 次の作業: モデル実ID配分・実行環境の設定差分を確定し、実行承認を得る。実装は未開始。
+- 次の作業: 本revision 4を整理後の正本・実ファイルから独立レビューし、major finding 0件にする。モデル実ID配分・実行環境の設定差分・実装承認はその後に別提示する。
 - 完成まで: 監査接続、入力再棚卸し、探索契約、抽出、因果審査、変更範囲承認、
   隔離実験、候補Blend、既存全要件の比較、ユーザー受入が残る。
 
@@ -44,9 +49,9 @@ revision 1は独立レビューでCritical 2・Major 5・Minor 1の差し戻し�
 | 正解の所在 | 原作H0157動画・フレーム、原作コード、Unity prefab / renderer / material / RampSettingと実行条件 |
 | 欠けうる入力 | H0157 scene join、Helen本人prefab、InternalLut、有効Volume、実行時髪処理、骨親情報、最終版f166 |
 | 対象群 | 修復対象S6（顔の白飛び）・S8（髪の被覆）・G10（材質対応）と、既存品質台帳の4 family（対象群）を別軸で保持 |
-| 代表例 | G10の参照鎖。G10の成功・承認をS6/S8や全身・動きへ流用しない |
+| 代表例 | G10の参照鎖は監査の正常fixture。第1実探索は、現行currentが示すf154候補とG10/S6/S8 gapの因果接続を比較して別承認で決める。G10の成功を他対象へ流用しない |
 | 比較方法 | 場面・衣装・時刻・ポーズ・カメラ・ROI・画像処理条件を拘束し、原作／変更前／変更後を直接比較 |
-| 停止条件 | 分母不明、根拠SHA不一致、参照辺不足、効果未確認、衣装・比較条件不一致、既存推定の未解消、未登録操作 |
+| 停止条件 | 整理後currentまたは実ファイルのSHA変化、分母不明、参照辺不足、効果未確認、衣装・比較条件不一致、既存推定の未解消、未登録操作 |
 
 ## 目的と完成条件
 
@@ -72,18 +77,39 @@ H0167は変種切替の検査入力に限る。他14アクション・他衣装�
 行欠落は `EA_REQUIREMENT_COVERAGE_MISSING`。今回の修復範囲外に残余欠陥を発見した場合は
 修復を勝手に拡大せず、その欠陥を残して成果物completeを停止し、必要な変更範囲を提示する。
 
-## 現物ベースライン
+## 現物ベースラインと旧版拒否
 
-2026-08-31の直接照合:
+2026-09-01、具体計画承認直前・直後の直接照合。KBと成果物rootはGit管理外なので、`git status`をcleanの証拠に使わない。
+
+| 入力 | 現行SHA-256 |
+|---|---|
+| `gf2-helen-repro-v51-current.md` | `919843e207d8d4043ecc1f73585bb6cdc7745dc3c35b4e768500dc26fde547df` |
+| `gf2-helen-cleanup-task-entry.md` | `6a390e6d1ddf87f702550a4e4dbaa236813f714336ea45dd6765c1e1acec6d3a` |
+| 本計画revision 3（改訂前） | `e1af011174cc63f37c1a85ed9db179414f6f761bfdfe8f6968f13a0dc36543c8` |
+| 監査計画revision 4 | `c690d7be9986eca7f24930ffdeb45255a0f7e3b596fb0264879a2bab9b9fa7d5` |
+| project `quality-gate.json` | `f7b29ca63f0d93d28f19f3fa34d54789c09493ad42ee26541b7f93ef191ffa96` |
+| `06_repro-v51/run-state.json` | `b176b17bb1d1cb9c61573f8ab070fe67170ed57c69ed2fcc7f2e21e60839fc8e` |
+| 現行Blend | `04ef8b79b3fa5b64b9d7e3496a9adc184f10c07d9ee9758caebd289ddbb6d7f5` |
+| P0 `writers.json` | `e09ca43104e6d163bf6b4b825d1e13be3e50084b7aaa7b3e4c826f6642302aee` |
+| P0 `evidence-index.json` | `829a73ec998e37befb9656f280c5e51614d1771bc3a9587c5f60379787e3f0b9` |
+| P0 `review-findings.json` | `3333d01abb9f5417992b8b44d3bf7d3f8590fb796d0712bff8fda6063c83ebaf` |
+| P0 `bootstrap-status.json` | `c5be5ee4a7a2f53421c88479824791c7c4ec5813cf609c73b0255224f4ca1110` |
+
+本計画自身のSHAを本文内へ埋めると自己参照で値が変わるため、revision 4の対象SHAは本文ではなく独立review receiptと外部登録簿へ固定する。上表は実行時の恒久値ではない。
+開始直前に再測定し、差があれば自動追従せずdrift reportを作り、計画再照合と明示promoteまで停止する。
+以前の `20260901-current-state-evidence.json` は現行run-state・rev4・rev3 SHAと不一致のため、過去スナップショットとしてだけ使う。
+
+現物の意味:
 - 現行Blend SHA:
   `04ef8b79b3fa5b64b9d7e3496a9adc184f10c07d9ee9758caebd289ddbb6d7f5`。
 - 旧plan PASS、f128は構造限定PASS、f152はFAIL。旧gate-resultsはBlend SHA無しでunbound。
 - f166初回結果は走査後にスクリプトが変わりstale。7,424/7,726（96.1%）は全体MSLの既存抽出未一致率で、
   Helenに必要なコードの未回収率ではない。
-- P0: 証拠48件、open finding 5件、writer候補54本。正規audit、guard、fixture、外部登録簿は未作成。
+- P0: 証拠48件、open finding 5件、writer候補54本。`.audit-bootstrap-20260830` の状態は `p0-complete-p0b-writer-review-required`、停止理由は `EA_WRITER_CLASSIFICATION_REVIEW_REQUIRED`。正規audit、guard、fixture、外部登録簿は未作成。
 - 現行4 familyは全てuser_accepted=false。shadingはmode=approximation、approximation_approved=false。
   これを忠実版の完成済み初期入力と扱わない。
-- 旧記録の「P0B step 2で停止」は現物と不一致。正しくは「P0完了・P0B本体実装前」。
+- P0Bは監査本体未導入であり、bootstrap上の次の肯定証拠はwriter 54本の独立分類。これを監査実装済みと読まない。
+- 整理後currentは、LLM単独で実行可能な残りとして未解析コンテナ展開（f154候補）を1件記録。G10はrenderer→material対応不足でblocked。G10を第1実探索へ自動指定しない。
 
 ## 正本と旧規則の変更案
 
@@ -130,8 +156,9 @@ rev4のcoverage_verifiedの要件を弱めず、共有在庫＋欠陥探索範�
 5. 各操作は `branch_id + defect_ids + action_id` に対して判定する。全体表示文を権限に使わない。
 6. 全件acceptedでも、要件・4 family・既存gate・出力SHA・受入記録が不足なら全体completeはfalse。
 
-legacy run-stateは過去履歴を維持し、current_step / next_action / passed_gates / failed_gates / current_failure /
-現行Blend参照だけを移行対象として一覧化する。U0で旧値のSHA保存と移行差分を作り、
+legacy run-stateは過去履歴を維持する。現在判断では `status_corrections_2026_09_01` を古い
+`agent_executable_remaining` 等より優先し、currentページの機械区画・実ファイルと直接照合する。
+current_step / next_action / passed_gates / failed_gates / current_failure / 現行Blend参照だけを移行対象として一覧化する。U0で旧値のSHA保存と移行差分を作り、
 U1導入時に現在欄を正本stateから生成する。history内の古いSHAや昔の方針は矛盾判定に含めない。
 stateとlegacy現在欄を別々に手書きする操作は禁止する。
 
@@ -142,6 +169,14 @@ stateとlegacy現在欄を別々に手書きする操作は禁止する。
 
 `audit_guard.py` に `begin_operation / finish_operation / status / transition` を用意する。
 各U工程は必ず登録済みaction_idでbeginを呼び、finish前の結果は工程完了証拠として採用できない。
+
+新しいlockファイルや第二の正本は作らない。既存 `quality-gate.json.execution_audit.current_state_inputs` に
+現行current、cleanup、run-state、監査計画、本計画、quality-gate、Blend、P0 bootstrapの絶対パス・SHA・役割を持たせ、
+`audit/evidence-index.json` に取得時刻、取得コマンド、size、mtime、SHA、読んだJSON pointer／行位置を持たせる。
+`begin_operation`、`finish_operation`、正式登録、plan/batch/completeのたびに実ファイルを再SHA化する。
+不一致・欠損・別パス・読取不能なら許可証またはwriter tokenを出さず `EA_KB_SNAPSHOT_STALE`。
+作業中に別エージェントが変更した場合も採用せず、変更前後SHAと差分を隔離記録する。
+基準SHAの自動更新は禁止し、差分再読・独立review・明示promoteでだけ更新する。
 
 | 登録操作 | 必要状態 | 必須出力 |
 |---|---|---|
@@ -154,7 +189,7 @@ stateとlegacy現在欄を別々に手書きする操作は禁止する。
 | U6.candidate | causal_tested＋同じ変更契約 | begin/finish writer記録、採用候補SHA |
 | U7.compare / accept | artifact_candidate以降 | 全要件・4 family比較、受入、限定登録結果 |
 
-許可証はoperation ID、actor ID、plan SHA、branch、defect集合、発行時のstate generation、
+許可証はoperation ID、actor ID、plan SHA、current-state input-set SHA、branch、defect集合、発行時のstate generation、
 依存read-set（共有準備、対象欠陥と依存欠陥、枝、承認、各入力の版とSHA）、script／入力SHA、
 許可出力先、変更契約SHA、有効期間、単回使用nonceを拘束する。
 finishとstate書込はlockで直列化する。別の独立操作が終わり全体generationだけ変わった場合は、
@@ -190,13 +225,18 @@ lock下でread-set・対象状態・入力不変・役割・権限・出力を�
 新しい巨大全文コーパスは作らない。全量在庫は軽量な一覧、本文保存は探索契約に一致した候補だけ。
 
 1. `knowledge-snapshot.json`
-   - 原計画REQ/OBS/GATE、run、handoff、監査計画、本計画、9.6、再現pipelineの採用節を記録。
+   - 最優先入口は整理後currentとcleanup。原計画REQ/OBS/GATE、監査計画、本計画、実ファイルを現行入力とし、run、handoff、9.6、旧current-state-evidenceは履歴として記録。
    - path、file SHA、主張ID／節・範囲、status、evidence_level、last_reviewed、used_for、
      原典／現物への参照を必須にする。legacyは一次資料再確認記録無しに確定根拠へ使わない。
    - ハイエンドモデルはsnapshotとそこから辿った原典を読む。wikiを読んだだけで原典確認済みとしない。
 2. `search-contract.json`
-   - 対象ルート・形式・分母、シンボルと参照候補、対象外、陽性／陰性対照、
+   - `requirement_ids`、`family_ids`、`defect_or_gap_ids`、gapが未解決であるpath+SHA+JSON pointer／行位置、
+     `decision_unlocked`、`claim_to_test`、`what_this_rules_out` を必須にする。
+   - 対象ルート・形式・分母・処理数・未読数、シンボルと参照候補、対象外、陽性／陰性対照、
      否定可能範囲、追加形式へ広げる条件を固定する。
+   - `duplicate_key = defect/gap + claim + input SHA集合 + search-rule SHA`。閉鎖済み同一keyは新規開始を拒否し既存記録を返す。
+   - 独立review receiptが無い、実在IDへ拘束できない、無断拡張、分母・対照欠落は `EA_SEARCH_SCOPE_INVALID`。
+     全範囲処理で候補なしは `rejected`、入力欠損・展開失敗・登録不能は `blocked`。別state語を作らない。
 3. `code-corpus.json / code-candidates.json`
    - 前者は抽出結果索引。入力集合の全件に成功／失敗／対象外と理由を付け、無記録を許さない。
    - 後者は候補の原文パス・位置・SHA、入力出力、依存辺、欠損辺、defect、review参照。
@@ -205,6 +245,8 @@ lock下でread-set・対象状態・入力不変・役割・権限・出力を�
    - 因果仮説と反証、単一変更または不可分な変更集合の定義、入力、試験対照、指標、期待方向、
      許容悪化限界、非対象回帰、戻し方を固定する。
    - 不可分な変更集合は独立因果審査で分割不能の理由を記録し、変更契約の対象として提示する。
+   - 対象gapの直接解消または事前登録H0157指標の期待方向改善と、非対象回帰が限界内であることを実測する。
+     効果差なし、逆効果、回帰、対照不一致は `EA_EFFECT_NOT_DEMONSTRATED` とし、candidate writer tokenを出さない。
 5. `artifact-lineage.json / requirement-coverage.json`
    - 変更候補、実験、入力、writer、候補Blend、原作比較画像、全要件、受入を同じSHA鎖へ接続する。
 
@@ -220,6 +262,10 @@ actor_idはオーケストレータの実タスク／実行IDから解決し、�
 欠落ID、同一runの別名、同一actor、入力SHA違い、古いreviewの流用を拒否する。
 モデル能力の上下は機械判定しない。承認済み `model-routing.json` の具体model ID／role／代替順と照合する。
 未登録モデルしか使えなければその役割だけ技術的停止し、入力が独立した許可済み作業は継続する。
+
+Lunaへ渡せるのは、固定済みroot／format／ruleについての列挙、件数、SHA、JSON pointer、既知署名の転記、
+単一変異試験の再実行だけ。原因確定、gapとの因果、欠損値推定、候補採用、原作一致、完成宣言は渡さない。
+Luna出力も同じcurrent-state input-set SHAに拘束し、別SHAの結果は採用しない。
 
 ## 忠実版・実験・近似版の分離
 
@@ -246,15 +292,18 @@ experiment ID、親Blend SHA、入力・変更SHA、枝、専用出力先を固�
 
 ## 実装順と承認関所
 
-- **U0 記録訂正**: 本計画実行承認＋計画独立レビュー合格後、既存の記録と正本入口だけ非破壊訂正。
-  P0・Blend SHAを再確認し、旧plan PASSを取得。新stateやguardの存在をU0開始条件にしない。
+- **U0 現行入口と入力拘束**: 本計画実行承認＋計画独立レビュー合格後、整理後current、cleanup、
+  run-state correction、実ファイル、P0 bootstrapを再取得する。revision 4で承認されたinput-setと1件でも違えば
+  `EA_KB_SNAPSHOT_STALE` で停止し、drift reportを作る。旧4枚を現在正本へ戻さない。新stateやguardの存在をU0開始条件にしない。
 - **U1 監査接続**: U0後の同一性を開始条件にrev4 bootstrapを実行。
   単一state、登録操作、役割台帳、実イベント接続、非破壊マージ、復元、writer54本の独立分類を試す。
   設定実パス・model ID配分表の承認が不足なら、その導入の前で停止する。
-- **U2 在庫修理**: f166を最小修理して1回全量走査。旧結果保持、NUL正規化、post差分、
-  vertex控除、LZ4失敗を理由付き再集計。非決定性が観測された場合だけ2回目。
-- **U3 探索設計**: ハイエンドがKBと原典からS6/S8/G10別契約を作り、別役割が直接照合。
-- **U4 抽出整理**: 登録形式を機械抽出しLuna/Sonnet級が候補整理。
+- **U2 第1探索候補の比較**: 最新currentが示す未解析コンテナ展開（f154候補）とG10/S6/S8 gapについて、
+  入力実在、解禁する判断、既存重複、H0157への因果候補を読み取りだけで比較する。G10は正常fixtureであり、
+  旧順序から第1実探索へ自動昇格させない。f166の修理・全量走査も、選ばれた契約が必要とする場合だけ対象にする。
+- **U3 探索設計**: ハイエンドがKBと原典から第1 `search-contract` 1件を作り、別役割が直接照合。
+  requirement/family/gap拘束、分母、両対照、duplicate key、rejected/blocked閉鎖を固定し、ユーザーの別承認を待つ。
+- **U4 抽出整理**: 承認された1契約の登録形式だけを機械抽出しLuna/Sonnet級が候補整理。
   追加形式は探索契約条件に一致するローカル範囲だけ。無条件のDLL/Lua/MonoScript全深掘りはしない。
 - **U5 因果審査**: 別ハイエンドが候補の実行条件、反証、原作差への経路を審査。
   ここで具体的変更契約（対象、予測される見え方、実験、回帰、戻し方）を提示し承認待ち。
@@ -330,14 +379,18 @@ completeは全ての導出条件と共有品質ゲートが同じ世代・同じ
 | EA_EXPERIMENT_PROMOTION_DENIED | 未検証実験出力の正式採用、承認前実験、親Blend改変 |
 | EA_REVIEW_ROLE_COLLISION | 同一actor／別名run、入力SHA違い、候補制作側の自己比較 |
 | EA_BRANCH_MISMATCH | 近似枝の証拠・承認を忠実枝へ流用、既存gapの消去 |
-| EA_KB_SNAPSHOT_STALE | 採用KB／原典のSHA・status変更、根拠不足のlegacy採用 |
-| EA_SEARCH_SCOPE_INVALID | 分母・対照・未処理件数の欠落、未登録形式の無断追加 |
+| EA_KB_SNAPSHOT_STALE | 整理後current・cleanup・run-state correction・計画・manifest・Blend・P0 bootstrapのSHA変更、旧4枚の正本化、begin後のread-set変更、自動SHA追従 |
+| EA_SEARCH_SCOPE_INVALID | H0157の実在REQ/family/gap参照欠落、分母・対照・未処理件数の欠落、閉鎖済みduplicate key、未登録形式の無断追加 |
 | EA_EFFECT_NOT_DEMONSTRATED | 効果なし、逆効果、非対象回帰、対照条件不一致 |
 | EA_ARTIFACT_LINEAGE_BROKEN | candidate／画像／writerのSHA相違、別候補への承認流用 |
 | EA_ACCEPTANCE_TRANSACTION_PENDING | 受入更新途中のcomplete、限定外キー変更、復元不一致 |
 
 IDを返すだけでは合格ではない。正常対照PASS、単一変異の所期FAIL、復元後PASSを記録する。
 実イベント接続、OS/Blender試験、人間判断は別々に報告し、単体試験で代替しない。
+
+旧版拒否は少なくとも、(1) currentを1バイト変更、(2) 旧handoffを正本指定、(3) begin後にrun-state変更、
+(4) review無しで基準SHAを自動更新、を1件ずつ変異させる。探索閉鎖は、unreadableをno-hit/rejectedへ誤分類する変異を
+`blocked`維持で拒否する。効果試験は変更を無効化して差0にする変異を `EA_EFFECT_NOT_DEMONSTRATED` で拒否する。
 
 ## 完成・未完成と保証の限界
 
@@ -362,6 +415,9 @@ IDを返すだけでは合格ではない。正常対照PASS、単一変異の�
 4. **第二の全体phase**は保存しない。
    欠陥別状態と共有準備から現在地を導出するため、一覧の見え方は複数状態併記になる。
    自由な一語への集約は戻さない。
+5. **G10を第1実探索として自動開始する順序**と、**f166全量修理を無条件に先行する順序**は採用しない。
+   手元ではG10が正常fixtureとして残り、最初の実探索はf154とG10/S6/S8の比較後に別承認となる。
+   すぐ探索を始める速さを失うが、整理後currentが示す候補を無視した旧順序と、H0157に効かない全量作業を防ぐ。
 成果物の部品や原作入力自体は今回削除していない。Blendの見た目は変更なし。
 
 ## 根拠・再開の入口（実パス）
@@ -373,6 +429,9 @@ KB-root:
 `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz`
 
 - 本計画: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md
+- 整理後current: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-current.md
+- 整理タスク結果: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-cleanup-task-entry.md
+- 承認済み具体計画: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md
 - 監査rev4: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md
 - 技術9.6: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md
 - 実行記録: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-run.md
@@ -381,14 +440,13 @@ KB-root:
 - 原REQ: /Users/takedayousuke/.claude/plans/mellow-questing-elephant-v5.1.md
 - 品質台帳: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json
 - brainstorm親: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md
-- 独立レビュー: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-independent-review.md
+- revision 3独立レビュー（本revision 4には流用しない）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-independent-review.md
 - レビュー対象旧版: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-revision-1.md
 
 ## 矛盾・未確定
 
-- revision 3の独立再レビューは完了し、未解消Critical/Majorなし（計画上のみ）。
-  検証対象SHAは `3860e540e929c340e773106acc2f3b2e6b899f6a606013b88c9a35f7a0bb83c4`。
-  検証後の変更はこのレビュー状態と「次の作業」の記録更新だけで、仕様の変更ではない。
-  モデル実ID配分表、hook設定差分、U5以後の具体変更契約は未承認。
+- revision 3の独立再レビューは未解消Critical/Majorなしだったが、対象SHAと仕様が本revision 4で変わったため流用しない。
+  revision 4の新SHAを固定し、整理後current・実ファイルを直接読む独立reviewを新規実施する。
+- モデル実ID配分表、hook設定差分、第1search-contract、U5以後の具体変更契約は未承認。
 - 実機のhook到達性、作業遮断、Blender見た目は未試験。
 - 現行旧計画の承認境界は、本計画が実行承認されるまで維持する。

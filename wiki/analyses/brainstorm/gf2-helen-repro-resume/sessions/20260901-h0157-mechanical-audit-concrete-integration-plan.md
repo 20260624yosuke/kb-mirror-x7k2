@@ -5,7 +5,7 @@ status: active
 confidence: medium
 evidence_level: user-stated+source-backed+inferred
 last_reviewed: 2026-09-01
-plan_status: proposed-unapproved
+plan_status: approved-for-unified-plan-revision
 parent: ../_index.md
 ---
 
@@ -13,8 +13,8 @@ parent: ../_index.md
 
 ## 状態
 
-- 2026-09-01、最小機械監査の**方針だけ承認済み**。
-- この文書は、未承認の一本化計画revision 3へ入れる具体差分の案。schema、guard、hook、Helen、f166、Blendの実装は未承認。
+- 2026-09-01、最小機械監査の方針と、この具体計画を明示承認済み。確認回答も「はい、この選択でよい」。
+- 承認範囲は、未承認の一本化計画revision 3本文の改訂と独立reviewまで。schema、guard、hook、Helen、f166、Blendの実装は未承認。
 - 旧版の記憶を使わず、2026-09-01の整理タスク後の現在位置ページ、実ファイル、SHAを再取得して作成した。
 
 ## 高リスク成果物として先に固定する6点
