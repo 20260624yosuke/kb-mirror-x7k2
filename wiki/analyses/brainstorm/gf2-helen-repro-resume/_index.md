@@ -109,6 +109,7 @@ background_paths:
 ## まだ決まってないこと
 
 - 承認済みの最小機械監査を、現行状態の再取得・旧版拒否を含めて一本化rev3へどう反映するか。具体差分、model ID、フック設定差分、実行承認は別。
+- 整理後のcurrent、run-state correction、実ファイル、P0 bootstrapを拘束する具体計画を承認するか。承認後も一本化rev3本文の改訂・独立reviewまでで、監査実装は別承認。
 - 最初の正式search-contractをG10のH0157本人参照鎖とし、登録済み原作bundle 2本の実体確認を同じgapの前段にするか。
 - 一本化計画revision 3の実行、具体モデル配分、実行環境の設定差分。
 - 因果審査後の具体的なBlend変更と、人間による原作差の許容判断。
@@ -123,6 +124,8 @@ background_paths:
 
 ## 直した記録
 
+- 2026-09-01 HTML revision 3を1280px/390pxで表示検証。本文6,677文字、h2 13個、重複ID 0件、文書全体の横はみ出し0px、狭幅の表は表内横スクロール、ブラウザーerror/warning 0件。整理後current、旧版拒否、f154対G10/S6/S8の第1契約停止点を表示し、方針承認と具体計画未承認を区別。3D成果物の見た目は未検証。
+- 2026-09-01 最小機械監査方針の承認後、別エージェント整理を再取得。現在位置の正本は `gf2-helen-repro-v51-current.md`、旧4枚は履歴へ降格、run-stateは `status_corrections_2026_09_01` 追加済みと確認。以前のcurrent-state-evidenceは現行run-state/rev4/rev3 SHAと不一致のため現在状態から降格。Git管理外なのでcleanとはみなさず、begin/finish/採用時の全入力SHA照合と `EA_KB_SNAPSHOT_STALE` 拒否を具体計画へ追加。Lunaは読取棚卸しだけを担当し、優先順位・因果・承認は決めていない。計画: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md
 - 2026-09-01 PC再起動後、旧探索票案の不承認と「Helenに有効でない機能を禁止」の修正要求から再開。既存一本化rev3の機構だけを再利用する最小機械監査案をsessionsへ保存。Helen・f166・Blend・quality-gate・一本化計画本文は未変更。設計: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-search-utility-gate-design.md
 - 2026-09-01 利用上限到達後、コード探索形式案HTML revision 2を1280pxと390pxで再検証。本文5,801文字、h2見出し12個、重複ID 0件、文書全体の横はみ出し0px、表は390px幅で表内横スクロール、ブラウザーerror/warning 0件。ローカルサーバーはfavicon 1件だけ404で本文資産は200/304。全ページ画像の継ぎ合わせ表示に見えた重複はDOM照合で撮影側の表示と判定し、上・中・下を通常画面単位で再確認した。3D成果物の見た目は検証していない。
 - 2026-09-01 コード探索の形式案をHTML化。H0157先行、14件・7,424件を分母にしない、外れた枝の閉鎖記録、Lunaと主担当の責任境界を1枚に整理した。実装・Blend・f166・品質台帳は変更していない。資料: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260901-h0157-code-investigation-workflow.html
@@ -156,6 +159,7 @@ background_paths:
 8. 独立レビュー: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-unified-route-plan-independent-review.md
 9. コード探索形式案HTML: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260901-h0157-code-investigation-workflow.html
 10. H0157探索・変更の有効性を強制する最小機械監査案: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-search-utility-gate-design.md
+11. 整理後の現行状態を拘束する一本化rev3具体計画案: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md
 
 ## 実装への申し送り
 
