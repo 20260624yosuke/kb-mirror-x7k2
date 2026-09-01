@@ -37,19 +37,18 @@ LLM が手を動かせる残りは実質0件で、次は**武田さんが4つの
 
 ## 節2 現在位置（機械が書く）
 
-| 項目 | 値 | 出どころ |
+<!-- MACHINE:section2:start -->
+| 項目 | 値 | どこから来たか |
 | --- | --- | --- |
-| 工程 | **E**（A〜E 完了・F 以降は未進入） | `run-state.json: current_step` |
-| 関所 | **13 PASS / 1 FAIL**（FAIL は G10） | `passed_gates` / `failed_gates` |
-| 記録の最終更新 | **2026-08-26 20:55** | `run-state.json: last_updated` |
-| 成果物 | `06_repro-v51/blends/helen-h0157-repro.blend` | 実ファイル |
-| 成果物の日時 | **2026-08-25 17:29** | 実ファイルの更新時刻 |
-| 成果物の大きさ | 19,295,445 バイト | 実ファイル |
-| 成果物の指紋 | `04ef8b79b3fa5b64…`（SHA-256 の先頭16桁） | 実測 |
-| 記録の件数 | 113件（工程Eが103件） | `history` |
+| 記録の最終更新 | 2026-08-26T20:55:15+09:00 | この記録の last_updated |
+| いまの工程 | E | この記録の current_step |
+| 次にやること | 6項目: 1_原作入力の回収 / 2_回収後の機械処理 / 3_見た目の報告 / 4_工程の停止点 / 5_次の候補(武田さんの選択待ち) / 参照 | この記録の next_action |
+| 止まっているもの | 4件: マント cloth1_lod0_Fight の再現 / 胸・スカートの伸びた辺（胸46本・スカート156本） / 顔の伸びた辺（122本） / 胸・背中の火傷状の筋 | この記録の blocked |
+| 成果物 | 2026-08-25 17:29 / 19,295,445 バイト / `04ef8b79b3fa5b64…` | `helen-h0157-repro.blend` |
+| 記録ファイル | 2026-09-01 11:49 / 228,544 バイト | `run-state.json` |
 
-**ずれの検知**: 記録（08-26 20:55）と成果物（08-25 17:29）は矛盾しない。
-ただし**この現在位置ページの生成時刻（2026-09-01）から見て、記録は6日前で止まっている**。
+**この節は機械が書いています**（生成 2026-09-01 11:50）。手で書き換えないでください。
+<!-- MACHINE:section2:end -->
 
 ## 節3 止まっている理由（機械と LLM・1行1件。片付いた行は消える）
 
@@ -97,40 +96,37 @@ LLM が手を動かせる残りは実質0件で、次は**武田さんが4つの
 
 ## 節6 関連ファイル（機械が書く・実パス）
 
-### この案件の本体
-
-| 何 | 実パス | 規模・最終更新 |
+<!-- MACHINE:section6:start -->
+| 何 | 規模・最終更新 | 実パス |
 | --- | --- | --- |
-| 作業フォルダ | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51` | 6,193ファイル / 最終 2026-08-26 |
-| 機械可読の記録 | 同上 `/run-state.json` | 226,044バイト / 2026-08-26 20:55 |
-| 成果物 | 同上 `/blends/helen-h0157-repro.blend` | 19.3MB / 2026-08-25 17:29 |
-| 実行記録（wiki） | `wiki/builds/gf2-helen-repro-v51-run.md` | — |
-| 引き継ぎ（wiki） | `wiki/builds/gf2-helen-repro-v51-handoff.md` | — |
+| 作業フォルダ | 6,193 ファイル / 2026-09-01 11:49 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51` |
+| 成果物フォルダ | 148 ファイル / 2026-08-26 15:45 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/blends` |
+| ふたなり化（派生） | 298 ファイル / 2026-09-01 11:48 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/07_futa-helen` |
+| キャラ抽出の安定化（派生） | 10,153 ファイル / 2026-09-01 11:48 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract` |
+| 水着化（派生） | 86 ファイル / 2026-09-01 11:48 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit` |
+| 実行記録（wiki） | 156,467 バイト / 2026-08-27 18:41 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-run.md` |
+| 引き継ぎ（wiki） | 152,873 バイト / 2026-08-27 18:41 | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-handoff.md` |
 
-### 派生案件
+**網羅である根拠はありません。** ここに出るのは `common.related` に書かれたものだけで、機械が自分で探した結果ではありません（2026-09-01 武田さんの指摘）。
 
-| 派生 | 実パス | 規模・最終更新 |
-| --- | --- | --- |
-| ふたなり化 | `…/gf2-helen-starlit-waltz/07_futa-helen` | 298ファイル / 2026-08-26 |
-| キャラ抽出の安定化 | `…/07_3D資料/gf2-char-extract` | 10,153ファイル / 2026-08-31 |
-| 水着化 | `LLM Knowledge Base _01/output/gf2-helen-swimsuit` | 85ファイル / 2026-08-31 |
-
-**注意（機械が検出した事実）**: 水着化とキャラ抽出は **2026-08-31 に動いている**。
-本体（06_repro-v51）だけが 08-26 で止まっている。
+**この節は機械が書いています**（生成 2026-09-01 11:50）。
+<!-- MACHINE:section6:end -->
 
 ## 節7 履歴の所在（機械が書く・全文は読ませない）
 
-| 記録 | 場所 | 量 |
+<!-- MACHINE:section7:start -->
+| 記録 | 量 | 場所 |
 | --- | --- | --- |
-| 工程の履歴113件 | `run-state.json: history` | 工程A 2件 / B 6件 / C 1件 / D 1件 / **E 103件** |
-| 実行の全文 | `wiki/builds/gf2-helen-repro-v51-run.md` | 1,737行 |
-| 引き継ぎの全文 | `wiki/builds/gf2-helen-repro-v51-handoff.md` | 1,582行 |
-| スクリプト | `06_repro-v51/scripts/` | 258本 |
-| 実行ログ | `06_repro-v51/logs/` | 241本 |
-| 台帳 | `06_repro-v51/ledger/` | 113本 |
+| スクリプト | 323 本 | `scripts` |
+| 実行ログ | 243 本 | `logs` |
+| 台帳 | 621 本 | `ledger` |
+| 実行の全文（wiki） | 156,467 バイト | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-run.md` |
+| 引き継ぎの全文（wiki） | 152,873 バイト | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-handoff.md` |
 
-**この節の目的は「どこを見ればよいか」だけを示すことです。**
-新しい会話は、まずこのページを読み、必要になった記録だけを実パスで開きます。
+**全文は読ませません。** どこを見ればよいかだけを示します。
+
+**この節は機械が書いています**（生成 2026-09-01 11:50）。
+<!-- MACHINE:section7:end -->
 
 ## 未確認・限界
 
