@@ -21,6 +21,18 @@ last_reviewed: 2026-09-03
   `/Applications` には無い。
 - 作業ディレクトリは
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01`。
+- **引き継ぎの監査が「53件の指摘」で止まることがある。これはこの案件のものではない。**
+  2026-09-03 に切り分け済み: 指摘はすべて別案件
+  （brainstorm-skill-portability と、llm-harness-parity / agent-positioning /
+  askuserquestion-misclick-guard の `_index.md`）のもので、
+  **この案件の正本メモへの指摘は 0 件**。
+  原因は ① `~/.codex/skills/brainstorm/scripts/` に未作成のファイルを指している（44件）
+  ② `_index.md` が保管庫内の `.claude/skills/brainstorm/SKILL.md` を指しているが、
+  実際は `~/.claude/skills/brainstorm/SKILL.md` にある（書き間違い・6件ほか）。
+  **武田さんの判断で「触らずに進める」と決まっている**（2026-09-03）。担当外なので直さないこと。
+  確かめ方:
+  `/opt/anaconda3/bin/python3 ~/.claude/skills/brainstorm/brainstorm_guard.py audit-handoff 2>&1 | grep -c 'gf2-dusevnyj-bikini-to-helen'`
+  → **0 なら、この案件は通っている。**
 
 ## 1. いま武田さんが決めていないこと（**最優先・これを聞くところから**）
 
@@ -77,7 +89,7 @@ $P tools/helen_swimsuit_fit_p.py --body general --rigid-roles all --cup-y-lam 5e
 - 台帳（どれを出すか）:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/visible-set-swimsuit.json`
   退避: 同フォルダの `visible-set-swimsuit.json.bak-20260903`
-- 実行記録（**今日の全経緯。1〜28節**）:
+- 実行記録（**今日の全経緯。1〜30節**）:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/run-20260903-choker-restored.txt`
 
 2026-09-03 に成果物へ入れたもの: **首の輪**（358面）、**眼鏡のフレーム**（1276面）、
