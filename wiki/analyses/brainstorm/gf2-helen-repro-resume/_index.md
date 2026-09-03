@@ -257,6 +257,13 @@ U3の対象選定は別判断に委ね、ここでは決めていない。
 解決することを武田さんが明示承認した。無断代替ではなく有断の置換として記録し、因果審査から進める。
 範囲は因果審査まで。U3の第1契約の作成は含まない。
 
+### 2026-09-03 A案実施と第1契約の提示
+
+承認ずみの3件を実行した。A案は入力再照合・隔離試作・陽性対照・寄与判定まで完了
+（周囲光の代表値約0.45〜0.51、顔の門への適用は推定が要るため別判断）。
+第1契約は伸びた辺で1件だけ作成し、提示したため承認待ちに戻る（独立照合は未実施）。
+成果物は読んでいない・書いていない。記録は実施記録・作成記録・結果HTML。
+
 ### 2026-09-03 承認3件を確定・承認・選択
 
 判断材料HTMLへの回答として3件とも受領した。
@@ -385,6 +392,9 @@ Helen必要分の未回収率ではない。初回走査後に正規化手順が
 30. 第1契約の対象の検討（2026-09-03・伸びた辺を提案・確定は承認待ち）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-first-contract-deliberation.md
 31. タイムライン作り直し版（2026-09-03・既存名で更新）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-timeline.html
 32. 承認3件の判断材料HTML（2026-09-03・カード再提示用・実行なし）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-approval-materials.html
+33. A案実施記録（2026-09-03・工程1〜4完了・工程5承認待ち）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-sh-lighting-implementation-record.md
+34. U3第1契約の作成記録（2026-09-03・提示・承認待ち）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-contract-author-record.md
+35. A案実施と第1契約の提示HTML（2026-09-03）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-aplan-contract.html
 
 ## 実装への申し送り
 
