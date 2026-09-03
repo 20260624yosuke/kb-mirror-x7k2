@@ -112,6 +112,18 @@ HTML revision 4の後半更新を停止し、先にレビュー反復の終端�
 
 推進の合図として採用する。入口書類はU0〜U3実装未承認のままであること、承認資料の固定版が旧基準（現在位置 `5bb60fb5...`・品質台帳 `f7b29ca6...`）で新版（`ec641b37...`・導入後の `479f8a1d...`）とずれていることを実ファイルで確認した。旧承認のままU2へ進まず、入り方をカードで確認する。因果審査の担当ID（`claude-opus-5`）をこの会話が名乗れるかは実行側で再確認する。
 
+### 2026-09-03 タイムライン図の作成を指示
+
+> /html を使って、現状のプロジェクトのタイムラインをグラフで説明してください
+
+09-03に水着版会話から持ち込まれた残タスク「タイムラインの図をこの案件にも作る」の実行として採用する。縦型の自作SVG図と証拠対応表で1枚にまとめる。既存の正本・台帳・Blendには触れない。現在位置ページの残タスク節は新基準（`ec641b37...`）の一部なので書き換えない。
+
+### 2026-09-03 タイムライン図がUIで確認できないと指摘
+
+> 承認しない。ui上で確認できません。解決してください
+
+ファイル自体は正常（構文OK・参照2件とも実在・7,609バイト）だったため、開き方の問題と切り分けた。対応として配布物の置き場をローカル配信（127.0.0.1の8901番）で出し直し、図とCSSの両方が200で返ることを curl で確認した。サーバーは表示確認用の一時的なもので、止め方は最終報告に書く。図本体の改訂は未実施。
+
 ### 2026-08-31開始・2026-09-01記録
 
 > プロジェクトを進めます。
@@ -280,6 +292,7 @@ U2（f154比較と因果審査）は別の機会に行う。この判断は中�
 19. U0再測定のdrift report（2026-09-03・新旧対照と判定）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u0-remeasurement-drift-report.md
 20. U2実在inventoryの実測JSON（2026-09-03）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-mechanical-inventory.json
 21. U2実在inventoryの報告（2026-09-03・因果判断なし）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-mechanical-inventory-report.md
+22. タイムライン図HTML（2026-09-03・縦型SVGと証拠対応表）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-timeline.html
 
 ## 実装への申し送り
 
