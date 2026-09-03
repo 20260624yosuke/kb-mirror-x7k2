@@ -25,3 +25,9 @@
 
 - 武田さんの言葉「俺はclaudeの使用感に近づいたかを確認したいんだけど。そのつもりの検証だった」。
 - 「検書」の対象は、使用感の接近確認に確定。文書校閲か動作検証かは未確定のまま（次カードで選ぶ）。
+
+## 進行承認と試作（2026-09-03）
+
+- 「タスクの続きを願いします」を新規メモでの動作検証の承認として受領した。
+- 見本を読んで試作HTMLを1件作り、親とHTMLの両検査に合格した。
+- 試作: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-usage-feel-check.html
