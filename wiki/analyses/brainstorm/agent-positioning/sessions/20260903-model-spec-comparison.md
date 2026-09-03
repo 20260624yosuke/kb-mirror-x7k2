@@ -1,0 +1,31 @@
+# セッションメモ：2026-09-03 モデルスペック比較の問い
+
+## 武田さんの発言（そのまま）
+
+> opencodeじゃなくてnemotron3 ultraを使ってる。このエージェント俺は知らないけどコンテキストが1億対応だから、結構大型モデルなのかな？って思ったんだよね。
+
+## 確認した事実
+
+- この会話で動いているモデル：**nemotron-3-ultra-free**（NVIDIA の Nemotron 3 Ultra 系）
+- 表示上のコンテキスト：**1億トークン**（100M context window）
+- これは opencode というエージェントフレームワークの上で動いているが、モデル自体は NVIDIA 製
+
+## 補足（一般知識・2次情報）
+
+Nemotron 3 Ultra は NVIDIA が 2024 年末〜2025 年初頭に発表した大規模言語モデル。
+- Nemotron 3 シリーズは Ultra / Pro / Mini の 3 サイズ
+- Ultra は「GPT-4 クラス」とされる最大サイズ
+- コンテキスト長 100M（1 億トークン）は、当時としては異例の長さ
+- NVIDIA の独自データ（Nemotron-CC 等）で学習され、アライメントには SteerLM / HelpSteer 等を使用
+- API 提供は NVIDIA の NIM (NVIDIA Inference Microservices) や、一部クラウド経由
+
+「opencode」はあくまで **CLI エージェントフレームワーク**（Go 製の単体バイナリ）で、バックエンドのモデルは切り替え可能。今回は nemotron-3-ultra-free が指定されている。
+
+## 次に確認したいこと
+
+- この環境の `opencode.json` でどのモデル設定になっているか
+- 武田さんが「スペック比較」としてまとめたい粒度（モデル単体比較か、エージェントフレームワーク込みの比較か）
+
+## 関連リンク
+
+- [[agent-positioning]] (親メモ)

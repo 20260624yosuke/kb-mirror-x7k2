@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4973 ファイル_
+_合計 4975 ファイル_
 
 ## root/ (11)
 
@@ -278,6 +278,14 @@ _合計 4973 ファイル_
 ## wiki/analyses/brainstorm/agent-performance-eval/sessions/ (1)
 
 - [20260903-agent-performance.md](wiki/analyses/brainstorm/agent-performance-eval/sessions/20260903-agent-performance.md) | 2026-09-03T03:51:26Z
+
+## wiki/analyses/brainstorm/agent-positioning/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/agent-positioning/_index.md) | 2026-09-03T03:55:21Z
+
+## wiki/analyses/brainstorm/agent-positioning/sessions/ (1)
+
+- [20260903-model-spec-comparison.md](wiki/analyses/brainstorm/agent-positioning/sessions/20260903-model-spec-comparison.md) | 2026-09-03T03:56:40Z
 
 ## wiki/analyses/brainstorm/askuserquestion-misclick-guard/ (1)
 
