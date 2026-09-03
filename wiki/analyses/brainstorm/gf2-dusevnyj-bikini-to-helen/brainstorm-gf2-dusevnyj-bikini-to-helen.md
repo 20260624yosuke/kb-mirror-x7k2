@@ -3,12 +3,15 @@ type: analysis
 status: active
 confidence: medium
 evidence_level: user-stated+source-backed
-last_reviewed: 2026-08-31
+last_reviewed: 2026-09-03
 brainstorm_status: ready
+# 2026-09-03 武田さん「このプロジェクトの続きは別のエージェントに任せます」
+implementation_agent: separate-session
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260903.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md
@@ -3488,7 +3491,78 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-chest-hole-cause-audit-gap.md — 胸の穴・監査の抜け・肩ひもの原因調査（2026-08-31）
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-four-defects-root-cause.md — 4件の原因調査と現在地の可視化（2026-08-31 夕）
+## 再開の入口（実パス）
+
+**新しい会話は、まずこの1枚を読む。**
+
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260903.md`
+
+そこに書いてあること: 武田さんが未回答の判断 / 成果物と退避の場所 / 検査の走らせ方 /
+成果物へ入れる手順 / 禁止事項 / 捨てた案 / 残っている作業 / 報告の作法。
+
+補助（必要になったら）:
+
+- 今日の全経緯（1〜28節）:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/run-20260903-choker-restored.txt`
+- 今日の説明ページ:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260903-choker-restored-and-exception-scope.html`
+- 採用手順の計画書:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`
+
+**このメモ（正本）は 5000 行ある。全部読む必要はない。** 日付つき見出しを新しい順に見る。
+
 ## 実装への申し送り
+### 【2026-09-03 引き継ぎ】別のエージェントへ渡す（武田さん指示）
+
+武田さん「コンテキストが膨らんできたので、このプロジェクトの続きは別のエージェントに
+任せます。準備して」。**この会話では実装しない。**
+
+**渡す先が最初に読むもの:**
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260903.md`
+
+#### 完成条件（次のエージェントが満たすもの）
+
+1. **武田さんに、候補B と候補A のどちらを成果物へ入れるか聞く**（引き継ぎ書 §1）。
+   選択肢には必ず「それを選ぶと失うもの」を添える。
+2. 選ばれた版を成果物へ入れ（引き継ぎ書 §4 の手順）、§3 の検査を全部走らせて、
+   **不合格の顔ぶれが増えていないこと**を数値で示す。
+3. 入れる前に Blend と台帳を退避する。
+4. 武田さんへ Blender で見てもらう（**絵として正しいかは機械で測れない**）。
+
+#### 絶対にやってはいけないこと
+
+引き継ぎ書 §5 が正本。要点だけ再掲:
+
+- 合格線を、成果物が通るように動かさない。
+- 手順の約束（厚み1.0 / 縫い目0mm / 新しく作る面0）を例外にして通さない（W12 が止める）。
+- 部品の名前を検査に直書きしない。
+- 「多分こういう物だろう」で部品を消さない。
+- 解く回数や重みを合格線に合わせて選ばない。
+- 原本へ書き込まない。退避せずに上書きしない。
+
+#### 捨てた案とその理由
+
+引き継ぎ書 §6 が正本（6件。`out_anchor` / 役割ごと剛体 / 高さごとの伸び率 /
+橋渡しの面 / 胸の頂点で全体を合わせる / 一様拡縮）。
+
+#### 完成条件（機械が読む形）
+
+```done-when
+path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260903.md
+path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/run-20260903-choker-restored.txt
+run: /opt/anaconda3/bin/python3 tools/plan_audit.py ==> 17 / 17 PASS
+run: /opt/anaconda3/bin/python3 tools/measurement_label_check.py ==> PASS
+run: /opt/anaconda3/bin/python3 tools/doc_layout_check.py --all ==> 指摘 0 件
+```
+
+### 終わったら次に取る承認
+
+1. 候補B / 候補A のどちらを入れるか（**最優先・未回答**）。
+2. 帯の厚みの原因が分かったら、その直し方。
+3. 検査 V8 の合格線（首の紐の浮きを何mmまで許すか）。
+4. 台帳21件の仕分けの仕組みを実際に走らせてよいか。
+
+
 
 ### 【2026-08-31 夕 承認・この会話で実装する】明言台帳と5本の関所 → 胸を General・腕を表示 → 作り直し
 
