@@ -226,6 +226,15 @@ U2（f154比較と因果審査）は別の機会に行う。この判断は中�
 
 確定カードの選択は「実在inventory先行」、確認は「はい、この選択でよい」。範囲はf154候補とG10/S6/S8の未解決点の読み取り限定の列挙まで。因果の採否・候補採用・探索順は含まない。因果審査は担当IDの確認後に別承認を取る。
 
+### 2026-09-03 U2因果審査を実施・接続なしと判定
+
+確定カードを使わず、会話文の「今回はそのまま進めていいよ」を配分変更の承認として採用し、
+U2因果審査を実施した。f154台帳（SHA `6b50c6d8...`）・現行状態・run-stateのf152記録を直接読んだ。
+結果はG10/S6/S8いずれとも因果接続なし、候補採用なし、実G10 P3B blocked維持。
+G10の入力欠損（prefab root由来の対応表）が確定したため承認資料U2の停止点に該当する。
+記録は `sessions/20260903-u2-causal-review.md` と同名JSON。
+U3の対象選定は別判断に委ね、ここでは決めていない。
+
 ### 2026-09-03 名前指定で図が見つかる・説明HTMLの要求
 
 > 見つかった（図のファイル名指定への回答、確認あり）
@@ -238,6 +247,15 @@ U2（f154比較と因果審査）は別の機会に行う。この判断は中�
 ### 2026-09-03 図受け入れから進める方針を承認
 
 確定カードの選択は「図受け入れから (推奨)」、確認は「はい、この選択でよい」。未決4点のうちタイムライン図の受け入れ可否から進める。bundle所在・因果審査・実行承認は後回しにするが、中断ではなく順番の決定である。図本体の改訂は含まず、会話文版での確認とする。
+
+### 2026-09-03 因果審査の担当名義の置換えを承認
+
+> 止まり位置の次は因果審査だが、約束どおり特定担当の名義が必要で無断代替しないため止まる。
+> この使用環境の話ではない。museだから。今回はそのまま進めていいよ。
+
+承認資料の指定（`requested_model=opus` → `claude-opus-5`）に対し、この会話は `muse-spark`（opencode）で
+解決することを武田さんが明示承認した。無断代替ではなく有断の置換として記録し、因果審査から進める。
+範囲は因果審査まで。U3の第1契約の作成は含まない。
 
 ### 2026-09-03 タイムライン図を受け入れない・作り直す
 
@@ -328,6 +346,8 @@ U2（f154比較と因果審査）は別の機会に行う。この判断は中�
 21. U2実在inventoryの報告（2026-09-03・因果判断なし）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-mechanical-inventory-report.md
 22. タイムライン図HTML（2026-09-03・縦型SVGと証拠対応表）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-timeline.html
 23. 表示の混乱の分離記録（2026-09-03・親の文脈汚染を避けるため子へ移動）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-vscode-visibility-detour.md
+24. U2因果審査の記録（2026-09-03・接続なし・採用なし・blocked維持）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-causal-review.md
+25. U2因果審査の実測JSON（2026-09-03）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-causal-review.json
 
 ## 実装への申し送り
 
