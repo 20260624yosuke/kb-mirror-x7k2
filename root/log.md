@@ -10905,3 +10905,14 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   index 未登録 7→0、孤立 5→0、幽霊登録 2→1 (`[[page-slug]]` は index.md 内の記述例)。
 - 触ったファイル: `wiki/entities/たけだようすけ.md` (新規) / `wiki/entities/takeda-yohsuke.md` /
   `tools/wiki_lint.py` / `index.md` / `log.md`。
+
+## [2026-09-03] query | opencodeのUI見づらさ対応とVSCode導入
+
+- デスクトップアプリの描画制限（リンク不通・白表示・shell単色）と回答の癖違い（読む指示とモデルの差）を切り分け。
+- 代替UI比較のHTMLを新規作成: `wiki/_attachments/project-hub-index/20260903-opencode-ui-alternatives.html`（TUI/Web/IDE拡張、関所PASS）。
+- VSCode導入段取りのHTMLを新規作成: `wiki/_attachments/project-hub-index/20260903-vscode-opencode-setup.html`（Kimi K3はMoonshot AI経由、関所PASS）。
+- 同一会話をVSCode側で開けることを確認（同じフォルダを開き `/sessions` で選択、送信は片方ずつ）。
+- パスコピー改善の検証: 候補2（素の絶対パス）は操作感○・視認性×で不採用。案1（短名リンク）と案2（file://符号化）を試作提示し案1採用。
+- 残: 案1採用に伴う表示ルールと検査の変更は未実施。
+- VSCode拡張の確認: `vscode-office` はOffice文書用でHTML対象外。HTMLプレビューはLive Preview（Microsoft製）を案内。
+- 触ったファイル: 上記HTML2件 / `log.md`。
