@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4980 ファイル_
+_合計 4982 ファイル_
 
 ## root/ (11)
 
@@ -345,7 +345,7 @@ _合計 4980 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-helen-repro-resume/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-03T08:47:22Z
+- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-03T08:52:58Z
 
 ## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (16)
 
@@ -377,6 +377,14 @@ _合計 4980 ファイル_
 ## wiki/analyses/brainstorm/llm-harness-parity/ (1)
 
 - [_index.md](wiki/analyses/brainstorm/llm-harness-parity/_index.md) | 2026-08-31T14:53:26Z
+
+## wiki/analyses/brainstorm/opencode-display-audit/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/opencode-display-audit/_index.md) | 2026-09-03T08:55:42Z
+
+## wiki/analyses/brainstorm/opencode-display-audit/sessions/ (1)
+
+- [20260903-path-color-blocks.md](wiki/analyses/brainstorm/opencode-display-audit/sessions/20260903-path-color-blocks.md) | 2026-09-03T08:51:55Z
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
