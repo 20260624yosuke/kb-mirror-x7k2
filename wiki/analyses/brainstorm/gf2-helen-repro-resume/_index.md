@@ -190,8 +190,15 @@ U2（f154比較と因果審査）は別の機会に行う。この判断は中�
 
 確定カードの選択は「完了版へ更新」、確認は「はい、この選択でよい」。対象は `wiki/_attachments/project-hub-index/20260903-helen-h0157-resume-status.html` のリード文とフッターの2件（導入前の文言を導入完了に合わせる）。次の一手節の「U2か区切りか」は承認済みの区切り判断に合わせる記録整理として実施。正規導入・Blend変更・U2/U3の新規作業は含まない。
 
+### 2026-09-03 U2推進へ切り替え・U0再測定の方針を承認
+
+確定カードの選択は「U0再測定から入る」、確認は「はい、この選択でよい」。09-03の「U1完了で区切り・U2は別機会」の判断を上書きし、この会話でU2に向けて進める。旧承認資料の固定版（現在位置 `5bb60fb5...`・品質台帳 `f7b29ca6...`）のままU2へ進まない。再測定は読み取り限定で実施し、新基準の確定後にU2実行承認を別カードで取る。正規の台帳・共有設定・Blend本体への書込みは含まない。
+
+再測定の結果は `sessions/20260903-u0-remeasurement.json`（実測集合SHA `e39ff76c...`）と `sessions/20260903-u0-remeasurement-drift-report.md` に保存した。変化は承認済みの2件（現在位置の残タスク追記、U1正規導入）のみで、他10件と環境3ファイルは不変のため PASS-WITH-KNOWN-DRIFT とした。以後は旧固定値を使わない。
+
 ## まだ決まってないこと
 
+- U2の実行承認：2026-09-03にU0再測定まで完了（実測集合SHA `e39ff76c...`・既知の変化2件のみ）。読み取り限定の比較（mechanical inventory先行か全体か）と因果審査の担当IDの扱いをカードで確認する。
 - U1の受領可否：2026-09-03に検証・限定修正・正規導入まで完了（一時作業場→本番の原子移設、退避と再検査つき）。
   本番関所 plan は PASS、試験20件も PASS。U1完了で区切り、U2は別機会（2026-09-03決定）。導入記録は `sessions/20260903-u1-production-promotion-record.md`、
   説明HTMLは `wiki/_attachments/project-hub-index/20260903-helen-h0157-resume-status.html`。
@@ -264,6 +271,8 @@ U2（f154比較と因果審査）は別の機会に行う。この判断は中�
 15. 別エージェント用の環境修理タスク入口: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md
 16. 一本化revision 4計画承認受領書: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-route-revision4-plan-approval-receipt.md
 17. 再開確認の付記HTML（2026-09-03・追加のみ・既存HTMLは不変）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-continuation-check.html
+18. U0再測定の実測JSON（2026-09-03・新基準）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u0-remeasurement.json
+19. U0再測定のdrift report（2026-09-03・新旧対照と判定）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u0-remeasurement-drift-report.md
 
 ## 実装への申し送り
 
