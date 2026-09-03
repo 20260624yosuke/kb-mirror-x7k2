@@ -5,8 +5,9 @@ confidence: medium
 evidence_level: user-stated+source-backed
 last_reviewed: 2026-09-04
 brainstorm_status: ready
-# 2026-09-03 武田さん「このプロジェクトの続きは別のエージェントに任せます」
-implementation_agent: separate-session
+# 2026-09-04 武田さんの指示で implementation_agent: separate-session を削除。
+# 「museがたぶん書き換えたな。もともとの俺の意図と違うスキルの挙動。実装とか承認する許可する。」
+# ＝この会話で実装してよい。再び足すのは武田さんが明示したときだけ。
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料
@@ -42,6 +43,28 @@ background_paths:
 旧入口の引き継ぎ資料: `wiki/builds/gf2-dusevnyj-p3-bikini-to-helen-handoff-20260827.md`（revision 3。
 0.4 と 0.5 は superseded）。
 このメモは、そこから再開した会話の記録。設計を会話で育てず、決まった順にここへ落とす。
+
+## 2026-09-04 3つの問いへの答え（私の回答・武田さんの判断待ち）
+
+**問い**: 「これは過剰監査？ 心がけの部分？ 他に有効な手段がある？」
+
+- **過剰監査ではない。** 数ではなく**測っている向き**の問題。38本の全部が
+  「距離」か「元の形からの崩れ」しか見ておらず、**「布が体の曲面に沿っているか」は0本**。
+- **心がけではない。** 機械化できる（幾何量・画像認識不要・合格線は原着装の実測から取れる）。
+  そして**心がけでは止まらなかったことが 2026-08-30 → 2026-09-04 の再発で実証済み**。
+- **他に有効な手段はある。** 「監査を増やす」ではなく **進捗の数え方を変える**:
+  - いま = 「検査を何本作ったか」「不合格が何件減ったか」
+  - 置き換え = **「目標のうち、まだ誰も測っていない部分が何個残っているか」**
+  - 目標を1枚の機械可読ファイルに書き、既存38本をそこへ紐付け、
+    **対応する検査が1本も無い目標項目を機械に列挙させる**。
+  - この形なら**監査を作ること自体は進捗にならない**。目標に紐付かない検査は本数に数えない。
+    これが「監査は目的ではなく憶測を防ぐ手段」の機械での表現。
+
+説明ページ:
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260904-why-audits-miss-the-goal.html`
+
+**未確認**: 沿い具合そのものは**まだ測っていない**（成果物封鎖で実行が止まった）。
+「沿い具合が浮きの正体」は私の仮説。1本測れば裏づくか外れるかが決まる。
 
 ## 武田さんの考え
 
