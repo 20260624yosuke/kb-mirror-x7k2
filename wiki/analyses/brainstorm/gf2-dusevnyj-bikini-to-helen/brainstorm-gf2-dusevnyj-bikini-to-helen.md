@@ -3,7 +3,7 @@ type: analysis
 status: active
 confidence: medium
 evidence_level: user-stated+source-backed
-last_reviewed: 2026-09-03
+last_reviewed: 2026-09-04
 brainstorm_status: ready
 # 2026-09-03 武田さん「このプロジェクトの続きは別のエージェントに任せます」
 implementation_agent: separate-session
@@ -44,6 +44,19 @@ background_paths:
 このメモは、そこから再開した会話の記録。設計を会話で育てず、決まった順にここへ落とす。
 
 ## 武田さんの考え
+
+### 2026-09-04 適合は「候補B」を採る（本人の選択・実施済み）
+
+2026-09-03 から未回答だった「候補B と候補A のどちらを成果物に入れるか」に、
+承認カード（3択・それぞれ「選ぶと失うもの」つき）で **「候補B」** を選択。
+同日、成果物へ入れて作り直し、検査と変異試験を全部通し直した。
+
+- 判定の不合格 **4件 → 2件**（G4b深い / G9a厚み）。検査の合否の顔ぶれは差し替え前と同一。
+- **失ったもの①** カップの厚み 1.824→0.664（今度は平たすぎる側へ外れた・**未確認**）
+- **失ったもの②** W7 首のひもの先端が **16.6mm 下がった**（+7.3mm → −9.3mm・**未確認**）
+- 戻せる（`_bak-20260904/` と `visible-set-swimsuit.json.bak-20260904`）
+- 記録:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260904-fit-candidate-b-adopted.md`
 
 ### 2026-09-03 3回目（本人の言葉・承認と新しい禁止3件）
 
@@ -5109,3 +5122,6 @@ G7「辺が10倍超」が新たに落ちる。**30本すべてがカップ↔帯
     — 4つの欠陥（胸の変種・骨の向き・水着の透明・肌の色）の原因調査と、V7/W8/W9/W10/W11 の実装記録
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260831-why-audits-missed-structural.md`
     — **機械監査が効かなかった構造的原因の調査**。監査は Blend の中しか見ていない／不合格を自分で例外にできる／検査が事故の後追い、を実測とコード行で確定。チョーカーは「消した」ではなく「Blend に入っていない」。提案する7つの機械監査と根拠
+
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260904-fit-candidate-b-adopted.md`
+    — 適合を候補B へ差し替えて成果物を作り直した記録（不合格 4件→2件・W7 が 16.6mm 悪化・戻し方）
