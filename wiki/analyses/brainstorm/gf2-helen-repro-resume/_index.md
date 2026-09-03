@@ -257,6 +257,14 @@ U3の対象選定は別判断に委ね、ここでは決めていない。
 解決することを武田さんが明示承認した。無断代替ではなく有断の置換として記録し、因果審査から進める。
 範囲は因果審査まで。U3の第1契約の作成は含まない。
 
+### 2026-09-03 未回収96パーセントの出所確認を指示
+
+> 未回収文が96％あったのはどうなってんの？/html/html
+
+実測まで戻って確認した。96.1は全体MSL 7,726種のうち既存抽出と未一致の7,424種の割合で、
+Helen必要分の未回収率ではない。初回走査後に正規化手順が変わり再走査が無いため古い値のまま。
+分母・完成率に使わない扱いは09-01の判断どおり維持する。成果物は説明HTML（Inbox i090397b）。
+
 ### 2026-09-03 判断情報の整理を指示
 
 > タスクを進めます。俺が判断するべき情報を整理して。/html
@@ -356,6 +364,7 @@ U3の対象選定は別判断に委ね、ここでは決めていない。
 24. U2因果審査の記録（2026-09-03・接続なし・採用なし・blocked維持）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-causal-review.md
 25. U2因果審査の実測JSON（2026-09-03）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-causal-review.json
 26. 判断整理HTML（2026-09-03・5件の判断・実行なし）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-takeda-decisions.html
+27. 未回収96パーセント説明HTML（2026-09-03・出所と現状・実行なし）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-unrecovered-96-percent.html
 
 ## 実装への申し送り
 
