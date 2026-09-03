@@ -230,6 +230,7 @@ U2（f154比較と因果審査）は別の機会に行う。この判断は中�
 
 - 2026-09-01: 指定の古い添付を現行状態とせず、後続の監査rev4・一本化rev3・実ファイルまで追跡した。
 - 2026-09-01: P0B step 2という古い表示と、監査本体が無い現物との差を説明へ残す。正式の実装状態は勝手に書き換えない。
+- 2026-09-03: 再開確認の付記HTMLを新規作成（既存の説明HTMLは不変）。承認カードの機械関所がHTML書込みなしで止めたため、追加のみの記録で対応した。見本の部品配置（本文先・用語後）どおりに作成した。
 
 ## 再開の入口（実パス）
 
@@ -249,6 +250,7 @@ U2（f154比較と因果審査）は別の機会に行う。この判断は中�
 14. レビューループ機械防止設計: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-review-loop-mechanical-prevention-design.md
 15. 別エージェント用の環境修理タスク入口: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md
 16. 一本化revision 4計画承認受領書: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-route-revision4-plan-approval-receipt.md
+17. 再開確認の付記HTML（2026-09-03・追加のみ・既存HTMLは不変）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-continuation-check.html
 
 ## 実装への申し送り
 
