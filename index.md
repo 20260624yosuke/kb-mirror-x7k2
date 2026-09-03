@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4982 ファイル_
+_合計 4983 ファイル_
 
 ## root/ (11)
 
@@ -385,6 +385,10 @@ _合計 4982 ファイル_
 ## wiki/analyses/brainstorm/opencode-display-audit/sessions/ (1)
 
 - [20260903-path-color-blocks.md](wiki/analyses/brainstorm/opencode-display-audit/sessions/20260903-path-color-blocks.md) | 2026-09-03T08:51:55Z
+
+## wiki/analyses/brainstorm/opencode-vscode-scroll/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/opencode-vscode-scroll/_index.md) | 2026-09-03T12:08:44Z
 
 ## wiki/analyses/brainstorm/project-hub-index/ (1)
 
