@@ -41,6 +41,19 @@ parent: ../_index.md
 - 「/html」の1語が何の指示か（状況説明HTMLが欲しいのか、誤記か）。
 
 ## 2026-09-03 追記：HTML付記を作成
-
 - 承認カードの発行が「HTML読込済みだが成果物への書込みが無い」で止まったため、密度判定の付記HTMLを新規作成した（既存の 20260903-helen-h0157-u1-interruption-status.html は未変更）。
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-handoff-density-check.html
+
+## 2026-09-03 武田さんの指摘：HTML本文が小さく視認性が悪い
+
+- 形式の適合は概ね可（head一式、h1・lede・目次・id対応、用語aside、3列表・rowlabel、コード言語クラス、絵文字なし、ページ固有styleなし）。
+- 不適合1件：`.mb-wrap` 内の順序が見本と逆。見本（component-samples.html 29〜30行目）は `.mb-main` 先・`aside.mb-glossary` 後だが、本付記と既存status両HTMLは aside 先・main 後。CSS（document.css 45〜50行目）は1列目を広く2列目を320pxに割るため、本文が320px列に押し込められる。これが狭さの原因と判定（CSS・DOM照合済み、ブラウザー実測は未実施）。
+- 20260831版はページ固有styleで grid-column を強制して回避していた。本付記にはその回避が無い。
+- 見え方が変わるため未修正のまま、修正範囲をカードで確認する。
+
+## 2026-09-03 修正実施：2件とも順序修正（承認済み）
+
+- カードで「2件とも順序修正」と「はい、この選択でよい」を受領し、両HTMLの `.mb-wrap` 内を `.mb-main` 先・`aside.mb-glossary` 後へ並べ替えた。本文・用語の中身は無変更。
+- 対象1：/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-handoff-density-check.html
+- 対象2：/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-u1-interruption-status.html
+- ブラウザーでの実測表示確認は未実施。開き直して本文が広い列に戻ったかの目視だけ残る。
