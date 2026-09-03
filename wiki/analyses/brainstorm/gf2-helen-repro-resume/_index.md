@@ -167,6 +167,7 @@ U0〜U3承認カードに対し、ユーザーは実装可否を選ばず、コ�
 
 ## まだ決まってないこと
 
+- U1の受領可否：2026-09-03のやり直し検証は受領不可（追加21件の誤分類が残るため）。限定修正（21件のnon-writer再分類と台帳・関所の再実行）の承認待ち。受領書は `sessions/20260903-u1-independent-verification-receipt.md`、説明HTMLは `wiki/_attachments/project-hub-index/20260903-helen-h0157-resume-status.html`。
 - 一本化計画revision 4は計画として承認済み。未決なのは、別資料に固定したU0〜U3実装を開始するか。
 - 別タスク [[codex-brainstorm-review-loop-prevention-task-entry]] で、review-loop guardの実装方式と変更範囲を承認するか。本H0157会話の未決事項には混ぜない。
 - `sessions/20260901-unified-rev4-u0-u3-implementation-approval-material.md` のmodel実ID、hook設定差分、U0〜U3実装範囲・停止条件を承認するか。
