@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4994 ファイル_
+_合計 4995 ファイル_
 
 ## root/ (11)
 
@@ -317,7 +317,7 @@ _合計 4994 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-09-03T13:51:52Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-09-03T15:34:14Z
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (21)
 
@@ -347,7 +347,7 @@ _合計 4994 ファイル_
 
 - [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-03T15:32:52Z
 
-## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (25)
+## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (26)
 
 - [20260901-brainstorm-fault-repair.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair.md) | 2026-08-31T15:51:17Z
 - [20260901-h0157-mechanical-audit-concrete-integration-plan.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md) | 2026-09-01T06:57:52Z
@@ -371,6 +371,7 @@ _合計 4994 ファイル_
 - [20260903-u2-causal-review.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-causal-review.md) | 2026-09-03T14:32:06Z
 - [20260903-u2-mechanical-inventory-report.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-mechanical-inventory-report.md) | 2026-09-03T07:28:30Z
 - [20260903-u3-contract-author-record.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-contract-author-record.md) | 2026-09-03T15:10:54Z
+- [20260903-u3-contract-determination.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-contract-determination.md) | 2026-09-03T15:36:08Z
 - [20260903-u3-first-contract-deliberation.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-first-contract-deliberation.md) | 2026-09-03T14:54:09Z
 - [20260903-u3-independent-verification-receipt.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-independent-verification-receipt.md) | 2026-09-03T15:27:15Z
 - [20260903-vscode-visibility-detour.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-vscode-visibility-detour.md) | 2026-09-03T13:02:17Z
