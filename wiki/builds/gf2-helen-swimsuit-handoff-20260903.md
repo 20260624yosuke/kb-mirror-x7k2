@@ -84,7 +84,12 @@ $P tools/helen_swimsuit_fit_p.py --body general --rigid-roles all --cup-y-lam 5e
 
 - Blend:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/blends/swimsuit/Helen-swimsuit-flat.blend`
-  48物体 / 表示22 / sha256 `9c8da510b444f0d5a4978b87db6ee84f324d5833febb1cd6f5c013d94c59f222`
+  48物体 / 表示22 / 場面の指紋（canonical_manifest_sha256）
+  `9c8da510b444f0d5a4978b87db6ee84f324d5833febb1cd6f5c013d94c59f222`
+  ※これは **Blend ファイルそのもののバイト列の sha256 ではない**（同名で書いてあったため
+  2026-09-04 に訂正）。中身は `build-log-swimsuit.canonical.json` と一致する。
+  ファイル自体の sha256 は `08d360c1e606cbe95d5373b3facecc612aa0036ef4521ebe3fbc9d5c38bcf2a4`
+  （2026-09-04 実測。**成果物は改変されていない**）。
   退避: 同フォルダの `_bak-20260903/`
 - 台帳（どれを出すか）:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/visible-set-swimsuit.json`
