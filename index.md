@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4977 ファイル_
+_合計 4978 ファイル_
 
 ## root/ (11)
 
@@ -345,9 +345,9 @@ _合計 4977 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-helen-repro-resume/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-03T06:20:32Z
+- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-03T06:40:27Z
 
-## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (13)
+## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (14)
 
 - [20260901-brainstorm-fault-repair.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair.md) | 2026-08-31T15:51:17Z
 - [20260901-h0157-mechanical-audit-concrete-integration-plan.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md) | 2026-09-01T06:57:52Z
@@ -361,6 +361,7 @@ _合計 4977 ファイル_
 - [20260901-unified-route-revision4-independent-review.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-route-revision4-independent-review.md) | 2026-09-01T07:04:38Z
 - [20260901-unified-route-revision4-plan-approval-receipt.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-unified-route-revision4-plan-approval-receipt.md) | 2026-09-01T12:59:31Z
 - [20260903-u1-independent-verification-receipt.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u1-independent-verification-receipt.md) | 2026-09-03T06:19:27Z
+- [20260903-u1-production-promotion-record.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u1-production-promotion-record.md) | 2026-09-03T06:37:15Z
 - [20260903-u1-verifier-interruption-assessment.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u1-verifier-interruption-assessment.md) | 2026-09-03T05:55:42Z
 
 ## wiki/analyses/brainstorm/html-skill-discovery/ (1)
