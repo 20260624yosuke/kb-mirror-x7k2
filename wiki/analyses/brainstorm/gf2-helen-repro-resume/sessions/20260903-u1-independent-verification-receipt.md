@@ -58,3 +58,13 @@ parent: ../_index.md
 ## 証拠の境界
 
 本受領書はU1検証の結果であり、監査導入・実hook到達・原作一致・Blend完成の証拠ではない。
+
+## 追記：限定修正の実施と再検証（2026-09-03・承認済み）
+
+カードで「この会話で限定修正」と「はい、この選択でよい」を受領して実施した。範囲は一時作業場（stage）のみ。正規の台帳・共有設定・Blend本体は無変更。
+
+- 受領書 `stage/project/06_repro-v51/audit/writer-review-receipt.json` を新規作成（SHA `398acda212504b07248817f235f98f2779158c0619afbfbc40b623e3ee998b90`）。75件の1件ずつの判定つき：54件維持（P0のまま）＋21件は non-writer（reader/renderer/verifier）。自動昇格は off のまま。
+- `stage/.../audit/state.json` の writer分類欄を accepted へ（証拠SHA・検証者ID・履歴行つき）。
+- `stage/.../audit/review-findings.json` の EA-P0-005（writer分類の独立確認待ち・Critical）を closed へ（証拠SHA・検証者IDつき）。他のMajor所見は手をつけていない。
+- 再実行の結果：品質ゲート plan が PASS（修正前は `EA_WRITER_CLASSIFICATION_REVIEW_REQUIRED` の所期停止 → 一時 `EA_OPEN_CRITICAL_FINDING` → P0-005クローズで PASS）。自動試験20件も再実行して PASS。
+- 判定の更新：分類未確定は解消。正規導入の可否は別の承認（導入前後のSHA記録と復元試験つきの原子操作）に委ねる。
