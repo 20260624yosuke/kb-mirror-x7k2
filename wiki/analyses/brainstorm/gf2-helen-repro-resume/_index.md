@@ -257,6 +257,15 @@ U3の対象選定は別判断に委ね、ここでは決めていない。
 解決することを武田さんが明示承認した。無断代替ではなく有断の置換として記録し、因果審査から進める。
 範囲は因果審査まで。U3の第1契約の作成は含まない。
 
+### 2026-09-03 A案選択・第1契約検討・図作り直し・基準置換えの指示
+
+> Aの案で進めます。第1契約の対象は目標の原作再現のためにはどうすればいいか考えて。
+> 図の作り直しはもう少し可視性上げて欲しい。新基準へ置き換えて。
+
+4件とも推進の合図として採用した。成果物は基準置換え記録・A案別計画（承認待ち）・
+第1契約検討（伸びた辺を提案・確定は承認待ち）・タイムライン作り直し版（更新・申告ずみ）。
+旧ファイルは凍結のまま書換えていない。実行は承認があるまでしない。
+
 ### 2026-09-03 未回収96パーセントの出所確認を指示
 
 > 未回収文が96％あったのはどうなってんの？/html/html
@@ -365,6 +374,10 @@ Helen必要分の未回収率ではない。初回走査後に正規化手順が
 25. U2因果審査の実測JSON（2026-09-03）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-causal-review.json
 26. 判断整理HTML（2026-09-03・5件の判断・実行なし）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-takeda-decisions.html
 27. 未回収96パーセント説明HTML（2026-09-03・出所と現状・実行なし）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-unrecovered-96-percent.html
+28. 承認基準の置換え記録（2026-09-03・確定は承認待ち）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-approval-baseline-replacement.md
+29. A案別計画（2026-09-03・承認待ち）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-sh-lighting-reconstruction-plan.md
+30. 第1契約の対象の検討（2026-09-03・伸びた辺を提案・確定は承認待ち）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-first-contract-deliberation.md
+31. タイムライン作り直し版（2026-09-03・既存名で更新）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-timeline.html
 
 ## 実装への申し送り
 
