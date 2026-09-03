@@ -257,6 +257,13 @@ U3の対象選定は別判断に委ね、ここでは決めていない。
 解決することを武田さんが明示承認した。無断代替ではなく有断の置換として記録し、因果審査から進める。
 範囲は因果審査まで。U3の第1契約の作成は含まない。
 
+### 2026-09-03 判断情報の整理を指示
+
+> タスクを進めます。俺が判断するべき情報を整理して。/html
+
+推進の合図として採用する。成果物は判断用の整理HTML（5件の判断を各選択肢の失うものつきで提示）。
+決めること1の候補文言は正本の原文のまま。実行・書込みは判断があるまでしない。
+
 ### 2026-09-03 タイムライン図を受け入れない・作り直す
 
 会話文版の提示に対する確定カードの選択は「受け入れない」、確認は「はい、この選択でよい」。
@@ -348,6 +355,7 @@ U3の対象選定は別判断に委ね、ここでは決めていない。
 23. 表示の混乱の分離記録（2026-09-03・親の文脈汚染を避けるため子へ移動）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-vscode-visibility-detour.md
 24. U2因果審査の記録（2026-09-03・接続なし・採用なし・blocked維持）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-causal-review.md
 25. U2因果審査の実測JSON（2026-09-03）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u2-causal-review.json
+26. 判断整理HTML（2026-09-03・5件の判断・実行なし）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-takeda-decisions.html
 
 ## 実装への申し送り
 
