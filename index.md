@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 4998 ファイル_
+_合計 4999 ファイル_
 
 ## root/ (11)
 
@@ -346,9 +346,9 @@ _合計 4998 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-helen-repro-resume/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-04T00:07:30Z
+- [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-04T00:14:41Z
 
-## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (27)
+## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (28)
 
 - [20260901-brainstorm-fault-repair.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair.md) | 2026-08-31T15:51:17Z
 - [20260901-h0157-mechanical-audit-concrete-integration-plan.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md) | 2026-09-01T06:57:52Z
@@ -375,6 +375,7 @@ _合計 4998 ファイル_
 - [20260903-u3-contract-determination.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-contract-determination.md) | 2026-09-03T15:36:08Z
 - [20260903-u3-exploration-record.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-exploration-record.md) | 2026-09-04T00:07:15Z
 - [20260903-u3-first-contract-deliberation.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-first-contract-deliberation.md) | 2026-09-03T14:54:09Z
+- [20260903-u3-fixtest-record.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-fixtest-record.md) | 2026-09-04T00:14:25Z
 - [20260903-u3-independent-verification-receipt.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-independent-verification-receipt.md) | 2026-09-03T15:27:15Z
 - [20260903-vscode-visibility-detour.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-vscode-visibility-detour.md) | 2026-09-03T13:02:17Z
 
