@@ -151,6 +151,12 @@ UI表示の混乱から表示経路の特定までの往復は、親の文脈汚
 デスクトップアプリも不可と報告あり。vscode拡張は0.0.13が最新で更新なし。試用版は未導入。
 説明HTMLは新規作成し成果物Inboxへ申告済み（i090310b）。共有機構・codex・wiki正本は不変。
 
+### 2026-09-04 ローカルのみ前提への切替えを指示
+
+> たぶん記録がないのかも、「後処理の回収、反射の再較準、監査の再実行、提出シートの再生成」です。回収の道は、応答書換えによる強制取得、部屋読込経路の解析、将来の配信待ちの3つです。この部分は、ローカルにあるコードをエージェントが探せてないから、プロジェクトがゴールできないという前提にする。別の強制取得とかそういう希望的憶測はもう禁止して、プロジェクトが進まない不毛な会話。ローカルにもうないという時点でこのプロジェクトが破綻するという前提以外禁止とここに明言する。
+
+上記を推進の合図ではなく、方針の決定依頼として扱う。従来の3経路（強制取得・部屋読込解析・配信待ち）を残す案は採らない方向で、ローカル探索の不全を原因に固定し、ローカルに無い時点で破綻とする前提への切替えをカードで確認する。HTMLは方針確定後に更新する。
+
 ## 決まったこと
 
 ### 2026-09-01 H0157と環境整備を別エージェントへ分離
@@ -344,6 +350,8 @@ Helen必要分の未回収率ではない。初回走査後に正規化手順が
 
 ## まだ決まってないこと
 
+- 2026-09-04 ローカルのみ前提への切替え：強制取得・部屋読込解析・配信待ちの3経路を希望的憶測として禁止し、ローカル探索の不全を原因に固定するか。ローカルに無い時点で破綻とするか。承認待ち。
+
 - U2の実行承認：2026-09-03にinventory先行を承認・実施済み（`sessions/20260903-u2-mechanical-inventory.json`・同report）。
   判定はCOMPLETE-WITH-INPUT-CAVEAT（cache側 `.d` 不在のため再実行不可、既存ledgerを証拠にする）。因果審査は担当ID確認後の別承認待ち。
 - U1の受領可否：2026-09-03に検証・限定修正・正規導入まで完了（一時作業場→本番の原子移設、退避と再検査つき）。
@@ -450,6 +458,7 @@ Helen必要分の未回収率ではない。初回走査後に正規化手順が
 45. U3原作比較の記録（2026-09-04・重みは原作どおり・目視許容へ）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-source-compare-record.md
 46. 原作比較の結果HTML（2026-09-04）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260904-helen-h0157-source-compare.html
 47. 全体の到達点HTML（2026-09-04・残りは目視許容）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260904-helen-h0157-progress.html
+48. ローカルのみ前提の検討記録（2026-09-04・方針の承認待ち・実装なし）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260904-local-only-premise.md
 
 ## 実装への申し送り
 
