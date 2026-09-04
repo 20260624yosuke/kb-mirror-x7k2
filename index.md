@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5003 ファイル_
+_合計 5004 ファイル_
 
 ## root/ (11)
 
@@ -3450,7 +3450,7 @@ _合計 5003 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (100)
+## wiki/builds/ (101)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -3462,6 +3462,7 @@ _合計 5003 ファイル_
 - [brainstorm-concrete-resume-audit-plan-20260831.md](wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md) | 2026-08-31T07:04:26Z
 - [brainstorm-five-guards-plan-20260831.md](wiki/builds/brainstorm-five-guards-plan-20260831.md) | 2026-09-01T00:49:18Z
 - [brainstorm-guard-fix-handoff-20260829.md](wiki/builds/brainstorm-guard-fix-handoff-20260829.md) | 2026-08-29T15:58:18Z
+- [brainstorm-memo-path-repair-order-20260904.md](wiki/builds/brainstorm-memo-path-repair-order-20260904.md) | 2026-09-04T11:54:18Z
 - [brainstorm-port-request-20260829.md](wiki/builds/brainstorm-port-request-20260829.md) | 2026-08-29T06:44:43Z
 - [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-08-31T03:40:07Z
 - [canvas-idea-cultivation-workflow.md](wiki/builds/canvas-idea-cultivation-workflow.md) | 2026-07-01T18:48:47Z
