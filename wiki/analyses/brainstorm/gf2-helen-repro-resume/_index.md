@@ -257,6 +257,13 @@ U3の対象選定は別判断に委ね、ここでは決めていない。
 解決することを武田さんが明示承認した。無断代替ではなく有断の置換として記録し、因果審査から進める。
 範囲は因果審査まで。U3の第1契約の作成は含まない。
 
+### 2026-09-04 実探索の完了（原因の系統を特定）
+
+承認ずみの実探索を実行した。e06再現は胸・スカート・顔が完全一致（手袋のみ46→53の
+境界ゆらぎ、対象外）。骨ペア調査で「違う骨」説を棄却し、重み配合の距離で機械的因果を確定
+（伸び側は正常側の4〜10倍、主骨が同じ辺だけでも差は残る）。修正試験は変更のため別承認。
+3D本体と正規台帳は指紋で無変更を確認。記録は探索記録・結果HTML。
+
 ### 2026-09-03 第1契約の確定
 
 武田さんの「確定していいです」により第1契約を確定した。対象は胸・スカートの伸びた辺。
@@ -417,6 +424,8 @@ Helen必要分の未回収率ではない。初回走査後に正規化手順が
 38. A案区切りと独立照合の結果HTML（2026-09-03）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-closure-verification.html
 39. U3第1契約の確定記録（2026-09-03・実探索は別承認）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-contract-determination.md
 40. 第1契約の確定HTML（2026-09-03）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-contract-determined.html
+41. U3実探索の記録（2026-09-04・系統を特定・修正は別承認）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-exploration-record.md
+42. 実探索の結果HTML（2026-09-04）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260904-helen-h0157-exploration-result.html
 
 ## 実装への申し送り
 
