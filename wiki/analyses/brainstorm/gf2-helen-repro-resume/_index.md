@@ -257,6 +257,13 @@ U3の対象選定は別判断に委ね、ここでは決めていない。
 解決することを武田さんが明示承認した。無断代替ではなく有断の置換として記録し、因果審査から進める。
 範囲は因果審査まで。U3の第1契約の作成は含まない。
 
+### 2026-09-04 原作比較の完了（重みは原作どおり）
+
+第1契約の問いを原作比較で閉じた。重みは頂点数・件数・値の集まりまで完全一致し、
+持ち込みの破損ではない。骨・動きの一致と合わせ、伸びは原作由来の可能性が高い。
+直す対象から外し、目視許容の対象に回す。原作の見た目の直接証拠はなく、
+許容は人の目視に委ねる。記録は比較記録・結果HTML。
+
 ### 2026-09-04 修正試験の完了（2手法とも不採用）
 
 複写だけで2手法を試験した。配合均しは胸が悪化、主骨寄せは問題が別フレームへ移動し、
@@ -435,6 +442,8 @@ Helen必要分の未回収率ではない。初回走査後に正規化手順が
 42. 実探索の結果HTML（2026-09-04）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260904-helen-h0157-exploration-result.html
 43. U3修正試験の記録（2026-09-04・2手法とも不採用・次は原作比較）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-fixtest-record.md
 44. 修正試験の結果HTML（2026-09-04）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260904-helen-h0157-fixtest-result.html
+45. U3原作比較の記録（2026-09-04・重みは原作どおり・目視許容へ）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-source-compare-record.md
+46. 原作比較の結果HTML（2026-09-04）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260904-helen-h0157-source-compare.html
 
 ## 実装への申し送り
 
