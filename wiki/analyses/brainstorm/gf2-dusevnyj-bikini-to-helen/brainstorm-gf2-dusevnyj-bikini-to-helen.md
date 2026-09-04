@@ -62,9 +62,32 @@ background_paths:
 
 説明ページ:
 `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260904-why-audits-miss-the-goal.html`
+実行記録:
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/run-20260904-goal-map.txt`
 
-**未確認**: 沿い具合そのものは**まだ測っていない**（成果物封鎖で実行が止まった）。
-「沿い具合が浮きの正体」は私の仮説。1本測れば裏づくか外れるかが決まる。
+### 実装した（武田さん承認「まず目標と検査の対応表を作る」・2026-09-04）
+
+- 対応表 `wiki/builds/gf2-helen-swimsuit-goal-map.json`（目標10件・検査55本を紐付け）
+- 検査 C1〜C4 `tools/goal_coverage.py`（変異試験 6/6）
+- 工程監査への接続 `A18`（`tools/plan_audit.py`）。監査 18/18 PASS。
+- **道具が動いた瞬間に自分の穴を3件検出**: 検査 G1 が道具のソースに存在しなかった /
+  6本が目標に紐付いていなかった / A18 の変異試験で架空 ID をソースに直書きして自己汚染した。
+
+### 進捗: 穴 5個 → **4個**
+
+埋めた: GOAL-NO-GUESS「何を測るかの選択が LLM の憶測」← 対応表＋A18 で機械が止めるようになった。
+残り: 載せ方の法則 / 沿い具合 / 全身の輪郭 / 全身が揃っているか
+
+### 沿い具合の実測（2026-09-04・**私の見立ては裏づけきれなかった**）
+
+測り方 `drape_normal_alignment`（布の法線 vs 直下の体の法線の角度差・度）:
+
+  全体中央値 原着装 24.29 → 成果物 29.36（+5.07）
+  肩ひも 17.63 → 31.19（**+13.56** 最大）／ カップ 15.74 → 23.59（+7.85）
+  帯 47.28 → 51.63（+4.35）／ 垂れ 29.95 → 25.47（改善）／ 中間 38.63 → 35.76（改善）
+
+**差 5.07 度は「ただ貼り付けただけ」の印象を全部説明できる大きさに見えない。原因は他にもある。**
+残る穴のうち **GOAL-LAW（載せ方の法則が数値で書かれていない）が本丸の可能性**。
 
 ## 武田さんの考え
 
