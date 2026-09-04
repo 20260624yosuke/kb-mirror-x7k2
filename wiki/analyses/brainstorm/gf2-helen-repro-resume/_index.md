@@ -257,6 +257,11 @@ U3の対象選定は別判断に委ね、ここでは決めていない。
 解決することを武田さんが明示承認した。無断代替ではなく有断の置換として記録し、因果審査から進める。
 範囲は因果審査まで。U3の第1契約の作成は含まない。
 
+### 2026-09-03 第1契約の確定
+
+武田さんの「確定していいです」により第1契約を確定した。対象は胸・スカートの伸びた辺。
+実探索は含まない。記録は確定記録・確定HTML。
+
 ### 2026-09-03 自律残りの棚卸し
 
 「タスクを進めます」を合図に自律残りを点検した。結果は残りゼロで、次は契約の確定だけ。
@@ -410,6 +415,8 @@ Helen必要分の未回収率ではない。初回走査後に正規化手順が
 36. A案区切り宣言（2026-09-03・推定混じりは扱わない）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-sh-lighting-closure.md
 37. U3独立照合受領書（2026-09-03・受領可・確定は承認待ち）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-independent-verification-receipt.md
 38. A案区切りと独立照合の結果HTML（2026-09-03）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-closure-verification.html
+39. U3第1契約の確定記録（2026-09-03・実探索は別承認）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-contract-determination.md
+40. 第1契約の確定HTML（2026-09-03）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260903-helen-h0157-contract-determined.html
 
 ## 実装への申し送り
 
