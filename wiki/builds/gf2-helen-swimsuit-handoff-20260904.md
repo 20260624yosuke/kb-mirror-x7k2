@@ -39,6 +39,35 @@ supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260903.md
 - **`implementation_agent: separate-session` を正本メモへ書かないこと。** 2026-09-03 に前任が
   書き、翌日この案件の実行が全面的に止まった。武田さんが明示したときだけ書く。
 
+### 引き継ぎの到達性監査が「70行の指摘」で止まる。**この案件のものではない。**
+
+会話を閉じようとすると `guard-stop-handoff` が大量の指摘で止める。2026-09-03 と 09-04 の
+2 日連続で切り分け済み。**この案件（gf2-dusevnyj-bikini-to-helen）の指摘は 0 件。**
+
+指摘の出どころ（すべて別案件のメモ）:
+
+| 件数 | ファイル | 案件 |
+|---|---|---|
+| 15 | 各 `_index.md` | agent-positioning / askuserquestion-misclick-guard / llm-harness-parity / project-hub-index |
+| 15 | `20260831-concrete-resume-audit-repair.md` | brainstorm-skill-portability |
+| 12 | `brainstorm-concrete-resume-audit-plan-20260831.md` | 同上 |
+| 12 | `brainstorm-brainstorm-skill-portability.md` | 同上 |
+| ほか | `brainstorm-skill.md` / `.opencode/commands/*.md` | 同上 |
+
+原因は ① `~/.codex/skills/brainstorm/scripts/` の未作成ファイルを指している
+② 保管庫内の `.claude/skills/brainstorm/SKILL.md` を指しているが実体は
+`~/.claude/skills/brainstorm/SKILL.md`（パスの書き間違い）
+③ `/private/tmp/.../scratchpad/backup_114245/` を省略形で書いている。
+
+**武田さんの判断で「触らずに進める」と決まっている**（2026-09-03）。担当外なので直さないこと。
+
+確かめ方（**0 なら、この案件は通っている**）:
+
+```
+/opt/anaconda3/bin/python3 ~/.claude/skills/brainstorm/brainstorm_guard.py audit-handoff 2>&1 \
+  | grep -c "gf2-helen-swimsuit-handoff-20260904\|brainstorm-gf2-dusevnyj\|goal-map\|explicit-statements"
+```
+
 ## 1. このプロジェクトのゴール（S010・粒度を下げてはならない）
 
 > 俺は、ヘレンが、ドゥルシーヌヴイみたいなビキニを着たらどうなるかわかる
