@@ -12,7 +12,9 @@ scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料
 entry_paths:
-  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260903.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260904.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-goal-map.json
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/explicit-statements.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-plan-repair-model-routing-handoff-20260827.md
@@ -3655,24 +3657,72 @@ O5 合格していなくても提出）。新規に書くのは O1・O2 の2つ�
 
 **新しい会話は、まずこの1枚を読む。**
 
-- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260903.md`
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260904.md`
 
-そこに書いてあること: 武田さんが未回答の判断 / 成果物と退避の場所 / 検査の走らせ方 /
-成果物へ入れる手順 / 禁止事項 / 捨てた案 / 残っている作業 / 報告の作法。
+そこに書いてあること: **武田さんが見る節（1件だけ・急ぎではない）** / ゴール /
+進捗の数え方 / いま最優先の作業 / 見つかった矛盾 / 新しく入った道具 / 検査の走らせ方 /
+成果物と退避の場所 / 成果物へ入れる手順 / 禁止事項 / 捨てた案 / 残作業 / 報告の作法。
+
+機械が読む2枚（引き継ぎ書と一緒に必ず読む）:
+
+- 目標と検査の対応表（**進捗はここでしか数えない**）:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-goal-map.json`
+- 明言台帳（**絶対 4 件は粒度を下げてはならない**）:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/explicit-statements.json`
 
 補助（必要になったら）:
 
-- 今日の全経緯（1〜28節）:
-  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/run-20260903-choker-restored.txt`
-- 今日の説明ページ:
-  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260903-choker-restored-and-exception-scope.html`
+- 2026-09-04 の全経緯:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/run-20260904-goal-map.txt`
+- 2026-09-04 の説明ページ（武田さん向け）:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260904-why-audits-miss-the-goal.html`
+- 前日の引き継ぎ書（20260904 が置き換えた）:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260903.md`
 - 採用手順の計画書:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`
 
 **このメモ（正本）は 5000 行ある。全部読む必要はない。** 日付つき見出しを新しい順に見る。
 
 ## 実装への申し送り
-### 【2026-09-03 引き継ぎ】別のエージェントへ渡す（武田さん指示）
+
+### 【2026-09-04 引き継ぎ】別のエージェントへ渡す（武田さん指示・**これが最新**）
+
+武田さん「別のエージェントに渡すので、記録を整備して。俺の認知負荷が高くないように、準備して」。
+
+**渡す先が最初に読むもの:**
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260904.md`
+
+**完成条件（この順で進める）**
+
+1. §5 の矛盾（カップ 1.40〜1.50 と合格線 0.95〜1.05 が重ならない）を武田さんへ示し、
+   どちらを採るか決めてもらう。**見え方がどう変わるかを添える。**
+2. 決まった側に合わせて、法則版のカップを収める。
+3. 法則版のめくれ 28枚とめり込み 15.69 を、最深を悪化させずに救う。
+4. いまの成果物より全項目で悪くない版ができたら、退避してから差し替える。
+
+**絶対にやってはいけないこと**（`explicit-statements.json` の priority: 絶対 と対応）
+
+- 検査の本数・合格数を進捗として報告する（S009）。進捗は `goal_coverage.py` の
+  「未測定の側面の個数」だけ。現在 4 個。
+- 明言台帳に決定がある論点を聞き直す（S011。P1 が止める）。
+- 合格線を成果物が通るように動かす。
+- `implementation_agent: separate-session` を書く（武田さんが明示したときだけ）。
+- 報告に監査の詳細・道具の説明を書く（2026-09-04「不毛」）。
+
+**捨てた案とその理由**は引き継ぎ書 §10 に表でまとめてある。蒸し返さない。
+
+```done-when
+path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260904.md
+path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-goal-map.json
+path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/goal_coverage.py
+path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/statement_ledger_check.py
+path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/doc_structure_check.py
+path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/garment_law.py
+run: /opt/anaconda3/bin/python3 tools/plan_audit.py ==> 20 / 20 PASS
+run: /opt/anaconda3/bin/python3 tools/goal_coverage.py ==> 未測定の側面 4 個
+```
+
+### 【2026-09-03 引き継ぎ】別のエージェントへ渡す（武田さん指示・**旧版**）
 
 武田さん「コンテキストが膨らんできたので、このプロジェクトの続きは別のエージェントに
 任せます。準備して」。**この会話では実装しない。**
