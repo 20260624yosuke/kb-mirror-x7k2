@@ -123,7 +123,7 @@ brainstorm の規則「会話で設計を育てずファイルへ落とす」「
 
 `/Users/takedayousuke/.codex/hooks.json` に 9 イベント（SessionStart / UserPromptSubmit / PreToolUse /
 PostToolUse / Stop / SessionEnd / PreCompact / PostCompact / SubagentStart / SubagentStop）が登録済みで、
-`/Users/takedayousuke/.codex/skills/brainstorm/scripts/guard.log` は 447 行、直近も pass を記録している。
+`/Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/guard.log` は 447 行、直近も pass を記録している。
 **動いていないのではなく、動いた結果が重い。** 何が重いかは 4 と 5。
 
 ### 4. トークンを食っている実測原因：読み取りだけのコマンドまで封鎖が止める
@@ -158,9 +158,9 @@ KB フォルダ直下は `CLAUDE.md` と `AGENTS.md` が両方あり中身も揃
 
 ```done-when
 path: /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py
-path: /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py
+path: /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py
 run: python3 "/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py" audit-handoff --selftest ==> 自己試験: PASS
-run: python3 "/Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py" audit-handoff --selftest ==> 自己試験: PASS
+run: python3 "/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py" audit-handoff --selftest ==> 自己試験: PASS
 run: grep -c "BLOCK card-without-prose" "/Users/takedayousuke/.claude/skills/brainstorm/guard.log" ==> 1
 run: grep -c "BLOCK no-implementation" "/Users/takedayousuke/.claude/skills/brainstorm/guard.log" ==> 1
 ```
@@ -279,7 +279,7 @@ Codex 側が膨らんだのも同じ形で、「合わせろ」に対する作�
 
 Claude 側の5件と、KB 監査の同期（検査4）を Codex へ入れた。
 
-- `/Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py` に、Claude 版と同じ
+- `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py` に、Claude 版と同じ
   定数と関数を移植（`_looks_write_command` / `_prose_of` / `_card_turn_prose` /
   `_deliverable_writes` / `_parse_done_when` / `_run_done_conditions` / `_guard_done_promotion`）。
   Codex 版の Stop は adapter が独自に持つため、検査5と検査2は新しい入口
@@ -397,7 +397,7 @@ python3 "/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py" aud
 Codex で `$brainstorm` を使い、次の行が出るかを見る。
 
 ```bash
-grep -E "content pass|BLOCK card-without-prose|lockdown off" "/Users/takedayousuke/.codex/skills/brainstorm/scripts/guard.log"
+grep -E "content pass|BLOCK card-without-prose|lockdown off" "/Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/guard.log"
 ```
 
 ### 終わったら次に取る承認
