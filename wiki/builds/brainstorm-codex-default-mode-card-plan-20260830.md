@@ -173,7 +173,7 @@ UserPromptSubmit heartbeatはそのイベント1本の生存証拠に限定す�
 2. `/Users/takedayousuke/.claude/skills/brainstorm/SKILL.md`
 3. `/Users/takedayousuke/.codex/skills/brainstorm/SKILL.md`
 4. `/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py`
-5. `/Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py`
+5. `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py`
 6. `/Users/takedayousuke/.codex/hooks.json`
 7. `/Users/takedayousuke/.codex/config.toml`
 

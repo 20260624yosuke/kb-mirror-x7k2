@@ -23,7 +23,7 @@ entry_paths:
 background_paths:
   - /Users/takedayousuke/.codex/skills/brainstorm/SKILL.md
   - /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py
-  - /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py
+  - /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py
   - /Users/takedayousuke/.codex/hooks.json
   - /Users/takedayousuke/.codex/config.toml
   - /Users/takedayousuke/.claude/skills/brainstorm/SKILL.md
@@ -188,7 +188,7 @@ Write ツールでは通った。
 ### 2026-09-01 小さいCodex版への置換を実行
 
 - 武田さんの「この方針でいい」「名前だけ同じはダメ」「実行して」を、新しいCodex版の実装許可として受領。旧第2版の巨大な許可台帳・checkpoint監査をそのまま実装するのではなく、画面上の使用感と必要な機械保証へ絞る。
-- 隔離先 `/Users/takedayousuke/.codex/skill-staging/brainstorm-20260901` に `SKILL.md`、UIメタデータ、ライフサイクルadapter、試験を新規作成。旧本番を完全退避してから同名位置へ入れ替える。Claude版、`hooks.json`、`config.toml`、Helen成果物は変更しない。
+- 隔離先 `/Users/takedayousuke/.codex/skill-staging/brainstorm-20260901` に `SKILL.md`、UIメタデータ、ライフサイクルadapter、試験を新規作成。旧本番を完全退避してから同名位置へ入れ替える。Claude版、`hooks.json`、`config.toml`、Helen成果物は変更しない。（隔離先は一時作業場で、2026-09-04確認で存在しない）
 - 単体試験11件とskill形式検証は合格。Lunaの初回独立レビューで見つかった承認前shell抜け道、古いカード回答、中断前親未選択、カード外本文不足を修正済み。実フック接続は本番入替後に確認するため、まだ運用開始可能とは扱わない。
 - 旧本番一式を `/Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146` へ移動し、隔離版を `/Users/takedayousuke/.codex/skills/brainstorm` へ入れ替えた。削除ではなくフォルダ単位の退避なので元へ戻せる。
 - 本番位置で11件PASS、skill形式検証PASS、Python構文検査PASS。`hooks.json` にある6本のライフサイクル接続はすべて新アダプタの実在パスを指し、`hooks.json` 自体のSHAは変更前後で同一。新しいユーザー入力による実フック発火は、このターンからは生成できないため未確認として残す。
@@ -389,7 +389,7 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
           "sha256": "2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f"
         },
         {
-          "path": "/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-test-results-20260831.json",
+          "path": "/Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/state/resume-repair-test-results-20260831.json",
           "sha256": "bd85bc82d2b28f6d3419980bb159a9668e74f2e12b3af279633672e893382179"
         }
       ]
@@ -594,4 +594,4 @@ Helenへの戻り先B（一本化計画の具体化）、A（P0B本体実装前�
 
 旧checkpointの「計画承認済み・通常タスクへ引継ぎ待ち」という現在地を、version 2の「修理実装済み・実機試験前」へ置き換えた。
 この時点では専用実機試験タスクの作成判断と案内したが、2026-08-31の再調査で撤回。既存の専用試験タスクがあり、ユーザーへ作成依頼を求める根拠がなかった。本人の発言・旧承認履歴・Helen成果物は削除していない。
-旧checkpointを含む変更前全文は `/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-doc-baseline-20260831.json` のparentキーから差分単位で復元できる。
+旧checkpointを含む変更前全文は `/Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/state/resume-repair-doc-baseline-20260831.json` のparentキーから差分単位で復元できる。

@@ -236,9 +236,9 @@ Claude / Codex / Kimi / opencode が互いのフォルダを参照する必要�
 
 - スキル: `/Users/takedayousuke/.codex/skills/brainstorm/SKILL.md`
 - Codex 変換層: `/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py`
-- 判定本体: `/Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py`
+- 判定本体: `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py`
 - フック配線: `/Users/takedayousuke/.codex/hooks.json`
-- 動作ログ: `/Users/takedayousuke/.codex/skills/brainstorm/scripts/guard.log`
+- 動作ログ: `/Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/guard.log`
 
 実測済み: 階層メモ3件の親だけを再帰探索、毎ターン再注入、`SessionStart(source=compact)` の厚い再注入、
 `ready` メモ未読時の書き込み拒否、brainstorm 中の `apply_patch` / Bash 書き込み拒否、wiki 内書き込みの

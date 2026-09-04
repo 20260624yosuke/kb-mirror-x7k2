@@ -151,7 +151,7 @@ Lunaへ渡した読取専用タスクは完了。コード変更・状態更新�
 - 親: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md
 - Codex SKILL: /Users/takedayousuke/.codex/skills/brainstorm/SKILL.md ; SHA-256: 939d6a16e157034ac8c17234f9276397e12037c70ec051c57a090f5f38fc5025
 - Codex adapter: /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py ; SHA-256: b856042d5651ff486cdf6d02000fe8e5d3def1f1b54d8e1dab9c650d9a17f96f ; terminal_prompt 150–157 / user_prompt 312–336 / operational_context 226–266 / answer_transition 500–528
-- Codex guard: /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py ; SHA-256: 3bbd63a1b7fbe2c52e15cdb93a8a48d1f9c86455caf20a322e22c940f2cdf000 ; guard-write 715–812
+- Codex guard: /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py ; SHA-256: 3bbd63a1b7fbe2c52e15cdb93a8a48d1f9c86455caf20a322e22c940f2cdf000 ; guard-write 715–812
 - Claude SKILL（比較だけ）: /Users/takedayousuke/.claude/skills/brainstorm/SKILL.md ; SHA-256: 4f30740ff34b27ec8f5bfb4a9712576bf5d810123fedbafbcddde4e13820531c ; 23–26
 - 既存修理計画: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md
 - Helen監査計画: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-execution-audit-plan-20260830.md

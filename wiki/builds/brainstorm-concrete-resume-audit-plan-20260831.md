@@ -69,26 +69,26 @@ revision 1の独立判定はCritical 0 / Major 5 / Minor 1。revision 2はCritic
 
 基線SHA（現在の初期変更を消して開始しない）:
 
-- /Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py
+- /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/resume_contract.py
   — 385bfbab3c70e134f9aa40130d74fbed0ea0c70af7a445d50cc4c20ed75a7f75
 - /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py
   — ba4aeaed7b4318d97c61980ff7a1cf91ee1aea8fced254fb2809d8621465d74d
 
-実イベント: /Users/takedayousuke/.codex/skills/brainstorm/scripts/card-events.jsonl
-書込判定のログ: /Users/takedayousuke/.codex/skills/brainstorm/scripts/guard.log
+実イベント: /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/card-events.jsonl
+書込判定のログ: /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/guard.log
 過去の合成試験・制作者の成功報告を、そのまま実機での拒否成功の証拠にしない。
 
 ## 3. 変更対象と維持する境界
 
 | 実ファイル | 変更する責務 | 維持するもの |
 |---|---|---|
-| /Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py | checkpointの型・必須値・根拠・復帰辺・終了状態・表示契約 | 読取専用CLI。nextの操作は実行しない |
+| /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/resume_contract.py | checkpointの型・必須値・根拠・復帰辺・終了状態・表示契約 | 読取専用CLI。nextの操作は実行しない |
 | /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py | 実カード・実状態とcheckpointの接続、全Stopの検査 | 同ターン記録、二問カード、実ID束縛、brainstorm外での非介入 |
-| /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py | 引用データの書込誤認、Codex引継ぎ監査の再入無条件通過 | 保護対象への実書込拒否、未読readyメモ、全Stopの到達性検査 |
-| /Users/takedayousuke/.codex/skills/brainstorm/tests/test_codex_adapter.py | 実状態・Stop・引用誤認の回帰試験 | 既存11ケース |
+| /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py | 引用データの書込誤認、Codex引継ぎ監査の再入無条件通過 | 保護対象への実書込拒否、未読readyメモ、全Stopの到達性検査 |
+| /Users/takedayousuke/.codex/skills/brainstorm/tests/test_adapter.py | 実状態・Stop・引用誤認の回帰試験 | 既存11ケース |
 | /Users/takedayousuke/.codex/skills/brainstorm/tests/ | 追加23ケース等を恒久保存する新テストを実装時に追加 | 現時点で新テストファイルは未作成 |
 | /Users/takedayousuke/.codex/skills/brainstorm/SKILL.md | 実コードと一致するcheckpoint手順・保証範囲 | 明示起動、計画限定、承認と中断の区別 |
-| /Users/takedayousuke/.codex/skills/brainstorm/quality-gate.json | 今回の根拠・対象群・証拠を非破壊で追記 | 旧対象群・旧batch・旧承認を保持。旧未受入を合格にしない |
+| /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/quality-gate.json | 今回の根拠・対象群・証拠を非破壊で追記 | 旧対象群・旧batch・旧承認を保持。旧未受入を合格にしない |
 | /Users/takedayousuke/.codex/skills/brainstorm/scripts/state/ | 親別の検査済み基準、ロック、今回範囲の品質ゲート検査用写し | 既存セッション状態を一括書換えしない。新ディレクトリは作らない |
 
 追加予定の検査実体は /Users/takedayousuke/.codex/skills/brainstorm/scripts/repair_quality_gate.py（実装時に作成・現時点未作成）。責務は8章の限定版生成と正本照合だけ。
@@ -256,7 +256,7 @@ CLI単独とHTML本文を渡す検査の両方が正常に動くことを確認�
 `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s /Users/takedayousuke/.codex/skills/brainstorm/tests -v`
 
 引継ぎ監査入口:
-`python3 /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py audit-handoff`
+`python3 /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py audit-handoff`
 
 コマンド文字列の比較だけでなく、終了コード・block応答・保存状態・入力SHA・実ログを判定根拠とする。
 

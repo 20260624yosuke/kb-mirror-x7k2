@@ -11,7 +11,7 @@ entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/agent-positioning/_index.md
 background_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/AGENTS.md
-  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.claude/skills/brainstorm/SKILL.md
+  - /Users/takedayousuke/.claude/skills/brainstorm/SKILL.md
 ---
 
 # エージェント比較：opencode / Claude Code / Codex の立ち位置
@@ -38,6 +38,8 @@ background_paths:
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/agent-positioning/_index.md
 
 ## 実装への申し送り
+
+現段階では壁打ち中で、実装に渡す内容はまだ決まっていない。実装へ進む場合は、完成条件・禁止事項・次に取る承認をここに書く。
 
 ## 機械化した指摘
 

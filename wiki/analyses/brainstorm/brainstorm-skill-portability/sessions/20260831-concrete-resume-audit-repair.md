@@ -54,7 +54,7 @@ codex_adapter.pyのStopに組込み、再入時の無条件通過を削除。UI�
 - 今回counter=2のUserPromptSubmitではterminal=none、awaiting_cardを維持。コード2本のSHAも上記と一致し、この再開ターンではコードを変更していない。
 - 今回、resume_contract.pyを単独実行し、更新した親checkpointを検査。exit_code=0、pass=true、errors=[]。CLI自体の包括的な許可追加は不要。この検査は構造・根拠の確認であり、今回の回答本文や実Stopの拒否試験ではない。
 
-実イベントの直接出典: /Users/takedayousuke/.codex/skills/brainstorm/scripts/card-events.jsonl
+実イベントの直接出典: /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/card-events.jsonl
 
 ## 作動後に顕在化した停止
 
@@ -93,10 +93,10 @@ Wikiルートへの説明HTML保存も書込境界で拒否。規則上文書保
 
 対象実ファイル:
 
-- /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py
-- /Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py
+- /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py
+- /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/resume_contract.py
 - /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py
-- /Users/takedayousuke/.codex/skills/brainstorm/tests/test_codex_adapter.py
+- /Users/takedayousuke/.codex/skills/brainstorm/tests/test_adapter.py
 - /Users/takedayousuke/.codex/skills/brainstorm/SKILL.md
 
 この修理計画の確定はHelen計画の実行承認ではない。Helenの戻り先は一本化計画revision 3のモデル配分・設定差分具体化。
@@ -154,12 +154,12 @@ Helen成果物、他LLM版、hooks.json、config.toml、公式project_quality_ga
 | 実Stop初回拒否・再入拒否・復元後通過 | 未実施 | 専用の試験タスク作成は未依頼 |
 
 実行記録:
-- /Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-test-results-20260831.json
-- /Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-gate-results-20260831.json
-- /Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-html-qa-20260831.json
-- /Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-html-desktop-20260831.png
-- /Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-html-mobile-20260831.png
-- /Users/takedayousuke/.codex/skills/brainstorm/scripts/state/quality-resume-repair-view.json
+- /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/state/resume-repair-test-results-20260831.json
+- /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/state/resume-repair-gate-results-20260831.json
+- /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/state/resume-repair-html-qa-20260831.json
+- /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/state/resume-repair-html-desktop-20260831.png
+- /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/state/resume-repair-html-mobile-20260831.png
+- /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/state/quality-resume-repair-view.json
 
 HTML描画は別の一時プロファイルのheadless Chromeで行い、ユーザーの前面画面やログイン状態を使用していない。
 外部通信を遮断し、代替字体で確認した。Google Fonts等の外部読込成功、Codex内Previewの実表示は未検証。
@@ -199,10 +199,10 @@ C（顔・髪・材質など原作比較）を維持。今回の試験や実行�
 ### 復旧用バックアップと実装SHA
 
 変更前のコード、既存試験、SKILL、quality-gateの全文:
-/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-baseline-20260831.json
+/Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/state/resume-repair-baseline-20260831.json
 
 変更前の親メモ、修理記録、HTML、承認済み計画の全文:
-/Users/takedayousuke/.codex/skills/brainstorm/scripts/state/resume-repair-doc-baseline-20260831.json
+/Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/state/resume-repair-doc-baseline-20260831.json
 
 復旧するときは対応するキーの全文と現ファイルを比較し、今回の変更差分だけをapply_patchで戻す。
 以後のユーザー編集・既存の初期修理を消さない。元ゲートを限定写しで置換しない。
@@ -210,13 +210,13 @@ C（顔・髪・材質など原作比較）を維持。今回の試験や実行�
 最終実装・試験ファイルSHA（テスト結果JSONにも保存）:
 
 ```text
-f9bfc329d7114bea019062df6251210c7e4a9cd2cf0f0535aa7e48d041a7bfa1  /Users/takedayousuke/.codex/skills/brainstorm/scripts/resume_contract.py
+f9bfc329d7114bea019062df6251210c7e4a9cd2cf0f0535aa7e48d041a7bfa1  /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/resume_contract.py
 26d31039a6d8eae88bebafe07a35d366a8a477b899619a3bfb3484d5a999ec53  /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py
-46644c03a481406df85407a58f791b5ed7d7f01ae003a21c2070866df0abf268  /Users/takedayousuke/.codex/skills/brainstorm/scripts/brainstorm_guard.py
-06c8225312d52edbfc4f09e1efdc8db5346543f603dd4f22d273698d59184eee  /Users/takedayousuke/.codex/skills/brainstorm/scripts/repair_quality_gate.py
-1ae0dc2bad7dd0e5ab2877ddff5444e77bf98c46142f327debb1221548a290a8  /Users/takedayousuke/.codex/skills/brainstorm/tests/test_codex_adapter.py
-2544199de995bc46c0ff2886a165101b6835c7c1dcd5d564daebf84dd9497fe0  /Users/takedayousuke/.codex/skills/brainstorm/tests/test_resume_repair.py
-7e9be0f46cb657c8f309c4e719811639b57a411ed5e0c3bf7c8d471932c5543d  /Users/takedayousuke/.codex/skills/brainstorm/tests/test_repair_quality_gate.py
+46644c03a481406df85407a58f791b5ed7d7f01ae003a21c2070866df0abf268  /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py
+06c8225312d52edbfc4f09e1efdc8db5346543f603dd4f22d273698d59184eee  /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/scripts/repair_quality_gate.py
+1ae0dc2bad7dd0e5ab2877ddff5444e77bf98c46142f327debb1221548a290a8  /Users/takedayousuke/.codex/skills/brainstorm/tests/test_adapter.py
+2544199de995bc46c0ff2886a165101b6835c7c1dcd5d564daebf84dd9497fe0  /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/tests/test_resume_repair.py
+7e9be0f46cb657c8f309c4e719811639b57a411ed5e0c3bf7c8d471932c5543d  /Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/tests/test_repair_quality_gate.py
 2409e37bac530aa54ab00104e98914daa569426010e61ce93fc65c9c18f0fc08  /Users/takedayousuke/.codex/skills/brainstorm/SKILL.md
 2f91eba7a0e3cbbfd184f58e29329019a7181acf1734895ee120dbf350f2cc5f  /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md
 ```
