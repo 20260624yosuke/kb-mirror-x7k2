@@ -257,6 +257,11 @@ U3の対象選定は別判断に委ね、ここでは決めていない。
 解決することを武田さんが明示承認した。無断代替ではなく有断の置換として記録し、因果審査から進める。
 範囲は因果審査まで。U3の第1契約の作成は含まない。
 
+### 2026-09-04 全体の到達点の整理
+
+「タスクはどこまで進んでる」の問いを受け、U0〜U3・A案の到達と残りを1枚にまとめた。
+残る機械作業はなく、次は人の目視許容。記録は進捗HTML。
+
 ### 2026-09-04 原作比較の完了（重みは原作どおり）
 
 第1契約の問いを原作比較で閉じた。重みは頂点数・件数・値の集まりまで完全一致し、
@@ -444,6 +449,7 @@ Helen必要分の未回収率ではない。初回走査後に正規化手順が
 44. 修正試験の結果HTML（2026-09-04）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260904-helen-h0157-fixtest-result.html
 45. U3原作比較の記録（2026-09-04・重みは原作どおり・目視許容へ）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-source-compare-record.md
 46. 原作比較の結果HTML（2026-09-04）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260904-helen-h0157-source-compare.html
+47. 全体の到達点HTML（2026-09-04・残りは目視許容）: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260904-helen-h0157-progress.html
 
 ## 実装への申し送り
 
