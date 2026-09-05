@@ -12,7 +12,7 @@ scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料
 entry_paths:
-  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260905.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260905-2.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-goal-map.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/explicit-statements.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md
@@ -1948,6 +1948,51 @@ UV で場所を合わせて測ると、**肩ひもに要求される広がりは
 - 未測定の側面 3 個（GOAL-LAW / GOAL-SILHOUETTE / GOAL-FULLBODY）。
 - 穴の塞ぎの質、G4a中央、中間 ×0.928、G12a の保留、N 0/3、W6・W8・W11・W12。
 - **引き継ぎ書の本文が今朝のまま**（§6 の手順だけ直した）。古い数値が残っている。
+
+
+## 2026-09-05 第24部 引き継ぎ書を今日の内容へ書き換えた
+
+武田さんの承認（カード）: 「引き継ぎ書を今日の内容へ更新する」。
+
+### 作ったもの
+
+新しい引き継ぎ書:
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260905-2.md`
+
+朝の版（`gf2-helen-swimsuit-handoff-20260905.md`）は **`status: superseded`** にし、
+冒頭に警告と新しい版の実パスを入れた。正本メモの `entry_paths` も新しい版へ向けた。
+
+### 新しい版で、いちばん強く書いたこと ＝ **判定そのものを壊す罠 4 件**
+
+| 罠 | 中身 |
+|---|---|
+| ① | 検査は Blend ではなく**写し**を読む。`blend_probe.py` を別に走らせないと更新されない |
+| ② | **同じ量を違う段階で比べる**（G12a はカップを広げる前を読むので永久に FAIL） |
+| ③ | **同じものを違う基準で測ると符号が逆になる**（向きの差 +0.9° と −10.3°、肩ひも −10.47mm と −5.42mm） |
+| ④ | **2体を同じ数値の基準で切ると別の場所を測る**（`Z>0.10` で符号が逆の結論を出した） |
+
+朝の版は罠②を「§8 絶対にやってはいけないこと」に1行書いていただけだった。
+**今日はその4件すべてを実際に踏んだ**ので、冒頭の §−1 へ移し、実測値つきで書いた。
+
+### そのほか新しい版で直したこと
+
+- §6 の手順に **`blend_probe.py`（必須）** と F1・G13・G14 を足した。
+- §−0.5 に「**原作の値も、測る相手で変わる**」表を足した（穴あき 0.88mm / 塞いだ 2.92mm /
+  最近傍距離 4.62mm）。**要求の側と成果の側で同じ塞ぎ方の体を使う**と明記。
+- §8 に「**変異試験の対象は、実際に判定される役割にする**」を足した
+  （2026-09-05 に「帯を 2 倍」という無効な試験を書いたため）。
+- 武田さんの評価「穴の塞ぎは質自体は良くない。最悪妥協」を、**武田さんが読む節**へ入れた。
+  次に触る人が「済んだ・良い」と扱わないため。
+- §11 に「**悪くなった点を隠さない**」を足した。
+
+### まだ決まってないこと（第24部の時点）
+
+- 未測定の側面 3 個（GOAL-LAW / GOAL-SILHOUETTE / GOAL-FULLBODY）← **これが進捗**
+- G12a の扱い（罠②）。**武田さんへの質問が未決のまま**（2026-09-05 にカードを閉じられた）
+- 帯・垂れを判定できるようにする（骨の基準の調査）
+- 穴の塞ぎの質、肩ひもの残り 5.42mm（胴体の上端を作り足す作業・未承認）
+- N1〜N3 0/3、W6・W8・W11・W12、V3・V4、G4a中央、中間 ×0.928
+- 「別に走らせないと更新されない入力」が他に無いかの調査（罠①の横展開）
 
 
 ## 武田さんの考え

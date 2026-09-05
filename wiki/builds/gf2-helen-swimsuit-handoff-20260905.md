@@ -1,13 +1,20 @@
 ---
 type: build
-status: active
+status: superseded
 confidence: high
 evidence_level: source-backed
 last_reviewed: 2026-09-05
 supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260904.md
+superseded_by: wiki/builds/gf2-helen-swimsuit-handoff-20260905-2.md
 ---
 
-# 水着版ヘレン 引き継ぎ書（2026-09-05）
+# 水着版ヘレン 引き継ぎ書（2026-09-05 朝・**古い版**）
+
+> [!warning] この版は置き換えられました
+> **正しい引き継ぎ書は**
+> `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260905-2.md`
+> この版の数値（カップ 面内 ×1.034 など）と §6 の手順は**古い**。§6 には
+> `blend_probe.py` が入っておらず、そのせいで検査が2日前の Blend を見ていた。
 
 ---
 
