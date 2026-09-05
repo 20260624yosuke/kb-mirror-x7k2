@@ -16,6 +16,18 @@ supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260905.md
 > - **良くない知らせ**: `B1` が不合格。「肌に隠れる面積」が 25.21 → 47.40 と**増えている**
 >   （原着装 7.32）。**09-05 の §6 はこの検査の合否を書いていなかった。**
 > - **G13a・G13b が対応表の検査一覧に登録されていなかった**（目標からは参照されていた）。09-06 に登録。
+> - **【09-06 夜】成果物を作り替えた。** Blend sha256 は
+>   `0980707efd5ae6b1441650b25280c7c98361a43f51fbdf902626def86c476d76`（§7 も更新済み）。
+>   退避は `blends/swimsuit/_bak-20260906/` と `output/gf2-helen-swimsuit/*.bak-20260906`。
+>   レンダー `wiki/_attachments/helen-swimsuit-status/img-20260906-holefill/`。
+> - **G12a を直した**（武田さん承認「広げたあとを読むよう直す」）。`tools/cup_fit_scale.py` の
+>   既定を成果物そのものへ。**×1.442 で PASS**（広げる前は `--stage fit` で ×1.099）。**罠②は解消。**
+> - **胸の穴の塞ぎ方を作り直した**（武田さん承認「見た目の質を直す」）。円錐 → 球に沿う蓋
+>   （中間の輪 2 本）。蓋の球からのずれ ヘレン 2.507 → **0.651mm** / ドナー 6.901 → **1.957mm**。
+>   **動いたのはカップだけ**（中央値 1.11mm・最大 6.50mm）。他の役割は 0.000mm。
+>   浮きは 2.90 → 1.82mm（合格線も 1.42〜4.42 → 0.33〜3.33 へ同じだけ動いた）。
+> - **肩ひもの残り 5.42mm は手を付けていない。** 胴体の上端を作り足すことになり、明言
+>   **S002「新しく作る面は 0」**に衝突する。明言を変える承認が要る。
 > - 09-06 の説明ページ:
 >   `wiki/_attachments/helen-swimsuit-status/20260906-three-goal-holes-filled.html`
 > - 09-06 のセッション記録:
@@ -41,8 +53,10 @@ supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260905.md
 **穴の塞ぎについては、武田さんご自身が「質自体は良くない。最悪妥協」と評価されています。
 次に触る人は、ここを「済んだ・良い」と扱わないでください。**
 
-Blend sha256（正本）`d6d0b1c3f5706f0451e95e8fc88c3a3492267e4e580464599e7c49d48f46cf87`
-レンダー `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/img-20260905-strap/`
+Blend sha256（**2026-09-05 時点**）`d6d0b1c3f5706f0451e95e8fc88c3a3492267e4e580464599e7c49d48f46cf87`
+→ **いまの正本は `0980707efd5ae6b1441650b25280c7c98361a43f51fbdf902626def86c476d76`（2026-09-06 に作り替えた）**
+レンダー（09-05）`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/img-20260905-strap/`
+レンダー（**09-06・いまの正本**）`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/img-20260906-holefill/`
 
 それ以外は次のエージェントが自分で進めます。以下はエージェント向けです。
 
@@ -65,7 +79,9 @@ Blend sha256（正本）`d6d0b1c3f5706f0451e95e8fc88c3a3492267e4e580464599e7c49d
 `G12a`（カップの大きさ）は **`helen_swimsuit_p_general.npz`＝カップを広げる前**を読む。
 広げる処理は次の工程（`swimsuit_shell_restore`）にあるので、**成果物が何であっても永久に FAIL**。
 成果物の実測は **面内 ×1.456**（承認 S006 の 1.40〜1.50 内）。**G12a の FAIL は成果物の欠陥ではない。**
-**この件は 2026-09-05 に武田さんへ質問したがカードを閉じられ、未決のまま。**
+**【2026-09-06 解消】** 武田さんが「広げたあとを読むよう直す」を承認。`tools/cup_fit_scale.py` の
+既定を成果物そのものへ変えた（`--stage fit` で広げる前も読める）。**×1.442 で PASS。**
+変異試験に段階の試験を足した（検出力 6/6）。
 
 ### 罠③ 同じものを、違う基準で測ると符号が逆になる
 
@@ -266,7 +282,14 @@ $P tools/goal_coverage.py                                                      #
 $P tools/doc_timeline_check.py --all
 ```
 
-**2026-09-06 の状態**（Blend は 09-05 夜のまま）:
+**2026-09-06 夜の状態**（Blend sha256 `0980707efd5a…`）:
+F1 PASS ／ D1 1/1 ／ V 4/6 ／ W 8/12 ／ N 0/3 ／ A 24/24 ／ M1 PASS ／ L1・L2・L3 指摘0 ／
+P1 6/6 ／ V10a FAIL ／ **G12a PASS（×1.442）** ／ G12b PASS ／ G13a PASS（浮き 1.82mm）／
+G13b PASS（+1.8°）／ G14a・G14b PASS ／ G15a・G15b PASS ／ G16a・G16b PASS ／
+G17a・G17b PASS ／ **B1 FAIL（据え置き）** ／ C1〜C4 PASS ／ **未測定の側面 1 個**。
+**不合格が増えた項目は無い。G12a が 1 件減った。**
+
+**2026-09-06 昼の状態**（作り替える前・当時の記録）:
 F1 PASS ／ D1 1/1 ／ V 4/6 ／ W 8/12 ／ N 0/3 ／ A 24/24 ／ M1 PASS ／ L1・L2・L3 指摘0 ／
 P1 6/6 ／ V10a FAIL ／ G12a FAIL（罠②）／ G12b PASS ／ G13a・G13b PASS ／ G14a・G14b PASS ／
 **G15a・G15b PASS ／ G16a・G16b PASS ／ G17a・G17b PASS** ／ **B1 FAIL（肌に隠れる面積
@@ -284,7 +307,9 @@ judge 不合格 2件（G4a中央・G9a厚み の中間 ×0.928）／ **未測定
 
 - Blend:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/blends/swimsuit/Helen-swimsuit-flat.blend`
-  正本 sha256 `d6d0b1c3f5706f0451e95e8fc88c3a3492267e4e580464599e7c49d48f46cf87`
+  正本 sha256 `0980707efd5ae6b1441650b25280c7c98361a43f51fbdf902626def86c476d76`
+  （**2026-09-06 に作り替えた。** 09-05 の `d6d0b1c3f570…` は
+  `blends/swimsuit/_bak-20260906/` に退避してある）
 - 台帳:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/visible-set-swimsuit.json`
 - **入れる前に必ず退避すること**（`_bak-<日付>/` と `.bak-<日付>`）。
@@ -330,8 +355,9 @@ judge 不合格 2件（G4a中央・G9a厚み の中間 ×0.928）／ **未測定
    この行が置き換える）
 2. G12a の扱い（罠②・武田さんへの質問が未決）
 3. 帯・垂れを判定できるようにする（骨の基準の調査）
-4. 穴の塞ぎの質（武田さん「最悪妥協」）
-5. 肩ひもの残り 5.42mm（胴体の上端を作り足す作業・未承認）
+4. ~~穴の塞ぎの質~~ **2026-09-06 に作り直した**（円錐 → 球に沿う蓋・輪 2 本）。
+   蓋の球からのずれ ヘレン 2.507 → 0.651mm / ドナー 6.901 → 1.957mm
+5. 肩ひもの残り 5.42mm — **明言 S002「新しく作る面は 0」に衝突する。明言を変える承認が要る**（胴体の上端を作り足す作業・未承認）
 6. N1〜N3 0/3、W6・W8・W11・W12、V3・V4
 7. G4a中央（5.29 → 6.15）、G9a厚み の中間 ×0.928
 8. 検査 R1・R2・R3・V8・V9・W2（設計だけで未実装。W11 が 6 件と数えている）
