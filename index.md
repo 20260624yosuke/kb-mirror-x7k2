@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5046 ファイル_
+_合計 5062 ファイル_
 
 ## root/ (11)
 
@@ -209,7 +209,7 @@ _合計 5046 ファイル_
 - [Helen-swimsuit-flat_set_P3.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/Helen-swimsuit-flat_set_P3.png) | 2026-09-05T13:05:08Z
 - [Helen-swimsuit-flat_side.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/Helen-swimsuit-flat_side.png) | 2026-09-05T13:05:03Z
 
-## wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/ (6)
+## wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/ (22)
 
 - [c_HelenSSR0101_slg_P1_body_lod0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_P1_body_lod0.png) | 2026-09-05T13:05:09Z
 - [c_HelenSSR0101_slg_P1_body_lod0_Dorm.sub0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_P1_body_lod0_Dorm.sub0.png) | 2026-09-05T13:05:10Z
@@ -217,6 +217,22 @@ _合計 5046 ファイル_
 - [c_HelenSSR0101_slg_P1_cloth_lod0.sub0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_P1_cloth_lod0.sub0.png) | 2026-09-05T13:05:13Z
 - [c_HelenSSR0101_slg_P1_cloth_lod0.sub1.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_P1_cloth_lod0.sub1.png) | 2026-09-05T13:05:14Z
 - [c_HelenSSR0101_slg_P1_cloth_lod0.sub2.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_P1_cloth_lod0.sub2.png) | 2026-09-05T13:05:15Z
+- [c_HelenSSR0101_slg_P1_hand_lod0.sub0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_P1_hand_lod0.sub0.png) | 2026-09-05T13:05:16Z
+- [c_HelenSSR0101_slg_P1_hand_lod0.sub1.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_P1_hand_lod0.sub1.png) | 2026-09-05T13:05:17Z
+- [c_HelenSSR0101_slg_P1_swimsuit_lod0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_P1_swimsuit_lod0.png) | 2026-09-05T13:05:18Z
+- [c_HelenSSR0101_slg_body_lod0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_body_lod0.png) | 2026-09-05T13:05:20Z
+- [c_HelenSSR0101_slg_cloth2_lod0_General.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_cloth2_lod0_General.png) | 2026-09-05T13:05:21Z
+- [c_HelenSSR0101_slg_cloth2gls_lod0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_cloth2gls_lod0.png) | 2026-09-05T13:05:22Z
+- [c_HelenSSR0101_slg_cloth2orn_lod0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_cloth2orn_lod0.png) | 2026-09-05T13:05:23Z
+- [c_HelenSSR0101_slg_cloth3gls_lod0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_cloth3gls_lod0.png) | 2026-09-05T13:05:25Z
+- [c_HelenSSR0101_slg_hair_lod0.sub0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_hair_lod0.sub0.png) | 2026-09-05T13:05:26Z
+- [c_HelenSSR0101_slg_hair_lod0.sub1.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR0101_slg_hair_lod0.sub1.png) | 2026-09-05T13:05:27Z
+- [c_HelenSSR01_slg_face_lod0.sub0.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR01_slg_face_lod0.sub0.png) | 2026-09-05T13:05:28Z
+- [c_HelenSSR01_slg_face_lod0.sub1.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR01_slg_face_lod0.sub1.png) | 2026-09-05T13:05:29Z
+- [c_HelenSSR01_slg_face_lod0.sub2.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR01_slg_face_lod0.sub2.png) | 2026-09-05T13:05:31Z
+- [c_HelenSSR01_slg_face_lod0.sub3.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR01_slg_face_lod0.sub3.png) | 2026-09-05T13:05:32Z
+- [c_HelenSSR01_slg_face_lod0.sub4.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR01_slg_face_lod0.sub4.png) | 2026-09-05T13:05:33Z
+- [c_HelenSSR01_slg_face_lod0.sub5.png](wiki/_attachments/helen-swimsuit-status/img-20260905-nipple-anchor/objects/c_HelenSSR01_slg_face_lod0.sub5.png) | 2026-09-05T13:05:34Z
 
 ## wiki/_attachments/helen-swimsuit-status/img-20260905-shell/ (6)
 
@@ -370,7 +386,7 @@ _合計 5046 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-09-05T12:58:00Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-09-05T13:06:19Z
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (22)
 
