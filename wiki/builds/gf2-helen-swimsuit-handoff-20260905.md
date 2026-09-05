@@ -218,6 +218,12 @@ $P tools/swimsuit_material_folder.py
 cd "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01"
 P=/opt/anaconda3/bin/python3
 EX="/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract"
+# 【2026-09-05 追加・必須】検査は Blend そのものではなく「写し」を読む。
+# **Blend を作り替えたら、必ずここで写しを作り直す。** これを忘れると、検査は古い Blend を
+# 見たまま「合格」を出す（2026-09-05 に実際に起き、2日前の写しで「回帰なし」と報告した）。
+"$BLENDER" -b "$EX/blends/swimsuit/Helen-swimsuit-flat.blend" \
+  --python tools/blend_probe.py -- --out output/gf2-helen-swimsuit/blend-probe
+$P tools/probe_freshness.py                                                    # F1（写しが新しいか）
 $P tools/deliverable_checks.py "$EX/blends/swimsuit/build-log-swimsuit.json"   # D1
 $P tools/swimsuit_visible_checks.py                                            # V1〜V6
 $P tools/swimsuit_wear_checks.py                                               # V7・W1〜W12
@@ -229,6 +235,7 @@ $P tools/doc_structure_check.py --all                                          #
 $P tools/statement_ledger_check.py                                             # P1a〜P1f
 $P tools/fit_target_check.py                                                   # V10a・V10b
 $P tools/cup_fit_scale.py                                                      # G12a・G12b
+$P tools/worn_feel_check.py                                                    # G13a・G13b（着ている形）
 $P tools/version_compare.py                                                    # B1・B2（版の採否）
 $P tools/goal_coverage.py                                                      # C1〜C4（進捗）
 $P tools/doc_timeline_check.py --all
