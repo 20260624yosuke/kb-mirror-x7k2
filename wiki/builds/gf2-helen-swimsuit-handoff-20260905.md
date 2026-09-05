@@ -236,6 +236,7 @@ $P tools/statement_ledger_check.py                                             #
 $P tools/fit_target_check.py                                                   # V10a・V10b
 $P tools/cup_fit_scale.py                                                      # G12a・G12b
 $P tools/worn_feel_check.py                                                    # G13a・G13b（着ている形）
+$P tools/role_fit_check.py                                                      # G14a・G14b（帯・肩ひも・垂れ）
 $P tools/version_compare.py                                                    # B1・B2（版の採否）
 $P tools/goal_coverage.py                                                      # C1〜C4（進捗）
 $P tools/doc_timeline_check.py --all
