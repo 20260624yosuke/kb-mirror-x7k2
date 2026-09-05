@@ -10916,3 +10916,29 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 残: 案1採用に伴う表示ルールと検査の変更は未実施。
 - VSCode拡張の確認: `vscode-office` はOffice文書用でHTML対象外。HTMLプレビューはLive Preview（Microsoft製）を案内。
 - 触ったファイル: 上記HTML2件 / `log.md`。
+
+## [2026-09-05] lint | brainstorm到達性監査の指摘対応（担当分68件のパス修正）
+
+- 2026-09-03と09-04に別案件担当者が引き継ぎ時の到達性監査で止められた件の対応。museの指示書
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-memo-path-repair-order-20260904.md`
+  にもとづき、museが担当分を修正した。
+- 監査指摘70件のうち担当分68件を解消。残り2件は別担当の水着版ヘレン引き継ぎで手をつけず、
+  同担当が2026-09-05 01:17に0905版へ更新して解消。監査はPASSになった。
+- 修正内容: 保管庫外混同パスの書換え、Codex旧本番パスの現行実体・退避先実体への書換え、
+  一時作業場の省略形の削除、空の申し送り節の記入、opencode起動路3件への到達性入口の追加。
+- 旧Codex本番一式は `/Users/takedayousuke/.codex/skill-backups/brainstorm-pre-lite-20260901-093146/`
+  に退避済みで、記録値とSHA一致5件を確認して参照先にした。`resume_contract.py` の最終版SHAとは
+  不一致（9-01入替えで失われた可能性あり）。Codex側guard.logの447行は観測時点の値で退避版は629行。
+- 触ったファイル: 下記12件 / `log.md`。
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/agent-positioning/_index.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/llm-harness-parity/_index.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/project-hub-index/_index.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260831-concrete-resume-audit-repair.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/sessions/20260901-explicit-permission-design.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/commands/html.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/commands/brainstorm.md`
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/instructions/display.md`

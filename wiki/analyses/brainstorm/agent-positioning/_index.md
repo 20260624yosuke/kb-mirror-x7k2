@@ -33,6 +33,8 @@ background_paths:
 
 ## 直した記録
 
+- 2026-09-05 到達性監査の指摘対応。存在しない背景資料パスを実在する側へ書換え、空の申し送り節を記入（muse）。
+
 ## 再開の入口（実パス）
 
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/agent-positioning/_index.md
