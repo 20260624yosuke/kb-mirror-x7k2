@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5005 ファイル_
+_合計 5006 ファイル_
 
 ## root/ (11)
 
@@ -270,6 +270,10 @@ _合計 5005 ファイル_
 - [x-eagle-observation-2026-06-23.md](wiki/analyses/x-eagle-observation-2026-06-23.md) | 2026-06-23T05:28:45Z
 - [x-eagle-project-current-state-interference-audit-2026-06-24.md](wiki/analyses/x-eagle-project-current-state-interference-audit-2026-06-24.md) | 2026-06-24T15:01:17Z
 - [ye-jji-course-roi-for-growing-character-artist.md](wiki/analyses/ye-jji-course-roi-for-growing-character-artist.md) | 2026-07-07T00:55:52Z
+
+## wiki/analyses/brainstorm/_probe-pass/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/_probe-pass/_index.md) | 2026-09-05T07:02:07Z
 
 ## wiki/analyses/brainstorm/agent-performance-eval/ (1)
 
