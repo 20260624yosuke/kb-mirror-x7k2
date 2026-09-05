@@ -3,11 +3,23 @@ type: build
 status: active
 confidence: high
 evidence_level: source-backed
-last_reviewed: 2026-09-05
+last_reviewed: 2026-09-06
 supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260905.md
 ---
 
-# 水着版ヘレン 引き継ぎ書（2026-09-05 夜・**朝の版を置き換える**）
+# 水着版ヘレン 引き継ぎ書（2026-09-05 夜 ＋ **2026-09-06 追記**）
+
+> [!important] 2026-09-06 の追記（この行より下の 09-05 の記述は、明記した箇所以外そのまま有効）
+> - **進捗: 未測定の側面 3 個 → 1 個。** 埋めたのは GOAL-FULLBODY（G15）/ GOAL-SILHOUETTE（G16）/
+>   GOAL-LAW（G17）。**Blend は作り替えていない**（sha256 は 09-05 夜のまま）。
+> - **残り 1 個**: 役割「中間」「小物」に体に対する基準が1つも無い（09-06 に G17a が表面化させた）。
+> - **良くない知らせ**: `B1` が不合格。「肌に隠れる面積」が 25.21 → 47.40 と**増えている**
+>   （原着装 7.32）。**09-05 の §6 はこの検査の合否を書いていなかった。**
+> - **G13a・G13b が対応表の検査一覧に登録されていなかった**（目標からは参照されていた）。09-06 に登録。
+> - 09-06 の説明ページ:
+>   `wiki/_attachments/helen-swimsuit-status/20260906-three-goal-holes-filled.html`
+> - 09-06 のセッション記録:
+>   `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260906-three-goal-holes-filled.md`
 
 ---
 
@@ -106,7 +118,19 @@ Blend sha256（正本）`d6d0b1c3f5706f0451e95e8fc88c3a3492267e4e580464599e7c49d
 **検査の本数・合格数を進捗として報告してはいけない。**
 進捗は `python3 tools/goal_coverage.py` が出す **「未測定の側面の個数」** ただ1つ。
 
-**2026-09-05 朝 5 個 → 夜 3 個。** 埋めたのは:
+**2026-09-05 朝 5 個 → 夜 3 個 → 2026-09-06 1 個。**
+
+2026-09-06 に埋めたもの:
+
+- **GOAL-FULLBODY**（全身が揃っているか）← **G15a・G15b**（`tools/fullbody_check.py`・変異試験 5/5）
+- **GOAL-SILHOUETTE**（横・斜めから見た輪郭）← **G16a・G16b**（`tools/silhouette_check.py`・4/4）
+- **GOAL-LAW**（載せ方の法則）← **G17a・G17b**（`tools/wearing_law_check.py` ＋
+  法則の正本 `wiki/builds/gf2-helen-swimsuit-wearing-law.json`・7/7）
+
+**2026-09-06 に新しく出た穴（残り 1 個）**: 役割「中間」「小物」に体に対する基準が1つも無い。
+`穴の総数の下限` は 10 → 11 へ引き上げた。
+
+2026-09-05 に埋めたもの:
 
 - **GOAL-DRAPE**（布の向きが体に沿っているか）← **G13a・G13b**
 - **GOAL-BODY-FIT**（帯・肩ひも・垂れが作り替えられているか）← **G14a・G14b**
@@ -234,12 +258,22 @@ $P tools/fit_target_check.py                                                   #
 $P tools/cup_fit_scale.py                                                      # G12a・G12b
 $P tools/worn_feel_check.py                                                    # G13a・G13b
 $P tools/role_fit_check.py                                                     # G14a・G14b
+$P tools/fullbody_check.py                                                     # G15a・G15b【09-06 追加】
+$P tools/silhouette_check.py                                                   # G16a・G16b【09-06 追加】
+$P tools/wearing_law_check.py                                                  # G17a・G17b【09-06 追加】
 $P tools/version_compare.py                                                    # B1・B2
 $P tools/goal_coverage.py                                                      # C1〜C4（進捗）
 $P tools/doc_timeline_check.py --all
 ```
 
-**2026-09-05 夜の状態**:
+**2026-09-06 の状態**（Blend は 09-05 夜のまま）:
+F1 PASS ／ D1 1/1 ／ V 4/6 ／ W 8/12 ／ N 0/3 ／ A 24/24 ／ M1 PASS ／ L1・L2・L3 指摘0 ／
+P1 6/6 ／ V10a FAIL ／ G12a FAIL（罠②）／ G12b PASS ／ G13a・G13b PASS ／ G14a・G14b PASS ／
+**G15a・G15b PASS ／ G16a・G16b PASS ／ G17a・G17b PASS** ／ **B1 FAIL（肌に隠れる面積
+25.21 → 47.40 と増えた・09-05 の引き継ぎ書は B1 の合否を書いていなかった）** ／
+C1〜C4 PASS ／ **未測定の側面 1 個**。
+
+**2026-09-05 夜の状態**（当時の記録・そのまま残す）:
 F1 PASS ／ D1 1/1 ／ V 4/6（V3・V4）／ **W 8/12**（W6・W8・W11・W12）／ N 0/3 ／
 **A 24/24** ／ M1 PASS ／ L1・L2・L3 指摘0 ／ P1 6/6 ／ V10a FAIL（罠②と同種の古い判定ファイル由来）／
 **G12a FAIL（罠②・成果物の欠陥ではない）** ／ G12b PASS ／
@@ -289,7 +323,11 @@ judge 不合格 2件（G4a中央・G9a厚み の中間 ×0.928）／ **未測定
 
 ## 10. 残っている作業
 
-1. **未測定の側面 3 個**（GOAL-LAW / GOAL-SILHOUETTE / GOAL-FULLBODY）← **これが進捗**
+0. **【2026-09-06 追記】B1 の不合格。** 肌に隠れる面積 25.21 → 47.40（原着装 7.32）。
+   めり込みは 23.16 → 14.65 と減っている。次に作り替えるときの判断材料。
+1. **未測定の側面 1 個**（GOAL-LAW の「中間・小物に体の基準が無い」）← **これが進捗**
+   （2026-09-06 に 3 個 → 1 個。旧記述「3 個（GOAL-LAW / GOAL-SILHOUETTE / GOAL-FULLBODY）」は
+   この行が置き換える）
 2. G12a の扱い（罠②・武田さんへの質問が未決）
 3. 帯・垂れを判定できるようにする（骨の基準の調査）
 4. 穴の塞ぎの質（武田さん「最悪妥協」）
