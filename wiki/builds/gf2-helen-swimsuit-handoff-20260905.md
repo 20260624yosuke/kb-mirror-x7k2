@@ -167,12 +167,36 @@ S006 は承認から 7日間、誰も成果物を照合していなかった。
 
 ## 5. いま最優先でやること
 
-1. **武田さんの判断（§ 武田さんの節）を待つ。** G9a厚み の上限をカップに掛け続けるか。
-2. 掛けないと決まったら、**法則版 ならし20 の「めり込み 23.95」を下げる。**
-   これが最後の壁。押し出し・ならし以外の手が要る（原着装は 3.66）。
-3. そのうえで成果物へ入れ、§7 の検査を全部通す。
+> **2026-09-05 追記。武田さんの承認が出て、決定A・B・C を実装済み。**
+> § 武田さんの節に書いた「上限を掛け続けるか」の判断は **A で決着**（カップだけ 0.95〜2.66）。
 
-**武田さんの判断を待つ間も、2 は着手してよい**（成果物を書き換えないので）。
+**残っている作業は 1 つだけ。**
+
+1. **法則版のめり込み（G4b）を 14.65 から 8.45 以下へ下げる。**
+   `tools/version_compare.py` の第1段階がここで止めている（いまの成果物 8.45 / 原着装 3.66）。
+   持ち上げ 2.5mm で 10.52 まで下がるが、体からの距離が原着装 2.900 から 4.177 へ離れる。
+   **押し出し・ならし・持ち上げ・目標側の押し戻しは全部試して頭打ち。別の手が要る。**
+2. 下がったら `python3 tools/version_compare.py` が「候補を採る」と言う。そこで成果物へ入れる。
+3. 法則版の **帯 ×1.509 / 肩ひも ×0.824 / 垂れ ×1.194**（決定A で初めて見えた）。未着手。
+4. **決定C（形に触っていない回は検査づくりを後回し）の機械化。設計していない＝未達。**
+
+### 2026-09-05 に入った道具・変更
+
+| 変更 | 中身 |
+|---|---|
+| `BAND_BY_ROLE` | カップの厚みの合格線を **0.95〜2.66** に。出どころは `cup_footprint_span` の第3主軸 |
+| `law_roles` | 法則を役割ごとに掛け分ける。**カップだけに掛けるのは逆効果**（§9 の表） |
+| `law_clamp_rounds` | 目標側の押し戻しの反復。**G4b は動かない**＝めり込みは突き刺さりではない証拠 |
+| `law_lift_mm` | 法則の行き先を体の法線方向へ持ち上げる。**1.3mm で体からの距離が原着装と一致** |
+| `tools/version_compare.py` | **B1・B2** 版の採否の2段判定。不合格の件数を使わない。変異試験 4/4 |
+| `tools/plan_audit.py` | **A22** 上を工程監査へ接続。監査 **22/22 PASS** |
+
+法則版の再現:
+
+```
+Case.solve(use_law=True, law_smooth=20, law_clamp=True, law_clamp_rounds=10,
+           lam_base=5.0, lam_pen=5.0, law_lift_mm=1.3)
+```
 
 ## 6. 検査の走らせ方（全部）
 
@@ -184,12 +208,13 @@ $P tools/deliverable_checks.py "$EX/blends/swimsuit/build-log-swimsuit.json"   #
 $P tools/swimsuit_visible_checks.py                                            # V1〜V6
 $P tools/swimsuit_wear_checks.py                                               # V7・W1〜W12
 $P tools/swimsuit_inventory_checks.py                                          # N1〜N3
-$P tools/plan_audit.py                                                         # A1〜A21
+$P tools/plan_audit.py                                                         # A1〜A22
 $P tools/measurement_label_check.py                                            # M1
 $P tools/doc_layout_check.py --all                                             # L1
 $P tools/doc_structure_check.py --all                                          # L2・L3
 $P tools/statement_ledger_check.py                                             # P1a〜P1d
 $P tools/cup_fit_scale.py                                                      # G12a・G12b
+$P tools/version_compare.py                                                    # B1・B2（版の採否）
 $P tools/goal_coverage.py                                                      # C1〜C4（進捗）
 $P tools/doc_timeline_check.py --all
 ```
