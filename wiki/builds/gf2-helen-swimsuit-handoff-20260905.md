@@ -165,6 +165,23 @@ $P tools/helen_swimsuit_fit_p.py --body general --rigid-roles all --cup-y-lam 5e
 **P1d が本命。** 「武田さんが数値で決めたのに、それを測る検査が1本も無い」を機械が止める。
 S006 は承認から 7日間、誰も成果物を照合していなかった。
 
+## 4.5 【2026-09-05 最重要・後から判明】**載せている相手が承認された相手と違う**
+
+> **2026-08-31 に武田さんが「胴体は `c_HelenSSR01_slg_body_lod0`（素肌の上半身）に確定。
+> 素体に合わせ直した Blend の作り直しと提出。いまの適合結果は捨てる」と承認していた。**
+> **その承認が 5日間 実行されていない。**
+
+- 明言台帳・引き継ぎ書 09-03/04/05 のいずれにも「素肌」の出現 **0件**。
+- この引き継ぎ書の検査コマンドも `--body general`（**ドレスの胴体**）のまま。
+- 実測: いまの成果物は **素肌から中央値 19.3mm・95%点 81.7mm 浮いている**
+  （ドレスの胴体からは 9.2mm）。武田さんの 2026-08-30「中に浮いてたよ」は正しかった。
+- 殻版を素肌で走らせると **肌に隠れる面積 58.70% / 最深 −65.54mm** で壊れる＝**着手されていない**。
+- **本書 §3 以下の数値はすべて「ドレスの胴体を相手にした値」。素肌では意味が変わる。**
+
+**次にやることは素肌への合わせ直し。** 新しい判断は要らない（8/31 に承認済み・台帳 S014）。
+検査 **V10**（`tools/fit_target_check.py`）が、承認された相手に合わせているかを機械で見る。
+**いま本番で 5件 検出している**（この引き継ぎ書を含む）。
+
 ## 5. いま最優先でやること
 
 > **2026-09-05 追記。武田さんの承認が出て、決定A・B・C を実装済み。**
@@ -212,7 +229,8 @@ $P tools/plan_audit.py                                                         #
 $P tools/measurement_label_check.py                                            # M1
 $P tools/doc_layout_check.py --all                                             # L1
 $P tools/doc_structure_check.py --all                                          # L2・L3
-$P tools/statement_ledger_check.py                                             # P1a〜P1d
+$P tools/statement_ledger_check.py                                             # P1a〜P1f
+$P tools/fit_target_check.py                                                   # V10a・V10b
 $P tools/cup_fit_scale.py                                                      # G12a・G12b
 $P tools/version_compare.py                                                    # B1・B2（版の採否）
 $P tools/goal_coverage.py                                                      # C1〜C4（進捗）
