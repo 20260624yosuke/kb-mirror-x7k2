@@ -1373,6 +1373,8 @@
 
 - [[gf2-helen-plan-audit-design-20260829]] — 「なぜ結論が何度も変わるのか」の原因分析と機械的な監査の設計。レビュー・検証ボトルネックの考察を現在のプロジェクト計画へ適用 (source-backed+inferred, 2026-08-29)
 
+- [[gf2-helen-agent-task-orders]] — H0157別実行者への指示書6件（指・生え際・顔の筋・白飛びの値・階調の割当て・反射のつや）。共通の約束・対象・手順・完了条件・禁止つきで貼って渡せる形。HTML版と同内容 (inferred, 2026-09-05)
+
 - [Helen H0157原作再現 再開用親メモ](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md>) — 原作再現を水着化から分けた入口。関連正本・旧親・現状HTMLと相互接続。Blend未完成、監査P0まで、一本化rev3実行未承認を実ファイルで再照合（2026-09-01）。
 
 - [[opencode-interrupted-tasks-20260826]] — opencode 中断タスクの全容把握。履歴DB925セッションを実測し Coloso7講座の映像ingest進捗(28/190章)・intake文字起こし134/285本・GF2系の待ち構造を確定、A-2文字起こし151本をリソース優先で保留に決定(1本中央5〜6分×151本=13〜15時間・GPU6GBの実測付き)、CPU負荷原因はvideo_frames.pyの1枚1ffmpeg起動と特定、二重死亡したマーセch12を読取7割済みまで救出(rescue-summary.md)。別セッション4本(ye_jji/hide/マーセ/ひづるめ修正)進行中 (source-backed, 2026-08-26)

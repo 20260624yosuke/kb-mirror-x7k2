@@ -10942,3 +10942,8 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/commands/html.md`
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/commands/brainstorm.md`
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/instructions/display.md`
+## [2026-09-05] query | H0157別実行者への指示書6件
+
+- 指の変換誤り・額の生え際・顔の筋・白飛びの値・階調の割当て・反射のつやを、共通の約束つきで貼って渡せる形に整理。
+- 触ったページ: wiki/analyses/gf2-helen-agent-task-orders.md (new)、index.md (Analysesへ1行追加)。
+- HTML版 wiki/_attachments/project-hub-index/20260905-agent-task-orders.html と同内容。

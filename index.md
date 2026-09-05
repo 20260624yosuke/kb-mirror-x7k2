@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5033 ファイル_
+_合計 5034 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 5033 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-09-01T13:41:29Z
-- [log.md](root/log.md) | 2026-09-05T00:25:25Z
+- [index.md](root/index.md) | 2026-09-05T12:36:39Z
+- [log.md](root/log.md) | 2026-09-05T12:36:42Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -234,7 +234,7 @@ _合計 5033 ファイル_
 - [c_HelenSSR01_slg_face_lod0.sub4.png](wiki/_attachments/helen-swimsuit-status/img-20260905-shell/objects/c_HelenSSR01_slg_face_lod0.sub4.png) | 2026-09-05T07:53:27Z
 - [c_HelenSSR01_slg_face_lod0.sub5.png](wiki/_attachments/helen-swimsuit-status/img-20260905-shell/objects/c_HelenSSR01_slg_face_lod0.sub5.png) | 2026-09-05T07:53:28Z
 
-## wiki/analyses/ (68)
+## wiki/analyses/ (69)
 
 - [art-canvas-asuna-reference-axis-map.md](wiki/analyses/art-canvas-asuna-reference-axis-map.md) | 2026-06-14T16:03:54Z
 - [asuna-maid-costume-structure.md](wiki/analyses/asuna-maid-costume-structure.md) | 2026-06-24T01:38:06Z
@@ -259,6 +259,7 @@ _合計 5033 ファイル_
 - [firefox-x-profile-scroll-jump-root-cause-2026-08-03.md](wiki/analyses/firefox-x-profile-scroll-jump-root-cause-2026-08-03.md) | 2026-08-03T08:46:15Z
 - [gf2-costume-inventory-and-selection-session-2026-08-24.md](wiki/analyses/gf2-costume-inventory-and-selection-session-2026-08-24.md) | 2026-08-24T08:30:43Z
 - [gf2-costume-reference-feasibility-2026-08-23.md](wiki/analyses/gf2-costume-reference-feasibility-2026-08-23.md) | 2026-08-23T01:10:44Z
+- [gf2-helen-agent-task-orders.md](wiki/analyses/gf2-helen-agent-task-orders.md) | 2026-09-05T12:36:35Z
 - [gf2-helen-bikini-harness-loop-application-2026-08-09.md](wiki/analyses/gf2-helen-bikini-harness-loop-application-2026-08-09.md) | 2026-08-09T10:41:23Z
 - [gf2-helen-body-shape-variants-20260829.md](wiki/analyses/gf2-helen-body-shape-variants-20260829.md) | 2026-08-29T11:42:31Z
 - [gf2-helen-bone-hierarchy-missing-2026-08-10.md](wiki/analyses/gf2-helen-bone-hierarchy-missing-2026-08-10.md) | 2026-08-10T14:36:07Z
