@@ -77,6 +77,15 @@ supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260905.md
 >   「憶測で成果物を汚しすぎです」。**3 版とも「写して伸ばす」点が共通していて、そこが誤り。**
 >   紐は**ヘレンの体に合わせて作る**必要がある（写して伸ばすのではなく）。**方法の承認を先に取ること。**
 >   **承認が出るまで成果物に触らない。**
+> - **【09-06 深夜・最新】案B を実装。紐をヘレンの体の上で作り直した**（武田さん承認 S022）。
+>   `tools/strap_rebuild.py`（新規）＋ `--strap-rebuild`（既定）。
+>   輪の中心だけを体 UV で写し、**道のりで等分して置き直し、原作の輪を各場所の枠へ載せ替える**。
+>   **断面は原作と完全一致**（幅 1.52 / 厚み 0.42mm）、**辺の伸び 中央 ×1.02**、
+>   G18b の差は最大 1.2mm。首の後ろ 76/300（原作 90）。
+>   Blend sha256 **`bef1da0801cb9025bc86c2b8495f0b2a3baa56a031c0f3b1771f00e486d9a035`**。
+>   **残る不合格 2 件**: W7（胴体上端を越える頂点 6 個）と G17b（肩ひも Z +14.44mm）。
+>   **どちらもヘレンの胴体メッシュが首の骨に対して 4.8mm 低い所で切れていることから出ている。**
+>   紐は首のメッシュの上にあり、宙に浮いてはいない。**W7 の条件は武田さんの承認で入ったものなので変えない。**
 > - 09-06 の説明ページ:
 >   `wiki/_attachments/helen-swimsuit-status/20260906-three-goal-holes-filled.html`
 > - 09-06 のセッション記録:
@@ -369,7 +378,7 @@ judge 不合格 2件（G4a中央・G9a厚み の中間 ×0.928）／ **未測定
 
 - Blend:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/blends/swimsuit/Helen-swimsuit-flat.blend`
-  正本 sha256 `7ea8582901ea2d6c082ce621e6a82e3c4d6193a1d857cbad5a3238a86e5efc43`
+  正本 sha256 `bef1da0801cb9025bc86c2b8495f0b2a3baa56a031c0f3b1771f00e486d9a035`
   （**2026-09-06 深夜・紐を張った版。**張る前は `f583db15ec8a…` で
   `blends/swimsuit/_bak-20260906c/` に退避。 同日昼の `0980707efd5a…` は
   `blends/swimsuit/_bak-20260906b/`、09-05 の `d6d0b1c3f570…` は
