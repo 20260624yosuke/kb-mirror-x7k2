@@ -26,7 +26,7 @@ background_paths:
 
 **引き算のメモではなく足し算のメモ。** 「差が不快だから禁止する」という向きの記録は
 `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/llm-harness-parity/_index.md`
-（[[llm-harness-parity]]、状態 active）にある。こちらは
+（[[llm-harness-parity]] ＝ `wiki/analyses/brainstorm/llm-harness-parity/_index.md`、状態 active）にある。こちらは
 **ヘレンの案件で良かったものを、他のサービスでも出すには何が要るか**だけを扱う。
 
 ## 武田さんの考え
@@ -371,7 +371,8 @@ Claude 側の判定本体（`brainstorm_guard.py`）を関数ごとに分類し�
 
 ### 4. そして前提が取れていない — Codex は 09-01 以降この保管庫で動いた記録が無い
 
-- `~/.codex/skills/brainstorm/scripts/` に `lite-state/` も `lite-events.jsonl` も **存在しなかった**
+- `~/.codex/skills/brainstorm/scripts/` の下に、状態のフォルダ（`lite-state`）も
+  イベントの記録（`lite-events.jsonl`）も **存在しなかった**
   （2026-09-06 に私が直接起動して初めて作られた。確認後に削除済み）。入れ替えから5日間、
   **実会話の記録が1件も無い。**
 - `tools/logs/prose-guard.log` を見ても、Codex 由来（`apply_patch`）の行は 08-31 23:04 の
@@ -519,7 +520,8 @@ brainstorm の `stop:0:1` は **登録がある**のに、9 セッションで1�
 ### 4. 保管庫側の関所2本は、実は一度も Codex で動いていない
 
 `tools/logs/prose-guard.log` の Codex 由来（`apply_patch`）の行は 3 件だけで、
-すべて 2026-08-31 23:04:14 の同一秒、対象は `wiki/_attachments/x/_probe.html`。
+すべて 2026-08-31 23:04:14 の同一秒で、対象として記録されているのは
+当時の確認用の仮ファイル名（`_probe.html`。いまは存在しない）。
 **配線の確認で流した合成の入力であって、実運用ではない。**
 
 > [!warning] 実測1 の言い方も訂正する
@@ -562,7 +564,7 @@ reentry=bool(data.get("stop_hook_active"))
 
 Codex をこの保管庫で開き、何でもよいので1行打って閉じる。そのあと私が次を読む。
 
-- `~/.codex/skills/brainstorm/scripts/lite-state/` が出来ているか
+- `~/.codex/skills/brainstorm/scripts/` の下に `lite-state`（フォルダ）が出来ているか
   （出来ていれば brainstorm のフックは発火している）
 - `tools/logs/prose-guard.log` に新しい行が増えたか
   （増えていれば `prose_guard.py` は発火している。増えなければ未信頼の疑いが強まる）
@@ -588,14 +590,23 @@ Codex の対話画面で `/hooks` と打ち、一覧を見せていただく。�
 
 **①で発火していなければ、③は成立しない。** その場合は②の結果を先に片付ける。
 
-### 私がその場で読むファイル
+### 私がその場で読むもの
+
+いま実在するのは次の2つ。
 
 ```
-/Users/takedayousuke/.codex/skills/brainstorm/scripts/lite-state/
-/Users/takedayousuke/.codex/skills/brainstorm/scripts/lite-events.jsonl
 /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/logs/prose-guard.log
 /Users/takedayousuke/.codex/config.toml
 ```
+
+残る2つは **フックが発火したときに初めて出来るもの**なので、いまは存在しない。
+置き場所は次のフォルダで、名前は `lite-state`（フォルダ）と `lite-events.jsonl`（ファイル）。
+
+```
+/Users/takedayousuke/.codex/skills/brainstorm/scripts/
+```
+
+**この2つが出来ているかどうかが、①の見分けそのもの。**
 
 ## 決まったこと
 
