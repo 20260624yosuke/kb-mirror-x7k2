@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5362 ファイル_
+_合計 5363 ファイル_
 
 ## root/ (11)
 
@@ -830,7 +830,11 @@ _合計 5362 ファイル_
 
 ## wiki/analyses/brainstorm/llm-harness-parity/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/llm-harness-parity/_index.md) | 2026-09-06T09:37:05Z
+- [_index.md](wiki/analyses/brainstorm/llm-harness-parity/_index.md) | 2026-09-06T09:40:19Z
+
+## wiki/analyses/brainstorm/llm-harness-parity/sessions/ (1)
+
+- [20260906-experience-reproducibility.md](wiki/analyses/brainstorm/llm-harness-parity/sessions/20260906-experience-reproducibility.md) | 2026-09-06T09:40:19Z
 
 ## wiki/analyses/brainstorm/opencode-display-audit/ (1)
 
