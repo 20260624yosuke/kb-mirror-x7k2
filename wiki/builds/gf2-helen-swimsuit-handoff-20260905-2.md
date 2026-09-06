@@ -467,6 +467,7 @@ $P tools/wearing_law_check.py                                                  #
 $P tools/strap_wrap_check.py                                                   # G18a・G18b【09-06 追加】
 $P tools/skin_contact_check.py                                                  # G19a・G19b・G19c【09-06 夜 追加】
 $P tools/proposal_guard.py                                                     # P3a・P3b【09-06 夜 追加】
+$P tools/neck_path_check.py                                                    # G20a・G20b【09-07 追加】
 $P tools/terminology_check.py wiki/_attachments/helen-swimsuit-status/*.html    # T1・T2【09-06 夜 追加】
 $P tools/version_compare.py                                                    # B1・B2
 $P tools/goal_coverage.py                                                      # C1〜C4（進捗）
