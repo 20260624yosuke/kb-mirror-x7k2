@@ -8403,6 +8403,9 @@ G7「辺が10倍超」が新たに落ちる。**30本すべてがカップ↔帯
 
 ## 説明ページ（人が読む用）
 
+- 2026-09-07 胸の谷の部品の正体／胴に回す紐の太さの取り消し（第44部）:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260907-front-accessory-and-band-width.html`
+
 - 2026-09-05 胸の穴と「着ている感」の定義（第13部）:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/helen-swimsuit-status/20260905-hole-and-worn-feel.html`
 
@@ -8688,6 +8691,7 @@ G7「辺が10倍超」が新たに落ちる。**30本すべてがカップ↔帯
 - 親: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`
 - 子の置き場: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions`
 - 現在の子:
+  - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260907-front-accessory-and-band-width.md`
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md`
     — 案P の実装結果と、そこで生まれた4つの道（それぞれ失うもの）
   - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-o0-build-blend-passthrough.md`

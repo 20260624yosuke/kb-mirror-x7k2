@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5395 ファイル_
+_合計 5396 ファイル_
 
 ## root/ (11)
 
@@ -779,9 +779,9 @@ _合計 5395 ファイル_
 
 ## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/ (1)
 
-- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-09-06T15:33:50Z
+- [brainstorm-gf2-dusevnyj-bikini-to-helen.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md) | 2026-09-06T15:39:12Z
 
-## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (24)
+## wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/ (25)
 
 - [20260829-p-implementation-and-decision-point.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260829-p-implementation-and-decision-point.md) | 2026-08-29T15:58:18Z
 - [20260830-deliverable-reject-mechanize-visible-checks.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260830-deliverable-reject-mechanize-visible-checks.md) | 2026-08-30T13:10:53Z
@@ -807,6 +807,7 @@ _合計 5395 ファイル_
 - [20260904-fit-candidate-b-adopted.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260904-fit-candidate-b-adopted.md) | 2026-09-03T23:22:00Z
 - [20260906-collarbone-and-back-bow.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260906-collarbone-and-back-bow.md) | 2026-09-06T15:00:21Z
 - [20260906-three-goal-holes-filled.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260906-three-goal-holes-filled.md) | 2026-09-06T04:54:22Z
+- [20260907-front-accessory-and-band-width.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260907-front-accessory-and-band-width.md) | 2026-09-06T15:39:12Z
 
 ## wiki/analyses/brainstorm/gf2-helen-repro-resume/ (1)
 
@@ -866,7 +867,7 @@ _合計 5395 ファイル_
 
 ## wiki/analyses/brainstorm/kb-experience-reproducibility/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md) | 2026-09-06T15:23:31Z
+- [_index.md](wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md) | 2026-09-06T15:43:09Z
 
 ## wiki/analyses/brainstorm/kb-experience-reproducibility/sessions/ (1)
 
