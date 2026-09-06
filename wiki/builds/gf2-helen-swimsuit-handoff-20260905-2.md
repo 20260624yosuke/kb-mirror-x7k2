@@ -86,6 +86,29 @@ supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260905.md
 >   **残る不合格 2 件**: W7（胴体上端を越える頂点 6 個）と G17b（肩ひも Z +14.44mm）。
 >   **どちらもヘレンの胴体メッシュが首の骨に対して 4.8mm 低い所で切れていることから出ている。**
 >   紐は首のメッシュの上にあり、宙に浮いてはいない。**W7 の条件は武田さんの承認で入ったものなので変えない。**
+> - **【09-06 夜・最新】背中のリボン結びのズレを直した。めり込みの関所を2本入れた。**
+>   **Blend の正本 sha256 は `04253cd4ea00ad7edab2da2ac5eb2832ea27dc903d165712453b127a90121bad`。**
+>   直前の版（`bef1da0801cb…`）は `blends/swimsuit/_bak-20260906d/` に退避。
+>   レンダー `wiki/_attachments/helen-swimsuit-status/img-20260906-back-bow/`（**背中の 2 方向を足した**）。
+>   - **武田さんの承認 S023「帯に追従させる」。** 結び目と帯の高さの差 **−10.85mm → −1.59mm**（原着装 −0.54mm）。
+>     動いたのは**リボンだけ**（カップ・帯・肩ひもは 0.000mm）。実装は
+>     `tools/helen_swimsuit_fit_p.py` の `BOW_ROLES` / `BOW_FOLLOW_BAND`（既定 True・`--no-bow-follow` で旧動作）。
+>   - **武田さんの承認 S024「めり込みは2段構え」。** 新しい関所 **P3a・P3b**（`tools/proposal_guard.py`・変異試験 8/8）と
+>     **G19b・G19c**（`tools/skin_contact_check.py`・変異試験 5/5）。
+>     **めり込みはゼロにしていない** — 原着装も食い込んでいるため（穴を塞いだ体で カップ 11.0%/−6.45mm ・
+>     帯 13.5%/−7.54mm ・肩ひも 18.9%/−4.86mm）。上限は原着装から毎回計算する。
+>   - **新しい不合格 1 件: G19b（帯 31.6%/−12.75mm・上限 17.6%/−9.04mm）。** これは新しい検査が
+>     もともと在った欠陥を表面化させたもので、成果物が悪くなったのではない。
+>   - G17b の判定できる役割が **3/6 → 6/6** に増えた（`tools/wearing_law_check.py` に「帯」基準を足した）。
+>     中間 Y −0.02mm / 小物 Y −1.10mm / 垂れ Y −0.01mm でいずれも合格線の中。**残る外れは肩ひも Z +14.44mm だけ**（据え置き）。
+>   - G9a厚み の **中間 ×0.928 → ×0.975**（合格線 0.95〜1.05 の中へ入った）。
+>   - **V7 を直した。** 明言台帳の `scope` に「現段階／最終」以外が入っていた 8 件（S016〜S023）を
+>     `現段階` にし、元の値を `適用対象` へ移した。**意味は落としていない。**
+>   - **鎖骨を力点にする案は採らない**（実測。力点は首の後ろとカップ上端の縫い目の 2 点で、鎖骨のあたりは一番浮いている）。
+>   - **未測定の側面はいまも 1 個。** 背中側は埋めたが、**小物の前側**に基準が無いことが同時に見つかった
+>     （`穴の総数の下限` 13 → 14）。
+>   - 説明ページ `wiki/_attachments/helen-swimsuit-status/20260906-collarbone-and-back-bow.html`
+>   - セッション記録 `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260906-collarbone-and-back-bow.md`
 > - 09-06 の説明ページ:
 >   `wiki/_attachments/helen-swimsuit-status/20260906-three-goal-holes-filled.html`
 > - 09-06 のセッション記録:
@@ -348,6 +371,8 @@ $P tools/fullbody_check.py                                                     #
 $P tools/silhouette_check.py                                                   # G16a・G16b【09-06 追加】
 $P tools/wearing_law_check.py                                                  # G17a・G17b【09-06 追加】
 $P tools/strap_wrap_check.py                                                   # G18a・G18b【09-06 追加】
+$P tools/skin_contact_check.py                                                  # G19b・G19c【09-06 夜 追加】
+$P tools/proposal_guard.py                                                     # P3a・P3b【09-06 夜 追加】
 $P tools/version_compare.py                                                    # B1・B2
 $P tools/goal_coverage.py                                                      # C1〜C4（進捗）
 $P tools/doc_timeline_check.py --all
