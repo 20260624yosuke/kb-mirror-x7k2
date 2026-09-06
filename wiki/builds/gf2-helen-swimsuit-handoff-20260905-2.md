@@ -56,6 +56,14 @@ supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260905.md
 > - **【09-06 深夜】目的を忘れることを機械で禁止した**（武田さん指示）。
 >   `tools/purpose_guard.py`（**P2a〜P2d**）＋ `tools/plan_audit.py` の **A25**。
 >   P2d は「測って『できない』で終わらせる」を落とす。変異試験 6/6。監査 **25/25 PASS**。
+> - **【09-06 深夜・最新】紐を張った状態にした**（武田さん承認 S021「そのまま着せる（食い込ませる）」）。
+>   Blend sha256 **`3f8b24cd43e7b76b1f126ccc249b610559486ac1284e95b80519e12db91fda13`**。
+>   張る前（`f583db15ec8a…`）は `blends/swimsuit/_bak-20260906c/`。
+>   レンダー `wiki/_attachments/helen-swimsuit-status/img-20260906-strap-taut/`。
+>   結果: 食い込んでいる頂点 **33.3%**、首まわりで −0.96〜−1.31mm（力点）、胸の上は +7.6mm（またぐ）。
+>   **増えた不合格 2 件: G14b 大きさ ×1.302 / G17b 肩ひも Z +15.63mm。合格線は動かしていない。**
+>   **文字どおりの「そのまま」は成立しない** — 原作の紐 183.3mm に対しヘレンの縫い目〜首は 256.8mm。
+>   実装したのは「張った状態にして、当たる所を原着装と同じ深さ（−1.33mm）で食い込ませる」。
 > - 09-06 の説明ページ:
 >   `wiki/_attachments/helen-swimsuit-status/20260906-three-goal-holes-filled.html`
 > - 09-06 のセッション記録:
@@ -348,8 +356,9 @@ judge 不合格 2件（G4a中央・G9a厚み の中間 ×0.928）／ **未測定
 
 - Blend:
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-char-extract/blends/swimsuit/Helen-swimsuit-flat.blend`
-  正本 sha256 `f583db15ec8a50bbaa9b26a05fcb72710dbebf47a639c2f49902cba2ac9cea55`
-  （**2026-09-06 深夜・肩ひもを直した版。** 同日昼の `0980707efd5a…` は
+  正本 sha256 `3f8b24cd43e7b76b1f126ccc249b610559486ac1284e95b80519e12db91fda13`
+  （**2026-09-06 深夜・紐を張った版。**張る前は `f583db15ec8a…` で
+  `blends/swimsuit/_bak-20260906c/` に退避。 同日昼の `0980707efd5a…` は
   `blends/swimsuit/_bak-20260906b/`、09-05 の `d6d0b1c3f570…` は
   `blends/swimsuit/_bak-20260906/` に退避してある）
 - 台帳:
