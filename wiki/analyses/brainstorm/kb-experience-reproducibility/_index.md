@@ -26,7 +26,7 @@ background_paths:
 
 **引き算のメモではなく足し算のメモ。** 「差が不快だから禁止する」という向きの記録は
 `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/llm-harness-parity/_index.md`
-（[[llm-harness-parity]] ＝ `wiki/analyses/brainstorm/llm-harness-parity/_index.md`、状態 active）にある。こちらは
+（llm-harness-parity メモ＝ `wiki/analyses/brainstorm/llm-harness-parity/_index.md`、状態 active）にある。こちらは
 **ヘレンの案件で良かったものを、他のサービスでも出すには何が要るか**だけを扱う。
 
 ## 武田さんの考え
@@ -685,6 +685,10 @@ Codex の対話画面で `/hooks` と打ち、一覧を見せていただく。�
 - 2026-09-06 説明ページを `wiki/_attachments/llm-harness-parity/` から
   `wiki/_attachments/kb-experience-reproducibility/` へ移した。成果物Inbox の古い申告
   `i0906a35` は処理済みにして、移動後のパスで申告し直した。
+- 2026-09-07 到達性監査 H1 の指摘対応（Kimi Code・武田さんの明示依頼）。`[[llm-harness-parity]]` は
+  リンク先がフォルダ型メモ（`_index.md`）で slug が解決しないため、実パス併記済みの
+  素の表記へ変更（2箇所）。Obsidian でも未解決リンクだったものが通常の文字になるだけで、
+  実パスによる誘導は変わらない。戻すには `[[llm-harness-parity]]` に書き戻す。
 
 ## 再開の入口（実パス）
 
@@ -759,7 +763,7 @@ run: python3 -c "import subprocess,sys; r=subprocess.run([sys.executable,'-m','u
 
 ## 関連リンク
 
-- [[llm-harness-parity]] — `wiki/analyses/brainstorm/llm-harness-parity/_index.md`
+- llm-harness-parity メモ — `wiki/analyses/brainstorm/llm-harness-parity/_index.md`
 - [[brainstorm-brainstorm-skill-portability]] — `wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
 - [[brainstorm-skill]] — `wiki/builds/brainstorm-skill.md`
 
