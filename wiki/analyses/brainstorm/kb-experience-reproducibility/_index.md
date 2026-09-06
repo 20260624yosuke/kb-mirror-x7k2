@@ -479,6 +479,124 @@ Claude 側の判定本体（`brainstorm_guard.py`）を関数ごとに分類し�
 これは「サービスごとにふるまいを変える」ことではない。**ふるまい（何を止めるか）は同じで、
 説明の置き場所だけが画面に合わせて変わる。**武田さんの「エージェントは1単位」とは衝突しない。
 
+## 2026-09-07 実測5：config.toml の登録漏れの調査（読み取りのみ・設定は触っていない）
+
+### 0. まず、私の前の報告が誤りだった
+
+> [!warning] 訂正
+> 実測3-4 で「Codex は 09-01 以降この保管庫で動いた記録が無い」と書いた。**誤り。**
+> Codex のセッション記録（`~/.codex/sessions` と `~/.codex/archived_sessions` の 403 件）を
+> 作業ディレクトリごとに数えたところ、**08-28 以降この保管庫で 41 回動いていた**。
+> 小さい版へ入れ替えた 09-01 09:31 より後だけでも **9 回**、最後は 09-02 02:55。
+> 無いのは「Codex を使った記録」ではなく、**「フックが発火した記録」**。区別を誤っていた。
+
+### 1. それでも状態ファイルは1件も作られていない
+
+小さい版へ入れ替えた後の 9 セッションで、`lite-state/` も `lite-events.jsonl` も作られていない。
+**フックが実際に呼ばれていない。** これは「使っていないから」ではない。
+
+### 2. 信頼済みの登録に、はっきりした欠けがある
+
+`~/.codex/config.toml` の `[hooks.state]` に登録されている `hooks.json` 由来のキーを全部照合した。
+
+| フック | キー | 登録 |
+|---|---|---|
+| `context_harness.py`（各イベント） | `*:0:0` | あり |
+| `codex_adapter.py`（brainstorm） | `stop:0:1` ほか | **あり** |
+| `deliverable_path_guard.py` | `stop:1:0` | **無し** |
+| `prose_guard.py`（`apply_patch`） | `pre_tool_use:1:0` | **無し** |
+
+- 登録されているのは **グループ番号 0 のものだけ**。1 は1件も無い。
+- 逆に、`config.toml` にあって `hooks.json` に無い古い登録は **0 件**。
+- `config.toml` の更新は 09-05 15:55、`hooks.json` は 09-05 19:11。**設定のほうが古い。**
+
+### 3. ただし、これだけでは説明が付かない
+
+brainstorm の `stop:0:1` は **登録がある**のに、9 セッションで1件も発火していない。
+つまり **信頼済みの登録の有無だけでは、発火しない理由を説明できない。**
+外から確かめられる材料はここで尽きる。
+
+### 4. 保管庫側の関所2本は、実は一度も Codex で動いていない
+
+`tools/logs/prose-guard.log` の Codex 由来（`apply_patch`）の行は 3 件だけで、
+すべて 2026-08-31 23:04:14 の同一秒、対象は `wiki/_attachments/x/_probe.html`。
+**配線の確認で流した合成の入力であって、実運用ではない。**
+
+> [!warning] 実測1 の言い方も訂正する
+> 「保管庫に置いた検査は Claude と Codex が同じ1ファイルを呼んでいて分岐が無い」と書いたが、
+> **正しくは「同じ1ファイルを呼ぶように書いてある」**。Codex 側で実際に動いたのを見たことは一度も無い。
+> 分岐が無いのは設定の話で、ふるまいの話ではなかった。
+
+### 5. 歯止めは「無かった」のではなく「失われた」
+
+09-01 より前の重い版のコードが、当時のセッション記録の中に残っている。そこには
+
+```
+reentry=bool(data.get("stop_hook_active"))
+```
+
+があり、`tests/test_parent_selection_fault.py` という専用の試験も存在した
+（`stop_hook_active=retry` を渡す形）。**重い版は `stop_hook_active` を読んでいた。**
+09-01 の小さい版への書き直しで、それが落ちた。
+**今日入れた歯止めは、新機能ではなく、失われた性質の復旧。**
+
+さらに重い版には `BS_CARD_PREFLIGHT_MISSING` という技術的停止があり、その再開手順の文言は
+「PreToolUseの信頼状態と実発火を確認し、明示再開後に親選択の事前検査を再試行する」。
+**Codex 側は当時から「フックが信頼されず発火しないかもしれない」ことを知っていた。**
+
+### 6. 信頼を与える方法は、外から自動でできない
+
+- `codex doctor` を走らせたが、フックの信頼状態は報告項目に無い（22 項目を確認）。
+- `codex` に `hooks` サブコマンドは無い。
+- 一次資料（`tools/context_harness/evidence/openai-hooks.md`）には
+  「CLIでは `/hooks` から確認・trust する」とある。**対話中の画面での操作。**
+
+**つまりここから先は、武田さんの手が要る。** 私が自動でできる範囲は尽きた。
+
+## 2026-09-07 半日後にまとめてやること（手順・そのまま実行できる形）
+
+武田さんの選択: **信頼の確認と、歯止めの実機確認を1回でやる**（利用量の回復後）。
+順番が大事。**①を先にやらないと②の結果が読めない。**
+
+### ① 発火しているかを、先に見分ける（Codex を1回だけ動かす）
+
+Codex をこの保管庫で開き、何でもよいので1行打って閉じる。そのあと私が次を読む。
+
+- `~/.codex/skills/brainstorm/scripts/lite-state/` が出来ているか
+  （出来ていれば brainstorm のフックは発火している）
+- `tools/logs/prose-guard.log` に新しい行が増えたか
+  （増えていれば `prose_guard.py` は発火している。増えなければ未信頼の疑いが強まる）
+
+**この2つで、発火しているフックとしていないフックが分かれる。**
+
+### ② 信頼状態を画面で見る（武田さんの操作・モデルは呼ばない）
+
+Codex の対話画面で `/hooks` と打ち、一覧を見せていただく。見たいのは次の4行の状態。
+
+- `context_harness.py`（各イベント）
+- `codex_adapter.py`（brainstorm）
+- `deliverable_path_guard.py`（Stop・2つ目のグループ）
+- `prose_guard.py`（PreToolUse・2つ目のグループ・matcher は `apply_patch`）
+
+**信頼を与える操作は武田さんが行う。** 安全に関わる承認なので、私は代行しない。
+
+### ③ 歯止めの実機確認
+
+①で brainstorm のフックが発火していることが確認できたら、`$brainstorm` を1回使い、
+承認カードの前に本文を書かずに閉じようとする。止まったあと、もう一度閉じようとして
+**2回目は止まらない**ことを見る。`lite-events.jsonl` に `stop_brake` の行が残る。
+
+**①で発火していなければ、③は成立しない。** その場合は②の結果を先に片付ける。
+
+### 私がその場で読むファイル
+
+```
+/Users/takedayousuke/.codex/skills/brainstorm/scripts/lite-state/
+/Users/takedayousuke/.codex/skills/brainstorm/scripts/lite-events.jsonl
+/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/logs/prose-guard.log
+/Users/takedayousuke/.codex/config.toml
+```
+
 ## 決まったこと
 
 - 2026-09-06 読み取りの承認。**効いていたのは保管庫側の台帳と検査で、分岐しているのは
@@ -530,8 +648,10 @@ Claude 側の判定本体（`brainstorm_guard.py`）を関数ごとに分類し�
 - **1ターンの探りは実行しない**（2026-09-06 カード回答3。Codex・opencode とも利用量を使い切り、
   回復は半日後）。実測4 でコードから原因が取れたため、探りの優先度は下がった。
 - （決着）歯止めは単独で先に入れた。対象は Codex の1本のみ。
-- `~/.codex/config.toml` の登録の非対称（2つ目のグループが未登録）を扱うかどうか。
-  信頼済みの印に触ることになるので危険度が上がる。
+- （手順は用意済み・実施待ち）半日後に①発火の見分け ②`/hooks` の確認 ③歯止めの実機確認を1回で行う。
+- （調査は完了）登録の欠けは確定したが、**それだけでは発火しない理由を説明できない**。
+  信頼を与えるには `/hooks` を対話画面で操作する必要があり、**武田さんの手が要る**。
+  どのやり方を採るかが未決（実測5-6）。
 - 検査5 を画面ごとに測り分ける形（opencode ではカードの中身を見る）を採るかどうか。
 - 手1 と対で決める「呼ぶ側で重さを選べる」の作り方。
 - 手2 の適用範囲（検査5と検査2だけか、会話の終わりの検査を全部移すか）。
@@ -560,6 +680,8 @@ Claude 側の判定本体（`brainstorm_guard.py`）を関数ごとに分類し�
 - このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md`
 - 説明ページ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260906-kb-experience-reproducibility.html`
 - 分岐を数える監査: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/scripts/harness_parity_check.py`
+- 計画書（歯止め・実施結果つき）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/kb-agent-parity-stop-brake-plan-20260906.md`
+- **次の会話が最初に読むのは「2026-09-07 半日後にまとめてやること」の節。**
 - 引き算側の記録（差の禁止）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/llm-harness-parity/_index.md`
 - 移植の経緯: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/brainstorm-skill-portability/brainstorm-brainstorm-skill-portability.md`
 
