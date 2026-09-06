@@ -95,123 +95,11 @@ brainstorm の規則「会話で設計を育てずファイルへ落とす」「
   （セッション 7a865522、24時間で自動失効）。
 - 検査5（カード前に本文が無いのを止める）は、心がけではなく機械監査として実装する。
 
-### 2026-09-06 良かったほうから問い直す（フォークした会話）
+### 2026-09-06 良かったほうから問い直す（別メモへ分離）
 
-> このセッションはフォークしたもので、ここからはkbフォルダでのllm運用の話をしたいと思う。
-> 話したい内容は、このプロジェクトのllm体験がすごくいいということ。
-> 仕組みとして気に入っている。意図を汲み取って欲しいんだけど、opus5の性能がすごいという話ではなく、
-> ハルシネーションを軽減しつつ難しいタスクを段階的に処理できている。正直llmが、
-> 今回の成果物のようなクリエイティブな合格ラインを通過できるのはすごいと感じた。
-> これは性能というよりも、俺の意図や指示の元であるコンテキストの粒度を上手くコントロールしたからだと思う。
-> この感覚は俺が使っているllmの中でclaudeがダントツでいい。
-> でも俺の思想としては、llmの各種サービスやモデルってエージェントっていう一つの単位だから、
-> kbフォルダ内でサービスごとにエージェントの挙動が変わるのは不快なんだよね。
-> claudeが無限に使えるわけじゃないから、ここがボトルネック。
-> 現に今使ってる/brainstormのスキルも他のサービスのllmだと上手く動作しないし、適応させようと調整を実行させても、
-> 俺がなんで/brainstormを使ったかを汲み取れない。
-> どうすればこのllm体験の再現性をkbフォルダで安定化できると思う？
+この日の話（保管庫のLLM体験の再現性）は、武田さんの指示で独立した親メモへ分けた。
+正本: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md`
 
-- これまでのこのメモは「差が不快だから禁止したい」という**引き算**の問い。今回は
-  「良かったものを他でも出したい」という**足し算**の問い。同じ対象だが向きが逆。
-- 武田さんの仮説: 効いていたのは **モデルの性能ではなく、文脈の粒度の制御**。
-- ボトルネックは Claude の利用量。だから「Claude だけで良い」は答えにならない。
-- サービスごとに挙動が変わること自体が不快。**エージェント＝1単位**という思想。
-
-## 2026-09-06 実測（すべてこの日に実ファイルを読んで確認）
-
-### A. KB フォルダに置いた検査は一致し、各ハーネスのフォルダに置いた検査は一致していない
-
-これは理屈ではなく、いまの配線を読んだ結果。
-
-| 検査の置き場所 | 呼んでいるハーネス | 分岐 |
-|---|---|---|
-| `tools/prose_guard.py`（KB の中） | Claude の PreToolUse ／ Codex の PreToolUse | 無し（同じ1ファイル） |
-| `tools/deliverable_path_guard.py`（KB の中） | Claude の Stop ／ Codex の Stop | 無し（同じ1ファイル） |
-| `~/.agents/context-harness/current/context_harness.py`（共有） | Claude 9イベント ／ Codex | 無し（同じ1ファイル） |
-| brainstorm の判定本体 | Claude=`~/.claude/skills/brainstorm/brainstorm_guard.py` ／ Codex=`~/.codex/skills/brainstorm/scripts/codex_adapter.py` ／ opencode=`.opencode/scripts/muse_brainstorm_check.py` | **3実装に分岐** |
-
-`python3 .opencode/scripts/harness_parity_check.py check` は 2026-09-06 現在 **FAIL・10件**。
-検査1(done受領証)・検査2(実装ゼロ検出)・検査3(作業量の関所)・handoff到達性が Codex と opencode の
-両方に無く、検査5(本文量)と guard-card確認質問が Codex に無い。
-
-### B. `/brainstorm` の本文が3か所で長さから違う
-
-- Claude 版 `~/.claude/skills/brainstorm/SKILL.md` … 238 行
-- Codex 版 `~/.codex/skills/brainstorm/SKILL.md` … **77 行**
-- opencode 版 `.opencode/commands/brainstorm.md` 66 行 ＋ `.opencode/instructions/brainstorm-body.md` 11 行
-
-Codex 版の末尾には次の一文がある。
-
-> 巨大な監査台帳や、通常作業を横断する許可レジストリは作らない。必要な機械保証は、親マーカー、
-> 二問カード、状態保存、承認前の書込み拒否、圧縮後再注入に限定する。
-
-つまり **Codex は「意図を汲み取れていない」のではなく、機械を持たないと書いてある別の文書を読んでいる。**
-武田さんの「なんで /brainstorm を使ったかを汲み取れない」の機械的な原因はここ。
-
-### C. `llm-wiki` スキルも2つに分かれている（今回発見・これまで未記録）
-
-- `~/.agents/skills/llm-wiki/SKILL.md` … 8,953 バイト（2026-05-17）
-- `~/.claude/skills/llm-wiki/SKILL.md` … 9,642 バイト（2026-05-20）
-- 見出しの並びは完全に一致。中身は SKILL.md で 39 行、reference.md で 150 行ぶん違う。
-- `AGENTS.md` は Codex を `~/.agents/skills/llm-wiki/` へ、`CLAUDE.md` は Claude を
-  `~/.claude/skills/llm-wiki/` へ送っている。**同じ名前の別の規約を読ませている。**
-
-### D. 分岐しない置き方の先例が、すでにこの保管庫にある
-
-`.claude/skills/html` は `.agents/skills/html` への **symlink**（inode 852375 で同一）。
-複製ではないので、書き換えても分岐しようがない。opencode 側も `.opencode/commands/html.md` で
-`.agents/skills/html/SKILL.md` を正本と名指ししている。**html だけは3ハーネスで1実体。**
-
-### E. 分岐は事故ではなく、承認済みの方針の結果
-
-- 2026-08-29 承認: **「スキル本体は LLM ごとに独立。共通本体の一元化は行わない」**
-  （理由として記録されているのは「フックの入出力形式が環境ごとに違うため、本体を共有しても
-  変換層が要るだけ」）。
-- 2026-09-01 承認: Codex 版を小さい版へ置換（旧版は `~/.codex/skill-backups/brainstorm-pre-lite-20260901-093146` へ退避）。
-
-**8-29 の理由づけは、いまや `tools/prose_guard.py` の存在で反証されている。** あれは KB に本体を置き、
-Codex 側の `apply_patch` を読む関数を1本足しただけで両方から呼べている。変換層は「要るだけ」ではなく
-「小さくて済んだ」。方針を見直す根拠はここ。
-
-### F. ヘレン案件で効いていたものの内訳（良かった理由の分解）
-
-| 効いたもの | 実体 | 移せるか |
-|---|---|---|
-| 進み具合を「未測定の側面の数」で数えた | `gf2-helen-swimsuit-goal-map.json` | 移せる（JSON） |
-| 武田さんの言葉を逐語で番号付き保存 | `output/gf2-helen-swimsuit/explicit-statements.json` | 移せる（JSON） |
-| 合格線を毎回原作から計算し、コードに焼かない | G検査群 | 移せる（Python） |
-| 検査自体を壊して捕まえられるか試す | 各検査の mutation test | 移せる（Python） |
-| 目的を忘れることを機械で禁止 | `tools/purpose_guard.py` P2a〜P2d ＋ `plan_audit.py` A25 | 移せる（Python） |
-| 合否を1コマンドで言い切る | `tools/plan_audit.py`（A1〜A25） | 移せる（Python） |
-
-**要点: 上の6つは全部 KB フォルダの中に居て、Python と JSON でできている。どのサービスでも動く。**
-効いていたものの本体は、Claude の中には無かった。
-
-### G. ただし「クリエイティブな合格ラインを LLM が通した」は、正確には違う
-
-今回の会話で武田さんが出した却下は3件あり、**どれも当時どの検査にも掛からなかった**。
-
-1. 「紐細すぎる」… 断面を見る検査が無かった（原因は平滑化による −29% の縮み）
-2. 「承認しません。憶測で成果物を汚しすぎです」… 方法の承認前に成果物へ触ることを止める検査が無かった
-3. 「お前すぐ忘れるな」… 目的を保つ検査が無かった → その場で P2/A25 を作った
-
-3 は機械になったが、**1 と 2 はいまも文章の申し送りのまま**（＝武田さんが禁止した「心がけ」）。
-つまり、クリエイティブな合格線を通したのは機械ではなく武田さんの目で、機械がやったのは
-**同じ指摘を二度させないこと**。この保管庫全体で、機械化した指摘は **121 件記録され、
-うち 29 件（24%）がまだ実装されていない**（`## 機械化した指摘` の表を全メモで数えた値）。
-
-## 2026-09-06 手立ての候補（それぞれ失うもの付き）
-
-| 手 | 中身 | 失うもの |
-|---|---|---|
-| 手1 | 判定の本体を KB の `tools/` へ移し、各ハーネスには payload を訳す薄い層だけ置く。先例は `prose_guard.py` と html の symlink | 2026-09-01 に「Codex を軽くする」と決めた判断を捨てることになる。重い検査が全部載れば、あのときのトークン消費が再発しうる。**本体の共有と、呼ぶ側で重さを選べることを、対で決める必要がある** |
-| 手2 | 締めのフックが無い環境では、**承認カードを出す瞬間**を関所にする。opencode の `skill-gate.js` は既にこれをやっている | カードを出さずに閉じる回は素通りする。Stop フックの完全な代わりにはならない |
-| 手3 | 台帳4点（明言・穴・検査・監査1本）を新プロジェクトの雛形にする | 小さい作業にも儀式が乗る。全部の案件に要るものではない |
-| 手4 | Claude を「枠を設計する工程」に温存し、枠の中の実行を他のサービスへ回す | 引き継ぎ費用と取り違え（このメモに既に記録がある）。ただしこれは**ふるまいの差ではなく工程の差**なので、武田さんの「エージェント＝1単位」の思想とは衝突しない |
-
-推奨は **手1 →	手2**。手1 は先例が同じ保管庫の中にあり、B と C の分岐を構造として消せる。
-手2 は opencode の構造的な限界（会話の終わりを掴むフックが無い）に触れるので、
-何を諦めるかを決めてからでないと着手できない。
 
 ## 実測で分かったこと（2026-08-31・すべてファイルを直接読んで確認）
 
@@ -360,8 +248,7 @@ Codex 側が膨らんだのも同じ形で、「合わせろ」に対する作�
 - 仕様の正本: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/brainstorm-skill.md`
 - 説明 HTML（使用感の差）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/llm-harness-parity/20260831-claude-codex-usage-gap.html`
 - 説明 HTML（実装が抜ける構造欠陥）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/llm-harness-parity/20260831-implementation-gap-defect.html`
-- 説明 HTML（良かった理由と分岐の実測・2026-09-06）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/llm-harness-parity/20260906-kb-experience-reproducibility.html`
-- 分岐を数える監査: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/scripts/harness_parity_check.py`
+- 2026-09-06 以降の再現性の話（別メモ）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md`
 
 ## 実装への申し送り
 
@@ -549,14 +436,6 @@ grep -E "content pass|BLOCK card-without-prose|lockdown off" "/Users/takedayousu
 | 計画だけ作って実装せずに閉じる | している | できる | `guard-stop` 発火点④（検査2）。2026-08-31 実装・第4層で試験 |
 | 完成条件を満たさずに done にする | する | できる | `guard-write` 発火点⑤（検査1）。2026-08-31 実装・第4層で試験 |
 
-### 2026-09-06 分
-
-| 指摘 | 再発しうるか | 機械判定できるか | 変換先 |
-|---|---|---|---|
-| 同じ名前のスキルが3ハーネスで別の長さ・別の中身になる | している（238/77/77 行） | できる（`harness_parity_check.py` が既に FAIL 10件を出している） | **既存の `harness_parity_check.py` を関所に昇格**（いまは走らせたときだけ見る道具）。未決定・今回の承認待ち |
-| `llm-wiki` スキルが `~/.agents/` と `~/.claude/` で二重化し、規約が別々を指す | している（8,953 / 9,642 バイト） | できる（同名スキルの実体が2つ以上あれば FAIL） | **同名スキルの実体数の検査**。未実装 |
-| 方法の承認前に成果物へ触る | している（09-06 に2回） | できる（承認カードの記録より前の成果物書き込みを数える） | 未実装。いまは文章の申し送りのまま |
-| 布の断面が処理で細る | した（−29%） | できる（処理の前後で断面を測る） | ヘレン案件側で対応済み（案B で断面一致）。汎用の検査にはしていない |
 
 ## 関連リンク
 
@@ -566,4 +445,4 @@ grep -E "content pass|BLOCK card-without-prose|lockdown off" "/Users/takedayousu
 
 ## セッションメモ（子）
 
-- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/llm-harness-parity/sessions/20260906-experience-reproducibility.md`
+- 親: このファイル。子はまだ無し。2026-09-06 の子は `kb-experience-reproducibility` へ移した。

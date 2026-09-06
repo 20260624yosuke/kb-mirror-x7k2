@@ -8,7 +8,7 @@ last_reviewed: 2026-09-06
 
 # 2026-09-06 良かった理由の分解と、分岐の実測
 
-親: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/llm-harness-parity/_index.md`
+親: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md`
 
 ヘレンの案件の会話からフォークして始まった回。武田さんの問いは
 「このLLM体験の再現性を、保管庫でどう安定させるか」。
@@ -26,8 +26,10 @@ last_reviewed: 2026-09-06
 
 ## この回の成果物
 
-- 説明ページ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/llm-harness-parity/20260906-kb-experience-reproducibility.html`
-- 親メモへ「2026-09-06 実測」「2026-09-06 手立ての候補」の2節を追加
+- 説明ページ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260906-kb-experience-reproducibility.html`
+- 新しい親メモ `kb-experience-reproducibility/_index.md` を作成（武田さんの指示で分離）
+- フックの能力の実測（追記1への回答）と、手立て4つの詳しい説明（追記3への回答）を親へ追加
+- 合格ラインの範囲について武田さんの訂正（追記2）を受け、節Gを訂正済みとして書き換え
 
 ## 次の会話が最初に読むもの
 
@@ -35,9 +37,16 @@ last_reviewed: 2026-09-06
 2. 上の説明ページ
 3. `python3 .opencode/scripts/harness_parity_check.py check` を走らせて現在値を取る
 
+## この回の決着
+
+- 読み取りは「合っている」で承認。記録先は新しい親メモへ分離。
+- 追記1（ボトルネックの有無）に回答: 要る能力5つのうち4つは3サービスとも止められる。
+  欠けは opencode の「会話の終わりで止め返す」1つだけで、代替がある。**技術的な障害はほぼ無い。**
+- 追記2（合格ラインの範囲）で節Gを訂正。合格箇所は胸を覆う布のみ、紐は未決着。
+- 追記3（手立ての詳細）に回答: 手1〜手4 それぞれに「いまの形／変える形／手元で何が変わるか／
+  失うもの／見積り」を書いた。
+
 ## まだ決まっていない
 
-- 読み取りが武田さんの意図と合っているか
-- 記録先を既存の親メモのままにするか、新しい親メモに分けるか
 - 手1（判定の本体を保管庫へ寄せる）に進むかどうか。2026-08-29 の「独立方針」を
   上書きすることになるので、武田さんの判断が要る
