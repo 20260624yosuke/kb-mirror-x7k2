@@ -123,6 +123,28 @@ supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260905.md
 >     （`穴の総数の下限` 13 → 14）。
 >   - 説明ページ `wiki/_attachments/helen-swimsuit-status/20260906-collarbone-and-back-bow.html`
 >   - セッション記録 `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260906-collarbone-and-back-bow.md`
+> - **【09-06 夜・第41部】武田さんが成果物を見た。背中のリボンは合格。紐は「グニャッ・うねうね」と却下。**
+>   **成果物は作り替えていない**（正本 sha256 `04253cd4ea00…` のまま）。調べたことと直した道具だけ。
+>   - **「グニャッ」の正体は太さ。** うねり・曲がり・ねじれは原作と差が出なかった
+>     （うねり 成果物 0.062 / 原作 0.078 mm/mm ／ ねじれ 85.5° / 88.1°）。差が出たのは断面:
+>     **肩ひも 3.42 → 8.14mm（×2.38）／ 胴に回す紐 3.17 → 6.87mm（×2.16）。**
+>     ヘレンの体は 1.1〜1.5 倍大きいだけで、2.2〜2.4 倍は説明がつかない。
+>   - **太る場所**: 肩ひもは**適合の段階では原作どおり（×0.92）で、`tools/strap_rebuild.py` で ×2.38 に太る**。
+>     胴に回す紐は適合の段階ですでに ×2.16。**第39部の「断面は原作と完全一致」は成果物では成り立っていない。**
+>   - **ヘレンのドレスに「胸から首へかける紐」は無い**（武田さんの着想の調査結果）。在るのは
+>     前へ垂れる紐（+7.5〜+99.7mm 浮き）・襟（+7.1〜+57.8mm）・肩の飾り。
+>     **ただし太もものベルト状の紐は在り**（`c_HelenSSR01_slg_cloth3_lod0` 部品 7/20）、お手本に使える。
+>   - **【訂正 2・重要】役割の写し方が誤っていた。** 成果物の頂点へ役割を付けるとき「近さ」で写していたが、
+>     **肩ひもは作り直しで大きく動くので別の部品を掴む**（写し距離の中央値 39.84mm・最大 93.55mm）。
+>     **頂点の対応で引くこと**（`tools/skin_contact_check.py` の `deliverable_roles`）。
+>   - **新しい検査 T2**（`tools/terminology_check.py`・変異試験 5/5）: 武田さんが読む説明ページで
+>     専門語を意味を書かずに使うと落とす（武田さん「弦がなぜこのタイミングで出てきたのかも疑問。
+>     こういう説明やめてほしいから、機械的な監査で止めてほしい」）。
+>   - **用語の確定**: コードの「帯」は**散文では「胴に回す紐」**（T002）。
+>     **「めり込み」＝体の中へ入る（あり得ない）／「食い込み」＝肌がへこんで見える（絵として在り得る）**（T003・T004）。
+>   - **武田さんの優先順位**: 「今は布生地と首からつながる紐の説得力のある形状が優先課題」。
+>     サブリナの水着の調査は「今はプライオリティが低い」と明言。
+>   - 胴に回す紐の断面のゆがみの直し方は **武田さんが「今は保留」**（食い込みの修正自体は指示あり）。
 > - 09-06 の説明ページ:
 >   `wiki/_attachments/helen-swimsuit-status/20260906-three-goal-holes-filled.html`
 > - 09-06 のセッション記録:
@@ -387,6 +409,7 @@ $P tools/wearing_law_check.py                                                  #
 $P tools/strap_wrap_check.py                                                   # G18a・G18b【09-06 追加】
 $P tools/skin_contact_check.py                                                  # G19a・G19b・G19c【09-06 夜 追加】
 $P tools/proposal_guard.py                                                     # P3a・P3b【09-06 夜 追加】
+$P tools/terminology_check.py wiki/_attachments/helen-swimsuit-status/*.html    # T1・T2【09-06 夜 追加】
 $P tools/version_compare.py                                                    # B1・B2
 $P tools/goal_coverage.py                                                      # C1〜C4（進捗）
 $P tools/doc_timeline_check.py --all

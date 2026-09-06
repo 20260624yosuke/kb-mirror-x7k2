@@ -73,3 +73,34 @@ last_reviewed: 2026-09-06
 `codex exec -C <保管庫> "…"` と `opencode run "…"` を1ターンずつ流し、
 `tools/logs/prose-guard.log` と `~/.codex/skills/brainstorm/scripts/lite-state/` が伸びるかを見る。
 費用は各1ターン分。判定は「行が増えたか」だけ。
+
+## 追記2（カード回答3・記憶2件をコードで裏取り）
+
+探りは中止（Codex・opencode とも利用量切れ、回復は半日後）。代わりに武田さんの記憶を手がかりに
+コードと記録済み実測を読んだ。**新規のトークン消費なし。**
+
+### 無限ループ
+
+- 会話の終わりで止める歯止め（`stop_hook_active` を読む処理）の数:
+  Claude の `brainstorm_guard.py` **3か所** ／ `tools/deliverable_path_guard.py` **1か所** ／
+  `codex_adapter.py` **0** ／ `.opencode/scripts/muse_brainstorm_check.py` **0**。
+- Codex に情報が来ていないわけではない。`tools/context_harness/evidence/openai-hooks.md` 13行目に
+  実セッション採取として「`Stop` は `turn_id`、`stop_hook_active`、`last_assistant_message` を受け取る」。
+  **受け取っているのに読んでいない。** 環境の制限ではなく実装の抜け。
+- `codex_adapter.py` の `main()` は内部例外でも Stop を止める（`BS_INTERNAL:`）。抜け道なし。
+- **09-01 の現行の小さい版で数えた値。旧版だけの話ではない。**
+
+### 埋もれる件
+
+- 検査5 は「本文が書かれたか」を見て、「本文が読めたか」を見ていない。
+  opencode + VSCode 統合ターミナルでは **合格しつつ武田さんは何も読めない**。
+- `.opencode/instructions/display.md` 第2節は「前提：この会話はデスクトップアプリで見ている」。
+  武田さんが居たのは VSCode の統合ターミナル（TUI）。**別の画面を前提にルールが作られていた。**
+- `opencode-display-audit` の宿題「カードの選択肢内にパスを書く書式（短名で回避）」が、
+  実は本体の問題だった。
+
+### 設計の結論
+
+**検査は3つとも同じ。説明の置き場所だけ画面ごとに変える。**
+opencode ではカードが唯一読める面なので、カードが要約を持つ必要がある。
+ふるまいは同じなので「エージェントは1単位」と衝突しない。
