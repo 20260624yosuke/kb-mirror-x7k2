@@ -3963,7 +3963,7 @@ _合計 5365 ファイル_
 - [google-tasks-quickadd.md](wiki/builds/google-tasks-quickadd.md) | 2026-06-21T12:53:22Z
 - [handoff-visible-effect-rule-2026-08-01.md](wiki/builds/handoff-visible-effect-rule-2026-08-01.md) | 2026-08-02T02:46:31Z
 - [hizurume-visual-ingest-handoff-plan.md](wiki/builds/hizurume-visual-ingest-handoff-plan.md) | 2026-08-22T23:34:47Z
-- [kb-agent-parity-stop-brake-plan-20260906.md](wiki/builds/kb-agent-parity-stop-brake-plan-20260906.md) | 2026-09-06T11:59:35Z
+- [kb-agent-parity-stop-brake-plan-20260906.md](wiki/builds/kb-agent-parity-stop-brake-plan-20260906.md) | 2026-09-06T12:11:03Z
 - [keyclack.md](wiki/builds/keyclack.md) | 2026-07-11T05:12:06Z
 - [kimi-code-artifact-location.md](wiki/builds/kimi-code-artifact-location.md) | 2026-08-19T08:20:34Z
 - [llm-chat-enter-guard.md](wiki/builds/llm-chat-enter-guard.md) | 2026-08-18T07:35:00Z

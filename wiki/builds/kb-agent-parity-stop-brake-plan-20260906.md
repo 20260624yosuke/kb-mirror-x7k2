@@ -50,13 +50,22 @@ sources: []
 3. **`/brainstorm` の本文が3種類。** Claude 238 行／Codex 77 行／opencode 66＋11 行。
    Codex 版には「巨大な監査台帳や、通常作業を横断する許可レジストリは作らない」と明記されている。
    つまり Codex は指示どおり小さいものを作っただけで、失敗ではない。
-4. **技術的な障害はほぼ無い。** 要る能力5つのうち4つは3サービスとも止められる。
-   欠けは opencode の「会話の終わりで止め返す」1つで、`event` フックが戻り値を持たないため。
-   ただし `permission.ask` と `tool.execute.before` は出力を書き換えられるので止められる。
-5. **手1（判定の1本化）の現実性。** `brainstorm_guard.py` の関数 2,134 行の内訳は
-   判定 909（42.6%）／自己試験 894（41.9%）／収集・入出力 331（15.5%）。共有候補は約85%。
-   ただし収集は **transcript を読む前提**で、Codex は自前の状態ファイル、opencode は
-   流れるイベントから再構成しており、**情報源が3通り**。薄い変換層では済まない。
+4. **技術的な障害はほぼ無い。** 要る能力5つのうち、**3サービスとも「止められる」のは2つ**
+   （書き込む前・承認を出す瞬間）。注ぎ直す2つは opencode では `chat.message` と `event` が担当し、
+   どちらも戻り値を持たないので **注入はできるが止められない**。
+   会話の終わりで止め返すのは opencode ではできない。
+   （初版で「4つとも止められる」と書いたのは圧縮しすぎ。2026-09-06 レビューで訂正）
+5. **手1（判定の1本化）の現実性。** `brainstorm_guard.py` のトップレベル関数は **2,134 行**。
+   そのうち自己試験は、規則「名前が `_st_` か `_st<数字>` で始まる、または `cmd_audit_selftest`」で
+   数えて **583 行（27.3%）**。残る 1,551 行の内訳（判定 / 収集）は、**再現できる規則を作れていない**。
+
+   > [!warning] 初版の数字は撤回した
+   > 初版は「判定 909（42.6%）／自己試験 894（41.9%）／収集 331（15.5%）／共有候補は約85%」と書いた。
+   > 分類の当て方が緩く（名前に `_st` を含むだけで自己試験と数えていた）、再現できない値だった。
+   > **「約85%が共有候補」は根拠が無いので取り下げる。** 2026-09-06 レビューの指摘による。
+
+   数字とは別に、構造の事実は残る。収集は **transcript を読む前提**で、Codex は自前の状態ファイル、
+   opencode は流れるイベントから再構成しており、**情報源が3通り**。薄い変換層では済まない。
 6. **Codex は 09-01 の入れ替え以降、この保管庫で動いた記録が無い。**
    `~/.codex/skills/brainstorm/scripts/` に `lite-state/` も `lite-events.jsonl` も存在しなかった
    （09-06 に直接起動して初めて生成。確認後に削除）。`tools/logs/prose-guard.log` の
@@ -88,6 +97,9 @@ sources: []
 | 「変換層は小さくて済む」を `prose_guard.py` 1本から一般化した | あれは「1回の書き込みの中身」、brainstorm は「会話1本ぶんの経過」。規模が違う |
 | 「合格線を通したのは機械ではなく武田さんの目」 | 武田さんの言う合格箇所は胸を覆う布の一点で、紐は最初から未決着。範囲を取り違えた |
 | 「Codex と opencode に歯止めが0か所（＝2本直す）」 | opencode は Stop 型の関所を持たないので対象外。**直すのは Codex の1本** |
+| 「要る能力5つのうち4つは3サービスとも止められる」 | 止められるのは2つ。注ぎ直す2つは opencode では戻り値が無く、止められない（レビュー指摘） |
+| 「関数の内訳は判定 909／自己試験 894／収集 331、共有候補は約85%」 | 分類が緩く再現できない値だった。**撤回**。確かなのは総行数 2,134 と自己試験 583（規則を明示して再計算） |
+| 「`stop()` の block 経路は `errors` の1本」 | 2本ある。`phase == "stopped"` の枝が別にあり、初版の位置指定ではそこが歯止めの外に残る（レビュー指摘） |
 
 ---
 
@@ -100,9 +112,11 @@ sources: []
 ### 3.2 完成条件（機械で判定する）
 
 1. 会話の終わりの合図に「すでに一度止めた」印が立っている再呼び出しでは、adapter が止め返さない。
+   これは `stop()` の**2本の経路と `main()` の1本、合わせて3本すべて**について成り立つこと。
 2. 内部で予期しない失敗が起きた場合も、同じ印が立っていれば止め返さない。
 3. 既存の単体試験 11 件が引き続き通る。
-4. 追加の単体試験 2 件（上記1と2）が通る。
+4. 追加の単体試験 **3 件**（試験A・B・C）が通り、試験の総数が 14 件であること。
+5. 歯止めが `stop()` と `main()` の**両方の関数の中**にあること（行数ではなく関数ごとに見る）。
 
 ### 3.3 今回やらないこと（非対象）
 
@@ -128,10 +142,17 @@ sources: []
 
 現状 257 行。関連する既存の実装は次の2か所。
 
-- `stop(data)` … 会話の終わりの判定。`errors` を組み立て、空でなければ
-  `{"decision": "block", "reason": ...}` を標準出力へ出す。
-- `main()` … 例外を捕まえ、`command == "stop"` のとき
-  `{"decision": "block", "reason": "BS_INTERNAL:<例外名>"}` を出す。
+**`stop()` には止める経路が2本ある。**（初版は1本しか書いていなかった。2026-09-06 レビューで訂正）
+
+- 経路1（234〜238 行）… `phase == "stopped"` の枝。`errors` を作る**前**に、
+  `BS_CARD_PROSE_REQUIRED` を直接出して `return 0` する。
+- 経路2（239〜244 行）… `errors` を組み立て、空でなければ
+  `{"decision": "block", "reason": ...}` を出す。
+
+`main()` にも3本目がある。例外を捕まえ、`command == "stop"` のとき
+`{"decision": "block", "reason": "BS_INTERNAL:<例外名>"}` を出す。
+
+**歯止めは3本すべての手前に置く必要がある。**
 
 ### 4.2 変更内容
 
@@ -140,8 +161,16 @@ sources: []
 `data.get("stop_hook_active")` が真なら、以降の判定へ進まず素通りする（戻り値 0、標準出力なし）。
 素通りしたことは既存の `event()` で記録する。
 
-置く位置は `state = read_state(...)` の直後、`if not state.get("active"): return 0` より前でも後でもよいが、
-**`errors` の組み立てより前**であること。
+**置く位置は `state = read_state(...)` の直後。** `if not state.get("active")` の判定も、
+`waiting_theme` の枝も、`phase == "stopped"` の枝も、`errors` の組み立ても、すべてこれより後ろに来ること。
+
+> [!warning] 初版の位置指定は欠陥版を通す
+> 初版は「`errors` の組み立てより前」とだけ書いていた。その条件を満たす位置
+> （`errors = []` の直前）に置くと、**経路1（`phase == "stopped"` → `BS_CARD_PROSE_REQUIRED`）が
+> 歯止めの外に残る**。中断を確定したあと本文が120字に満たないと止められ、書き直しても足りなければ
+> また止められる——武田さんが心配された形そのものが残る。
+> しかも初版の試験A・試験Bと `done-when` は、**この欠陥版も合格させる**。
+> 2026-09-06 レビューの指摘で、位置指定と試験の両方を直した。
 
 **変更2: `main()` の例外の枝に同じ歯止めを置く。**
 
@@ -155,11 +184,18 @@ sources: []
 
 `/Users/takedayousuke/.codex/skills/brainstorm/tests/test_adapter.py` に追加する。
 
-- 試験A: 親メモ未選択・カード未発行（＝本来なら `BS_PARENT_REQUIRED / BS_CARD_REQUIRED` で止まる状態）で、
-  `stop_hook_active: true` を渡すと、標準出力が空であること。
-- 試験B: `stop()` の内部で例外が起きる状況を作り、`stop_hook_active: true` のときは
-  `BS_INTERNAL:` が出ないこと。同じ状況で `stop_hook_active` が無いときは出ること
-  （＝歯止めが効いているのであって、例外処理を消したのではないことを示す）。
+**試験は3件**（初版は2件。レビューで1件足した）。
+
+- 試験A（経路2）: 親メモ未選択・カード未発行（＝本来なら `BS_PARENT_REQUIRED / BS_CARD_REQUIRED` で
+  止まる状態）で、`stop_hook_active: true` を渡すと標準出力が空であること。
+- 試験B（`main()` の枝）: **例外は `read_state` の呼び出しで起こす。**
+  `stop_hook_active: true` のときは `BS_INTERNAL:` が出ず、`stop_hook_active` が無いときは出ること。
+  （歯止めより後ろで例外を起こすと、`stop()` の歯止めだけで素通りしてしまい、
+  変更2 が無くても合格する。だから起こす場所を指定する。）
+- 試験C（経路1・**欠陥版を弾くための試験**）: `phase == "stopped"`・`confirmed_via_card` が真・
+  最後の発言が120字未満、という `BS_CARD_PROSE_REQUIRED` が出る状態で、
+  `stop_hook_active: true` を渡すと標準出力が空であること。
+  **この試験だけが、歯止めを `errors` の直前に置いた欠陥版を落とす。**
 
 ### 4.3 変更しないこと（実装上の禁止）
 
@@ -174,20 +210,37 @@ sources: []
 
 ### 5.1 自動試験
 
+初版の2条件は、どちらも**欠陥版を合格させ**、しかも**試験を1件も足していない状態でも合格した**
+（`grep -c` は行数を数えるだけ、`unittest` は 11 件でも 13 件でも OK を返す）。作り直した。
+
 ```done-when
 path: /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py
-run: grep -c stop_hook_active /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py ==> 2
-run: python3 -c "import subprocess,sys; r=subprocess.run([sys.executable,'-m','unittest','tests.test_adapter'],cwd='/Users/takedayousuke/.codex/skills/brainstorm',capture_output=True,text=True); print('TESTS-OK' if r.returncode==0 else 'TESTS-FAIL')" ==> TESTS-OK
+run: python3 -c "import ast; src=open('/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py',encoding='utf-8').read(); t=ast.parse(src); L=src.splitlines(); f={n.name:chr(10).join(L[n.lineno-1:n.end_lineno]) for n in t.body if isinstance(n,ast.FunctionDef)}; print('BRAKE-'+('OK' if 'stop_hook_active' in f.get('stop','') and 'stop_hook_active' in f.get('main','') else 'MISSING'))" ==> BRAKE-OK
+run: python3 -c "import subprocess,sys,re; r=subprocess.run([sys.executable,'-m','unittest','tests.test_adapter','-v'],cwd='/Users/takedayousuke/.codex/skills/brainstorm',capture_output=True,text=True); m=re.search(r'Ran (\d+) tests',r.stderr); print('TESTS-'+(m.group(1) if m else '0')+'-'+('OK' if r.returncode==0 else 'FAIL'))" ==> TESTS-14-OK
 ```
+
+**差別力を実測済み（2026-09-06、変更前のファイルに対して）**: 1行目は `BRAKE-MISSING`、
+2行目は `TESTS-11-OK` を返す。どちらも現状では不合格になる＝条件が働いていることを確認した。
 
 ### 5.2 この計画で確かめられないこと
 
 - **実会話での発火。** Codex の利用量の回復は半日後。自動試験に通っても
   「実機確認済み」とは呼ばない。
 - **`trusted_hash` が現行の `hooks.json` と一致しているか。** 印の作り方が Codex 内部のもので、
-  ファイル全体・正規化 JSON・コマンド文字列のいずれとも一致しなかった。
-  したがって「09-01 以降フックが発火していない」原因が、この印なのか、単に Codex を
-  この保管庫で使っていないだけなのかは **未確定**。
+  ファイル全体・正規化 JSON・コマンド文字列のいずれとも一致しなかった（レビュー側も12通り試して全滅）。
+
+  **ただし、方式が分からなくても読める事実がある**（2026-09-06 レビューの発見）。
+  `~/.codex/config.toml` の `[hooks.state]`（205〜267 行）に登録されている `~/.codex/hooks.json` 由来の
+  キーは **すべてグループ番号 0**。`hooks.json` には `Stop` の2つ目のグループ
+  （`deliverable_path_guard.py`、83〜91 行）と `PreToolUse` の2つ目のグループ
+  （`prose_guard.py`、150〜160 行）があるのに、**`stop:1:0` と `pre_tool_use:1:0` の登録が1件も無い。**
+  `config.toml` の更新時刻（9/5 15:55）は `hooks.json`（9/5 19:11）より古い。
+  つまり「後から足したグループが未 trust のまま」という説明が立つ。
+  これは `prose-guard.log` に Codex 由来の行が 09-01 以降0件であることと整合する。
+
+  **一方、本計画の対象である brainstorm の Stop フックは `stop:0:1` で、登録が残っている。**
+  その定義は 08-31 以降3世代の `hooks.json` で1文字も変わっていない。
+  §3.3 で `hooks.json` を触らないとしたのは、この点から見ても妥当。
 - 上の未確定があるため、**この修正だけで武田さんが体験する無限ループが消えるとは断定できない。**
   消えるのは「歯止めが無いという構造上の欠陥」であって、発火経路の問題は別。
 
@@ -220,3 +273,21 @@ run: python3 -c "import subprocess,sys; r=subprocess.run([sys.executable,'-m','u
 /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md
 /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260906-kb-experience-reproducibility.html
 ```
+
+
+---
+
+## 9. 改訂履歴
+
+- **初版 2026-09-06**（sha256 `ea14ffaa…`）。
+- **第2版 2026-09-06**。独立レビュー（サブエージェント、読み取りのみ）の指摘を反映。
+  変更点は6件。
+  1. §2.2-4「4つとも止められる」を「止められるのは2つ」へ訂正。
+  2. §2.2-5 の行数の内訳と「共有候補は約85%」を**撤回**。分類規則が再現できなかったため。
+  3. §4.1 に `stop()` の2本目の block 経路（`phase == "stopped"`）を追記。
+  4. §4.2 の歯止めの位置を「`errors` より前」から「`read_state()` の直後」へ限定。
+     初版の指定は欠陥版を許し、初版の試験と `done-when` はそれを合格させた。
+  5. §4.2 の試験を2件から3件へ。試験B に例外を起こす場所を明記し、
+     欠陥版を落とす試験C を追加。
+  6. §5.1 の `done-when` を作り直し、**変更前のファイルで不合格になることを実測**して差別力を確認。
+  あわせて §5.2 へ `config.toml` のグループ番号の非対称（レビューの発見）を追記。
