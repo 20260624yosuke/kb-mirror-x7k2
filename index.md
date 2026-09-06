@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5329 ファイル_
+_合計 5330 ファイル_
 
 ## root/ (11)
 
@@ -739,7 +739,7 @@ _合計 5329 ファイル_
 
 - [_index.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md) | 2026-09-04T11:51:24Z
 
-## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (31)
+## wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/ (32)
 
 - [20260901-brainstorm-fault-repair.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-brainstorm-fault-repair.md) | 2026-08-31T15:51:17Z
 - [20260901-h0157-mechanical-audit-concrete-integration-plan.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-h0157-mechanical-audit-concrete-integration-plan.md) | 2026-09-01T06:57:52Z
@@ -771,6 +771,7 @@ _合計 5329 ファイル_
 - [20260903-u3-source-compare-record.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-u3-source-compare-record.md) | 2026-09-04T00:38:38Z
 - [20260903-vscode-visibility-detour.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260903-vscode-visibility-detour.md) | 2026-09-03T13:02:17Z
 - [20260904-local-only-premise.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260904-local-only-premise.md) | 2026-09-04T11:51:20Z
+- [20260906-a-plan-execution-and-baseline-replacement.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260906-a-plan-execution-and-baseline-replacement.md) | 2026-09-06T07:06:54Z
 - [20260906-blender-block-resolution.md](wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260906-blender-block-resolution.md) | 2026-09-06T06:52:17Z
 
 ## wiki/analyses/brainstorm/html-skill-discovery/ (1)
