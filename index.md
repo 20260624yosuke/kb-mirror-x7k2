@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5316 ファイル_
+_合計 5328 ファイル_
 
 ## root/ (11)
 
@@ -573,6 +573,21 @@ _合計 5316 ファイル_
 - [c_HelenSSR01_slg_face_lod0.sub3.png](wiki/_attachments/helen-swimsuit-status/img-20260906-strap-wrap/objects/c_HelenSSR01_slg_face_lod0.sub3.png) | 2026-09-05T23:51:41Z
 - [c_HelenSSR01_slg_face_lod0.sub4.png](wiki/_attachments/helen-swimsuit-status/img-20260906-strap-wrap/objects/c_HelenSSR01_slg_face_lod0.sub4.png) | 2026-09-05T23:51:42Z
 - [c_HelenSSR01_slg_face_lod0.sub5.png](wiki/_attachments/helen-swimsuit-status/img-20260906-strap-wrap/objects/c_HelenSSR01_slg_face_lod0.sub5.png) | 2026-09-05T23:51:44Z
+
+## wiki/_attachments/project-hub-index/img-20260906-visual/ (12)
+
+- [dress-orig.png](wiki/_attachments/project-hub-index/img-20260906-visual/dress-orig.png) | 2026-09-06T06:11:24Z
+- [dress-ours.png](wiki/_attachments/project-hub-index/img-20260906-visual/dress-ours.png) | 2026-09-06T06:11:24Z
+- [f206-ours.png](wiki/_attachments/project-hub-index/img-20260906-visual/f206-ours.png) | 2026-09-06T06:11:24Z
+- [face-orig.png](wiki/_attachments/project-hub-index/img-20260906-visual/face-orig.png) | 2026-09-06T06:11:24Z
+- [face-ours.png](wiki/_attachments/project-hub-index/img-20260906-visual/face-ours.png) | 2026-09-06T06:11:24Z
+- [hairline-orig.png](wiki/_attachments/project-hub-index/img-20260906-visual/hairline-orig.png) | 2026-09-06T06:11:24Z
+- [hairline-ours.png](wiki/_attachments/project-hub-index/img-20260906-visual/hairline-ours.png) | 2026-09-06T06:11:24Z
+- [hand_L-orig.png](wiki/_attachments/project-hub-index/img-20260906-visual/hand_L-orig.png) | 2026-09-06T06:11:24Z
+- [hand_L-ours.png](wiki/_attachments/project-hub-index/img-20260906-visual/hand_L-ours.png) | 2026-09-06T06:11:24Z
+- [hand_R-orig.png](wiki/_attachments/project-hub-index/img-20260906-visual/hand_R-orig.png) | 2026-09-06T06:11:24Z
+- [hand_R-ours.png](wiki/_attachments/project-hub-index/img-20260906-visual/hand_R-ours.png) | 2026-09-06T06:11:24Z
+- [specular-candidate.png](wiki/_attachments/project-hub-index/img-20260906-visual/specular-candidate.png) | 2026-09-06T06:11:24Z
 
 ## wiki/analyses/ (69)
 
