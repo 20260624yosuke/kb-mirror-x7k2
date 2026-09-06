@@ -412,6 +412,14 @@ Claude 側の判定本体（`brainstorm_guard.py`）を関数ごとに分類し�
 | `~/.codex/skills/brainstorm/scripts/codex_adapter.py` | **0** |
 | `.opencode/scripts/muse_brainstorm_check.py` | **0** |
 
+> [!warning] この表の読み方を 2026-09-06 に訂正した
+> `0` が2つ並ぶが、**穴なのは Codex だけ**。opencode はそもそも会話の終わりで押し返せず、
+> Stop 型の関所を持っていない（実測2）。止めているのはカード（`question` 道具）を出す瞬間で、
+> そこは道具の呼び出しが1回断られるだけなので、終われなくなる形にはならない。
+> `skill-gate.js` には行き止まり避けが既に書かれている
+> （「初回カードは方向確認のため成果物ゼロを許す」「止めたカードで目印を進めない」）。
+> **`stop_hook_active` は opencode には当てはまらない。直す対象は Codex の1本。**
+
 **そして Codex 側にその情報が来ていないわけではない。** 実測資料
 `tools/context_harness/evidence/openai-hooks.md` の13行目に、実 Codex セッションで採取した結果として
 「`Stop` は `turn_id`、`stop_hook_active`、`last_assistant_message` を受け取る」と記録されている。
@@ -477,6 +485,12 @@ Claude 側の判定本体（`brainstorm_guard.py`）を関数ごとに分類し�
   各サービスが自分のフォルダに持つ判定のほう。**この枠で続ける。
 - 2026-09-06 記録先はこの新しい親メモ。`llm-harness-parity` には1行の案内だけを残した。
 
+### 2026-09-06 方針の承認：歯止めを先に入れる
+
+カードの回答は「歯止めを先に入れる（推奨）」＋「はい、この選択でよい」。
+**これは方針の承認であり、実行の承認ではない。** 実行は別のカードで取る。
+失うものとして提示済み: 3実装に分かれたまま直すので、分岐が1件増える。次の検査でも同じことが起きる。
+
 ## まだ決まってないこと
 
 - **手1 に進むかどうか。判断の前に、各サービスが実際にフックを発火させているかの確認が要る**
@@ -517,8 +531,47 @@ Claude 側の判定本体（`brainstorm_guard.py`）を関数ごとに分類し�
 
 ## 実装への申し送り
 
-**まだ実装段階ではない。** 手1〜手4 のどれにも実行の承認は出ていない。
-方針が決まったらここへ完成条件を書く。
+### 2026-09-06 歯止めの追加（方針は承認済み・実行は未承認）
+
+**完成条件**
+
+Codex の adapter が、会話の終わりを一度止めたあとの再呼び出しでは止め返さないこと。
+内部の失敗で止めるときも同じ抜け道を持つこと。既存の試験 11 件が引き続き通ること。
+
+**変更するファイル（1本だけ）**
+
+`/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py`
+
+- `stop()` の冒頭で `stop_hook_active` が真なら、判定へ進まず素通りさせる（記録は残す）。
+- `main()` の例外の枝（`BS_INTERNAL:`）も同じ条件で素通りさせる。
+- 変更前を `codex_adapter.py.bak-20260906` として同じ場所に残す。
+- 試験を2件足す（一度止めたあとは止めない／内部の失敗でも一度止めたあとは止めない）。
+
+**絶対にやってはいけないこと**
+
+- Claude 側（`~/.claude/skills/brainstorm/`）を触ること。今回の対象ではない。
+- opencode 側（`.opencode/`）を触ること。**opencode は Stop 型の関所を持たないので、
+  `stop_hook_active` は当てはまらない。**「0 が2つあるから2本直す」は誤り。
+- `~/.codex/hooks.json` と `~/.codex/config.toml` を触ること。信頼済みの印が変わると、
+  かえって発火しなくなる恐れがある（印の作り方は外から確かめられていない）。
+- 保管庫の `tools/` を触ること。
+- 歯止めを入れるついでに、止める条件そのものを緩めること。**合格線は動かさない。**
+
+**捨てた案と理由**
+
+- 手1（判定の1本化）の中でまとめて直す … 穴が塞がるまでが長い。今回は先に塞ぐ。
+- 探りを流して実機で確かめてから直す … 利用量が半日戻らない。原因はコードから取れている。
+
+```done-when
+path: /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py
+run: grep -c stop_hook_active /Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py ==> 2
+run: python3 -c "import subprocess,sys; r=subprocess.run([sys.executable,'-m','unittest','tests.test_adapter'],cwd='/Users/takedayousuke/.codex/skills/brainstorm',capture_output=True,text=True); print('TESTS-OK' if r.returncode==0 else 'TESTS-FAIL')" ==> TESTS-OK
+```
+
+### 終わったら次に取る承認
+
+歯止めが入って試験が通ったら、次は「検査5 を画面ごとに測り分ける（opencode ではカードの中身を見る）」
+の方針承認を取る。手1（判定の1本化）はその後。
 
 ## 機械化した指摘
 
