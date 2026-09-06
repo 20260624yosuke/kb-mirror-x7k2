@@ -152,3 +152,27 @@ S002 は書き換えていない。引き継ぎ書 §3.4・§10-5 を訂正し�
 
 **機械化**: `tools/purpose_guard.py`（P2a〜P2d）＋ `plan_audit` の A25。
 P2d は「測って『できない』で終わらせる」を落とす。変異試験 6/6。`穴の総数の下限` 12 → 13。
+
+## 追記4 案B の実装と、この会話の区切り
+
+武田さんの区切り: **「今日はここで区切る」**（W7 の扱いは「まだ決めない」）。
+
+**この日の後半（第30〜39部）でやったこと**:
+
+- 肩ひもが首の後ろに回っていない（奥行き 80.5mm）ことを武田さんの指摘で発見 → 直した
+- **目的を忘れない機械監査**（`tools/purpose_guard.py` の P2a〜P2d ＋ `plan_audit` の A25）
+  ＝ 武田さん「このプロジェクトの機械監査で忘れるの禁止にして」
+- **奥行きを見る関所**（`tools/strap_wrap_check.py` の G18a・G18b）
+- 原作の基準を割り出した（浮きは役割ごと／肩ひもは首でだけ触れる）
+- テンションの表し方を 2 回試して 2 回とも却下（武田さん「憶測で成果物を汚しすぎです」）
+- **案B**（`tools/strap_rebuild.py`）で紐をヘレンの体の上に作り直した
+
+**最終の成果物**: Blend sha256 `bef1da0801cb9025bc86c2b8495f0b2a3baa56a031c0f3b1771f00e486d9a035`。
+レンダー `wiki/_attachments/helen-swimsuit-status/img-20260906-strap-rebuild/`。
+
+**残る不合格**: W7（胴体上端を越える頂点 6 個・扱い保留）／ G17b（肩ひも Z +14.44mm）／
+V3・V4 ／ W6・W8・W11・W12 ／ N 0/3 ／ B1。**監査 25/25 PASS。未測定の側面 1 個。**
+
+**次に開く人へ**: 引き継ぎ書
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260905-2.md`
+の冒頭の追記を上から読むこと。**成果物へ触る前に方法の承認を取る。**
