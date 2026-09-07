@@ -61,6 +61,7 @@ background_paths:
 - 2026-09-08: 一時修正版で変数参照を直して再実行した結果、Morning / Evening / Nightは合格したが、Dayだけは `NOT downloaded` で停止。修正後もDay動画本体が無いという判定は変わらず、スクリプト本体とLaunchAgentは未作成。
 - 2026-09-08: 武田さん提供のスクリーンショット `/Users/takedayousuke/Library/Mobile Documents/com~apple~CloudDocs/ダウンロード/02_スクショ保存/ 2026-09-08 0.13.01.jpg` を確認。macOS壁紙画面には昼・朝・夕・夜の4種類が表示され、4種類を選択したという本人報告を支持する。ただしDay動画本体はツールの期待パスに無く、画面選択とローカルキャッシュの不一致が確定。precheckを迂回する手動導入は別案で、Day切替失敗のリスクを明示して別承認が必要。
 - 2026-09-08: Dayキャッシュ確認を迂回した手動導入について「この会話で実装する」と確認「はい、この選択でよい」を受領。固定版スクリプト本体、東京設定、LaunchAgent登録、初回実行、実機結果の確認までを実施する。Day切替失敗は未達として報告する。
+- 2026-09-08: 手動導入を実施。固定版 `wallpaper-switch.js` を `~/Library/Scripts/` に配置、東京設定JSONを使用、`com.user.wallpaper-switch.plist` を `~/Library/LaunchAgents/` に作成・loadした。初回実行は終了コード0で `00:15 | Tokyo | night | wallpaper→night`、state JSONもnightのIDを記録。stderrは空。LaunchAgentは登録され、runs=1 / last exit code=0を確認した。画面上で壁紙が実際に表示されたかは未確認、Day切替も未確認。
 <!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=2 input=9bef9131bd9774edbbc03fc25dc204aba2df5654a068bc54f4c3fe21afdac0cc turn=3497173c3b1ddf5bf46dbb00a15e37e7ea095296b314d39d8077aab912c2fd41 -->
 <!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=2 input=9bef9131bd9774edbbc03fc25dc204aba2df5654a068bc54f4c3fe21afdac0cc turn=3497173c3b1ddf5bf46dbb00a15e37e7ea095296b314d39d8077aab912c2fd41 -->
 <!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=2 input=9bef9131bd9774edbbc03fc25dc204aba2df5654a068bc54f4c3fe21afdac0cc turn=3497173c3b1ddf5bf46dbb00a15e37e7ea095296b314d39d8077aab912c2fd41 -->
@@ -80,4 +81,4 @@ background_paths:
 
 ## 現在地
 
-方向性と導入方法の承認待ち。調査・内容確認の段階で、実装は未着手。
+導入と初回自動実行は確認済み。画面の見た目は未確認。4枚のうちDay動画キャッシュが無い状態でprecheckを迂回したため、Day時間帯の切替だけは未検証で、運用開始可能とはまだ断定しない。
