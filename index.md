@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5490 ファイル_
+_合計 5491 ファイル_
 
 ## root/ (11)
 
@@ -981,7 +981,7 @@ _合計 5490 ファイル_
 
 ## wiki/analyses/brainstorm/kb-experience-reproducibility/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md) | 2026-09-07T13:22:30Z
+- [_index.md](wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md) | 2026-09-07T13:24:52Z
 
 ## wiki/analyses/brainstorm/kb-experience-reproducibility/sessions/ (1)
 
@@ -1012,6 +1012,10 @@ _合計 5490 ファイル_
 - [20260831-hole3-threshold-measurement.md](wiki/analyses/brainstorm/project-hub-index/sessions/20260831-hole3-threshold-measurement.md) | 2026-08-31T15:36:30Z
 - [20260901-five-guards-rev3-review.md](wiki/analyses/brainstorm/project-hub-index/sessions/20260901-five-guards-rev3-review.md) | 2026-09-01T00:38:48Z
 - [20260901-five-guards-rev4-review.md](wiki/analyses/brainstorm/project-hub-index/sessions/20260901-five-guards-rev4-review.md) | 2026-09-01T01:00:24Z
+
+## wiki/analyses/brainstorm/vocabulary-runtime-check/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/vocabulary-runtime-check/_index.md) | 2026-09-07T13:29:35Z
 
 ## wiki/assets/frames/coloso-hide-ch02-line-drawing/ (17)
 
