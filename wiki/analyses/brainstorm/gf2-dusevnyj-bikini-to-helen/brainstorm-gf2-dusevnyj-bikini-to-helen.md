@@ -649,6 +649,27 @@ V3・V4 ／ W6・W7・W8・W11・W12 ／ N1〜N3 ／ **G17b** ／ **G19b（帯 2
 **W7 は第39部から不合格**（胴体上端 1.478 を越える頂点 6 個・今回も同数）。
 **G19b の帯 22.7% は作り替え前と同じ値**（帯は今回触っていない）。
 
+### 2026-09-07 第51部（お手本のレンダーのパスを揃えた。成果物には触っていない）
+
+**使えるレンダーの実パス**（`…` は `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料`）:
+
+- **ドゥルシーヌヴイ 原着装のビキニ（正解）**:
+  `…/gf2-char-extract/reports/sheets/Dusevnyj-SSR0101/Dusevnyj-DusevnyjSSR0101-repro_set_P3.png`
+  **`_front.png` は制服でビキニではない。取り違えないこと。**
+- **サブリナ 水着（ホルターネック）**:
+  `…/gf2-char-extract/reports/sheets/Sabrina-SSR0101/Sabrina-SabrinaSSR0101-repro_front.png`
+  （`_left45` / `_side` / `_sheet` もある）
+- **ヘレン ドレス立ち絵**（今日 作り直した）:
+  `wiki/_attachments/helen-swimsuit-status/img-20260907-reference-helen-dress/helen-dress-noprops_front.png`
+  （front / side / left45 / back / back45）
+
+**既存のヘレンの repro レンダーは壊れていた。**
+`reports/sheets/Helen-SSR01/`（`_v84` `_v91` も同じ）は、旗
+`c_HelenSSR01_slg_flag_lod0_Effect` が画角を大きく広げ、**キャラが隅に小さく写る**
+（front はほぼ武器しか写っていない）。**旗と銃を隠した一時 Blend を作ってレンダーし直した**
+（`hide_render` を立てただけ。原本にも成果物にも書き込んでいない）。
+
+
 ## まだ決まってないこと
 
 ### 2026-09-07 第50部の時点

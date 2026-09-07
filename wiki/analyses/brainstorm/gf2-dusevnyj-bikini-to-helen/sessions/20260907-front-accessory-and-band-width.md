@@ -345,3 +345,37 @@ G20b を **面の上の最近点＋補間法線での符号付き距離**へ変�
 V3・V4 ／ W6・W7・W8・W11・W12 ／ N1〜N3 ／ G17b ／ G19b（帯 22.7%・上限 9.8%）／ B1。
 W7 は第39部から不合格（胴体上端を越える頂点 6 個・今回も同数）。
 G19b の帯 22.7% は作り替え前と同じ値（帯は今回触っていない）。
+
+---
+
+# 第51部（お手本のレンダーのパスを揃えた。**成果物には触っていない**）
+
+武田さんの依頼「サブリナとドゥルシーヌヴイのファイルパスを見せて。ヘレンのドレス衣装で
+立ち絵ポーズのパスも残ってたら出して欲しい」。
+
+## 使えるレンダー（実パス）
+
+| 何 | 実パス |
+|---|---|
+| **ドゥルシーヌヴイ 原着装のビキニ（正解）** | `…/gf2-char-extract/reports/sheets/Dusevnyj-SSR0101/Dusevnyj-DusevnyjSSR0101-repro_set_P3.png` |
+| ドゥルシーヌヴイ 制服（既定衣装） | `…/reports/sheets/Dusevnyj-SSR0101/Dusevnyj-DusevnyjSSR0101-repro_front.png` |
+| **サブリナ 水着（ホルターネック）** | `…/reports/sheets/Sabrina-SSR0101/Sabrina-SabrinaSSR0101-repro_front.png` ／ `_left45.png` ／ `_side.png` ／ `_sheet.png` |
+| **ヘレン ドレス立ち絵（今日 作り直した）** | `wiki/_attachments/helen-swimsuit-status/img-20260907-reference-helen-dress/helen-dress-noprops_front.png` ほか（front / side / left45 / back / back45） |
+
+`…` は `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料`。
+
+## ヘレンのドレス立ち絵は、既存のものが壊れていた
+
+`reports/sheets/Helen-SSR01/`（および `_v84` `_v91`）の repro レンダーは、
+**旗（`c_HelenSSR01_slg_flag_lod0_Effect`）が画角を大きく広げ、キャラが隅に小さく写る**。
+front はほぼ武器しか写っていない。
+
+**旗と銃を隠した一時 Blend を作ってレンダーし直した**（`hide_render` を立てただけ。
+**原本にも成果物にも書き込んでいない**。一時 Blend はスクラッチ領域）。
+
+## 注意
+
+- **ドゥルシーヌヴイの `front` は制服**で、ビキニではない。**ビキニは `set_P3`。**
+- ヘレンのドレス立ち絵は**装備（肩当て・脚のポーチ・杖）も付いた状態**。首まわりは見える。
+- 寝そべりポーズの比較シートなら
+  `…/gf2-helen-starlit-waltz/06_repro-v51/reports/submission-sheet-2026-08-25.png` にある。
