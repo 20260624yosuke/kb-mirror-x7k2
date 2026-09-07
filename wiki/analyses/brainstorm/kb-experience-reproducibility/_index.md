@@ -1952,3 +1952,21 @@ run: python3 -c "import subprocess,sys; r=subprocess.run([sys.executable,'-m','u
 「承認」等の部分一致と、単なる相づちによる実装許可を廃止した。カードは残るが、実行ボタンは「実行を承認」「この会話で実装する」「実装を許可」のような明確な表記を使う。自由な言い回しや「計画」という語を含む実行カードでも実装許可にならない場合があるため、主質問・説明を実行対象の記述に絞る。実機の見え方は未確認。
 
 戻す場合は `/Users/takedayousuke/.codex/skill-staging/brainstorm-approval-fix-xvykwktt/before/` の3ファイルを対応する本番パスへ復元する。ただし誤って実装許可を出す旧挙動も戻る。同フォルダの test-result.txt、old-version-regression.txt、promotion.json に試験と反映の記録を保存した。
+
+## 2026-09-07 Astra 自動切り替えを実装（自動試験済み・実機未確認）
+
+- user-stated: Astra 向けの追加コマンドなし自動切り替えを実装する明示依頼。承認カードが使えない制約の正体と、ローカルで修正可能かを非エンジニア向けに説明する依頼。
+- 制約の説明を訂正・具体化: このタスクの上位指示が request_user_input の permission requests / permission-related escalations 用途を禁止している。ボタン描画の故障ではなく用途制限。通常の任意の好み・相談の質問と、実行を許可する質問は別扱いである。この指示はスキルの編集では解除できない。全サービスで恒久的に不可能という意味ではないが、変更可能なアプリ設定は未確認。カードを保存すれば現環境でそのまま承認に使えるという説明は撤回する。別用途の質問を実行承認に読み替える回避策は採らない。
+- 実装: `/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py` の model_profile / inject_context。brainstorm が起動しているときの UserPromptSubmit / SessionStart / カード回答後の PostToolUse で、そのフック入力の model の完全一致だけを使う。gpt-6-astra なら astra-brainstorm-v1、他モデルなら common。欠損・型違い・不正文字・過長値は unknown / common。ユーザー文や保存済みのモデルから補完しない。
+- Astra 補助の内容: 方針と実行を区別する、承認済み範囲は重複確認せず進める、途中の質問に答えた後も元の作業を保持する、説明は具体的で短くする、必要以上に試験を広げない。共通の記録・承認境界・テーマ待ち・中断規則と上位ツール制約を維持する。追加コマンドもモデル設定変更もない。
+- 監査: scripts/lite-events.jsonl に model_context_emitted を記録。model / profile / source / hook_event / guidance_sha / context_sha と既存のsession・turn識別子を含む。「フックが追加指示を出力した」証拠であり、配信やモデルの遵守・改善の証拠ではない。
+- 試験: 既存38件＋追加7件＝45件合格。Astraのみ補助あり、他モデルへ切替後は補助なし、欠損・不正時に前回Astraを持ち越さない、ユーザー文での偽装拒否、通常会話で不発動、再開・カード結果時に現在モデルを再評価、テーマ待ち・中断出口維持、出力と監査SHA一致を検証。状態・ログ・KB参照を一時領域へ隔離した自動試験。
+- 反映: SKILL.md / scripts/codex_adapter.py / tests/test_adapter.py の3本。候補で合格後、本番変更前SHAの一致を確認して反映し、反映後も候補とのバイト一致を確認。前ターンの方針承認修正は維持。hooks.json / config.toml / 他サービス / 実セッション状態は変更していない。スキルfrontmatterは変更前と一致。quick_validateのPyYAML不足は前節のとおり未解消。
+- 反映後SHA-256: SKILL.md=`be4bc03c019da6abbe06f7a8187725b5d146dd7b49331467f5cfb868b5902ce4`、codex_adapter.py=`c99c725907fcfcdc7b038af31364f8f76f23e7dff5d9355b3bebdfa4b6286d2b`、test_adapter.py=`216848239277ac1599bf195577b75a5b69abb58b729046b5c2285c5c75bb4aa3`。
+- 未確認: 実フックで model が提供されること、生成した追加指示の実配信、Astraでの使用感改善。現在の保守会話はbrainstorm未起動なので、実機検証のために勝手に起動・承認操作をしていない。今後の実際のbrainstorm使用時に出る監査記録と応答を照合する。常駐監視や定期タスクは作っていない。
+
+### 使わなかったもの・手元での違い・戻し方
+
+追加コマンドでAstra補助を手動起動する案は採用しない。ユーザーは通常のbrainstorm起動だけでよく、モデルを切り替えると次の対象フック出力で適用状態を更新する。過去の会話テキストは消さず、最新の適用状態を明示する方式。モデル名が不明のときは専用補助の適用を見送るが、共通規則は継続する。実機の見え方は未確認。
+
+戻すには `/Users/takedayousuke/.codex/skill-staging/brainstorm-astra-auto-l6zpcsgl/before/` の3本を本番の対応先へ復元する。このバックアップは方針承認の修正後なので、自動切り替えだけを戻せる。同フォルダの test-result.txt と promotion.json が試験・反映の記録。
