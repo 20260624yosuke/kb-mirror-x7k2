@@ -13,6 +13,9 @@ entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/run-state.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/ledger/finger-axis-decision.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/scripts/f151_finger_axis_H.py
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/ledger/h0157-original-lighting-primary.json
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/e0-post-values.json
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/e1-baked-lighting.json
 background_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/f171-current-status.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-repro-v51-handoff.md
@@ -31,6 +34,7 @@ background_paths:
 - f151 の反転正規化の誤りを直す候補を作る。本体は触らない。
 - 品質の合否は武田さんの目視のみ。機械の数値は関与しない。
 - 計画書は作らない（残作業は機械的手順と目視判断だけ）。
+- 2026-09-05夜：照明の解決を自律的に進める。過去の前提は捨て、探せていない前提でのみ探す。見つかるまで中断しない。本体反映は別承認。
 - 数値書換え案は捨て、方向試験（鏡像なし1本）の候補作成の承認を得た。
 
 ## まだ決まってないこと
@@ -38,6 +42,7 @@ background_paths:
 - 本体への反映（別承認待ち）。
 - 選択4件（A/B/C/D）。
 - 目視確認への進入。
+- 原作13・251付近の指が拳か直指か（Hの当否の分岐点。拳ならD1は原作通り方向、直指ならH撤回）。
 
 ## 捨てた案と理由
 
