@@ -4,9 +4,11 @@ status: active
 confidence: medium
 evidence_level: user-stated
 last_reviewed: 2026-09-05
-brainstorm_status: ready
+brainstorm_status: active
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-fingerfix
 entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/run-state.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/ledger/finger-axis-decision.json
@@ -40,6 +42,7 @@ background_paths:
 
 - 計画書の作成：残作業に設計の余地がなく、正本を増やして混乱の種になるため。
 - 摘みの総当たり：原因が割れている箇所への対症は無限ループになるため。
+- f173数値書換え：独立再計算で真の差0.00度と確定したため（project logs/t1-finger-diff-reverify.json）。私の差表は標本1つずれと順序違いの産物であり撤回する。
 
 ## 直した記録
 
