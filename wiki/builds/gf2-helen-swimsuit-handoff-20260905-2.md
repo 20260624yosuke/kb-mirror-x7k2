@@ -175,7 +175,24 @@ supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260905.md
 >   **太さは直す必要が無い。**
 > - **新しい道具 `tools/cord_profile.py`**（紐を 25 項目でサンプリング・変異試験 5/5）。
 >   **ただし「幅・厚み・差し渡し」は主軸の等分で出しているので、長さの違う紐どうしでは信用しないこと。**
-> - **【09-06 夜・実装】武田さん承認「3 つとも直す」。Blend の正本 sha256
+> - **【2026-09-07・最新】紐の輪を「原着装と同じ開き角」の場所へ置き直した**（武田さん承認 S035）。
+>   **Blend の正本（中身の照合用）sha256
+>   `b677e020bcbdc65424ffb82eb3229643ab5899c3391f9282501689a8637f39d3`。**
+>   退避 `blends/swimsuit/_bak-20260907b/`（作り替え前 `88c6e684d5f4…`）。
+>   レンダー `wiki/_attachments/helen-swimsuit-status/img-20260907-angle-place/`。
+>   実装 `tools/strap_rebuild.py` の `_resample_by_angle` ＋ `--strap-angle-place`（既定）。
+>   **新しい検査 G20a・G20b**（`tools/neck_path_check.py`・変異試験 7/7）と
+>   **通り道の法則の正本** `wiki/builds/gf2-helen-swimsuit-neck-path-law.json`。
+>   結果: **G20a 4.0% → 8.0% で合格**／曲がり 中央 0.878 → 0.765・最大 3.445 → 2.852／
+>   輪の間隔 最大 33.85 → 30.53mm／肩ひものめり込み 19.9% → 18.9%。
+>   悪化は 最深 −2.00 → −2.12mm と 首の骨より後ろ 76 → 72 の 2 つ。**不合格は増えていない。**
+> - **【2026-09-07】報告に成果物のパスを出さずに閉じるのを機械で止めた**（検査 **D4** ＋ `guard-card`）。
+>   **会話の終わりのフックは、承認カードで終わる回では発火しない**ため、既存の D1・D2・H1 は
+>   brainstorm の運用では一度も走っていなかった。`~/.claude/settings.json` の `PreToolUse` へ
+>   `AskUserQuestion` matcher で登録済み（**効くのは次の会話から**）。検出力 12/12・配線 4/4。
+> - **【2026-09-07】サブリナ SSR0101 は水着（ホルターネック）だった。** お手本として使える
+>   （移植はしない・明言 S032）。首の骨より後ろ サブリナ 48% ／ 原着装 29% ／ 成果物 25%。
+> > - **【09-06 夜・実装】武田さん承認「3 つとも直す」。Blend の正本 sha256
 >   `88c6e684d5f4cc5b2d50953fd0b4c49935da5a83e346a4c18356055d06f747b4`。**
 >   退避 `blends/swimsuit/_bak-20260906e/`。レンダー
 >   `wiki/_attachments/helen-swimsuit-status/img-20260906-strap-seam/`。
