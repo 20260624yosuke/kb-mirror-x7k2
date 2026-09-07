@@ -1907,3 +1907,24 @@ run: python3 -c "import subprocess,sys; r=subprocess.run([sys.executable,'-m','u
 ## セッションメモ（子）
 
 - `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/kb-experience-reproducibility/sessions/20260906-experience-reproducibility.md`
+
+## 2026-09-07 Codex Astra 向け点検（調整の設計は未確定）
+
+- user-stated: 現在の brainstorm を検査し、問題があれば調整する依頼。Codex で常に Astra を使うとは限らないため、Astra 使用時に起動できる仕組みを希望。今回はスキルの保守依頼であり、brainstorm 自体の起動依頼ではない。
+- 公式資料: https://developers.openai.com/api/docs/guides/latest-model の GPT-6 Astra / Prompting best practices を検索・取得して確認。指示ファイルへの敏感さ、確認質問による停止、文章量、試験量の調整を案内している。Astra 専用調整が一律必須という記述ではない。
+- 現物: Codex の SKILL.md と codex_adapter.py にモデル判定・Astra 限定処理はない。agents/openai.yaml は allow_implicit_invocation: false。起動語が文中に登場するだけの入力は INVOKE_RE に一致しない。
+- 確定した欠陥: tests.test_adapter の card(main_label='方針を承認する') を card_contract() に通し、同ラベルと確認「はい」の response を answer() に渡すと、('approved', 'confirmed_approval', '方針を承認する') を返す。方針承認と実行承認を分ける規約に反する。Astra 固有とは判定できない。
+- 現環境との不整合: Codex SKILL.md は request_user_input の固定二問カードを承認に使う。一方、このタスクに提供された上位指示は同ツールの承認用途を禁止し、必須入力は通常文の短い質問で求めるよう指定している。スキルの指示だけで上位制約を解除できない。他の画面・サービスでも同じ制約とは断定しない。
+- 既存試験: STATE_DIR / EVENT_LOG / KB_ROOT を一時領域へ分離し、tests.test_adapter の 34 件が合格。実機での改善や Astra の振る舞いを検証したものではない。最初に kb_guard 全体を置換した試行は、配線試験まで無効化して 2 件エラーにしたため、試験方法を修正した。製品の不具合件数には数えない。
+- 実記録: lite-events.jsonl は観測時 26 行。親に書かれた4回目試験前の18行から増えており、末尾に confirmed_approval と confirmed_stop がある。ただしログ単独には選択ラベルやモデルがなく、広げた語彙の実機合格や Astra 検証の根拠にはしない。
+- 版: `/Users/takedayousuke/.codex/skills/brainstorm/SKILL.md` SHA-256 `68f30f04773860a9f5f65cd2c6a96a28429dbec7a133b34741429e3ba0580707`、`/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py` SHA-256 `0717e1ca523d2ba7a7ab4cbd94afec1ccf5e37cb1645f216b0872eb0462e039d`。点検の前後で一致。
+
+### 調整候補（未承認・未実装）
+
+共通の承認処理と、Astra 向けの追加指示を分ける。前者は方針承認で実装許可を出さないこと、承認カードを使えない環境では対象と段階を示す通常文への明示回答を結び付けること。後者は同じ brainstorm の起動時に明示指定で追加指示を読み込む方式を候補とする。モデルを自動で変更しない。自動判定の経路は未検証なので実装可能とはまだ断定しない。
+
+この変更で、カード利用不可の環境では二問カードを押す操作が短い文章での回答に変わる。押し間違い確認の二問目を失うため、確認対象を一意に結び付ける機械処理と試験が必要。実装前にこの操作変更の合意を取る。現段階ではスキル・コード・hooks.json・config.toml・他サービスの設定を変更していない。
+
+### 使わなかったもの・落とした情報
+
+なし。正本の過去記録を削除・訂正していない。Astra 専用の指示追加だけで共通の不整合まで直ったとは扱わない。
