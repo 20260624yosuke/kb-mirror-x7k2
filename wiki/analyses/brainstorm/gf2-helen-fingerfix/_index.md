@@ -4,7 +4,7 @@ status: active
 confidence: medium
 evidence_level: user-stated
 last_reviewed: 2026-09-05
-brainstorm_status: active
+brainstorm_status: ready
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index
@@ -31,6 +31,7 @@ background_paths:
 - f151 の反転正規化の誤りを直す候補を作る。本体は触らない。
 - 品質の合否は武田さんの目視のみ。機械の数値は関与しない。
 - 計画書は作らない（残作業は機械的手順と目視判断だけ）。
+- 数値書換え案は捨て、方向試験（鏡像なし1本）の候補作成の承認を得た。
 
 ## まだ決まってないこと
 
