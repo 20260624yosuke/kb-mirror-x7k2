@@ -175,7 +175,18 @@ supersedes: wiki/builds/gf2-helen-swimsuit-handoff-20260905.md
 >   **太さは直す必要が無い。**
 > - **新しい道具 `tools/cord_profile.py`**（紐を 25 項目でサンプリング・変異試験 5/5）。
 >   **ただし「幅・厚み・差し渡し」は主軸の等分で出しているので、長さの違う紐どうしでは信用しないこと。**
-> - **【2026-09-07・最新】武田さんへ見せる絵の混在を機械で止めた（検査 D5）。**
+> - **【2026-09-07・最新】「紐が張っていない」を合格線にした（検査 G21・武田さん承認 S041）。**
+>   武田さんの言葉「紐ってさピーンとさ引っ張られる可能性があるものじゃん？…この形が、
+>   ヘレンへのレンダリング時に顕著に残ってた」を数値にした。
+>   **たるみ（道のり ÷ 両端を結ぶ直線）が 原着装 1.0502 → 成果物 1.0507 とそのまま残っている。**
+>   落ち込んだ輪も 34.8% → **52.2%**。**G21a・G21b とも FAIL。**
+>   上限は毎回原着装から計算する（「ヘレンが着たら原着装より張るはず」）。
+>   **案B は「原作の輪を各場所へ載せ替える」作りなので、作り方を変えないと G21a は通らない見込み。**
+> - **【2026-09-07】部品の同定条件は明言台帳から引く（検査 D6）。**
+>   私が武田さんの「首から胸につながる紐」を「首を回る紐」へ言い換えて数えた
+>   （ハルシネーション）。条件は `explicit-statements.json` の `part_identification`（S039）に置き、
+>   `tools/part_identify.py` が数える。**LOD 違いは同じ部品なので数えない。** 検出力 4/4。
+> > - **【2026-09-07・最新】武田さんへ見せる絵の混在を機械で止めた（検査 D5）。**
 >   参考用にレンダーしたヘレンのドレスで、**同じ胴体の胸の変種 4 つ・素肌 2 つ・髪 2 つ・
 >   戦闘服とドレスが同時**に表示されていた。原因は **D1・V5 を水着の成果物にしか掛けておらず、
 >   参考用の別 Blend を対象外にしていたこと。**
@@ -503,6 +514,9 @@ $P tools/strap_wrap_check.py                                                   #
 $P tools/skin_contact_check.py                                                  # G19a・G19b・G19c【09-06 夜 追加】
 $P tools/proposal_guard.py                                                     # P3a・P3b【09-06 夜 追加】
 $P tools/neck_path_check.py                                                    # G20a・G20b【09-07 追加】
+$P tools/cord_tension_check.py                                                 # G21a・G21b【09-07 追加】
+$P tools/render_set_check.py --all                                             # D5【09-07 追加】
+$P tools/part_identify.py --save                                               # D6a・D6b【09-07 追加】
 $P tools/terminology_check.py wiki/_attachments/helen-swimsuit-status/*.html    # T1・T2【09-06 夜 追加】
 $P tools/version_compare.py                                                    # B1・B2
 $P tools/goal_coverage.py                                                      # C1〜C4（進捗）
