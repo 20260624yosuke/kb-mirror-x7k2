@@ -19,6 +19,8 @@ background_paths:
 ## 武田さんの考え
 
 - 専用試験メモだけを使い、実案件のメモを汚さない。
+- 「$brainstorm 承認語の実機確認。成果物は何も作らないでください」――今回は承認語が実機のカードで承認として扱われるかだけを確認し、成果物は作らない。
+<!-- bs-lite:v1 session=35dafa3986bcc021df2e63862dac528d7b695b08dc861c42714c9361da7568a counter=1 input=3d18efead0c4cef5101aec01dac65f6415dcb32e38db6543adf0311804cbba23 turn=dd94ef2781b5a5d7987008c5d9acd92760b8fb4795d723b3020bf6b965ddbc4c -->
 
 ## 決まったこと
 

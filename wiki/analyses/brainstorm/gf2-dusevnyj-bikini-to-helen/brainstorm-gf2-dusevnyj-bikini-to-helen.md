@@ -3,7 +3,7 @@ type: analysis
 status: active
 confidence: medium
 evidence_level: user-stated+source-backed
-last_reviewed: 2026-09-06
+last_reviewed: 2026-09-07
 brainstorm_status: ready
 # 2026-09-04 武田さんの指示で implementation_agent: separate-session を削除。
 # 「museがたぶん書き換えたな。もともとの俺の意図と違うスキルの挙動。実装とか承認する許可する。」
@@ -12,7 +12,8 @@ scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料
 entry_paths:
-  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260905-2.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-handoff-20260907.md
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-neck-path-law.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-swimsuit-goal-map.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/output/gf2-helen-swimsuit/explicit-statements.json
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md
@@ -36,8 +37,10 @@ background_paths:
 # Dusevnyj P3ビキニ上衣 → Helen 適合ハーネス（brainstorm）
 
 > [!important] 再開する場合の入口
-> **実装計画の正本は `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`。その section 0 に、
-> 関連ファイルの実パスと元データの絶対パスがまとまっている。** まずそちらを開くこと。
+> **【2026-09-07 更新】まず引き継ぎ書
+> `wiki/builds/gf2-helen-swimsuit-handoff-20260907.md` を開くこと。**
+> 実装計画の正本は `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`（section 0 に
+> 関連ファイルの実パスと元データの絶対パスがまとまっている）。
 > 作業ディレクトリは
 > `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01`。
 > 本文中の `[[slug]]` は Obsidian の記法で、実体は `wiki/` 配下の `<slug>.md`。
