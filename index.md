@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5427 ファイル_
+_合計 5431 ファイル_
 
 ## root/ (11)
 
@@ -682,6 +682,11 @@ _合計 5427 ファイル_
 - [c_HelenSSR01_slg_face_lod0.sub4.png](wiki/_attachments/helen-swimsuit-status/img-20260907-angle-place/objects/c_HelenSSR01_slg_face_lod0.sub4.png) | 2026-09-06T23:57:42Z
 - [c_HelenSSR01_slg_face_lod0.sub5.png](wiki/_attachments/helen-swimsuit-status/img-20260907-angle-place/objects/c_HelenSSR01_slg_face_lod0.sub5.png) | 2026-09-06T23:57:43Z
 
+## wiki/_attachments/helen-swimsuit-status/img-20260907-reference-helen-dress/ (2)
+
+- [Helen-HelenSSR01-repro_front.png](wiki/_attachments/helen-swimsuit-status/img-20260907-reference-helen-dress/Helen-HelenSSR01-repro_front.png) | 2026-09-07T00:13:55Z
+- [Helen-HelenSSR01-repro_left45.png](wiki/_attachments/helen-swimsuit-status/img-20260907-reference-helen-dress/Helen-HelenSSR01-repro_left45.png) | 2026-09-07T00:13:57Z
+
 ## wiki/_attachments/project-hub-index/img-20260906-visual/ (12)
 
 - [dress-orig.png](wiki/_attachments/project-hub-index/img-20260906-visual/dress-orig.png) | 2026-09-06T06:11:24Z
@@ -844,6 +849,14 @@ _合計 5427 ファイル_
 - [20260906-collarbone-and-back-bow.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260906-collarbone-and-back-bow.md) | 2026-09-06T15:00:21Z
 - [20260906-three-goal-holes-filled.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260906-three-goal-holes-filled.md) | 2026-09-06T04:54:22Z
 - [20260907-front-accessory-and-band-width.md](wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/sessions/20260907-front-accessory-and-band-width.md) | 2026-09-06T23:59:21Z
+
+## wiki/analyses/brainstorm/gf2-helen-finger-fix/ (1)
+
+- [_index.md](wiki/analyses/brainstorm/gf2-helen-finger-fix/_index.md) | 2026-09-07T00:08:25Z
+
+## wiki/analyses/brainstorm/gf2-helen-finger-fix/sessions/ (1)
+
+- [20260905-finger-flip-plan.md](wiki/analyses/brainstorm/gf2-helen-finger-fix/sessions/20260905-finger-flip-plan.md) | 2026-09-07T00:08:22Z
 
 ## wiki/analyses/brainstorm/gf2-helen-repro-resume/ (1)
 
