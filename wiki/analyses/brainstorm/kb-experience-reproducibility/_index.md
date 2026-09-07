@@ -11,6 +11,7 @@ scope:
   - /Users/takedayousuke/.claude/skills/brainstorm
   - /Users/takedayousuke/.codex/skills/brainstorm
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-result.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-check.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260906-kb-experience-reproducibility.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/scripts/harness_parity_check.py
@@ -762,11 +763,70 @@ Codex の対話画面で `/hooks` と打ち、一覧を見せていただく。�
 最後のフォルダの中を見て、`lite-state`（フォルダ）と `lite-events.jsonl`（ファイル）の有無を判定する。
 この2つは発火して初めて出来るものなので、いまは実在しない。
 
+## 2026-09-07 実測7：①' を実施した。発火していた。歯止めも実機で効いた
+
+武田さんが Codex（VS Code 拡張・gpt-5.6 luna・エフォート軽）で `$brainstorm 発火確認` を1回打った。
+そのあと私が読んだ結果。**1回の操作で ①' と ③ の両方が片付いた。**
+
+### 1. 発火している（①' の答え）
+
+`~/.codex/skills/brainstorm/scripts/` に `lite-state`（フォルダ）と `lite-events.jsonl`（ファイル）が
+**両方できていた**（どちらも 2026-09-07 15:15）。記録は3行。
+
+| 時刻 | 出来事 | 中身 |
+|---|---|---|
+| 15:15:28 | `user_prompt` | `invoked: true`、`waiting_theme: false` |
+| 15:15:32 | `stop_block` | `BS_PARENT_REQUIRED` / `BS_CARD_REQUIRED` |
+| 15:15:36 | `stop_brake` | 一度止めたあとの再呼び出しを素通り |
+
+**これで「brainstorm の判定は Codex で発火する」が確定した。** 実測5-1 の推測は完全に否定された。
+実測6-3 で「0 番目が動いているのだから 1 番目も動くはず」と書いた見立ては、直接の記録で裏付いた。
+
+### 2. 歯止めが実機で効いた（③ の完成条件）
+
+③ の完成条件は「一度止まり、2回目は止まらない。`lite-events.jsonl` に `stop_brake` が残る」だった。
+**`stop_block` の 4 秒後に `stop_brake` が1行だけ記録され、そこで終わっている。**
+無限ループにも入っていない。**2026-09-06 の歯止めは、実機確認済みに上がる。**
+
+- 前は「実装済み・自動試験済み・壊し試験済み」だった。**いま「実機確認済み」。**
+- 09-01 の書き直しで落ちた性質が、実際に戻っていることを画面の外の記録で確かめた。
+
+### 3. グループ1は、やはり動いていない
+
+- `tools/logs/prose-guard.log` に増えた2行は、この Claude セッションの `Write` によるもの。
+  **Codex 由来（`apply_patch`）は 08-31 の 3 件のまま増えていない。**
+- `~/.codex/config.toml` のグループ1（`:1:`）の登録は **0 件のまま**。
+
+**実測5-2・実測6-4 のこの部分は、そのまま正しい。** 直すには ②'（端末で `/hooks`）が要る。
+
+### 4. 機械は従ったが、モデルは従わなかった
+
+武田さんが受け取った返答はこれ。
+
+> テーマ未指定のため、親メモの選択と承認カードを開始できません。考えたいテーマを指定してください。
+
+**この返答は Codex 版 SKILL.md の指示と合っていない。** SKILL.md は
+「引数が無ければ『brainstorm を待機状態にしました。テーマ（何を考えたいか）をどうぞ。』だけを返す」で、
+引数がある場合は親メモの二問カードへ進む。今回は引数「発火確認」があり、
+**アダプタ側も `waiting_theme: false` と正しく判定していた**（状態ファイルに記録あり）。
+それでもモデルは「テーマ未指定」と述べ、カードを出さなかった。
+
+- **機械（フック）は仕様どおり動き、モデルの従い方だけがずれた。** この案件が追っている
+  「サービスごとに挙動が変わる」の実例が、初めて1回の試行の中で分離して観測できた。
+- ただしこれは **1 回・軽いエフォート・1 モデル**の観測。頻度も再現性も測っていない。
+
 ## 決まったこと
 
 - 2026-09-06 読み取りの承認。**効いていたのは保管庫側の台帳と検査で、分岐しているのは
   各サービスが自分のフォルダに持つ判定のほう。**この枠で続ける。
 - 2026-09-06 記録先はこの新しい親メモ。`llm-harness-parity` には1行の案内だけを残した。
+
+### 2026-09-07 歯止めは実機確認済みになった
+
+- 2026-09-06 に入れた Codex の歯止め（一度止めたあとの再呼び出しを素通りさせる）は、
+  **2026-09-07 15:15 の実機で `stop_brake` が記録され、実機確認済みへ上がった。**
+- 同時に **brainstorm の Stop フックが Codex で発火することも確定**した。
+- 残る穴は **グループ1の2本**（`deliverable_path_guard.py` と `prose_guard.py`）の信頼登録のみ。
 
 ### 2026-09-07 直した手順の承認：①' だけ先に
 
@@ -826,7 +886,9 @@ Codex の対話画面で `/hooks` と打ち、一覧を見せていただく。�
 - （決着）歯止めは単独で先に入れた。対象は Codex の1本のみ。
 - （手順は用意済み・実施待ち）半日後に①発火の見分け ②`/hooks` の確認 ③歯止めの実機確認を1回で行う。
   **2026-09-07 15:00 更新: ①②は前提が崩れたので直した（上の「直した手順」）。直した手順の承認が未取得。**
-- **①' と ②' は Codex を起動する操作で、私からは実行できない。** どちらを武田さんが行うか未決。
+- **①' は 2026-09-07 15:15 に実施済み（発火を確認）。③ も同時に達成。** 残るのは ②' のみ。
+- **モデルが SKILL.md の起動手順から外れる件**（実測7-4）。1回しか観測しておらず、
+  頻度・再現性・モデル差は未測定。機械で検出するかどうかも未決。
 - （調査は完了）登録の欠けは確定したが、**それだけでは発火しない理由を説明できない**。
   信頼を与えるには `/hooks` を対話画面で操作する必要があり、**武田さんの手が要る**。
   どのやり方を採るかが未決（実測5-6）。
@@ -864,7 +926,8 @@ Codex の対話画面で `/hooks` と打ち、一覧を見せていただく。�
 ## 再開の入口（実パス）
 
 - このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md`
-- 説明ページ（最新・2026-09-07）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-check.html`
+- 説明ページ（最新・2026-09-07 結果）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-result.html`
+- 説明ページ（2026-09-07 昼・superseded）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-check.html`
 - 説明ページ（2026-09-06）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260906-kb-experience-reproducibility.html`
 - 分岐を数える監査: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/scripts/harness_parity_check.py`
 - 計画書（歯止め・実施結果つき）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/kb-agent-parity-stop-brake-plan-20260906.md`
