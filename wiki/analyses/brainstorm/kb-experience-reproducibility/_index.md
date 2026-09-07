@@ -11,6 +11,7 @@ scope:
   - /Users/takedayousuke/.claude/skills/brainstorm
   - /Users/takedayousuke/.codex/skills/brainstorm
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-realmachine-result.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-three-audit-gaps.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/audit_integrity_check.py
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/surface_claim_check.py
@@ -1194,11 +1195,13 @@ deliverable_path_guard: 台帳と中身が違います（記録 5398630426e7 / �
 
 ```
 2026-09-07 16:43:05 prose-guard pass  tool=apply_patch
-2026-09-07 16:46:01 prose-guard DENY  tool=apply_patch path=wiki/_attachments/kb-experience-reproducibility/_probe.html issues=2
+2026-09-07 16:46:01 prose-guard DENY  tool=apply_patch path=…/kb-experience-reproducibility/_probe.html issues=2
 2026-09-07 16:46:21 prose-guard pass  tool=apply_patch
 ```
 
 - **`DENY` が出て、`_probe.html` は作られていない。** 狙ったとおりに止まった。
+  （置き場は `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/`。
+  拒否される前提の試験なので、そのファイルが実在しないのが正しい。上の記録は path を短く書いてある。）
 - `output/gf2-helen-swimsuit/deliverable-path-guard.log` も **64 行 → 71 行**（7行増）。
   会話終わりの検査も Codex 側で走った。
 - **これで「adapter から呼ぶ」は実機確認済みになった。** 設定ファイルには一度も触っていない。
@@ -1395,7 +1398,8 @@ Codex 本人の言葉:
 ## 再開の入口（実パス）
 
 - このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md`
-- 説明ページ（3つの抜けと入れた検査・2026-09-07 最新）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-three-audit-gaps.html`
+- 説明ページ（実機確認の結果・2026-09-07 最新）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-realmachine-result.html`
+- 説明ページ（3つの抜けと入れた検査・2026-09-07）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-three-audit-gaps.html`
 - 説明ページ（カードの関所の穴・2026-09-07）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-brainstorm-card-gate-hole.html`
 - 説明ページ（①' の結果・2026-09-07）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-result.html`
 - 説明ページ（2026-09-07 昼・superseded）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-check.html`
