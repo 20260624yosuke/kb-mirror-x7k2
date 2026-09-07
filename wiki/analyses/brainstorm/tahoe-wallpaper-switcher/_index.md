@@ -6,7 +6,7 @@ evidence_level: source-backed
 last_reviewed: 2026-09-07
 sources:
   - https://github.com/andmev/tahoe-wallpaper-switcher
-brainstorm_status: active
+brainstorm_status: ready
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
 entry_paths:
@@ -56,6 +56,14 @@ background_paths:
 - 2026-09-08: リポジトリのインストーラと同じ候補選択を再実行。Dayの候補はID `4C108785-A7BA-422E-9C79-B0129F1D5550` の1件だけで、対応する `.mov/.mp4/.m4v` は0件。Morning / Evening / Nightは各約4.5億バイトの`.mov`が存在する。別ID・別拡張子の見落としではない。
 - 2026-09-08: Dayの取得完了まで待って再確認する選択と確認を受領。Dayを壁紙設定で再選択し、ダウンロード完了後に再読取する。実行承認はまだ無い。
 - 2026-09-08: 武田さんから「ダウンロードした。ダウンロードした前提で進めていい。dlは本当にしてます」と明示された。実ファイルの既存観測とは食い違うが、本人の現物確認を前提に、固定版インストーラの実行許可カードへ進む。インストーラの事前チェックがDay不足で停止した場合は、そこで技術的停止とする。
+- 2026-09-08: 「この会話で実装する」および確認「はい、この選択でよい」を受領。固定コミット版のインストーラ、東京設定、LaunchAgent、初回実行、ログ確認の範囲で実行許可済み。範囲外の修正やDay動画の代替取得はしない。
+- 2026-09-08: 固定コミット `31c7eea079bbb46ee098b5dab2b804c77ea88684` のインストーラを実行したが、exit 1。`TAHOE_ID_MORNING/DAY/EVENING/NIGHT` を作る一方、チェック側は `TAHOE_ID_TAHOE_MORNING` 等を参照するバグで、4枚を誤って未取得扱いした。スクリプト本体とLaunchAgentは未作成、東京設定JSONのみ作成済み。修正版作成・再実行は元の承認範囲外なので技術的停止。
+- 2026-09-08: 一時修正版で変数参照を直して再実行した結果、Morning / Evening / Nightは合格したが、Dayだけは `NOT downloaded` で停止。修正後もDay動画本体が無いという判定は変わらず、スクリプト本体とLaunchAgentは未作成。
+- 2026-09-08: 武田さん提供のスクリーンショット `/Users/takedayousuke/Library/Mobile Documents/com~apple~CloudDocs/ダウンロード/02_スクショ保存/ 2026-09-08 0.13.01.jpg` を確認。macOS壁紙画面には昼・朝・夕・夜の4種類が表示され、4種類を選択したという本人報告を支持する。ただしDay動画本体はツールの期待パスに無く、画面選択とローカルキャッシュの不一致が確定。precheckを迂回する手動導入は別案で、Day切替失敗のリスクを明示して別承認が必要。
+- 2026-09-08: Dayキャッシュ確認を迂回した手動導入について「この会話で実装する」と確認「はい、この選択でよい」を受領。固定版スクリプト本体、東京設定、LaunchAgent登録、初回実行、実機結果の確認までを実施する。Day切替失敗は未達として報告する。
+<!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=2 input=9bef9131bd9774edbbc03fc25dc204aba2df5654a068bc54f4c3fe21afdac0cc turn=3497173c3b1ddf5bf46dbb00a15e37e7ea095296b314d39d8077aab912c2fd41 -->
+<!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=2 input=9bef9131bd9774edbbc03fc25dc204aba2df5654a068bc54f4c3fe21afdac0cc turn=3497173c3b1ddf5bf46dbb00a15e37e7ea095296b314d39d8077aab912c2fd41 -->
+<!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=2 input=9bef9131bd9774edbbc03fc25dc204aba2df5654a068bc54f4c3fe21afdac0cc turn=3497173c3b1ddf5bf46dbb00a15e37e7ea095296b314d39d8077aab912c2fd41 -->
 <!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=2 input=9bef9131bd9774edbbc03fc25dc204aba2df5654a068bc54f4c3fe21afdac0cc turn=3497173c3b1ddf5bf46dbb00a15e37e7ea095296b314d39d8077aab912c2fd41 -->
 <!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=1 input=a03353cd3780bf05fa1ce931f029f0e5c2f0e1b681f3e986f7adcbd5e006e3f turn=79b8ff8286cc502ec7798ef627176b387bedc4a3bbf1ec2fac8c8867d5514fff -->
 
