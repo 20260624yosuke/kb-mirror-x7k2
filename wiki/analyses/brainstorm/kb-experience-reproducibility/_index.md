@@ -11,6 +11,9 @@ scope:
   - /Users/takedayousuke/.claude/skills/brainstorm
   - /Users/takedayousuke/.codex/skills/brainstorm
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-three-audit-gaps.html
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/audit_integrity_check.py
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/surface_claim_check.py
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-brainstorm-card-gate-hole.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-result.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-check.html
@@ -135,6 +138,29 @@ background_paths:
 
 - **指摘は当たっている。** 監査に抜けがあった。心がけの問題ではない（実測8）。
 - ②' を実施することは決定。
+
+### 2026-09-07 4つの指摘（武田さん）
+
+> -**/Users/takedayousuke/llm-uploads/20260907-155444-バグっていました-2つあります-止めていただいて助かりました.md**
+> この部分、今後の運用に関わるハルシネーションなので再発を防ぎたい。心がけやこの一時的な場当たり的な処置じゃなくて、
+> Kbフォルダで再発しないような機械監査を仕組みとして組み込んで。
+> ###
+> -まだ会話を打ち切っています。
+> 別のセッションではこういう挙動じゃないのになんで会話を中断するの？
+> 俺がお前の承認の案を選択してるから、会話を中断していいって思ってるってこと？
+> それはつまり、スキルの判断が心がけになってるってこと？だとすれば監査に抜けがあります。意図と違う。
+> ###
+> -気になったんだけど俺はcodexデスクトップアプリで使ってるんだけど、なんでターミナル指定なの？
+> そういう前提をなんで偏見で確定させてるわけ？
+> 問題です。
+> 問題を放置することを禁止します。なぜこうなったかの調査と解決。
+> 解決は機械的な監査以外の方法を禁止します。
+> 解決法の仕組みが、有効に機能する事実と根拠が揃ってない場合は禁止します。
+> ###
+> -私は非エンジニアなんですけど、ターミナルでの操作って私がする必要があるわけ？
+> エージェントがやってはダメなの？これは質問です。
+
+**3件とも当たっている。** 3つとも監査の抜けで、心がけの問題ではなかった（実測11）。
 
 ## 2026-09-06 実測（すべてこの日に実ファイルを読んで確認）
 
@@ -971,6 +997,69 @@ if _is_card_answer(content) or _looks_approval_or_stop(_text_of(content)):
 - **完成条件ではなく再開の入口**なので、実在しないのは記録の側の誤り。指の修正案件のメモなので触らない。
 - 5件あった H3 の指摘のうち4件は、完成条件の除外で消えた。**残りはこの1件だけ。**
 
+## 2026-09-11 実測11：3つの抜けを特定し、3つの機械監査を入れた
+
+### 抜け1　承認1回で、何ターンでも閉じられた
+
+`guard.log` の実測。2026-09-07 の `guard-stop` は **15:43:54 と 15:52:43 の2回とも
+`pass card-answer`** を出していた。同じカード回答を毎ターン読み直して通していた。
+
+- スキルは「承認または中断が明示された**後の、最後の報告**」1回だけを許している。
+- 機械は**回数を数えていなかった**。だから2回目・3回目の打ち切りも素通りした。
+- **入れた監査**: `brainstorm_guard.py` に `_already_reported()` を新設。
+  session ごとに「どのユーザー発言に対する、どの最終発話で閉じたか」を
+  `~/.claude/skills/brainstorm/stopstate/` に記録し、**同じ承認で2回目の報告を止める**。
+  同じターン内の2回目の呼び出し（フックが複数登録されている）では誤爆しないよう、
+  最終発話の指紋が同じなら通す。
+- **試験3件を常設**（1回目は通る／同じターンの2回目は通る／同じ承認の2回目の報告は止まる）。
+
+### 抜け2　壊し試験の残骸が、そのまま運用に残った
+
+- **入れた監査**: `tools/audit_integrity_check.py`（保管庫の中）。
+  監査スクリプト6本の sha256 を `tools/audit-integrity.json` に記録し、控えを
+  `tools/audit-baselines/` に置く。**台帳と中身が違えば Stop で会話を閉じさせない。**
+- 意図した変更なら `record` で台帳を更新、残骸なら `restore` で控えから戻す。
+- `~/.claude/settings.json` の Stop に登録済み。自己試験6件すべて合格。
+
+### 抜け3　使った記録の無い画面を、操作手順として名指しした
+
+**原因は「数えた台帳が、対象を含みうるかを確かめなかった」こと。**
+
+- 私は `~/.codex/state_5.sqlite` の `threads.source` を数えた。出てきたのは
+  `vscode` / `exec` / `cli` の3つだけ。そこから「使っている面は VS Code 拡張」と断定した。
+- **そのテーブルにはデスクトップアプリのスレッドが1件も入らない。**
+  別の台帳 `~/.codex/sqlite/codex-dev.db` の `local_thread_catalog` に
+  `source_kind='chatgpt'` として **912 件**入っていた（すべて作業フォルダなし）。
+- さらに「`/hooks` は端末側の部品」という別の観察と混ぜて、
+  **この保管庫での使用記録が 0 件の画面を操作手順として指定した。**
+- **入れた監査**: `tools/surface_claim_check.py`。操作を頼む言い方と一緒に画面の名前が出たら、
+  その画面が**この保管庫の作業として使われた記録**があるかを `local_thread_catalog` で照合する。
+  0 件なら Stop で止め、「名指しをやめて本人に聞け」と出す。
+- **私が実際に書いた文で再現済み。**「端末（Terminal.app）を開いて…」は FAIL になる。
+- Stop に登録済み。自己試験6件すべて合格。
+
+### 実測された画面（この保管庫の作業として）
+
+| 画面 | 件数 |
+|---|---|
+| vscode | 239 |
+| cli（端末） | 0 |
+| chatgpt（デスクトップアプリ） | 0 |
+
+**デスクトップアプリの 912 件は、すべて作業フォルダなし。** つまり「保管庫の作業」としては
+記録されていない。武田さんの認識（デスクトップアプリで使っている）と台帳が食い違っており、
+**どちらが正しいかは台帳だけでは決まらない。** だから名指しをやめて聞く、が正しい振る舞い。
+
+### 質問への回答：端末の操作は武田さんがやる必要があるのか
+
+- **私は `codex` を非対話で動かせる。**ただし `/hooks` は対話画面の中の操作で、非対話からは開けない。
+- 信頼を与える操作は「このスクリプトを走らせてよい」という許可で、**私が自分に許可を出す形**になる。
+  だから代行しない、と書いた。**これは私の判断であって、技術的な必然ではない。**
+- 自動で信頼を与える方法は見つかっていない（`trusted_hash` の作り方を8通り試して不一致、
+  `codex doctor` に項目なし、`hooks` サブコマンドなし）。`--dangerously-bypass-hook-trust` は
+  1回限りの回避で、永続的な信頼付与ではない。
+- **そもそも ②' をやらない**（関所2本を Codex で動かすのを諦める）という選択肢もある。
+
 ## 決まったこと
 
 - 2026-09-06 読み取りの承認。**効いていたのは保管庫側の台帳と検査で、分岐しているのは
@@ -1114,6 +1203,7 @@ if _is_card_answer(content) or _looks_approval_or_stop(_text_of(content)):
 ## 再開の入口（実パス）
 
 - このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md`
+- 説明ページ（3つの抜けと入れた検査・2026-09-07 最新）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-three-audit-gaps.html`
 - 説明ページ（カードの関所の穴・2026-09-07）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-brainstorm-card-gate-hole.html`
 - 説明ページ（①' の結果・2026-09-07）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-result.html`
 - 説明ページ（2026-09-07 昼・superseded）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-codex-hook-firing-check.html`
@@ -1175,6 +1265,15 @@ run: python3 -c "import subprocess,sys; r=subprocess.run([sys.executable,'-m','u
 「安全の仕掛けが1つの実装の外へ広がらない」ほうを根拠にする。**
 
 ## 機械化した指摘
+
+### 2026-09-07 分（4つの指摘）
+
+| 指摘 | 再発しうるか | 機械判定できるか | 変換先 |
+|---|---|---|---|
+| 承認1回で何ターンも会話を閉じた | **していた**（09-07 に3回） | できる | **`_already_reported()` を実装。試験3件常設** |
+| 壊し試験の残骸が運用に残った | **していた**（09-07 に1回） | できる | **`tools/audit_integrity_check.py` を新設。Stop に登録** |
+| 使った記録の無い画面を操作手順に名指しした | **していた**（09-07 に2回） | できる | **`tools/surface_claim_check.py` を新設。Stop に登録** |
+| 数えた台帳が対象を含みうるかを確かめずに断定した | しうる | 一部できる | 上の画面の検査が、この形の断定のうち「操作手順」に出るものだけを捕まえる。一般形は未実装 |
 
 ### 2026-09-07 分
 
