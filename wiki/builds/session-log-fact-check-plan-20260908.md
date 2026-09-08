@@ -4,10 +4,10 @@ status: active
 confidence: medium
 evidence_level: source-backed+user-stated
 last_reviewed: 2026-09-09
-version: 5
+version: 6
 ---
 
-# セッションログを一次情報にする — 実装計画（v5・2026-09-09 改訂）
+# セッションログを一次情報にする — 実装計画（v6・2026-09-09 改訂）
 
 v1（2026-09-08）〜v4 はいずれも独立レビューで前提の誤りが見つかったため改訂した。変更点は 12 章。
 関連: [[kb-experience-reproducibility]] ／ 説明版 HTML
@@ -274,6 +274,14 @@ iter_lines(path, from_line) -> Iterator[str]
   カード回答の承認記録が**すべて無くなる**。Codex は普通のチャットに戻る。
   （`deliverable_path_guard.py` と `prose_guard.py` は別登録で state 判定の前に走るため残る）
 - **戻せるか**: 戻せる。`hooks.json` に 3 行を戻すだけ。
+- **新しい仕組みは Codex でも動く**（2026-09-09 の武田さんの確認事項）。
+  写し取り・照合・座標は brainstorm とは**別の登録行**として `hooks.json` に入れるため、
+  `codex_adapter.py` の状態（`active`）に一切依存しない。
+  実例として、保管庫の `deliverable_path_guard.py` はすでに Codex の Stop に**独立した行**
+  （`Stop[1]`）として登録されており、brainstorm が動いていなくても機能している。
+  **止まるのは brainstorm だけで、これから作る仕組みは止まらない。**
+  ただし段階2 の「座標の名乗り」は `AGENTS.md` に書く規則であり、
+  **機械の強制ではなく LLM の遵守に依存する**（この点は Claude 側も同じ）。
 - **この計画としての扱い**: 2026-09-08 に武田さんが「brainstorm というスキル自体を使わない方針」と
   明言しているため、これは**意図した撤去**として扱う。ただし 6.2 の「触らない」の意味は
   「登録行を消さない」であって「機能が生き続ける」ではない、と明記しておく。
