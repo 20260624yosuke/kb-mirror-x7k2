@@ -17,6 +17,7 @@ entry_paths:
   - /Users/takedayousuke/Library/LaunchAgents/com.user.wallpaper-switch.plist
 background_paths:
   - https://github.com/andmev/tahoe-wallpaper-switcher
+---
 
 # macOS Tahoe の壁紙を太陽位置で切り替える導入
 
@@ -93,6 +94,11 @@ background_paths:
 - 2026-09-08: 用語確認。`Day` は昼、`Evening` が夕方。先の「Day切替未確認」は夕方ではなく、昼の壁紙切替を指していた。
 - 2026-09-08: 「壁紙が切り替わっていない気がする。時間帯的に昼の壁紙は違和感がある。場当たり的な回答は禁止」と受領。18:33 JST時点で期待値・state・macOSの壁紙設定IDがすべてNightに一致することを確認。System Eventsのdesktop pictureは3台とも`missing value`で、画面上の実壁紙の直接証拠にはならない。entry_pathsに再開対象の実ファイルを追加した。
 - 2026-09-08: 武田さんが「現在の壁紙は昼だと明言する。間違いない」と実機観測を確定。以後、実画面はDay、内部の期待値・state・macOS設定IDはNightという不一致を現在状態として扱う。Night指定済みを実画面反映済みとは扱わず、原因未確定のまま追加修正をしない。
+- 2026-09-08: 「どうやったら解決できると思う？」を相談として受領。現行スクリプトはstateがNightなら`wallpaperChanged=false`となり、macOS内部設定がNightでも実画面がDayなら再適用しない。まず一回だけ強制再適用して画面を確認し、Nightになるならstateガードの stale（古い状態を正しいと扱う）問題、NightにならないならWallpaperAgent／Space／ディスプレイ反映問題と切り分ける。恒久修正はこの試験結果後に決める。
+ - 2026-09-08: 別エージェントへの委任が現実的か、またコピペで渡せる指示を求められた。委任対象は現状の再照合・一度だけの強制Night再適用・内部ログの収集・試験結果に応じた最小修正までとし、実画面がNightになったかの最終判定は武田さんの実機観測に残す。無人で完全完了とは扱わず、実画面確認を一回の停止点にする。
+<!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=8 input=083d0a56ee9adb3eb5279a15087f1514ebe8f4e2e057fc73588558c16580c4ad turn=9cc2cd18086507f6462d75d95ed9dfc4cd8ec0594576a4520883fbfc11da9cd9 -->
+<!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=7 input=d459f08f4df014d6f3c233dc9437e8da7526aa5db7c1b65faf3c7edcf22a3ab1 turn=441a4ee98d4e2478720f26389c75d90c32ec66ade9ae9b4b1983887babe4728c -->
+- 2026-09-08: 到達性フックの原因を確認。`entry_paths` は存在していたが、frontmatter終了区切り `---` が欠落していたため、YAMLとして解釈されていなかった。終了区切りを追加し、再開対象の絶対パスをfrontmatterとして有効化した。
 <!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=6 input=686280a12b56791338a7ad2db25f9a0c2e831fcce55798078b4c302b9798e91b turn=b4cc0325910a4ddb12e07ca2bcc68194d89862eacc81cadc387fc41ac8e93561 -->
 <!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=5 input=df3b306dc7982c63177ba2f43e17eb274824c6a78998f3f81d16c4a4aa659f63 turn=d28500803179904b65c9e2f90bf96771451f744531ec5923add75a177d0d359f -->
 <!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=4 input=fac9d43b1145327438459f4e634630ad142a8fb42fd1885b06bf69585c524030 turn=695d5ae436289efb276be8285a17c24a8437296966b54c9a1f139b4774b7d7a3 -->
