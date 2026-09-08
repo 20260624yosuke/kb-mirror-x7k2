@@ -2137,6 +2137,55 @@ opencode の `check_parent` は **`entry_paths` が無い場合も素通りす�
 opencode の `check_parent` に本文の照合を足すとき、**`done-when` の中は照合しない**必要がある
 （Claude の H3 は 2026-09-07 にこの除外を入れている。入れないと、着手前のメモが必ず落ちる）。
 
+## 2026-09-08 実装：3ハーネスのパス照合を揃えた（実行の承認「opencode まで一気にやる」）
+
+**結果: 3つとも同じ合否になった。壊し試験 9通り すべて一致。**
+
+### 入れたもの
+
+| 何 | どこ |
+|---|---|
+| 共通の1本（新規） | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/reachability_check.py` |
+| Claude の委譲 | `/Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py`（`audit_memo` の直前に読み込み。読めなければ元の定義で動く） |
+| Codex の呼び出し | `/Users/takedayousuke/.codex/skills/brainstorm/scripts/codex_adapter.py`（既存の `kb_guard` に1行） |
+| opencode の呼び出し | `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/.opencode/scripts/muse_brainstorm_check.py`（`check_parent` の末尾に `_reachability()`） |
+
+**判定の中身は1文字も書き直していない。** `brainstorm_guard.py` の H1〜H4・H6 を
+プログラムで抜き出して移した。H5・H7 は brainstorm 固有なのであちらに残した。
+
+### 確かめたこと
+
+- **回帰: 親メモ 20 枚で、Claude と共通の1本の判定が 20/20 一致。**
+- **壊し試験 9通り（3ハーネス × 3パターン）すべて一致。** 使い捨てのフォルダで実施し、
+  本番のメモには触っていない。試験用フォルダは消したことも確認した。
+  - **1回目は器具の誤りで3件ずれた。** 死んだパスを `/存在しないはずのパス/` で作ったが、
+    検査は `/Volumes` `/Users` `/tmp` `/private` で始まるものだけを見る。器具を直して再実施。
+- 各自己試験: 共通の1本 9/9、opencode 13/13、Codex の adapter 53/53、
+  Claude は既存の FAIL 1件のみ（`settings.json` の AskUserQuestion フック。今日の変更より前からある）。
+- 健全性の台帳に 5 本を記録し、PASS。
+
+### 報告されたバグを直した
+
+`wiki/analyses/brainstorm/gf2-helen-fingerfix/_index.md` の `## 再開の入口（実パス）` から
+死んだ1行を削除した。**理由を同じメモに注記として残し、控えも取った**
+（`_index.md.bak-20260908-deadpath`）。同じパスは `done-when` に残るので失うものは無い。
+**3ハーネスとも PASS になった。**
+
+### opencode 側で変えた判定（手元での違い）
+
+`check_parent` は今まで **frontmatter の `entry_paths` しか実在照合していなかった**。
+本文も見るようになったので、**本文に死んだパスを書いたメモは、opencode でもカードが止まる。**
+あわせて、opencode 側の自己試験の器具2件を Claude と同じ判定に合わせた
+（空の `background_paths:` は Claude では H6 になる／文言を「実在しません」に統一）。
+戻すには `.opencode/_restore/20260908-pre-opencode-parity/muse_brainstorm_check.pre-reachability.py` に書き戻す。
+
+### 衝突について
+
+`.opencode/` は別の会話が 00:45 に控えを取り、**今日 11:57 に封印を2件書いている**
+（`20260908-unseal-three-points.json` / `20260908-body-rule.json`。どちらもヘレンの案件）。
+**あちらが触っているのは `seals/` で、私が触った `scripts/muse_brainstorm_check.py` は
+2026-09-03 から更新されていなかった。** 衝突は起きていない。
+
 ## 決まったこと
 
 - 2026-09-06 読み取りの承認。**効いていたのは保管庫側の台帳と検査で、分岐しているのは
@@ -2322,6 +2371,8 @@ opencode の `check_parent` に本文の照合を足すとき、**`done-when` �
   実パスによる誘導は変わらない。戻すには `[[llm-harness-parity]]` に書き戻す。
 
 ## 再開の入口（実パス）
+
+- 3ハーネス共通の到達性の検査: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/reachability_check.py`
 
 - 台帳の未処理を数える検査: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/mechanization_backlog_check.py`
 

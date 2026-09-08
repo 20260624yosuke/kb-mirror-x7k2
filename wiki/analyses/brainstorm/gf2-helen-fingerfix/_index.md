@@ -65,7 +65,12 @@ background_paths:
 
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/run-state.json
 - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/ledger/finger-axis-decision.json
-- /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/f173-finger-flip-fix.json
+
+> [!note] 2026-09-08 `## 再開の入口（実パス）` から1行を削除
+> `logs/f173-finger-flip-fix.json` は**この作業がこれから作るファイル**で、下の `done-when`
+> （完成条件）に正しく置かれている。再開の入口は「読んで再開するファイル」を並べる場所なので、
+> まだ無いものを置くのは誤りだった。**同じパスは done-when に残っているので失うものは無い。**
+> 戻すには、この節にその1行を書き戻す。控え: `_index.md.bak-20260908-deadpath`
 
 ## 実装への申し送り
 
