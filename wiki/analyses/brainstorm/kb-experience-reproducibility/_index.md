@@ -2066,9 +2066,45 @@ opencode の `check_parent` は **`entry_paths` が無い場合も素通りす�
 - **止めるのは「未処理が受入れ済みより増えたとき」だけ。** 毎回の説教はしない。
 - 自己試験 12 件すべて合格。**実データで誤検知を1件見つけて直した**
   （日付だけの行を「8箇所で再発」と読んでいた）。
+- **配線の実機確認済み**: `~/.claude/settings.json` の Stop に登録し、実際に呼べることを確認。
+  控えは `/Users/takedayousuke/.claude/settings.json.bak-20260908-backlog`。
+- **壊し試験（本番のメモは無傷）**: 使い捨てのフォルダに未処理を1件足したら
+  「42 件から 43 件へ増えています」で**止まった**。フォルダを消したら素通りに戻った。
+- 受入れ済みの件数は **42** に設定。**この数を超えたときだけ止まる。**
 - 実データの計測: 未処理 **42 件**、再発 **6 件**。
   （手で数えた 39 件との差は、検査が `未設計` `未承認` `検査の候補` `未定` も未処理に数えるため。
   手の集計より広い。**広いほうを正とした。**）
+
+### 2026-09-08 別の会話が Codex の adapter をまた書き換えた（私の関与外・**3回目の検出**）
+
+健全性の検査が捕まえた。`codex_adapter: 台帳と中身が違います（記録 75021eeb8bb3 / いま dd0ac87091aa）`。
+控えが `codex_adapter.py.bak-20260908-authorization` として相手側に残っている。
+**この会話は adapter 自体には触っていない。** 中身を読んだうえで、武田さんの承認
+「Codex adapter の件を処理する」により台帳を更新した。
+
+### 何が変わっていたか（3件・09-08 09:36）
+
+1. **通常文の承認語を広げた。** 「この計画を実行してください」のような、対象が明示された
+   短い直接依頼も承認として受ける。**疑問符を含む文は拾わない**（引用・質問を承認にしない）。
+2. **`plain_input_wait()` を新設。** 最後の行が `【入力待ち】` で始まり疑問符で終わる 12 字超なら、
+   カード必須（`BS_CARD_REQUIRED`）を出さずに閉じられる。
+   **カードが使えない上位規則のときの出口。** 実行許可も中断も発生させない（状態は `discussion` のまま）。
+3. **`pending_execution_request` を新設。** 親メモを選ぶ前に受けた明示依頼を、入力の出典
+   （`input_sha` / `turn_hash`）つきで保留し、親が決まった時点で承認に変える。
+
+### 受け入れた根拠
+
+- **設計の記録が別のメモに在る。** `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`
+  に「上位規則でカードを使えない時の通常文による入力待ちの出口を整える。
+  **未回答や曖昧な相づちを承認にする変更はしない**」と書かれている。今回の実装はこれと一致する。
+- **仕様も書かれている。** `/Users/takedayousuke/.codex/skills/brainstorm/SKILL.md` に
+  「この形式は会話を入力待ちにするだけで、実行許可・中断・完了へ状態を変えない」とある。
+- **試験がある。** `/Users/takedayousuke/.codex/skills/brainstorm/tests/test_adapter.py` を実行し、
+  **53 件すべて合格**。`【入力待ち】` の事例も試験に入っている。
+- **関所は弱くなっていない。** 出口は「閉じてよい」だけで、承認は与えない。
+
+古い控えは `tools/audit-baselines/codex_adapter.pre-plaininput-20260908.py` に別名で保存した。
+**相手の作業は消していない。** 健全性の検査は PASS に戻った。
 
 ## 決まったこと
 
@@ -2255,6 +2291,8 @@ opencode の `check_parent` は **`entry_paths` が無い場合も素通りす�
   実パスによる誘導は変わらない。戻すには `[[llm-harness-parity]]` に書き戻す。
 
 ## 再開の入口（実パス）
+
+- 台帳の未処理を数える検査: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/mechanization_backlog_check.py`
 
 - 計画書（パスの実在照合を揃える・2026-09-08）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/kb-path-existence-parity-plan-20260908.md`
 
