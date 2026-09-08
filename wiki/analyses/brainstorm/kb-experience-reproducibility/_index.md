@@ -2186,6 +2186,24 @@ opencode の `check_parent` に本文の照合を足すとき、**`done-when` �
 **あちらが触っているのは `seals/` で、私が触った `scripts/muse_brainstorm_check.py` は
 2026-09-03 から更新されていなかった。** 衝突は起きていない。
 
+## 2026-09-08 実機確認の手はず（武田さんの承認「実機確認の手はずを作る」）
+
+手順書:
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/opencode-reachability-realmachine-check-20260908.md`
+
+**これは実装後の改善確認**（原因調査ではない）。確かめていないのは1点だけ:
+**opencode を実際に使ったとき、承認カードが本当に止まるか。**
+配線（`skill-gate.js` が検査を呼ぶ）は、opencode を起動しないと確かめられない。
+
+- CLAUDE.md #6 に従い3択を提示し、**③（私が手順を出し、武田さんが操作し、私が結果を読む）を推奨**した。
+  一度きりの確認で反復も自動判定も要らないため、②（自動操作）は当てはまらない。
+- **使い捨てのメモは置き済み**なので、武田さんが用意するものは無い:
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/_probe-realmachine/_index.md`
+- **他の会話に影響しないことを確認済み**: 置いた後も、保管庫全体の到達性の監査・台帳の未処理
+  （42/42）・健全性の3つとも PASS のまま。
+- 3つの入口とも、このメモを**止める**ことを確認済み（Claude / 共通の1本 / opencode）。
+- **結果を伺ったら、私がフォルダごと消す。** 消し忘れの確認方法も手順書に書いた。
+
 ## 決まったこと
 
 - 2026-09-06 読み取りの承認。**効いていたのは保管庫側の台帳と検査で、分岐しているのは
@@ -2371,6 +2389,8 @@ opencode の `check_parent` に本文の照合を足すとき、**`done-when` �
   実パスによる誘導は変わらない。戻すには `[[llm-harness-parity]]` に書き戻す。
 
 ## 再開の入口（実パス）
+
+- 実機確認の手順書（2026-09-08）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/opencode-reachability-realmachine-check-20260908.md`
 
 - 3ハーネス共通の到達性の検査: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/reachability_check.py`
 
