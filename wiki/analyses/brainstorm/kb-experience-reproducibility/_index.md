@@ -2758,6 +2758,24 @@ Codex の 52% 阻止が消え、指摘するたびに検査候補が積まれる
 
 ## 直した記録
 
+### 2026-09-08 案2 手順4（Codex / opencode への展開）完了（武田さん承認）
+
+- **Codex**: `~/.codex/skills/brainstorm/scripts/codex_adapter.py` の規則の定数
+  （`CONFIRM_YES` / `CONFIRM_NO` / `APPROVE_EXACT` / `STOP_EXACT` / `STOP_LABEL_WORDS` /
+  `DECISION_KINDS`）を `tools/brainstorm_core.py` から受け取る形にした。
+  **判定の流れは移していない。** アダプタには親メモ選択（`parent_selected`）という
+  Codex 固有の分岐があり、共通本体の `judge_card_verdict` にはこれが無い（移植時に対象外と明記）。
+  関数ごと置き換えると挙動が変わるので、**重複しているのは規則の定数だけ**と判断してそこだけ1本化した。
+  **入力 72 通り（主回答8 × 確認3 × 種類3）で、委譲の前後に判定の差が0件**であることを控えと比較して確認。
+- **opencode**: `.opencode/scripts/muse_brainstorm_check.py` には判定の写しが無く、
+  到達性は既に `tools/reachability_check.py` を呼んでいた。**委譲すべき重複は無し**。
+- 自己試験: 共通本体 PASS（第1〜8層）／到達性 PASS／opencode PASS／HTML 構造 PASS。
+- **これで案2 は4段すべて完了。** 判定の正本は `tools/brainstorm_core.py` と
+  `tools/reachability_check.py` の2本になり、Claude・Codex・opencode の3ハーネスがそこを見る。
+- **未着手**: 案1（差し込みの絞り込み）。`~/.claude/settings.json` の AskUserQuestion フックは
+  武田さんの「不毛な運用環境修正ループ」との表明を受けて触っていない。
+
+
 ### 2026-09-08 案2（共通本体の配線）を実施（武田さん承認）
 
 - **`tools/brainstorm_core.py` の素通り欠陥を修正。** 標準入力の JSON が壊れていると
