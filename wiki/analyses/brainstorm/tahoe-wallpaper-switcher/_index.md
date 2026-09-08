@@ -11,6 +11,10 @@ scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
 entry_paths:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/tahoe-wallpaper-switcher/_index.md
+  - /Users/takedayousuke/Library/Scripts/wallpaper-switch.js
+  - /Users/takedayousuke/Library/Scripts/wallpaper-switch-config.json
+  - /Users/takedayousuke/Library/Scripts/wallpaper-switch-state.json
+  - /Users/takedayousuke/Library/LaunchAgents/com.user.wallpaper-switch.plist
 background_paths:
   - https://github.com/andmev/tahoe-wallpaper-switcher
 
@@ -87,4 +91,8 @@ background_paths:
 導入と初回自動実行は確認済み。画面の見た目は未確認。4枚のうちDay動画キャッシュが無い状態でprecheckを迂回したため、Day時間帯の切替だけは未検証で、運用開始可能とはまだ断定しない。
 
 - 2026-09-08: 用語確認。`Day` は昼、`Evening` が夕方。先の「Day切替未確認」は夕方ではなく、昼の壁紙切替を指していた。
+- 2026-09-08: 「壁紙が切り替わっていない気がする。時間帯的に昼の壁紙は違和感がある。場当たり的な回答は禁止」と受領。18:33 JST時点で期待値・state・macOSの壁紙設定IDがすべてNightに一致することを確認。System Eventsのdesktop pictureは3台とも`missing value`で、画面上の実壁紙の直接証拠にはならない。entry_pathsに再開対象の実ファイルを追加した。
+- 2026-09-08: 武田さんが「現在の壁紙は昼だと明言する。間違いない」と実機観測を確定。以後、実画面はDay、内部の期待値・state・macOS設定IDはNightという不一致を現在状態として扱う。Night指定済みを実画面反映済みとは扱わず、原因未確定のまま追加修正をしない。
+<!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=6 input=686280a12b56791338a7ad2db25f9a0c2e831fcce55798078b4c302b9798e91b turn=b4cc0325910a4ddb12e07ca2bcc68194d89862eacc81cadc387fc41ac8e93561 -->
+<!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=5 input=df3b306dc7982c63177ba2f43e17eb274824c6a78998f3f81d16c4a4aa659f63 turn=d28500803179904b65c9e2f90bf96771451f744531ec5923add75a177d0d359f -->
 <!-- bs-lite:v1 session=185460f9b3311d1150e4b4c272ad8446ede4ed1ed67c38172765c332549efdca counter=4 input=fac9d43b1145327438459f4e634630ad142a8fb42fd1885b06bf69585c524030 turn=695d5ae436289efb276be8285a17c24a8437296966b54c9a1f139b4774b7d7a3 -->
