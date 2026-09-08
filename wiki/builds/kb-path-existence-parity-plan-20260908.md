@@ -17,7 +17,9 @@ last_reviewed: 2026-09-08
 
 `wiki/analyses/brainstorm/gf2-helen-fingerfix/_index.md` の本文 `## 再開の入口（実パス）` の
 3行目が、実在しないファイル（ファイル名 `f173-finger-flip-fix.json`）を指している。
-同じ `logs/` に実在するのは `f173-gate-replay-test.json` と `f173-transfer-claim.json`。
+**2026-09-08 に同じメモの `done-when` を読んで確定した。** あのファイルは
+「指の修正作業がこれから作るもの」で、完成条件として `done-when` に正しく置かれている。
+**誤りは、同じパスを `## 再開の入口（実パス）`（＝読んで再開するファイルの一覧）にも置いたこと。**
 
 このメモは **opencode の検査を通り、Claude の検査で落ちる**。実測（2026-09-08）:
 
@@ -67,8 +69,8 @@ python3 ~/.claude/skills/brainstorm/brainstorm_guard.py audit-handoff --memo wik
 ### 今回やらないこと
 
 - コードが動くかを見る関所（層3）。これは別の判断。
-- `gf2-helen-fingerfix` のメモの1行そのものの修正。担当外の案件で、
-  正しい行き先を私は判断できない。**別に承認を取る。**
+- `gf2-helen-fingerfix` のメモの1行そのものの修正。担当外の案件なので、
+  直し方が確定していても**別に承認を取る**。
 - 承認語・カード形式・本文量など、パス到達性以外の分岐。
 
 ## 4. 採る方法：同じ1本を呼ばせる
@@ -134,6 +136,10 @@ python3 ~/.claude/skills/brainstorm/brainstorm_guard.py audit-handoff --memo wik
 
 - `done-when` ブロックの中のパスは**照合しない**（着手前は実在しないのが正しい。
   2026-09-07 に実際に起きた誤検知）。移設先でもこの除外が効くこと。
+  **2026-09-08 追記: これは机上の話ではない。** 今回の `f173-finger-flip-fix.json` は
+  まさに `done-when` に置かれた「これから作るファイル」で、
+  **同じパスが `## 再開の入口（実パス）` にも置かれていたのが誤り**だった。
+  除外を入れずに opencode へ足すと、着手前のメモが軒並み落ちる。
 - コードフェンスの中のパスは照合対象のまま。
 - `glob` や `<穴埋め>` を含むパスは丸ごと捨てる（切り詰めて別のパスに化けさせない）。
 
@@ -150,7 +156,8 @@ python3 ~/.claude/skills/brainstorm/brainstorm_guard.py audit-handoff --memo wik
 ### 絶対にやってはいけないこと
 
 - **`.opencode/` を、着手中の会話の終了を確認せずに触る。** 2026-09-07 に 2 回起きている。
-- **`gf2-helen-fingerfix` の本文の 1 行を、推測で書き換える。** 正しい行き先が未確定。別承認。
+- **`gf2-helen-fingerfix` の本文の 1 行を、承認なく触る。** 直し方は確定している（消すだけ）が、
+  担当外の案件なので別承認。
 - **検査基盤の異常で仕事を止める。** ファイルが無い・タイムアウト・起動失敗は**素通り**に倒す
   （`skill-gate.js` と `muse_brainstorm_check.py` の既存方針に合わせる）。
 - 承認語・カード形式・本文量など、この計画の対象外の分岐に手を伸ばす。
@@ -172,8 +179,9 @@ run: python3 "/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_
 
 完成条件を満たしたら止まる決まりなので、次に聞くことを先に書いておく。
 
-1. **`gf2-helen-fingerfix` の死んだ1行を、どう直すか。**（消す／`f173-gate-replay-test.json` に差し替える／
-   `f173-transfer-claim.json` に差し替える／武田さんが指定する）
+1. **`gf2-helen-fingerfix` の死んだ1行を消してよいか。** 2026-09-08 に `done-when` を読んで確定した。
+   あれは**これから作るファイル**で、`done-when` に正しく置かれている。
+   `## 再開の入口（実パス）` から**その1行を消すだけ**でよく、差し替えは不要。失うものは無い。
 2. **opencode 側（手順4）に進んでよいか。** 着手中の会話の状況を確認したうえで。
 3. **層3（コードが動くかを見る関所）を作るか。** 今回の対象外。別の判断。
 
