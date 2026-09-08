@@ -11,6 +11,7 @@ scope:
   - /Users/takedayousuke/.claude/skills/brainstorm
   - /Users/takedayousuke/.codex/skills/brainstorm
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260908-agent-operating-model.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260908-opencode-environment-and-bugs.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-realmachine-result.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-three-audit-gaps.html
@@ -39,7 +40,28 @@ background_paths:
 
 ## 武田さんの考え
 
+### 2026-09-08（2回目・エージェント運用そのものを問い直す）
+
+- 「エージェントの運用が難しい。どうすればいいのかがわかってないからなのかな。」
+- 「エージェントを使うのは、成果物が欲しいからこれはその都度流動的だよね。」
+- 「でも、フロンティアモデルでも、ハルシネーションを起こすから、機械監査の仕組みで防ぐ必要がある。」
+- 「claudeで機能した仕組みもcodexでは崩壊。でもそれはユーザー的には困る。ここでパニックが起きる。
+  どうすればいいの？って。そしてこの表層的な問題解決がゴールに切り替えられる。
+  トークンを使わせるのが企業にとって利益だから、狡いやり方でトークンを浪費させてるのかもしれないけど、
+  ユーザーの俺としては非常に困っている。現状も修正ループで本題に入っていない。」
+- 「他のユーザーがどう使ってるかは全くわからない。俺にとって有益になるなら情報として興味があるけど、
+  基本的にネットにあるハウツーは金儲け目当てのクソ情報。」
+- 「codex側での使用感がやっぱり悪い。」
+- 「実際のところ、なんのためにbrainstormを作ったのか詳細を細かく覚えてはいない。
+  でも、仕組みとして、負荷が高い。claudeのみにエージェントを絞る方針ではない現状は。」
+- 「俺の要望さえ実現できれば、そもそもbrainstormである必要は全くない。
+  ただスキルとして起動してあるだけでこだわってるわけじゃない。」
+- 判断材料として GPT の回答を提示（`/Users/takedayousuke/llm-uploads/20260908-162508--以下私の質問.md`）。
+  要旨は「Codex では巨大な brainstorm は不要。残す核は逐語記録と実装許可の機械ゲートの2つ。
+  その2つも KB 側の共通 Python/JSON へ寄せられる可能性が高い」。
+
 ### 2026-09-08
+
 
 - 「kbフォルダでは各サービスのエージェントを一つの単位として捉えて、挙動を安定化させるのが
   ゴールですので、そこの部分の憶測での認識のズレは禁止します。」
@@ -2301,7 +2323,39 @@ opencode の画面の**全文**だった。読める事実:
 武田さんに画面を見てもらう回数が減る。控えは
 `.opencode/_restore/20260908-pre-opencode-parity/skill-gate.pre-log.js`。
 
+## 2026-09-08 実測19：運用の負荷を数えた（brainstorm を続けるかの判断材料）
+
+**この節は読み取りのみ。設定・スキル・フックは一切触っていない。**
+成果物: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260908-agent-operating-model.html`
+
+| 測った項目 | 数 | 確認方法 |
+|---|---|---|
+| `tools/` の Python | 93 本（うち検査系 37 本） | `ls tools/*.py` |
+| Claude 側 brainstorm | 3,299 行（SKILL.md 242＋guard 3,057） | `wc -l` |
+| Codex 側 brainstorm | 1,382 行（SKILL.md 128＋adapter 496＋試験 758） | `wc -l` |
+| opencode 側 brainstorm | 1,177 行（起動路 66＋本体 11＋plugin 684＋検査 416） | `wc -l` |
+| フック登録数 | Claude 20 ／ Codex 15 ／ opencode プラグイン 1 | `settings.json` `hooks.json` を JSON で数えた |
+| `codex_adapter.py` の退避コピー | 3日で 7 個（09-06〜09-08） | `ls *.bak-*` |
+| brainstorm 案件 | 21 件（道具の話 16／成果物 5、うち指の案件がフォルダ重複2件） | `wiki/analyses/brainstorm/` の一覧 |
+
+**最大の発見: `tools/brainstorm_core.py`（1,342 行・2026-09-08 新設・ハーネス非依存の共通判定本体）は
+存在するが、呼び出し元が 0 件。** `grep -rn "brainstorm_core"` を
+`~/.claude/settings.json` `~/.codex/hooks.json` `.opencode/` `~/.claude/skills/brainstorm/`
+`~/.codex/skills/brainstorm/` に対して実行して該当なしを確認した。
+**共通化を決めて本体を書き、配線する前に会話が終わっている。** いまは4つ目の実装が増えた状態。
+
+**GPT の回答の検算結果**（上記 HTML の表が正）。当たっている: ①効いていた本体は kb 側 ②Codex で
+brainstorm 自体が故障源 ③状態機械の二重化 ④残す核は逐語記録と実装許可ゲートの2つ。
+**未確認: 「Codex の native compaction があるから圧縮対策の重要度は下がった」**——この環境で測っていない。
+GPT より先に進んでいる点: **寄せ先はもう書かれている。足りないのは配線だけ。**
+
+**トークン浪費について。** 外部からの仕掛けの証拠は見つからなかった。浪費の実体は
+「同じ規則を3回書き直し、3つを同期させ続けていること」で、これは 2026-08-29 の
+承認済み方針（サービスごとに独立実装）の帰結。その方針の根拠は節E で既に反証済み。
+
 ## 決まったこと
+
+- 2026-09-08 **brainstorm という形式に価値は無い**（武田さん明言。「俺の要望さえ実現できれば、そもそも brainstorm である必要は全くない」）。以後、形式の維持を目的にした議論はしない。
 
 - 2026-09-06 読み取りの承認。**効いていたのは保管庫側の台帳と検査で、分岐しているのは
   各サービスが自分のフォルダに持つ判定のほう。**この枠で続ける。
@@ -2389,6 +2443,12 @@ opencode の画面の**全文**だった。読める事実:
 失うものとして提示済み: 3実装に分かれたまま直すので、分岐が1件増える。次の検査でも同じことが起きる。
 
 ## まだ決まってないこと
+
+- **今日の3択のどれを採るか**（案1 共通本体を配線／案2 brainstorm を畳んで逐語記録だけ残す／案3 現状維持）。
+  詳細と「それぞれ失うもの」は `wiki/_attachments/kb-experience-reproducibility/20260908-agent-operating-model.html`。
+- 案1 を採る場合、**brainstorm という名前・毎ターンの承認カードを残すか**（配線後に別途決める前提）。
+- Codex の圧縮がメモの粒度を保てるか（**未測定**。これを根拠に圧縮対策を減らすのは危険）。
+- 指の案件のフォルダ重複（`gf2-helen-finger-fix` と `gf2-helen-fingerfix`）をどう畳むか。
 
 - **どれを先にやるか（2026-09-08 実測24）。** 候補は4つ:
   (a) 同じ案件のメモが2つできるのを止める／見つける
@@ -2486,6 +2546,10 @@ opencode の画面の**全文**だった。読める事実:
   実パスによる誘導は変わらない。戻すには `[[llm-harness-parity]]` に書き戻す。
 
 ## 再開の入口（実パス）
+
+- 2026-09-08 運用の負荷を数えた結果: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260908-agent-operating-model.html
+- 配線されていない共通本体: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/brainstorm_core.py
+- GPT の回答（判断材料）: /Users/takedayousuke/llm-uploads/20260908-162508--以下私の質問.md
 
 - 実機確認の手順書（2026-09-08）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/opencode-reachability-realmachine-check-20260908.md`
 
