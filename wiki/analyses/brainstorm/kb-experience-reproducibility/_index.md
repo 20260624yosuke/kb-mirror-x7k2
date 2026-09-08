@@ -2758,6 +2758,36 @@ Codex の 52% 阻止が消え、指摘するたびに検査候補が積まれる
 
 ## 直した記録
 
+### 2026-09-08 案2（共通本体の配線）を実施（武田さん承認）
+
+- **`tools/brainstorm_core.py` の素通り欠陥を修正。** 標準入力の JSON が壊れていると
+  `_facts_from_stdin` が空データに変えてしまい、**`verdict: pass` / 終了コード 0** を返していた
+  （実測: `{壊れたJSON` を渡して確認）。配線すると「壊れた入力＝合格」が見えないまま通る。
+  判定不能（終了コード 2）を返すよう修正。空入力は今までどおり判定が走る。自己試験 8層すべて PASS。
+- **`tools/reachability_check.py` に URL の除外を追加。** `background_paths` に書かれた
+  `https://…` をファイルとして実在照合していたため、tahoe のメモで毎回 H6 が落ち、
+  **この保管庫で動く全会話の終了を止めていた**。`http(s)://` は照合対象外にした。自己試験 PASS。
+- **同じ規則が2か所にあって食い違う実例を捕まえた。** 上の URL 修正の直後、同じメモに対して
+  Claude 側の `brainstorm_guard.py` は PASS、共通本体 `brainstorm_core.py` は FAIL を返した
+  （メモ21件中1件が不一致）。原因は共通本体が `_check_reachability` / `_entry_paths` の
+  **写しを自前で持っていた**こと。共通本体も `reachability_check.py` へ委譲させ、21件すべて一致。
+- **Claude 側を共通本体へ委譲（案2 手順3）。** `brainstorm_guard.py` の `audit_memo` /
+  `_parse_done_when` / `_run_done_conditions` を `brainstorm_core.py` の実装へ寄せた。
+  `_run_done_conditions` は共通本体が作業ディレクトリを引数で受け取る形なので橋渡しを1つ置いた。
+  読み込みに失敗したときは従来の定義がそのまま働く（素通りに倒す）。
+  **接続の前後で、全メモの監査結果に差が出ないことを確認済み**（控えと突き合わせ）。
+- **`_probe-realmachine/_index.md` を機能停止**（`brainstorm_status: done`）。試験用の使い捨てメモだが
+  `active` のまま置かれ、わざと仕込まれた死んだパスで**全会話の終了を毎回止めていた**。
+  死んだパスは指示どおり温存。`active` へ戻せば試験は再開できる。
+- **未解決（武田さんの判断が要る）**: `~/.claude/settings.json` の PreToolUse に
+  AskUserQuestion のフック（`deliverable_path_guard.py guard-card`）が登録されており、
+  `brainstorm_guard.py audit-handoff --selftest` が「brainstorm 以外でも発火する。武田さんの指示で禁止」
+  として FAIL を出す。**この設定は 11:54 時点のもので、今回の配線とは無関係。**
+  外すと全会話に影響するため、こちらの判断では触っていない。
+- **未着手**: 案2 手順4（Codex / opencode への展開）。本日 Codex が同じ領域を編集しているため、
+  衝突を避けて止めてある。案1（差し込みの絞り込み）も未着手。
+
+
 - 2026-09-08 実測21の「opencode には関所が無い／後追いの検査だけ」に訂正の注記を付けた。
   `.opencode/plugins/skill-gate.js` が道具の実行前に割り込んで**その場で止めている**ことを
   実ファイルで確認したため。**手元での違いは、opencode 担当の会話の出発点が

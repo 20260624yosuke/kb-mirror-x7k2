@@ -4,7 +4,7 @@ status: active
 confidence: low
 evidence_level: user-stated
 last_reviewed: 2026-09-08
-brainstorm_status: active
+brainstorm_status: done
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/_probe-realmachine
 entry_paths:
@@ -14,6 +14,14 @@ background_paths:
 ---
 
 # 実機確認用の使い捨てメモ（2026-09-08）
+
+> [!note] 2026-09-08 機能停止（武田さんの指示）
+> このメモは試験用の使い捨てですが、`brainstorm_status: active` のまま置かれていたため、
+> **生きているメモを見る監査が毎回このメモを読み、わざと置いた死んだパスで必ず落ちていました。**
+> 結果、この保管庫で動くすべての会話が、毎ターン終了を止められていました。
+> 武田さん（この仕掛けを知らなかった）の指示で `brainstorm_status: done` に下げ、
+> 監査の対象から外しました。**死んだパスは指示どおり温存しています。直さないでください。**
+> 試験を再開するときは、この行を `active` に戻せば元どおり動きます。
 
 opencode で「本文に死んだパスがあるメモ」が**承認カードを止めるか**を見るためだけのもの。
 確認が済んだら、このフォルダごと消す。**中身に意味は無い。**
