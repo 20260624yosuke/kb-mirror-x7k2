@@ -520,3 +520,45 @@ Codex の `pre-tool` / `stop` / `session-end`）には触らない。
 8. **触らない登録を名指しで定義**した（6.2）
 9. 実測値を再計測して更新した（3）。「30 日」の断定をやめた（9・10）
 10. v1 が誤っていた前提を、消さずに 3.1 に残した
+
+## 13. 実装記録
+
+### 段階1 — 写しと整合（2026-09-09 実装）
+
+武田さんの選択: **段階1 のみ**を実装。写しの置き場所は **`_logs`（見える名前）**。
+段階2〜4（対応表・座標・照合・注入撤去・Inbox 廃止）には**触っていない**。
+
+作ったもの:
+
+| ファイル | 役割 |
+|---|---|
+| `tools/session_log_mirror.py` | 写し取り（走査方式）。`hook` / `scan` / `--self-test` |
+| `tools/log_readers/`（`__init__` `base` `claude` `codex`） | ハーネス別の読み取り部品。`roots()` / `log_files()` / `iter_lines()` / `identify()` |
+| `tools/session_log_verify.py` | 前方一致の監査。`--self-test` / `--audit-writes` / `guard-stop`（未配線） |
+| `_logs/README.md` | 機械管理の注意書き |
+
+触った既存ファイル:
+
+- `tools/wiki_lint.py` … `SKIP_DIRS` に `_logs` を追加（5 章のとおり。lint が JSONL 611 本を走査しないように）
+- `~/.claude/settings.json` … `Stop` と `SubagentStop` に写し取りフックを各 1 行追加（バックアップ: `~/.claude/settings.json.bak-20260909-011735`）
+- `~/.codex/hooks.json` … `Stop` に写し取りフックを 1 行追加（バックアップ: `~/.codex/hooks.json.bak-20260909-011735`）
+
+状態フィールド: 計画 4.1 の `{size, lines, sha256_head, mtime, src}` に加え、
+先頭一致の判定を安定させるため `head_len`（sha を取った先頭バイト数）と `src_mtime` を持たせた。
+
+完成条件の確認（2026-09-09 時点）:
+
+1. **写しの行数が増える** … 走査 1 回ごとにこのセッション自身の写しへ追記されることを実測
+   （161 → 210 行）。Stop への配線も完了（実際の Stop での自動発火は、この会話の終了時に走る）
+2. **全ファイルで前方一致** … `session_log_verify.py` が 611/611 本で前方一致。要対応 0 本
+3. **走査外で書き換わっていない** … `mirror-drift`（サイズ／先頭 sha が状態と不一致）で検出。
+   自己テストで改竄→次回走査での修復を確認。補助の `--audit-writes` も用意
+4. **複数セッションID／Codex 1対多／サブエージェント** … Claude の複数 sessionId 14 本、
+   Codex の跨りセッション 31 件（最大 8 ファイル）、サブエージェント写し 82 本、いずれも前方一致
+5. **サブエージェントでの二重追記なし** … 写し先ごとに `flock`。取れなければその回は何もしない。
+   自己テストでロック競合と解放後の追いつきを確認
+
+遡り一括: Claude 212 本＋Codex 399 本＝611 本・3.3GB を約 15 秒で写した。
+
+段階1 で**やっていない**こと: 対応表 `_logs/index.jsonl`、座標の導出・名乗り、
+`session_log_query.py`、注入 5 行の撤去、成果物 Inbox の撤去、opencode の読み取り部品。
