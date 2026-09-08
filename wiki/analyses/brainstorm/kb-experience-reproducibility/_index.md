@@ -3,7 +3,7 @@ type: analysis
 status: active
 confidence: medium
 evidence_level: source-backed+user-stated
-last_reviewed: 2026-09-07
+last_reviewed: 2026-09-08
 brainstorm_status: active
 scope:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01
@@ -11,6 +11,7 @@ scope:
   - /Users/takedayousuke/.claude/skills/brainstorm
   - /Users/takedayousuke/.codex/skills/brainstorm
 entry_paths:
+  - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260908-opencode-environment-and-bugs.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-realmachine-result.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-three-audit-gaps.html
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/audit_integrity_check.py
@@ -1702,6 +1703,19 @@ codex_adapter: 台帳と中身が違います（記録 0717e1ca523d / いま 750
 
 ## 2026-09-08 実測21：opencode 側は「穴がある」のではなく「関所が無い」
 
+> [!warning] 2026-09-08 訂正（同日中に判明）
+> **この節の「関所が無い／後追いの検査だけ」は誤り。** `.opencode/plugins/skill-gate.js`
+> （26,250 バイト）が道具の実行前に割り込み、**その場で止めている**。止める箇所は2つ
+> （`write`/`edit`/`bash` の書き込み関所＝554 行目、`question` のカード関所＝653 行目。
+> どちらも `throw new Error` で道具の実行そのものを失敗させる）。
+> 私は `muse_brainstorm_check.py` の冒頭コメントだけを読み、**それを呼ぶ側を確かめていなかった**。
+> `.opencode/commands/html.md` にも「承認カードを出す直前は skill-gate.js が自動で同じ検査を
+> 走らせる。FAIL のカードは機械的に止まる」と書いてある。
+> **申し送り（下の節）にもこの誤りが載っている。opencode 担当の会話は「関所を作る」ではなく
+> 「既にある関所に足す」から始めてよい。** 以下の節の残りの記述（見ている項目・封印の中身・
+> `_restore` の状態）は再確認して正しい。
+
+
 武田さんの承認「opencode 側を調べる」。実ファイルを読んだ結果。
 
 ### 1. 仕組みが根本的に違う
@@ -1819,6 +1833,52 @@ codex_adapter: 台帳と中身が違います（記録 0717e1ca523d / いま 750
 
 **壊し試験は合計 35 通り、すべて捕まえた。** すべてコピーの上で実施し、本番のファイルは無傷。
 
+## 2026-09-08 実測22：環境の整備では「バグ残し」は止まらない（武田さんの問い）
+
+武田さんの問い「opencode のエージェントが kb フォルダの環境を無視してバグを残している。
+意図的にハーネスを解除させた弊害かもしれない。**このプロジェクトの環境の整備が済めば解消されますか**」。
+実ファイルと opencode 本体を読んで確かめた。
+
+### 1. 答え：解消しない
+
+いまの関所が見ているのは3種類だけ ——「brainstorm の手順を踏んだか」「絶対パスを出したか」
+「応答本文が 120 字以上あるか」。**作ったコードが動くかを見る仕組みは、
+Claude・Codex・opencode のどれにも入っていない。** バグ残しは関所の外側の出来事。
+
+### 2. 規則は届いている（無視の前提が違う）
+
+opencode 本体（`~/.opencode/bin/opencode`）の中に、作業フォルダから上へ辿って
+`AGENTS.md` を集める処理がある（`targets:["AGENTS.md"]` を `_.up` で収集し、
+設定フォルダの `AGENTS.md` と `~/.claude/CLAUDE.md` を足す）。
+**この保管庫の `AGENTS.md`（40,424 バイト）は設定に書かなくても自動で読み込まれる。**
+プロジェクト側 `opencode.json` はさらに `display.md` と `brainstorm-body.md` を足している。
+→ 届いていないのではなく、従っていないか、規則の対象外の領域。
+
+### 3. 関所が呼ぶ検査は2本だけ
+
+`skill-gate.js` が実行するのは `muse_brainstorm_check.py`（手順）と `display_check.py`（見た目）のみ。
+保管庫側の `tools/deliverable_path_guard.py` / `tools/project_quality_gate.py` /
+`tools/audit_integrity_check.py` / `tools/surface_claim_check.py` は
+**`.opencode/` 配下から1本も呼ばれていない**（検索して 0 件）。
+Codex には `kb_guard` が入ったが、opencode には入っていない。
+
+### 4. 「ハーネス解除の弊害」は機械では裏付けが取れない
+
+`skill-gate.js` と `prewrite.js` を `seal` で検索して **0 件**。
+`.opencode/seals/` の封印3件は**どの関所にも配線されていない**。記録として置かれ、
+読んだモデルの振る舞いにだけ効く。機械の判定を実際に緩めているのは `task-relax.json` 1件で、
+内容は **本文の最低字数 120 → 40 字**（4つのパス接頭辞・2026-09-13 期限・表示検査と書き込み関所は緩めない）。
+**これはコードの不具合を生む経路にならない。**
+
+ただし**封印は文章としては効く**。`three-points-seal` は指の値の再調査を止め、
+`body-approval-suspension` は体のブレンドの別承認規則を 09-14 まで止めている。
+封印の中にバグがあれば触られないままになる。**経路としては成立するが、
+どのバグを指しているかは未特定なので断定しない。**
+
+### 5. 説明ページ
+
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260908-opencode-environment-and-bugs.html`
+
 ## 決まったこと
 
 - 2026-09-06 読み取りの承認。**効いていたのは保管庫側の台帳と検査で、分岐しているのは
@@ -1908,6 +1968,12 @@ codex_adapter: 台帳と中身が違います（記録 0717e1ca523d / いま 750
 
 ## まだ決まってないこと
 
+- **層3（成果物が動くかを見る関所）を置くかどうか。** 2026-09-08 に、どの関所も
+  「作ったものが動くか」を見ていないことが確定した（実測22）。置く／置かない／
+  先に実物のバグを1件見る、の3択は**未決**。私の判断で決めない。
+- **武田さんの言う「opencode が残したバグ」の実体が未特定。** ファイル名も症状も伺っていない。
+  封印との関連は、これが分かるまで推測のまま。
+
 - （決着）**adapter から呼ぶ**を採用し、実装済み。**2026-09-07 16:46 に実機確認も完了。**
   ②'（許可を与える操作）は不要になった。
 - （決着）**どのカードにも「終える」肢を必ず置く**形にした。中断を選べば出口が効く。
@@ -1961,6 +2027,12 @@ codex_adapter: 台帳と中身が違います（記録 0717e1ca523d / いま 750
 
 ## 直した記録
 
+- 2026-09-08 実測21の「opencode には関所が無い／後追いの検査だけ」に訂正の注記を付けた。
+  `.opencode/plugins/skill-gate.js` が道具の実行前に割り込んで**その場で止めている**ことを
+  実ファイルで確認したため。**手元での違いは、opencode 担当の会話の出発点が
+  「関所を新たに作る」から「既にある関所に足す」へ変わること。**
+  戻すには、実測21 の見出し直下の注記ブロックを削除する。
+
 - 2026-09-07 引用の中のファイルパスを ` で囲んだ。太字の記号がパスの末尾に付いて、到達性の監査が
   「実在しないパス」と読んでいたため。武田さんの言葉は変えていない。見え方の変化は、そのパスが
   等幅の文字で表示されるだけ。戻すには ` を外す。
@@ -1980,6 +2052,8 @@ codex_adapter: 台帳と中身が違います（記録 0717e1ca523d / いま 750
   実パスによる誘導は変わらない。戻すには `[[llm-harness-parity]]` に書き戻す。
 
 ## 再開の入口（実パス）
+
+- 説明ページ（環境整備とバグ残し・2026-09-08 最新）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260908-opencode-environment-and-bugs.html`
 
 - このメモ: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md`
 - 説明ページ（実機確認の結果・2026-09-07 最新）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260907-realmachine-result.html`
@@ -2045,6 +2119,12 @@ run: python3 -c "import subprocess,sys; r=subprocess.run([sys.executable,'-m','u
 「安全の仕掛けが1つの実装の外へ広がらない」ほうを根拠にする。**
 
 ## 機械化した指摘
+
+### 2026-09-08 分（1つの指摘）
+
+| 指摘 | 再発しうるか | 機械判定できるか | 変換先 |
+|---|---|---|---|
+| 「呼ばれる側のコメントだけ読んで、呼ぶ側を確かめずに結論を書いた」（実測21の誤り） | する | できる（申し送りに書いた断定と、実ファイルの照合） | **人間判断として残す**。何を確かめれば足りるかが案件ごとに違うため |
 
 ### 2026-09-07 分（4つの指摘）
 
