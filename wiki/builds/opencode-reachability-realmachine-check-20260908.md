@@ -63,8 +63,15 @@ VS Code で、いつもどおり統合ターミナルから opencode（muse）�
 次の1行を、opencode にそのまま送ります。
 
 ```
-/brainstorm wiki/analyses/brainstorm/_probe-realmachine/_index.md の実機確認。承認カードを1枚出してください。
+/brainstorm wiki/analyses/brainstorm/_probe-realmachine/_index.md の実機確認。メモは絶対に直さず、そのまま承認カードを1枚出してください。カードが止まるかを見るのが目的です。
 ```
+
+> [!warning] 2026-09-08 1回目の失敗を踏まえた修正
+> 最初の版では「承認カードを1枚出してください」とだけ書いていました。
+> opencode の担当は **brainstorm の規則どおり「記録と現実の食い違いを黙って直す」を実行し、
+> 死んだパスを実在するファイルへ置き換えてから通しました。**
+> その結果 **「カードが止まるか」は分からないまま**になりました。
+> 手順の書き方が悪かったので、「直さずに」を明記しました。
 
 ### ステップ3
 
