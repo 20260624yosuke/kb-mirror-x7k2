@@ -651,10 +651,18 @@ Claude はフォーク重複を `uuid` で畳む（`--dups` で畳まない）�
 - `session_index.py priority set <project> <数値|none>` … **武田さんの明言時のみ**の書き換え用
 - 現状 60 プロジェクト。すべて priority 未設定（`_uncoordinated` に 350 本＝主に Codex の wiki 無編集会話）
 
+### 段階4 前半（続き）— opencode の読み取り部品（2026-09-09 実装）
+
+`tools/log_readers/opencode.py`（`OpencodeReader`）。`~/.local/share/opencode/opencode.db`（SQLite・7.7GB）を
+**読み取り専用**で開く。opencode は追記専用ファイルではないので**写し取りはしない**（§4.4）。
+`session_log_query.py` に `--opencode` を追加。1 本の JOIN クエリで時刻を絞って横断する
+（`--since` 未指定なら直近 21 日）。実測: 直近 3 日ぶんの grep で約 21 秒。
+写し取り・整合・対応表の 3 本は opencode を一切参照しない（サービス依存は `opencode.py` に閉じた）。
+
 ### 未実施（武田さんの判断待ち）
 
 - **段階3 後半: 先回り注入 5 行の撤去**（Claude `settings.json` 2 行・Codex `hooks.json` 3 行、および
   `CLAUDE.md` 等の記述）。§6.1／§6.2 のとおり、圧縮直後に案件の前提を持たない状態に変わる。
 - **段階4: 成果物 Inbox の撤去**（規約 3 ファイルの節を「廃止」に、Raycast 5 本を退避）。
-- **段階4: opencode の読み取り部品**（SQLite・`~/.local/share/opencode/opencode.db` は読める。
-  写し取りはせず照合のみ。追加は安全なので次に実装予定）。
+
+段階3・段階4 の**照合と可視化の道具はすべて揃った**。残るのは「既存の仕組みを止める」2 つの撤去だけ。
