@@ -562,3 +562,51 @@ Codex の `pre-tool` / `stop` / `session-end`）には触らない。
 
 段階1 で**やっていない**こと: 対応表 `_logs/index.jsonl`、座標の導出・名乗り、
 `session_log_query.py`、注入 5 行の撤去、成果物 Inbox の撤去、opencode の読み取り部品。
+
+### 段階2 — 対応表と座標（2026-09-09 実装）
+
+武田さんの選択: **段階2 に進む**（段階3〜4 は未着手のまま）。
+
+作ったもの:
+
+| ファイル | 役割 |
+|---|---|
+| `tools/session_index.py` | 対応表 `_logs/index.jsonl` の生成・更新・照会。`rebuild` / `update` / `path --project` / `unassigned` / `show` / `--self-test` |
+
+改修:
+
+- `tools/session_log_mirror.py` … 走査で写しが変わったら、その写しの行だけ対応表を更新する
+  （`session_index.update_paths`）。`scan(index_update=False)` で切れる（自己テスト用）
+
+座標の決め方（§4.4 案C の 3 段構え）:
+
+1. **名乗り（declared）** … 会話の最初の応答（先頭 12 行）に `座標: <相対パス>` の行があればそれを使う
+2. **導出（derived）** … ツール呼び出しから wiki の .md パスを数える。**書き込み優先**
+   （`Write` / `Edit` / `NotebookEdit`、Bash の `>` `>>` `tee` `mv` `cp` `cat>`）。
+   書き込みが 0 件の回だけ**読み取り**（`Read`、Bash の `cat` / `sed -n` / `grep`）で補い、
+   `coordinate_basis="read"` を残す。同点は「浅いパス優先」で親メモを選ぶ
+3. **未確定（none）** … どちらも決まらなければ `project="_uncoordinated"`、`coordinate=""`
+
+対応表の行に `coordinate_source`（`declared` / `derived` / `none`）と `coordinate_basis`（`write` / `read` / ``）を持たせた。
+`kind`（`main` / `subagent`）は元パスに `/subagents/` を含むか、または写しの basename が `agent-` で始まるかで判定する。
+
+完成条件の確認（2026-09-09 時点）:
+
+1. **案件名 → ログのパス** … `session_index.py path --project <名前>`。既定は `main` のみ、`--with-subagents` で広げる
+2. **名乗りが無くても導出で正しい座標** … 答えの分かっている 3 本すべて一致（いずれも `derived` / `basis=write`）:
+   - `756bb56d…` → `wiki/builds/session-log-fact-check-plan-20260908.md`
+   - `574bba9f…` → `wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md`
+   - `c6cfd2a8…` → `wiki/analyses/brainstorm/gf2-dusevnyj-bikini-to-helen/brainstorm-gf2-dusevnyj-bikini-to-helen.md`
+   いずれも `Write`/`Edit` の `file_path` だけでは「なし」判定になり、**Bash のコマンド文字列を読んで**一致した
+3. **未確定の一覧** … `session_index.py unassigned`（座標なし＋読み取り由来を併記）。現状 506 本
+4. **座標が判明してもファイルは動かない** … 座標は対応表の欄でしか持たず、写しの置き場所を決める要素にしていない（移動処理が存在しない）
+5. **導出値が名乗りを上書きしない** … `declared` があれば導出を実行しない。自己テストで確認
+
+`rebuild` の全走査は 611 本で約 23 秒。走査 1 回あたりの `update` は変わった写しだけなので軽い。
+現状の対応表: `derived` 138 本 / `none` 473 本（Codex 399 本と wiki 無編集の Claude セッションを含む）。
+
+段階2 で**残っている**こと: **§4.6 の「座標の名乗り」1 行を規約（`CLAUDE.md` / `AGENTS.md` / `KIMI.md`）へ追加する**
+（書式と対象ファイルの範囲は武田さんの確認待ち）。
+
+段階2 で**やっていない**こと: `session_log_query.py`（照合の入口・段階3）、注入 5 行の撤去（段階3）、
+成果物 Inbox の撤去（段階4）、opencode の読み取り部品（段階4）。
