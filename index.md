@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5492 ファイル_
+_合計 5496 ファイル_
 
 ## root/ (11)
 
@@ -762,6 +762,13 @@ _合計 5492 ファイル_
 - [hand_R-ours.png](wiki/_attachments/project-hub-index/img-20260906-visual/hand_R-ours.png) | 2026-09-06T06:11:24Z
 - [specular-candidate.png](wiki/_attachments/project-hub-index/img-20260906-visual/specular-candidate.png) | 2026-09-06T06:11:24Z
 
+## wiki/_attachments/project-hub-index/img-20260908-why-unchanged/ (4)
+
+- [ab_body_f049_hand.png](wiki/_attachments/project-hub-index/img-20260908-why-unchanged/ab_body_f049_hand.png) | 2026-09-08T02:02:36Z
+- [ab_f184_f049_hand.png](wiki/_attachments/project-hub-index/img-20260908-why-unchanged/ab_f184_f049_hand.png) | 2026-09-08T02:02:36Z
+- [f184_f206.png](wiki/_attachments/project-hub-index/img-20260908-why-unchanged/f184_f206.png) | 2026-09-08T02:02:36Z
+- [h0157_30.png](wiki/_attachments/project-hub-index/img-20260908-why-unchanged/h0157_30.png) | 2026-09-08T02:02:36Z
+
 ## wiki/analyses/ (69)
 
 - [art-canvas-asuna-reference-axis-map.md](wiki/analyses/art-canvas-asuna-reference-axis-map.md) | 2026-06-14T16:03:54Z
@@ -981,7 +988,7 @@ _合計 5492 ファイル_
 
 ## wiki/analyses/brainstorm/kb-experience-reproducibility/ (1)
 
-- [_index.md](wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md) | 2026-09-08T00:35:01Z
+- [_index.md](wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md) | 2026-09-08T02:06:23Z
 
 ## wiki/analyses/brainstorm/kb-experience-reproducibility/sessions/ (1)
 
