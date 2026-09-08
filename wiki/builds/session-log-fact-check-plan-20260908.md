@@ -703,8 +703,26 @@ Codex `pre-tool` / `stop` / `session-end`、両者の写し取りフック。
 `session_log_verify.py` / `session_index.py` / `session_log_query.py` / `log_readers/opencode.py`）、
 撤去 2 件（注入 5 行・Inbox）、規約 3 ファイルの更新。
 
-**私（LLM）が確認できていないこと**（末端の実機観測が要る）:
-- 段階3 完成条件 1〜3 は、brainstorm が作動している会話 ＋ 実際の圧縮を経ないと最終判定できない。
-  撤去自体は完了しているが、「圧縮をまたいで発言が `session_log_query.py` で引ける」の実測は次の圧縮時。
-- opencode の写し取りは設計上おこなわない（照合のみ）。opencode を使った会話での照合は
-  `--opencode` で引けることを実データで確認済みだが、圧縮跨ぎの検証は未。
+### Codex 側の実機検証（2026-09-09・武田さんが Codex セッションで実行）
+
+| 項目 | 結果 |
+|---|---|
+| 自己テスト 4 本 | すべて `self-test: OK` |
+| `scan` ＋ `verify` | Codex 環境から実行して `要対応 0 本`（写し 613 本・前方一致 613 本） |
+| `session_index.py path --project` ＋ `session_log_query.py --grep 丸写し` | ログのパス 2 件と会話該当行 3 件を取得 |
+| `grep codex_adapter ~/.codex/hooks.json` | `session-end` / `stop` / `pre-tool` のみ。`session-start` / `user-prompt` / `post-tool` は消えている |
+| Codex セッション開始時 | 「Restoring brainstorm memo context」・brainstorm メモの再掲は**出ない**（注入停止を確認） |
+
+### Codex の Stop フック自動発火 → SessionEnd にも写し取りを追加（2026-09-09）
+
+Codex の新セッション（02:04）が動いても Stop フックからの写し取りが自動では走らなかった
+（Codex のフック発火は以前から不安定）。**仕組み自体は正しく動く**（手動 `scan` で 02:04 の
+Codex セッションは前方一致で写せた）が、自動発火が確実でないため、
+`~/.codex/hooks.json` の **SessionEnd にも写し取りフックを 1 行足した**（Stop と二重掛け・
+どちらか一方でも走れば追いつく。走査は冪等なので二重でも害はない）。
+バックアップ: `~/.codex/hooks.json.bak-20260909-021150`。
+Claude 側は Stop の自動発火を実測済みのため SessionEnd 追加はしていない。
+
+**まだ末端で見ていないこと**: 段階3 完成条件の「圧縮をまたいで圧縮前の発言が
+`session_log_query.py` で引ける」は、次に実際の（手動でもよい）圧縮が起きたときに実測する。
+撤去と道具は完了済みで、これは観測待ちの 1 項目のみ。
