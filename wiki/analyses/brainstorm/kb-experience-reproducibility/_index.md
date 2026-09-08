@@ -1939,6 +1939,36 @@ frontmatter の `entry_paths` 6件は全部実在するので合格し、**本�
 - **関所の側。** `check_parent` に「本文の `## 再開の入口（実パス）` も実在照合する」を足す。
   ただし `.opencode/` は**別の会話が 09-08 00:45 に控えを取って着手中**。触ると衝突する。
 
+## 2026-09-08 揃え方の計画を作った（方針の承認：武田さんのカード回答「揃え方の計画を作る」）
+
+計画書:
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/kb-path-existence-parity-plan-20260908.md`
+
+**採る方法は「同じ1本を呼ばせる」（手1）。** 規則を3か所に書き直させない
+（2026-08-31 に書き直させて成果ゼロで週の25%を消費した記録がある）。
+
+- 作るもの: `tools/reachability_check.py` 1本（KB 側・ハーネス中立）。**未実装・これから作る。**
+  Claude の H1〜H4・H6 を**移設**する。書き直しではない。
+  Claude の H3 は実データで働いている（`gf2-helen-fingerfix` を実際に捕まえた）ので、そこを正本にする。
+- 繋ぎは各ハーネス数行。Codex は既にある `kb_guard` に1行足すだけ（器は 09-07 実機確認済み）。
+- 置き場を `tools/harness_compat/` にしない理由: あそこは I/O を持たない純関数の場所で、
+  ファイルを触る検査を混ぜると既存3ファイルの前提が壊れる。
+- 順番: ①新規ファイル ②Claude ③Codex ④opencode（最後）。
+  **`.opencode/` は別の会話が 09-08 00:45 に着手中**で、09-07 に2回衝突している。
+  **①〜③だけでも 2/3 が揃う**設計にした。
+- 壊し試験は 3ハーネス × 3パターン = 9通り。
+
+### 実測（この計画の根拠・2026-09-08）
+
+| ハーネス | frontmatter | 本文の実パス | タイミング |
+|---|---|---|---|
+| Claude | 照合する（H6） | **照合する（H3）** | 会話を閉じるとき |
+| Codex | しない | しない | — |
+| opencode | 照合する | **しない** | カードを出す直前 |
+
+`tools/deliverable_path_guard.py` に実在照合は無い（`exists` の呼び出し 0 件）。
+あれは「応答にパスが**出ているか**」の検査で、「そのパスが**在るか**」は見ていない。
+
 ## 決まったこと
 
 - 2026-09-06 読み取りの承認。**効いていたのは保管庫側の台帳と検査で、分岐しているのは
@@ -2117,6 +2147,8 @@ frontmatter の `entry_paths` 6件は全部実在するので合格し、**本�
   実パスによる誘導は変わらない。戻すには `[[llm-harness-parity]]` に書き戻す。
 
 ## 再開の入口（実パス）
+
+- 計画書（パスの実在照合を揃える・2026-09-08）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/kb-path-existence-parity-plan-20260908.md`
 
 - 説明ページ（環境整備とバグ残し・2026-09-08 最新）: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/kb-experience-reproducibility/20260908-opencode-environment-and-bugs.html`
 
