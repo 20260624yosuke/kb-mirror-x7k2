@@ -4,12 +4,12 @@ status: active
 confidence: medium
 evidence_level: source-backed+user-stated
 last_reviewed: 2026-09-09
-version: 3
+version: 4
 ---
 
-# セッションログを一次情報にする — 実装計画（v3・2026-09-09 改訂）
+# セッションログを一次情報にする — 実装計画（v4・2026-09-09 改訂）
 
-v1（2026-09-08）・v2 はいずれも独立レビューで前提の誤りが見つかったため改訂した。変更点は 12 章。
+v1（2026-09-08）・v2・v3 はいずれも独立レビューで前提の誤りが見つかったため改訂した。変更点は 12 章。
 関連: [[kb-experience-reproducibility]] ／ 説明版 HTML
 `wiki/_attachments/kb-experience-reproducibility/20260908-fact-check-wiring-plan.html`
 
@@ -59,7 +59,7 @@ v1（2026-09-08）・v2 はいずれも独立レビューで前提の誤りが�
 | 項目 | 値 | 確認方法 |
 |---|---|---|
 | Claude のログ | `~/.claude/projects/**/*.jsonl` **208 本・594MB**（うち KB フォルダ直下 126 本・531MB、**サブエージェント記録 79 本・62MB**） | `find` / 全行パース |
-| Claude ログの最古 | 2026-08-03（37 日前）。それ以前は残っていない | `ls -lt` |
+| Claude ログの最古 | **2026-06-07**（94 日前）。**2026-08-03 より前に開始した本が 45 本残っている** | 全 209 本の先頭行 `timestamp` |
 | フォーク由来の重複 | KB 直下の uuid 付き 60,820 行のうち **23,678 行（38.9%）が重複** | 全行の uuid を集計 |
 | 全文検索の速度 | 594MB 全体への `grep -r` が **約 0.2 秒** | 実測 |
 | Codex のログ | `~/.codex/sessions/YYYY/MM/DD/rollout-<ts>-<id>.jsonl` 399 本・3.0GB。最古 2026-05-17 | `find` / `du` |
@@ -104,7 +104,15 @@ v1（2026-09-08）・v2 はいずれも独立レビューで前提の誤りが�
 | 1 つの session_id が跨るのは Codex だけ | **不足。** Claude 側でも **33 件**が複数ファイルに跨る |
 | （記載なし） | **フォークにより同じ行が別ファイルへ複製される。KB 直下で 38.9%。** 丸写しは正しいが、照合が同じ発言を何度も返す |
 
-### 3.2 形式の一致（移植性の根拠・レビューでも一致確認）
+#### 3.1.3 v3 が誤っていた前提（3 回目のレビューで判明・自分でも再確認済み）
+
+| v3 の前提 | 実測 |
+|---|---|
+| Claude のログは 2026-08-03 より前が残っていない（＝約 30 日で消える） | **誤り。** 最古は **2026-06-07**。8/3 より前に開始した本が **45 本**ある。v1〜v3 は KB フォルダ直下の**更新時刻**だけを見ていた。保持期間は少なくとも 94 日あり、「30 日で消える」という前提は成り立たない |
+| Codex 側の注入は SessionStart の 1 本だけ | **誤り。** `UserPromptSubmit`（`user-prompt`・上限 5,000 字）と `PostToolUse`（`post-tool`）にも注入がある。**Codex 側の毎ターン注入は SessionStart ではなく UserPromptSubmit** |
+| 対象は 208 本 | 本数は日々増える（検証中に 209 本へ）。**完成条件に固定の本数を書かない** |
+
+## 3.2 形式の一致（移植性の根拠・レビューでも一致確認）
 
 - Claude・Codex ともに 1 行 1 件の JSONL。
 - Claude: 各行に `cwd`。圧縮境界は `type=system, subtype=compact_boundary` で `logicalParentUuid` により圧縮前へ辿れる。
@@ -123,8 +131,11 @@ v1（2026-09-08）・v2 はいずれも独立レビューで前提の誤りが�
 - **宛先の鍵は「元ログのファイル」**。セッション ID は鍵にしない。
 - **動作**: 既知のログ置き場（Claude / Codex）を歩き、**サイズが前回より増えたファイルだけ**を対象に、
   増えた行を写しへ追記する。走査は `stat` の比較だけなので、ファイル数が増えても軽い。
-- **対象**: `~/.claude/projects/**/*.jsonl` **208 本すべて**（サブエージェント記録 79 本を含む。2026-09-09 に武田さんが「写す」を選択）と、
-  `~/.codex/sessions/**/rollout-*.jsonl` 399 本。
+- **対象**: `~/.claude/projects/**/*.jsonl` **すべて**（2026-09-09 時点で 209 本。サブエージェント記録 80 本を含む。
+  武田さんが「写す」を選択）と、`~/.codex/sessions/**/rollout-*.jsonl`（同 399 本）。
+  **本数は日々増えるので、設計にも完成条件にも固定の数を書かない。**
+  `~/.claude/projects/` には KB 以外のプロジェクト（`Downloads` / `RefBoard` / `LLM-Brain-Base-01` など）も
+  含まれる。**これらも写す**（後で案件を分けるのは対応表の役目）。
 - **写し先**: `_logs/<harness>/<元ファイルと同じ名前>.jsonl`。**元ログと 1 対 1**。
   案件別のフォルダには分けない（4.4 の理由）。ファイル名は Claude 208 本・Codex 399 本を通して重複が無いことを確認済み。
 - **状態**: `_logs/.state/<harness>/<元ファイル名>.json` に `{size, lines, sha256_head, mtime, src}`。
@@ -145,9 +156,16 @@ v1（2026-09-08）・v2 はいずれも独立レビューで前提の誤りが�
 
 ```
 roots() -> list[Path]                      # このハーネスのログ置き場
-identify(path) -> dict                     # 先頭行から cwd / session_id 群 / 開始時刻を得る
+identify(path) -> dict                     # 全行を走査し cwd / session_id 群 / 開始時刻 / 行識別子を得る
 iter_lines(path, from_line) -> Iterator[str]
 ```
+
+**`identify` は先頭行だけでは足りない。** Claude は 1 ファイルに複数の `sessionId` を含み（14 本）、
+ファイル名と先頭の `sessionId` が一致しない（14 本）。`session_ids` を埋めるには全行の走査が要る。
+走査は写し取りと同じ 1 回のパスで行い、二度読みしない。
+
+**行識別子**（4.5 の重複畳み込みが使う）も、この部品が返す。Claude は `uuid`、Codex は `uuid` を持たないため
+`(timestamp, ordinal)` の組を使う。**照合側はハーネスを知らない。**
 
 - `claude.py` … `~/.claude/projects/**/*.jsonl`
 - `codex.py` … `~/.codex/sessions/**/rollout-*.jsonl`（**ファイル名では判定せず、先頭行の `session_meta` を読む**）
@@ -184,7 +202,7 @@ iter_lines(path, from_line) -> Iterator[str]
 - **写しの置き場所は案件で変わらない。** 案件は対応表の欄でしか持たないので、
   会話の途中で座標が判明しても**ファイルを移動しない**（v1 の未定義点をこれで解消）。
 - `project` / `coordinate` は座標の名乗り（4.6）から入る。名乗りが無ければ `_uncoordinated`。
-- 遡り分の既存 126 本は、`cwd` から機械的に `project` を仮置きし、`coordinate` は空にする。
+- 遡り分の既存ログは、`cwd` から機械的に `project` を仮置きし、`coordinate` は空にする。
 - `priority` は武田さんの明言でのみ書き換える。LLM は写すだけ。
 
 ### 4.5 `tools/session_log_query.py`（照合の入口）
@@ -192,7 +210,10 @@ iter_lines(path, from_line) -> Iterator[str]
 - `--project <名前>` / `--grep <語>` / `--since <日付>`。
 - 既定の検索対象は **武田さんの発言と応答本文**（合計 3.0MB）。`--all` でツール結果まで広げる。
 - **重複の畳み込み**: フォークにより同じ行が複数ファイルへ複製されている（KB 直下で 38.9%）。
-  既定では `uuid` が同じ行を 1 件に畳み、`--dups` で全件表示する。
+  既定では**読み取り部品が返す行識別子**が同じ行を 1 件に畳み、`--dups` で全件表示する
+  （Claude は `uuid`、Codex は `uuid` を持たないので `(timestamp, ordinal)`）。
+  畳むと減るのは **22.8%**（38.9% は「重複グループに属する行」の割合で、削減量ではない）。
+  なお Claude 側で `uuid` を持たない行が 21.8% あるが、すべてメタ行で既定の検索対象外。
 - 出力は日時・harness・写しのパス・該当行。
 
 ### 4.6 座標の名乗り（規約側の 1 行）
@@ -217,7 +238,8 @@ iter_lines(path, from_line) -> Iterator[str]
 
 | 対象 | 実体 | やり方 |
 |---|---|---|
-| 先回りの注入 | `~/.claude/settings.json` の SessionStart `brainstorm_guard.py inject-full`（8,000 字）と UserPromptSubmit `inject-light`、`~/.codex/hooks.json` の SessionStart `codex_adapter.py session-start` | フック登録の行を外す。スクリプトは残す |
+| 先回りの注入（Claude） | `~/.claude/settings.json` の SessionStart `brainstorm_guard.py inject-full`（8,000 字）と UserPromptSubmit `inject-light` | フック登録の行を外す。スクリプトは残す |
+| 先回りの注入（Codex） | `~/.codex/hooks.json` の SessionStart `codex_adapter.py session-start`（上限 9,000 字）、**UserPromptSubmit `user-prompt`（上限 5,000 字）**、**PostToolUse `post-tool`** | 同上。**3 本ある。Codex の毎ターン注入は SessionStart ではなく UserPromptSubmit なので、ここを外さないと注入は止まらない** |
 | 成果物 Inbox | `tools/inbox.py`、`CLAUDE.md` / `AGENTS.md` / `KIMI.md` の「成果物 Inbox」節、`inbox-dashboard.md`、Raycast の 2 項目 | 規約の節を「廃止（2026-09-09）」に書き換える。スクリプトとボードは残置し、呼ばれなくする |
 
 **どちらもファイルを削除しない。** 戻すときは登録行と節を戻すだけ。
@@ -233,10 +255,12 @@ iter_lines(path, from_line) -> Iterator[str]
 
 ### 6.2 「触らない監査」の定義（v1 で曖昧だった・レビュー指摘）
 
-段階3で外すのは **`inject-full` / `inject-light` / `codex_adapter.py session-start` の 3 つの登録行だけ**。
+段階3で外すのは **5 つの登録行**: Claude の `inject-full` / `inject-light`、
+Codex の `session-start` / `user-prompt` / `post-tool`。
 これ以外の常時登録（`context_harness.py`、`guard-stop-content`、`guard-stop-handoff`、
 `deliverable_path_guard.py`、`audit_integrity_check.py`、`surface_claim_check.py`、
-`mechanization_backlog_check.py`、`prose_guard.py`、`guard-write`、`guard-card`）には触らない。
+`mechanization_backlog_check.py`、`prose_guard.py`、`guard-write`、`guard-card`、
+Codex の `pre-tool` / `stop` / `session-end`）には触らない。
 
 ## 7. 段階と完成条件
 
@@ -245,16 +269,19 @@ iter_lines(path, from_line) -> Iterator[str]
 ### 段階1 — 写しと整合（土台）
 
 - 作る: 4.1 / 4.2（claude・codex）/ 4.3。**この段階の 4.1 は対応表を書かない版**（段階2 で改修する）
-- 配線: Claude `settings.json` の Stop に 1 行、Codex `hooks.json` の Stop に 1 行
-- 遡り: 既存 126 本＋Codex 399 本を一括で写す
+- 配線: Claude `settings.json` の Stop と **SubagentStop** に各 1 行、Codex `hooks.json` の Stop に 1 行
+  （SubagentStop に付けるのは、サブエージェント記録を写すため、および完成条件 5 を成立させるため）
+- 遡り: **既存の全ログ**（Claude `~/.claude/projects/**` と Codex `~/.codex/sessions/**`）を一括で写す
 - **完成条件**（すべて機械で判定できる形にした）
   1. 会話を 1 回終えると、**そのセッション自身の元ログに対応する写し**の行数が増える
      （他ファイルの増加では通さない）
   2. `session_log_verify.py` が全ファイルで**前方一致**を返す
-  3. **当該セッションのログに、`_logs/` 配下への Write / Edit / Bash による書き込みの記録が 0 件**
-     （Bash を判定対象に含める。`>` `tee` `python3 -c` などの経路をふさぐ）
+  3. **遡りの一括実行より後に始まった通常セッションを 1 つ選び**、そのログに
+     `_logs/` 配下への Write / Edit / Bash による書き込みの記録が 0 件
+     （Bash を判定対象に含める。`>` `tee` `python3 -c` などの経路をふさぐ。
+     遡りを走らせた作業セッションは必ず Bash 書き込みを含むので、判定対象にしない）
   4. 1 ファイルに複数のセッション ID を含むログ、Codex の 1 対多、サブエージェント記録でも 1〜3 が成立する
-  5. Stop と SubagentStop が同時に発火した回で、写しに二重の追記が無い
+  5. サブエージェントを使った会話（Stop と SubagentStop の両方が発火する回）で、写しに二重の追記が無い
 
 ### 段階2 — 対応表と座標
 
@@ -267,7 +294,8 @@ iter_lines(path, from_line) -> Iterator[str]
 - 作る: 4.5
 - 撤去: 6 章の「先回りの注入」（3 行のみ）
 - **完成条件**
-  1. 注入が止まっている（会話の頭に案件一覧が出ない）
+  1. **Claude と Codex の両方**で注入が止まっている（Claude は会話の頭、
+     **Codex は毎ターン**注入されるので、両方で確認する）
   2. **圧縮をまたいだ会話で、圧縮前の武田さんの発言を `session_log_query.py` で引ける**
      （注入で得ていたものが、照合で取れることの実測）
   3. 1 と 2 を、実際に圧縮が起きた会話で確認する
@@ -293,7 +321,7 @@ iter_lines(path, from_line) -> Iterator[str]
 | リスク | 対処 |
 |---|---|
 | 外付け未接続で写せない | fail-open。次回接続時に差分で追いつく（元ログは本体にあるため取りこぼしなし） |
-| 本体ログが消え、写す前に失われる | 段階1で遡り一括を先に実施する |
+| 本体ログが消え、写す前に失われる | 段階1で遡り一括を先に実施する。**ただし緊急度は当初より低い**（最古 2026-06-07 まで残っており、「30 日で消える」は誤りだった） |
 | 本体の圧迫（空き 14GB・93%） | 段階4以降で退避を検討。段階1では触らない |
 | 走査の負荷 | サイズ比較のみ。全 525 本でも `stat` だけで済む。実測して 1 秒を超えるなら更新時刻の新しい順に打ち切る |
 | opencode だけ形式が違う | 段階1〜3 は Claude / Codex で通し、opencode は読み取り部品 1 本の追加で入れる |
@@ -308,8 +336,8 @@ iter_lines(path, from_line) -> Iterator[str]
 
 ## 10. 未確認
 
-- Claude のログ自動削除を止める設定の正確な名前と単位。**「30 日で消える」は推定であって実測ではない**
-  （実測で言えるのは「2026-08-03 より前が残っていない」ことだけ）
+- Claude のログ自動削除の有無と条件。**「30 日で消える」は誤りだった**（最古 2026-06-07・94 日前）。
+  削除が起きるのか、起きるとして何日なのかは**未確認**
 - Obsidian の除外設定・先頭ドットのフォルダの実際の効き（先行タスク A で確認する）
 - opencode の SQLite が会話の中身をどこまで保持しているか
 - SessionEnd のペイロード内容（Stop では実証済み。SessionEnd は既に両ハーネスで登録済みなので確認は容易）
@@ -322,6 +350,20 @@ iter_lines(path, from_line) -> Iterator[str]
 - `audit_integrity_check.py` はファイルの sha256 を見るので、登録行を外しても落ちない
 
 ## 12. 変更点
+
+### v3 → v4（2026-09-09・3 回目のレビューを受けて）
+
+1. **Codex の注入 2 本（UserPromptSubmit・PostToolUse）を撤去対象に追加**した。
+   Codex の毎ターン注入は SessionStart ではなくここにある。**これを落とすと計画の目的が Codex 側で達成されない**
+2. **「30 日で消える」を撤回**した。実測の最古は 2026-06-07（94 日前）で、8/3 以前の本が 45 本ある。
+   v1〜v3 は KB 直下の更新時刻だけを見ていた。9 章の緊急度も下げた
+3. 7 章・4.4 に残っていた**「126 本」を全ログへ修正**し、**完成条件に固定の本数を書かない**ことにした
+4. `identify()` を**全行走査**に変更した（先頭行だけでは `session_ids` を埋められない）
+5. 重複畳み込みの鍵を**ハーネス共通の行識別子**に変えた（Codex に `uuid` は無い）。削減量は 22.8%
+6. 段階1 の配線に **SubagentStop** を追加し、完成条件 5 を成立させた
+7. 完成条件 3 に**判定するセッションの指定**を追加した（遡りを走らせたセッションでは測らない）
+8. 4.1 に、KB 以外のプロジェクトのログも写すことを明記した
+9. v3 が誤っていた前提を、消さずに 3.1.3 に残した
 
 ### v2 → v3（2026-09-09・2 回目のレビューを受けて）
 
