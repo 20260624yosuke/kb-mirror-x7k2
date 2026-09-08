@@ -10947,3 +10947,30 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 指の変換誤り・額の生え際・顔の筋・白飛びの値・階調の割当て・反射のつやを、共通の約束つきで貼って渡せる形に整理。
 - 触ったページ: wiki/analyses/gf2-helen-agent-task-orders.md (new)、index.md (Analysesへ1行追加)。
 - HTML版 wiki/_attachments/project-hub-index/20260905-agent-task-orders.html と同内容。
+
+## [2026-09-09] build | セッションログ写し取りシステム（段階1〜4）実装
+
+- 会話開始・圧縮ごとの案件先回り注入をやめ、会話ログを `_logs/` へ丸写し＋対応表＋照合で
+  一次情報に辿る仕組みへ置き換えた。正本の設計・経緯は `wiki/builds/session-log-fact-check-plan-20260908.md` §13。
+- 撤去: brainstorm 先回り注入 5 行（Claude `settings.json` 2 / Codex `hooks.json` 3）、成果物 Inbox
+  （規約 3 ファイルの節を「廃止」、Raycast 5 本を退避）。いずれもファイルは残置し戻せる。
+- 追加: Codex `hooks.json` の SessionEnd にも写し取りフック（Stop 自動発火が不安定なため二重掛け）。
+- 触ったファイル（KB 内）:
+  - tools/session_log_mirror.py (new)
+  - tools/session_log_verify.py (new)
+  - tools/session_index.py (new)
+  - tools/session_log_query.py (new)
+  - tools/log_readers/__init__.py (new) / base.py (new) / claude.py (new) / codex.py (new) / opencode.py (new)
+  - _logs/README.md (new)
+  - tools/wiki_lint.py（SKIP_DIRS に `_logs` 追加）
+  - CLAUDE.md / AGENTS.md（「座標の名乗り」節追加、「成果物 Inbox」節を廃止、ログ規則に `build` 追加）
+  - KIMI.md（同上の Kimi 補足）
+  - wiki/builds/session-log-fact-check-plan-20260908.md（§13 実装記録を追記）
+  - wiki/builds/deliverable-inbox.md（status: superseded ＋ 廃止の警告ブロック）
+- 触ったファイル（KB 外・バックアップあり）:
+  - ~/.claude/settings.json（Stop・SubagentStop に写し取り、inject-full・inject-light を撤去）
+  - ~/.codex/hooks.json（Stop・SessionEnd に写し取り、session-start・user-prompt・post-tool を撤去）
+  - ~/.config/raycast-scripts/ の Inbox 5 本を ~/.config/raycast-scripts-retired-inbox-20260909/ へ退避
+- 遡り一括で既存の Claude 212 本＋Codex 399 本＝約 3.4GB を写した。写し 614 本すべて前方一致。
+- Codex セッションでも自己テスト・整合・照合・注入撤去を実機確認。Codex の自動写し取りも確認（02:16）。
+- 未確認 1 点: 「圧縮をまたいで圧縮前の発言を `session_log_query.py` で引ける」は次の圧縮時に実測。
