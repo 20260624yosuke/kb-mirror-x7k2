@@ -48,6 +48,14 @@ python3 "<KBルート>/tools/inbox.py" add "<絶対パス>" --origin kimi --task
 - ユーザーの入口: Raycast「成果物Inboxを開く」/「成果物Inbox処理済み」。CLI は `llm-wiki-inbox`。
 - 共通規則は `AGENTS.md`「成果物 Inbox(全ハーネス共通の機械導線)」節。正本は [[deliverable-inbox]]。
 
+## Kimi 独自補足: セッション座標の名乗り(任意)
+
+会話の最初の応答の冒頭で、その回の座標(主に触る案件の正本ファイルのルート相対パス)を
+`座標: wiki/analyses/brainstorm/<案件>/_index.md` の書式で 1 行だけ書く。
+該当が無ければ `wiki/builds/<案件>-<日付>.md` を 1 行で新規作成しそれを座標にする。
+**任意・機械強制なし。** 名乗らなくても `tools/session_index.py` がログから導出する。
+詳細は `AGENTS.md`「セッション座標の名乗り」節。正本は [[session-log-fact-check-plan-20260908]]。
+
 ### 関連
 
 - `AGENTS.md` — 共通規則

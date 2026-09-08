@@ -391,6 +391,23 @@ Codex では `~/.codex/skills/grill-build/SKILL.md` を正規入口にし、Clau
 `$plan-gate`（Codex）または`/plan-gate`（Claude）を明示した時だけ起動する。目的は実装前の計画承認であり、承認後も実装へ進まない。Codex は `request_user_input`、Claude Code は `AskUserQuestion` で承認カードを出す。無回答・空回答・タイムアウト相当・カード閉鎖・古いカードの回答は承認でも中断でもなく、保存済みの同じ `card_id` / `plan_sha256` の承認待ちを維持する。高リスク案件では、計画を見せる前に `gpt-5.6-terra` / reasoning effort `medium` の監査を完了し、major finding がない場合だけ承認カードへ進む。`APPROVED` と `USER_STOPPED` は当該 plan-gate 呼出しだけの終端で、報告後は次の明示依頼を妨げない。
 <!-- END GENERATED: plan-gate -->
 
+## セッション座標の名乗り(任意・2026-09-09)
+
+会話の最初の応答の冒頭で、その回の「座標」(今そのセッションで主に触る案件の正本ファイルの
+プロジェクトルート相対パス)を、次の書式で 1 行だけ書く。
+
+```
+座標: wiki/analyses/brainstorm/<案件>/_index.md
+```
+
+- 該当する正本がまだ無ければ、`wiki/builds/<案件>-<日付>.md` を 1 行の計画メモとして
+  新規作成し、それを座標にする。
+- **この規則は任意で、機械強制しない。** 名乗らなくても事故にはならない
+  (`tools/session_index.py` がログから座標を導出し、決まらなければ未確定として一覧に出す)。
+  名乗った場合は導出より優先される。
+- 目的は、セッションログの写し(`_logs/`)を案件へ機械的に結びつけること。
+  正本は [[session-log-fact-check-plan-20260908]]。
+
 ## 成果物 Inbox(全ハーネス共通の機械導線)
 
 成果物(新規作成・更新してユーザーに確認してほしいファイル)が完成したら、報告文に加えて必ず
