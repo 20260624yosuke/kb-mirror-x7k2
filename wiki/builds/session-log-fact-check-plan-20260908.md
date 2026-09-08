@@ -3,11 +3,13 @@ type: build
 status: active
 confidence: medium
 evidence_level: source-backed+user-stated
-last_reviewed: 2026-09-08
+last_reviewed: 2026-09-09
+version: 2
 ---
 
-# セッションログを一次情報にする — 実装計画（2026-09-08）
+# セッションログを一次情報にする — 実装計画（v2・2026-09-09 改訂）
 
+v1（2026-09-08）は独立レビューで中核の前提に誤りが見つかったため改訂した。変更点は 12 章。
 関連: [[kb-experience-reproducibility]] ／ 説明版 HTML
 `wiki/_attachments/kb-experience-reproducibility/20260908-fact-check-wiring-plan.html`
 
@@ -45,163 +47,211 @@ last_reviewed: 2026-09-08
 |---|---|
 | 記録の担い手 | 手で書く親メモをやめ、スクリプトがログを写す（トークン消費ゼロ） |
 | 写す範囲 | **丸写し**。ツール結果を含む全行。容量より粒度を優先 |
-| 置き場所 | 保管庫の中。ただし Obsidian の索引に載せない |
-| 遡り | いま本体に残っている分（Claude 約 517MB）も写す |
+| 置き場所 | 保管庫の中。ただし Obsidian の検索の邪魔にならない形にする |
+| 遡り | いま本体に残っている分（Claude 約 557MB）も写す |
 | 座標 | **案B**。会話の頭で LLM が座標を名乗る。無ければその場で 1 行の計画ファイルを作る |
 | 優先順位 | 武田さんの明言でのみ更新。LLM は書き写すだけ |
 | 監査 | この計画の 5 本以外は作らない |
 | Inbox | 仕組みごと廃止（機械監査が上位互換） |
 
-## 3. 実測にもとづく前提（2026-09-08 に実ファイルで確認）
+## 3. 実測にもとづく前提（2026-09-09 に再計測。v1 の値は古かった）
 
 | 項目 | 値 | 確認方法 |
 |---|---|---|
-| Claude のログ | `~/.claude/projects/<slug>/<session_id>.jsonl` 126 本・517MB | `ls` / 全行パース |
-| Claude ログの最古 | 2026-08-03（36 日前）。それ以前は消えている | `ls -lt` |
+| Claude のログ | `~/.claude/projects/<slug>/<file>.jsonl` 126 本・**557MB** | `find` / 全行パース |
+| Claude ログの最古 | 2026-08-03（37 日前）。それ以前は残っていない | `ls -lt` |
 | Codex のログ | `~/.codex/sessions/YYYY/MM/DD/rollout-<ts>-<id>.jsonl` 399 本・3.0GB。最古 2026-05-17 | `find` / `du` |
-| opencode | `~/.local/share/opencode/opencode.db`（SQLite） | `ls` |
-| 本体の空き | 19GB / 使用率 91% | `df -h` |
+| opencode | `~/.local/share/opencode/opencode.db`（SQLite・7.7GB） | `ls` |
+| 本体の空き | **14GB / 使用率 93%** | `df -h /System/Volumes/Data` |
 | 保管庫（外付け） | 931GB・空き 312GB | `df -h` |
-| ログの内訳 | ツール結果 77.2%／道具呼び出し 18.6%／メタ 3.5%／応答本文 0.4%／武田さんの発言 0.2% | 全 126 本を分類集計 |
 | Inbox 未処理 | 298 件（最古 14 日経過） | `tools/inbox.py list` |
 
-形式の一致（移植性の根拠）:
+ログの内訳（**126 本全量**。v1 と同値であることを再計算で確認）:
 
-- Claude・Codex ともに **1 行 1 件の JSONL**。
-- Claude: 各行に `cwd` を持つ。圧縮境界は `type=system, subtype=compact_boundary` で、
-  `logicalParentUuid` により圧縮前の発話へ辿れる。
-- Codex: 先頭行 `type=session_meta` の `payload` に `cwd` `id` `originator` を持つ。
-- opencode のみ SQLite。読み取り部品を別に作る必要がある。
+| 種別 | 量 | 割合 |
+|---|---|---|
+| ツール結果 | 421.0 MB | 75.6% |
+| 道具呼び出し | 101.1 MB | 18.1% |
+| メタ | 22.0 MB | 3.9% |
+| 武田さんの発言（行全体） | 5.9 MB | 1.1% |
+| 思考 | 4.8 MB | 0.9% |
+| 応答本文 | 2.0 MB | 0.4% |
 
-フックのペイロード（実装上の入力）:
+補足: 「武田さんの発言」5.9MB は JSON の枠とフックが差し込む文言を含む行全体の量。
+**発言のテキストそのものは 1.01 MB**（1,073 ターン）。4.5 の既定検索が軽い根拠はこちら。
 
-- Claude Code: Stop / SessionEnd で `transcript_path` `cwd` `session_id` が渡る（`brainstorm_guard.py` が現に使用）。
-- Codex: `~/.codex/hooks.json` に同形式で登録でき、`session_id` `cwd` が渡る。**`transcript_path` は渡らない**ため、
-  `session_id` から rollout ファイルを解決する。
+### 3.1 v1 が誤っていた前提（レビューで判明・自分でも再確認済み）
+
+| v1 の前提 | 実測 |
+|---|---|
+| Codex は `session_id` から rollout ファイルを解決できる | **誤り。** 2026-09 の 28 本中 **13 本がファイル名に `session_id` を含まない**。ファイル名の UUID は `payload.id`（ロールアウト固有）で、`payload.session_id` とは別 |
+| 1 セッション ID ＝ 1 ログファイル | **誤り。** Codex は 1 つの `session_id` に **複数ファイル**（4 件）。Claude は 126 本中 **14 本が 1 ファイルに複数の `sessionId`** を含み、**14 本でファイル名と先頭の `sessionId` が不一致** |
+
+**この 2 点により、v1 の「`session_id` を宛先の鍵にする」設計は成立しない。** v2 で作り直した（4 章）。
+
+### 3.2 形式の一致（移植性の根拠・レビューでも一致確認）
+
+- Claude・Codex ともに 1 行 1 件の JSONL。
+- Claude: 各行に `cwd`。圧縮境界は `type=system, subtype=compact_boundary` で `logicalParentUuid` により圧縮前へ辿れる。
+- Codex: 先頭行 `type=session_meta` の `payload` に `cwd` `id` `session_id` `originator`。
+- opencode のみ SQLite。読み取り部品を別に作る。
+- Claude の Stop フックは `transcript_path` `cwd` `session_id` を渡す。Codex は `session_id` `cwd` のみ（`transcript_path` は渡らない）。
 
 ## 4. 成果物（作るもの 5 本）
 
 すべて `tools/` に置く。名前は仮。
 
-### 4.1 `tools/session_log_mirror.py`（写し取り）
+### 4.1 `tools/session_log_mirror.py`（写し取り）— v2 で方式変更
 
-- **入力**: フックの JSON（stdin）。`transcript_path` があればそれを使い、無ければ `session_id` から解決。
-- **動作**: 元ログの総行数と、前回写した行数を比較し、**増えた行だけ**を写しへ追記する。
-- **出力先**: `_logs/<project>/<session_id>.jsonl`（下記 5 章）。
-- **状態**: `_logs/.state/<harness>-<session_id>.json` に `{lines, sha256, mtime, src}` を保存。
-- **トークン**: 標準出力に何も書かない。ブロックもしない。**会話に一切載らない**。
-- **失敗時**: 例外は握りつぶして終了コード 0（fail-open）。会話を止めない。
-- **外付け未接続時**: 何もせず終了。次回接続時に差分としてまとめて追いつく。
+**フックのペイロードに依存しない「走査方式」にする。** これが 3.1 の 2 つの誤りへの答え。
+
+- **宛先の鍵は「元ログのファイル」**。セッション ID は鍵にしない。
+- **動作**: 既知のログ置き場（Claude / Codex）を歩き、**サイズが前回より増えたファイルだけ**を対象に、
+  増えた行を写しへ追記する。走査は `stat` の比較だけなので、ファイル数が増えても軽い。
+- **写し先**: `_logs/<harness>/<元ファイルと同じ名前>.jsonl`。**元ログと 1 対 1**。
+  案件別のフォルダには分けない（4.4 の理由）。
+- **状態**: `_logs/.state/<harness>/<元ファイル名>.json` に `{size, lines, sha256_head, mtime, src}`。
+- **フックの役割**: 走査を起動するだけ。`transcript_path` が渡る場合はそのファイルを最優先で処理する（速度のためだけの最適化で、正しさは走査が担保する）。
+- **トークン**: 標準出力に何も書かない。ブロックしない。会話に載らない。
+- **失敗時**: 例外を握りつぶして終了コード 0（fail-open）。
+- **外付け未接続時**: 何もせず終了。次回接続時に差分でまとめて追いつく。
 
 ### 4.2 `tools/log_readers/`（読み取り部品）
 
-サービス差を吸収する薄い層。共通インターフェースは 2 関数だけ。
+共通インターフェースは 3 関数。
 
 ```
-resolve(payload) -> Path | None     # このセッションの元ログの場所
+roots() -> list[Path]                      # このハーネスのログ置き場
+identify(path) -> dict                     # 先頭行から cwd / session_id 群 / 開始時刻を得る
 iter_lines(path, from_line) -> Iterator[str]
 ```
 
-- `claude.py` … `transcript_path` をそのまま返す
-- `codex.py` … `~/.codex/sessions/**/rollout-*-<session_id>.jsonl` を解決
-- `opencode.py` … SQLite から会話行を取り出し、共通の JSONL 形へ整形（段階4以降）
+- `claude.py` … `~/.claude/projects/**/*.jsonl`
+- `codex.py` … `~/.codex/sessions/**/rollout-*.jsonl`（**ファイル名では判定せず、先頭行の `session_meta` を読む**）
+- `opencode.py` … SQLite から会話行を取り出し共通形へ整形（段階4）
 
 **サービス依存はこのフォルダの中だけ。他の 4 本は harness を知らない。**
 
 ### 4.3 `tools/session_log_verify.py`（整合の監査）
 
-- 元ログの行数と写しの行数を比較。
-- 写した範囲（先頭 N 行）の sha256 を元ログの同範囲と比較。
+- 元ログと写しの **行数**、および写した範囲の **sha256** を比較する。
 - **元ログを常に正**とする。写しの手編集を禁止し、食い違えば写しを作り直す。
-- 実行は手動 1 コマンド、および段階3以降で Stop フックに 1 行（不一致時のみ出力）。
+- 1 対 1 対応なので、ファイル単位で完結する（セッション ID の曖昧さに影響されない）。
+- 実行は手動 1 コマンド。段階3以降で Stop に 1 行（**不一致のときだけ出力**）。
 
 ### 4.4 `_logs/index.jsonl`（対応表）と `tools/session_index.py`
 
-1 セッション 1 行の JSONL。
+**1 行 = 1 ログファイル**（セッション単位ではない）。
 
 ```json
-{"harness":"claude","session_id":"...","project":"kb-experience-reproducibility",
+{"harness":"claude","file":"_logs/claude/<name>.jsonl",
+ "src":"/Users/…/.claude/projects/…/<name>.jsonl",
+ "session_ids":["…","…"], "cwd":"/Volumes/…/LLM Knowledge Base _01",
+ "project":"kb-experience-reproducibility",
  "coordinate":"wiki/analyses/brainstorm/kb-experience-reproducibility/_index.md",
- "log":"_logs/kb-experience-reproducibility/<id>.jsonl",
- "started":"2026-09-08T22:15:18Z","updated":"...","priority":null,"title":""}
+ "started":"2026-09-08T22:15:18Z","updated":"…","priority":null,"title":""}
 ```
 
-- 会話終了時に写し取りが 1 行を追記／更新する。
-- `project` と `coordinate` は、**会話の頭で LLM が名乗った座標**から決まる（4.6）。
+- `session_ids` は配列。1 ファイルに複数あっても、1 つが複数ファイルに跨っても表現できる。
+- **写しの置き場所は案件で変わらない。** 案件は対応表の欄でしか持たないので、
+  会話の途中で座標が判明しても**ファイルを移動しない**（v1 の未定義点をこれで解消）。
+- `project` / `coordinate` は座標の名乗り（4.6）から入る。名乗りが無ければ `_uncoordinated`。
+- 遡り分の既存 126 本は、`cwd` から機械的に `project` を仮置きし、`coordinate` は空にする。
 - `priority` は武田さんの明言でのみ書き換える。LLM は写すだけ。
 
 ### 4.5 `tools/session_log_query.py`（照合の入口）
 
-- `--project <名前>` でその案件のログを、`--grep <語>` で発言・応答を検索。
-- 既定は **武田さんの発言と私の応答本文だけ**を対象にし、`--all` でツール結果まで広げる
-  （丸写しは保持したうえで、検索の既定を軽くする）。
-- 出力は日時・harness・該当行。**これが「事実確認」の入口**。
+- `--project <名前>` / `--grep <語>` / `--since <日付>`。
+- 既定の検索対象は **武田さんの発言と応答本文**（合計 3.0MB）。`--all` でツール結果まで広げる。
+- 出力は日時・harness・写しのパス・該当行。
 
 ### 4.6 座標の名乗り（規約側の 1 行）
 
-`CLAUDE.md` / `AGENTS.md` / `KIMI.md` に次を追加する。
+`CLAUDE.md` / `AGENTS.md` / `KIMI.md` に追加する。
 
 > 会話の最初の応答で、その回の座標（案件の正本ファイルの相対パス）を 1 行で名乗る。
 > 該当が無ければ `wiki/builds/<案件>-<日付>.md` を 1 行で新規作成し、それを座標にする。
 
-座標が無い会話は `project: "_uncoordinated"` として写す（記録は必ず残す）。
-
 ## 5. 置き場所と Obsidian
 
 - 写しの置き場所: `<KB>/_logs/`
-- Obsidian の索引から外す方法は **2 案**。実機で確認して選ぶ。
-  1. Obsidian 設定の「除外フォルダ」に `_logs` を追加（設定 UI・武田さんの操作が要る）
-  2. フォルダ名を `.logs` にする（先頭ドットは Obsidian が読まない想定・**未確認**）
-- **どちらも未検証。段階1の完成条件に「実機で索引に出ないこと」を含める。**
+- **要件は「Obsidian の検索の邪魔にならないこと」**。レビュー指摘のとおり、Obsidian の
+  「除外フォルダ」は検索から**消すのではなく順位を下げる**機能である可能性があり、要件を満たさないおそれがある。
+- 手段の候補は 2 つ。**どちらも未確認のため、段階1 に入る前に実機で 1 回確かめて決める（先行タスク A）。**
+  1. Obsidian 設定の除外フォルダに `_logs` を追加（武田さんの UI 操作が要る）
+  2. フォルダ名を `.logs` にする（先頭ドットを Obsidian が読まない想定）
+- **v1 では未確認のものを完成条件に置いていた。v2 では先行タスクに切り出した。**
 
 ## 6. 撤去するもの
 
 | 対象 | 実体 | やり方 |
 |---|---|---|
-| 先回りの注入 | `~/.claude/settings.json` の SessionStart `inject-full` と UserPromptSubmit `inject-light`、`~/.codex/hooks.json` の SessionStart `codex_adapter.py session-start` | フック登録の行を外す。スクリプトは残す |
-| 成果物 Inbox | `tools/inbox.py`、`CLAUDE.md` / `AGENTS.md` / `KIMI.md` の「成果物 Inbox」節、`inbox-dashboard.md`、Raycast の 2 項目 | 規約の節を「廃止（2026-09-08）」に書き換える。スクリプトとボードは残置し、呼ばれなくする |
+| 先回りの注入 | `~/.claude/settings.json` の SessionStart `brainstorm_guard.py inject-full`（8,000 字）と UserPromptSubmit `inject-light`、`~/.codex/hooks.json` の SessionStart `codex_adapter.py session-start` | フック登録の行を外す。スクリプトは残す |
+| 成果物 Inbox | `tools/inbox.py`、`CLAUDE.md` / `AGENTS.md` / `KIMI.md` の「成果物 Inbox」節、`inbox-dashboard.md`、Raycast の 2 項目 | 規約の節を「廃止（2026-09-09）」に書き換える。スクリプトとボードは残置し、呼ばれなくする |
 
 **どちらもファイルを削除しない。** 戻すときは登録行と節を戻すだけ。
 
+### 6.1 注入を外すと失うもの（v1 で書いていなかった・レビュー指摘）
+
+- **何を捨てるか**: 圧縮のたびに案件メモを読み込ませ直す処理（`inject-full`）。
+  これは brainstorm が担保していた 4 つの機械保証のうちの 1 つ。
+- **手元でどう変わるか**: 圧縮をまたいだ直後、案件の前提を私が持っていない状態になる。
+  座標の名乗りと照合で取りに行く形に変わるので、**私が「取りに行かなければ」抜ける**。
+  この差を段階3の完成条件で実測する（7 章）。
+- **戻せるか**: 戻せる。`settings.json` に 1 行を戻すだけ。
+
+### 6.2 「触らない監査」の定義（v1 で曖昧だった・レビュー指摘）
+
+段階3で外すのは **`inject-full` / `inject-light` / `codex_adapter.py session-start` の 3 つの登録行だけ**。
+これ以外の常時登録（`context_harness.py`、`guard-stop-content`、`guard-stop-handoff`、
+`deliverable_path_guard.py`、`audit_integrity_check.py`、`surface_claim_check.py`、
+`mechanization_backlog_check.py`、`prose_guard.py`、`guard-write`、`guard-card`）には触らない。
+
 ## 7. 段階と完成条件
 
-各段階は単体で役に立つ状態で終える。**注入を外すのは段階3。順序を逆にしない。**
+**先行タスク A（段階1 の前）**: Obsidian の索引・検索の扱いを実機で 1 回確認し、5 章の手段を決める。
 
 ### 段階1 — 写しと整合（土台）
 
-- 作る: 4.1 / 4.2（claude・codex）/ 4.3
+- 作る: 4.1 / 4.2（claude・codex）/ 4.3。**この段階の 4.1 は対応表を書かない版**（段階2 で改修する）
 - 配線: Claude `settings.json` の Stop に 1 行、Codex `hooks.json` の Stop に 1 行
-- 遡り: 既存 126 本を一括で写す
-- **完成条件**（すべて実測で確認）
-  1. 会話を 1 回終えると、写しの行数が増える
-  2. `session_log_verify.py` が全セッションで一致を返す
-  3. その間、私は 1 文字も記録を書いていない（応答に記録の記述が無い）
-  4. Obsidian の検索に `_logs` の中身が出ない
+- 遡り: 既存 126 本＋Codex 399 本を一括で写す
+- **完成条件**（すべて機械で判定できる形にした）
+  1. 会話を 1 回終えると、対象ファイルの写しの行数が増える
+  2. `session_log_verify.py` が全ファイルで一致を返す
+  3. **当該セッションのログに、`_logs/` 配下への Write / Edit の記録が 0 件**
+     （＝私がトークンを使って書いていないことを、ログ自身で判定する）
+  4. 1 ファイルに複数のセッション ID を含むログ、Codex の 1 対多のログでも、1〜3 が成立する
 
 ### 段階2 — 対応表と座標
 
-- 作る: 4.4、規約への 4.6 の 1 行
-- **完成条件**: 案件名を渡すと、その案件のログのパスが機械で引ける。座標なしの会話も `_uncoordinated` で残る
+- 作る: 4.4、4.1 の改修（対応表への追記）、規約への 4.6 の 1 行
+- **完成条件**: 案件名からその案件のログのパスが機械で引ける。座標なしの会話も `_uncoordinated` で残る。
+  会話の途中で座標が判明しても、写しのパスが変わらない
 
 ### 段階3 — 照合と、注入の撤去
 
 - 作る: 4.5
-- 撤去: 6 章の「先回りの注入」
-- **完成条件**: 注入が止まっており（会話の頭に案件一覧が出ない）、かつ案件の事実を `session_log_query.py` で引ける
+- 撤去: 6 章の「先回りの注入」（3 行のみ）
+- **完成条件**
+  1. 注入が止まっている（会話の頭に案件一覧が出ない）
+  2. **圧縮をまたいだ会話で、圧縮前の武田さんの発言を `session_log_query.py` で引ける**
+     （注入で得ていたものが、照合で取れることの実測）
+  3. 1 と 2 を、実際に圧縮が起きた会話で確認する
 
 ### 段階4 — Inbox 撤去と優先順位の可視化
 
 - 撤去: 6 章の「成果物 Inbox」
-- 作る: 対応表の `priority` を一覧にする出力（新規スクリプトにせず 4.4 のサブコマンド）
+- 作る: 対応表の `priority` の一覧出力（4.4 のサブコマンド。新規スクリプトにしない）
 - opencode の読み取り部品を追加
 - **完成条件**: 規約から Inbox が消え、「いまの順位」を 1 コマンドで出せる
 
 ## 8. 今回やらないこと
 
 - 新しい監査をこの 5 本以外に作らない
-- 既存の常時監査 7 本には触らない（注入だけを外す）
+- 6.2 に挙げた既存の登録には触らない
 - 過去の親メモを書き換えない（記録として残す）
-- 本体ログの自動削除設定は段階1では変更しない（写しの動作を確認してから判断）
+- 本体ログの自動削除設定は段階1では変更しない
 - ログの要約・分類・タグ付けはしない（丸写しのみ）
 
 ## 9. 危ないところ
@@ -209,16 +259,36 @@ iter_lines(path, from_line) -> Iterator[str]
 | リスク | 対処 |
 |---|---|
 | 外付け未接続で写せない | fail-open。次回接続時に差分で追いつく（元ログは本体にあるため取りこぼしなし） |
-| 本体ログが 30 日で消え、写す前に失われる | 段階1で遡り一括を先に実施する |
-| Claude が本体を圧迫（19GB 空き） | 段階4以降で退避を検討。段階1では触らない |
-| opencode だけ形式が違う | 段階1〜3は Claude / Codex で通し、opencode は読み取り部品 1 本の追加で入れる |
-| 注入を外した直後の案件取り違え | 段階2（座標の名乗り）が効いていることを確認してから段階3へ進む |
-| 写しと元の二重管理 | 元を常に正とし、写しの手編集を禁止。`session_log_verify.py` で機械的に検出 |
-| Obsidian 索引除外が効かない | 段階1の完成条件に含め、2 案のどちらかで必ず満たす |
+| 本体ログが消え、写す前に失われる | 段階1で遡り一括を先に実施する |
+| 本体の圧迫（空き 14GB・93%） | 段階4以降で退避を検討。段階1では触らない |
+| 走査の負荷 | サイズ比較のみ。全 525 本でも `stat` だけで済む。実測して 1 秒を超えるなら更新時刻の新しい順に打ち切る |
+| opencode だけ形式が違う | 段階1〜3 は Claude / Codex で通し、opencode は読み取り部品 1 本の追加で入れる |
+| 注入を外した直後の案件取り違え | 段階2 が効いていることを確認してから段階3。さらに段階3 の完成条件 2 で実測する |
+| 写しと元の二重管理 | 元を常に正とし、写しの手編集を禁止。`session_log_verify.py` で機械検出 |
+| Obsidian の扱い | 先行タスク A で手段を確定してから段階1 に入る |
 
 ## 10. 未確認
 
-- Claude のログ自動削除を止める設定の正確な名前と単位
-- Obsidian の索引除外の効き方（上記 2 案とも実機未確認）
+- Claude のログ自動削除を止める設定の正確な名前と単位。**「30 日で消える」は推定であって実測ではない**
+  （実測で言えるのは「2026-08-03 より前が残っていない」ことだけ）
+- Obsidian の除外設定・先頭ドットのフォルダの実際の効き（先行タスク A で確認する）
 - opencode の SQLite が会話の中身をどこまで保持しているか
-- Codex のフックで `session_id` から rollout ファイルを解決できること（形式は確認済み、解決処理は未実装）
+- SessionEnd のペイロード内容（Stop では実証済み）
+
+## 11. レビューで指摘され、事実でなかった懸念
+
+- Inbox 廃止と `mechanization_backlog_check.py` は無関係（別の台帳を読んでいる）
+- `audit_integrity_check.py` はファイルの sha256 を見るので、登録行を外しても落ちない
+
+## 12. v1 からの変更点
+
+1. **宛先の鍵をセッション ID からログファイルへ変更**し、写し取りを走査方式にした（4.1・4.2）
+2. **写し先を案件別フォルダからハーネス別のフラットへ変更**し、案件は対応表だけが持つ形にした（4.4）
+3. 対応表を **1 行 = 1 ログファイル**にし、`session_ids` を配列にした（4.4）
+4. **Obsidian の扱いを完成条件から先行タスクへ移した**（5・7）
+5. 段階1 の完成条件 3 を、主観判定から**ログで判定できる形**へ書き換えた（7）
+6. 段階3 の完成条件に、**注入で得ていたものが照合で取れることの実測**を追加した（7）
+7. **注入を外して失うものを 3 点セットで明記**した（6.1）
+8. **触らない登録を名指しで定義**した（6.2）
+9. 実測値を再計測して更新した（3）。「30 日」の断定をやめた（9・10）
+10. v1 が誤っていた前提を、消さずに 3.1 に残した
