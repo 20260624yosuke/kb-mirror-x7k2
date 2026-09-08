@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5500 ファイル_
+_合計 5501 ファイル_
 
 ## root/ (11)
 
@@ -4059,7 +4059,7 @@ _合計 5500 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (108)
+## wiki/builds/ (109)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -4165,6 +4165,7 @@ _合計 5500 ファイル_
 - [pureref-session-restore.md](wiki/builds/pureref-session-restore.md) | 2026-06-15T14:10:13Z
 - [raycast-file-search-scope.md](wiki/builds/raycast-file-search-scope.md) | 2026-08-25T02:29:47Z
 - [screenshot-path-clipboard.md](wiki/builds/screenshot-path-clipboard.md) | 2026-07-05T13:38:07Z
+- [session-log-fact-check-plan-20260908.md](wiki/builds/session-log-fact-check-plan-20260908.md) | 2026-09-08T14:56:55Z
 - [video-visual-ingest-design.md](wiki/builds/video-visual-ingest-design.md) | 2026-08-26T07:31:59Z
 - [window-layout-restore.md](wiki/builds/window-layout-restore.md) | 2026-08-26T11:04:47Z
 - [x-eagle-free-save-pilot.md](wiki/builds/x-eagle-free-save-pilot.md) | 2026-08-03T08:46:15Z
