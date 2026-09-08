@@ -659,10 +659,52 @@ Claude はフォーク重複を `uuid` で畳む（`--dups` で畳まない）�
 （`--since` 未指定なら直近 21 日）。実測: 直近 3 日ぶんの grep で約 21 秒。
 写し取り・整合・対応表の 3 本は opencode を一切参照しない（サービス依存は `opencode.py` に閉じた）。
 
-### 未実施（武田さんの判断待ち）
+### 段階3 後半 — 先回り注入 5 行の撤去（2026-09-09 実施・武田さん承認）
 
-- **段階3 後半: 先回り注入 5 行の撤去**（Claude `settings.json` 2 行・Codex `hooks.json` 3 行、および
-  `CLAUDE.md` 等の記述）。§6.1／§6.2 のとおり、圧縮直後に案件の前提を持たない状態に変わる。
-- **段階4: 成果物 Inbox の撤去**（規約 3 ファイルの節を「廃止」に、Raycast 5 本を退避）。
+バックアップ: `~/.claude/settings.json.bak-20260909-015518` ／ `~/.codex/hooks.json.bak-20260909-015518`
 
-段階3・段階4 の**照合と可視化の道具はすべて揃った**。残るのは「既存の仕組みを止める」2 つの撤去だけ。
+外した 5 行:
+
+| ハーネス | イベント | 外した登録 |
+|---|---|---|
+| Claude | SessionStart | `brainstorm_guard.py inject-full`（グループごと削除） |
+| Claude | UserPromptSubmit | `brainstorm_guard.py inject-light`（グループごと削除） |
+| Codex | SessionStart | `codex_adapter.py session-start` |
+| Codex | UserPromptSubmit | `codex_adapter.py user-prompt` |
+| Codex | PostToolUse | `codex_adapter.py post-tool`（PostToolUse キーごと消滅） |
+
+**触っていない**（§6.2 のとおり登録行は残す）: Claude `guard-stop-content` / `guard-stop-handoff` /
+`guard-write --unread` / `guard-card`、`deliverable_path_guard` / `audit_integrity_check` /
+`surface_claim_check` / `mechanization_backlog_check` / `context_harness`、
+Codex `pre-tool` / `stop` / `session-end`、両者の写し取りフック。
+
+**この撤去で失うもの**（§6.1）:
+- 何を捨てるか … 圧縮のたびに案件メモを読み込ませ直す処理（`inject-full` / `session-start` / `user-prompt`）。
+- 手元でどう変わるか … 圧縮直後、案件の前提を私が持たない状態になる。座標の名乗りと `session_log_query.py` で
+  取りに行く形に変わる（取りに行かなければ抜ける）。**Codex 側は `user-prompt` が state["active"] を立てる唯一の箇所だったため、
+  brainstorm の承認カード歯止め・親メモ必須化・カード記録もすべて動かなくなる**（登録は残るが素通り）。
+- 戻せるか … 戻せる。バックアップから 5 行を戻すだけ。
+- 扱い … 2026-09-08 に武田さんが「brainstorm というスキル自体を使わない方針」と明言しており、意図した撤去。
+
+### 段階4 — 成果物 Inbox の廃止（2026-09-09 実施・武田さん承認）
+
+- `CLAUDE.md` / `AGENTS.md` / `KIMI.md` の「成果物 Inbox」節を「廃止（2026-09-09）」へ書き換え。
+- `wiki/builds/deliverable-inbox.md` を `status: superseded` にし、冒頭に廃止の警告ブロックを追加。
+- Raycast の 5 本（`llm_wiki_inbox` / `_done` / `_done_all` / `_open` / `_open_all`）を
+  `~/.config/raycast-scripts-retired-inbox-20260909/` へ退避（Raycast の一覧から外れる）。
+  `llm_wiki_open.sh`（wiki ページを開く別物）は残置。
+- **削除していない**: `tools/inbox.py` ・ `tools/inbox.jsonl` ・ `inbox-dashboard.md`。
+- 失うもの … 成果物の確認導線が inbox 申告から対応表（`_logs/index.jsonl`）へ完全に移る。
+  戻すときは規約 3 節と Raycast 5 本を元へ戻す。
+
+## この計画は完了
+
+段階1〜4 をすべて実施した。作った道具 6 本（`session_log_mirror.py` / `log_readers/` /
+`session_log_verify.py` / `session_index.py` / `session_log_query.py` / `log_readers/opencode.py`）、
+撤去 2 件（注入 5 行・Inbox）、規約 3 ファイルの更新。
+
+**私（LLM）が確認できていないこと**（末端の実機観測が要る）:
+- 段階3 完成条件 1〜3 は、brainstorm が作動している会話 ＋ 実際の圧縮を経ないと最終判定できない。
+  撤去自体は完了しているが、「圧縮をまたいで発言が `session_log_query.py` で引ける」の実測は次の圧縮時。
+- opencode の写し取りは設計上おこなわない（照合のみ）。opencode を使った会話での照合は
+  `--opencode` で引けることを実データで確認済みだが、圧縮跨ぎの検証は未。

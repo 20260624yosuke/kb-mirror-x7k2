@@ -1,13 +1,22 @@
 ---
 type: build
 sources: []
-status: active
+status: superseded
 confidence: high
 evidence_level: user-stated
-last_reviewed: 2026-08-23
+last_reviewed: 2026-09-09
 ---
 
 # 成果物 Inbox(deliverable-inbox)
+
+> [!warning] 2026-09-09 廃止
+> この仕組みは廃止した。セッションログの写しと対応表(`_logs/` ・
+> [[session-log-fact-check-plan-20260908]])による機械監査が上位互換のため
+> (2026-09-08 に武田さんが「機械監査が上位互換だからもう必要ない」と明言)。
+> `tools/inbox.py` ・ `tools/inbox.jsonl` ・ `inbox-dashboard.md` は削除していない。
+> Raycast の 5 本は `~/.config/raycast-scripts-retired-inbox-20260909/` へ退避。
+> 規約(`CLAUDE.md` / `AGENTS.md` / `KIMI.md`)の該当節は「廃止」に書き換え済み。
+> 戻すときは規約の節と Raycast スクリプトを元に戻すだけ。以下は当時の設計記録。
 
 ## 目的・背景
 

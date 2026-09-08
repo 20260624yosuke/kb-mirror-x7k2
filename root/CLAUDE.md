@@ -408,20 +408,18 @@ Codex では `~/.codex/skills/grill-build/SKILL.md` を正規入口にし、Clau
 - 目的は、セッションログの写し(`_logs/`)を案件へ機械的に結びつけること。
   正本は [[session-log-fact-check-plan-20260908]]。
 
-## 成果物 Inbox(全ハーネス共通の機械導線)
+## 成果物 Inbox(廃止・2026-09-09)
 
-成果物(新規作成・更新してユーザーに確認してほしいファイル)が完成したら、報告文に加えて必ず
-inbox へ機械的に申告する。チャット内リンクの押下可否はハーネス(opencode 等)依存のため、
-押せるリンクではなくこの申告が成果物確認の正の経路。
+**この仕組みは廃止した。** セッションログの写しと対応表(`_logs/` ・
+[[session-log-fact-check-plan-20260908]])による機械監査が上位互換のため。
 
-```
-python3 "<KBルート>/tools/inbox.py" add "<絶対パス>" --origin <claude-code|codex|kimi|opencode> --task "<依頼の要約>" --note "<見て判断すべき点>"
-```
-
-- 申告は窓を開かない(静かに記録されるだけ)。同一パスの未処理分がある場合は弾かれ、既存の短IDが返る。
-- ユーザーの入口: Raycast「成果物Inboxを開く」= 未処理ボード(inbox-dashboard.md)を Obsidian でオープン。
-  「成果物Inbox処理済み」= 短ID指定で完了化。CLI は `llm-wiki-inbox`(add/list/open/done/board)。
-- 正本と経緯は [[deliverable-inbox]]。
+- `tools/inbox.py` ・ `inbox.jsonl` ・ `inbox-dashboard.md` は削除していない(呼ばれなくなっただけ)。
+- Raycast の 5 本(`llm_wiki_inbox` / `_done` / `_done_all` / `_open` / `_open_all`)は
+  `~/.config/raycast-scripts-retired-inbox-20260909/` へ退避した。
+- `inbox.py add` の申告は不要。報告時に成果物のパスを押せるリンクで出す規則
+  (グローバル `~/.claude/CLAUDE.md`「ファイルの示し方」)はそのまま維持する。
+- 戻すときは本節を戻し、Raycast の 5 本を `~/.config/raycast-scripts/` へ戻す。
+- 経緯は [[deliverable-inbox]]。
 
 ## 命名規則
 
