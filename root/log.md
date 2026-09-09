@@ -10974,3 +10974,24 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 遡り一括で既存の Claude 212 本＋Codex 399 本＝約 3.4GB を写した。写し 614 本すべて前方一致。
 - Codex セッションでも自己テスト・整合・照合・注入撤去を実機確認。Codex の自動写し取りも確認（02:16）。
 - 未確認 1 点: 「圧縮をまたいで圧縮前の発言を `session_log_query.py` で引ける」は次の圧縮時に実測。
+
+## [2026-09-09] query | muse（Muse Spark 1.3）による汚染調査
+
+- 依頼: opencode で muse に進めさせた Helen H0157 案件が、「フロンティア級」という前提で
+  タスクを投げていたために汚染された可能性の調査。方針は武田さんの選択で
+  「判断・結論だけを疑い、機械が測った数値と再実行できるコードは残す」。
+- `~/.local/share/opencode/opencode.db`（7.7GB）を読み取り専用で照会。使用モデルは全期間で3種のみ、
+  会話内の混在なし。muse は 2026-09-03 12:30 〜 09-08 12:50、74セッション、応答7,828件。
+  書き換えた実パスは重複を除き269件（brainstormメモ45 / HTML88 / Helen 3D 38 / .opencode 24）。
+- 「フロンティア前提」の出所は 09-03 の `20260903-muse-spark-spec.html`（muse の自己評価文書）。
+  記載の知能指数 62(max)/61(xhigh)・文脈長1M・価格は Artificial Analysis の公開値と一致し、捏造ではなかった。
+  よって汚染の型は「虚偽の自己申告」ではなく「ベンチマーク値と本案件での実用性の乖離」。
+- 正本に残った誤結論2件を特定: ①09-03 不具合の原因を武田さんの進め方に帰した診断（直後の
+  「会話を切らないと送れてない」で実不具合と判明）②f189の目視不合格に対し f193 で「clip解釈側が誤り」へ倒した判断。
+- 逆向きの汚染1件: `implementation_agent: separate-session` を「museがたぶん書き換えた」とする帰属は、
+  opencode全期間・全モデル・bash含めて0件で裏付けなし。muse は opencode でしか動いていない。
+- 無変更を確認: Helen原本 `helen-h0157-repro.blend`（SHA 04ef8b79…、8/25）、`CLAUDE.md`、`AGENTS.md`、
+  `~/.claude/skills/`、`~/.codex/`、`gf2-helen-h0157-u0-u3-next-agent-task-entry.md`。
+- 未確認: bash経由の書き込み（bash 2,170回）、f169〜f197の再実行、08-22〜08-26の `x-preview-f-free` 期間。
+- 触ったファイル: `wiki/_attachments/project-hub-index/20260909-muse-contamination-audit.html`（新規） /
+  `wiki/_attachments/project-hub-index/design-system/figure-zoom.js`（helen-swimsuit-status から複製） / `log.md`。
