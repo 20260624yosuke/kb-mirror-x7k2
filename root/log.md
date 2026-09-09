@@ -11228,3 +11228,21 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   区画申告の書き足しと再実行の修理は未着手。
 - 触ったファイル: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/f200-cache-side-availability.json`（新規） /
   `wiki/builds/helen-h0157-new-agent-entry-20260909.md` / `log.md`。
+
+## [2026-09-09] lint | 【訂正】保存領域2台の「0件・陰性」は誤り。検索が走っていなかった
+
+- 2026-09-09 に2回報告した「`/Volumes/HDD_バックアップ` と `/Volumes/HDD_バックアップ_macbookpro` は
+  `*.bundle` 0件・目標2本0件・ゲームデータ0件で陰性」を **全部取り消す。**
+- 原因: 走査コマンドを `timeout 240 find ... | wc -l` の形で書いた。**この Mac に `timeout` が無い。**
+  `command not found` となりパイプが空になり、`wc -l` が 0 を返していた。
+  再現確認: `timeout 5 find /Volumes/HDD_02 -maxdepth 1 | wc -l` → 0、
+  `timeout` を外すと同じ検索が 19 を返す。
+- **陽性対照を置いていなかったため、この0件を検索結果として報告した。**
+  2回目の走査で陽性対照（`backup_manifest.plist`）を付けたところ 9 件返り、
+  同時に本探索が `*.bundle` を **1,458 件**返して誤りが露見した。
+- この誤りは `log.md` の 2026-09-09 の2エントリと
+  `wiki/builds/helen-h0157-new-agent-entry-20260909.md` §7 に書き込まれていた。
+  入口文書は訂正済み。log.md は追記式のため本エントリで打ち消す。
+- 1,458 件の素性と、目標2本の有無は走査中。結果は
+  `06_repro-v51/logs/f201-backup-volume-rescan.json` に記録する。
+- 触ったファイル: `wiki/builds/helen-h0157-new-agent-entry-20260909.md` / `log.md`。
