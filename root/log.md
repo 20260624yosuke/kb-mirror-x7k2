@@ -10995,3 +10995,27 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 未確認: bash経由の書き込み（bash 2,170回）、f169〜f197の再実行、08-22〜08-26の `x-preview-f-free` 期間。
 - 触ったファイル: `wiki/_attachments/project-hub-index/20260909-muse-contamination-audit.html`（新規） /
   `wiki/_attachments/project-hub-index/design-system/figure-zoom.js`（helen-swimsuit-status から複製） / `log.md`。
+
+## [2026-09-09] query | Helen再現の詰まりの正体と、読み違いを止める機械化の設計
+
+- 武田さんの5つの問いへの回答。すべて実ファイル実測。
+- 90パーセントの正体: `logs/f166-code-inventory.json`（08-26 全数棚卸し）。ゲーム全体の符号 7,726種のうち
+  7,424種＝96.1% が未取出し。私が指摘した「UnityFS で開けなかった4区画・約1.8億バイト」とは数える軸が別
+  （符号の種類 / ファイルのバイト）。原因は同じ「取り出す道具が形式に届いていない」。
+- 前回の推し（GFF末尾秘密を含む4区画）に条件変更。末尾秘密は 5,200通り試行で0件・植え込み陽性対照は検出済み。
+  残る本命は GFF容器の内部構造と resource streams の2つ。
+- 読み違いの機械化（設計・未実装）: `ledger/negative-claims.json` と `ledger/local-corpus-coverage.json` が
+  繋がっていないのが原因。否定主張に `covered_classes` / `excluded_classes` を必須化し、
+  `scripts/f72_negative_claim_gate.py` が「目録に partial/unreadable の区画があるのに未申告なら FAIL」を見る。
+  併せて「引用記録の測定日が目録より古いのに未走査区画を併記していなければ FAIL」（鮮度検査）。
+- 台帳バッティングのボトルネック（設計・未実装）: `tools/audit-integrity.json` は1ファイル1SHAで、
+  正当な拡張と壊し試験の残骸を機械が区別できない。判定器（各監査の `--mutation-test` / `--selftest`）は既に存在するので、
+  SHA不一致で即停止せず自己試験を走らせ、通れば自動 record、落ちれば残骸として停止する順序へ変える。
+- **新事実**: `ledger/backup-volume-access-20260823.json` で macOS の保護により列挙不能と記録され、
+  09-06 にも「依然として開けない」と再確認された保存領域2台が、2026-09-09 に読める状態になっていた。
+  記録された反証条件（解除後に同じ探索を再実行）は未実施だった。走査を開始し、
+  `/Volumes/HDD_バックアップ`（115GB）は *.bundle 0件・目標2本0件・ゲームデータ0件で陰性。
+  `/Volumes/HDD_バックアップ_macbookpro` は走査継続中。
+- muse への委任範囲: 容器を開ける作業は可（正解が容器内・成否が機械判定可・読取りのみ）。
+  不可は①否定主張の登録②合否の門の作成（`logs/f197-allframes-gap.json` の実測が根拠）。
+- 触ったファイル: `wiki/_attachments/project-hub-index/20260909-helen-bottlenecks-and-mechanization.html`（新規） / `log.md`。
