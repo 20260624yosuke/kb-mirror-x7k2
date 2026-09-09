@@ -11269,3 +11269,21 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   現在の詰まりへ接続すると検証されていないため、正規な次工程として未採用とする。
 - `wiki/builds/gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909.md` と
   `wiki/builds/helen-h0157-new-agent-entry-20260909.md` を上記の区別へ訂正した。
+
+## [2026-09-09] query | 保存領域の再走査（1,458件の素性・目標2本は判定不能・TM 33世代）
+
+- 前エントリの訂正を受けた再走査。読み取りのみ。記録は
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/f201-backup-volume-rescan.json`。
+- **1,458件の素性判明**: macOS のアプリケーションバンドル（`ChromeRemoteDesktopHost.bundle` /
+  `GoogleSoftwareUpdate.bundle` 等）。ゲームの資産束ではない。`.bundle` は macOS の汎用拡張子。
+- **目標2本の探索は判定不能**: 実名検索の戻りは 0 だったが、**陽性対照も 0**。
+  対照の選び方が誤っていた（ゲームの経路に在る束名を、バックアップ側の探索の対照に使った）。
+  **この走査から目標2本について何も主張しない。**
+- **この2台は稼働中の Time Machine 保存先**と判明。スナップショット名は backup のたびに変わり、
+  以前に測ったパスは解決しなくなる。`tmutil listbackups` は 33 世代を返し、
+  消失前（本日 17:58 等）の時刻を含む。
+- 消失前の世代を読む試み: `/Volumes/HDD_バックアップ/<最新>.previous` 側は陽性対照が通り、
+  その世代（21:30・消失後）の LocalCache は空だった。`/Volumes/.timemachine/<UUID>/` 側は
+  陽性対照（`Macintosh HD - Data/Users` の列挙）が通らず、**消失前の世代の中身は未測定**。
+- 触ったファイル: `06_repro-v51/logs/f201-backup-volume-rescan.json`（新規） /
+  `wiki/builds/helen-h0157-new-agent-entry-20260909.md` / `log.md`。
