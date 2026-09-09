@@ -11047,3 +11047,24 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 触ったファイル: `tools/deliverable_path_guard.py` / `tools/audit_integrity_check.py` /
   `tools/audit-integrity.json` / `tools/audit-baselines/` /
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/scripts/f72_negative_claim_gate.py` / `log.md`。
+
+## [2026-09-09] build | 未開封区画を開く作業指示書（廉価モデル向け・実測で裏取り）
+
+- 武田さんの指示（2026-09-09「4からはじめます」「廉価モデルでも自律的に進められる計画にして」）で作成。
+- 想定実行者は muse / sonnet / gpt luna。会話履歴なしで完結する形式にし、停止条件・陽性対照・
+  禁止事項・「書いてはいけない結論」を明記した。
+- 計画を書く前に対象の実物を測定（憶測での手順化を避けるため）:
+  - GFF 容器の見出しを解読。`GFF\0` + 検査値 + 容量A + 容量B + 2つの数、`0x18` から
+    12バイト1行 `(識別子, 大きさ, 連番)` の表。csHt で 5,313 行が連番どおり読めた。
+  - 読み取った検査値 897537011 は `ledger/h0157-gff-vab-primary-source-scan.json` の
+    `checksum_u32` と一致。読み方が成立していることを確認（＝指示書の陽性対照に採用）。
+  - **表の後ろに 99% 以上が残る**（csHt で 24,450,780 バイト）。ここが未開封の本体。
+  - `resources.resource` の先頭は `FSB5`（FMOD の音の入れ物）。
+  - `resources.assets.resS` は見出しなし。**単体では開けない設計**で、索引 `resources.assets`
+    の StreamingInfo が位置と長さを持つ。`resources.assets` は UnityPy 1.25.3 で開け、
+    オブジェクト 4,036 件（目録の boot_assets の記録と一致）。
+    → 2026-09-06 の「resource_streams は UnityPy で読めず・物0件」は、
+       単体で開こうとしたためと判明。索引経由の手順へ変更した。
+- 触ったファイル: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/reports/WORK-ORDER-20260909-open-gff-containers.md`（新規） / `log.md`。
+- 承認ずみ・未着手: ①保存領域2台の陰性を登録簿へ ②否定主張9件への区画申告の書き足し
+  ③再実行が壊れている主張の修理。武田さんの指定順は 4 → 1 → 2 → 3。
