@@ -11149,3 +11149,29 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   時刻が読めない会話記録では従来どおり止める側へ倒す。
 - 検出力 20/20（D4 入口の新規3件を含む）・配線 5/5。台帳は自己試験を通ったので自動記録された。
 - 触ったファイル: `tools/deliverable_path_guard.py` / `tools/audit-integrity.json` / `log.md`。
+
+## [2026-09-09] build | 否定主張の門を台帳の外へ広げた（実装・配線・凍結）
+
+武田さんの承認（2026-09-09「実装許可します」）で実装。
+
+- 新規 `tools/absence_claim_scope_gate.py`。案件側の判定器 `f72_negative_claim_gate.py` の
+  `scan_text` をそのまま使い、**判定の基準は変えていない**。
+- 監査の範囲を、台帳2ファイルから次へ広げた:
+  `06_repro-v51/reports/`（実装エージェントへ渡す指示書）/ `wiki/builds/`（引き継ぎ資料）/
+  `wiki/analyses/brainstorm/gf2-helen-repro-resume/`（親メモ）/ `wiki/_attachments/`（説明ページ）。
+- 見るのは **その回に実際に更新された文書だけ**（更新時刻が人の発言より後のもの。H1/D4 と同じ絞り込み）。
+  強い否定主張の指紋が `negative-claims.json` / `negative-claims-legacy.json` /
+  `negative-claims-expanded-legacy.json` のどれにも無ければ会話を止める。
+  **証拠の中身は見ない**（登録の有無だけ）。証拠の実行照合は従来どおり `f72 audit` の担当。
+- 既存分は 2026-08-20 の決定「新しい主張からだけ強制する」に合わせて凍結。
+  `ledger/negative-claims-expanded-legacy.json` に **1,406 件**を宿題として記録した
+  （照合時の 702 件は一部の抽出。全範囲を走査した結果がこの件数）。
+- `tools/deliverable_path_guard.py` の `guard-stop` へ配線。実地試験で
+  「新しい無証拠の否定主張を書いた回＝止めた」「普通の作業報告の回＝通した」を確認。
+- 検出力: 新しい門 7/7、`deliverable_path_guard` 20/20・配線 5/5、`audit_integrity_check` 9/9。
+- 新しい門を `tools/audit-integrity.json` へ登録。自己試験が通り自動記録された。
+- 途中で自分の試験文が保管庫の作法（`HEDGE_SCOPE` の語形）に合っていないことが判明。
+  **判定器は弱めず、試験文の側を直した。**
+- 触ったファイル: `tools/absence_claim_scope_gate.py`（新規） / `tools/deliverable_path_guard.py` /
+  `tools/audit_integrity_check.py` / `tools/audit-integrity.json` / `tools/audit-baselines/` /
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/ledger/negative-claims-expanded-legacy.json`（新規） / `log.md`。
