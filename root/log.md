@@ -11287,3 +11287,15 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   陽性対照（`Macintosh HD - Data/Users` の列挙）が通らず、**消失前の世代の中身は未測定**。
 - 触ったファイル: `06_repro-v51/logs/f201-backup-volume-rescan.json`（新規） /
   `wiki/builds/helen-h0157-new-agent-entry-20260909.md` / `log.md`。
+
+## [2026-09-09] build | H0157 現行アプリ全量コード再抽出から忠実Blendまでの詳細計画
+
+- 武田さんの選択で、完成条件をH0157の忠実再現、最初の機械工程を「現行アプリ全量コード抽出後にH0157分析」へ固定した。
+- Time Machineと特定2bundle探索はユーザー要件ではないとの訂正を受け、既定経路から除外した。必要性が全量抽出後に直接証明された場合だけ再選択する。
+- 旧分業計画を `superseded` にし、現行計画
+  `wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-20260909.md` を作成した。
+- 廉価モデルへ渡す最初の具体契約
+  `wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-20260909.md` を作成した。R0入力固定、R1全量抽出、R2機械検証、R3 H0157候補索引までを対象とし、意味判断とBlend変更は含めない。
+- 現物を再測定し、app main、UnityFramework、global-metadata、app側AssetBundles 4,513 regular files、陽性対照bundle、原本Blendの実体とSHAを契約へ固定した。
+- `wiki/builds/helen-h0157-new-agent-entry-20260909.md` と `index.md` を現行計画へ接続した。
+- 計画作成のみ。抽出器、索引器、全量再抽出、独立レビュー、Blend変更は未実施。

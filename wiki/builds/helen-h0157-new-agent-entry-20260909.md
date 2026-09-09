@@ -10,12 +10,11 @@ supersedes_entry: gf2-helen-h0157-u0-u3-next-agent-task-entry.md
 
 # Helen H0157 — 新しいエージェントの入口（2026-09-09）
 
-> [!warning] 2026-09-09 分業計画の差し替え案
-> フロンティア級エージェントが前提を確定し、独立レビューを通した後にだけ廉価モデルへ実装を渡す計画を
-> [[gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909]] として作成した。
-> **計画は proposed、実装未開始。** 本文 §3 のMuse由来候補、§7の未着手作業を、現在の実行指示として自動採用しない。
-> **状態訂正:** GFFは `f198` の範囲まで解析済み。保存領域の検索は完走したが陽性対照不成立。
-> F12は「未着手の次工程」ではなく、Muse由来で次工程として未採用の候補である。
+> [!warning] 2026-09-09 現行の計画
+> [[gf2-helen-h0157-current-app-reextract-workflow-plan-20260909]] を現行計画とする。
+> 完成条件は忠実再現。現在読めるドルフロ2アプリからコードを全量再抽出し、その後H0157だけを分析する。
+> 最初の廉価モデル用契約は [[gf2-helen-h0157-current-app-reextract-task-contract-20260909]]。
+> **計画は proposed、実装未開始。** Time Machine、特定2bundle、GFF、F12を次工程として自動採用しない。
 
 **この1枚を最初に読む。他の資料はここから辿る。**
 
@@ -29,8 +28,8 @@ supersedes_entry: gf2-helen-h0157-u0-u3-next-agent-task-entry.md
 
 - **ゴール**: 寮の Helen の見た目を Blender 上で再現し、開いて確認できる blend を渡すこと。
 - **合否を決めるのは武田さんの目**。機械の一致は合格の証拠にならない（実例は §4）。
-- **正規な次工程は未確定**。候補を開いてF12を押す段取りはMuseが書いたもので、現行工程として
-  採用されていない。GFF解析済み範囲と保存領域検索の不成立を先に再照合する。
+- **正規な次工程は計画済み・未実行**。現在読めるアプリの入力を固定し、廉価モデルが全量コード再抽出と
+  H0157候補索引までを隔離出力へ作る。F12、Time Machine、特定bundle探索は開始しない。
 
 ---
 
@@ -219,8 +218,9 @@ PC を再起動したあと、同じ経路に `os.stat` を当てた戻りは **
    その後の全深度検索task `bhjp69w2l` も完走した。だが出力では目標2名だけでなく、同じ方法で
    探した陽性対照も0件だった。このため目標不在という結論は無効である。出力が示すのは
    上位ディレクトリ別の分布までで、1,458件の内容解析ではない。
-   `06_repro-v51/logs/f201-backup-volume-rescan.json` は作られていない。現在状態は
-   **「検索は実行済み・結果不成立・次工程としては未採用」**であり、未着手とは扱わない。
+   `06_repro-v51/logs/f201-backup-volume-rescan.json` は 2026-09-09 22:01 に作成済み。
+   1,458件はmacOSのアプリケーションbundleであり、ゲーム資産束ではなかった。目標2本検索は
+   陽性対照不成立で判定不能。現在状態は **「検索は実行済み・結果不成立・現行工程から除外」**。
 2. 否定主張 9 件への区画申告の書き足し（`covered_classes` / `excluded_classes`）
 3. 再実行が壊れている主張の修理（登録された探索コマンドが実行時に落ちるもの）
 
@@ -249,7 +249,9 @@ PC を再起動したあと、同じ経路に `os.stat` を当てた戻りは **
 
 ## 10. 関連
 
-- [[gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909]] — フロンティア判断と廉価モデル実装を分離する差し替え計画（proposed・実装未開始）
+- [[gf2-helen-h0157-current-app-reextract-workflow-plan-20260909]] — 現行アプリ全量コード再抽出から忠実Blendまでの現行計画（proposed・実装未開始）
+- [[gf2-helen-h0157-current-app-reextract-task-contract-20260909]] — 廉価モデルへ渡すR0〜R3の詳細契約（proposed・実装未開始）
+- [[gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909]] — 旧分業計画（superseded）
 - [muse 汚染調査](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260909-muse-contamination-audit.html>)
 - [監査の死角と繰り返し](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260909-audit-blind-spot-and-repeat-pattern.html>)
 - [引き継ぎ資料 2026-09-08](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/helen-h0157-handoff-20260908.md>)

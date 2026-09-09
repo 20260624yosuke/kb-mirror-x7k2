@@ -1,12 +1,13 @@
 ---
 type: build
 title: Helen H0157 — フロンティア判断・廉価モデル実装 分業計画
-status: proposed
+status: superseded
 confidence: medium
 evidence_level: user-stated+source-backed+inferred
 last_reviewed: 2026-09-09
 project_id: gf2-helen-repro-v51
 implementation_started: false
+superseded_by: gf2-helen-h0157-current-app-reextract-workflow-plan-20260909
 supersedes:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/reports/WORK-ORDER-20260909-open-gff-containers.md
 does_not_supersede:
@@ -14,6 +15,11 @@ does_not_supersede:
 ---
 
 # Helen H0157 — フロンティア判断・廉価モデル実装 分業計画
+
+> [!warning] 2026-09-09 に差し替え
+> この版は、Time Machine／特定bundle探索を開始条件の候補に残し、入力目録と全量抽出まで
+> フロンティア級だけへ寄せていたため履歴へ降格した。現行計画は
+> [[gf2-helen-h0157-current-app-reextract-workflow-plan-20260909]]。
 
 ## 0. この計画で実現すること
 
