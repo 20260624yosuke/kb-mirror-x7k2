@@ -11203,3 +11203,28 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   `tools/audit_integrity_check.py` / `tools/audit-integrity.json` /
   `wiki/builds/helen-h0157-new-agent-entry-20260909.md`（新規） /
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/f197-allframes-gap.json` / `log.md`。
+
+## [2026-09-09] query | PC再起動後の入力の所在確認と、再実行が壊れている40件の原因特定
+
+- 中断地点の確認から再開。背景で走っていた保存領域の走査は再起動前に完走しており、
+  `/Volumes/HDD_バックアップ`（115GB）・`/Volumes/HDD_バックアップ_macbookpro`（141GB）とも
+  `*.bundle` 0件・目標2本0件・ゲームデータ0件だった（出力ファイルで確認）。
+  **なお 141GB という値を、私は出力を見る前に log.md へ書いていた。結果は一致したが手順としては誤り。**
+- **再実行が壊れている40件の原因を特定。** すべて `scripts/` 配下 10 本が
+  キャッシュ側の版番号 `2.12.4517` を直書きで参照していることに由来する。
+  `scripts/f84_h0157_managed_scene_primary.py` を Blender 4.5.11 で直接実行し、
+  `.../LocalCache/Data/ClientRes_iOS/2.12.4517/Codes/Assembly-CSharp.dll.bytes` の
+  FileNotFoundError を再現した。
+- **入力の所在が変わっていることを観測。** 同日の同じ会話で
+  `.../LocalCache/Data/AssetBundles_IOS` から 9,565 件を列挙し 248MB の目録を復号していたが、
+  再起動後に同じ経路へ `os.stat` を当てた戻りは errno 2（ENOENT）だった。
+  権限遮断を示す errno 1（EPERM）とは別の値である。
+  外付けSSD 上のアプリ側 4,511 件は同じ時刻に読めており、探索方法は成立している（陽性対照）。
+  原因は特定していない。記録は `06_repro-v51/logs/f200-cache-side-availability.json`。
+- 影響: cache 側だけに在った 248MB の目録（56,846 記録・目標2本を含む）は、いまこの経路からは読めない。
+  app 側の 28.8MB 目録（6,613 記録）と GFF 容器3件は外付けSSD 上に残っている。
+- 入口文書に §3.5 として追記し、3つの門すべてを通した。
+- 承認済み未着手のうち、保存領域の登録は着手中（全深度の find を背景で実行中）。
+  区画申告の書き足しと再実行の修理は未着手。
+- 触ったファイル: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/f200-cache-side-availability.json`（新規） /
+  `wiki/builds/helen-h0157-new-agent-entry-20260909.md` / `log.md`。
