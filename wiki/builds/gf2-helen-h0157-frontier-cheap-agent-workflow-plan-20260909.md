@@ -38,7 +38,14 @@ Helen H0157 の原作再現を完成させるため、役割を次のように�
 
 - `quality-gate.json` が原作入力として登録するcache側bundle 2本は、2026-09-09の対象2パスへの `stat` がいずれも `ENOENT` を返した。
 - PC再起動前に読めたcache側 `AssetBundles_IOS` は、再起動後に登録経路から読めず、原因は未確定。
-- 保存領域2台から列挙された `*.bundle` 1,458件は、内容と目標入力との関係が未確認。予定されていた `logs/f201-backup-volume-rescan.json` のパス確認結果は `exists: false`。
+- GFFは未解析ではない。`logs/f198-gff-unopened-accounting.json` で異なる8ファイルの構造会計、
+  248MB目録56,846件と28MB目録6,613件の名前復号、陽性対照、目標名の照合まで記録済みである。
+  未解明なのは、記録ごとの二進部分の意味、resource streamsの索引経由の被覆、bundle実データの
+  入手可否である。
+- 保存領域2台の `*.bundle` 1,458件は列挙済みで、その後の全深度検索も背景task
+  `bhjp69w2l` がexit code 0で完走した。ただし出力では目標2名だけでなく陽性対照も0件だったため、
+  目標不在の証拠にはならない。実行したのは実名検索と上位ディレクトリ集計であり、1,458件の
+  内容解析ではない。予定されていた `logs/f201-backup-volume-rescan.json` は存在しない。
 - 完成条件として引用された `logs/f197-allframes-gap.json` はMuse由来で、武田さんの指示としての裏付けが取れず `contested` になっている。
 - 既存の状態拘束は古い。品質ゲートのplan検査は `EA_KB_SNAPSHOT_STALE` で停止し、`run-state.json` の固定SHAと現物が一致しない。
 
@@ -90,12 +97,14 @@ Helen H0157 の原作再現を完成させるため、役割を次のように�
 - `python3 tools/project_quality_gate.py check ... --phase plan` は `EA_KB_SNAPSHOT_STALE: project-run-state: sha256 mismatch` で停止する。
 - `WORK-ORDER-20260909-open-gff-containers.md` は、前提、構造模型、数値、対象数の誤りにより撤回済み。
 - F12確認候補 `f195-opencheck.blend` と `WORKING-LINE.json` は実在するが、Muse由来であり、現在の正規な次工程としては未採用。
+- GFFは `f198-gff-unopened-accounting.json` の範囲まで解析済みであり、「GFF解析未開始」は誤り。
+- 保存領域の全深度検索は完走したが、陽性対照も空だったため結果は不成立。未着手でも陰性確定でもない。
 
 ### 現在言えないこと
 
-- GFFまたは保存領域のどれが次の本命か。
-- 未探索領域がどれだけ残っているか。
-- F12候補を先に見るべきか。
+- GFFの未解明3項目または保存領域のどれが、H0157の次の本命か。
+- 保存領域に目標bundleがあるか。完走した検索は陽性対照が成立していないため結論に使えない。
+- Muse由来F12候補が、現在の詰まりへ接続する有効な候補か。
 - 既存の `run-state.json` に書かれた次工程が現在も有効か。
 
 したがって最初の仕事は、新しい実装指示書ではなく、以下のF0である。
@@ -286,7 +295,10 @@ completion_evidence: 作業完了を示すが、原作一致を意味しない�
 
 ## 5. 最初に実行する作業
 
-最初はF0だけを行う。GFF解析、1,458 bundleの中身解析、F12確認、Blend変更には進まない。
+最初はF0だけを行う。ここで新しいGFF再解析、1,458 bundleの内容解析、F12確認、Blend変更には進まない。
+すでにある `f198-gff-unopened-accounting.json` は解析済み記録として再照合し、背景task
+`bhjp69w2l` は「完走したが陽性対照不成立」として扱う。F12は未着手の正規工程ではなく、
+Muse由来で現在の次工程として未採用の候補として扱う。
 
 F0の成果物は次の2件とする。
 

@@ -11254,3 +11254,18 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 現物照合で、原本Blend SHAは `04ef8b79...` のまま、品質ゲートplanは `EA_KB_SNAPSHOT_STALE`、固定12入力のうち `run-state.json` と親 `quality-gate.json` が現物と不一致、登録cache bundle 2本が登録パスに無いことを確認した。このため最初の作業をF0「現在状態の再照合」に固定し、GFF解析・F12確認・Blend変更は開始していない。
 - 計画: `wiki/builds/gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909.md`。statusは `proposed`、独立レビュー未実施、実装未開始。
 - 入口 `wiki/builds/helen-h0157-new-agent-entry-20260909.md` に、Muse由来候補と未着手作業を現在の実行指示として自動採用しない注意を追加した。
+
+## [2026-09-09] build | 【訂正】分業計画の「GFF解析・F12確認は開始していない」を撤回
+
+- 直前の分業計画エントリに書いた「GFF解析・F12確認・Blend変更は開始していない」のうち、
+  **GFF解析とF12確認の位置づけを撤回する。** Blend変更を今回開始していない点だけがそのまま残る。
+- GFFは未開始ではない。`06_repro-v51/logs/f198-gff-unopened-accounting.json` に、異なる8ファイルの
+  構造会計、248MB目録56,846件と28MB目録6,613件の名前復号、陽性対照、目標名照合が記録済み。
+  未解明は、記録ごとの二進部分の意味、resource streamsの索引経由の被覆、bundle実データの入手可否。
+- 保存領域は `*.bundle` 1,458件の列挙後、全深度検索task `bhjp69w2l` がexit code 0で完走した。
+  ただし目標2名と陽性対照がともに0件だったため陰性結論は不成立。内容解析も行っていない。
+  状態は「未着手」ではなく「検索実行済み・結果不成立」。`f201-backup-volume-rescan.json` は未作成。
+- F12は、実行済みか未実行かを現行工程の状態として採用できない。候補と段取りがMuse由来であり、
+  現在の詰まりへ接続すると検証されていないため、正規な次工程として未採用とする。
+- `wiki/builds/gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909.md` と
+  `wiki/builds/helen-h0157-new-agent-entry-20260909.md` を上記の区別へ訂正した。
