@@ -10,6 +10,11 @@ supersedes_entry: gf2-helen-h0157-u0-u3-next-agent-task-entry.md
 
 # Helen H0157 — 新しいエージェントの入口（2026-09-09）
 
+> [!warning] 2026-09-09 分業計画の差し替え案
+> フロンティア級エージェントが前提を確定し、独立レビューを通した後にだけ廉価モデルへ実装を渡す計画を
+> [[gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909]] として作成した。
+> **計画は proposed、実装未開始。** 本文 §3 のMuse由来候補、§7の未着手作業を、現在の実行指示として自動採用しない。
+
 **この1枚を最初に読む。他の資料はここから辿る。**
 
 この文書の目的は2つある。ゴールまでの現在地を渡すことと、
@@ -237,6 +242,7 @@ PC を再起動したあと、同じ経路に `os.stat` を当てた戻りは **
 
 ## 10. 関連
 
+- [[gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909]] — フロンティア判断と廉価モデル実装を分離する差し替え計画（proposed・実装未開始）
 - [muse 汚染調査](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260909-muse-contamination-audit.html>)
 - [監査の死角と繰り返し](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260909-audit-blind-spot-and-repeat-pattern.html>)
 - [引き継ぎ資料 2026-09-08](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/helen-h0157-handoff-20260908.md>)

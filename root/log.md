@@ -11246,3 +11246,11 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 1,458 件の素性と、目標2本の有無は走査中。結果は
   `06_repro-v51/logs/f201-backup-volume-rescan.json` に記録する。
 - 触ったファイル: `wiki/builds/helen-h0157-new-agent-entry-20260909.md` / `log.md`。
+
+## [2026-09-09] build | H0157のフロンティア判断・廉価モデル実装 分業計画
+
+- 武田さんの発言から、全体判断は武田さんとフロンティア級エージェント、判断済みのコード実装はMuse／Sonnet／GPT Lunaなどへ渡す役割分担を正本化した。
+- 撤回済み `WORK-ORDER-20260909-open-gff-containers.md` の失敗を受け、実装手順を書く前に探索枝の前提を独立レビューする順序へ変更した。レビューで前提が覆った場合は探索枝だけを閉じ、廉価モデル用作業票を発行しない。
+- 現物照合で、原本Blend SHAは `04ef8b79...` のまま、品質ゲートplanは `EA_KB_SNAPSHOT_STALE`、固定12入力のうち `run-state.json` と親 `quality-gate.json` が現物と不一致、登録cache bundle 2本が登録パスに無いことを確認した。このため最初の作業をF0「現在状態の再照合」に固定し、GFF解析・F12確認・Blend変更は開始していない。
+- 計画: `wiki/builds/gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909.md`。statusは `proposed`、独立レビュー未実施、実装未開始。
+- 入口 `wiki/builds/helen-h0157-new-agent-entry-20260909.md` に、Muse由来候補と未着手作業を現在の実行指示として自動採用しない注意を追加した。
