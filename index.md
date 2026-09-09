@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5515 ファイル_
+_合計 5517 ファイル_
 
 ## root/ (11)
 
@@ -4072,7 +4072,7 @@ _合計 5515 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (113)
+## wiki/builds/ (115)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -4120,8 +4120,10 @@ _合計 5515 ファイル_
 - [gf2-helen-deliverable-unified-route-plan-20260831.md](wiki/builds/gf2-helen-deliverable-unified-route-plan-20260831.md) | 2026-09-01T07:01:25Z
 - [gf2-helen-futa-addition-handoff.md](wiki/builds/gf2-helen-futa-addition-handoff.md) | 2026-08-26T13:33:06Z
 - [gf2-helen-futa-current.md](wiki/builds/gf2-helen-futa-current.md) | 2026-09-03T03:20:20Z
-- [gf2-helen-h0157-current-app-reextract-task-contract-20260909.md](wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-20260909.md) | 2026-09-09T13:44:28Z
-- [gf2-helen-h0157-current-app-reextract-workflow-plan-20260909.md](wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-20260909.md) | 2026-09-09T13:44:28Z
+- [gf2-helen-h0157-current-app-reextract-task-contract-20260909.md](wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-20260909.md) | 2026-09-09T23:09:26Z
+- [gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md](wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md) | 2026-09-09T23:09:26Z
+- [gf2-helen-h0157-current-app-reextract-workflow-plan-20260909.md](wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-20260909.md) | 2026-09-09T23:09:26Z
+- [gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md](wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md) | 2026-09-09T23:09:26Z
 - [gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909.md](wiki/builds/gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909.md) | 2026-09-09T13:46:30Z
 - [gf2-helen-h0157-u0-u3-next-agent-task-entry.md](wiki/builds/gf2-helen-h0157-u0-u3-next-agent-task-entry.md) | 2026-09-01T13:15:15Z
 - [gf2-helen-motion-library-retarget-v21-pilot.md](wiki/builds/gf2-helen-motion-library-retarget-v21-pilot.md) | 2026-07-22T15:40:24Z

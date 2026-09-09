@@ -1,16 +1,20 @@
 ---
 type: build
 title: Helen H0157 — 現行アプリ全量コード再抽出 R0-R3 作業契約
-status: proposed
+status: superseded
 confidence: medium
 evidence_level: user-stated+source-backed+inferred
 created: 2026-09-09
 last_reviewed: 2026-09-09
 parent_plan: gf2-helen-h0157-current-app-reextract-workflow-plan-20260909
 implementation_started: false
+superseded_by: gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910
 ---
 
 # Helen H0157 — 現行アプリ全量コード再抽出 R0-R3 作業契約
+
+> [!warning] 2026-09-10にrevision 2へ置換
+> 本版の4分母、parser registry、R3非意味schema、fail-closed coverage、対照分離、canonical化、write-scopeを修正した現行契約は [[gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910]]。
 
 ```yaml
 contract_version: 1

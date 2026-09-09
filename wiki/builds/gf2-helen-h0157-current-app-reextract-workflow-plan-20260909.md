@@ -1,13 +1,14 @@
 ---
 type: build
 title: Helen H0157 — 現行アプリ全量コード再抽出から忠実Blendまでの実行計画
-status: proposed
+status: superseded
 confidence: medium
 evidence_level: user-stated+source-backed+inferred
 created: 2026-09-09
 last_reviewed: 2026-09-09
 revision: 1
 implementation_started: false
+superseded_by: gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910
 supersedes:
   - gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909
 first_task_contract: gf2-helen-h0157-current-app-reextract-task-contract-20260909
@@ -15,6 +16,9 @@ user_view: wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextr
 ---
 
 # Helen H0157 — 現行アプリ全量コード再抽出から忠実Blendまでの実行計画
+
+> [!warning] 2026-09-10にrevision 2へ置換
+> 本版はアプリ全体5,326件ではなくAssetBundles 4,513件を全量分母にしていたこと、file/object分母の混在、quality-gate接続、parser/edge/coverage/test/canonical化/write-scopeの不足が独立レビューで判明した。現行正本は [[gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910]]。
 
 ## 0. 固定済みの決定
 
