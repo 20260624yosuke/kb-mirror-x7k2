@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5505 ファイル_
+_合計 5511 ファイル_
 
 ## root/ (11)
 
@@ -177,12 +177,18 @@ _合計 5505 ファイル_
 - [ff1f7d2ce8c8.png](wiki/_attachments/gf2-skin-genre-map/img/ff1f7d2ce8c8.png) | 2026-08-24T07:20:08Z
 - [ff3ebc7f241b.png](wiki/_attachments/gf2-skin-genre-map/img/ff3ebc7f241b.png) | 2026-08-24T07:20:07Z
 
-## wiki/_attachments/helen-swimsuit-status/ (4)
+## wiki/_attachments/helen-swimsuit-status/ (10)
 
 - [20260909-helen-dress-repro-h0157.png](wiki/_attachments/helen-swimsuit-status/20260909-helen-dress-repro-h0157.png) | 2026-09-08T23:56:24Z
 - [20260909-reference-dusevnyj.png](wiki/_attachments/helen-swimsuit-status/20260909-reference-dusevnyj.png) | 2026-09-08T17:31:02Z
 - [20260909-reference-helen.png](wiki/_attachments/helen-swimsuit-status/20260909-reference-helen.png) | 2026-09-08T17:31:05Z
 - [20260909-reference-sabrina.png](wiki/_attachments/helen-swimsuit-status/20260909-reference-sabrina.png) | 2026-08-26T10:59:04Z
+- [20260909-rest-dusevnyj-front.png](wiki/_attachments/helen-swimsuit-status/20260909-rest-dusevnyj-front.png) | 2026-09-09T00:14:35Z
+- [20260909-rest-dusevnyj-side.png](wiki/_attachments/helen-swimsuit-status/20260909-rest-dusevnyj-side.png) | 2026-09-09T00:14:36Z
+- [20260909-rest-helen-front.png](wiki/_attachments/helen-swimsuit-status/20260909-rest-helen-front.png) | 2026-09-09T00:14:41Z
+- [20260909-rest-helen-side.png](wiki/_attachments/helen-swimsuit-status/20260909-rest-helen-side.png) | 2026-09-09T00:14:42Z
+- [20260909-rest-sabrina-front.png](wiki/_attachments/helen-swimsuit-status/20260909-rest-sabrina-front.png) | 2026-09-09T00:14:38Z
+- [20260909-rest-sabrina-side.png](wiki/_attachments/helen-swimsuit-status/20260909-rest-sabrina-side.png) | 2026-09-09T00:14:39Z
 
 ## wiki/_attachments/helen-swimsuit-status/img-20260831-cause/ (11)
 
