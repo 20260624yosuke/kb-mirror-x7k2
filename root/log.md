@@ -11068,3 +11068,27 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 触ったファイル: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/reports/WORK-ORDER-20260909-open-gff-containers.md`（新規） / `log.md`。
 - 承認ずみ・未着手: ①保存領域2台の陰性を登録簿へ ②否定主張9件への区画申告の書き足し
   ③再実行が壊れている主張の修理。武田さんの指定順は 4 → 1 → 2 → 3。
+
+## [2026-09-09] lint | 作業指示書の独立レビュー結果と撤回（Critical 3 / Major 6）
+
+- 武田さんの指示でサブエージェント（Opus・バイアス回避のため作成者の結論を渡さず起動）にレビューさせた。
+- 結果 Critical 3件・Major 6件。作成者が主要指摘を独立に測り直し、**すべて正しいことを確認**した。
+- Critical-1: 「表の後に残るバイト数」が 3件中2件で不一致。実測 QSeY 29,939,408（指示書 30,003,020）/
+  tLjm 53,467,076（同 53,583,704）。しかも指示書は「自分で測り直す必要はない」と宣言していた。
+- Critical-2: **前提そのものが誤り。** 「表の後ろは誰も中を見ていない」は事実に反する。
+  `ledger/h0157-gff-container-scan-v1.json`（`scripts/f154_gff_container_scan.py`・
+  2026-09-06 09:59・武田さん承認済み #78）が同領域を復号済みで、
+  `format_verified_from_raw_bytes` に構造が記録されている:
+  `header20B=GFF\0|tag|A|B|count; table@0x14=(id,page,length)xcount; item@page*4096;
+   gap holds count*256B XOR-obfuscated record table; v26111 body='{0}/<md5>.bundle'(CDN URL)`。
+- Critical-3: 構造の模型が誤り。実表は `0x14` から `(id, page, length)`、実体は `page*4096`。
+  行数はヘッダ `0x10` の宣言値（5314 / 5314 / 9731）。指示書の「連番が続く間だけ数える」は
+  実行者ごとに 1〜5,313 行と答えが変わる。
+- Major-5: 対象数が誤り。局所の GFF 容器は 6件ではなく **11件**（作成者の再走査）。
+  最大の 248,078,336 バイト（56,846件・台帳と checksum 不一致）を落としていた。
+- 根本原因: 要約 `ledger/local-corpus-coverage.json`（「内部構造未展開」）を一次資料として扱い、
+  より詳細な `h0157-gff-container-scan-v1.json` に当たらずに「未踏」と判定した。
+  **coverage の当該項目は `evidence: []` で出典を持たず、その8分前に書かれた f154 と矛盾している。**
+  同日実装した f72 の区画申告ゲートは、この信頼できない要約を判定の基準にしている。
+- 対応: 指示書の冒頭に撤回の見出しを付けた（削除はしない）。実装には進んでいない。
+- 触ったファイル: `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/reports/WORK-ORDER-20260909-open-gff-containers.md` / `log.md`。
