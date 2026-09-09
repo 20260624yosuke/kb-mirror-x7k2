@@ -11175,3 +11175,31 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 触ったファイル: `tools/absence_claim_scope_gate.py`（新規） / `tools/deliverable_path_guard.py` /
   `tools/audit_integrity_check.py` / `tools/audit-integrity.json` / `tools/audit-baselines/` /
   `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/ledger/negative-claims-expanded-legacy.json`（新規） / `log.md`。
+
+## [2026-09-09] build | 出所の門の新設・f197 への印・新しいエージェント用の入口
+
+武田さんの許可（2026-09-09「許可する」「うん作って」「新しいエージェントでプロジェクトを進めます」）で実施。
+
+- **f197 に印を付けた**（`logs/f197-allframes-gap.json`）。`status: contested` にし、
+  `provenance_warning` を追加。作成者が muse（opencode・2026-09-08 12:53）であること、
+  `judge_requirement` の「全フレームが合格ライン（武田さん指示 2026-09-08）」が
+  opencode の武田さん発言全期間と `_logs` のログ写し214本を「全フレーム／全枠／合格ライン」で
+  検索した範囲では見つからなかったこと（陽性対照21件・検索は成立）を記録した。
+  代わりに見つかったのは 2026-09-05 の別内容の発言。
+- **出所の門を新設**（`tools/provenance_gate.py`）。検査は2つ。
+  ①muse が書いたファイル（`tools/muse-authored-files.json`・269件・陽性対照つき）を
+  出所の印なしで引用したら止める ②武田さんの発言として引いた文言が `_logs` のログ写しに
+  無ければ止める（3.3GB あるため全読み込みはせず grep で流す）。検出力 6/6。
+- **門が作成者自身の誤りを2件捕まえた**: (a) 試験文で `WORKING-LINE.json` を muse 無関係と
+  仮定したが、実際は muse が 2026-09-08 11:57 に作成していた。会話で武田さんへ
+  「muse の判断ではなくファイルの実体」と説明した直後であり、**同じ誤りを繰り返していた**。
+  (b) 新設した入口文書を否定主張の門に通したところ 5 件で止まり、文章側を直した。
+- **新しいエージェント用の入口を作成**（`wiki/builds/helen-h0157-new-agent-entry-20260909.md`）。
+  汚染源・採用方針・止まっている1手・繰り返している失敗4種・機械で守られていること・
+  承認済み未着手3件・禁止事項を1枚に集約。3つの門すべてを通した。
+- `tools/audit-integrity.json` に `provenance_gate` を登録。自己試験が通り自動記録。
+- 触ったファイル: `tools/provenance_gate.py`（新規） / `tools/muse-authored-files.json`（新規） /
+  `tools/absence_claim_scope_gate.py` / `tools/deliverable_path_guard.py` /
+  `tools/audit_integrity_check.py` / `tools/audit-integrity.json` /
+  `wiki/builds/helen-h0157-new-agent-entry-20260909.md`（新規） /
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/logs/f197-allframes-gap.json` / `log.md`。
