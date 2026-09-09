@@ -11015,7 +11015,35 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   09-06 にも「依然として開けない」と再確認された保存領域2台が、2026-09-09 に読める状態になっていた。
   記録された反証条件（解除後に同じ探索を再実行）は未実施だった。走査を開始し、
   `/Volumes/HDD_バックアップ`（115GB）は *.bundle 0件・目標2本0件・ゲームデータ0件で陰性。
-  `/Volumes/HDD_バックアップ_macbookpro` は走査継続中。
+  `/Volumes/HDD_バックアップ_macbookpro`（141GB）も *.bundle 0件・目標2本0件・ゲームデータ0件で陰性。
+  計256GB・全深度。記録された反証条件（解除後の再走査で束が1件でも見つかれば『無し』を更新）は発火せず。
 - muse への委任範囲: 容器を開ける作業は可（正解が容器内・成否が機械判定可・読取りのみ）。
   不可は①否定主張の登録②合否の門の作成（`logs/f197-allframes-gap.json` の実測が根拠）。
 - 触ったファイル: `wiki/_attachments/project-hub-index/20260909-helen-bottlenecks-and-mechanization.html`（新規） / `log.md`。
+
+## [2026-09-09] build | 3つの機械化（H1誤検出の修正・台帳の自己試験優先・探索範囲の申告義務）
+
+武田さんの承認（2026-09-09「その方針で進めて」「直してください」「やってください」）で実装。
+
+- **H1 の誤検出を修正**（`tools/deliverable_path_guard.py`）。原因は `touched_handoff` が Bash の入力を
+  丸ごと検索していたこと。Bash は読むのも書くのも同じ道具なので `sed -n` や `stat` が「書き換えた」に見えていた
+  （実測: `helen-h0157-handoff-20260908.md` を読んだだけの回が3回連続で停止。ファイルは 09-08 11:27 のまま無変更）。
+  会話記録の timestamp を保持し、最後の人の発言より後に実際に mtime が新しくなったファイルだけを残す。
+  時刻が読めない記録では従来どおり止める側へ倒す。検出力 17/17（新規3件）・配線 5/5。
+- **台帳の判定順序を変更**（`tools/audit_integrity_check.py`）。ボトルネックは「SHA は変化を検知できるが
+  拡張か残骸かを判定できない」こと。判定器（各監査の `--selftest` / `--mutation-test`）は既に存在したのに
+  関所が呼んでいなかった。SHA 不一致で即停止せず、まず自己試験を走らせ、通れば拡張として自動 record、
+  落ちれば残骸として停止、試験が無ければ従来どおり人へ返す、へ変更。台帳に `selftest` / `changed_at` /
+  `auto_recorded` 欄を追加。自己試験 9/9（新規3件）。
+  導入直後の実測: 別会話が 09:16 に足した `deliverable_path_guard` の11行が自己試験を通り自動記録された。
+  3ターン続いていた停止がこれで解消。
+- **探索範囲の申告を義務化**（`06_repro-v51/scripts/f72_negative_claim_gate.py`）。原因は
+  `ledger/negative-claims.json` と `ledger/local-corpus-coverage.json` が突き合わされていなかったこと。
+  目録に status が scanned-ok / proven-absent / out-of-scope 以外の区画がある間は、その区画名を
+  `covered_classes` か `excluded_classes`（理由30字以上ではなく10字以上）に書かないと否定主張を登録できない。
+  あわせて鮮度検査: 探索日が目録の測定日より古い場合、`coverage_reviewed_at` を書かないと不合格。
+  再現試験 21/21（新規6件）。
+  副作用: 台帳の既存20件は全件が宿題になった。OL-4 の再現試験は「旧規則は満たすが申告が未記入で止まる」へ変更。
+- 触ったファイル: `tools/deliverable_path_guard.py` / `tools/audit_integrity_check.py` /
+  `tools/audit-integrity.json` / `tools/audit-baselines/` /
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/scripts/f72_negative_claim_gate.py` / `log.md`。
