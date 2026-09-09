@@ -324,12 +324,18 @@ expected_exact_counts:
   _Lut_Params: 1
 mutations:
   - id: MUT-H0157
+    replace_at_base_offset: 4
+    replace_hex: 37-to-36
     sha256: 49bd846adcc8e88bae24a47415c17377dc1e93c9a8d2fe765bcd19960eb65473
     expected: H0157=0; other two remain 1
   - id: MUT-FILM
+    replace_at_base_offset: 19
+    replace_hex: 70-to-71
     sha256: b046b882e9cf711671faa932bb3aafdd7a41dc481eea388d41eeae4c9d3a8bb8
     expected: _FilmWhiteClip=0; other two remain 1
   - id: MUT-LUT
+    replace_at_base_offset: 31
+    replace_hex: 73-to-74
     sha256: 3d2ddd99c99926eb5206ad0c55eb6943dc2817b67810cedb6e758085cd057f52
     expected: _Lut_Params=0; other two remain 1
 ```
@@ -504,4 +510,3 @@ stop_conditions:
 - 全5,326件の形式内訳、object/range分母、抽出総数は未測定。
 - IL2CPP call edge parserの実動は未確認。未成立ならcoverage-openで停止する。
 - 本v2契約の独立レビューと実行許可はまだ無い。
-

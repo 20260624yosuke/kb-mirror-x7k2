@@ -11300,3 +11300,19 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - `wiki/builds/helen-h0157-new-agent-entry-20260909.md` と `index.md` を現行計画へ接続した。
 - 計画作成のみ。抽出器、索引器、全量再抽出、独立レビュー、Blend変更は未実施。
 - ユーザー向け可視化 `wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextract-plan.html` を追加した。正本計画、R0〜R3契約、入口へリンクし、判断・成果物・検証の3段と、選択肢を出す分岐を示す。
+
+## [2026-09-10] build | H0157 現行アプリ全域再抽出計画 revision 2
+
+- ユーザー指定の gpt-5.6-sol 独立レビューで、revision 1にCritical 2件、High 5件、Medium 2件の指摘を得た。
+- レビュー中の「`06_repro-v51/quality-gate.json`が無い」という指摘は、現行実装
+  `06_repro-v51/scripts/common.py` と親プロジェクト直下の現物を照合して訂正した。正本は
+  `gf2-helen-starlit-waltz/quality-gate.json` に実在する。
+- 正本quality-gateを `tools/project_quality_gate.py ... --phase plan` で検査し、
+  `EA_KB_SNAPSHOT_STALE: project-run-state: sha256 mismatch` のFAILを観測した。実装開始状態はblockedのまま。
+- `wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md` を作成した。
+  app root全5,326 regular filesを分母とし、AssetBundles 4,513件と外側813件を内訳へ分離した。
+- `wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md` を作成した。
+  Q0 quality-gate回復、P0 parser固定、file/container/object/range別分母、canonical集合SHA、
+  unit fixture・production陽性対照・verifier改竄試験、fail-closed終端、stage限定write scopeを固定した。
+- revision 1の計画と契約を`superseded`へ変更し、入口、index、既存HTMLをrevision 2へ接続した。
+- 計画修正のみ。quality-gate更新、抽出器、索引器、全域再抽出、候補Blend、親Blendは変更していない。

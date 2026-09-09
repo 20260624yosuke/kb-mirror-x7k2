@@ -4,17 +4,19 @@ title: Helen H0157 — 新しいエージェントの入口（2026-09-09）
 status: active
 confidence: high
 evidence_level: source-backed+user-stated
-last_reviewed: 2026-09-09
+last_reviewed: 2026-09-10
 supersedes_entry: gf2-helen-h0157-u0-u3-next-agent-task-entry.md
 ---
 
 # Helen H0157 — 新しいエージェントの入口（2026-09-09）
 
-> [!warning] 2026-09-09 現行の計画
-> [[gf2-helen-h0157-current-app-reextract-workflow-plan-20260909]] を現行計画とする。
-> 完成条件は忠実再現。現在読めるドルフロ2アプリからコードを全量再抽出し、その後H0157だけを分析する。
-> 最初の廉価モデル用契約は [[gf2-helen-h0157-current-app-reextract-task-contract-20260909]]。
-> **計画は proposed、実装未開始。** Time Machine、特定2bundle、GFF、F12を次工程として自動採用しない。
+> [!warning] 2026-09-10 現行の計画 revision 2
+> [[gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910]] を現行計画とする。
+> 完成条件は忠実再現。現在読めるドルフロ2アプリ全5,326 regular filesを全域棚卸しし、その後H0157だけを意味分析する。
+> 最初の廉価モデル用契約は [[gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910]]。
+> **計画は proposed、実装未開始、開始関所はblocked。** 正本quality-gateのplan検査で
+> `EA_KB_SNAPSHOT_STALE: project-run-state: sha256 mismatch` を観測している。Q0でこの関所がPASSするまで抽出実装へ進まない。
+> Time Machine、特定2bundle、GFF、F12を次工程として自動採用しない。
 > ユーザー向けの可視化は [H0157 忠実Blendまでの実行計画](../_attachments/project-hub-index/20260909-h0157-current-app-reextract-plan.html)。
 
 **この1枚を最初に読む。他の資料はここから辿る。**
@@ -29,8 +31,10 @@ supersedes_entry: gf2-helen-h0157-u0-u3-next-agent-task-entry.md
 
 - **ゴール**: 寮の Helen の見た目を Blender 上で再現し、開いて確認できる blend を渡すこと。
 - **合否を決めるのは武田さんの目**。機械の一致は合格の証拠にならない（実例は §4）。
-- **正規な次工程は計画済み・未実行**。現在読めるアプリの入力を固定し、廉価モデルが全量コード再抽出と
-  H0157候補索引までを隔離出力へ作る。F12、Time Machine、特定bundle探索は開始しない。
+- **正規な次工程は計画済み・未実行**。最初はQ0で既存quality-gateのstale snapshotを
+  validation mergeで直す候補をstageへ作り、独立reviewとユーザー承認後のproduction plan PASSを得る。
+  その後だけ、廉価モデルが現行アプリ全5,326 filesの固定parser棚卸しとH0157非意味索引を隔離出力へ作る。
+  F12、Time Machine、特定bundle探索は開始しない。
 
 ---
 
@@ -250,8 +254,10 @@ PC を再起動したあと、同じ経路に `os.stat` を当てた戻りは **
 
 ## 10. 関連
 
-- [[gf2-helen-h0157-current-app-reextract-workflow-plan-20260909]] — 現行アプリ全量コード再抽出から忠実Blendまでの現行計画（proposed・実装未開始）
-- [[gf2-helen-h0157-current-app-reextract-task-contract-20260909]] — 廉価モデルへ渡すR0〜R3の詳細契約（proposed・実装未開始）
+- [[gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910]] — 現行アプリ全域の検証付き再抽出から忠実Blendまでの現行計画 revision 2（proposed・実装未開始・quality-gate blocked）
+- [[gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910]] — 廉価モデルへ渡すQ0〜R3の詳細契約 revision 2（proposed・実装未開始）
+- [[gf2-helen-h0157-current-app-reextract-workflow-plan-20260909]] — revision 1。初回独立レビュー後にsuperseded
+- [[gf2-helen-h0157-current-app-reextract-task-contract-20260909]] — revision 1。初回独立レビュー後にsuperseded
 - [H0157 忠実Blendまでの実行計画](../_attachments/project-hub-index/20260909-h0157-current-app-reextract-plan.html) — ユーザー向けHTML
 - [[gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909]] — 旧分業計画（superseded）
 - [muse 汚染調査](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260909-muse-contamination-audit.html>)
