@@ -15,6 +15,7 @@ supersedes_entry: gf2-helen-h0157-u0-u3-next-agent-task-entry.md
 > 完成条件は忠実再現。現在読めるドルフロ2アプリからコードを全量再抽出し、その後H0157だけを分析する。
 > 最初の廉価モデル用契約は [[gf2-helen-h0157-current-app-reextract-task-contract-20260909]]。
 > **計画は proposed、実装未開始。** Time Machine、特定2bundle、GFF、F12を次工程として自動採用しない。
+> ユーザー向けの可視化は [H0157 忠実Blendまでの実行計画](../_attachments/project-hub-index/20260909-h0157-current-app-reextract-plan.html)。
 
 **この1枚を最初に読む。他の資料はここから辿る。**
 
@@ -251,6 +252,7 @@ PC を再起動したあと、同じ経路に `os.stat` を当てた戻りは **
 
 - [[gf2-helen-h0157-current-app-reextract-workflow-plan-20260909]] — 現行アプリ全量コード再抽出から忠実Blendまでの現行計画（proposed・実装未開始）
 - [[gf2-helen-h0157-current-app-reextract-task-contract-20260909]] — 廉価モデルへ渡すR0〜R3の詳細契約（proposed・実装未開始）
+- [H0157 忠実Blendまでの実行計画](../_attachments/project-hub-index/20260909-h0157-current-app-reextract-plan.html) — ユーザー向けHTML
 - [[gf2-helen-h0157-frontier-cheap-agent-workflow-plan-20260909]] — 旧分業計画（superseded）
 - [muse 汚染調査](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260909-muse-contamination-audit.html>)
 - [監査の死角と繰り返し](</Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/_attachments/project-hub-index/20260909-audit-blind-spot-and-repeat-pattern.html>)

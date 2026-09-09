@@ -11299,3 +11299,4 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 現物を再測定し、app main、UnityFramework、global-metadata、app側AssetBundles 4,513 regular files、陽性対照bundle、原本Blendの実体とSHAを契約へ固定した。
 - `wiki/builds/helen-h0157-new-agent-entry-20260909.md` と `index.md` を現行計画へ接続した。
 - 計画作成のみ。抽出器、索引器、全量再抽出、独立レビュー、Blend変更は未実施。
+- ユーザー向け可視化 `wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextract-plan.html` を追加した。正本計画、R0〜R3契約、入口へリンクし、判断・成果物・検証の3段と、選択肢を出す分岐を示す。
