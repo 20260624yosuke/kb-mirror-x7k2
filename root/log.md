@@ -11316,3 +11316,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   unit fixture・production陽性対照・verifier改竄試験、fail-closed終端、stage限定write scopeを固定した。
 - revision 1の計画と契約を`superseded`へ変更し、入口、index、既存HTMLをrevision 2へ接続した。
 - 計画修正のみ。quality-gate更新、抽出器、索引器、全域再抽出、候補Blend、親Blendは変更していない。
+
+## [2026-09-10] analysis | H0157知識衝突とGitの役割を可視化
+
+- `wiki/_attachments/project-hub-index/20260910-h0157-kb-conflict-recovery-guide.html` を作成した。
+- 現在のKBを読み取り測定し、全体約208GB、`raw/`約195GB、regular files 83,827件、KBルートはGit repositoryではないことを確認した。
+- Git単独は版・差分・巻き戻しを扱うが、現行正本・実測と推測の区別・原作一致は決めないことを分離した。
+- 一般的なGit、ADR、provenance、CI、DVCの役割を公式資料へリンクし、このKBでは全体をGit化せず、小さな実行管理層だけを履歴化する案として整理した。
+- Git初期化、ファイル移動、archive化、実行カプセル作成、H0157計画修正、抽出、Blend変更は行っていない。
+- `xmllint`、`doc_timeline_check.py`、`doc_layout_check.py`、`doc_version_check.py`はPASS。ローカル`file:` URLはブラウザ安全規則で拒否されたため、実ブラウザの目視レイアウト確認は未実施。
