@@ -1,35 +1,47 @@
 ---
-decision_id: H0157-DEC-0001
-capsule_id: H0157-ACTIVE-20260910-R1
+type: build
+title: H0157 active baseline decision 0001
 status: active
-decided_at: 2026-09-10T09:12:11+09:00
-evidence_set_sha256: 75d41e19f2d128f8c7cf100017ca98ce326e88056c863d2006a283eb58971f79
+confidence: high
+evidence_level: source-backed+user-stated
+created: 2026-09-10
+last_reviewed: 2026-09-10
+capsule_id: H0157-ACTIVE-20260910-R1
+decision_id: H0157-DECISION-0001
 ---
 
-# Decision 0001 — `h0157-active` を現行の復旧入口にする
+# H0157 active baseline decision 0001
 
 ## 決定
 
-次の担当は、H0157の状態を再開するときに `CURRENT.json` → `EVIDENCE.jsonl` → `TASK.md` の順で読み、各主張を証拠IDとfull SHAへ結ぶ。旧計画、旧引き継ぎ、Muse由来判断は現行状態の根拠にせず、必要になった場合も探索候補としてだけ扱う。
+`wiki/builds/h0157-active/`を、H0157の次回作業で最初に読む小さな現行入口とする。
+現在識別できる親BlendはSHA `04ef8b79b3fa5b64b9d7e3496a9adc184f10c07d9ee9758caebd289ddbb6d7f5`。
+次の欠落は `H0157-GAP-Q0-CURRENT-STATE-SNAPSHOT` の1件だけを採用する。
 
-この決定は復旧契約の実行範囲に限る。Helenの抽出、Blend変更、quality-gate正本変更、計画採用を許可しない。
+この決定は、親Blend、quality-gate、run-state、抽出物を変更せず、Q0実装を許可しない。
 
-## 使わなかったもの・落とした情報
+## 根拠
 
-1. 何を捨てたか
-   - 旧計画を実行入口として読むこと。
-   - KB全域を最初から検索すること。
-   - Gitを先に導入すること。
-   - Muse由来の候補、F12、Time Machine、特定bundle、GFF、f166未抽出群を次工程へ自動採用すること。
+- `EV-H0157-003`: 親Blendの現物path・size・full SHA。
+- `EV-H0157-014`: production quality-gateのplan検査がSHA不一致でFAIL。
+- `EV-H0157-015`: 12入力中、唯一の現物不一致がproject-run-state。
+- `EV-H0157-008` / `EV-H0157-012`: 現行入口と計画がQ0を先頭に置き、旧f166を全域抽出器として採用していない。
+- `EV-H0157-011` / `EV-H0157-013`: 復旧のみ許可され、実装は未許可。
 
-2. そのせいで手元でどう変わるか
-   - HelenのBlendは1バイトも変わらない。
-   - 次の担当が最初に読む対象は、この5ファイルと固定SHAの入力へ縮む。
-   - 過去案に含まれる見た目改善候補は消していないが、この入口から自動実行されなくなる。
+## 採用の代償
 
-3. 戻せるか
-   - 戻せる。既存Wiki、プロジェクト、Blend、quality-gate、ログは削除・移動・変更していない。必要な旧資料は元のパスから再読できる。
+- 何を捨てたか: 旧計画、旧handoff、Muse由来判断、F12、Time Machine、特定bundle探索、`f166`再実行を次回の入口にすること。
+- 手元でどう変わるか: HelenのBlendは1バイトも変わらない。次の担当が最初に読む範囲と、最初に扱う欠落がQ0の12入力SHA照合へ絞られる。見た目の改善はまだ起きない。
+- 戻せるか: 既存ファイルは削除・移動・変更していない。このカプセルを`superseded`にし、旧資料を再読すれば戻せる。append-onlyの`log.md`は履歴として残す。
 
-## 現在の停止境界
+## 再評価条件
 
-復旧カプセルの次は `H0157-GAP-Q0-RUNSTATE-SNAPSHOT` の隔離proposal作成だけである。正本への昇格と実装開始は、別の肯定的証拠と明示承認が得られるまで停止する。
+- 親Blend、quality-gate、run-state、現行入口のいずれかのSHAが変わった。
+- Q0が独立review、user approval、production plan PASSまで完了した。
+- Q0より前に扱うべき別の直接証拠が新たに現れた。
+
+## 言っていないこと
+
+- H0157の見た目が原作と一致したとは言っていない。
+- 抽出が完了したとは言っていない。
+- Q0以降を実装してよいとは言っていない。

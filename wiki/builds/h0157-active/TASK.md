@@ -1,56 +1,98 @@
 ---
-task_id: H0157-Q0-RUNSTATE-SNAPSHOT-PROPOSAL
+type: build
+title: H0157 active — 次の欠落1件
+status: blocked
+confidence: high
+evidence_level: source-backed+user-stated
+created: 2026-09-10
+last_reviewed: 2026-09-10
 capsule_id: H0157-ACTIVE-20260910-R1
-gap_id: H0157-GAP-Q0-RUNSTATE-SNAPSHOT
-status: ready-for-fixed-input-reconciliation
+gap_id: H0157-GAP-Q0-CURRENT-STATE-SNAPSHOT
 implementation_authorized: false
-evidence_set_sha256: 75d41e19f2d128f8c7cf100017ca98ce326e88056c863d2006a283eb58971f79
 ---
 
-# H0157 次の不足接続 — stale run-state snapshot の検証候補
-
-## 1件だけの作業
-
-`quality-gate.json` が保存する `project-run-state` memberを、現物 `run-state.json` のfull SHA・size・mtimeへ合わせた**隔離検証候補**として構成し、正本を変更せずに差分と機械照合結果を提出する。
+# H0157 active — 次の欠落1件
 
 ```yaml
-gap_id: H0157-GAP-Q0-RUNSTATE-SNAPSHOT
-goal_effect: この不一致を解消できる候補が検証されると、現行計画の開始関所を古いrun-state snapshotではなく現物入力で再評価する次段へ進める。Helenの見た目やBlend自体はまだ変わらない。
+gap_id: H0157-GAP-Q0-CURRENT-STATE-SNAPSHOT
+goal_effect: >-
+  quality-gateが参照する12件のcurrent_state_inputsを現物へ同期し、plan検査が
+  EA_KB_SNAPSHOT_STALEで停止する状態を解消する。これだけではBlendの見た目は変わらず、
+  P0以降の実装開始条件が回復するだけである。
 known_inputs:
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json
     sha256: 479f8a1daea14ff3e83597298140555d89488fd223ae2830c2a7b0d8a0f49141
+    evidence_id: EV-H0157-001
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/run-state.json
     sha256: 4752ff9aceac9254976ee4fc64cf4c0460903eb6be92580bf5d84909dbaf1074
-  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/helen-h0157-new-agent-entry-20260909.md
-    sha256: ad30a746f79409f6ab3ce84c81eaeffaa85fd322d0b4eada97e80c4c1e76ee04
-missing_evidence: 現物run-state値を使った隔離候補がJSONとして成立し、変更点がproject-run-state snapshot memberだけで、正本quality-gateを一切変更していないことのreadback証拠。
+    evidence_id: EV-H0157-002
+  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/project_quality_gate.py
+    sha256: 2dea2a28b8feb539790b9038ac0d84b7d2ac8f68781e755cd0e8b8d75e55acc8
+  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/scripts/audit_guard.py
+    sha256: 7c5cdd35803a81c6989c955f5bb45a9d6c802f474e9aa2c9ae41ac9d137644f1
+  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/scripts/a10_quality_gate.py
+    sha256: c0076e5e1fdeabe9882e13b7aacf0a13270703f8d5a9c6938b91a6744f2afa5e
+  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/scripts/writer_scan.py
+    sha256: 346951262441c03b19571b73e5fa6241f24573a3f0431a1e7dafd15f1a051447
+  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md
+    sha256: 869a860aa0ffd38bc86f597f08bfe93254329f7abce61d97382661c4736cdd1d
+    evidence_id: EV-H0157-013
+missing_evidence: >-
+  現物12件から生成したstage側u0-snapshot、非audit key不変を示すvalidation merge、
+  mutation・rollback・idempotence・writer-scanの結果、独立review SHA、user approval SHA、
+  production plan検査exit 0の保存済みstdout/stderr。
 allowed_actions:
-  - 上記3入力のread-only再hashとJSON/本文readback
-  - mktempで作った一時コピー上だけでproject-run-state memberのsha256,size,mtimeを現物値へ置換
-  - 差分と照合結果を /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/h0157-active/receipts/q0-runstate-snapshot-proposal.json に新規保存
+  - 12件の現物path・hash_mode・full SHAまたはquality-gate canonical projection SHAをread-only再測定する
+  - 指定されたstage内だけへu0-snapshot.jsonとquality-gate候補を作る
+  - validation mergeで非audit key、families、ground_truth、stop_conditionsの不変性を検査する
+  - stage候補に対してplan検査、mutation、rollback、idempotence、writer-scanを実行する
+  - 実装者とは別の読み手が入力、候補、検査結果を直接再読する
 forbidden_actions:
-  - 正本quality-gate.jsonの変更
-  - 06_repro-v51配下への書き込み
-  - 抽出の実行または出力
-  - Blendの変更または保存
-  - Git初期化・commit・metadata変更
-  - 旧計画・旧引き継ぎの修正
-  - H0157以外への拡大
+  - user approval SHAと独立review SHAが無いままproduction quality-gateを更新する
+  - run-state.jsonを変更する
+  - 親Blendまたは候補Blendを変更する
+  - P0、R0、R1、R2、R3の抽出実装へ進む
+  - app、production scripts、Wiki正本、raw、Git metadataを変更する
 expected_outputs:
-  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/h0157-active/receipts/q0-runstate-snapshot-proposal.json
-    content: 入力3件の再hash、置換前後値、変更JSON pointer一覧、隔離候補SHA、正本quality-gateの変更前後SHA一致、判定
+  - stage/u0-snapshot.json
+  - stage/quality-gate.candidate.json
+  - stage/q0-validation-receipt.json
+  - independent-review receipt with fixed SHA
+  - user approval receipt with fixed SHA
+  - approved transactional promotion receipt
+  - production plan-check stdout/stderr receipt with exit 0
 mechanical_checks:
-  - 入力3件のfull SHAがknown_inputsと完全一致
-  - 一時候補と正本をJSON parseできる
-  - JSON差分pointerが /execution_audit/current_state_inputs/members のinput_id=project-run-stateに属するsha256,size,mtimeだけ
-  - 候補のproject-run-state sha256/size/mtimeが現物run-state readbackと一致
-  - 作業前後の正本quality-gate full SHAが479f8a1daea14ff3e83597298140555d89488fd223ae2830c2a7b0d8a0f49141のまま
-  - 06_repro-v51とBlendへ書き込んでいないことを対象ファイルSHAで再確認
-frontier_decision_required: yes — 隔離候補を正本quality-gateへ昇格する判断と、その後の実装開始は構造・実行方針を変えるため、独立reviewとユーザーの明示承認が必要。
-cheap_model_delegable: yes — 上記固定入力の再hash、限定JSON置換、差分照合、proposal receipt作成まで。正本昇格・抽出・Blend変更は委譲範囲外。
-stop_condition: 入力SHAが1件でも変化、対象memberが一意でない、指定3フィールド以外の差分が必要、正本への書き込みが必要、意味推測・前面GUI・H0157外の探索が必要になった時点で何も昇格せずtechnical-stopをreceiptへ記録する。
+  - current_state_inputsはexactly 12 membersでID集合が登録guardと一致する
+  - 12件すべての現物SHAまたはcanonical projection SHAが候補記録と一致する
+  - quality-gate自身は/execution_audit/current_state_inputsを除外したprojection hashを使う
+  - current_state_inputs以外のquality-gate内容は候補前後で同一である
+  - stage plan checkがexit 0である
+  - mutation、rollback、idempotence、writer-scanが契約どおりの結果になる
+  - production更新は独立review SHAとuser approval SHAが一致したtransactional promotionだけで行う
+  - promotion後のproduction plan checkがexit 0である
+frontier_decision_required: >-
+  yes。stage候補の独立reviewとproduction昇格の承認が必要であり、今回の復旧契約は
+  implementation_authorized=falseである。
+cheap_model_delegable: >-
+  yes, conditionally。固定入力、固定stage、固定検査に限定した候補作成は委譲可能だが、
+  独立review、採否判断、user approval、production昇格は委譲不可。別の明示実行許可が必要。
+stop_condition: >-
+  入力SHA変化、12件以外への範囲拡大、非audit key差分、guard/schema/writer/hook不一致、
+  stage検査FAIL、独立review不在、user approval不在、production plan検査FAILのいずれか。
 ```
 
-## 完了と呼ばないもの
+## 現在の停止点
 
-この1件のproposalがPASSしても、quality-gate正本の更新、計画PASS、抽出開始、Helenの見た目改善、原作一致、Blend完成にはならない。
+このファイルは実装ticketではなく、復旧で確定した次の欠落記録である。今回の許可ではQ0を実行しない。
+
+## 参照
+
+- `CURRENT.json`: `next_gap_id` がこの `gap_id` と一致する。
+- `EVIDENCE.jsonl`: `EV-H0157-014` と `EV-H0157-015` が現在の停止を直接示す。
+- [[gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910]]: Q0の候補手順。現在はproposedかつnot-authorized。
+
+## 使わなかったもの・落とした情報
+
+- 捨てたもの: `f166`再実行、F12、Time Machine、特定bundle探索を最初の1件にすること。
+- 手元でどう変わるか: Blendの見た目は変わらない。次の担当が最初に扱う欠落だけが、12入力のSHA不一致へ絞られる。
+- 戻せるか: すべて履歴として残っている。Q0完了後に現物と現行計画を再照合し、次の欠落候補として再評価できる。

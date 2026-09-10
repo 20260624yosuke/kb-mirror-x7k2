@@ -11332,3 +11332,12 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 契約はgpt-5.6-solが既存成果をread-onlyで再照合し、`wiki/builds/h0157-active/`へCURRENT、EVIDENCE、TASK、決定記録、readback receiptの5ファイルを作る範囲だけを許可する。
 - Git初期化、KB全域走査、旧計画修正、quality-gate変更、抽出、Blend変更は契約外とした。
 - 契約のYAML frontmatterと、最初に読む証拠候補10パスの存在を確認した。実行カプセル自体は別タスクで作成する。
+
+## [2026-09-10] build | H0157現行状態復旧カプセルを作成
+
+- 復旧契約に従い、指定10パスと、その現行入口が直接参照する計画revision 2・Q0契約revision 2をread-onlyで照合した。
+- `wiki/builds/h0157-active/`へ`CURRENT.json`、`EVIDENCE.jsonl`、`TASK.md`、`decisions/0001-active-baseline.md`、`receipts/recovery-readback.json`を作成した。
+- 親Blendはfull SHA `04ef8b79b3fa5b64b9d7e3496a9adc184f10c07d9ee9758caebd289ddbb6d7f5`で識別した。見た目、原作一致、ユーザー受入れは未確認のまま分離した。
+- quality-gateの12入力を登録guardと同じhash modeで再計測し、11件一致、`project-run-state`だけが登録SHA `b176b17b...39fc8e`と現物SHA `4752ff9a...af1074`で不一致だった。production plan検査は`EA_KB_SNAPSHOT_STALE`でexit 1。
+- 次の欠落1件を`H0157-GAP-Q0-CURRENT-STATE-SNAPSHOT`に固定した。旧f166再実行、F12、Time Machine、特定bundle探索は最初の工程に採用していない。
+- 今回は復旧カプセルのみ。quality-gate、run-state、Blend、抽出物、旧計画、Git metadataは変更しておらず、Q0実装は未許可である。
