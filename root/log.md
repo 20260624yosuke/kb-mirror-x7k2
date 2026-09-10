@@ -7,6 +7,22 @@ LLM Wiki の append-only ログ。ingest / query / lint / init の履歴を時�
 すべてのエントリは以下のプレフィックスで始める(`grep "^## \[" log.md` で一覧化できるように):
 
 ```
+## [2026-09-10] build | 返答パスの正直さ検査（D3）と引き継ぎ到達性監査の対象範囲の修正
+
+機械監査の意図と実装のズレを直した。欲しかった「返答に書いたパスが憶測でないか」（D3）は未実装で、
+代わりに KB メモ全体の到達性監査が作業フォルダ基準で発火し、担当外メモの不合格で会話が止まっていた
+（実測: 発言と無関係に14本が対象、不合格9件は全て未言及の別案件）。D3 を実装し、到達性監査の Stop
+発火を「返答で名指ししたメモ」に限定し、自分が書き換えていないメモの不合格は記録だけにした。
+検出力 27/27・配線 6/6、発火点② 6ケース全OK、実データ誤検出0。正本は
+wiki/builds/reply-path-honesty-and-audit-scope-20260910.md。
+
+触ったファイル:
+- wiki/builds/reply-path-honesty-and-audit-scope-20260910.md（新規・正本）
+- tools/deliverable_path_guard.py（D3 の実装・変異試験7件＋配線1件を追加）
+- /Users/takedayousuke/.claude/skills/brainstorm/brainstorm_guard.py（Stop の対象選び・所有判定・自己試験4件を追加）
+- index.md
+- log.md
+
 ## [YYYY-MM-DD] <op> | <タイトル>
 ```
 

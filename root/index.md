@@ -1286,6 +1286,7 @@
 - [[yixuan-zzz-viral-fanart]] — Zenless Zone Zero の Yixuan 作例が 4.7万いいねまで伸びた事例。画力以外の伸び要因を考えるために保存。 (first_observed 2026-05)
 
 ## Builds
+- [[reply-path-honesty-and-audit-scope-20260910]] — 返答パスの憶測検査（D3）を実装し、引き継ぎ到達性監査の対象を「返答で名指ししたメモ」へ限定した記録（wiki/builds/reply-path-honesty-and-audit-scope-20260910.md）
 
 ユーザー所有の成果物・運用システム・自作ツール・自動化・実装済み/実装予定ワークフロー。
 
