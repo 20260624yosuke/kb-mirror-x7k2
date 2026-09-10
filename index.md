@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5521 ファイル_
+_合計 5522 ファイル_
 
 ## root/ (11)
 
@@ -4072,7 +4072,7 @@ _合計 5521 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (117)
+## wiki/builds/ (118)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -4087,6 +4087,7 @@ _合計 5521 ファイル_
 - [brainstorm-memo-path-repair-order-20260904.md](wiki/builds/brainstorm-memo-path-repair-order-20260904.md) | 2026-09-04T11:54:18Z
 - [brainstorm-port-request-20260829.md](wiki/builds/brainstorm-port-request-20260829.md) | 2026-08-29T06:44:43Z
 - [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-09-07T06:32:23Z
+- [brainstorm-teardown-brief-20260910.md](wiki/builds/brainstorm-teardown-brief-20260910.md) | 2026-09-10T14:26:12Z
 - [canvas-idea-cultivation-workflow.md](wiki/builds/canvas-idea-cultivation-workflow.md) | 2026-07-01T18:48:47Z
 - [canvas-ingest-eagle-feedback-guide.md](wiki/builds/canvas-ingest-eagle-feedback-guide.md) | 2026-07-07T06:22:27Z
 - [canvas-ingest-model-runbook.md](wiki/builds/canvas-ingest-model-runbook.md) | 2026-08-22T12:20:27Z
