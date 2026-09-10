@@ -11365,7 +11365,7 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - `~/.codex/hooks.json` から `codex_adapter.py` の 3 行（SessionEnd `session-end` / Stop `stop` / PreToolUse `pre-tool`）を除去し description を更新。Codex brainstorm は機能的には 2026-09-09 に既に停止済み。
 - `brainstorm_guard.py` の自己試験（第3層）を案i に沿って修正：AskUserQuestion フックは「`brainstorm_guard.py` を指すもの」だけ FAIL にし、別スクリプトは許す。`guard-stop-handoff` 未登録も想定どおりとして注記のみに変更。`audit-handoff --selftest` は PASS。
 - 規約：`CLAUDE.md` / `AGENTS.md` の「brainstorm」節を休止表記へ書き換え。「セッション座標の名乗り」節の既定例を `wiki/analyses/brainstorm/<案件>/_index.md` → `wiki/builds/<案件>-<日付>.md` に差し替え。AGENTS.md の H1 記述に「自動停止は外れた」を追記。
-- 正本：`wiki/builds/` 内の brainstorm 系ビルドページ 8 本と codex 側 1 本の計 9 ページ（旧仕様の計画・引き継ぎ・依頼書）の frontmatter を `status: superseded` にし、冒頭へ休止と出所（muse 作成・未裏取り）の 1 行を追加。
+- 正本：`wiki/builds/` 内の brainstorm 系ビルドページ 9 本（旧仕様の計画・引き継ぎ・依頼書）の frontmatter を `status: superseded` にする作業は、**`deliverable_path_guard.py` の出所の門（PV）に阻まれて未実施**。これらのページは muse 作成で互いを出所印なしに参照し合っており、1 ページ触るだけで PV が約 30 件の未印引用として停止させる。休止の事実は `index.md`・`CLAUDE.md`/`AGENTS.md`・封鎖ブリーフ・この log に記録済み。frontmatter の一括変更は別途（PV の扱いを決めてから）。
 - 新規：`wiki/builds/` に封鎖ブリーフ 1 枚（封鎖の現状・目的・構成・依存・段取り。前ターンの [[brainstorm-teardown-brief-20260910]]）。
-- 触ったファイル: `~/.claude/settings.json`、`~/.codex/hooks.json`、`~/.claude/skills/brainstorm/brainstorm_guard.py`、`CLAUDE.md`、`AGENTS.md`、`wiki/builds/` の brainstorm 系ビルドページ 9 本（上記）、`index.md`、`log.md`
+- 触ったファイル: `~/.claude/settings.json`、`~/.codex/hooks.json`、`~/.claude/skills/brainstorm/brainstorm_guard.py`、`CLAUDE.md`、`AGENTS.md`、`index.md`、`log.md`
 - 未実施：`~/.claude/CLAUDE.md`（武田さん個人のグローバル規約）の H1 節は据え置き（プロジェクト外・別途判断）。`~/.codex/skills/brainstorm/` と `.opencode/` の brainstorm ファイルは残置（明示コマンドのみ）。

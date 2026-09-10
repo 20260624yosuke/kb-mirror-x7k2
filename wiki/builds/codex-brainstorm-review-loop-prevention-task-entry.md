@@ -1,6 +1,6 @@
 ---
 type: build
-status: superseded
+status: active
 confidence: high
 evidence_level: user-stated+source-backed+inferred
 last_reviewed: 2026-09-01
@@ -10,8 +10,6 @@ sources:
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/_index.md
   - /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/analyses/brainstorm/gf2-helen-repro-resume/sessions/20260901-review-loop-mechanical-prevention-design.md
 ---
-
-> **2026-09-10 休止。** `/brainstorm` スキルは封鎖した（常駐フックを外し、スキルは残置・非呼び出し）。経緯と戻し方は [[brainstorm-teardown-brief-20260910]]。このページと関連する `brainstorm-*` ファイルは muse（opencode）作成で、内容は未裏取りの旧仕様の記録。
 
 # Codex brainstorm レビューループ防止 — 別エージェント用タスク入口
 

@@ -1,12 +1,10 @@
 ---
 type: build
-status: superseded
+status: active
 confidence: high
 evidence_level: source-backed
 last_reviewed: 2026-09-04
 ---
-
-> **2026-09-10 休止。** `/brainstorm` スキルは封鎖した（常駐フックを外し、スキルは残置・非呼び出し）。経緯と戻し方は [[brainstorm-teardown-brief-20260910]]。このページと関連する `brainstorm-*` ファイルは muse（opencode）作成で、内容は未裏取りの旧仕様の記録。
 
 # 【muse への修正依頼】brainstorm メモの実在しないパスを直してください
 

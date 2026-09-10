@@ -383,7 +383,7 @@ Codex では `~/.codex/skills/grill-build/SKILL.md` を正規入口にし、Clau
 
 ### brainstorm（休止・2026-09-10）
 
-**`/brainstorm` は休止した。hold・plan-gate と同じ扱い（スキルとスクリプトのファイルは残置、呼び出さない）。** 2026-09-08 に武田さんが「brainstorm というスキル自体を使わない方針」と明言し、2026-09-10 に常駐フック 3 本（`~/.claude/settings.json` の `guard-write --unread` / `guard-stop-content` / `guard-stop-handoff`、および `~/.codex/hooks.json` の `codex_adapter.py` 3 行）を外した。`/brainstorm` を明示起動しない限り何も発火しない。既存の `wiki/analyses/brainstorm/` の親メモ・子メモは過去の思考の記録として残す。承認を取りながら考えを詰める作業は、通常モードで会話しつつ `wiki/builds/<案件>-<日付>.md` に書き足していく。封鎖の経緯と戻し方は [[brainstorm-teardown-brief-20260910]]、旧仕様は [[brainstorm-skill]]（`superseded`）。**hold と plan-gate も休止（ファイルは削除していない）。**
+**`/brainstorm` は休止した。hold・plan-gate と同じ扱い（スキルとスクリプトのファイルは残置、呼び出さない）。** 2026-09-08 に武田さんが「brainstorm というスキル自体を使わない方針」と明言し、2026-09-10 に常駐フック 3 本（`~/.claude/settings.json` の `guard-write --unread` / `guard-stop-content` / `guard-stop-handoff`、および `~/.codex/hooks.json` の `codex_adapter.py` 3 行）を外した。`/brainstorm` を明示起動しない限り何も発火しない。既存の `wiki/analyses/brainstorm/` の親メモ・子メモは過去の思考の記録として残す。承認を取りながら考えを詰める作業は、通常モードで会話しつつ `wiki/builds/<案件>-<日付>.md` に書き足していく。封鎖の経緯と戻し方は [[brainstorm-teardown-brief-20260910]]、旧仕様は [[brainstorm-skill]]（休止・frontmatter は据え置き）。**hold と plan-gate も休止（ファイルは削除していない）。**
 
 
 ### plan-gate（明示起動のみ）
