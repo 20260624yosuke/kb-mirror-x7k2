@@ -368,9 +368,9 @@ Codex では `~/.codex/skills/grill-build/SKILL.md` を正規入口にし、Clau
 これは ingest/query ではなく、関連ファイルと現状を先に確認し、必要最小限の質問で曖昧点を詰めて、
 実装可能な計画を1つの成果物として出すスキル。自発起動しない。
 
-### brainstorm（会話を切らずに考えを詰める・計画作成まで・明示起動のみ）
+### brainstorm（休止・2026-09-10）
 
-2026-08-28 以降、承認を取りながら考えを詰める作業は `/brainstorm`（`~/.claude/skills/brainstorm/`）を使う。プランモードは使わない（やり取りをファイルに残せず、圧縮で武田さんの考えが消えるため）。話した内容は `wiki/analyses/brainstorm/<プロジェクト>/` の親メモへ毎ターン書き足す（親1枚＋`sessions/` の子。機械が読むのは親だけ。2026-08-29 に平置きから移行）。承認・中断が明示されるまで応答を必ず承認カード（頭に `【承認待ち】`）で終える。**実装はしない（計画作成まで）。** 監査スクリプト `brainstorm_guard.py` が、①圧縮後のメモ再注入 ②`ready` のメモを読まずに実装しようとしたときの拒否 ③ブレスト中の成果物フォルダ封鎖 ④カード無しで閉じるときの停止、を機械的に担保する。矛盾修正は「成果物の見え方が変わるか」の1問テストで自律判断し、変わらないなら黙って直してメモに記録する。正本は [[brainstorm-skill]]。**hold と plan-gate は休止（ファイルは削除していない）。**
+**`/brainstorm` は休止した。hold・plan-gate と同じ扱い（スキルとスクリプトのファイルは残置、呼び出さない）。** 2026-09-08 に武田さんが「brainstorm というスキル自体を使わない方針」と明言し、2026-09-10 に常駐フック 3 本（`~/.claude/settings.json` の `guard-write --unread` / `guard-stop-content` / `guard-stop-handoff`、および `~/.codex/hooks.json` の `codex_adapter.py` 3 行）を外した。`/brainstorm` を明示起動しない限り何も発火しない。既存の `wiki/analyses/brainstorm/` の親メモ・子メモは過去の思考の記録として残す。承認を取りながら考えを詰める作業は、通常モードで会話しつつ `wiki/builds/<案件>-<日付>.md` に書き足していく。封鎖の経緯と戻し方は [[brainstorm-teardown-brief-20260910]]、旧仕様は [[brainstorm-skill]]（`superseded`）。**hold と plan-gate も休止（ファイルは削除していない）。**
 
 
 ### plan-gate（明示起動のみ）
@@ -384,11 +384,11 @@ Codex では `~/.codex/skills/grill-build/SKILL.md` を正規入口にし、Clau
 プロジェクトルート相対パス)を、次の書式で 1 行だけ書く。
 
 ```
-座標: wiki/analyses/brainstorm/<案件>/_index.md
+座標: wiki/builds/<案件>-<日付>.md
 ```
 
 - 該当する正本がまだ無ければ、`wiki/builds/<案件>-<日付>.md` を 1 行の計画メモとして
-  新規作成し、それを座標にする。
+  新規作成し、それを座標にする。（2026-09-10 まで例は `wiki/analyses/brainstorm/<案件>/_index.md` だったが、brainstorm 休止に伴い差し替えた。座標の仕組み自体はセッションログ写し取り側で生きている。）
 - **この規則は任意で、機械強制しない。** 名乗らなくても事故にはならない
   (`tools/session_index.py` がログから座標を導出し、決まらなければ未確定として一覧に出す)。
   名乗った場合は導出より優先される。
@@ -533,7 +533,7 @@ Wiki ページ、要約、ログ、frontmatter の値は **すべて日本語** 
 機械の検査: `tools/deliverable_path_guard.py`（D1 送ったファイルのパス／D2 判断を求める語とパス）。
 Codex は `~/.codex/hooks.json` の Stop に登録済み。検出力 6/6・配線 3/3。
 
-**H1 引き継ぎ資料**（brainstorm の親メモ／`wiki/builds/*handoff*.md`）を書き換えた回は、
-**そのパスを本文に出す**。出さずに閉じようとすると止まる。
-2026-09-05 実測: 更新した 7 ターンのうち 6 ターンで出していなかった。
-（Codex は会話記録が渡らないため H1 は判定できない。D2 のみ動く。）
+**H1 引き継ぎ資料**（`wiki/builds/*handoff*.md` など）を書き換えた回は、
+**そのパスを本文に出す**。2026-09-05 実測: 更新した 7 ターンのうち 6 ターンで出していなかった。
+（規則としては生きているが、機械の自動停止は 2026-09-10 の brainstorm 封鎖で外れた
+＝`guard-stop-handoff` を settings.json から除去。D1／D2 は引き続き `deliverable_path_guard.py` が見る。）

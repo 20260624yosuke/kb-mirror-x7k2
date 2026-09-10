@@ -1,11 +1,13 @@
 ---
 type: build
-status: active
+status: superseded
 confidence: medium
 evidence_level: user-stated
 last_reviewed: 2026-08-28
 sources: []
 ---
+
+> **2026-09-10 休止。** `/brainstorm` スキルは封鎖した（常駐フックを外し、スキルは残置・非呼び出し）。経緯と戻し方は [[brainstorm-teardown-brief-20260910]]。以下は旧仕様の記録。
 
 # brainstorm スキル（会話を切らずに考えを詰める・計画作成まで）
 
