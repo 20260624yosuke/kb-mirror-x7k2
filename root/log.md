@@ -11357,3 +11357,15 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - quality-gateの12入力を登録guardと同じhash modeで再計測し、11件一致、`project-run-state`だけが登録SHA `b176b17b...39fc8e`と現物SHA `4752ff9a...af1074`で不一致だった。production plan検査は`EA_KB_SNAPSHOT_STALE`でexit 1。
 - 次の欠落1件を`H0157-GAP-Q0-CURRENT-STATE-SNAPSHOT`に固定した。旧f166再実行、F12、Time Machine、特定bundle探索は最初の工程に採用していない。
 - 今回は復旧カプセルのみ。quality-gate、run-state、Blend、抽出物、旧計画、Git metadataは変更しておらず、Q0実装は未許可である。
+
+## [2026-09-10] build | brainstorm スキルを封鎖（休止）
+
+- 武田さんの明示承認（案A＋案i）により、`/brainstorm` を hold・plan-gate と同じ「休止」扱いにした。スキルとスクリプトのファイルは残置。
+- `~/.claude/settings.json` から brainstorm 由来の常駐フック 3 本を除去（PreToolUse `guard-write --unread`、Stop `guard-stop-content`、Stop `guard-stop-handoff`）。`deliverable_path_guard.py` の AskUserQuestion フックと他のガードは残置。
+- `~/.codex/hooks.json` から `codex_adapter.py` の 3 行（SessionEnd `session-end` / Stop `stop` / PreToolUse `pre-tool`）を除去し description を更新。Codex brainstorm は機能的には 2026-09-09 に既に停止済み。
+- `brainstorm_guard.py` の自己試験（第3層）を案i に沿って修正：AskUserQuestion フックは「`brainstorm_guard.py` を指すもの」だけ FAIL にし、別スクリプトは許す。`guard-stop-handoff` 未登録も想定どおりとして注記のみに変更。`audit-handoff --selftest` は PASS。
+- 規約：`CLAUDE.md` / `AGENTS.md` の「brainstorm」節を休止表記へ書き換え。「セッション座標の名乗り」節の既定例を `wiki/analyses/brainstorm/<案件>/_index.md` → `wiki/builds/<案件>-<日付>.md` に差し替え。AGENTS.md の H1 記述に「自動停止は外れた」を追記。
+- 正本：`wiki/builds/brainstorm-*.md` と `codex-brainstorm-review-loop-prevention-task-entry.md` 計 9 ページの frontmatter を `status: superseded` にし、冒頭へ休止の 1 行を追加。
+- 新規：`wiki/builds/brainstorm-teardown-brief-20260910.md`（封鎖の現状・目的・構成・依存・段取り）。
+- 触ったファイル: `~/.claude/settings.json`, `~/.codex/hooks.json`, `~/.claude/skills/brainstorm/brainstorm_guard.py`, `CLAUDE.md`, `AGENTS.md`, `wiki/builds/brainstorm-skill.md`, `wiki/builds/brainstorm-card-guard-plan-20260830.md`, `wiki/builds/brainstorm-codex-default-mode-card-plan-20260830.md`, `wiki/builds/brainstorm-concrete-resume-audit-plan-20260831.md`, `wiki/builds/brainstorm-five-guards-plan-20260831.md`, `wiki/builds/brainstorm-guard-fix-handoff-20260829.md`, `wiki/builds/brainstorm-memo-path-repair-order-20260904.md`, `wiki/builds/brainstorm-port-request-20260829.md`, `wiki/builds/codex-brainstorm-review-loop-prevention-task-entry.md`, `wiki/builds/brainstorm-teardown-brief-20260910.md`, `index.md`, `log.md`
+- 未実施：`~/.claude/CLAUDE.md`（武田さん個人のグローバル規約）の H1 節は据え置き（プロジェクト外・別途判断）。`~/.codex/skills/brainstorm/` と `.opencode/` の brainstorm ファイルは残置（明示コマンドのみ）。

@@ -14,7 +14,7 @@ review_status: passed-plan-only
 reviewed_revision_sha256: a3f3c0c51d5faea840e432793a6584384a8874ee7e9652e26c7de6a5c2902227
 ---
 
-> **2026-09-10 休止。** `/brainstorm` スキルは封鎖した（常駐フックを外し、スキルは残置・非呼び出し）。経緯と戻し方は [[brainstorm-teardown-brief-20260910]]。以下は旧仕様の記録。
+> **2026-09-10 休止。** `/brainstorm` スキルは封鎖した（常駐フックを外し、スキルは残置・非呼び出し）。経緯と戻し方は [[brainstorm-teardown-brief-20260910]]。このページと関連する `brainstorm-*` ファイルは muse（opencode）作成で、内容は未裏取りの旧仕様の記録。
 
 # Codex brainstorm 終了・再開点監査の修理計画 — revision 3
 

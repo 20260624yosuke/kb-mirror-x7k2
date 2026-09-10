@@ -6,7 +6,7 @@ evidence_level: source-backed
 last_reviewed: 2026-09-01
 ---
 
-> **2026-09-10 休止。** `/brainstorm` スキルは封鎖した（常駐フックを外し、スキルは残置・非呼び出し）。経緯と戻し方は [[brainstorm-teardown-brief-20260910]]。以下は旧仕様の記録。
+> **2026-09-10 休止。** `/brainstorm` スキルは封鎖した（常駐フックを外し、スキルは残置・非呼び出し）。経緯と戻し方は [[brainstorm-teardown-brief-20260910]]。このページと関連する `brainstorm-*` ファイルは muse（opencode）作成で、内容は未裏取りの旧仕様の記録。
 
 # brainstorm ガード 5検査の実装計画（2026-08-31 承認・方針の承認）
 
