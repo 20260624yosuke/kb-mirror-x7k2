@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5520 ファイル_
+_合計 5521 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 5520 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-09-10T00:25:51Z
-- [log.md](root/log.md) | 2026-09-10T00:25:51Z
+- [index.md](root/index.md) | 2026-09-10T14:08:09Z
+- [log.md](root/log.md) | 2026-09-10T14:08:09Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -4072,7 +4072,7 @@ _合計 5520 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (116)
+## wiki/builds/ (117)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -4184,6 +4184,7 @@ _合計 5520 ファイル_
 - [pureref-personal-fork.md](wiki/builds/pureref-personal-fork.md) | 2026-06-22T12:49:33Z
 - [pureref-session-restore.md](wiki/builds/pureref-session-restore.md) | 2026-06-15T14:10:13Z
 - [raycast-file-search-scope.md](wiki/builds/raycast-file-search-scope.md) | 2026-08-25T02:29:47Z
+- [reply-path-honesty-and-audit-scope-20260910.md](wiki/builds/reply-path-honesty-and-audit-scope-20260910.md) | 2026-09-10T14:07:52Z
 - [screenshot-path-clipboard.md](wiki/builds/screenshot-path-clipboard.md) | 2026-07-05T13:38:07Z
 - [session-log-fact-check-plan-20260908.md](wiki/builds/session-log-fact-check-plan-20260908.md) | 2026-09-08T17:22:40Z
 - [video-visual-ingest-design.md](wiki/builds/video-visual-ingest-design.md) | 2026-08-26T07:31:59Z
