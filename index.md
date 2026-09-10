@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5517 ファイル_
+_合計 5518 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 5517 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-09-09T23:52:56Z
-- [log.md](root/log.md) | 2026-09-09T23:52:56Z
+- [index.md](root/index.md) | 2026-09-10T00:07:34Z
+- [log.md](root/log.md) | 2026-09-10T00:07:34Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -4072,7 +4072,7 @@ _合計 5517 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (115)
+## wiki/builds/ (116)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -4150,6 +4150,7 @@ _合計 5517 ファイル_
 - [gf2-sabrina-summer-bikini-no-frill-reference-build.md](wiki/builds/gf2-sabrina-summer-bikini-no-frill-reference-build.md) | 2026-07-27T10:50:53Z
 - [gfl2-external-data-mount.md](wiki/builds/gfl2-external-data-mount.md) | 2026-07-30T02:39:19Z
 - [google-tasks-quickadd.md](wiki/builds/google-tasks-quickadd.md) | 2026-06-21T12:53:22Z
+- [h0157-active-state-recovery-contract-20260910.md](wiki/builds/h0157-active-state-recovery-contract-20260910.md) | 2026-09-10T00:07:11Z
 - [handoff-visible-effect-rule-2026-08-01.md](wiki/builds/handoff-visible-effect-rule-2026-08-01.md) | 2026-08-02T02:46:31Z
 - [helen-h0157-handoff-20260908.md](wiki/builds/helen-h0157-handoff-20260908.md) | 2026-09-08T02:27:07Z
 - [helen-h0157-new-agent-entry-20260909.md](wiki/builds/helen-h0157-new-agent-entry-20260909.md) | 2026-09-09T23:13:51Z

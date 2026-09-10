@@ -11325,3 +11325,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 一般的なGit、ADR、provenance、CI、DVCの役割を公式資料へリンクし、このKBでは全体をGit化せず、小さな実行管理層だけを履歴化する案として整理した。
 - Git初期化、ファイル移動、archive化、実行カプセル作成、H0157計画修正、抽出、Blend変更は行っていない。
 - `xmllint`、`doc_timeline_check.py`、`doc_layout_check.py`、`doc_version_check.py`はPASS。ローカル`file:` URLはブラウザ安全規則で拒否されたため、実ブラウザの目視レイアウト確認は未実施。
+
+## [2026-09-10] build | H0157現行状態復旧契約を作成
+
+- ユーザーの明示依頼により、`wiki/builds/h0157-active-state-recovery-contract-20260910.md`を作成した。
+- 契約はgpt-5.6-solが既存成果をread-onlyで再照合し、`wiki/builds/h0157-active/`へCURRENT、EVIDENCE、TASK、決定記録、readback receiptの5ファイルを作る範囲だけを許可する。
+- Git初期化、KB全域走査、旧計画修正、quality-gate変更、抽出、Blend変更は契約外とした。
+- 契約のYAML frontmatterと、最初に読む証拠候補10パスの存在を確認した。実行カプセル自体は別タスクで作成する。
