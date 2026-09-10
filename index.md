@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5518 ファイル_
+_合計 5520 ファイル_
 
 ## root/ (11)
 
@@ -4984,6 +4984,14 @@ _合計 5518 ファイル_
 - [10m20s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p4/10m20s.png) | 2026-08-26T07:30:13Z
 - [10m40s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p4/10m40s.png) | 2026-08-26T07:30:13Z
 - [11m00s.png](wiki/builds/coloso-visual-ingest-batch2/staging/yejji-ch13/p4/11m00s.png) | 2026-08-26T07:30:14Z
+
+## wiki/builds/h0157-active/ (1)
+
+- [TASK.md](wiki/builds/h0157-active/TASK.md) | 2026-09-10T00:19:22Z
+
+## wiki/builds/h0157-active/decisions/ (1)
+
+- [0001-active-baseline.md](wiki/builds/h0157-active/decisions/0001-active-baseline.md) | 2026-09-10T00:19:22Z
 
 ## wiki/concepts/ (404)
 
