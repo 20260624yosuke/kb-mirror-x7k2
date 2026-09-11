@@ -11455,3 +11455,22 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   tools/project_quality_gate_required_audits.json,
   wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md, wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md,
   wiki/builds/h0157-active/CURRENT.json, EVIDENCE.jsonl, TASK.md, log.md
+
+## [2026-09-11] build | 計画v2・契約v2の quality-gate 引用の出所を一意化（PV-1 / PV-2）
+
+- 出所の門が、両文書の `quality-gate.json` 引用を「muse が書いたファイルを印なしで引用」として
+  止めていた。門の canonical は muse が 2026-09-01 の stage へ書いた同名複製で、production 正本は
+  別パス。gen0（2026-09-10 原文）から存在した指摘で、今回の一連の編集が持ち込んだものではない。
+- production 正本 `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json`
+  （現物 sha256 `e66c16d684b2ea23e49dfb850a1ec57e0e9b427967451a6f6b336bf0e3fbd703`）の絶対パスを引用の近傍に置き、stage 同名複製は相対表記で示して
+  区別した。計画v2は2箇所を絶対パス化し注記1つを追加、契約v2は注記2つと絶対パス定義を追加。
+- **allowlist / forbidden writes / protected_sets / completion_evidence / stop_conditions の行は
+  1文字も変更していない。** 工程設計・意味・分母規則も不変。
+- 2文書のバイトが変わるため、registry の p0_authorization 束縛と、それを記録している
+  ART-H0157-REGISTRY・EV-H0157-023・TASK.md の known_inputs を同一transactionで追随させた。
+  index.md は旧SHAを保持していないため対象外。
+- `p0_authorization.authorized` は false のまま。3つの承認フィールドも空のまま。
+  protected-before・P0・Helen抽出・Blend制作はいずれも未実行。
+- 触ったファイル: wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md, wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md,
+  tools/project_quality_gate_required_audits.json,
+  wiki/builds/h0157-active/CURRENT.json, EVIDENCE.jsonl, TASK.md, log.md

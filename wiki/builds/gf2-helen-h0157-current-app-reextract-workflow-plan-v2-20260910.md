@@ -34,7 +34,8 @@ user_view: wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextr
 
 現在の実装開始判定は `blocked`。ただし 2026-09-10 時点の blocker は解消済みで、止めている条件が入れ替わっている。
 
-- **2026-09-10 の観測（superseded）**: 正本 `gf2-helen-starlit-waltz/quality-gate.json` の
+- **2026-09-10 の観測（superseded）**: 正本
+  `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json` の
   `--phase plan` 検査が `EA_KB_SNAPSHOT_STALE: project-run-state: sha256 mismatch` で FAIL。
 - **2026-09-11 の観測（current）**: Q0・Q0-CR・差分再審査フローが本番反映され、同じ検査は
   exit 0 で `品質ゲート: PASS (plan)` を返す。正本の現物SHAは
@@ -63,6 +64,11 @@ RV2について、正しい正本パスは
 `06_repro-v51/quality-gate.json` を新規作成しない。既存正本のSHAは2026-09-10観測時点で
 `479f8a1daea14ff3e83597298140555d89488fd223ae2830c2a7b0d8a0f49141`、
 Q0昇格後の2026-09-11時点では `e66c16d684b2ea23e49dfb850a1ec57e0e9b427967451a6f6b336bf0e3fbd703`。
+
+> **出所の区別**: ここでいう quality-gate の正本は
+> `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json`
+> （2026-09-11 に現物から測った sha256 は `e66c16d684b2ea23e49dfb850a1ec57e0e9b427967451a6f6b336bf0e3fbd703`）。
+> muse が 2026-09-01 の stage へ書いた同名複製（`audit/runs/20260901T230943+0900/stage/project/quality-gate.json`）とは別物で、そちらは根拠に使わない。
 
 ## 2. 高リスク品質ゲート
 
@@ -385,7 +391,7 @@ Time Machineは武田さんが明示選択した場合だけ追加候補にす�
 - `06_repro-v51/scripts/a10_quality_gate.py`
 - `06_repro-v51/scripts/audit_guard.py`
 - `06_repro-v51/scripts/f166_code_inventory.py`
-- `gf2-helen-starlit-waltz/quality-gate.json`
+- `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json`
 
 ## 矛盾・未確定
 

@@ -56,6 +56,7 @@ quality_gate:
 ```
 
 `06_repro-v51/quality-gate.json`を作らない。templateから既存正本を作り直さない。
+正本は `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json` の1つだけを指す。
 
 ### 1.2 Q0で許される更新
 
@@ -121,7 +122,17 @@ app_root:
 
 ## 3. 読み書き境界
 
+> **出所の区別**: ここでいう quality-gate の正本は
+> `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json`
+> （2026-09-11 に現物から測った sha256 は `e66c16d684b2ea23e49dfb850a1ec57e0e9b427967451a6f6b336bf0e3fbd703`）。
+> muse が 2026-09-01 の stage へ書いた同名複製（`audit/runs/20260901T230943+0900/stage/project/quality-gate.json`）とは別物で、そちらは根拠に使わない。
+
+`<project-root>` は `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz`、`<run-root>` は `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51`、`<KB-root>` は `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01` を指す。
+下の allowlist の行は変更していない。
+
 ```yaml
+# `<project-root>/quality-gate.json` は /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json の1ファイル。
+# muse が 2026-09-01 の stage へ書いた同名複製（audit/runs/20260901T230943+0900/stage/project/quality-gate.json）とは別物。
 read_allowlist:
   - <app-root>/**
   - <project-root>/quality-gate.json
@@ -137,6 +148,8 @@ read_allowlist:
   - <run-root>/scripts/f166_code_inventory.py
   - <KB-root>/tools/project_quality_gate.py
   - <KB-root>/tools/project_quality_gate_required_audits.json
+# `<project-root>/quality-gate.json` は /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json の1ファイル。
+# muse が 2026-09-01 の stage へ書いた同名複製（audit/runs/20260901T230943+0900/stage/project/quality-gate.json）とは別物。
 write_allowlist_Q0:
   - <run-root>/audit/runs/<run-id>/stage/**
   - <project-root>/quality-gate.json only by approved transactional promotion
@@ -153,6 +166,9 @@ forbidden_writes_P0_R3:
 ```
 
 実装スクリプトはstageの`bin/`へ置く。production `scripts/`への昇格は本契約外。
+
+上の allowlist / forbidden writes に出てくる `<project-root>/quality-gate.json` は、
+`/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json` の1ファイルを指す。
 
 ## 4. 保護対象snapshot
 
