@@ -14,8 +14,8 @@
 
 | 種類 | 必要なこと | 今回の実例 |
 |---|---|---|
-| scanner 候補（`is_scanner_candidate: true`） | 独立レビューが `writer-retained` / `non-writer` を判定 | 0件 |
-| 目録のみ（`false`） | 独立レビューが `non-writer` と確認。writer とは記録できない | 3件 |
+| scanner 候補（`is_scanner_candidate: true`） | 独立レビューが `writer-retained` / `non-writer` を判定 | 今回の差分では該当 0 行 |
+| 目録のみ（`false`） | 独立レビューが `non-writer` と確認。`propose` は `non-writer` 以外の判定を拒否する | 今回の差分では 3 行 |
 
 - **なぜ自動承認にしないか**: 「scanner が拾わなかった」は「writer でない」の証拠ではない。
   パターンの見落としがあり得る。Q0-CR が塞いだ穴を、運用の都合で開け直すことになる。
@@ -37,8 +37,8 @@
 
 - 同じ SHA なら、中身は既に審査済みのものそのもの。`SHA不変の行だけ継承する` という
   必須条件と矛盾しない。
-- 引き継いだ行には `renamed_from` を残し、レビュー受領証の `acknowledged_renames` に
-  無い rename は `propose` が拒否する（黙って移動しない）。
+- 引き継いだ行には `renamed_from` を残す。`propose` は、レビュー受領証の `acknowledged_renames` に
+  同じ from / to / SHA の行がある rename だけを通す（黙って移動しない）。
 - **中身も変わった rename は rename ではない。** 追加＋削除として扱い、新しい判定を要求する
   （試験 `M4_rename_with_edit_is_add_plus_remove`）。
 - **コスト**: rename 1件につき1行の承認。ファイル整理のたびに全審査をやり直さずに済む。

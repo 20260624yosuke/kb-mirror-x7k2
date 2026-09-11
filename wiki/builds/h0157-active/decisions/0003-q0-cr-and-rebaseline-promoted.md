@@ -17,8 +17,9 @@ decision_id: H0157-DECISION-0003
 1. **現在地の正本はR3カプセルとする。** R1（H0157-ACTIVE-20260910-R1）とstageのR2は
    `superseded` として保持し、現行説として参照しない。R1の3ファイルは
    `wiki/builds/h0157-active/superseded/` へ原本のまま残す。
-2. **監査基盤の積み残しは無い。** Q0、Q0-CR、差分再審査フローの3つが本番反映済みで、
-   それぞれ独立読み返しがPASSしている。次の欠落は `H0157-GAP-P0-PROTECTED-BEFORE-SNAPSHOT`。
+2. **監査基盤は、Q0・Q0-CR・差分再審査フローの3件が本番反映済みで、それぞれ独立読み返しが PASS している。**
+   点検したのはこの3件の範囲であり、それ以外に課題が残っているかは点検していない。
+   次の欠落は `H0157-GAP-P0-PROTECTED-BEFORE-SNAPSHOT`。
 3. **審査方針を確定した。**
    - scanner が候補として拾わない変更にも、独立レビューの判定を要求する。
    - rename はバイトが同一のときだけ既存判定を継承し、旧pathと明示承認を残す。
@@ -33,6 +34,9 @@ decision_id: H0157-DECISION-0003
 ## 変えていないこと
 
 - 親Blend、run-state、quality-gate.json、writers.json、raw、appは不変。
+  （`quality-gate.json` は production 正本 `<project>/quality-gate.json` を指す。muse が 2026-09-01 の
+  stage へ書いた同名複製 `audit/runs/20260901T230943+0900/stage/project/quality-gate.json` とは別物で、
+  そちらは根拠に使っていない。不変は現物の再ハッシュで確認した値であり、muse の判断の引用ではない。）
 - Helenの見た目・抽出・Blend候補作成は未着手。
 
 ## この決定が証明しないこと

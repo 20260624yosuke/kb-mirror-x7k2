@@ -13,7 +13,8 @@ implementation_authorized: false
 
 # H0157 active — 次の欠落1件
 
-Q0・Q0-CR・差分再審査フローはいずれも本番反映済み。監査基盤側の積み残しは無い。
+Q0・Q0-CR・差分再審査フローの3件はいずれも本番反映済みで、それぞれ独立読み返しが PASS している。
+点検したのはこの3件の範囲であり、それ以外に課題が残っているかは点検していない。
 次はP0開始前の基準線を取る工程だが、**まだ許可されていない**。
 
 ```yaml
@@ -23,6 +24,9 @@ goal_effect: >-
   変わっていないと後から機械比較できるよう、開始前の全ファイル集合をstageへ固定する。
   Helenの見た目は変わらない。取り違えと範囲外書込みを検出する基準線だけを作る。
 known_inputs:
+  # 同名の取り違え注意: これは production 正本。muse が 2026-09-01 の stage へ書いた同名複製
+  # (audit/runs/20260901T230943+0900/stage/project/quality-gate.json) とは別物で、そちらは使わない。
+  # 下の sha256 は本文作成時に現物から再計算した値であり、muse の判断の引用ではない。
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json
     sha256: e66c16d684b2ea23e49dfb850a1ec57e0e9b427967451a6f6b336bf0e3fbd703
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/run-state.json
