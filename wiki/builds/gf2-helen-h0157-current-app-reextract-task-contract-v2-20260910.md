@@ -5,12 +5,14 @@ status: proposed
 confidence: medium
 evidence_level: user-stated+source-backed+inferred
 created: 2026-09-10
-last_reviewed: 2026-09-10
+last_reviewed: 2026-09-11
 revision: 2
 parent_plan: gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910
 implementation_started: false
 implementation_gate: blocked
-blocking_evidence: EA_KB_SNAPSHOT_STALE
+blocking_evidence: EA_P0_NOT_AUTHORIZED
+blocking_evidence_superseded: EA_KB_SNAPSHOT_STALE (2026-09-10; Q0昇格で解消)
+current_state_reviewed: 2026-09-11
 supersedes:
   - gf2-helen-h0157-current-app-reextract-task-contract-20260909
 ---
@@ -21,7 +23,8 @@ supersedes:
 contract_version: 2
 task_id: H0157-Q0-P0-R0-R3-CURRENT-APP-REEXTRACT
 parent_goal: H0157 faithful Blender deliverable
-execution_status: proposed-blocked-not-authorized
+execution_status: q0-complete-p0-not-authorized
+execution_status_superseded: proposed-blocked-not-authorized (2026-09-10; Q0未実行かつquality-gate FAILだった頃の記述)
 actor_class: cheap-model-implementer
 semantic_decisions_allowed: false
 input_mode: complete-current-app-root
@@ -40,12 +43,16 @@ production_script_write_allowed: false
 quality_gate:
   canonical_path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json
   observed_full_sha256_20260910: 479f8a1daea14ff3e83597298140555d89488fd223ae2830c2a7b0d8a0f49141
+  observed_full_sha256_20260911: e66c16d684b2ea23e49dfb850a1ec57e0e9b427967451a6f6b336bf0e3fbd703
   project_id: gf2-helen-starlit-waltz
   canonical_root: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz
   check_command: python3 <KB-root>/tools/project_quality_gate.py check <canonical_path> --phase plan
-  observed_result: FAIL
-  observed_reason: EA_KB_SNAPSHOT_STALE project-run-state sha256 mismatch
+  observed_result_20260910: FAIL
+  observed_reason_20260910: EA_KB_SNAPSHOT_STALE project-run-state sha256 mismatch
+  observed_result_20260911: PASS (exit 0, '品質ゲート: PASS (plan)')
+  observed_run_state_sha256_20260911: 4752ff9aceac9254976ee4fc64cf4c0460903eb6be92580bf5d84909dbaf1074
   required_before_P0: PASS with exit 0 and saved stdout/stderr receipt
+  required_before_P0_status: satisfied as of 2026-09-11; the remaining P0 blocker is EA_P0_NOT_AUTHORIZED, not this gate
 ```
 
 `06_repro-v51/quality-gate.json`を作らない。templateから既存正本を作り直さない。
@@ -61,6 +68,8 @@ quality_gate:
 7. transactional promotion後、production canonical pathへ同じplan checkを実行する。
 
 Q0以外のactorによるquality-gate変更は禁止する。Q0は抽出実装ではなく、その開始条件を回復するbootstrapである。
+
+**2026-09-11 現在の状態**: この Q0 bootstrap は本番反映済みで、合格基準の補修（Q0-CR）と、差分だけを再審査して baseline を更新する通常運転フローも反映済み。正本 quality-gate の `--phase plan` 検査は PASS。以後の script 変更は `tools/h0157_rebaseline.py` の diff / propose と `tools/h0157_promote_bundle.py` を通す。**残っている P0 の関所は `EA_P0_NOT_AUTHORIZED` だけで、これは本文書と計画v2の固定SHA・独立review・ユーザー承認が揃うまで開かない。**
 
 ## 2. 固定入力
 
@@ -91,6 +100,24 @@ inputs:
 ```
 
 R0でapp root全体を再帰列挙する。5,326件は計画時観測値であり、実行時に違えば`INPUT_DRIFT`で停止する。
+
+### 2.1 分母の一意化 — `app_root`（2026-09-11 追記）
+
+```yaml
+app_root:
+  canonical_absolute_path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/02_ソフトウェア/ドルフロ2_本体.app/Wrapper/SnqxExilium.app
+  token_aliases: [app-root, app_root, "<app-root>"]
+  rule: >-
+    この契約に現れる app-root / app_root / <app-root> は、上の1つの絶対パスだけを指す。
+    外側の ドルフロ2_本体.app や .../Wrapper は分母にしない。
+    AssetBundles_IOS / Frameworks / Data/Managed などは、すべてこの根の部分集合であり、
+    それ自体を app_root と呼ばない。
+  denominator_scope: every regular file under the canonical_absolute_path, recursive
+  drift_stop: app_root が上のパス以外へ解決されたら INPUT_DRIFT で停止する
+```
+
+この節は用語の一意化であり、分母規則そのもの（file / container / object / byte-range の4分母）、
+工程、関所、停止条件は変えていない。
 
 ## 3. 読み書き境界
 
@@ -505,7 +532,10 @@ stop_conditions:
 
 ## 矛盾・未確定
 
-- quality-gate planは現在FAILでありQ0未実行。
+- quality-gate planは2026-09-11時点でPASS。Q0・Q0-CR・差分再審査フローは本番反映済み。
+- P0許可の状態: registry の `p0_authorization.authorized` は false。
+  同日 `protected_before_precheck` は `may_take_protected_before: false` を返した。
+  観測したのはこの2つの値だけで、他の経路は点検範囲外。
 - P0 parser registry、stage抽出器、索引器、verifierは未実装。
 - 全5,326件の形式内訳、object/range分母、抽出総数は未測定。
 - IL2CPP call edge parserの実動は未確認。未成立ならcoverage-openで停止する。

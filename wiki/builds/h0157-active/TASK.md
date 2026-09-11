@@ -17,9 +17,11 @@ Q0・Q0-CR・差分再審査フローの3件はいずれも本番反映済みで
 点検したのはこの3件の範囲であり、それ以外に課題が残っているかは点検していない。
 次はP0を開始してよいという許可を取る工程だが、**まだ許可されていない**。
 
-開始前の基準線（protected-before）を先に取ることはできない。
-`audit_guard.protected_before_precheck` は P0 authorization が無いかぎり
-`may_take_protected_before=false` を返す。実行可能順は
+開始前の基準線（protected-before）の関所は、いまは閉じている。2026-09-11 に
+`audit_guard.protected_before_precheck` を現物へ実行したところ、
+`may_take_protected_before: false` と `EA_P0_NOT_AUTHORIZED` が返った。
+点検したのはこの1関数の戻り値だけで、他の経路は点検範囲外。
+この関所が開くのは P0 authorization が成立した後。実行可能順は
 `H0157-GAP-P0-AUTHORIZATION` → `H0157-GAP-P0-PROTECTED-BEFORE-SNAPSHOT` → P0。
 
 ```yaml
@@ -31,11 +33,11 @@ goal_effect: >-
 known_inputs:
   # sha256 は本文作成時に現物から再計算した値であり、過去の判断の引用ではない。
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/project_quality_gate_required_audits.json
-    sha256: 2f6bb3cad69fdb13c0fca887cdf4dd6a4ab29ee14fb6a010f14f0c8e996ffafa
+    sha256: a5ea2a0ba2ea52d3cae733b2c9183f297450f964d5222b16794fa5ae5170123f
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md
-    sha256: 59218afbf8bc4ffc8d8911a6e83f295f81d96c3410468b5149d710514689bf34
+    sha256: 7a39cedc8999b5bde00e3096527003107e665cef93bceb961d597d0553819e9e
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md
-    sha256: 869a860aa0ffd38bc86f597f08bfe93254329f7abce61d97382661c4736cdd1d
+    sha256: 36312355f37e6567e078686e2d1845053801597d9cf84146ae0baa4a57d0181e
 missing_evidence: >-
   registry の p0_authorization は authorized=false で、independent_review_sha256 /
   user_approval_sha256 / approved_at がいずれも空文字列。audit_guard.validate_p0_authorization は

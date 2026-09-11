@@ -11415,3 +11415,24 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 監査基盤・親Blend・quality-gate・run-state・production scripts・raw・app は不変。
   P0は未許可のまま。protected-before未取得。Helenの抽出・Blend制作は未着手。
 - 触ったファイル: wiki/builds/h0157-active/CURRENT.json, EVIDENCE.jsonl, TASK.md, index.md, log.md
+
+## [2026-09-11] build | H0157 計画v2・契約v2の現在地修正と app_root 一意化（P0許可の準備）
+
+- R3 reconciliation 本番反映後の read-only 走査で残った Major 4件（R-2〜R-5）を解消する候補を作成。
+- 計画v2・契約v2の「quality-gate が EA_KB_SNAPSHOT_STALE で blocked」という現在地記述を、
+  現物観測（`--phase plan` は exit 0 で PASS、quality-gate 現物SHA
+  `e66c16d684b2ea23e49dfb850a1ec57e0e9b427967451a6f6b336bf0e3fbd703`）へ更新。旧観測は日付つきで superseded として残した。
+  現在の blocker は `EA_P0_NOT_AUTHORIZED` であることを両文書に明記。
+- 契約v2の分母節と計画v2の入力節に app_root の一意化を追加。
+  app_root は `/Volumes/.../02_ソフトウェア/ドルフロ2_本体.app/Wrapper/SnqxExilium.app` ただ1つを指し、
+  外側の `.app` や `Wrapper` を分母にしない。逸脱時は `INPUT_DRIFT` で停止する。
+- 工程・関所・停止条件・allowlist・完了条件は変更していない。
+- 2文書のバイトが変わるため、registry の `p0_authorization` の束縛SHA、カプセルの
+  `ART-H0157-REGISTRY`・`EV-H0157-023`・TASK.md の known_inputs を同じ候補で追随させた。
+- `p0_authorization.authorized` は false のまま。`independent_review_sha256` /
+  `user_approval_sha256` / `approved_at` も空のまま。P0・protected-before・Helen抽出・
+  Blend制作はいずれも未実行。
+- 触ったファイル: wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md,
+  wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md,
+  tools/project_quality_gate_required_audits.json, wiki/builds/h0157-active/CURRENT.json,
+  EVIDENCE.jsonl, TASK.md, index.md, log.md

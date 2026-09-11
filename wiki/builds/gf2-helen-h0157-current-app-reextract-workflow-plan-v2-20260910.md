@@ -5,11 +5,13 @@ status: proposed
 confidence: medium
 evidence_level: user-stated+source-backed+inferred
 created: 2026-09-10
-last_reviewed: 2026-09-10
+last_reviewed: 2026-09-11
 revision: 2
 implementation_started: false
 implementation_gate: blocked
-blocking_evidence: EA_KB_SNAPSHOT_STALE
+blocking_evidence: EA_P0_NOT_AUTHORIZED
+blocking_evidence_superseded: EA_KB_SNAPSHOT_STALE (2026-09-10; Q0昇格で解消)
+current_state_reviewed: 2026-09-11
 supersedes:
   - gf2-helen-h0157-current-app-reextract-workflow-plan-20260909
 first_task_contract: gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910
@@ -30,10 +32,17 @@ user_view: wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextr
 
 本版は計画修正までである。コード抽出、品質ゲート更新、プロジェクトスクリプト追加、Blend変更は開始していない。
 
-現在の実装開始判定は `blocked`。2026-09-10に正本
-`gf2-helen-starlit-waltz/quality-gate.json` を
-`python3 tools/project_quality_gate.py check ... --phase plan` で直接検査し、
-`EA_KB_SNAPSHOT_STALE: project-run-state: sha256 mismatch` を観測した。
+現在の実装開始判定は `blocked`。ただし 2026-09-10 時点の blocker は解消済みで、止めている条件が入れ替わっている。
+
+- **2026-09-10 の観測（superseded）**: 正本 `gf2-helen-starlit-waltz/quality-gate.json` の
+  `--phase plan` 検査が `EA_KB_SNAPSHOT_STALE: project-run-state: sha256 mismatch` で FAIL。
+- **2026-09-11 の観測（current）**: Q0・Q0-CR・差分再審査フローが本番反映され、同じ検査は
+  exit 0 で `品質ゲート: PASS (plan)` を返す。正本の現物SHAは
+  `e66c16d684b2ea23e49dfb850a1ec57e0e9b427967451a6f6b336bf0e3fbd703`。
+- **現在の blocker は `EA_P0_NOT_AUTHORIZED`**。registry の `p0_authorization.authorized` が
+  false のため、`audit_guard.protected_before_precheck` は
+  `may_take_protected_before=false` を返す。P0開始前の基準線（protected-before）も、
+  この許可が出るまで取れない。
 
 ## 1. 初回独立レビュー9件への処置
 
@@ -52,7 +61,8 @@ user_view: wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextr
 RV2について、正しい正本パスは
 `/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json`。
 `06_repro-v51/quality-gate.json` を新規作成しない。既存正本のSHAは2026-09-10観測時点で
-`479f8a1daea14ff3e83597298140555d89488fd223ae2830c2a7b0d8a0f49141`。
+`479f8a1daea14ff3e83597298140555d89488fd223ae2830c2a7b0d8a0f49141`、
+Q0昇格後の2026-09-11時点では `e66c16d684b2ea23e49dfb850a1ec57e0e9b427967451a6f6b336bf0e3fbd703`。
 
 ## 2. 高リスク品質ゲート
 
@@ -116,11 +126,26 @@ H0157一件だけ。別action、別衣装、水着、14件への量産へ展開�
 | UnityFramework | SHA `8be85a1c692b741be3619eba40b006c3133c2ff8a137030c34090650e75b5c4d` | Mach-O / IL2CPP入力 |
 | global-metadata | SHA `10609117460b9375c6a9d768f3a489120ac5f4312597c12a99b2df597512a197` | IL2CPP metadata入力 |
 | parent-blend | SHA `04ef8b79b3fa5b64b9d7e3496a9adc184f10c07d9ee9758caebd289ddbb6d7f5` | read-only親Blend |
-| project-quality-gate | 実在、SHA `479f8a1d...f49141`、plan FAIL | Q0でstale解消が必要 |
-| project-run-state | SHA `4752ff9a...af1074`。gate記録値`b176b17b...39fc8e`と不一致 | 現在のblocker |
+| project-quality-gate | 実在。2026-09-10は SHA `479f8a1d...f49141`・plan FAIL。2026-09-11時点は SHA `e66c16d6...fbd703`・plan PASS | Q0で解消済み |
+| project-run-state | SHA `4752ff9a...af1074`。2026-09-10はgate記録値`b176b17b...39fc8e`と不一致だったが、Q0昇格でこのSHAが採用され一致 | 解消済み。現在のblockerはP0許可 |
 | bundled runtime | Python 3.14、UnityPy 1.25.2、lz4 4.4.5 | UnityFS parser候補 |
 | system tools | `/usr/bin/file`、`otool`、`nm`、`strings`、`dwarfdump` | Mach-O観測候補 |
 | unavailable modules | dnfile、dncil、macholib、liefはbundled runtimeで未導入 | 存在を仮定しない |
+
+### 3.1 app_root の一意化（2026-09-11 追記）
+
+`app-root` / `app_root` / `<app-root>` は、次の**1つの絶対パス**だけを指す。
+
+```
+/Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/02_ソフトウェア/ドルフロ2_本体.app/Wrapper/SnqxExilium.app
+```
+
+- 外側の `ドルフロ2_本体.app` や `.../Wrapper` を分母にしない。分母は上の `SnqxExilium.app` の中だけ。
+- `AssetBundles_IOS`、`Frameworks`、`Data/Managed` などはすべてこの1つの根の部分集合であり、
+  それ自体を `app_root` と呼ばない。
+- 実行時に `app_root` がこのパス以外へ解決された場合は `INPUT_DRIFT` で停止する。
+
+この節は用語の一意化であり、工程・関所・停止条件は変えていない。
 
 旧`f166_code_inventory.py`はSHA
 `5ec2fbfd4efbe4622774845bfa5a9105b48835e56a06f9337c3ed2bcea431c27`。
@@ -314,8 +339,11 @@ Time Machineは武田さんが明示選択した場合だけ追加候補にす�
 | v2 Q0〜R3契約 | drafted |
 | 初回独立レビュー | 9 findings、v2へ反映 |
 | v2独立レビュー | pending |
-| quality-gate plan | FAIL: EA_KB_SNAPSHOT_STALE |
-| Q0〜R3実装 | not-started |
+| quality-gate plan | PASS（2026-09-11再実行。2026-09-10のFAIL: EA_KB_SNAPSHOT_STALEは解消） |
+| Q0 | 本番反映済み。Q0-CR（合格基準の補修）と差分再審査フローも反映済み |
+| P0許可 | registry の `p0_authorization.authorized` は false（2026-09-11 現物で観測） |
+| protected-before | `protected_before_precheck` の戻り値は `may_take_protected_before: false`（同日） |
+| P0〜R3実装 | not-started |
 | Blend変更 | none |
 | 親Blend | SHA `04ef8b79...d7f5`、未変更 |
 
@@ -361,8 +389,11 @@ Time Machineは武田さんが明示選択した場合だけ追加候補にす�
 
 ## 矛盾・未確定
 
-- quality-gateのstale snapshotは未修正で、plan検査はFAILのまま。
-- P0 parser registryとQ0更新器は未実装。
+- quality-gateのstale snapshotはQ0昇格で解消済みで、plan検査はPASS（2026-09-11再実行）。
+- P0許可の状態: registry の `p0_authorization.authorized` は false。
+  同日 `protected_before_precheck` は `may_take_protected_before: false` を返した。
+  観測したのはこの2つの値だけで、他の経路は点検範囲外。
+- P0 parser registryは未実装。Q0更新器は本番反映済み。
 - 5,326件の全file SHA集合、形式内訳、object/range分母は未測定。
 - IL2CPP method/call edgeを閉じるparserは現時点で実動未確認。
 - 現行アプリに必要参照が無い場合の取得経路はB3まで未選択。
