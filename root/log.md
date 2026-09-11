@@ -11391,3 +11391,27 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 反映済みのproductionファイル: 06_repro-v51/scripts/audit_guard.py, writer_scan.py,
   06_repro-v51/audit/writer-review-receipt.json, state.json, rebaselines/（2件）,
   tools/project_quality_gate_required_audits.json, tools/h0157_rebaseline.py, tools/h0157_promote_bundle.py
+
+## [2026-09-11] build | H0157 R3カプセルの整合化（自己参照・gap順序・証拠SHA）
+
+- 承認済みR3 post-image と現物のbyte diffを別プロセスで取り、3文書の差分を分類した。
+  全称否定の弱めと canonical path / SHA による同名複製の区別注記は範囲内。
+  `receipts/rebaseline-operating-policy.md` の rename 拒否条件1 hunkだけが範囲外だったため
+  blockedで停止し、武田さんが「実装と一致する正しい訂正」として今回限りの追認を明示（A-1）。
+- A-2: `EV-H0157-025` の証拠元 stage ファイルも同じ編集で変わっていたため、
+  `EVIDENCE.jsonl` の `source_sha256` を現物へ整合。4つの審査方針そのものは不変。
+- A-3: 上書きされていた承認済みpost-image（`capsule/TASK.md`・`capsule/decisions/0003`）を
+  `tests/rehearsal/targets/` の同一SHAバイトから復元。capsule 12件全部が承認済みpost SHAと一致。
+  以後の上書きを防ぐため read-only 化し、`PROMOTED-POST-IMAGE.lock.json` にSHA一覧を固定。
+- B: `CURRENT.json` が自分の同期対象 `TASK.md` を sha256 付きで持つ自己参照を除去。
+  入口の行は凍結済み `superseded/TASK-R1.md` へ付け替え、生きた入口は `live_entry` に path だけ。
+- C: 実行可能なgap順序を `P0 authorization → protected-before → P0` へ整合。
+  `protected_before_precheck` が P0 authorization 無しでは開かないという束縛と一致させた。
+- D: 昇格台帳の誤状態を解消。適用済みの R3 wiki sync bundle が `pending_candidates` に
+  「未承認・未適用」として残っており、実行すれば現在より古い正本を書き戻す risk があった。
+  `applied_promotions` へ承認receipt・読み返し結果つきで移し（読み返しは W5 の1件だけ FAIL で、
+  その原因は B の自己参照）、`pending_candidates` を空にした。あわせて `promotion_record_rule` を
+  置き、カプセルが自分の in-flight 昇格を先回り記録しない構造にした。
+- 監査基盤・親Blend・quality-gate・run-state・production scripts・raw・app は不変。
+  P0は未許可のまま。protected-before未取得。Helenの抽出・Blend制作は未着手。
+- 触ったファイル: wiki/builds/h0157-active/CURRENT.json, EVIDENCE.jsonl, TASK.md, index.md, log.md

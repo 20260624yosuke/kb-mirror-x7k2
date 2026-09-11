@@ -7,7 +7,7 @@ evidence_level: source-backed
 created: 2026-09-11
 last_reviewed: 2026-09-11
 capsule_id: H0157-ACTIVE-20260911-R3
-gap_id: H0157-GAP-P0-PROTECTED-BEFORE-SNAPSHOT
+gap_id: H0157-GAP-P0-AUTHORIZATION
 implementation_authorized: false
 ---
 
@@ -15,7 +15,55 @@ implementation_authorized: false
 
 Q0・Q0-CR・差分再審査フローの3件はいずれも本番反映済みで、それぞれ独立読み返しが PASS している。
 点検したのはこの3件の範囲であり、それ以外に課題が残っているかは点検していない。
-次はP0開始前の基準線を取る工程だが、**まだ許可されていない**。
+次はP0を開始してよいという許可を取る工程だが、**まだ許可されていない**。
+
+開始前の基準線（protected-before）を先に取ることはできない。
+`audit_guard.protected_before_precheck` は P0 authorization が無いかぎり
+`may_take_protected_before=false` を返す。実行可能順は
+`H0157-GAP-P0-AUTHORIZATION` → `H0157-GAP-P0-PROTECTED-BEFORE-SNAPSHOT` → P0。
+
+```yaml
+gap_id: H0157-GAP-P0-AUTHORIZATION
+goal_effect: >-
+  P0（現行アプリ全域の再抽出）を開始してよいという許可を、Q0の技術PASSとは別の束縛として取る。
+  Helenの見た目は変わらない。registryの p0_authorization が閉じているかぎり、
+  protected-before もP0も機械的に開かない。
+known_inputs:
+  # sha256 は本文作成時に現物から再計算した値であり、過去の判断の引用ではない。
+  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/project_quality_gate_required_audits.json
+    sha256: 2f6bb3cad69fdb13c0fca887cdf4dd6a4ab29ee14fb6a010f14f0c8e996ffafa
+  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md
+    sha256: 59218afbf8bc4ffc8d8911a6e83f295f81d96c3410468b5149d710514689bf34
+  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md
+    sha256: 869a860aa0ffd38bc86f597f08bfe93254329f7abce61d97382661c4736cdd1d
+missing_evidence: >-
+  registry の p0_authorization は authorized=false で、independent_review_sha256 /
+  user_approval_sha256 / approved_at がいずれも空文字列。audit_guard.validate_p0_authorization は
+  この3つが非空であること、authorized=true であること、workflow_plan_v2 と task_contract_v2 の
+  現物SHAが記録値と一致することの全部を要求する。加えて、2文書は現在地と食い違う記述を残しており、
+  task contract の分母節は app_root を絶対パスで一意化していない。未修正のまま固定SHAを束縛すると、
+  誤った分母のままP0が開始される。
+allowed_actions:
+  - 2文書の現在地記述を現物と整合させる修正候補を、新しいrunのstage配下へ作る
+  - 修正後の新SHAへ束縛する p0_authorization candidate / package をstageへ作る
+  - 実装者とは別の読み手が、2文書と候補を実バイトから独立reviewする
+forbidden_actions:
+  - 明示承認なしに registry の p0_authorization を authorized=true にする
+  - Q0 / Q0-CR / rebaseline の技術PASSをP0許可の根拠に流用する
+  - 工程設計そのものを独断で変更する（必要になったら理由と影響を報告して停止する）
+  - protected-beforeの取得、P0開始、Helen抽出、Blend制作
+mechanical_checks:
+  - 2文書の現物SHAが p0_authorization の記録値と一致する
+  - independent_review_sha256 / user_approval_sha256 / approved_at が非空である
+  - validate_p0_authorization が PASS を返す
+  - protected_before_precheck が may_take_protected_before=true を返す
+stop_condition: 2文書の記述と現状の食い違いが残る、app_rootが一意でない、独立reviewのmajor finding、
+  工程設計の変更が必要になった、のいずれか。
+```
+
+## この後（許可が出た後の工程）
+
+`H0157-GAP-P0-PROTECTED-BEFORE-SNAPSHOT`。P0 authorization が取れて初めて着手できる。
 
 ```yaml
 gap_id: H0157-GAP-P0-PROTECTED-BEFORE-SNAPSHOT
@@ -66,8 +114,3 @@ python3 <KB>/tools/h0157_rebaseline.py --registry <registry> propose --diff <sta
 # bundle を作り、明示承認を得てから
 python3 <KB>/tools/h0157_promote_bundle.py --bundle <bundle> --approval-receipt <receipt> --backup-dir <stage>/backup
 ```
-
-## この後
-
-`H0157-GAP-P0-AUTHORIZATION`。計画v2・契約v2の固定SHA、独立review、ユーザー承認の4点が
-揃うまで registry の `p0_authorization.authorized` は false のまま。
