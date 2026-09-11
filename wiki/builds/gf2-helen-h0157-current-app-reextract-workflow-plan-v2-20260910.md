@@ -53,7 +53,7 @@ user_view: wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextr
 | RV3 | file分母とobject分母が混在 | file、container、object、byte-rangeの4分母を分離 |
 | RV4 | `codeらしい`が意味判断 | 廃止。署名と固定parserだけを使うparser registryへ置換 |
 | RV5 | R3のfamilyと参照辺が意味判断 | R3からfamily分類を除去。exact hitと構造edgeを別schemaに分離 |
-| RV6 | 候補0件・未処理でも完了できる | coverage-open、partial、unsupportedをfail-closed。0件はR4へ進めず分岐カード |
+| RV6 | 候補`0` 件・未処理でも完了できる | coverage-open、partial、unsupportedをfail-closed。`0` 件はR4へ進めず分岐カード |
 | RV7 | 変異試験が入力SHA検査と衝突 | unit fixture、production対照、verifier改竄試験を分離 |
 | RV8 | 集合SHAのcanonical化が未定義 | JSONLのencoding、正規化、key順、mtime除外、set SHA式を固定 |
 | RV9 | allowlistと不変性検査が不十分 | 親Blendをread allowlistへ追加。実装物はstage限定、保護対象の前後集合SHAを独立検証 |
@@ -168,7 +168,7 @@ v2の全域抽出器そのものとしては採用しない。陽性対照とpar
 - byte列を見て「codeらしい」と決める。
 - R3でmesh、motion、shading、hairへ意味分類する。
 - 共起や名前の類似を参照edgeにする。
-- unsupported、partial、0件を不存在または完了へ変える。
+- unsupported、partial、`0` 件を不存在または完了へ変える。
 - 新しい取得経路、近似、完成、採用を決める。
 
 ### 4.2 フロンティア主担当
@@ -283,7 +283,7 @@ family分類、関連性、採否はR4でフロンティア主担当が原文を
 - 新しい外部取得または前面GUIが必要になるまで、ユーザーへ選択を求めない。
 - coverage-openが1件でもある間はR3完了にしない。
 
-### B3 coverageが閉じてexact候補0件
+### B3 coverageが閉じてexact候補`0` 件
 
 次の3択をカードで出す。
 
@@ -325,7 +325,7 @@ Time Machineは武田さんが明示選択した場合だけ追加候補にす�
 - 廉価モデルの自然文報告を状態遷移証拠にしない。
 - parser registry外の分類を出力へ入れない。
 - exact hit、構造edge、意味判断を別schema・別担当にする。
-- 0件、unsupported、partialを成功にしない。
+- `0` 件、unsupported、partialを成功にしない。
 - 変換式の単位、軸、フレーム、原文位置が空ならBlendを生成しない。
 - 検証した候補と提示した候補のSHAが違えば受入れへ進めない。
 - quality-gateの`plan`、`batch`、`complete`を対応工程で実際に再実行する。
@@ -397,5 +397,5 @@ Time Machineは武田さんが明示選択した場合だけ追加候補にす�
 - 5,326件の全file SHA集合、形式内訳、object/range分母は未測定。
 - IL2CPP method/call edgeを閉じるparserは現時点で実動未確認。
 - 現行アプリに必要参照が無い場合の取得経路はB3まで未選択。
-- v2の独立レビューと実装許可はまだ無い。
+- v2の独立レビューと実装許可は、2026-09-11 時点で未実施。
 

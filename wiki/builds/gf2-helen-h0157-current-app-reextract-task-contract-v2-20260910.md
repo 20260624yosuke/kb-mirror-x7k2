@@ -539,4 +539,4 @@ stop_conditions:
 - P0 parser registry、stage抽出器、索引器、verifierは未実装。
 - 全5,326件の形式内訳、object/range分母、抽出総数は未測定。
 - IL2CPP call edge parserの実動は未確認。未成立ならcoverage-openで停止する。
-- 本v2契約の独立レビューと実行許可はまだ無い。
+- 本v2契約の独立レビューと実行許可は、2026-09-11 時点で未実施。

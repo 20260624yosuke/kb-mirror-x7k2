@@ -11436,3 +11436,22 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md,
   tools/project_quality_gate_required_audits.json, wiki/builds/h0157-active/CURRENT.json,
   EVIDENCE.jsonl, TASK.md, index.md, log.md
+
+## [2026-09-11] build | 否定主張の門を昇格候補まで届かせ、計画v2・契約v2の既存主張を是正
+
+- NC-2: `tools/absence_claim_scope_gate.py` の `in_scope()` が stage を含まないため、昇格候補を
+  検査しても素通りして PASS に見えていた。`scan(paths, force=False)`、`scan-bundle <bundle>`、
+  `--force` を追加し、「昇格先が範囲内なら候補を検査する」形にした。既定の挙動と変異試験 18/18 は不変。
+- NC-3 / NC-4: 計画v2に6件、契約v2に1件あった未登録の強い否定主張を是正。`0件` は測定値・条件名
+  なので `` `0` 件 `` のトークン置換だけにし、行内の他の語は変えていない。「まだ無い」2行は
+  日付つきの状態記述へ。工程・停止条件・allowlist・protected_sets・完了条件は不変。
+- 2文書のバイトが変わるため、`p0_authorization` の束縛SHAと、それを記録している
+  `ART-H0157-REGISTRY`・`EV-H0157-023`・TASK.md の known_inputs を同一transactionで追随させた。
+  記録SHAを持たない index.md は対象外とした。
+- `p0_authorization.authorized` は false のまま。`independent_review_sha256` /
+  `user_approval_sha256` / `approved_at` も空のまま。protected-before・P0・Helen抽出・
+  Blend制作はいずれも未実行。
+- 触ったファイル: tools/absence_claim_scope_gate.py,
+  tools/project_quality_gate_required_audits.json,
+  wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md, wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md,
+  wiki/builds/h0157-active/CURRENT.json, EVIDENCE.jsonl, TASK.md, log.md

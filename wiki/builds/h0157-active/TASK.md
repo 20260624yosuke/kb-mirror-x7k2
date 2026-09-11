@@ -33,11 +33,11 @@ goal_effect: >-
 known_inputs:
   # sha256 は本文作成時に現物から再計算した値であり、過去の判断の引用ではない。
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/project_quality_gate_required_audits.json
-    sha256: a5ea2a0ba2ea52d3cae733b2c9183f297450f964d5222b16794fa5ae5170123f
+    sha256: 355b31e662c17cacca590036c3bbfaf1b48f0eebee688fcd30903df48c0ed3fe
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md
-    sha256: 7a39cedc8999b5bde00e3096527003107e665cef93bceb961d597d0553819e9e
+    sha256: 34e853dc9f82d218b0a70f43a172e3305769d2cee6c42a657feb764866a6bcc7
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md
-    sha256: 36312355f37e6567e078686e2d1845053801597d9cf84146ae0baa4a57d0181e
+    sha256: 439ca84e6ac93ae0824f737c41cc9c0d9d9379995b40d6a9e1b7697ed89795d3
 missing_evidence: >-
   registry の p0_authorization は authorized=false で、independent_review_sha256 /
   user_approval_sha256 / approved_at がいずれも空文字列。audit_guard.validate_p0_authorization は
