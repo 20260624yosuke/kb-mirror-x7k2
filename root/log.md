@@ -11369,3 +11369,25 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 新規：`wiki/builds/` に封鎖ブリーフ 1 枚（封鎖の現状・目的・構成・依存・段取り。前ターンの [[brainstorm-teardown-brief-20260910]]）。
 - 触ったファイル: `~/.claude/settings.json`、`~/.codex/hooks.json`、`~/.claude/skills/brainstorm/brainstorm_guard.py`、`CLAUDE.md`、`AGENTS.md`、`index.md`、`log.md`
 - 未実施：`~/.claude/CLAUDE.md`（武田さん個人のグローバル規約）の H1 節は据え置き（プロジェクト外・別途判断）。`~/.codex/skills/brainstorm/` と `.opencode/` の brainstorm ファイルは残置（明示コマンドのみ）。
+
+## [2026-09-11] build | H0157 差分再審査フローを本番反映し、現在地をR3カプセルへ固定
+
+- Q0-CR（Q0合格基準の補修）を2026-09-10に、差分だけを再審査してbaselineを更新する通常運転フローを
+  2026-09-11にproductionへ昇格。昇格後の独立読み返しはそれぞれ25件・38件がPASS、major finding 0。
+- 以後、`06_repro-v51/scripts` 配下の未審査変更はplan工程でfail-closedになり、
+  `tools/h0157_rebaseline.py` の diff / propose と `tools/h0157_promote_bundle.py` で
+  差分だけ再審査して通す。初回rebaselineは変更3行だけを審査し、273行の判定を据え置いた。
+- 審査済みbaselineは candidate 84 = writer 61 + non-writer 23、scripts目録276件。
+  来歴（差分報告と独立review受領証）は `06_repro-v51/audit/rebaselines/<id>/` に恒久保存する。
+- 審査方針を確定: scanner候補外の変更にも判定を要求／renameはバイト同一時のみ判定継承で旧pathと
+  明示承認を残す／baseline更新はbatch可／目録はPythonソースを持ちうる全ファイルへ拡張。
+  独立reviewは通常運転では機械が行うが、別プロセス・実バイト直接検査・意味判断は自動承認しない。
+- 現在地の正本を `wiki/builds/h0157-active/` のR3カプセルへ更新。R1の3ファイルは
+  `wiki/builds/h0157-active/superseded/` へ原本のまま保持し、stageのR2候補は未反映のまま superseded。
+- P0は未許可のまま（registryの `p0_authorization.authorized: false`）。protected-beforeも未取得。
+  Helenの抽出・Blend制作は未着手。
+- 触ったファイル: wiki/builds/h0157-active/CURRENT.json, EVIDENCE.jsonl, TASK.md,
+  decisions/0003-q0-cr-and-rebaseline-promoted.md, receipts/（5件）, superseded/（3件）, index.md, log.md
+- 反映済みのproductionファイル: 06_repro-v51/scripts/audit_guard.py, writer_scan.py,
+  06_repro-v51/audit/writer-review-receipt.json, state.json, rebaselines/（2件）,
+  tools/project_quality_gate_required_audits.json, tools/h0157_rebaseline.py, tools/h0157_promote_bundle.py

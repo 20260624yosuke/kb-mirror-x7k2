@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5522 ファイル_
+_合計 5525 ファイル_
 
 ## root/ (11)
 
@@ -13,8 +13,8 @@ _合計 5522 ファイル_
 - [claude-handoff-x-eagle-ui-unification.md](root/claude-handoff-x-eagle-ui-unification.md) | 2026-06-20T16:04:01Z
 - [diary-quick-capture-proposal.md](root/diary-quick-capture-proposal.md) | 2026-06-06T12:22:11Z
 - [grill-build-proposal.md](root/grill-build-proposal.md) | 2026-05-29T16:57:13Z
-- [index.md](root/index.md) | 2026-09-10T14:54:26Z
-- [log.md](root/log.md) | 2026-09-10T14:54:14Z
+- [index.md](root/index.md) | 2026-09-11T00:08:49Z
+- [log.md](root/log.md) | 2026-09-11T00:08:49Z
 - [transcript-guide.md](root/transcript-guide.md) | 2026-05-31T01:43:22Z
 
 ## wiki/_attachments/gf2-costume-inventory/ (1)
@@ -4989,11 +4989,20 @@ _合計 5522 ファイル_
 
 ## wiki/builds/h0157-active/ (1)
 
-- [TASK.md](wiki/builds/h0157-active/TASK.md) | 2026-09-10T00:24:57Z
+- [TASK.md](wiki/builds/h0157-active/TASK.md) | 2026-09-11T00:08:49Z
 
-## wiki/builds/h0157-active/decisions/ (1)
+## wiki/builds/h0157-active/decisions/ (2)
 
 - [0001-active-baseline.md](wiki/builds/h0157-active/decisions/0001-active-baseline.md) | 2026-09-10T00:24:57Z
+- [0003-q0-cr-and-rebaseline-promoted.md](wiki/builds/h0157-active/decisions/0003-q0-cr-and-rebaseline-promoted.md) | 2026-09-11T00:08:49Z
+
+## wiki/builds/h0157-active/receipts/ (1)
+
+- [rebaseline-operating-policy.md](wiki/builds/h0157-active/receipts/rebaseline-operating-policy.md) | 2026-09-11T00:08:49Z
+
+## wiki/builds/h0157-active/superseded/ (1)
+
+- [TASK-R1.md](wiki/builds/h0157-active/superseded/TASK-R1.md) | 2026-09-11T00:08:49Z
 
 ## wiki/concepts/ (404)
 

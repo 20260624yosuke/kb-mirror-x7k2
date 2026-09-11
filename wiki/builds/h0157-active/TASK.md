@@ -1,98 +1,69 @@
 ---
 type: build
 title: H0157 active — 次の欠落1件
-status: blocked
+status: active
 confidence: high
-evidence_level: source-backed+user-stated
-created: 2026-09-10
-last_reviewed: 2026-09-10
-capsule_id: H0157-ACTIVE-20260910-R1
-gap_id: H0157-GAP-Q0-CURRENT-STATE-SNAPSHOT
+evidence_level: source-backed
+created: 2026-09-11
+last_reviewed: 2026-09-11
+capsule_id: H0157-ACTIVE-20260911-R3
+gap_id: H0157-GAP-P0-PROTECTED-BEFORE-SNAPSHOT
 implementation_authorized: false
 ---
 
 # H0157 active — 次の欠落1件
 
+Q0・Q0-CR・差分再審査フローはいずれも本番反映済み。監査基盤側の積み残しは無い。
+次はP0開始前の基準線を取る工程だが、**まだ許可されていない**。
+
 ```yaml
-gap_id: H0157-GAP-Q0-CURRENT-STATE-SNAPSHOT
+gap_id: H0157-GAP-P0-PROTECTED-BEFORE-SNAPSHOT
 goal_effect: >-
-  quality-gateが参照する12件のcurrent_state_inputsを現物へ同期し、plan検査が
-  EA_KB_SNAPSHOT_STALEで停止する状態を解消する。これだけではBlendの見た目は変わらず、
-  P0以降の実装開始条件が回復するだけである。
+  P0以降の調査でアプリ、親Blend、quality-gate、run-state、production scripts、Wiki、rawが
+  変わっていないと後から機械比較できるよう、開始前の全ファイル集合をstageへ固定する。
+  Helenの見た目は変わらない。取り違えと範囲外書込みを検出する基準線だけを作る。
 known_inputs:
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/quality-gate.json
-    sha256: 479f8a1daea14ff3e83597298140555d89488fd223ae2830c2a7b0d8a0f49141
-    evidence_id: EV-H0157-001
+    sha256: e66c16d684b2ea23e49dfb850a1ec57e0e9b427967451a6f6b336bf0e3fbd703
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/run-state.json
     sha256: 4752ff9aceac9254976ee4fc64cf4c0460903eb6be92580bf5d84909dbaf1074
-    evidence_id: EV-H0157-002
-  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/project_quality_gate.py
-    sha256: 2dea2a28b8feb539790b9038ac0d84b7d2ac8f68781e755cd0e8b8d75e55acc8
-  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/scripts/audit_guard.py
-    sha256: 7c5cdd35803a81c6989c955f5bb45a9d6c802f474e9aa2c9ae41ac9d137644f1
-  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/scripts/a10_quality_gate.py
-    sha256: c0076e5e1fdeabe9882e13b7aacf0a13270703f8d5a9c6938b91a6744f2afa5e
-  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/scripts/writer_scan.py
-    sha256: 346951262441c03b19571b73e5fa6241f24573a3f0431a1e7dafd15f1a051447
-  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md
-    sha256: 869a860aa0ffd38bc86f597f08bfe93254329f7abce61d97382661c4736cdd1d
-    evidence_id: EV-H0157-013
+  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/blends/helen-h0157-repro.blend
+    sha256: 04ef8b79b3fa5b64b9d7e3496a9adc184f10c07d9ee9758caebd289ddbb6d7f5
+  - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/audit/writer-review-receipt.json
+    sha256: ead250c2a501c61d4e0ffc6d31934b503ace2d2b0957006f62f80d8ed73890a0
 missing_evidence: >-
-  現物12件から生成したstage側u0-snapshot、非audit key不変を示すvalidation merge、
-  mutation・rollback・idempotence・writer-scanの結果、独立review SHA、user approval SHA、
-  production plan検査exit 0の保存済みstdout/stderr。
+  protected-before を取ってよいという明示許可。現在 protected_before_precheck は
+  may_take_protected_before=false を返す（P0 authorization が未取得のため）。
+  app_root、parent_blend、quality_gate、run_state、production_scripts、wiki、raw の
+  全regular file path+size+sha256集合とcanonical set SHA、独立readback receipt も未取得。
 allowed_actions:
-  - 12件の現物path・hash_mode・full SHAまたはquality-gate canonical projection SHAをread-only再測定する
-  - 指定されたstage内だけへu0-snapshot.jsonとquality-gate候補を作る
-  - validation mergeで非audit key、families、ground_truth、stop_conditionsの不変性を検査する
-  - stage候補に対してplan検査、mutation、rollback、idempotence、writer-scanを実行する
-  - 実装者とは別の読み手が入力、候補、検査結果を直接再読する
+  - 許可が出た後に、protected setをread-onlyで再帰列挙・SHA測定する
+  - 新しいrunのstage配下へだけ書く
+  - 実装者とは別の読み手が全集合とset SHAを再測定する
 forbidden_actions:
-  - user approval SHAと独立review SHAが無いままproduction quality-gateを更新する
-  - run-state.jsonを変更する
-  - 親Blendまたは候補Blendを変更する
-  - P0、R0、R1、R2、R3の抽出実装へ進む
-  - app、production scripts、Wiki正本、raw、Git metadataを変更する
-expected_outputs:
-  - stage/u0-snapshot.json
-  - stage/quality-gate.candidate.json
-  - stage/q0-validation-receipt.json
-  - independent-review receipt with fixed SHA
-  - user approval receipt with fixed SHA
-  - approved transactional promotion receipt
-  - production plan-check stdout/stderr receipt with exit 0
+  - 許可なくprotected-beforeを取る
+  - P0開始、Helen抽出、Blend制作
+  - app、親Blend、quality-gate、run-state、production scripts、Wiki正本、raw、Git metadataの変更
 mechanical_checks:
-  - current_state_inputsはexactly 12 membersでID集合が登録guardと一致する
-  - 12件すべての現物SHAまたはcanonical projection SHAが候補記録と一致する
-  - quality-gate自身は/execution_audit/current_state_inputsを除外したprojection hashを使う
-  - current_state_inputs以外のquality-gate内容は候補前後で同一である
-  - stage plan checkがexit 0である
-  - mutation、rollback、idempotence、writer-scanが契約どおりの結果になる
-  - production更新は独立review SHAとuser approval SHAが一致したtransactional promotionだけで行う
-  - promotion後のproduction plan checkがexit 0である
-frontier_decision_required: >-
-  yes。stage候補の独立reviewとproduction昇格の承認が必要であり、今回の復旧契約は
-  implementation_authorized=falseである。
-cheap_model_delegable: >-
-  yes, conditionally。固定入力、固定stage、固定検査に限定した候補作成は委譲可能だが、
-  独立review、採否判断、user approval、production昇格は委譲不可。別の明示実行許可が必要。
-stop_condition: >-
-  入力SHA変化、12件以外への範囲拡大、非audit key差分、guard/schema/writer/hook不一致、
-  stage検査FAIL、独立review不在、user approval不在、production plan検査FAILのいずれか。
+  - 全7 protected setsにfile count、各path+size+sha256、set SHAがある
+  - 同じ入力から再生成したset SHAが一致する
+  - 独立verifierの再測定が一致する
+  - protected対象の反映前後SHA差分が0件である
+stop_condition: 入力変化、読み取り不能、対象集合欠落、再測定不一致、stage外書込みのいずれか。
 ```
 
-## 現在の停止点
+## 通常運転（script を直したくなったとき）
 
-このファイルは実装ticketではなく、復旧で確定した次の欠落記録である。今回の許可ではQ0を実行しない。
+```
+python3 <KB>/tools/h0157_rebaseline.py --registry <KB>/tools/project_quality_gate_required_audits.json verify
+python3 <KB>/tools/h0157_rebaseline.py --registry <registry> diff --output <stage>/diff.json
+# 独立レビューが diff を読んで判定受領証を作る（実装担当とは別プロセス）
+python3 <KB>/tools/h0157_rebaseline.py --registry <registry> propose --diff <stage>/diff.json --review <stage>/review.json --out-dir <stage>/out
+# bundle を作り、明示承認を得てから
+python3 <KB>/tools/h0157_promote_bundle.py --bundle <bundle> --approval-receipt <receipt> --backup-dir <stage>/backup
+```
 
-## 参照
+## この後
 
-- `CURRENT.json`: `next_gap_id` がこの `gap_id` と一致する。
-- `EVIDENCE.jsonl`: `EV-H0157-014` と `EV-H0157-015` が現在の停止を直接示す。
-- [[gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910]]: Q0の候補手順。現在はproposedかつnot-authorized。
-
-## 使わなかったもの・落とした情報
-
-- 捨てたもの: `f166`再実行、F12、Time Machine、特定bundle探索を最初の1件にすること。
-- 手元でどう変わるか: Blendの見た目は変わらない。次の担当が最初に扱う欠落だけが、12入力のSHA不一致へ絞られる。
-- 戻せるか: すべて履歴として残っている。Q0完了後に現物と現行計画を再照合し、次の欠落候補として再評価できる。
+`H0157-GAP-P0-AUTHORIZATION`。計画v2・契約v2の固定SHA、独立review、ユーザー承認の4点が
+揃うまで registry の `p0_authorization.authorized` は false のまま。
