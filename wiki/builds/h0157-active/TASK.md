@@ -33,7 +33,7 @@ goal_effect: >-
 known_inputs:
   # sha256 は本文作成時に現物から再計算した値であり、過去の判断の引用ではない。
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/project_quality_gate_required_audits.json
-    sha256: 4bc99dda9c473a014e070658c6f51ce87f6b080e0d1e48479f63518e408698b5
+    sha256: 890497a8393f11b437e93241b7820886441fb5e4d297715699a7ec4bf7bcfe4c
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md
     sha256: df9a2e2586364b118f774913b93e74f53665c5ccf1620920bc127434d8fd827e
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md
@@ -42,9 +42,13 @@ missing_evidence: >-
   registry の p0_authorization は authorized=false で、independent_review_sha256 /
   user_approval_sha256 / approved_at がいずれも空文字列。audit_guard.validate_p0_authorization は
   この3つが非空であること、authorized=true であること、workflow_plan_v2 と task_contract_v2 の
-  現物SHAが記録値と一致することの全部を要求する。加えて、2文書は現在地と食い違う記述を残しており、
-  task contract の分母節は app_root を絶対パスで一意化していない。未修正のまま固定SHAを束縛すると、
-  誤った分母のままP0が開始される。
+  現物SHAが記録値と一致することの全部を要求する。なお、かつてこの項にあった
+  「2文書は現在地と食い違う記述を残している」「task contract の分母節は app_root を
+  絶対パスで一意化していない」という記述は、2026-09-11 の現在地修正（R-2〜R-5）で解消済みの
+  旧世代の状態であり、現行 task contract v2（sha256 3cae29d5…）の §2.1 では app_root は
+  /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/02_ソフトウェア/ドルフロ2_本体.app/Wrapper/SnqxExilium.app の1つの絶対パスに一意化され、
+  implementation_gate: blocked / blocking_evidence: EA_P0_NOT_AUTHORIZED が現行の blocker で
+  ある（TS-1 で旧記述を是正）。
 allowed_actions:
   - 2文書の現在地記述を現物と整合させる修正候補を、新しいrunのstage配下へ作る
   - 修正後の新SHAへ束縛する p0_authorization candidate / package をstageへ作る

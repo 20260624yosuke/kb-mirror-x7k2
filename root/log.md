@@ -11474,3 +11474,21 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 触ったファイル: wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md, wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md,
   tools/project_quality_gate_required_audits.json,
   wiki/builds/h0157-active/CURRENT.json, EVIDENCE.jsonl, TASK.md, log.md
+
+## [2026-09-12] build | H0157 registry binding_source 追随（BS-1）と TASK missing_evidence の旧世代記述の是正（TS-1）
+
+- BS-1: registry の `candidate_output_binding_source.sha256` が現行 task contract と同一pathを指しながら
+  旧世代SHA `869a860a…` を保持していたため、現行SHA `3cae29d5…` へ追随（02bb 候補と同一バイト）。
+- TS-1: TASK.md の missing_evidence に「2文書は現在地と食い違う」「app_root が絶対パスで一意化
+  されていない」という旧世代の記述が残っていた。2026-09-11 の現在地修正（R-2〜R-5、run
+  20260911T104500+0900）で contract §2.1 が app_root を /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/02_ソフトウェア/ドルフロ2_本体.app/Wrapper/SnqxExilium.app
+  に一意化済みであり、現行 blocker は EA_P0_NOT_AUTHORIZED。現物と矛盾する旧記述を最小修正し、
+  旧主張は CURRENT.json の stale_claims に記録した。
+- 上記に伴い registry / ART-H0157-REGISTRY / EV-H0157-023 / TASK.md known_inputs を同一transactionで
+  追随。index.md は旧SHAを保持していないため対象外。TASK.md SHA の他の live 依存は機械走査で0件。
+- 本 bundle は 02bb10f9…（BS-1 のみ）を supersede する。02bb10f9… は DO NOT APPLY。
+  現行 P0 authorization package（f906052c…）も引き続き DO NOT APPROVE / DO NOT APPLY。
+- `p0_authorization.authorized` は false のまま。3つの承認フィールドも空のまま。
+  protected-before・P0・Helen抽出・Blend制作はいずれも未実行。
+- 触ったファイル: tools/project_quality_gate_required_audits.json,
+  wiki/builds/h0157-active/CURRENT.json, EVIDENCE.jsonl, TASK.md, log.md
