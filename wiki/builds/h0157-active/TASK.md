@@ -5,7 +5,7 @@ status: active
 confidence: high
 evidence_level: source-backed
 created: 2026-09-11
-last_reviewed: 2026-09-11
+last_reviewed: 2026-09-12
 capsule_id: H0157-ACTIVE-20260911-R3
 gap_id: H0157-GAP-P0-AUTHORIZATION
 implementation_authorized: false
@@ -33,27 +33,32 @@ goal_effect: >-
 known_inputs:
   # sha256 は本文作成時に現物から再計算した値であり、過去の判断の引用ではない。
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/tools/project_quality_gate_required_audits.json
-    sha256: 890497a8393f11b437e93241b7820886441fb5e4d297715699a7ec4bf7bcfe4c
+    sha256: 5bf4f4e5a1e984566329178230fc31612d72393ec73328030f163aafc8d5cfa3
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910.md
-    sha256: df9a2e2586364b118f774913b93e74f53665c5ccf1620920bc127434d8fd827e
+    sha256: 2d0f585dd6eb1fedb9bbad403fae64afd5b4da8c96018000970ff164d9f3eeae
   - path: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/05_claude/claude_llm_wiki/LLM Knowledge Base _01/wiki/builds/gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910.md
-    sha256: 3cae29d52741849b50eae6e5658c1ec0c551d8bb1fc73504f2cafb256c0a22b8
+    sha256: 3e27010f156b6b5d16d95cbd8474e62bc6ca562fb4ee66f3c63c6a6dea96f6a4
 missing_evidence: >-
   registry の p0_authorization は authorized=false で、independent_review_sha256 /
   user_approval_sha256 / approved_at がいずれも空文字列。audit_guard.validate_p0_authorization は
   この3つが非空であること、authorized=true であること、workflow_plan_v2 と task_contract_v2 の
-  現物SHAが記録値と一致することの全部を要求する。なお、かつてこの項にあった
-  「2文書は現在地と食い違う記述を残している」「task contract の分母節は app_root を
-  絶対パスで一意化していない」という記述は、2026-09-11 の現在地修正（R-2〜R-5）で解消済みの
-  旧世代の状態であり、現行 task contract v2（sha256 3cae29d5…）の §2.1 では app_root は
-  /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/02_ソフトウェア/ドルフロ2_本体.app/Wrapper/SnqxExilium.app の1つの絶対パスに一意化され、
-  implementation_gate: blocked / blocking_evidence: EA_P0_NOT_AUTHORIZED が現行の blocker で
-  ある（TS-1 で旧記述を是正）。
+  現物SHAが記録値と一致することの全部を要求する。PLAN-STATE-01 は束縛済み2文書の最小修正で
+  解消済みだが、ae85c78d… の7-target remediation は successor-before-promotion として保持し
+  promotion しない。その独立semantic review は P0 authorization 用 review ではなく、後継の
+  final approval evidence として流用しない。AUTH-BUNDLE-BINDING-01 修正の patched promoter を
+  含む 8-target successor remediation の promotion・独立semantic review・ユーザー承認はまだ存在しない。
+  NEW-FILE-POSTHASH-ROLLBACK-01 修正を含む r2 promoter で再検証する。
+  TARGET-MAP-AUTH-SCOPE-BINDING-01 修正を含む r3 promoter で再検証する。
+  BACKUP-DIR-WRITE-SCOPE-BINDING-01 修正を含む r4 promoter で再検証する。
+  r4 は UNAUTHORIZED-PRODUCTION-WRITE-01 の incident-bearing history であり、promoter bytes を byte-identical に再利用して r5 を clean run として fresh 構築・再検証する。
+  新しいlive canonical bytesから作るsuccessor P0 authorization packageと、そのpackageを対象に
+  した独立semantic review、ユーザー承認もまだ存在しない。
 allowed_actions:
-  - 2文書の現在地記述を現物と整合させる修正候補を、新しいrunのstage配下へ作る
-  - 修正後の新SHAへ束縛する p0_authorization candidate / package をstageへ作る
-  - 実装者とは別の読み手が、2文書と候補を実バイトから独立reviewする
+  - 本successor remediation反映後のlive canonical plan / contract / registry / promoter bytesから、successor P0 authorization packageを新しいrunのstageへ作る
+  - 実装者とは別の読み手が、successor packageと束縛対象を実バイトから独立semantic reviewする
 forbidden_actions:
+  - package v5、そのreview、approval evidenceを承認・再利用する
+  - 脆弱な旧 promoter（feb59c74…）での production promotion
   - 明示承認なしに registry の p0_authorization を authorized=true にする
   - Q0 / Q0-CR / rebaseline の技術PASSをP0許可の根拠に流用する
   - 工程設計そのものを独断で変更する（必要になったら理由と影響を報告して停止する）

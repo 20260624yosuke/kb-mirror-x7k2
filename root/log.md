@@ -11534,3 +11534,11 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   案Bの実機打鍵 8 項目は未実施。OpenCode 再起動が必要。
 - 触ったファイル: wiki/builds/opencode-ime-submit-keybind-20260912.md,
   wiki/builds/llm-chat-enter-guard.md, index.md, log.md
+
+## [2026-09-13] build | H0157 8-target successor remediation候補 r5（clean rebuild・Architecture A）
+
+- workflow plan v2 / task contract v2 は ae85 承認済み bytes を byte-identical で再利用（2d0f585d…/3e27010f…）。registry / EVIDENCE は r4 bytes を byte-identical で再利用（同一 promoter のため再束縛不要・差分なしを機械検証）。
+- h0157_promote_bundle.py は r4 promoter bytes（bc9a3ee782c34965b5c424b4f212f0f167ce3037e76e2ad6fac9459b0d222450）を byte-identical に再利用する。r4 run は UNAUTHORIZED-PRODUCTION-WRITE-01 の incident-bearing history であり、bytes 自体の正当性は r4 review と本 r5 review で審査する。r5 run 自体は clean run として fresh 構築する。
+- CURRENT / TASK を新 post-state へ再束縛。evidence_set_sha256 は dcad9ffadfab0a747699a14d172c63a616cc938c6a0ef6f5388ac29a73cf7bbc（r4 と同一値であることを機械検証）。
+- 84b17e2f05c520c9fa6149ffbd4e30750510a46015eefa1374098e3b5ccf7815（r4 successor）は incident-bearing history として保持し、production promotion には使用しない。その review / approval evidence を後継の final approval として流用しない。ae85c78d…・098fcaf0…・42b28073…・9a343771… の履歴保持も継続する。
+- package v5（26da8f414fba14e9cd9f08ac62cca719958c7cfcc207c1b58a8e4d13da754a03）は引き続き stale／流用禁止。P0 authorization は未承認のまま。protected-before 未取得。
