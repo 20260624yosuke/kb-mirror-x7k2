@@ -11514,3 +11514,23 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   候補と代償はページの「矛盾・未確定」に記録。
 - 触ったファイル: wiki/builds/opencode-ime-submit-keybind-20260912.md,
   wiki/builds/llm-chat-enter-guard.md, index.md, log.md
+
+## [2026-09-12] build | OpenCode 送信経路の原因特定と案Bへの切り替え
+
+- 武田さんの追加テストで OpenCode 入力欄の Ctrl+Y 直接送信が正常と確定。
+  `input_submit = ctrl+y`・`tui.json` 読込・OpenCode 側送信処理は正常、
+  障害は VS Code 側中継に限定された。
+- 原因特定（VS Code 1.137.0・設定既定・競合なし・既知不具合は条件不一致を
+  確認の上で除外）: 選択中プロファイルで稼働する Karabiner `LLM Chat` ルールが
+  HID 層で VS Code 上の `cmd+enter` を素の enter へ剥がすため、
+  VS Code リゾルバに Cmd+Enter が届かず自作バインドが発火しなかった。
+  VS Code 側だけの安全な修正は不存在と判断（FAIL）。
+- 武田さん判断で案Bを採用。`tui.json` を通過後キーへ整合
+ （`input_submit: return`・`input_newline: shift+return,ctrl+return,alt+return,ctrl+j`、
+  値は既定と同一だが依存明示のため保持）、発火不能だった
+  VS Code `keybindings.json` は除去（作成前と同一状態へ復帰）。
+  Karabiner・Kimi 側は無改変。
+- JSON 有効性・`opencode debug config` 正常起動・除去確認済み。
+  案Bの実機打鍵 8 項目は未実施。OpenCode 再起動が必要。
+- 触ったファイル: wiki/builds/opencode-ime-submit-keybind-20260912.md,
+  wiki/builds/llm-chat-enter-guard.md, index.md, log.md

@@ -1339,7 +1339,7 @@
 - [[screenshot-path-clipboard]] — スクリーンショット保存直後に最新画像の絶対パスをクリップボードへ入れる Mac 自動化。LaunchAgent がスクショ保存先を監視し、LLM へ画像パスを貼る工程を短縮する。実装済み・自動試験済み、通常操作での体感確認待ち (new 2026-07-05)
 - [[codexbar]] — Claude / Codex の使用量監視用メニューバーアプリ。2026-07-14 に `codexbar 0.42.1` を導入し、provider を `Codex` / `Claude` の2つへ絞った。Claude は表示確認済み、Codex は `OpenAI is unavailable in the current environment.` が出て未解決 (new 2026-07-14)
 - [[llm-chat-enter-guard]] — LLMチャットで Enter 誤送信を防ぐ Karabiner 設定。Enter=改行、Cmd+Enter=送信。ChatGPT/Codex/Claude に加え VS Code(Kimi Code)へ拡大・採用済み (new 2026-06-20, 更新 2026-08-18)
-- [[opencode-ime-submit-keybind-20260912]] — VS Code 統合ターミナルの OpenCode TUI を Enter=改行・Cmd+Enter=送信へ変更。公式の TUI 設定＋VS Code キーバインド方式（中継キーは ctrl+y）。設定検証は通過したが実機打鍵は未実施で、稼働中の Karabiner 既存ルールが cmd+enter を剥がす干渉の疑いが濃厚・要解決 (new 2026-09-12)
+- [[opencode-ime-submit-keybind-20260912]] — VS Code 統合ターミナルの OpenCode TUI を Enter=改行・Cmd+Enter=送信へ変更。原因は Karabiner 既存ルールが cmd+enter を剥がすことと特定し、通過後キーへ合わせる案Bを採用（送信=素の enter・改行=shift+enter 系、発火不能な VS Code バインドは除去）。Ctrl+Y 直接送信の正常は実機確認済み、案Bの打鍵 8 項目は未実施 (new 2026-09-12)
 - [[azookey-mode-reconversion]] — azooKey 打ち間違いモード復元機能(かな連打/英数連打)。実装・単体テストは完了したが実機の入力メソッド機構(imklaunchagent・入力ソース登録)で複数回障害が発生し、2026-07-10 に**中止・元のazooKey v1.0へ復元**。世代カウンタの設計バグ等、再挑戦時の技術的原因を記録 (updated 2026-07-10)
 - [[azookey-symbol-input-customization]] — azooKey 日本語入力中に `_`、`*`、`#`、`・・ -> /`、`ーー -> -`、`＋＋ -> +`、`0。0`〜`9。9 -> 0.0`〜`9.9` を扱うカスタム入力テーブル。外側とコンテナ内の両方の設定ファイルを400行・同一SHAへ同期し、2026-07-10 にユーザー実機確認済み。今後は二重保存先の同期と SHA 照合を必須手順として扱う。`おー -> oh` は変換エンジン側のクセとして要調査 (updated 2026-07-10)
 - [[keyclack]] — klakk 置き換えの自作打鍵音メニューバーアプリ。15パック(Topre含む)、CoreAudioデバイス固定＋自動復帰、音量2段構え(マスター+パック別)、キーリピート抑制、修飾キーフィルタ、アプリ別ミュート。2026-07-11 に Chrome 前面時の無音真因を `mutedApps` と特定し、前面アプリ無音状態の可視化と解除を追加。実機で動作中 (updated 2026-07-11)

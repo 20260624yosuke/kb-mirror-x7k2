@@ -33,8 +33,9 @@ LLM チャットアプリで Enter を押したときにメッセージが送信
   TUI 設定＋VS Code キーバインドで Enter=改行・Cmd+Enter=送信へ変更した。
   詳細は [[opencode-ime-submit-keybind-20260912]]。
 - 注意: 本ルールは HID 層で VS Code 上の `cmd+enter` を素の enter へ剥がすため、
-  机上では OpenCode 側の送信トリガーが発火しない疑いが濃厚。実機未確認。
-  実機で送信されなければ第一容疑者は本ルールとの干渉。
+  OpenCode TUI 側の送信トリガーが届かない原因だった（2026-09-12 特定）。
+  対策は OpenCode 側を通過後キーへ合わせる案Bで解決し、本ルールは無改変。
+  詳細は [[opencode-ime-submit-keybind-20260912]]。
 
 ### 2026-08-18: VS Code(Kimi Code)を対象に追加・採用
 

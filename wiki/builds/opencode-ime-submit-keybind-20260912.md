@@ -13,30 +13,38 @@ sources: []
 
 VS Code 統合ターミナル上の OpenCode（TUI）で、日本語 IME の変換確定 Enter による
 誤送信を防ぐためのキー割り当て変更。操作体系は [[llm-chat-enter-guard]] と同じ
-（Enter=改行・Cmd+Enter=送信）にそろえたが、実装手段は Karabiner ではなく
-OpenCode 公式の TUI 設定＋VS Code キーバインドで行った。
+（Enter=改行・Cmd+Enter=送信）にそろえた。
 
-- 素の Enter は送信から外し、改行に割り当てた。
-- 送信は中継キー `ctrl+y` に割り当て、VS Code 側で
-  `cmd+enter`（`terminalFocus` 時に限定）を捕捉して `ctrl+y` 相当の制御文字
- （`U+0019`）をターミナルへ送る。
-- 2026-09-12 時点で設定ファイルの作成と静的検証まで完了。
-  実機の打鍵確認は未実施。さらに机上検証で、稼働中の Karabiner 既存ルールと
-  干渉する疑いが濃厚になった（下の「矛盾・未確定」）。運用開始前に要解決。
+2026-09-12 の武田さん判断で案B（通過後キーに整合）を採用した。Karabiner が
+VS Code 上の Enter 系キーを HID 層で変換した後のキーに OpenCode 側を合わせる
+方式で、VS Code 側のキーバインド追加は不要になった（発火不能なため除去済み）。
+Kimi Code 側の Karabiner ガードには手を付けていない。
+
+- 物理 Enter → Karabiner で shift+enter → OpenCode は改行として処理。
+- 物理 Cmd+Enter → Karabiner で素の enter → OpenCode は送信として処理。
+- IME 変換中の物理 Enter → shift+enter → IME が変換確定（Kimi 側の
+  2026-08-18 実機確認と同型式）。送信されない見込み。
+- 2026-09-12 時点で設定変更と静的検証まで完了。実機の打鍵確認は未実施。
 
 ## 正本ファイル
 
-- グローバル TUI 設定（新規作成・2026-09-12）:
+- グローバル TUI 設定（2026-09-12 作成・同日案Bへ変更）:
   `/Users/takedayousuke/.config/opencode/tui.json`
-  - `keybinds.input_submit`: `ctrl+y`（既定 `return` から変更）
+  - `keybinds.input_submit`: `return`（=既定値。Karabiner が Cmd+Enter を
+    剥がした後の素の enter を送信に使う）
   - `keybinds.input_newline`:
-    `return,shift+return,ctrl+return,alt+return,ctrl+j`
-    （既定の改行群に `return` を追加した形で、既存の改行操作は維持）
-- VS Code キーバインド（新規作成・2026-09-12）:
-  `/Users/takedayousuke/Library/Application Support/Code/User/keybindings.json`
-  - `key: cmd+enter`、`command: workbench.action.terminal.sendSequence`、
-    `args.text: U+0019`、`when: terminalFocus`
-  - 作成前は同ファイル自体が存在せず、競合なしを確認済み。
+    `shift+return,ctrl+return,alt+return,ctrl+j`（=既定値。Karabiner が
+    素の Enter を変換した後の shift+enter を改行に使う）
+  - 値だけ見れば既定と同一だが、Karabiner 通過後キーへの依存を明示するため
+    ファイルは残す。
+- VS Code キーバインド: 2026-09-12 に `keybindings.json` を新規作成
+  （`cmd+enter`＋`terminalFocus`→`sendSequence` U+0019）したが、同日中に除去
+  した。Karabiner が Cmd を剥がすため VS Code に Cmd+Enter が届かず発火不能
+  （死に設定）だったため。作成前と同じく同ファイルは存在しない状態へ戻した。
+- 採用しなかった中継キー `ctrl+y` の検証記録:
+  OpenCode 入力欄で直接 Ctrl+Y を押すと正常に送信できた（2026-09-12 武田さん
+  実機確認）。`input_submit = ctrl+y`・`tui.json` 読込・OpenCode 側送信処理は
+  正常と確定。この結果で障害箇所を VS Code 側中継に限定できた。
 - 触っていない既存設定:
   `/Users/takedayousuke/.config/opencode/opencode.jsonc`（権限のみ）、
   プロジェクトの `opencode.json`（skills・instructions のみ）、
@@ -68,46 +76,45 @@ OpenCode 公式の TUI 設定＋VS Code キーバインドで行った。
 
 ## 検証状態
 
-- 実装済み: 上記 2 ファイルの作成。
-- 自動試験済み: 両ファイルの JSON 有効性、`tui.json` のキー名が公式の
-  バインド ID と一致すること、`opencode debug config` の正常起動（終了 0）。
-- 実機確認済み: なし。要求された 8 項目（IME 変換確定・改行・送信・
-  英数字時・エディタ側無影響・IME 変換中の Cmd+Enter）は未実施。
-- 運用開始可能: いいえ。下の Karabiner 干渉の解決と実機確認が先。
+- 実装済み: グローバル `tui.json` の案B値への変更と、
+  発火不能だった VS Code `keybindings.json` の除去。
+- 自動試験済み: `tui.json` の JSON 有効性・キー名が公式バインド ID と一致すること、
+  `opencode debug config` の正常起動（終了 0）、除去後の User ディレクトリに
+  `keybindings.json` が残っていないこと。
+- 実機確認済み: Ctrl+Y 直接押下での送信のみ（2026-09-12 武田さん実施）。
+  案Bの 8 項目（IME 変換確定・改行・送信・英数字時・エディタ側無影響・
+  IME 変換中の Cmd+Enter）は未実施。
+- 運用開始可能: いいえ。実機確認が先。
 
-反映には OpenCode の再起動（TUI 設定は起動時読込）と
-VS Code ウィンドウのリロードが必要。
+反映には OpenCode の再起動（TUI 設定は起動時読込）が必要。
+VS Code 側は死に設定の除去のみのため再読込は必須ではないが、
+ウィンドウのリロードを推奨。
 
 ## 矛盾・未確定
 
-> [!warning] Karabiner 既存ルールとの干渉の疑い（2026-09-12・机上検証・実機未確認）
+### 解決済み: Karabiner 干渉の原因特定と案B採用（2026-09-12）
 
-- 稼働確認済み（2026-09-12 にプロセス実在を確認）: Karabiner-Elements の
-  Core Service・VirtualHID デーモン・console_user_server が起動中。
-  設定 `/Users/takedayousuke/.config/karabiner/karabiner.json`
-  （mtime 2026-08-18）の `LLM Chat: Enter→改行, Cmd+Enter→送信` ルールは
-  `^com\.microsoft\.VSCode$` を対象に含み、条件はアプリ単位のみ
-  （ターミナルフォーカスでは区別しない）。
-- 当該ルールは HID 層で `cmd+enter → 素の enter` へ剥がし、
-  `素の enter → shift+enter` へ変換する。VS Code より下層で起きるため、
-  統合ターミナル上でも適用される。
-- よって机上では次の通りになる見込み（推論・未実測）:
-  - Enter 打鍵 → Karabiner で shift+enter → OpenCode は改行として処理。
-    Enter=改行の目的は達成される。
-  - Cmd+Enter 打鍵 → Karabiner で素の enter に剥がされる →
-    VS Code の `cmd+enter` バインドは発火しない →
-    OpenCode は素の enter（=改行）を受け取る。**送信されない。**
-- すなわち現状のままでは送信経路が成立しない可能性が高い。
-  実機で Cmd+Enter が送信されなければ、この干渉が第一容疑者。
-- 候補と代償（いずれも未実施・判断待ち）:
-  - Karabiner ルールから VS Code を外す: Kimi Code（公式の送信キー変更手段が
-    無い）が誤送信に戻る代償あり。両立には別案が要る。
-  - VS Code 側の送信トリガーを Karabiner が剥がさないキーへ変える:
-    「送信は必ず Cmd+Enter」の統一操作要件と衝突する。
-  - Karabiner 側でターミナル時だけ除外する: bundle ID 条件しか無いため不可。
-  - OpenCode 側の submit を Karabiner 通過後のキーへ割当てる:
-    通過後の enter/shift+enter は改行と共有のため単純割当ては不可。
-    別の中継キー案の再設計が要る。
+- 原因は VS Code ではなく、選択中プロファイルで稼働する Karabiner
+  `LLM Chat` ルールが HID 層で VS Code 上の `cmd+enter` を素の enter へ
+  剥がすことだった（デーモン稼働・選択プロファイル・条件内容を直接確認、
+  武田さんの Ctrl+Y 直接送信テストとも整合）。
+- VS Code 1.137.0 の送信系 2 設定は既定のままで支障なし、
+  Cmd+Enter の実効競合なし（拡張機能側はエディタ条件付きのみ）、
+  既知の VS Code 側不具合群は条件不一致を確認済み。
+- VS Code 側だけの安全な修正は不存在と判断（素の Enter 受信時送信は
+  Karabiner 停止時に全ターミナルを破壊するため不採用）。
+  武田さん判断で案Bを採用し、案A（Karabiner から VS Code を除外）は不採用。
+  Karabiner 側は無改変のため Kimi Code のガードに影響なし。
+
+### 残存する既知の制約（いずれも未実測・実機確認待ち）
+
+- Karabiner 依存: Karabiner 停止中は物理 Enter が素の enter のまま届き
+  送信に戻る（現 Kimi と同級の露出）。
+- VS Code 外のターミナルで OpenCode を使うと、素の Enter が送信になる。
+  本設定は VS Code＋Karabiner 前提。
+- IME 変換中の物理 Cmd+Enter → 素の enter → IME が変換確定する見込みだが、
+  確定後に Enter が漏れて送信されるかは不明。他サービスと同型の境界として
+  実機確認項目に入れる。
 
 ## 使わなかったもの・落とした情報
 
