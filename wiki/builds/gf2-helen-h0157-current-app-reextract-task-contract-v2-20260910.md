@@ -8,7 +8,6 @@ created: 2026-09-10
 last_reviewed: 2026-09-11
 revision: 2
 parent_plan: gf2-helen-h0157-current-app-reextract-workflow-plan-v2-20260910
-# `implementation_started` は P0〜R3 の実装に限定した boolean。Q0・Q0-CR・差分再審査フローは本番反映済み。
 implementation_started: false
 implementation_gate: blocked
 blocking_evidence: EA_P0_NOT_AUTHORIZED
@@ -35,8 +34,6 @@ specific_missing_bundle_required: false
 blend_write_allowed: false
 production_script_write_allowed: false
 ```
-
-ここでいう `implementation_started: false` の対象は、P0〜R3のparser・抽出・索引・verifier、Helen抽出、Blend変更に限定する。Q0・Q0-CR・差分再審査フロー、およびそれらに伴うquality-gate・関連production scriptsの更新は本番反映済みである。P0 authorization用の独立semantic reviewは未完了である。
 
 ## 1. Q0開始関所
 

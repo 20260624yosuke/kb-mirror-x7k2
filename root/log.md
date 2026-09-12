@@ -11534,12 +11534,3 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   案Bの実機打鍵 8 項目は未実施。OpenCode 再起動が必要。
 - 触ったファイル: wiki/builds/opencode-ime-submit-keybind-20260912.md,
   wiki/builds/llm-chat-enter-guard.md, index.md, log.md
-
-## [2026-09-12] build | H0157 8-target successor remediation候補 r4（Architecture A・BACKUP-DIR-WRITE-SCOPE-BINDING-01修正）
-
-- workflow plan v2 / task contract v2 は ae85 承認済み bytes を byte-identical で再利用（2d0f585d…/3e27010f…）。
-- h0157_promote_bundle.py を r4 patched 版（bc9a3ee782c34965b5c424b4f212f0f167ce3037e76e2ad6fac9459b0d222450）へ置換。rehearsal の全 write（target 宛先・backup-dir・派生 temp）を --sandbox-root へ閉鎖し、root 外は write 前 REFUSED。production mode は receipt の exact backup_dir field を必須化し、不一致・欠落は write 前 REFUSED。
-- registry の promote_tool_sha256 を r4 promoter 実SHAへ更新。新 registry SHA は 5bf4f4e5a1e984566329178230fc31612d72393ec73328030f163aafc8d5cfa3。
-- CURRENT / EVIDENCE / TASK を新 post-state へ再束縛。evidence_set_sha256 は dcad9ffadfab0a747699a14d172c63a616cc938c6a0ef6f5388ac29a73cf7bbc。
-- 9a3437715e122c35ef3992fedbbf8f1129b33bfb1df6958f1b403f0022f54823（r3 successor）は内容 review 済み履歴として保持し、production promotion には使用しない（successor-before-promotion）。その review / approval evidence を後継の final approval として流用しない。ae85c78d…・098fcaf0…・42b28073… の履歴保持も継続する。
-- package v5（26da8f414fba14e9cd9f08ac62cca719958c7cfcc207c1b58a8e4d13da754a03）は引き続き stale／流用禁止。P0 authorization は未承認のまま。protected-before 未取得。

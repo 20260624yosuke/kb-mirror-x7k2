@@ -7,7 +7,6 @@ evidence_level: user-stated+source-backed+inferred
 created: 2026-09-10
 last_reviewed: 2026-09-11
 revision: 2
-# `implementation_started` は P0〜R3 の実装に限定した boolean。Q0・Q0-CR・差分再審査フローは本番反映済み。
 implementation_started: false
 implementation_gate: blocked
 blocking_evidence: EA_P0_NOT_AUTHORIZED
@@ -31,7 +30,7 @@ user_view: wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextr
 | D4 | 結果を変える曖昧な分岐だけ、推論前に選択肢を出す | user-required |
 | D5 | 廉価モデルは意味判断をせず、機械的な実装と列挙だけを担当する | user goalから導出 |
 
-本版で未開始なのは、P0〜R3のparser・抽出・索引・verifier、Helen抽出、Blend変更である。Q0・Q0-CR・差分再審査フロー、およびそれらに伴うquality-gate・関連production scriptsの更新は本番反映済みである。P0 authorization用の独立semantic reviewは未完了であり、P0開始判定は `blocked` のままである。
+本版は計画修正までである。コード抽出、品質ゲート更新、プロジェクトスクリプト追加、Blend変更は開始していない。
 
 現在の実装開始判定は `blocked`。ただし 2026-09-10 時点の blocker は解消済みで、止めている条件が入れ替わっている。
 
