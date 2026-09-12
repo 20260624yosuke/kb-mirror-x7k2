@@ -11492,3 +11492,25 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
   protected-before・P0・Helen抽出・Blend制作はいずれも未実行。
 - 触ったファイル: tools/project_quality_gate_required_audits.json,
   wiki/builds/h0157-active/CURRENT.json, EVIDENCE.jsonl, TASK.md, log.md
+
+## [2026-09-12] build | OpenCode TUI の IME 誤送信ガード設定と Karabiner 干渉の記録
+
+- VS Code 統合ターミナルの OpenCode 1.18.30 を Enter=改行・Cmd+Enter=送信へ変更。
+  新規作成のみで既存設定は無改変: グローバル `tui.json`
+ （`input_submit: ctrl+y`、`input_newline: return`＋既定改行群を維持）、
+  VS Code `keybindings.json`
+ （`cmd+enter`＋`terminalFocus`→`sendSequence` U+0019）。
+- 方式確定の根拠は直接確認: `opencode.json` スキーマにキーバインド項目なし
+  （正式方式は `tui.json`）、既定 `input_submit=return`・
+  `input_newline=shift+return,ctrl+return,alt+return,ctrl+j`、
+  `ctrl+y` の既定単独使用なし、`keybindings.json` 不在、
+  `sendSequence` の U+0000 形式流儀。
+- JSON 有効性と `opencode debug config` 正常起動は確認済み。
+  実機打鍵の 8 項目は未実施。
+- wiki 記録時の点検で、稼働中の Karabiner `LLM Chat` ルール
+ （VS Code を対象に含む・HID 層で `cmd+enter`→素の enter へ剥がす）が
+  送信経路を壊す疑い濃厚と判明（机上検証・実機未確認）。
+  Enter=改行側は成立見込み、Cmd+Enter=送信側が不成立見込み。
+  候補と代償はページの「矛盾・未確定」に記録。
+- 触ったファイル: wiki/builds/opencode-ime-submit-keybind-20260912.md,
+  wiki/builds/llm-chat-enter-guard.md, index.md, log.md

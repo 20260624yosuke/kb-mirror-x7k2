@@ -3,7 +3,7 @@ type: build
 status: active
 confidence: high
 evidence_level: source-backed
-last_reviewed: 2026-08-18
+last_reviewed: 2026-09-12
 ---
 
 # LLM チャット Enter 誤送信ガード
@@ -26,6 +26,15 @@ LLM チャットアプリで Enter を押したときにメッセージが送信
 ターミナル・ブラウザ等には一切影響しない。
 
 ## 現在の状態: 運用中(2026-08-18 に VS Code へ拡大)
+
+### 2026-09-12: OpenCode TUI は別手段で対応・本ルールとの干渉に注意
+
+- VS Code 統合ターミナル上の OpenCode は、Karabiner ではなく OpenCode 公式の
+  TUI 設定＋VS Code キーバインドで Enter=改行・Cmd+Enter=送信へ変更した。
+  詳細は [[opencode-ime-submit-keybind-20260912]]。
+- 注意: 本ルールは HID 層で VS Code 上の `cmd+enter` を素の enter へ剥がすため、
+  机上では OpenCode 側の送信トリガーが発火しない疑いが濃厚。実機未確認。
+  実機で送信されなければ第一容疑者は本ルールとの干渉。
 
 ### 2026-08-18: VS Code(Kimi Code)を対象に追加・採用
 
