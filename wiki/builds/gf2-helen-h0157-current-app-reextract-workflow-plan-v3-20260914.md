@@ -1,7 +1,7 @@
 ---
 type: build
-title: Helen H0157 — 現行アプリ全域の検証付き再抽出から忠実Blendまでの実行計画 v3 (amendment proposal, not adopted)
-status: proposed
+title: Helen H0157 — 現行アプリ全域の検証付き再抽出から忠実Blendまでの実行計画 v3
+status: active
 confidence: medium
 evidence_level: user-stated+source-backed+inferred
 created: 2026-09-10
@@ -25,7 +25,7 @@ first_task_contract: gf2-helen-h0157-current-app-reextract-task-contract-v3-2026
 user_view: wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextract-plan.html
 ---
 
-# Helen H0157 — 現行アプリ全域の検証付き再抽出から忠実Blendまでの実行計画 v3 (amendment proposal, not adopted)
+# Helen H0157 — 現行アプリ全域の検証付き再抽出から忠実Blendまでの実行計画 v3
 
 ## 0. 固定済みの目的と今回の状態
 
@@ -37,7 +37,7 @@ user_view: wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextr
 | D4 | 結果を変える曖昧な分岐だけ、推論前に選択肢を出す | user-required |
 | D5 | 廉価モデルは意味判断をせず、機械的な実装と列挙だけを担当する | user goalから導出 |
 
-本版で未開始なのは、R1 successor rebuild、R2以降、Helen抽出、Blend変更である。Q0・Q0-CRは本番反映済み、P0・R0は独立review PASS済みである。現行の関所は `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01`（v3 adoption待ち）であり、R2は未承認である。
+本版で未開始なのは、R1 successor rebuild、R2以降、Helen抽出、Blend変更である。Q0・Q0-CRは本番反映済み、P0・R0は独立review PASS済みである。現行の関所は `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01`（R1 successor rebuild待ち）であり、R2は未承認である。
 
 現在の実装開始判定は `r1-remediation-stop`（machine-readable gateと同一）。ただし 2026-09-10 時点の blocker は解消済みで、止めている条件が入れ替わっている。
 
@@ -52,7 +52,7 @@ user_view: wiki/_attachments/project-hub-index/20260909-h0157-current-app-reextr
   `audit_guard.protected_before_precheck` は `may_take_protected_before=false` を
   返していた（当時の記録。P0 authorizationは成立済みであり、現行blockerは
   2026-09-14の観測の通り `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01`）。
-- **2026-09-14 の観測（current）**: P0 authorizationは成立し、P0・R0は独立review PASS済み。現在のblockerは `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01`（v3 adoption＋R1 successor rebuild待ち）である。R2は未承認。
+- **2026-09-14 の観測（current, v3 adoption完了後）**: v3 adoption は run `20260914T184900+0900` で完了済み（ADOPTION-MANIFEST `8b45b385b7d7869c63497325a7b65fa4e02fe8f014093b65a14cb699151dc855`）。P0 authorizationは成立し、P0・R0は独立review PASS済み。現在のblockerは `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01`（R1 successor rebuild待ち）である。R1 successor rebuild は未開始・未承認。R2は未承認。
 
 ## 1. 初回独立レビュー9件への処置
 
@@ -142,7 +142,7 @@ H0157一件だけ。別action、別衣装、水着、14件への量産へ展開�
 | global-metadata | SHA `10609117460b9375c6a9d768f3a489120ac5f4312597c12a99b2df597512a197` | IL2CPP metadata入力 |
 | parent-blend | SHA `04ef8b79b3fa5b64b9d7e3496a9adc184f10c07d9ee9758caebd289ddbb6d7f5` | read-only親Blend |
 | project-quality-gate | 実在。2026-09-10は SHA `479f8a1d...f49141`・plan FAIL。2026-09-11時点は SHA `e66c16d6...fbd703`・plan PASS | Q0で解消済み |
-| project-run-state | SHA `4752ff9a...af1074`。2026-09-10はgate記録値`b176b17b...39fc8e`と不一致だったが、Q0昇格でこのSHAが採用され一致 | 解消済み。旧P0 blockerは解消。現行blockerは `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01`（v3 adoption＋R1 successor rebuild待ち） |
+| project-run-state | SHA `4752ff9a...af1074`。2026-09-10はgate記録値`b176b17b...39fc8e`と不一致だったが、Q0昇格でこのSHAが採用され一致 | 解消済み。旧P0 blockerは解消。現行blockerは `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01`（v3 adoption完了済み・R1 successor rebuild待ち） |
 | bundled runtime | Python 3.14、UnityPy 1.25.2、lz4 4.4.5 | UnityFS parser候補 |
 | system tools | `/usr/bin/file`、`otool`、`nm`、`strings`、`dwarfdump` | Mach-O観測候補 |
 | unavailable modules | dnfile、dncil、macholib、liefはbundled runtimeで未導入 | 存在を仮定しない |
@@ -354,24 +354,24 @@ Time Machineは武田さんが明示選択した場合だけ追加候補にす�
 | item | state |
 |---|---|
 | ユーザー決定D1〜D5 | fixed |
-| v2計画 | superseded（後継は本v3 proposal） |
-| v2 Q0〜R3契約 | superseded（後継は本v3 proposal） |
+| v2計画 | superseded（後継は本v3 canonical） |
+| v2 Q0〜R3契約 | superseded（後継は本v3 canonical） |
 | 初回独立レビュー | 9 findings、v2へ反映 |
-| v2独立レビュー | superseded（v3 proposal reviewへ継承） |
+| v2独立レビュー | superseded（v3 adoption reviewで継承・完了） |
 | quality-gate plan | PASS（2026-09-11再実行。2026-09-10のFAIL: EA_KB_SNAPSHOT_STALEは解消） |
 | Q0 | 本番反映済み。Q0-CR（合格基準の補修）と差分再審査フローも反映済み |
 | P0許可 | authorization成立・P0 PASS（独立review済み） |
 | protected-before | 取得済み・PASS（独立review済み） |
 | P0〜R0実装 | PASS（独立review済み） |
-| R1 | remediation が review 中（STOP、v3 adoption＋successor rebuild待ち） |
+| R1 | remediation が v3 adoption で確定（STOP、successor rebuild待ち） |
 | R2 | 未承認（not-started） |
 | Blend変更 | none |
 | 親Blend | SHA `04ef8b79...d7f5`、未変更 |
 
-> Adoption note (proposal): 上表は現行状態（2026-09-14）を示す。2026-09-11 時点の
+> Adoption note (post-adoption): 上表は adoption完了後（2026-09-14 run 20260914T184900+0900）の現行状態を示す。2026-09-11 時点の
 > 旧値（`not-started`・`false`・`blocked`・P0許可・protected-before・P0未実装・
 > v2独立レビュー未実施）は frontmatter の `historical_state_20260911` に保存され、
-> 本候補の現行主張ではない。
+> 本文書の現行主張ではない。
 
 ## 13. 使わなかったもの・落とした情報
 
@@ -422,10 +422,10 @@ Time Machineは武田さんが明示選択した場合だけ追加候補にす�
 - P0 parser registryは実装・PASS済み。Q0更新器は本番反映済み。
 - 5,326件の全file SHA集合・R0分母は測定済みで独立review PASS。
 - 旧R1 container/object/range evidenceは存在するが、coordinate-space束縛不足のため
-  failed/noncanonical（v3 adoption後のsuccessor rebuildで再生成・再検証する）。
+  failed/noncanonical（v3 adoption完了済み。successor rebuildで再生成・再検証する）。
 - IL2CPP method/call edgeを閉じるparserは現時点で実動未確認であり、未成立なら
   coverage-openとして明示済み。上記測定済み分母とは別枠。
 - IL2CPP method/call edgeを閉じるparserは現時点で実動未確認。
 - 現行アプリに必要参照が無い場合の取得経路はB3まで未選択。
-- v2の独立レビューと実装許可は、2026-09-11 時点で未実施（HISTORICAL）。R2および本v3の独立レビューと実行許可は未実施・未承認。
+- v2の独立レビューと実装許可は、2026-09-11 時点で未実施（HISTORICAL）。R2およびR1 successor rebuild の実行許可は未承認。本v3の独立レビューは PASS 済みで adoption は完了済み（run 20260914T184900+0900）。
 

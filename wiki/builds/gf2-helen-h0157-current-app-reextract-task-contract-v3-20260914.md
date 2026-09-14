@@ -1,7 +1,7 @@
 ---
 type: build
-title: Helen H0157 — 現行アプリ全域再抽出 Q0-P0-R0-R3 作業契約 v3 (amendment proposal, not adopted)
-status: proposed
+title: Helen H0157 — 現行アプリ全域再抽出 Q0-P0-R0-R3 作業契約 v3
+status: active
 confidence: medium
 evidence_level: user-stated+source-backed+inferred
 created: 2026-09-10
@@ -25,7 +25,7 @@ supersedes:
   - gf2-helen-h0157-current-app-reextract-task-contract-v2-20260910
 ---
 
-# Helen H0157 — 現行アプリ全域再抽出 Q0-P0-R0-R3 作業契約 v3 (amendment proposal, not adopted)
+# Helen H0157 — 現行アプリ全域再抽出 Q0-P0-R0-R3 作業契約 v3
 
 ```yaml
 contract_version: 3
@@ -43,7 +43,7 @@ blend_write_allowed: false
 production_script_write_allowed: false
 ```
 
-ここでいう `implementation_started` の対象は、P0〜R3のparser・抽出・索引・verifier、Helen抽出、Blend変更である（`true`: Q0・P0・R0 の実装と検証は PASS 済み）。Q0・Q0-CR・差分再審査フロー、およびそれらに伴うquality-gate・関連production scriptsの更新は本番反映済みである。P0 authorization は成立済みである。現行の関所は `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01`（v3 adoption と R1 successor rebuild 待ち）であり、R2 は未承認である。
+ここでいう `implementation_started` の対象は、P0〜R3のparser・抽出・索引・verifier、Helen抽出、Blend変更である（`true`: Q0・P0・R0 の実装と検証は PASS 済み）。Q0・Q0-CR・差分再審査フロー、およびそれらに伴うquality-gate・関連production scriptsの更新は本番反映済みである。P0 authorization は成立済みである。現行の関所は `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01`（R1 successor rebuild 待ち）であり、R2 は未承認である。
 
 ## 1. Q0開始関所
 
@@ -62,7 +62,7 @@ quality_gate:
   observed_result_20260911: PASS (exit 0, '品質ゲート: PASS (plan)')
   observed_run_state_sha256_20260911: 4752ff9aceac9254976ee4fc64cf4c0460903eb6be92580bf5d84909dbaf1074
   required_before_P0: PASS with exit 0 and saved stdout/stderr receipt
-  required_before_P0_status: satisfied as of 2026-09-11 (historical observation; P0 PASS since then); current blocker is R1 remediation / v3 adoption, not this gate
+  required_before_P0_status: satisfied as of 2026-09-11 (historical observation; P0 PASS since then); current blocker is R1 remediation / R1 successor rebuild, not this gate
 ```
 
 `06_repro-v51/quality-gate.json`を作らない。templateから既存正本を作り直さない。
@@ -82,7 +82,7 @@ Q0以外のactorによるquality-gate変更は禁止する。Q0は抽出実装�
 
 **2026-09-11 当時の観測（superseded）**: この Q0 bootstrap は本番反映済みで、合格基準の補修（Q0-CR）と、差分だけを再審査して baseline を更新する通常運転フローも反映済み。正本 quality-gate の `--phase plan` 検査は PASS。以後の script 変更は `tools/h0157_rebaseline.py` の diff / propose と `tools/h0157_promote_bundle.py` を通す。
 
-**2026-09-14 現在**: 現行の関所は `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01` で、v3 adoption と R1 successor rebuild まで開かない。R2 は未承認。P0 authorization（旧 `EA_P0_NOT_AUTHORIZED`）と R0 は PASS 済みであり、本文書と計画v3の固定SHA・独立review・ユーザー承認が揃うまで R1 以降へ進まない。
+**2026-09-14 現在（v3 adoption完了後）**: v3 adoption は run `20260914T184900+0900` で完了済み（ADOPTION-MANIFEST `8b45b385b7d7869c63497325a7b65fa4e02fe8f014093b65a14cb699151dc855`）。現行の関所は `R1-OBJECT-COORDINATE-SPACE-SCHEMA-LIMITATION-01` で、R1 successor rebuild まで開かない。R2 は未承認。P0 authorization（旧 `EA_P0_NOT_AUTHORIZED`）と R0 は PASS 済みであり、R1 successor rebuild が承認・開始されるまで R1 以降へ進まない。
 
 ## 2. 固定入力
 
@@ -598,21 +598,21 @@ stop_conditions:
   `historical_state_20260911` に保存）。
 - protected-before: 取得済み、独立review PASS。
 - P0 parser registry、R0 file denominator は PASS（独立review済み）。
-  R1 は remediation が review 中（v3 adoption＋successor rebuild待ち）。
+  R1 は remediation が v3 adoption で確定し、successor rebuild 前（未開始・未承認）。
 - 全5,326件の形式内訳、object/range分母は sealed R1 evidence の検証対象
-  （v3 adoption待ち）。
+  （v3 adoption完了済み。successor rebuild待ち）。
 - IL2CPP call edge parserの実動は未確認。未成立ならcoverage-openで停止する。
-- R2の実行許可は未承認。本v3契約の独立レビューと実行許可は未実施。
+- R2の実行許可は未承認。本v3契約の独立レビューは PASS し adoption は完了済み（run 20260914T184900+0900）。
 
-### Stale-state markings in this candidate (proposal note, non-authoritative)
+### State markings in this document (post-adoption note, non-authoritative)
 
 - frontmatter の現行値は 2026-09-14 時点の独立review済み状態を示す。
   2026-09-11 時点の旧値は `historical_state_20260911` に保存され、
-  本候補の現行主張ではない。旧値（いずれも historical）の内訳:
+  本文書の現行主張ではない。旧値（いずれも historical）の内訳:
   旧 `execution_status`、旧 `implementation_started: false`、
   旧 `implementation_gate: blocked`、
   旧 `blocking_evidence: EA_P0_NOT_AUTHORIZED`。
-- 現行状態: Q0・Q0-CR 反映済み、P0 PASS、R0 PASS、R1 remediation が review 中、
+- 現行状態: Q0・Q0-CR 反映済み、P0 PASS、R0 PASS、v3 adoption 完了済み、R1 successor rebuild 前（未開始・未承認）、
   R2 未承認。
 - `H0157-CURRENT-APP-INPUTS-V2` の `V2` は凍結された domain separator であり、
   変更しない（inputs_set の連続性のため）。
