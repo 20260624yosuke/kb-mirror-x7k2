@@ -22,14 +22,15 @@ Raycast をユーザー向けランチャーの唯一のハブとして維持し
 - 英数入力: `com.apple.inputmethod.Kotoeri.RomajiTyping.Roman` (TIS current source を英数状態で実測。前回の「ことえり Romaji」回答と一致)
 - BTT: Shift+C / ⌘Space / Hyper 系トリガーは未使用 (btt_data_store 直接クエリ)。fn+英字 トリガー多数 (window snapping 系) → backend は fn を使わない
 - Karabiner-Elements 稼働中: 外部KB (vid=9610) で left_option→英数、right_option→かな。Apple 内蔵KB は esc→fn, tab→英数。BTT 合成イベントは物理KB経由でないため影響なしと想定 (未検証)
-- Raycast の db は暗号化 (SQLCipher) のため既存 Hotkey は読めず、ユーザー確認が必要
-- Raycast defaults に `enforcedInputSourceIDOnOpen = com.apple.inputmethod.Kotoeri.RomajiTyping.Roman` あり (非公式、実効性未検証。有効なら Clipboard 日本語化と競合しうる)
+- Raycast の db は暗号化 (SQLCipher) のため既存 Hotkey 自体はDBから読めないが、ユーザー確認済み: Root = `⌘Space` / Clipboard History = `⇧C`
+- Raycast defaults の `enforcedInputSourceIDOnOpen = com.apple.inputmethod.Kotoeri.RomajiTyping.Roman` は、Gate 2のA/BでRoot・Clipboardとも監視中のTIS source切替を観測せず、Rootもたつきとの因果も支持されなかった。恒久削除せず元の値を維持。
 - BTT アクション: Change Input Source = type 420 (`BTTActionChangeInputSource`), Send Keyboard Shortcut = type 264 (`BTTShortcutToSend` "59,58,56,55,キー" 形式)。アクション列は `BTTAdditionalActions` 配列。追加は `btt://add_new_trigger/?json=...` / `btt://jsonimport/<base64>`
 
 ## 決定事項
 - backend Hotkey 案: Root = ⌃⌥⌘⇧Space ("59,58,56,55,49"), Clipboard = ⌃⌥⌘⇧C ("59,58,56,55,8") — 監査上の既存割当と競合なし
 - Gate 1 PASS: 英数Input Sourceを `com.apple.inputmethod.Kotoeri.RomajiTyping.Roman` に確定。日本語は `dev.ensan.inputmethod.azooKeyMac.Japanese`。
 - Gate 2完了: `enforcedInputSourceIDOnOpen` はA/BいずれでもRoot・Clipboardの監視中TIS sourceを切り替えなかった。一時無効化後、元の値へ復元済み。
+- Gate 3 artifact生成: `wiki/builds/btt-raycast-ime-20260915-gate3-artifact.json` を生成したが、BTT/Raycast/macOSへは未適用。SHA-256: `c99e6bbbc229ac71e534cfa9dc41bdf56db85a71ff03935e1bdd6e221f12990a`
 
 ## Gate 2 A/B結果
 - A（hidden prefあり）Root: 起動前・起動直後・終了時とも `dev.ensan.inputmethod.azooKeyMac.Japanese`。起動直後のもたつきは再現あり。
@@ -40,8 +41,10 @@ Raycast をユーザー向けランチャーの唯一のハブとして維持し
 - 推奨: hidden prefは恒久削除せず、元の値を維持する。非公式設定の恒久削除による別の挙動変化を避けるため。
 - Gate 3: live設定変更なしのimport artifact生成へ進行可能。ただしRootのもたつきは未解決であり、Gate 3通過を完成・改善の証拠とは扱わない。
 
-## 未決定
-- Raycast 側の適用手法 (手動/自動/共同)
+## 運用確定
+- Raycast側のbackend Hotkeyは、手順書に従いユーザーが手動設定する。
+
+## 未検証
 - BTT synthetic shortcut がKarabinerを確実に迂回するか
 
 ## 検証計画
