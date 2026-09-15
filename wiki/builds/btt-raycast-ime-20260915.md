@@ -24,13 +24,14 @@ Raycast をユーザー向けランチャーの唯一のハブとして維持し
 - Karabiner-Elements 稼働中: 外部KB (vid=9610) で left_option→英数、right_option→かな。Apple 内蔵KB は esc→fn, tab→英数。BTT 合成イベントは物理KB経由でないため影響なしと想定 (未検証)
 - Raycast の db は暗号化 (SQLCipher) のため既存 Hotkey 自体はDBから読めないが、ユーザー確認済み: Root = `⌘Space` / Clipboard History = `⇧C`
 - Raycast defaults の `enforcedInputSourceIDOnOpen = com.apple.inputmethod.Kotoeri.RomajiTyping.Roman` は、Gate 2のA/BでRoot・Clipboardとも監視中のTIS source切替を観測せず、Rootもたつきとの因果も支持されなかった。恒久削除せず元の値を維持。
-- BTT アクション: Change Input Source = type 420 (`BTTActionChangeInputSource`), Send Keyboard Shortcut = type 264 (`BTTShortcutToSend` "59,58,56,55,キー" 形式)。アクション列は `BTTAdditionalActions` 配列。追加は `btt://add_new_trigger/?json=...` / `btt://jsonimport/<base64>`
+- BTT アクション: Change Input Source = type 420 (`BTTActionChangeInputSource`), Send Keyboard Shortcut = type 264 (`BTTShortcutToSend` "59,58,56,55,キー" 形式)。標準trigger action列は `BTTActionsToExecute` 配列。今回のartifactはJSON配列のため、importは `btt://jsonimport` またはBTTのJSON importを使い、`add_new_trigger`へ配列全体を渡さない。
 
 ## 決定事項
 - backend Hotkey 案: Root = ⌃⌥⌘⇧Space ("59,58,56,55,49"), Clipboard = ⌃⌥⌘⇧C ("59,58,56,55,8") — 監査上の既存割当と競合なし
 - Gate 1 PASS: 英数Input Sourceを `com.apple.inputmethod.Kotoeri.RomajiTyping.Roman` に確定。日本語は `dev.ensan.inputmethod.azooKeyMac.Japanese`。
 - Gate 2完了: `enforcedInputSourceIDOnOpen` はA/BいずれでもRoot・Clipboardの監視中TIS sourceを切り替えなかった。一時無効化後、元の値へ復元済み。
 - Gate 3 artifact生成: `wiki/builds/btt-raycast-ime-20260915-gate3-artifact.json` を生成したが、BTT/Raycast/macOSへは未適用。SHA-256: `c99e6bbbc229ac71e534cfa9dc41bdf56db85a71ff03935e1bdd6e221f12990a`
+- Gate 3.1 hardening: disabled import用artifactを生成。`BTTEnabled = 0`、Root/Clipboardの識別名、modifier混入防止を明示。BTT/Raycast/macOSへは未適用。
 
 ## Gate 2 A/B結果
 - A（hidden prefあり）Root: 起動前・起動直後・終了時とも `dev.ensan.inputmethod.azooKeyMac.Japanese`。起動直後のもたつきは再現あり。
@@ -43,6 +44,7 @@ Raycast をユーザー向けランチャーの唯一のハブとして維持し
 
 ## 運用確定
 - Raycast側のbackend Hotkeyは、手順書に従いユーザーが手動設定する。
+- Gate 4 import手順: disabled artifactをJSON配列としてimport → BTT read-backで2triggerを識別名・`BTTEnabled=0`・Global / All Apps scopeとして確認 → Raycast backend Hotkeyを手動設定 → backend受け口をread-back確認 → 最後に2triggerだけenableする。app scopeが限定されていた場合はenableしない。
 
 ## 未検証
 - BTT synthetic shortcut がKarabinerを確実に迂回するか
