@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5531 ファイル_
+_合計 5532 ファイル_
 
 ## root/ (11)
 
@@ -4072,7 +4072,7 @@ _合計 5531 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (124)
+## wiki/builds/ (125)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -4088,9 +4088,10 @@ _合計 5531 ファイル_
 - [brainstorm-port-request-20260829.md](wiki/builds/brainstorm-port-request-20260829.md) | 2026-09-06T15:00:00Z
 - [brainstorm-skill.md](wiki/builds/brainstorm-skill.md) | 2026-09-06T15:00:00Z
 - [brainstorm-teardown-brief-20260910.md](wiki/builds/brainstorm-teardown-brief-20260910.md) | 2026-09-10T14:26:12Z
+- [btt-raycast-ime-20260915-gate3.2-root-readback-20260915T221515+0900-uuid.txt](wiki/builds/btt-raycast-ime-20260915-gate3.2-root-readback-20260915T221515%2B0900-uuid.txt) | 2026-09-15T13:15:49Z
 - [btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148+0900-add-new-trigger-uuid.txt](wiki/builds/btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148%2B0900-add-new-trigger-uuid.txt) | 2026-09-15T13:03:07Z
 - [btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148+0900-sha256.txt](wiki/builds/btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148%2B0900-sha256.txt) | 2026-09-15T13:03:56Z
-- [btt-raycast-ime-20260915.md](wiki/builds/btt-raycast-ime-20260915.md) | 2026-09-15T01:27:47Z
+- [btt-raycast-ime-20260915.md](wiki/builds/btt-raycast-ime-20260915.md) | 2026-09-15T13:13:42Z
 - [canvas-idea-cultivation-workflow.md](wiki/builds/canvas-idea-cultivation-workflow.md) | 2026-07-01T18:48:47Z
 - [canvas-ingest-eagle-feedback-guide.md](wiki/builds/canvas-ingest-eagle-feedback-guide.md) | 2026-07-07T06:22:27Z
 - [canvas-ingest-model-runbook.md](wiki/builds/canvas-ingest-model-runbook.md) | 2026-08-22T12:20:27Z

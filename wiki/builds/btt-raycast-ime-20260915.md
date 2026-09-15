@@ -54,3 +54,8 @@ Raycast をユーザー向けランチャーの唯一のハブとして維持し
 
 ## 関連リンク
 - [[obsidian-direct-open-entrypoint]]
+
+## Gate 3.2 履歴 (2026-09-15)
+- Gate 3.1 の `BTTActionsToExecute` 形式は、BTT 4.204 の `add_new_trigger` ingest で action が欠落し、key trigger のみが残った。
+- Gate 3.2 は、BTT 4.204 の実機 `add_new_trigger` / `get_trigger` / `get_triggers` で保持を確認した `BTTAdditionalActions` 形式へ移行した compatibility artifact であり、Gate 3.1 を supersede (置き換え) する。
+- Gate 3.2 artifact: `wiki/builds/btt-raycast-ime-20260915-gate3.2-artifact.json`。Root / Clipboard とも `BTTEnabled=0`、action順は 420 → shortcut-send。
