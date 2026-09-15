@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5532 ファイル_
+_合計 5535 ファイル_
 
 ## root/ (11)
 
@@ -4072,7 +4072,7 @@ _合計 5532 ファイル_
 - [ye-jji-ch13-p4-10m40s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-10m40s.png) | 2026-08-26T09:06:15Z
 - [ye-jji-ch13-p4-11m00s.png](wiki/assets/frames/coloso-ye-jji-ch13-lineart/ye-jji-ch13-p4-11m00s.png) | 2026-08-26T09:06:15Z
 
-## wiki/builds/ (125)
+## wiki/builds/ (128)
 
 - [approval-granularity-fix-handoff-20260829.md](wiki/builds/approval-granularity-fix-handoff-20260829.md) | 2026-08-29T15:54:27Z
 - [art-canvas-ingest-design.md](wiki/builds/art-canvas-ingest-design.md) | 2026-06-14T12:47:14Z
@@ -4091,6 +4091,9 @@ _合計 5532 ファイル_
 - [btt-raycast-ime-20260915-gate3.2-root-readback-20260915T221515+0900-uuid.txt](wiki/builds/btt-raycast-ime-20260915-gate3.2-root-readback-20260915T221515%2B0900-uuid.txt) | 2026-09-15T13:15:49Z
 - [btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148+0900-add-new-trigger-uuid.txt](wiki/builds/btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148%2B0900-add-new-trigger-uuid.txt) | 2026-09-15T13:03:07Z
 - [btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148+0900-sha256.txt](wiki/builds/btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148%2B0900-sha256.txt) | 2026-09-15T13:03:56Z
+- [btt-raycast-ime-20260915-phase-d1-before-restart-20260915T225543+0900.png](wiki/builds/btt-raycast-ime-20260915-phase-d1-before-restart-20260915T225543%2B0900.png) | 2026-09-15T13:55:59Z
+- [btt-raycast-ime-20260915-phase-d2-after-restart-20260915T225909+0900.png](wiki/builds/btt-raycast-ime-20260915-phase-d2-after-restart-20260915T225909%2B0900.png) | 2026-09-15T13:59:09Z
+- [btt-raycast-ime-20260915-phase-diagnosis-sha256-20260915T225909+0900.txt](wiki/builds/btt-raycast-ime-20260915-phase-diagnosis-sha256-20260915T225909%2B0900.txt) | 2026-09-15T14:00:17Z
 - [btt-raycast-ime-20260915.md](wiki/builds/btt-raycast-ime-20260915.md) | 2026-09-15T13:31:10Z
 - [canvas-idea-cultivation-workflow.md](wiki/builds/canvas-idea-cultivation-workflow.md) | 2026-07-01T18:48:47Z
 - [canvas-ingest-eagle-feedback-guide.md](wiki/builds/canvas-ingest-eagle-feedback-guide.md) | 2026-07-07T06:22:27Z
