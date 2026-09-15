@@ -24,7 +24,8 @@ Raycast をユーザー向けランチャーの唯一のハブとして維持し
 - Karabiner-Elements 稼働中: 外部KB (vid=9610) で left_option→英数、right_option→かな。Apple 内蔵KB は esc→fn, tab→英数。BTT 合成イベントは物理KB経由でないため影響なしと想定 (未検証)
 - Raycast の db は暗号化 (SQLCipher) のため既存 Hotkey 自体はDBから読めないが、ユーザー確認済み: Root = `⌘Space` / Clipboard History = `⇧C`
 - Raycast defaults の `enforcedInputSourceIDOnOpen = com.apple.inputmethod.Kotoeri.RomajiTyping.Roman` は、Gate 2のA/BでRoot・Clipboardとも監視中のTIS source切替を観測せず、Rootもたつきとの因果も支持されなかった。恒久削除せず元の値を維持。
-- BTT アクション: Change Input Source = type 420 (`BTTActionChangeInputSource`), Send Keyboard Shortcut = type 264 (`BTTShortcutToSend` "59,58,56,55,キー" 形式)。標準trigger action列は `BTTActionsToExecute` 配列。今回のartifactはJSON配列のため、importは `btt://jsonimport` またはBTTのJSON importを使い、`add_new_trigger`へ配列全体を渡さない。
+- BTT 4.204 の現在の実装経路: Change Input Source = type 420 (`BTTActionChangeInputSource`) → shortcut-send（`BTTShortcutToSend`、Hyper修飾キー列）を `BTTAdditionalActions` の子要素2件として保持し、`add_new_trigger` を trigger object ごとに実行する。`BTTEnabled=0` のまま Root を先に追加して完全 read-back し、Root PASS 後だけ Clipboard を追加する。
+- Gate 3.1 の `BTTActionsToExecute` 形式と `jsonimport` は、BTT 4.204 で actions が欠落した履歴・失敗経路であり、現在の実装経路では使わない。
 
 ## 決定事項
 - backend Hotkey 案: Root = ⌃⌥⌘⇧Space ("59,58,56,55,49"), Clipboard = ⌃⌥⌘⇧C ("59,58,56,55,8") — 監査上の既存割当と競合なし
@@ -40,11 +41,11 @@ Raycast をユーザー向けランチャーの唯一のハブとして維持し
 - B（hidden pref一時無効）Clipboard: 起動前・起動直後・終了時とも `dev.ensan.inputmethod.azooKeyMac.Japanese`。日本語入力は正常で、Aとの差は体感上なし。
 - 結論: この試験条件ではhidden prefがRoot/Clipboardのどちらかに実効的に作用した証拠は得られず、Rootのもたつき原因とも確認できない。
 - 推奨: hidden prefは恒久削除せず、元の値を維持する。非公式設定の恒久削除による別の挙動変化を避けるため。
-- Gate 3: live設定変更なしのimport artifact生成へ進行可能。ただしRootのもたつきは未解決であり、Gate 3通過を完成・改善の証拠とは扱わない。
+- Gate 3.2: BTT 4.204 compatibility serialization (`BTTAdditionalActions`) の disabled artifact。Root/Clipboard の live read-back は、Root PASS 後にのみ Clipboard へ進む。Rootのもたつきは未解決であり、artifactの検証を完成・改善の証拠とは扱わない。
 
 ## 運用確定
 - Raycast側のbackend Hotkeyは、手順書に従いユーザーが手動設定する。
-- Gate 4 import手順: disabled artifactをJSON配列としてimport → BTT read-backで2triggerを識別名・`BTTEnabled=0`・Global / All Apps scopeとして確認 → Raycast backend Hotkeyを手動設定 → backend受け口をread-back確認 → 最後に2triggerだけenableする。app scopeが限定されていた場合はenableしない。
+- Gate 4 live手順: Gate 3.2 artifact の Root object を `add_new_trigger` で1件だけ disabled追加 → BTT UI の `All Apps` / `Keyboard Shortcuts` と API read-back で完全確認 → Root PASS 後のみ Clipboard object を同じ手順で disabled追加する。両方PASSしても、Raycast backend Hotkey変更・trigger enable・スモーク/20回試験には進まない。`jsonimport` と `update_trigger` は現在の実装経路では使わない。
 
 ## 未検証
 - BTT synthetic shortcut がKarabinerを確実に迂回するか
@@ -59,3 +60,4 @@ Raycast をユーザー向けランチャーの唯一のハブとして維持し
 - Gate 3.1 の `BTTActionsToExecute` 形式は、BTT 4.204 の `add_new_trigger` ingest で action が欠落し、key trigger のみが残った。
 - Gate 3.2 は、BTT 4.204 の実機 `add_new_trigger` / `get_trigger` / `get_triggers` で保持を確認した `BTTAdditionalActions` 形式へ移行した compatibility artifact であり、Gate 3.1 を supersede (置き換え) する。
 - Gate 3.2 artifact: `wiki/builds/btt-raycast-ime-20260915-gate3.2-artifact.json`。Root / Clipboard とも `BTTEnabled=0`、action順は 420 → shortcut-send。
+- 現在の正本実装経路は BTT 4.204 の `add_new_trigger` による trigger object 単位の逐次追加である。`jsonimport` / `update_trigger` は do-not-use とする。
