@@ -1,0 +1,6 @@
+a998613cd4146f27e31047a8a59c0e54b8fa682a4cdc77e286f86769762a6dc8  btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148+0900-existing-multi-action.json
+b9bb3a2d650ff93ad255cab0262a660d728e49785c265b7742bee5573b92897f  btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148+0900-get-trigger.json
+c8624d101d1018eb93da5f74ca0c6b1d7e9cc53189d45f02be08dfa0ba63108b  btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148+0900-get-triggers.json
+239f922623f4c8681ac1a7a4fb6ff4d16b2f80963bf262b5f8d29df5bc2b142d  btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148+0900-root-candidate.json
+f1be9b9d2c2a1abfa17984f852d0b7202bf822e9c96b1df2f6b4995c692a48aa  btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148+0900-add-new-trigger-uuid.txt
+c5d38b07f3ce19bf5f20d0f66e61c30710f23cc0be50019c5a8110d937ae4ff6  btt-raycast-ime-20260915-gate4-compat-probe-20260915T220148+0900-rollback-receipt.json
