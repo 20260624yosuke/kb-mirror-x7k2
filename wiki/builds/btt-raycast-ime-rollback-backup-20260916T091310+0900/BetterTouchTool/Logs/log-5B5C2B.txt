@@ -1,0 +1,30 @@
+1630296128.503516|usage|loading todays usage|
+1630296128.521475|short|init|
+1630296128.544284|LIC|idate 2021-08-29 01:51:01 +0000|
+1630296128.547872|short|register all hotkeys|
+1630296128.554696|ASL|error loading master preset|
+1630296128.556117|short|register disable hotkeys|
+1630296128.557213|short|register disable hotkeys|
+1630296128.558362|short|register all hotkeys|
+1630296128.564032|LAUNCH|DIDLaunch|
+1630296128.569115|ASL|trial has ended|
+1630296128.632596|ASL|disable|
+1630296128.634632|short|register disable hotkeys|
+1630296129.638134|short|register disable hotkeys|
+1630296129.639202|short|register all hotkeys|
+1630296131.150272|LIC|trial|
+1630296131.254811|short|register disable hotkeys|
+1630296131.255626|short|register disable hotkeys|
+1630296131.358507|ASL|nil host used in call to allowsSpecificHTTPSCertificateForHost|
+1630296131.358540|ASL|nil host used in call to allowsAnyHTTPSCertificateForHost:|
+1630296131.515352|ASL|nil host used in call to allowsSpecificHTTPSCertificateForHost|
+1630296131.515385|ASL|nil host used in call to allowsAnyHTTPSCertificateForHost:|
+1630296131.515674|ASL|nil host used in call to allowsSpecificHTTPSCertificateForHost|
+1630296131.515694|ASL|nil host used in call to allowsAnyHTTPSCertificateForHost:|
+1630296131.516457|ASL|nil host used in call to allowsSpecificHTTPSCertificateForHost|
+1630296131.516478|ASL|nil host used in call to allowsAnyHTTPSCertificateForHost:|
+1630296131.635167|ASL|nil host used in call to allowsSpecificHTTPSCertificateForHost|
+1630296131.635203|ASL|nil host used in call to allowsAnyHTTPSCertificateForHost:|
+1630296133.823990|lic|in new updater method|
+1630296135.202056|ASL|*** WARNING: Method convertPointToBase: in class NSView is deprecated on 10.7 and later. It should not be used in new applications. |
+1630296196.294369|TERMINATE|SHOULDTERMINATE|

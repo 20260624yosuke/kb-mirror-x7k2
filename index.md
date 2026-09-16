@@ -1,7 +1,7 @@
 # Mirror Index
 
 _sync_manifest.tsv 由来。日時=各ファイルの更新時刻(UTC)_
-_合計 5535 ファイル_
+_合計 5538 ファイル_
 
 ## root/ (11)
 
@@ -4202,6 +4202,15 @@ _合計 5535 ファイル_
 - [window-layout-restore.md](wiki/builds/window-layout-restore.md) | 2026-08-26T11:04:47Z
 - [x-eagle-free-save-pilot.md](wiki/builds/x-eagle-free-save-pilot.md) | 2026-08-03T08:46:15Z
 - [x-eagle-idea-workbench.md](wiki/builds/x-eagle-idea-workbench.md) | 2026-06-25T09:50:10Z
+
+## wiki/builds/btt-raycast-ime-rollback-backup-20260916T091310+0900/ (1)
+
+- [SHA256SUMS.txt](wiki/builds/btt-raycast-ime-rollback-backup-20260916T091310%2B0900/SHA256SUMS.txt) | 2026-09-16T00:13:10Z
+
+## wiki/builds/btt-raycast-ime-rollback-backup-20260916T091310+0900/BetterTouchTool/Logs/ (2)
+
+- [log-1E48B6.txt](wiki/builds/btt-raycast-ime-rollback-backup-20260916T091310%2B0900/BetterTouchTool/Logs/log-1E48B6.txt) | 2021-08-29T05:01:43Z
+- [log-5B5C2B.txt](wiki/builds/btt-raycast-ime-rollback-backup-20260916T091310%2B0900/BetterTouchTool/Logs/log-5B5C2B.txt) | 2021-08-30T04:03:16Z
 
 ## wiki/builds/coloso-intake/ (1)
 
