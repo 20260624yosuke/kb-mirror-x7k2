@@ -11556,3 +11556,8 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 主な値: たるみ 原着装 1.0502／候補 1.0507、落ち込み 0.348／0.522。ヘレンの紐との差は首側 10〜13mm、胸側 92.4mm。
 - 次の関所: R2 の合格条件（candidate_fit）の案を作成し外部監査待ちで停止。
 - 触ったファイル: output/gf2-helen-swimsuit/helen-r2-t1-role-gap-measurement-20260919/（新規）, output/gf2-helen-swimsuit/outer-supervisor-r2-20260919/（新規）, log.md
+
+## [2026-09-19] build | Helen R2-T2 合格条件を既存の合わせ込み計画と突き合わせ（案 v2・外部監査待ち）
+
+- 既存計画 `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`（rev 3.6）の G1〜G11 と、既存の肩ひも検査 G14/G18/G19/G21/W7 に対して T1 の測定を分類した。新しい数値の線は追加していない。既存の基準も置き換え・緩和していない。v1 の誤り4点（15mm の新しい線・過去の帯の流用・ヘレンのドレスの紐を合格条件にしたこと・G21b の厳格化）を取り下げた。R2-T2 は未委譲。本番への書き込みは0件。
+- 触ったファイル: output/gf2-helen-swimsuit/outer-supervisor-r2-20260919/r2-candidate-fit-criteria-proposal-v2-reconciled.md（新規）, output/gf2-helen-swimsuit/outer-supervisor-r2-20260919/supervisor-summary.json, log.md
