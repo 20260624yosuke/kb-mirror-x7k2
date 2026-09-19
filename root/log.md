@@ -11542,3 +11542,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - CURRENT / TASK を新 post-state へ再束縛。evidence_set_sha256 は dcad9ffadfab0a747699a14d172c63a616cc938c6a0ef6f5388ac29a73cf7bbc（r4 と同一値であることを機械検証）。
 - 84b17e2f05c520c9fa6149ffbd4e30750510a46015eefa1374098e3b5ccf7815（r4 successor）は incident-bearing history として保持し、production promotion には使用しない。その review / approval evidence を後継の final approval として流用しない。ae85c78d…・098fcaf0…・42b28073…・9a343771… の履歴保持も継続する。
 - package v5（26da8f414fba14e9cd9f08ac62cca719958c7cfcc207c1b58a8e4d13da754a03）は引き続き stale／流用禁止。P0 authorization は未承認のまま。protected-before 未取得。
+
+## [2026-09-19] build | Helen S039 controlled production adoption（actual・COMMITTED）
+
+- Independent PASS 済みの runner ccffb34c / manifest 82fbece8 / bundle af2e0133（canonical 24afd2d6）/ applier f1cbaf3b を無改変で使い、`--mode production` で本番採用。Gate A（53項目）/ B（38項目）/ C（Sabrina 実パス読み取り専用検証、変更0）/ baseline-capture 36ae8896 直前確認すべて PASS。
+- 本番の変更は4点のみ: tools/swimsuit_authority.py 8812d436→47d00e2a、tools/swimsuit_reference_contract_v2.py c5b4802c→e549f42d、active seal 2ca13675→24d2e2a8（新規 SEALED）、active contract ce2be301→239be33d（real generator 生成、PASS）。G20 D/S/H/R PASS、R2 stage_entry OPEN。Supervisor 独立監査 88項目 PASS。
+- runtime pointer・successor-v3.4.1・Blend・Helen NPZ 2本・skeleton・Sabrina evidence・Helen confirmation・authority ledgers は前後同一。actual R2 fit は未開始。terminal: HELEN_S039_CONTROLLED_PRODUCTION_ADOPTION_READY_FOR_INDEPENDENT_REVIEW。
+- 触ったファイル: tools/swimsuit_authority.py, tools/swimsuit_reference_contract_v2.py, output/gf2-helen-swimsuit/r0-authority-policy-seal-v1.json, output/gf2-helen-swimsuit/reference-contract-v2.json, output/gf2-helen-swimsuit/helen-s039-controlled-production-adoption-actual-20260919/（新規）, log.md
