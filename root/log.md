@@ -11568,3 +11568,9 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - G21b の「＋5ポイント」は武田さんの承認に無い緩和（区分 C）と判定し、合格線を原着装の値そのものにした。変異試験は幅 0.05 でも 0 でも 7/7 で、境目のケースが無いことを確認した。
 - 作業の成否（r2_t2_task_result）と候補の合否（candidate_fit）を別の欄にした。「General と Flat の両方で全検査合格」は出どころ未解決として切り離した。R2-T2 は未着手・未委譲。本番への書き込みは0件。
 - 触ったファイル: output/gf2-helen-swimsuit/outer-supervisor-r2-20260919/ の r2-t2-preimplementation-reconciliation-v1.md・.json・r2-candidate-fit-criteria-proposal-v3-reconciled.md・g21b-margin-evidence-v1.json・20260920-r2-t2-preimplementation-reconciliation.html・design-system/（新規）, supervisor-summary.json・supervisor-state.json（更新）, log.md
+
+## [2026-09-20] build | Helen R2-T2 run 1 肩ひもの張りの候補（staging・外部監査待ち）
+
+- 外部監査の PASS を受け、R2-T2 を staging で実施した。落ち込んだ輪を体の外向きにだけ持ち上げる方法（9/7 のならし・9/8 のならし後の置き直しは採らない）。右の紐はたるみ 1.0507→1.0398、落ち込み 12/23→8/23 で、厳密な G21（原着装以下・許容 0）を満たした。動いたのは肩ひもの 192 頂点だけで、体へ近づいた輪は 0。Outer Supervisor が独立に再計算し、76,498 ファイルを前後照合した。
+- 条件 E（G7/G8/G9a/G9b）と F（G19b 全体）は、出発点の 9/7 版の時点で不合格だった（主にカップ・小物・帯）。肩ひもだけの作業では満たせないため、合格基準の扱いを外部監査に回して停止した。candidate_fit は FAIL のまま。本番への書き込みは0件。
+- 触ったファイル: output/gf2-helen-swimsuit/helen-r2-t2-strap-bridge-20260920/（新規・実装役）, output/gf2-helen-swimsuit/outer-supervisor-r2-20260919/r2-t2-task-contract.md・r2-t2-run1-supervisor-audit.json・20260920-r2-t2-run1-strap-bridge-audit.html（新規）, supervisor-summary.json・supervisor-state.json（更新）, log.md
