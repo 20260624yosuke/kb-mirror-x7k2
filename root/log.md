@@ -11561,3 +11561,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 
 - 既存計画 `wiki/builds/gf2-helen-swimsuit-fit-plan-20260829.md`（rev 3.6）の G1〜G11 と、既存の肩ひも検査 G14/G18/G19/G21/W7 に対して T1 の測定を分類した。新しい数値の線は追加していない。既存の基準も置き換え・緩和していない。v1 の誤り4点（15mm の新しい線・過去の帯の流用・ヘレンのドレスの紐を合格条件にしたこと・G21b の厳格化）を取り下げた。R2-T2 は未委譲。本番への書き込みは0件。
 - 触ったファイル: output/gf2-helen-swimsuit/outer-supervisor-r2-20260919/r2-candidate-fit-criteria-proposal-v2-reconciled.md（新規）, output/gf2-helen-swimsuit/outer-supervisor-r2-20260919/supervisor-summary.json, log.md
+
+## [2026-09-20] build | Helen R2-T2 着手前の突き合わせ（外部監査の差し戻し3点・読み取りのみ）
+
+- 水着を載せる体を S014（絶対）に基づき `cloth2_lod0_General` submesh 0 に一本化した。9/18 のステージング記録にある `fit_body = body_lod0` は、根拠のない古い誤記と判定した（上書きはしていない）。T1 で素肌の体を使った値は取り下げた。
+- G21b の「＋5ポイント」は武田さんの承認に無い緩和（区分 C）と判定し、合格線を原着装の値そのものにした。変異試験は幅 0.05 でも 0 でも 7/7 で、境目のケースが無いことを確認した。
+- 作業の成否（r2_t2_task_result）と候補の合否（candidate_fit）を別の欄にした。「General と Flat の両方で全検査合格」は出どころ未解決として切り離した。R2-T2 は未着手・未委譲。本番への書き込みは0件。
+- 触ったファイル: output/gf2-helen-swimsuit/outer-supervisor-r2-20260919/ の r2-t2-preimplementation-reconciliation-v1.md・.json・r2-candidate-fit-criteria-proposal-v3-reconciled.md・g21b-margin-evidence-v1.json・20260920-r2-t2-preimplementation-reconciliation.html・design-system/（新規）, supervisor-summary.json・supervisor-state.json（更新）, log.md
