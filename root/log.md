@@ -11549,3 +11549,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 本番の変更は4点のみ: tools/swimsuit_authority.py 8812d436→47d00e2a、tools/swimsuit_reference_contract_v2.py c5b4802c→e549f42d、active seal 2ca13675→24d2e2a8（新規 SEALED）、active contract ce2be301→239be33d（real generator 生成、PASS）。G20 D/S/H/R PASS、R2 stage_entry OPEN。Supervisor 独立監査 88項目 PASS。
 - runtime pointer・successor-v3.4.1・Blend・Helen NPZ 2本・skeleton・Sabrina evidence・Helen confirmation・authority ledgers は前後同一。actual R2 fit は未開始。terminal: HELEN_S039_CONTROLLED_PRODUCTION_ADOPTION_READY_FOR_INDEPENDENT_REVIEW。
 - 触ったファイル: tools/swimsuit_authority.py, tools/swimsuit_reference_contract_v2.py, output/gf2-helen-swimsuit/r0-authority-policy-seal-v1.json, output/gf2-helen-swimsuit/reference-contract-v2.json, output/gf2-helen-swimsuit/helen-s039-controlled-production-adoption-actual-20260919/（新規）, log.md
+
+## [2026-09-19] build | Helen R2-T1 役割別の差の測定（読み取りのみ・staging）
+
+- 外部監査 PASS（S039 本番反映）を受け R2 を再開。現在の水着候補（2026-09-07）の肩ひもを、参照3件の役割ごと（G20-D ドゥルシーヌヴイ／G20-S サブリナ／G20-H ヘレン自身の首から胸への紐）に測った。形状・Blend・本番は無変更。Outer Supervisor が成果物・コード・独立再計算・76,485 ファイルの前後照合で確認し PASS。
+- 主な値: たるみ 原着装 1.0502／候補 1.0507、落ち込み 0.348／0.522。ヘレンの紐との差は首側 10〜13mm、胸側 92.4mm。
+- 次の関所: R2 の合格条件（candidate_fit）の案を作成し外部監査待ちで停止。
+- 触ったファイル: output/gf2-helen-swimsuit/helen-r2-t1-role-gap-measurement-20260919/（新規）, output/gf2-helen-swimsuit/outer-supervisor-r2-20260919/（新規）, log.md
