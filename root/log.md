@@ -11574,3 +11574,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 外部監査の PASS を受け、R2-T2 を staging で実施した。落ち込んだ輪を体の外向きにだけ持ち上げる方法（9/7 のならし・9/8 のならし後の置き直しは採らない）。右の紐はたるみ 1.0507→1.0398、落ち込み 12/23→8/23 で、厳密な G21（原着装以下・許容 0）を満たした。動いたのは肩ひもの 192 頂点だけで、体へ近づいた輪は 0。Outer Supervisor が独立に再計算し、76,498 ファイルを前後照合した。
 - 条件 E（G7/G8/G9a/G9b）と F（G19b 全体）は、出発点の 9/7 版の時点で不合格だった（主にカップ・小物・帯）。肩ひもだけの作業では満たせないため、合格基準の扱いを外部監査に回して停止した。candidate_fit は FAIL のまま。本番への書き込みは0件。
 - 触ったファイル: output/gf2-helen-swimsuit/helen-r2-t2-strap-bridge-20260920/（新規・実装役）, output/gf2-helen-swimsuit/outer-supervisor-r2-20260919/r2-t2-task-contract.md・r2-t2-run1-supervisor-audit.json・20260920-r2-t2-run1-strap-bridge-audit.html（新規）, supervisor-summary.json・supervisor-state.json（更新）, log.md
+
+## [2026-09-21] build | Helen B5-T4 promotion bundle の頂点位置条件を修理し締め予行演習を再実施（sandbox・本番未適用）
+
+- B5-T3 の報告を採用せず、active Blend を Blender で読み直して独立に再測定した。実機 Blend と承認済み R2-T3 candidate の座標差 374 頂点は、R2-T2 の肩ひも 192 と R2-T3 の帯 182 に完全に一致し（重複 0・和集合が差分集合と一致）、カップの頂点差は 0、位相と UV はビット一致。B5-T2 の bundle が active Blend の完了条件に使っていた `db07706a…` は candidate の座標で、この取引では永久に満たせず、かつ「頂点を動かさないこと」を禁じてもいない条件だったと判定した。
+- bundle を狭く修理した（v1 `d632e3f2…` → v2 `1a39246e…`）。完了条件を「その Blend 自身の取引前後の頂点位置が一致すること」へ置換し、頂点数・並び順・カップ／非カップ別の不動・向きを変えた面が 3,648 枚だけであること・非カップ面の向き不変・UV 対応・位相対応を機械検査する 2 本を bundle に足した。既存 9 ファイルはバイト一致で引き継ぎ。副作用の数字の取り違え（巻き戻しの再反転の 1616 loops/800 faces を前向き適用の値として書いていた。実測は 248 面/744 loops）も訂正した。
+- 修理版で 3 者同時取引を sandbox で最初から再実行し、生成器・candidate・Blend の検証、acceptance 21 関所（差分 0）、保護対象 52,703 件の帰属（変化はガード自身の追記ログ 1 件のみ・未帰属 0）、fail-closed 7/7（従来 5＋位置不変条件の新規 2）、pre-image バイト復元による巻き戻し（全長 SHA 一致）まで全 PASS。production・実機 Blend・承認済み candidate への書き込みは 0 件。R2 の帯／肩ひも座標は反映していない。`candidate_fit` は FAIL、`geometry_acceptance` は NOT_EVALUATED、validator 未採用、B5-B 未変更。External Review readiness は YES だが本番へは適用せず停止した。
+- 触ったファイル: output/gf2-helen-swimsuit/helen-b5-t4-position-invariant-repair-20260921/（新規）, log.md
