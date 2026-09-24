@@ -11581,3 +11581,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - bundle を狭く修理した（v1 `d632e3f2…` → v2 `1a39246e…`）。完了条件を「その Blend 自身の取引前後の頂点位置が一致すること」へ置換し、頂点数・並び順・カップ／非カップ別の不動・向きを変えた面が 3,648 枚だけであること・非カップ面の向き不変・UV 対応・位相対応を機械検査する 2 本を bundle に足した。既存 9 ファイルはバイト一致で引き継ぎ。副作用の数字の取り違え（巻き戻しの再反転の 1616 loops/800 faces を前向き適用の値として書いていた。実測は 248 面/744 loops）も訂正した。
 - 修理版で 3 者同時取引を sandbox で最初から再実行し、生成器・candidate・Blend の検証、acceptance 21 関所（差分 0）、保護対象 52,703 件の帰属（変化はガード自身の追記ログ 1 件のみ・未帰属 0）、fail-closed 7/7（従来 5＋位置不変条件の新規 2）、pre-image バイト復元による巻き戻し（全長 SHA 一致）まで全 PASS。production・実機 Blend・承認済み candidate への書き込みは 0 件。R2 の帯／肩ひも座標は反映していない。`candidate_fit` は FAIL、`geometry_acceptance` は NOT_EVALUATED、validator 未採用、B5-B 未変更。External Review readiness は YES だが本番へは適用せず停止した。
 - 触ったファイル: output/gf2-helen-swimsuit/helen-b5-t4-position-invariant-repair-20260921/（新規）, log.md
+
+## [2026-09-24] build | Helen 水着 見える欠陥4件の局所修理（staging・review Blend 作成・本番未反映）
+
+- 武田さんが自由視点で見つけた4件を、出発点 `240a318a…` から局所修理した。首のひものめり込み（ひもの肌内 54→0）、カップ上部とひも・カップ外側と横ひもの接続の段（原因はカップの厚み外皮の縁が付け根で箱状に立っていたこと。付け根3リングで厚みを漸減）、ひも断面のねじれ（原作断面で貼り直し）、カップ表面の折れ4か所（原作形 ARAP・肌より深くしない制約）。中央 bridge と小物は不動。
+- 残したもの: bridge 脇の引き伸ばされたカップ面 18 枚（直すと中央形状を動かすため範囲外）、右カップ上部内側の折れ1か所（2系統で直すとくぼみが出るため）。
+- 候補 `9ec02f60…`、review Blend `84964ec0…`。production `72d6396d…` は前後一致。worker 委譲なし（Supervisor 自身の実装・機械検査・画像確認）。
+- 触ったファイル: output/gf2-helen-swimsuit/helen-r2-visible-defect-repair-20260924/（新規）, log.md
