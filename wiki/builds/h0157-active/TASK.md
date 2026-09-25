@@ -8,7 +8,7 @@ created: 2026-09-11
 last_reviewed: 2026-09-24
 capsule_id: H0157-ACTIVE-20260911-R3
 gap_id: H0157-GAP-MESH-BODY-GEOMETRY-VALUE-FREEZE
-implementation_authorized: false
+implementation_authorized: true
 ---
 
 # H0157 active — 次のdomain task（2026-09-24 sync）
