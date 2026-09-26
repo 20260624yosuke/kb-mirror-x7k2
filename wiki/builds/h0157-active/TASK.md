@@ -1,7 +1,7 @@
 ---
 type: build
 title: H0157 active — motion exact subscope value freeze（2026-09-26）
-status: active
+status: IMPLEMENTED_PENDING_FRESH_REVIEW
 confidence: high
 evidence_level: source-backed
 created: 2026-09-11
@@ -113,3 +113,24 @@ quality_gate:
 - Finger20: A=HUMAN_COMPENSATION（保持・削除なし）、B=game-data-derived（AnimationClip scope）、C=NONE。post-clip final runtimeはunproven、PARKED。
 - Visual route: NOT_READY、promotionなし。
 - 旧TASK本文（geometry freeze第一候補の詳細）は本更新で置換した。旧内容が必要なら版履歴を参照。
+
+## Motion freeze実装記録（2026-09-26、IMPLEMENTED_PENDING_FRESH_REVIEW）
+
+```yaml
+status: IMPLEMENTED_PENDING_FRESH_REVIEW
+implementation_authorized: false
+freeze_artifact: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/audit/runs/20260926-motion-exact-freeze/stage/h0157-motion-exact-value-freeze/h0157-motion-exact-value-freeze.json
+freeze_artifact_sha256: 65e4867751fe97855c2648015aa5e041e0072b3595164df504485036aa6eba54
+frozen:
+  translation: 330 final
+  scale: 330 final
+  rotation: 310 final
+  face_curves: 24 final (BIT_EXACT)
+parked:
+  finger20_rotation: 20 (rotationのみ除外、T/Sはfreeze済み)
+parent_blend_changed: false
+blender_launched: false
+evidence: EV-H0157-046
+next_action: RETURN_FOR_FRESH_INDEPENDENT_REVIEW
+note: 次domainは外部Supervisorが決める。Finger20をnext taskにしない。
+```
