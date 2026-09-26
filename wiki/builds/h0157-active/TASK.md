@@ -60,7 +60,10 @@ forbidden_now:
   - Candidate Bをproven final live-runtime truthと書くこと
 ```
 
-## 次の本体task
+## 閉じたmotion（history、現行taskにしない）
+
+2026-09-26にformal freezeを実行した（下記Motion freeze実装記録、EV-H0157-046）。
+当時の「次の本体task」記述はhistoryとして以下に残し、現行taskにしない。
 
 ```yaml
 gap_id: H0157-GAP-MOTION-EXACT-SUBSCOPE-VALUE-FREEZE
@@ -84,7 +87,8 @@ excluded:
   - unresolved motion部分
   - Blenderへの本番書込み
 success_effect: 334個の既に確定済みmotion値がformal frozen valuesになる。
-executed_by_this_task: false
+executed_by_this_task: true
+executed_record: 下記Motion freeze実装記録（2026-09-26、EV-H0157-046）
 forbidden_actions:
   - 本taskでのmotion freeze実行
   - Blender起動
@@ -111,10 +115,13 @@ quality_gate:
 ## 現行state要点（詳細はCURRENT.json）
 
 - mesh_body_geometry: FINAL_VALUES_CONFIRMED（Blend変更なし、EV-H0157-045）。
+- motion exact subscope: formal frozen（Blend変更なし、EV-H0157-046）。Finger20 rotation 20本はPARKED。
+- skinning exact subscope: formal frozen（Blend変更なし、Blender未起動、EV-H0157-047）。28 mesh・122317 verticesのper-mesh bone_indices / bone_weights / variant-specific bindposes / bone_hashes + Blender vertex weights全頂点一致。
+- skeleton_weight_deformation family全体: still incomplete。unresolved = unified rest exactness / 51 estimated parent relations / hierarchy-dependent deformation fidelity（いずれもNOT FROZEN）。
 - H0157 motion: 330 mapped、unmatched 0、T330/S330/R310/TRS310、残差exactly 20 Finger20。
 - Finger20: A=HUMAN_COMPENSATION（保持・削除なし）、B=game-data-derived（AnimationClip scope）、C=NONE。post-clip final runtimeはunproven、PARKED。
 - Visual route: NOT_READY、promotionなし。
-- 旧TASK本文（geometry freeze第一候補の詳細）は本更新で置換した。旧内容が必要なら版履歴を参照。
+- 旧TASK本文（geometry freeze第一候補・motion freeze未実行時の詳細）は本更新でhistory化した。旧内容が必要なら版履歴を参照。
 
 ## Motion freeze実装記録（2026-09-26、IMPLEMENTED_PENDING_FRESH_REVIEW）
 
@@ -135,4 +142,36 @@ blender_launched: false
 evidence: EV-H0157-046
 next_action: RETURN_FOR_FRESH_INDEPENDENT_REVIEW
 note: 次domainは外部Supervisorが決める。Finger20をnext taskにしない。
+```
+
+## Skinning freeze実装記録（2026-09-26、IMPLEMENTED_PENDING_FRESH_REVIEW）
+
+```yaml
+status: IMPLEMENTED_PENDING_FRESH_REVIEW
+implementation_authorized: false
+freeze_artifact: /Volumes/SSD_M.2_Realtek RTL9210 NVME Media_/01_イラスト/07_3D資料/gf2-helen-starlit-waltz/06_repro-v51/audit/runs/20260926-skinning-exact-freeze/stage/h0157-skinning-exact-value-freeze/h0157-skinning-exact-value-freeze-v1.json
+freeze_artifact_sha256: 41f71310c568990fffd63920089b6de66715bf8bd5ccf441904616f7dfe63bd7
+frozen_per_mesh:
+  bone_indices: frozen source-backed value
+  bone_weights: frozen source-backed value
+  bindposes: frozen PER-MESH value (variant-specific, not unified)
+  bone_hashes: frozen source-backed value
+mesh_count: 28
+total_vertices: 122317
+blender_weight_readback:
+  count_mismatch: 0
+  index_mismatch: 0
+  max_abs_weight_diff: 0.0
+  non_bone_groups: none
+explicitly_not_frozen:
+  - unified skeleton rest exactness
+  - 51 estimated parent relations
+  - hierarchy-dependent deformation fidelity
+parent_blend_changed: false
+blender_launched: false
+tolerance_used: false
+approximation_used: false
+evidence: EV-H0157-047
+next_action: RETURN_FOR_FRESH_INDEPENDENT_REVIEW
+note: 次domainは外部Supervisorが決める。331-bone armature全体がexactとは書かない。Finger20をnext taskにしない。
 ```
