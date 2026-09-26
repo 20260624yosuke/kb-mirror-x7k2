@@ -1,24 +1,26 @@
 ---
 type: build
-title: H0157 active — motion exact subscope value freeze（2026-09-26）
+title: H0157 active — skinning exact subscope value freeze（2026-09-26）
 status: IMPLEMENTED_PENDING_FRESH_REVIEW
 confidence: high
 evidence_level: source-backed
 created: 2026-09-11
 last_reviewed: 2026-09-26
 capsule_id: H0157-ACTIVE-20260911-R3
-gap_id: H0157-GAP-MOTION-EXACT-SUBSCOPE-VALUE-FREEZE
+gap_id: H0157-GAP-SKINNING-EXACT-VALUE-FREEZE
 implementation_authorized: false
 ---
 
-# H0157 active — motion exact subscope value freeze（2026-09-26）
+# H0157 active — skinning exact subscope value freeze（2026-09-26）
 
 2026-09-26のgeometry closureでmesh_body_geometryはFINAL_VALUES_CONFIRMEDとして
 current taskから外した（Blend変更なし、詳細はCURRENT.jsonのgeometry_closure_20260926と
-EV-H0157-045）。whole projectはINCOMPLETEのまま。
+EV-H0157-045）。motion exact subscopeも2026-09-26にformal freezeし
+current taskから外した（Blend変更なし、詳細はCURRENT.jsonのmotion_exact_freeze_20260926と
+EV-H0157-046）。whole projectはINCOMPLETEのまま。
 
-本taskはstate更新であり、motion freeze自体は実行しない
-（implementation_authorized: false）。
+本taskはstate更新であり、skinning freeze自体は下記記録のとおり実行済み
+（implementation_authorized: falseのまま。次の技術領域は選ばない）。
 
 ## 閉じたgeometry（history、現行taskにしない）
 
