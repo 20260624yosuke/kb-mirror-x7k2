@@ -11588,3 +11588,10 @@ E4完結の実態へ更新(TCC拒否中→完結・回収ルートは配信待�
 - 残したもの: bridge 脇の引き伸ばされたカップ面 18 枚（直すと中央形状を動かすため範囲外）、右カップ上部内側の折れ1か所（2系統で直すとくぼみが出るため）。
 - 候補 `9ec02f60…`、review Blend `84964ec0…`。production `72d6396d…` は前後一致。worker 委譲なし（Supervisor 自身の実装・機械検査・画像確認）。
 - 触ったファイル: output/gf2-helen-swimsuit/helen-r2-visible-defect-repair-20260924/（新規）, log.md
+
+## [2026-09-27] build | Helen 環境整備の収束（Claude: 上=Opus・子=Sonnet）
+- `.claude/agents/helen-implementer.md` の `model: inherit` → `claude-sonnet-5`（インストール済み Claude Code 2.1.281 のモデル一覧で sonnet の既定値として確認）。退避: `.claude/agents/helen-implementer.md.bak-sonnet-20260927`。supervisor（`claude-opus-5`）・OpenCode 側・`HELEN-LOOP.md` は無変更。
+- 試験 23/23・ガード自己試験 30/30・`verify_artifacts.py` PASS。current candidate / review Blend / production / checkpoint の SHA 一致。
+- Helen リポジトリに `HELEN-LOOP.md`・`tests/test_helen_loop.py`・`AGENTS.md` をコミット（0d32318）。
+- 無料モデルの待機ループ（opencode run を 5 分ごとに再試行）を停止。
+- 未達: `claude --agent helen-supervisor` の起動確認は、単体 CLI がログアウト状態のため認証エラーで止まった（エージェント定義の読込みエラーは無し）。
