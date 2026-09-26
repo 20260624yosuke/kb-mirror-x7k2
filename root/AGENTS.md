@@ -537,3 +537,7 @@ Codex は `~/.codex/hooks.json` の Stop に登録済み。検出力 6/6・配�
 **そのパスを本文に出す**。2026-09-05 実測: 更新した 7 ターンのうち 6 ターンで出していなかった。
 （規則としては生きているが、機械の自動停止は 2026-09-10 の brainstorm 封鎖で外れた
 ＝`guard-stop-handoff` を settings.json から除去。D1／D2 は引き続き `deliverable_path_guard.py` が見る。）
+
+## Helen_水着化のproject入口
+
+Helen_水着化の依頼では、最初に `projects/gf2-helen-swimsuit/CURRENT.md` と `projects/gf2-helen-swimsuit/ARTIFACTS.json` を読み、同projectの `AGENTS.md` に従う。currentの意味はCURRENTだけで決め、最新mtimeや旧checkpointから推測しない。

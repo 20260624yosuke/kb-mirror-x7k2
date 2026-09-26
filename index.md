@@ -5,8 +5,8 @@ _合計 5538 ファイル_
 
 ## root/ (11)
 
-- [AGENTS.md](root/AGENTS.md) | 2026-09-10T14:54:32Z
-- [CLAUDE.md](root/CLAUDE.md) | 2026-09-10T14:54:32Z
+- [AGENTS.md](root/AGENTS.md) | 2026-09-26T00:29:55Z
+- [CLAUDE.md](root/CLAUDE.md) | 2026-09-26T00:29:55Z
 - [KIMI.md](root/KIMI.md) | 2026-09-08T16:59:23Z
 - [README.md](root/README.md) | 2026-08-19T08:21:10Z
 - [claude-handoff-active-display-resolution.md](root/claude-handoff-active-display-resolution.md) | 2026-06-19T06:29:15Z

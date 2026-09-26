@@ -1,5 +1,7 @@
 # LLM Wiki — Schema (CLAUDE.md)
 
+Helen_水着化の依頼では `projects/gf2-helen-swimsuit/CURRENT.md` と `projects/gf2-helen-swimsuit/ARTIFACTS.json` を最初に読み、同projectの `AGENTS.md` を読む。currentの意味はCURRENTだけで決め、最新mtimeや旧checkpointから推測しない。
+
 このディレクトリは **LLM Wiki** 形式のパーソナル知識ベースです。あなた(Claude)は
 このナレッジベースの **maintainer** として、以下の規約に従って動作してください。
 
